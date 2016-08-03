@@ -1,0 +1,193 @@
+﻿@{
+    ViewBag.Title = "厂盟智能 | 服务";    
+}
+@section css{
+    <link href="/modules/css/services.css" rel="stylesheet" />
+}
+@section scripts{
+    <script type="text/javascript">
+        seajs.use(["scripts/services/services"], function (ObjectJS) {
+            ObjectJS.init();
+        });
+    </script>
+}
+<div class="head-information">
+    <img style="width:100%" src="/modules/images/services/service-br.png" />
+    <div class="information">
+        <div class="font24 mTop200">我们提供7*24小时在线服务</div>
+        <div class="font14" style="color:#C6D1DD;width:320px;margin:auto">您的每一个需求和建议，都是我们进步的原动力</div>        
+    </div>
+</div>
+@* 产品定价 *@
+@*<div class="service-pricing">
+    <div class="center font24 clocr-title pTop30">产品定价</div>
+    <div class="pricing-details">
+        <ul class="mRight25">
+            <li>免费版</li>
+            <li class="font22 mBottom10">￥0</li>
+            <li class="color-pricing ">适用于个人或微型团队</li>
+            <li class="btn-click btn-click-login"><a class="font16" href="http://edj.yunxiaokeji.com/Home/Register">立即注册</a></li>
+            <li class="line-pricing"></li>
+            <li class="details-function">免费账户<a>5</a>人</li>
+            <li class="details-function">企业账户附件上传总大小<=<a>10G</a></li>
+            <li class="details-function">有效添加客户/会员数<=<a>50</a>人</li>
+            <li class="details-function">有效添加产品总数<=<a>100</a>个</li>
+            <li class="details-function">含基础报表统计</li>
+        </ul>
+        <ul class="mRight25">
+            <li>专业版</li>
+            <li class="font22 mBottom10">￥2,000+</li>
+            <li class="color-pricing ">适用于小型团队</li>
+            <li class="btn-click login-trial"><a class="font16" href="http://edj.yunxiaokeji.com/Home/Register">免费试用</a></li>
+            <li class="line-pricing"></li>
+            <li class="details-function" style="margin:0;text-align:center;margin-bottom:20px;">"免费版"所有功能</li>
+            <li class="details-function" style="margin:0;text-align:center;margin-bottom:20px;">数据指标不设限制</li>
+            <li class="details-function" style="margin:0;text-align:center;margin-bottom:20px;">所有报表统计功能</li>            
+        </ul>
+        <ul>
+            <li>定制服务</li>
+            <li class="font22 mBottom10">￥？？？</li>
+            <li class="color-pricing ">适用于各规模团队与企业</li>
+            <li class="btn-click login-trial"><a class="font16">联系我们</a></li>
+            <li class="line-pricing"></li>
+            <li class="details-function">根据企业需求专业定制</li>
+            <li class="details-function">项目结束后免费维护一年</li>
+            <li class="details-function">提供企业级解决方案</li>            
+        </ul>
+    </div>
+</div>*@
+@* 价格表 *@
+<div class="price-list">
+    <div class="center font24 clocr-title pTop30 mBottom40">价格表</div>
+    <table>
+        <tr class="bgcolor-title">
+            <td></td>
+            <td class="no-border-left font14">1年价格(元)</td>
+            <td class="no-border-left font14">2年价格(元)</td>
+            <td class="no-border-left font14">3年价格(元)</td>
+        </tr>
+        <tr class="bgcolor-price">
+            <td><div class="use-number">5用户</div></td>
+            <td data-number="1200.00" data-time="1">2,000</td>
+            <td data-number="2400.00" data-time="2">4,000</td>
+            <td data-number="3600.00" data-time="3">6,000</td>
+        </tr>
+        <tr>
+            <td><div class="use-number">10用户</div></td>
+            <td data-number="2400.00" data-time="1">4,000</td>
+            <td data-number="4200.00" data-time="2">7,600</td>
+            <td data-number="5600.00" data-time="3">10,800</td>
+        </tr>
+        <tr class="bgcolor-price">
+            <td><div class="use-number">20用户</div></td>
+            <td data-number="4600.00" data-time="1">8,000</td>
+            <td data-number="8200.00" data-time="2">15,200</td>
+            <td data-number="10800.00" data-time="3">21,600</td>
+        </tr>
+        <tr>
+            <td><div class="use-number">50用户</div></td>
+            <td data-number="10800.00" data-time="1">19,000</td>
+            <td data-number="19200.00" data-time="2">36,100</td>
+            <td data-number="25600.00" data-time="3">51,300</td>
+        </tr>
+        <tr class="bgcolor-price">
+            <td><div class="use-number">100用户</div></td>
+            <td data-number="19800.00" data-time="1">36,000</td>
+            <td data-number="35600.00" data-time="2">64,800</td>
+            <td data-number="46800.00" data-time="3">92,700</td>
+        </tr>
+    </table>
+    <div class="reminder">此价格仅供参考,具体收费以实际为准</div>
+    <div class="price-line"></div>
+</div>
+@* 费用估算 *@
+@*<div class="estimate">
+    <div class="center font24 clocr-title pTop30 mBottom40">费用估算</div>
+    <div class="estimate-price">
+        <ul class="mRight50">
+            <li>
+                <div>使用人数</div>
+                <div class="use-line use-number-txt">
+                    <div style="width:0%"></div>
+                    <div class="btn-number" style="margin-left:0%"></div>
+                </div>
+                <input class="user-numb" type="text" value="1" />/人
+            </li>
+            <li>
+                <div>时间</div>
+                <div class="left mRight20">
+                    <i class="round hover" data-year="1">
+                        <span style="display: inline-block;"></span>
+                    </i>
+                    <span style="padding: 3px; font-size: 16px;">1/年</span>
+                </div>
+                <div class="left mRight20">
+                    <i class="round" data-year="2">
+                        <span style="display: inline-block;"></span>
+                    </i>
+                    <span style="padding: 3px; font-size: 16px;">2/年</span>
+                </div>
+                <div>
+                    <i class="round" data-year="3">
+                        <span style="display: inline-block;"></span>
+                    </i>
+                    <span style="padding: 3px; font-size: 16px;">3/年</span>
+                </div>    
+            </li>
+            <li>
+                <div>折扣</div>
+                <div class="use-line discount">
+                    <div style="width:0%"></div>
+                    <div class="btn-number" style="margin-left:0%"></div>
+                </div>
+                <input class="user-discount" type="text" value="0" />/折
+            </li>
+        </ul>
+        <div class="cost">
+            <div>服务费用</div>
+            <div class="check-box iconfont">&#xe626;</div>
+            <div>                
+                部署服务：<span>￥1000</span>/次
+            </div>
+            <div class="check-box iconfont">&#xe626;</div>
+            <div>                
+                制度培训：<span>￥4000</span>/小时
+            </div>
+            <div class="count">
+                总计价格：￥<span>1200.00</span>元
+            </div>
+        </div>
+    </div>
+</div>*@
+@* 技术支持 *@
+<div class="technical-support">
+   
+    <div class="details">        
+        <ul class="mRight50">
+            <li><img src="/modules/images/services/service-ico1.png" /></li>            
+            <li class="font16">定制化服务</li>
+            <li>对于有个性化需求的客户，我们提供针对性的定制功能开发，基于智能工厂平台做各种拓展功能</li>
+            <li>了解详情&nbsp;></li>
+        </ul>
+        <ul class="mRight50">
+            <li><img src="/modules/images/services/service-ico3.png" /></li>            
+            <li class="font16">技术化支持</li>
+            <li>针对新用户，我们会提供免费的培训指导，帮助您和您的团队更快捷有效的使用智能工厂</li>
+            <li>了解详情&nbsp;></li>
+        </ul>
+        <ul>
+            <li><img src="/modules/images/services/service-ico2.png" /></li>            
+            <li class="font16">销售咨询</li>
+            <li style="height:51px;">销售经理为您解答专业版报价,智能工厂部署实施方案的各种问题</li>
+            <li>了解详情&nbsp;></li>
+        </ul>
+    </div>    
+</div>
+
+<div class="MD-teamwork">
+    <img src="/modules/images/services/service-bt.png" />
+    <div class="MD-teamwork-mask">
+        <div>明道与智能工厂用户，首次购买智能工厂享5折优惠</div>
+        <div>终身续费8.8折</div>
+    </div>
+</div>

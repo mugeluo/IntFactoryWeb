@@ -1,0 +1,77 @@
+﻿
+.head-information { position:relative;}
+.information {position:absolute;top:0;left:0;z-index:111;text-align:center;width:100%;height:100%; }
+.information div{color:#FEFEFF;margin-bottom:40px;text-shadow:2px 2px 3px #333;}
+.main-content { background-color:#fff;}
+.anli {background-color:#F3F2F0;height:150px; }
+.case-industry { color:#0C090D;font-size:22px;margin-bottom:20px;padding-top:30px;margin-top:-3px;}
+.line-case { border-bottom:1px solid #D8D5CF;margin-bottom:5px;width:200px;margin:auto;}
+.industry {margin:20px auto 75px auto;max-width:300px;}
+.industry li{float:left;margin-right:30px;margin-left:50px;font-size:16px;cursor:pointer;padding:6px 17px; }
+.industry li.hover{color:#fff;background-color:#008AE1;}
+.example .example-img { background-color:#F3F2F0;height:360px;width:100%;}
+.example .example-img .img{position:relative;}
+.example .example-img .img2{width:540px;float:right;position:relative;}
+.example .example-img img{height:360px;}
+.example .example-img  .layer{position:absolute;background:rgba(109, 95, 95, 0.6);
+                              height:360px;width:540px;top:0;right:0;}
+.example .example-img  .layer-two{position:absolute;background:rgba(109, 95, 95, 0.6);
+                              height:360px;width:540px;top:0;right:0;}
+.example-img .layer div { color:#fff !important;margin-left:50px;margin-right:50px;font-size:16px;}
+.example-img .layer-two div { color:#fff !important;margin-left:50px;margin-right:50px;font-size:16px;}
+.example .example-anli-img {width:1100px;margin:auto; }
+.example .example-anli-img div:first-child {margin-right:100px; }
+
+.example .solve-problem { margin:auto;max-width:1050px;margin-top:30px;}
+.example .details {width:1000px;margin:auto;margin-top:50px;}
+.example .details-example { width:675px;}
+.example .seaced-state { height:380px;width:1000px;margin:auto;margin-top:50px;}
+.example .seaced-state img{float:left;margin-right:20px;}
+.example .end-txt { width:1050px;margin:auto;}
+.fontcolor { color:#73736F;font-size:14px;line-height:24px;}
+
+@media only screen and (max-width:1024px){
+    .example .example-img { height:723px;}
+    .example .example-img .layer { left:23.5%;}
+    .example .example-img .layer-two {top:363px;left: 23.5%;}
+    .example .solve-problem { max-width:550px;}
+    .example .img div:first-child{ margin-left:250px;margin-bottom:20px;}
+    .example .details-example { margin-left:50px;}
+    .example .seaced-state { height:500px;}
+    .example .seaced-state .details-txt{margin-right:50px;}
+    .example .end-txt { width:900px;}
+}
+@media only screen and (max-width:900px){
+    .example .img div:first-child { margin-left:110px;}
+    .example .img div:first-child img{width:650px;}
+    .example .details-example { margin-left:20px;}
+    .example .end-txt { width:650px;margin:220px auto 0 auto;}
+    .example div:last-child img { width:650px;}
+}
+@media only screen and (max-width:640px){
+    .example .example-img .layer { left:0;}
+    .example .example-img .layer-two {top:363px;left: 0;}
+    .example .img div:first-child { margin-left:50px;}
+    .example .img div:first-child img{width:500px;}
+    .example .end-txt { width:500px;margin:220px auto 0 auto;}
+    .example div:last-child img { width:500px;}
+    .example .details-example { width:80%;}
+    .example .seaced-state img { float:none;}
+}
+@media only screen and (max-width:320px){
+    .anli { height:250px;}
+    .example .example-img img {height:160px; }
+    .example .example-img .layer { height:160px;width:270px;}
+    .example .example-img .layer div:first-child{margin-top:0;}
+    .example .example-img .layer-two { height:160px;width:270px;top:165px}
+    .example .example-img .layer-two div:first-child{margin-top:0;}
+    .example .example-img { height:325px;}
+    .example .img div:first-child img { width:160px;}
+    .example .img div:last-child img { width:160px;}
+    .example .img div:first-child { margin-left:60px;}
+    .example .seaced-state img { margin-left:0;}
+    .example div:last-child img { width:300px;}
+    .example .seaced-state { height:1100px;}
+    .example .end-txt { width:250px;margin: 120px auto 0 auto;}
+    .example .seaced-state .details-txt{width: 250px;margin: auto;}
+}

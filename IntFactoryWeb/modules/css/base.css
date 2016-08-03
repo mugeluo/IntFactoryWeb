@@ -8,7 +8,8 @@
 .tLeft { text-align:left !important;}
 .center { text-align:center; }
 .tRight { text-align:right !important;}
-.hide { display:none; }
+.hide { display:none;}
+.block { display:block;}
 .nolimits { display: none !important; }
 .relative {position:relative;}
 .bold {font-weight:bold}
@@ -45,12 +46,13 @@
 /*字体加粗*/
 .fontbold { font-weight:bold;}
 
+.color000 { color:#000 !important; }
 .color333 { color:#333 !important; }
 .color555 { color:#555 !important; }
 .color666 { color:#666 !important; }
 .color999 { color:#999 !important; }
 .colorccc { color:#ccc !important; }
-.colorfff { color:#fff !important;}
+.colorfff { color:#938D88 !important;}
 .head {background-color:#ddd !important;}
 
 .lineHeight15 { height:15px; line-height:15px;}
@@ -80,6 +82,7 @@
 .pTop30 {padding-top:30px;}
 .pTop50 {padding-top:50px;}
 
+.pBottom2 {padding-bottom:2px !important;}
 .pBottom5 {padding-bottom:5px !important;}
 .pBottom10 {padding-bottom:10px !important;}
 .pBottom20 {padding-bottom:20px !important;}
@@ -88,7 +91,8 @@
 .pAll10 {padding:10px;}
 .pAll15 {padding:10px;}
 .pAll20 {padding:20px;}
-/*margin*/ 
+/*margin*/
+.margin { margin:0;}
 .mTop1 {margin-top:1px;}
 .mTop2 {margin-top:2px;}
 .mTop3 {margin-top:3px;}
@@ -99,13 +103,17 @@
 .mTop8 {margin-top:8px;}
 .mTop9 {margin-top:9px;}
 .mTop10 {margin-top:10px !important;}
+.mTop12 {margin-top:12px !important;}
 .mTop15 {margin-top:15px !important;}
 .mTop20 {margin-top:20px !important;}
 .mTop25 {margin-top:25px !important;}
 .-mTop20 {margin-top:-20px !important;}
 .mTop30 {margin-top:30px;}
 .mTop40 {margin-top:40px !important;}
+.mTop45 {margin-top:45px;}
 .mTop50 {margin-top:50px;}
+.mTop150 {margin-top:150px;}
+.mTop200 {margin-top:200px;}
 
 .mLeft1 {margin-left:1px;}
 .mLeft2 {margin-left:2px;}
@@ -117,8 +125,17 @@
 .mLeft20 {margin-left:20px;}
 .mLeft30 {margin-left:30px;}
 .mLeft50 {margin-left:50px;}
+.mLeft60 {margin-left:60px;}
 .mLeft65 {margin-left:65px;}
 .mLeft80 {margin-left:80px;}
+.mLeft100 {margin-left:100px;}
+.mLeft150 {margin-left:150px;}
+.mLeft155 {margin-left:155px;}
+.mLeft160 {margin-left:160px;}
+.mLeft230 {margin-left:230px;}
+.mLeft235 {margin-left:235px;}
+.mLeft240 {margin-left:240px;}
+.mLeft275 {margin-left:275px;}
 
 .mRight1 {margin-right:1px;}
 .mRight2 {margin-right:2px;}
@@ -128,8 +145,10 @@
 .mRight10 {margin-right:10px;}
 .mRight15 {margin-right:15px;}
 .mRight20 {margin-right:20px;}
+.mRight25 {margin-right:25px;}
 .mRight30 {margin-right:30px;}
 .mRight50 {margin-right:50px !important;}
+.mRight150 {margin-right:150px}
 
 .mBottom1 {margin-bottom:1px;}
 .mBottom2 {margin-bottom:2px;}
@@ -174,5 +193,8 @@
 .minwidth300 { min-width:300px !important; }
 
 /*常用高度*/
+.hight20 { height:20px !important;}
+.hight30 { height:30px !important;}
 .hight40 { height:40px !important;}
 .hight58 { height:58px !important;}
+.hight100 { height:100px !important;}

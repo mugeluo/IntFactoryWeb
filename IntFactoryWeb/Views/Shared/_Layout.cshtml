@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.Title</title>
+    <link href="/modules/css/base.css" rel="stylesheet" />
+    <link href="/modules/css/layout.css" rel="stylesheet" />
+    <link href="/modules/css/iconfont/iconfont.css" rel="stylesheet" />
+    <script src="/Scripts/sea.js"></script>
+    <script src="/Scripts/sea-config.js"></script>
+    <script src="/Scripts/jquery-1.11.1.js"></script>    
+    
+    @RenderSection("css", false)   
+</head>
+<body>
+    <header class="header-menu" data-isbg="0">
+        <div class="site-header">
+            <ul class="left nav">                
+                <li><a href="/Home/Index"><img src="/modules/images/ico-home.png" /></a></li>
+                <li class="Product"><a href="/Product/Product">产品</a></li>
+                <li class="Services"><a href="/Services/Services">服务</a></li>
+                <li class="Case"><a href="/Case/Case">案例</a></li>
+                <li class="About"><a href="/About/About">关于</a></li>
+            </ul>
+            <div class="right mTop15">
+                <a href="http://edj.yunxiaokeji.com/Home/Login">登录</a>
+                <a class="register" href="http://edj.yunxiaokeji.com/Home/Register">注册</a> 
+                <div class="clear"></div>               
+            </div>   
+        </div>
+    </header>
+
+    <div class="main-content">
+        @RenderBody()        
+    </div>
+    
+    @RenderSection("scripts",false)
+    <footer class="site-footer">
+        <div class="left links">
+            @*<ul class="menu-footer">
+                <li>产品</li>
+                <li>功能特点</li>
+                <li>CRM</li>
+                <li>进销存</li>
+                <li>代理商</li>
+                <li>个性化</li>
+                <li>更新日志</li>
+            </ul>*@
+            <ul class="menu-footer">
+                <li>案例</li>
+                <li><a href="/Case/Case">行业案例</a></li>
+                @*<li>企业</li>*@                
+            </ul>
+            <ul class="menu-footer">
+                <li>报价</li>
+                <li><a href="/Services/Services">价格表</a></li>
+                @*<li>定制化服务</li>*@               
+            </ul>
+            @*<ul class="menu-footer">
+                <li>帮助</li>
+                <li>帮助中心</li>
+                <li>用户反馈</li>
+                <li>操作手册</li>               
+            </ul>*@
+            @*<ul class="menu-footer">
+                <li>开发者</li>
+                <li>开发平台</li>
+                <li>平台对接</li>               
+            </ul>*@
+            <ul class="menu-footer">
+                <li>关于</li>
+                <li><a href="/About/About">公司介绍</a></li>
+                @*<li>合作伙伴</li>               
+                <li>招聘</li>               
+                <li>商务合作</li>*@               
+            </ul>
+            <div class="clear"></div>
+        </div>
+        <div class="party-footer right">
+            <img class="wx-public" src="/modules/images/qrcode_for_gh_4dda5c475611_344.jpg" />            
+            <div class="clear"></div>
+            <div class="address-footer">
+                <ul class="icon-party right">
+                    @*<li>
+                        <a href="#"><img src="/modules/images/sns1.png" /></a>
+                    </li>*@
+                    <li>
+                        <img id="wx-photo" src="/modules/images/sns2.png" />
+                    </li>
+                   @* <li>
+                        <a href="#"><img src="/modules/images/sns3.png" /></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="/modules/images/sns4.png" /></a>
+                    </li>*@
+                </ul>
+                <div class="right mRight20">
+                    <span>公司地址:</span>
+                    <a target="_blank" href="http://j.map.baidu.com/FvBYv" title="跳转到地图">上海市长宁区中山西路 1279弄6号国峰科技大厦 6楼</a>
+                    <div class="mTop10">市场合作:&nbsp;customer@yunxiaokeji.com</div>
+                </div> 
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div class="statement">
+            <span class="colorfff left">©2016厂盟智能 沪ICP备 1999888 号</span>
+            <div>服务条款</div>   
+            <div class="line"></div>         
+            <div>隐私服务</div>
+            <div class="line"></div>   
+            <div>版权声明</div>
+            <div class="line"></div>  
+            <div>网站地图</div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </footer>
+    @*<div class="getback-FH">
+        <div title="返回顶部" class="iconfont-back iconfont">&#xe643;</div>
+    </div>*@
+    <script type="text/javascript">
+        seajs.use(["scripts/layout"], function (layout) {
+            layout.init();
+        });
+    </script>
+</body>
+</html>

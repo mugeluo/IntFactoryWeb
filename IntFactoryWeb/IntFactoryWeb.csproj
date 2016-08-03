@@ -122,7 +122,11 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\CaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\ServicesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -130,18 +134,104 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="modules\css\about.css" />
     <Content Include="modules\css\base.css" />
+    <Content Include="modules\css\case.css" />
     <Content Include="modules\css\home\index.css" />
+    <Content Include="modules\css\iconfont\demo.css" />
+    <Content Include="modules\css\iconfont\demo.html" />
+    <Content Include="modules\css\iconfont\iconfont.css" />
+    <Content Include="modules\css\iconfont\iconfont.svg" />
+    <Content Include="modules\css\index.css" />
     <Content Include="modules\css\layout.css" />
+    <Content Include="modules\css\product.css" />
+    <Content Include="modules\css\services.css" />
+    <Content Include="modules\images\about\about-ico1.png" />
+    <Content Include="modules\images\about\about-ico2.png" />
+    <Content Include="modules\images\about\about_01.png" />
+    <Content Include="modules\images\about\about_02.png" />
+    <Content Include="modules\images\about\about_03.png" />
+    <Content Include="modules\images\about\about_08.png" />
+    <Content Include="modules\images\case\anlile-1.png" />
+    <Content Include="modules\images\case\anlile-2.png" />
+    <Content Include="modules\images\case\anlile-3.png" />
+    <Content Include="modules\images\case\anlile-4.png" />
+    <Content Include="modules\images\case\anlile-5.png" />
+    <Content Include="modules\images\case\anlile-6.png" />
+    <Content Include="modules\images\case\anlile-7.png" />
+    <Content Include="modules\images\case\case-br.png" />
+    <Content Include="modules\images\case\case-js1.png" />
+    <Content Include="modules\images\home\br-0.png" />
+    <Content Include="modules\images\home\br-1.png" />
+    <Content Include="modules\images\home\br-3.png" />
+    <Content Include="modules\images\home\br-4.png" />
+    <Content Include="modules\images\home\index-10.png" />
+    <Content Include="modules\images\home\index-11.png" />
+    <Content Include="modules\images\home\index-12.png" />
+    <Content Include="modules\images\home\index-2.png" />
+    <Content Include="modules\images\home\index-3.png" />
+    <Content Include="modules\images\home\index-4.png" />
+    <Content Include="modules\images\home\index-5.png" />
+    <Content Include="modules\images\home\index-6.png" />
+    <Content Include="modules\images\home\index-7.png" />
+    <Content Include="modules\images\home\index-8.png" />
+    <Content Include="modules\images\home\index-9.png" />
+    <Content Include="modules\images\home\index-br0-cloud-left.png" />
+    <Content Include="modules\images\home\index-br0-cloud-right.png" />
+    <Content Include="modules\images\home\index-dls0.png" />
+    <Content Include="modules\images\home\index-dls1.png" />
+    <Content Include="modules\images\home\index-dls2.png" />
+    <Content Include="modules\images\home\index-jxc0.png" />
+    <Content Include="modules\images\home\index-jxc1.png" />
+    <Content Include="modules\images\home\index-jxc2.png" />
+    <Content Include="modules\images\home\index-kh0.png" />
+    <Content Include="modules\images\home\index-kh1.png" />
+    <Content Include="modules\images\home\index-kh2.png" />
+    <Content Include="modules\images\home\index-_03.png" />
+    <Content Include="modules\images\home\shadow-line.png" />
+    <Content Include="modules\images\ico-home.png" />
     <Content Include="modules\images\logo_login.png" />
+    <Content Include="modules\images\qrcode_for_gh_4dda5c475611_344.jpg" />
+    <Content Include="modules\images\services\service-br.png" />
+    <Content Include="modules\images\services\service-bt.png" />
+    <Content Include="modules\images\services\service-ico1.png" />
+    <Content Include="modules\images\services\service-ico2.png" />
+    <Content Include="modules\images\services\service-ico3.png" />
+    <Content Include="modules\images\sns1.png" />
+    <Content Include="modules\images\sns2.png" />
+    <Content Include="modules\images\sns3.png" />
+    <Content Include="modules\images\sns4.png" />
+    <Content Include="modules\images\wechat.jpg" />
     <Content Include="modules\images\ zngc-1.png" />
     <Content Include="modules\images\ zngc-2.png" />
     <Content Include="modules\images\ zngc-3.png" />
     <Content Include="modules\images\ zngc-4.png" />
     <Content Include="modules\images\ zngc-5.png" />
     <Content Include="modules\images\ zngc-6.png" />
+    <Content Include="modules\plug\carousel\css\8dc3a597.css" />
+    <Content Include="modules\plug\carousel\img\5a30b78c.png" />
+    <Content Include="modules\plug\carousel\img\62371027.png" />
+    <Content Include="modules\plug\carousel\img\b8cb3910.png" />
+    <Content Include="modules\plug\carousel\js\6d510e95.js" />
     <Content Include="modules\plug\doT.js" />
+    <Content Include="modules\plug\jquery-horizon-line-switch\css\default.css" />
+    <Content Include="modules\plug\jquery-horizon-line-switch\css\reset.css" />
+    <Content Include="modules\plug\jquery-horizon-line-switch\css\style.css" />
+    <Content Include="modules\plug\jquery-horizon-line-switch\fonts\icomoon.svg" />
+    <Content Include="modules\plug\jquery-horizon-line-switch\img\cd-arrow.svg" />
+    <Content Include="modules\plug\jquery-horizon-line-switch\js\jquery-2.1.1.min.js" />
+    <Content Include="modules\plug\jquery-horizon-line-switch\js\jquery.mobile.custom.min.js" />
+    <Content Include="modules\plug\jquery-horizon-line-switch\js\main.js" />
+    <Content Include="modules\plug\jquery-horizon-line-switch\js\modernizr.js" />
+    <Content Include="modules\plug\js-img-switching\index-img-switching.css" />
+    <Content Include="modules\plug\js-img-switching\index-img-switching.js" />
+    <Content Include="modules\plug\js-img-switching\l.png" />
+    <Content Include="modules\plug\js-img-switching\r.png" />
+    <Content Include="modules\scripts\case\case.js" />
+    <Content Include="modules\scripts\global.js" />
     <Content Include="modules\scripts\home\index.js" />
+    <Content Include="modules\scripts\layout.js" />
+    <Content Include="modules\scripts\services\services.js" />
     <Content Include="Scripts\jquery-1.11.1.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\sea-config.js" />
@@ -162,6 +252,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Content\" />
     <Folder Include="Models\" />
+    <Folder Include="modules\scripts\about\" />
     <Folder Include="modules\template\" />
   </ItemGroup>
   <ItemGroup>
@@ -169,6 +260,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="modules\css\iconfont\iconfont.eot" />
+    <Content Include="modules\css\iconfont\iconfont.ttf" />
+    <Content Include="modules\css\iconfont\iconfont.woff" />
+    <Content Include="modules\plug\jquery-horizon-line-switch\fonts\icomoon.eot" />
+    <Content Include="modules\plug\jquery-horizon-line-switch\fonts\icomoon.ttf" />
+    <Content Include="modules\plug\jquery-horizon-line-switch\fonts\icomoon.woff" />
+    <Content Include="Views\About\About.cshtml" />
+    <Content Include="Views\Case\Case.cshtml" />
+    <Content Include="Views\Product\Product.cshtml" />
+    <Content Include="Views\Services\Services.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
