@@ -3,10 +3,14 @@
 .bacolor { background-color:#008AE1;}
 .bgcolor-title { background-color:#F3F2F0;}
 .bgcolor-price { background-color:#EDF5FF;}
+
+.head-information { position:relative;background-color:#4a91e3;height:400px;}
+.information {position:absolute;top:0;left:0;z-index:111;text-align:center;width:100%;height:100%; }
+.information div{color:#FEFEFF;margin-bottom:30px;line-height:1.6;text-shadow: 2px 2px 3px #333;}
 /*产品定价*/
 .service-pricing { height:650px;background-color:#F3F2F0;margin-top:-3px;}
-.pricing-details { text-align:center;width:850px;margin:auto;margin-top:50px;}
-.pricing-details ul { background-color:#fff;width:250px;height:475px;float:left;margin-right:50px;}
+.pricing-details { text-align:center;width:800px;margin:auto;margin-top:50px;}
+.pricing-details ul { background-color:#fff;width:250px;height:475px;float:left;}
 .pricing-details ul li:first-child{margin-bottom: 20px;padding-top:30px;font-size:22px;color:#61605B;}
 .pricing-details ul .btn-click-login{background-color:#fff !important;color:#008AE1 !important;}
 .pricing-details ul .btn-click-login a{color:#4a98e7 !important;}
@@ -18,7 +22,7 @@
 .pricing-details ul .details-function{font-size:14px;color:#A3A2A0;text-align:left;margin:15px 0 0 25px;}
 .pricing-details ul .details-function a{color:#0A0B0A}
 /*价格表*/
-.price-list table { width:850px;margin:auto;margin-bottom:20px;border-collapse:collapse;}
+.price-list table { width:800px;margin:auto;margin-bottom:20px;border-collapse:collapse;}
 .price-list table td{border:1px solid #ccc;border-style:dashed;text-align:center;height:40px;border-bottom:0px;
                      border-right:0px;position:relative;}
 table td span{position:absolute;color: #1eb452;right:20px;}
@@ -30,7 +34,7 @@ table td span{position:absolute;color: #1eb452;right:20px;}
 .price-list .reminder { max-width:800px;margin:auto;}
 .price-list .price-line { height: 1px;border-bottom: 1px solid #ccc;width: 850px;margin: 30px auto;}
 /*费用估算*/
-/*.estimate .estimate-price {width:800px;margin:auto;margin-bottom:20px;height:300px; }
+.estimate .estimate-price {width:800px;margin:auto;margin-bottom:20px;height:300px; }
 .estimate-price ul li { width:400px;margin-bottom:20px;}
 .estimate .estimate-price .use-line,.time-line,.discount-line { width: 300px;height: 15px;border: 1px solid #ccc;border-radius: 15px;
                                                               float: left;margin-right:30px;position:relative;cursor:pointer;}
@@ -50,12 +54,27 @@ table td span{position:absolute;color: #1eb452;right:20px;}
 .cost div span { font-size:17px;}
 .estimate-price .cost .count { border: 0;border-top: 3px solid #ccc;width: 300px;color: #0689E0;
                                padding-top: 10px;font-size: 18px;}
-.cost .count span { color:#0689E0;}*/
+.cost .count span { color:#0689E0;}
 /*技术支持*/
 .technical-support { height:500px;background-color:#F3F2F0;}
 .technical-support .details{width:850px;margin:auto;height:400px;}
 .technical-support ul{width:250px;background-color:#008AE1;height:300px;margin:auto;float:left;margin-top:100px;}
-.technical-support ul li,.technical-support ul li a{color:#FBFBFC;text-align:center;margin:20px 20px 30px 20px;}
+.technical-support ul li{color:#FBFBFC;text-align:center;margin:20px 20px 30px 20px;}
+.technical-support ul li a{color:#FBFBFC;text-align:center;margin:20px 20px 30px 20px;}
+/*合作伙伴优惠*/
+/*.MD-teamwork { position:relative;height:400px;}
+.MD-teamwork img{height:400px;width:100%; }
+.MD-teamwork .MD-teamwork-mask{position:absolute;top:0;left:0;width:100%;height:400px;}
+.MD-teamwork .MD-teamwork-mask div:first-child{color:#fff;text-align:center;margin-top:180px;font-size:20px;}
+<<<<<<< HEAD
+.MD-teamwork .MD-teamwork-mask div:last-child{text-align:center;margin-top:20px;font-size:18px;color:#94BBDC;}*/
+@media only screen and (max-width:1200px) {
+    .technical-support ul { width:25%;}
+    .technical-support .details { width:800px}
+}
+=======
+.MD-teamwork .MD-teamwork-mask div:last-child{text-align:center;margin-top:20px;font-size:18px;color:#94BBDC;}
+>>>>>>> 50ad300db96bf0bc6a09eef7cb5f7ef64c94998b
 
 
 

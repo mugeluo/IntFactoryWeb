@@ -118,7 +118,7 @@ Main Components
   bottom: 0;
   z-index: 2;
   text-align: center;
-  font-size: 12px;
+  font-size: 14px;
   padding-bottom: 15px;
   color: #383838;
   /* fix bug on Safari - text flickering while timeline translates */
@@ -140,8 +140,8 @@ Main Components
   -o-transform: translateX(-50%);
   transform: translateX(-50%);
   bottom: -5px;
-  height: 12px;
-  width: 12px;
+  height: 14px;
+  width: 14px;
   border-radius: 50%;
   border: 2px solid #dfdfdf;
   background-color: #f8f8f8;
@@ -244,11 +244,12 @@ Main Components
 .cd-horizontal-timeline .events-content {
   position: relative;
   width: 100%;
-  margin: 2em 0;
+  margin-top: 2em;
   overflow: hidden;
   -webkit-transition: height 0.4s;
   -moz-transition: height 0.4s;
   transition: height 0.4s;
+  height:200px;
 }
 .cd-horizontal-timeline .events-content li {
   position: absolute;
@@ -314,12 +315,13 @@ Main Components
 .cd-horizontal-timeline .events-content em {
   display: block;
   margin: 10px auto;
+  font-style:normal;
 }
 .cd-horizontal-timeline .events-content em::before {
   content: '- ';
 }
 .cd-horizontal-timeline .events-content p {
-  font-size: 12px;
+  font-size: 14px;
   color: #959595;
 }
 .cd-horizontal-timeline .events-content em, .cd-horizontal-timeline .events-content p {

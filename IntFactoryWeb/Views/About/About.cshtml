@@ -1,52 +1,60 @@
 ﻿@{
-    ViewBag.Title = "厂盟智能 | 关于";
+    ViewBag.Title = "厂盟智能 | 关于-企业供应链SaaS平台";
+    ViewBag.name = "About";
 }
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@ViewBag.Title</title>
+    @section css{
     <link href="/modules/css/about.css" rel="stylesheet" />
     <link href="/modules/plug/jquery-horizon-line-switch/css/style.css" rel="stylesheet" />
     <link href="/modules/plug/jquery-horizon-line-switch/css/reset.css" rel="stylesheet" />
-
+    }
+    @section scripts{
     <script src="/modules/plug/jquery-horizon-line-switch/js/modernizr.js"></script>
     <script src="/modules/plug/jquery-horizon-line-switch/js/main.js"></script>
-    @* 地图 *@
-    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=gDx9WNPeuFj4EgNvullqmzhF"></script>    
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=gDx9WNPeuFj4EgNvullqmzhF"></script>
+
+    <script type="text/javascript">
+        seajs.use(["scripts/about/baidumap"], function (ObjectJS) {
+            ObjectJS.init();
+        });
+    </script>
+    }
 </head>
 <div class="head-information">
     <img style="width:100%;height:100%;" src="/modules/images/about/about_01.png" />
     <div class="information">
-        <div class="font24 mTop200">厂盟智能，让营销行云流水</div>
-        <div class="font14" style="color:#C6D1DD;width:320px;margin:auto;">致力于帮助更多中小型企业解决供应链管理难题，帮助您的企业和品牌，更高效的运作与管理</div>
+        <div class="font24 mTop150">厂盟智能，让营销行云流水</div>
+        <div class="desc">致力于帮助更多中小型企业解决供应链管理难题，帮助您的企业和品牌，更高效的运作与管理</div>
     </div>
 </div>
-@* 关于云销 *@
+
 <div class="cloud-pin">
-    <h3 class="host-timeline">企业介绍</h3>
-    <div>上海云销信息科技有限公司，成立于2015年3月，我们是一家技术创新型企业，公司以信息技术为核心，凭着多年的业务经验积累，精心打造了核心产品“智能工厂”。厂盟智能自成立以来，一直以优质的客户体验为己任、建立营销行业新时代为目标，励志打造成为国内一流的营销行业软件应用平台。</div>
-    <div>公司产品“智能工厂”是一款面向中小型企业，以客户、进销存管理为基础，分销管理为核心的企业级SaaS平台应用；可视化的大数据，为用户带来了全新的视觉体验，使企业管理变得简单，我们的宗旨是：让营销行云流水。</div>      
+    <div class="host-timeline">企业介绍</div>
+    <div><b>上海云销信息科技有限公司</b>，成立于2015年3月，我们是一家技术创新型企业，公司以信息技术为核心，凭着多年的业务经验积累，精心打造了核心产品“二当家”。<b>厂盟智能</b>自成立以来，一直以优质的客户体验为己任、建立营销行业新时代为目标，励志打造成为国内一流的营销行业软件应用平台。</div>
+    <div>公司产品“二当家”是一款面向中小型企业，以客户、进销存管理为基础，分销管理为核心的企业级SaaS平台应用；可视化的大数据，为用户带来了全新的视觉体验，使企业管理变得简单，我们的宗旨是：让营销行云流水。</div>      
 </div>
-@* 发展历程 *@
+
 <section class="cd-horizontal-timeline">
-    <div class="host-timeline">发展历程</div>
+    <div class="host-timeline" id="list">发展历程</div>
     <div class="timeline">
         <div class="events-wrapper">
-	    <div class="events">
-		    <ol>
-			    <li><a href="#0" data-img="/modules/images/about/about_02.png" data-date="15/03/2015" class="selected">15年3月</a></li>
-			<li><a href="#0" data-img="/modules/images/.png" data-date="15/01/2016">16年1月</a></li>
-			    <li><a href="#0" data-img="/modules/images/about/about_02.png" data-date="15/03/2016">16年3月</a></li>
-			<li><a href="#0" data-img="/modules/images/.png" data-date="15/05/2016">16年5月</a></li>
-		    </ol>
-		    <span class="filling-line" aria-hidden="true"></span>
-		</div>
-	</div>
-			
-	<ul class="cd-timeline-navigation">
-		<li><a href="#0" class="prev inactive">Prev</a></li>
-		<li><a href="#0" class="next">Next</a></li>
-	</ul>
-</div>
+	        <div class="events">
+		        <ol>
+			        <li><a href="#0" data-img="/modules/images/about/about_02.png" data-date="15/03/2015" class="selected">15年3月</a></li>
+			        <li><a href="#0" data-img="" data-date="15/01/2016">16年1月</a></li>
+			        <li><a href="#0" data-img="/modules/images/about/about_02.png" data-date="15/03/2016">16年3月</a></li>
+			        <li><a href="#0" data-img="" data-date="15/05/2016">16年5月</a></li>
+		        </ol>
+		        <span class="filling-line" aria-hidden="true"></span>
+		    </div>
+	    </div>
+	    <ul class="cd-timeline-navigation">
+		    <li><a href="#0" class="prev inactive">Prev</a></li>
+		    <li><a href="#0" class="next">Next</a></li>
+	    </ul>
+    </div>
 
 	<div class="events-content">
 		<ol>
@@ -57,23 +65,20 @@
 					上海云销信息科技有限公司，成立于2015年3月，致力于服务各类中小型企业
 				</p>                
 			</li>
-
 			<li data-date="15/01/2016">
-				<h2>"智能工厂"上线,并在明道应用市场上架</h2>
+				<h2>“二当家”上线，并在明道应用市场上架</h2>
 				<em>2016.1</em>
 				<p>	
-					早在“厂盟智能”成立之前，公司产品“智能工厂”一直处于设计和研发阶段，历时两年多，终于于2016年1月上架明道应用市场线上推广使用，“智能工厂”至6月份已积累200+家企业用户 
+					早在“厂盟智能”成立之前，公司产品“二当家”一直处于设计和研发阶段，历时两年多，终于于2016年1月开始上线推广使用，并在明道应用市场上架，至6月份已积累200+家企业用户
 				</p>                
 			</li>
-
 			<li data-date="15/03/2016">
 				<h2>"智能工厂"诞生</h2>
 				<em>2016.3</em>
 				<p>	
-					厂盟智能合资成立子公司“上海厂盟智能科技有限公司”， 继“智能工厂”上线明道应用市场之后，厂盟智能的第二个产品相关内容也在夜以继日地进行着，5月份， “智能工厂”正式面世并在阿里巴巴应用市场上线推广使用，智能工厂是专门针对服装生产流程管理而开发的SaaS应用平台，并且是第一家与阿里巴巴-淘工厂对接的ISV服务商
+					厂盟智能合资成立子公司“上海厂盟智能科技有限公司”， 继“二当家”上线明道应用市场之后，厂盟智能的第二个产品相关内容也在夜以继日地进行着，5月份， “智能工厂”上线，并在阿里巴巴应用市场上架，智能工厂是专门针对服装生产流程管理而开发的SaaS应用平台，是第一家与<b>阿里巴巴-淘工厂</b>对接的ISV服务商
 				</p>                
 			</li>
-
 			<li data-date="15/05/2016">
 				<h2>产品说明会</h2>
 				<em>2016.5</em>
@@ -89,7 +94,7 @@
 </div>*@
 
 @* 加入我们-合作伙伴 *@
-<div class="join-teamwork">
+@*<div class="join-teamwork">
     <div class="join">
         <div class="title-join-teamwork">加入我们</div>
         <div class="center mTop40 mBottom30">
@@ -107,77 +112,19 @@
         <div class="txt-join-teamwork mTop20">经历一家注定要走远路的公司难能可贵的初创期,我们一起,为这个世界做点什么.</div>
     </div>
     <div class="clear"></div>
-</div>
+</div>*@
 
-@* 地址 *@
 <div class="contant-us">
-    <h3 class="host-timeline">联系我们</h3>
+    <div class="host-timeline">联系我们</div>
     <div class="information">
-        <div>合作：18221077623</div>
+        <div>合作：13120611062 / 18221077623</div>
         <div>邮箱：customer@yunxiaokeji.com</div>
         <div>地址：上海市长宁区中山西路 1279弄6号国峰科技大厦 6楼</div>
         <div>邮编：200050</div>
     </div>   
     <div class="bg-img"></div> 
 </div>
+
 <div class="map" id="map"></div>
 
-<script type="text/javascript">
-        //创建和初始化地图函数：
-        function initMap() {
-            createMap();//创建地图
-            //setMapEvent();//设置地图事件
-            addMapControl();//向地图添加控件
-            addMapOverlay();//向地图添加覆盖物
-        }
-        function createMap() {
-            map = new BMap.Map("map");
-            map.centerAndZoom(new BMap.Point(121.426032, 31.197214), 18);
-        }
-        function setMapEvent() {
-            map.enableScrollWheelZoom();
-            map.enableKeyboard();
-            map.enableDragging();
-            map.enableDoubleClickZoom()
-        }
-        function addClickHandler(target, window) {
-            target.addEventListener("click", function () {
-                target.openInfoWindow(window);
-            });
-        }
-        function addMapOverlay() {
-            var markers = [
-              { content: "我的备注", title: "上海云销信息科技有限公司", imageOffset: { width: 0, height: 3 }, position: { lat: 31.198422, lng: 121.42751 } }
-            ];
-            for (var index = 0; index < markers.length; index++) {
-                var point = new BMap.Point(markers[index].position.lng, markers[index].position.lat);
-                var marker = new BMap.Marker(point, {
-                    icon: new BMap.Icon("http://api.map.baidu.com/lbsapi/createmap/images/icon.png", new BMap.Size(20, 25), {
-                        imageOffset: new BMap.Size(markers[index].imageOffset.width, markers[index].imageOffset.height)
-                    })
-                });
-                var label = new BMap.Label(markers[index].title, { offset: new BMap.Size(25, 5) });
-                var opts = {
-                    width: 200,
-                    title: markers[index].title,
-                    enableMessage: false
-                };
-                var infoWindow = new BMap.InfoWindow(markers[index].content, opts);
-                marker.setLabel(label);
-                addClickHandler(marker, infoWindow);
-                map.addOverlay(marker);
-            };
-        }
-        //向地图添加控件
-        function addMapControl() {
-            var scaleControl = new BMap.ScaleControl({ anchor: BMAP_ANCHOR_BOTTOM_LEFT });
-            scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
-            map.addControl(scaleControl);
-            var navControl = new BMap.NavigationControl({ anchor: BMAP_ANCHOR_TOP_LEFT, type: BMAP_NAVIGATION_CONTROL_LARGE });
-            map.addControl(navControl);
-            var overviewControl = new BMap.OverviewMapControl({ anchor: BMAP_ANCHOR_BOTTOM_RIGHT, isOpen: true });
-            map.addControl(overviewControl);
-        }
-        var map;
-        initMap();
-</script>
+

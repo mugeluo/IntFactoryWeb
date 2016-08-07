@@ -1,5 +1,6 @@
 ﻿@{
-    ViewBag.Title = "厂盟智能 | 案例";
+    ViewBag.Title = "厂盟智能 | 案例-企业供应链SaaS平台";
+    ViewBag.name = "Case";
 }
 @section css{
     <link href="/modules/css/case.css" rel="stylesheet" />
@@ -12,48 +13,54 @@
     </script>
 }
 <div class="head-information">
-    <img style="width:100%" src="/modules/images/case/case-br.png" />
+    <img style="width:100%;height:100%;" src="/modules/images/case/case-br.png" />
     <div class="information">
-        <div class="font24 mTop200">为不同企业打造同一个供应链管理平台</div>
-        <div class="font14" style="color:#C6D1DD;width:320px;margin:auto;">通过智能工厂来管理业务，他们的企业都获得了意想不到的改变，现在我们邀您一同见证</div>
+        <div class="font24 mTop150">为不同企业打造同一个供应链管理平台</div>
+        <div class="desc">通过二当家来管理业务，他们的企业都获得了意想不到的改变，现在我们邀您一同见证</div>
     </div>
 </div>
 <div class="anli">
     <div class="center case-industry">行业案例</div>
     <div class="line-case"></div>
     <ul class="industry">
-        <li data-industry="clothing" class="hover">服装</li>
-        <li data-industry="drinks">酒水</li>
+        <li class="clothing hover" data-industry="clothing">服装</li>
+        <li class="drinks" data-industry="drinks">酒水</li>
     </ul>
 </div>
 
 <div>   
-    <div id="clothing" class="example">
-       <div class="center example-img">
-           <div style="width:1080px;margin:auto">
-               <div class="img left">
-                   <img data-id="layer" src="/modules/images/case/anlile-1.png" />
-                   <div class="layer">
-                       <div class="tLeft mTop150 mBottom20">慕白服饰</div>
-                       <div class="tLeft">服装加工厂使用智能工厂来管理客户,订单,库存,采购等内容</div>
-                   </div>
-               </div>
-               <div class="img2">
-                   <img data-id="layer-two" src="/modules/images/case/anlile-2.png" />           
-                   <div class="layer-two">
-                       <div class="tLeft mTop150 mBottom20">慕白服饰</div>
-                       <div class="tLeft">服装加工厂使用智能工厂来管理客户,订单,库存,采购等内容</div>
-                   </div>
-               </div> 
-           </div>          
-       </div> 
-       <div class="case-industry center mTop30 mBottom30">
-           实例介绍
+    <div id="clothing" class="example">       
+       <div class="solve-problem center">
+           <span class="">解决了服装厂的制作过程中采购材料,出库发货耗时长.数据整理复杂等问题</span>
+       </div>    
+       <div class="details">
+           <div class="left details-example">               
+               <div class="fontcolor">随着我国互联网普及率的提高，电子商务发展插上了腾飞的翅膀，而且由于这些年网民的暴增与电子商务平台的增多，网购已经“飞入寻常百姓家”，电子商务产业呈现蒸蒸日上的发展势头，对于服装行业的电商，它已然成为人们日常生活不可或缺的一部分，火爆的营销平台必然离不开强大的后勤运营支撑，二当家能为您提供后勤运营解决方案。</div>
+               <div class="case-title">二当家能为您提供什么</div>
+               <div class="fontcolor">二当家已上架淘宝应用市场，实现了数据互通，通过二当家可一键铺货至淘宝，并且通过二当家，可直接下发采购订单至“智能工厂”（智能工厂是一个专门针对服装加工生产流程管理的平台，已与二档实现数据互通，可通过二当家直接对服装生产厂家进行快捷下单），再由智能工厂生产厂家进行服装加工生产，商户可实时监控订单生产进度。</div>
+               <div class="fontcolor">如果您是淘宝商家，如果您没有自己的生产供应商，或者您希望找到更好的供应商，您可通过“智能工厂”查找相关资源</div>
+           </div>
+           <div class="right">
+                <img src="/modules/images/case/anlile-5.png"/>
+           </div>      
+           <div class="clear"></div>     
        </div>
-       <div class="solve-problem">
-           <span class="font14">解决问题：解决了服装厂的制作过程中采购材料,出库发货耗时长.数据整理复杂等问题</span>
+       <div class="seaced-state" style="height:330px;">
+           <div>
+                <img style="height:300px;width:500px" src="/modules/images/case/anli-a.jpg" />
+           </div>           
+           <div>
+               <div  class="case-title">二当家如何管理服装</div>
+               <div class="fontcolor">基础信息配置：如果您是代销多家品牌服装的用户，可在基础信息中配置相关品牌信息；二当家支持产品属性自定义，像服装行业通用属性“颜色”和“尺码”，都可在基础信息中自定义配置，在服装款式信息可自行编辑这些基础信息；同时二当家还支持分类自定义，通过二当家您可将服装款式分类配置为符合自身特性的设置</div>               
+           </div>           
        </div>
-       <div class="mTop20 example-anli-img">
+       <div class="mTop30 fontcolor end-txt">
+           除了上述基础应用，二当家还将客户/会员、销售、采购、库存、财务、报表统计等功能融为一体，从服装款式的采购到仓库，从入库到淘宝的铺货，从客户到销售，再由仓库负责发货出库，都可在二当家这一个平台得到实现，保障了商户整体信息化的运营支撑
+       </div>
+       @*<div class="center mTop50 mBottom50">
+           <img src="/modules/images/case/anlile-7.png" />
+       </div>*@
+        <div class="mTop20 example-anli-img">
            <div class="left">
                <img src="/modules/images/case/anlile-3.png" />
                <div class="center">使用前</div>
@@ -62,98 +69,39 @@
                <img src="/modules/images/case/anlile-4.png" />
                <div class="center" style="color:#42A4E1;">使用后</div>
            </div>           
-       </div>       
-       <div class="details">
-           <div class="left details-example">
-               <h2>行业背景</h2>
-               <div class="fontcolor">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;随着我国互联网普及率的提高，电子商务发展插上了腾飞的翅膀，而且由于这些年网民的暴增与电子商务平台的增多，网购已经“飞入寻常百姓家”，电子商务产业呈现蒸蒸日上的发展势头，对于服装行业的电商，它已然成为人们日常生活不可或缺的一部分，火爆的营销平台必然离不开强大的后勤运营支撑，智能工厂能为您提供后勤运营解决方案.</div>
-               <h2>智能工厂能为您提供什么</h2>
-               <div class="fontcolor">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;智能工厂已上架淘宝应用市场，实现了数据互通，通过智能工厂可一键铺货至淘宝，并且通过智能工厂，可直接下发采购订单至“智能工厂”（智能工厂是一个专门针对服装加工生产流程管理的平台，已与智能工厂实现数据互通，可通过智能工厂直接对服装生产厂家进行快捷下单），再由智能工厂生产厂家进行服装加工生产，商户可实时监控订单生产进度.</div>
-               <div class="fontcolor">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果您是淘宝商家，如果您没有自己的生产供应商，或者您希望找到更好的供应商，您可通过“智能工厂”查找相关资源</div>
-           </div>
-           <div class="right">
-                <img src="/modules/images/case/anlile-5.png"/>
-           </div>      
-           <div class="clear"></div>     
-       </div>
-       <div class="seaced-state">
-           <div>
-                <img src="/modules/images/case/anlile-6.png"/>
-           </div>           
-           <div>
-               <h2>智能工厂如何管理服装</h2>
-               <div class="fontcolor">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;基础信息配置：如果您是代销多家品牌服装的用户，可在基础信息中配置相关品牌信息；智能工厂支持产品属性自定义，像服装行业通用属性“颜色”和“尺码”，都可在基础信息中自定义配置，在服装款式信息可自行编辑这些基础信息；同时智能工厂还支持分类自定义，通过智能工厂您可将服装款式分类配置为符合自身特性的设置。</div>               
-           </div>           
-       </div>
-       <div class="mTop30 fontcolor end-txt">
-           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;除了上述基础应用，智能工厂还将客户/会员、销售、采购、库存、财务、报表统计等功能融为一体，从服装款式的采购到仓库，从入库到淘宝的铺货，从客户到销售，再由仓库负责发货出库，都可在智能工厂这一个平台得到实现，保障了商户整体信息化的运营支撑
-       </div>
-       <div class="center mTop50 mBottom50">
-           <img src="/modules/images/case/anlile-7.png" />
-       </div>
+       </div>   
     </div>
-    <div id="drinks" class="hide example">
-       <div class="center example-img">
-           <div style="width:1080px;margin:auto">
-               <div class="img left">
-                   <img data-id="layer" src="/modules/images/case/anlile-1.png" />
-                   <div class="layer">
-                       <div class="tLeft mTop150 mBottom20">慕白服饰</div>
-                       <div class="tLeft">服装加工厂使用智能工厂来管理客户,订单,库存,采购等内容</div>
-                   </div>
-               </div>
-               <div class="img2">
-                   <img data-id="layer-two" src="/modules/images/case/anlile-2.png" />           
-                   <div class="layer-two">
-                       <div class="tLeft mTop150 mBottom20">慕白服饰</div>
-                       <div class="tLeft">服装加工厂使用智能工厂来管理客户,订单,库存,采购等内容</div>
-                   </div>
-               </div> 
-           </div>          
-       </div> 
-       <div class="case-industry center mTop30 mBottom30">
-           实例介绍
-       </div>
-       <div class="solve-problem">
-           <span class="font14">解决问题：解决了服装厂的制作过程中采购材料,出库发货耗时长.数据整理复杂等问题</span>
-       </div>
-       <div class="mTop20 example-anli-img">
-           <div class="left">
-               <img src="/modules/images/case/anlile-3.png" />
-               <div class="center">使用前</div>
-           </div>
-           <div>
-               <img src="/modules/images/case/anlile-4.png" />
-               <div class="center" style="color:#42A4E1;">使用后</div>
-           </div>           
-       </div>       
+    <div id="drinks" class="hide example">       
+       <div class="solve-problem center">
+           <span class="">解决了酒水的制作过程中采购材料,出库发货耗时长.数据整理复杂等问题</span>
+       </div>         
        <div class="details">
-           <div class="left details-example">
-               <h2>行业背景</h2>
-               <div class="fontcolor">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;中国是酒的故乡，酒和酒类文化一直占据着重要地位。在几千年的文明历史中，酒几乎渗透到社会生活中的各个领域。在中国，酒的形态万千色泽纷呈，酒的品种之多，产量之丰，皆堪称世界之冠。中国更是酒文化的极盛地，饮酒的意义远不止生理性消费，远不止口腹之乐；在许多场合，它都是作为一个文化符号，一种文化消费，用来表示一种礼仪，一种气氛，一种情趣，一种心境。酒，在人类文化的历史长河中，它已不仅仅是一种客观的物质存在，而是一种文化象征。</div>
-               <h2>智能工厂是如何管理酒品</h2>
-               <div class="fontcolor">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;随着互联信息技术的发展和普及，21世纪已是一个信息化时代，网络技术渗透到各行各业，酒水的信息化管理和营销，已是不可缺少的一种方式。那么，如何使用智能工厂来管理我们的酒水业务呢？</div>
-               <div class="fontcolor">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;酒因品牌、酿造原料、工艺、产地的不同，酒的品种也是包罗万象</div>
+           <div class="left details-example">              
+               <div class="fontcolor">中国是酒的故乡，酒和酒类文化一直占据着重要地位。在几千年的文明历史中，酒几乎渗透到社会生活中的各个领域。在中国，酒的形态万千色泽纷呈，酒的品种之多，产量之丰，皆堪称世界之冠。中国更是酒文化的极盛地，饮酒的意义远不止生理性消费，远不止口腹之乐；在许多场合，它都是作为一个文化符号，一种文化消费，用来表示一种礼仪，一种气氛，一种情趣，一种心境。酒，在人类文化的历史长河中，它已不仅仅是一种客观的物质存在，而是一种文化象征。</div>
+               <div class="case-title">二当家是如何管理酒品</div>
+               <div class="fontcolor">随着互联信息技术的发展和普及，21世纪已是一个信息化时代，网络技术渗透到各行各业，酒水的信息化管理和营销，已是不可缺少的一种方式。那么，如何使用二当家来管理我们的酒水业务呢？</div>
+               <div class="fontcolor">酒因品牌、酿造原料、工艺、产地的不同，酒的品种也是包罗万象</div>
            </div>
            <div class="right">
-                <img src="/modules/images/case/anlile-5.png"/>
+                <img style="width:150px;height:300px" src="/modules/images/case/js-b.png" />
+                <img style="width:150px;height:300px" src="/modules/images/case/js-c.png" />                
            </div>      
            <div class="clear"></div>     
        </div>
        <div class="seaced-state">
            <div>
-                <img src="/modules/images/case/anlile-6.png"/>
+                <img style="width:506px;height:300px;" src="/modules/images/case/index-12.png" />
            </div>           
            <div>
-               <h2>基础信息管理</h2>
-               <div class="fontcolor">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;品牌管理，企业、商家或是分销商可根据经营品牌自定义配置，企业默认可用自销品牌，商家或者分销商可自定义分销品牌；产品属性完全自定义，不同的酒水成品有着固有属性，例如“容量”和“酒精度数”，在智能工厂中只需添加这两个属性及相关属性值，添加产品时可直接将属性赋予新产品；自定义产品分类，这里拿葡萄酒举例，葡萄酒可分甜葡萄酒、桃红酒、香槟酒、干红、干白、白兰地，再根据这些品类按产地分，比如旧世界的法国酒、德国酒、西班牙酒和意大利酒，还有新世界中的澳洲酒、阿根廷酒、智利酒、美国酒等。</div>               
+               <div class="case-title">基础信息管理</div>
+               <div class="fontcolor">品牌管理，企业、商家或是分销商可根据经营品牌自定义配置，企业默认可用自销品牌，商家或者分销商可自定义分销品牌；产品属性完全自定义，不同的酒水成品有着固有属性，例如“容量”和“酒精度数”，在二当家中只需添加这两个属性及相关属性值，添加产品时可直接将属性赋予新产品；自定义产品分类，这里拿葡萄酒举例，葡萄酒可分甜葡萄酒、桃红酒、香槟酒、干红、干白、白兰地，再根据这些品类按产地分，比如旧世界的法国酒、德国酒、西班牙酒和意大利酒，还有新世界中的澳洲酒、阿根廷酒、智利酒、美国酒等。</div>               
            </div>           
        </div>
        <div class="mTop30 fontcolor end-txt">
-           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;既然提及到采购和销售，那么必然会涉及供应商和客户，这类信息是进销存软件的必填项，除了这类基础功能，智能工厂还提供强大的报表分析，通过查看销售报表分析，我们就会知道在什么时候应该进行采购，采购多少，什么类型的酒水在什么时候需要供应给哪些客户，我们都能为您提供实时的数据分析
+           既然提及到采购和销售，那么必然会涉及供应商和客户，这类信息是进销存软件的必填项，除了这类基础功能，二当家还提供强大的报表分析，通过查看销售报表分析，我们就会知道在什么时候应该进行采购，采购多少，什么类型的酒水在什么时候需要供应给哪些客户，我们都能为您提供实时的数据分析
        </div>
        <div class="center mTop50 mBottom50">
-           <img src="/modules/images/case/anlile-7.png" />
+           <img style="height:300px;width:800px;" src="/modules/images/case/js-a.png" />
        </div>
     </div>
 </div>

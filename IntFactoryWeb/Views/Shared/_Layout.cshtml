@@ -2,23 +2,22 @@
 <html>
 <head>
     <meta charset="utf-8" />
+     <meta name="keywords" content="厂盟智能,二当家,CRM系统,轻量ERP平台,企业供应链管理系统,协作平台" />
+    <meta name="description" content="国内先进的企业供应链SaaS平台系统,提供CRM、进销存和分销管理一站式服务。支持第三方应用对接,可针对企业特殊业务流程订制分销模式。" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@ViewBag.Title</title>
     <link href="/modules/css/base.css" rel="stylesheet" />
     <link href="/modules/css/layout.css" rel="stylesheet" />
     <link href="/modules/css/iconfont/iconfont.css" rel="stylesheet" />
-    <script src="/Scripts/sea.js"></script>
-    <script src="/Scripts/sea-config.js"></script>
-    <script src="/Scripts/jquery-1.11.1.js"></script>    
-    
-    @RenderSection("css", false)   
+    <link rel="shortcut icon" href="/modules/images/logo_login.png">
+    @RenderSection("css", false)
 </head>
 <body>
     <header class="header-menu" data-isbg="0">
         <div class="site-header">
             <ul class="left nav">                
                 <li><a href="/Home/Index"><img src="/modules/images/ico-home.png" /></a></li>
-                <li class="Product"><a href="/Product/Product">产品</a></li>
+                @*<li class="Product"><a href="/Product/Product">产品</a></li>*@
                 <li class="Services"><a href="/Services/Services">服务</a></li>
                 <li class="Case"><a href="/Case/Case">案例</a></li>
                 <li class="About"><a href="/About/About">关于</a></li>
@@ -35,49 +34,49 @@
         @RenderBody()        
     </div>
     
-    @RenderSection("scripts",false)
     <footer class="site-footer">
-        <div class="left links">
-            @*<ul class="menu-footer">
-                <li>产品</li>
-                <li>功能特点</li>
-                <li>CRM</li>
-                <li>进销存</li>
-                <li>代理商</li>
-                <li>个性化</li>
-                <li>更新日志</li>
-            </ul>*@
-            <ul class="menu-footer">
-                <li>案例</li>
-                <li><a href="/Case/Case">行业案例</a></li>
-                @*<li>企业</li>*@                
-            </ul>
-            <ul class="menu-footer">
-                <li>报价</li>
-                <li><a href="/Services/Services">价格表</a></li>
-                @*<li>定制化服务</li>*@               
-            </ul>
-            @*<ul class="menu-footer">
-                <li>帮助</li>
-                <li>帮助中心</li>
-                <li>用户反馈</li>
-                <li>操作手册</li>               
-            </ul>*@
-            @*<ul class="menu-footer">
-                <li>开发者</li>
-                <li>开发平台</li>
-                <li>平台对接</li>               
-            </ul>*@
-            <ul class="menu-footer">
-                <li>关于</li>
-                <li><a href="/About/About">公司介绍</a></li>
-                @*<li>合作伙伴</li>               
-                <li>招聘</li>               
-                <li>商务合作</li>*@               
-            </ul>
-            <div class="clear"></div>
-        </div>
-        <div class="party-footer right">
+        <div  class="module-box">
+            <div class="left links">
+                @*<ul class="menu-footer">
+                    <li>产品</li>
+                    <li>功能特点</li>
+                    <li>CRM</li>
+                    <li>进销存</li>
+                    <li>代理商</li>
+                    <li>个性化</li>
+                    <li>更新日志</li>
+                </ul>*@
+                <ul class="menu-footer">
+                    <li>案例</li>
+                    <li><a href="/Case/Case">行业案例</a></li>
+                    @*<li>企业</li>*@                
+                </ul>
+                <ul class="menu-footer">
+                    <li>报价</li>
+                    <li><a href="/Services/Services">价格表</a></li>
+                    @*<li>定制化服务</li>*@               
+                </ul>
+                @*<ul class="menu-footer">
+                    <li>帮助</li>
+                    <li>帮助中心</li>
+                    <li>用户反馈</li>
+                    <li>操作手册</li>               
+                </ul>*@
+                @*<ul class="menu-footer">
+                    <li>开发者</li>
+                    <li>开发平台</li>
+                    <li>平台对接</li>               
+                </ul>*@
+                <ul class="menu-footer">
+                    <li>关于</li>
+                    <li><a href="/About/About">公司介绍</a></li>
+                    @*<li>合作伙伴</li>               
+                    <li>招聘</li>               
+                    <li>商务合作</li>*@               
+                </ul>
+                <div class="clear"></div>
+            </div>
+            <div class="party-footer right">
             <img class="wx-public" src="/modules/images/qrcode_for_gh_4dda5c475611_344.jpg" />            
             <div class="clear"></div>
             <div class="address-footer">
@@ -102,27 +101,37 @@
                 </div> 
             </div>
         </div>
-        <div class="clear"></div>
-        <div class="statement">
-            <span class="colorfff left">©2016厂盟智能 沪ICP备 1999888 号</span>
-            <div>服务条款</div>   
-            <div class="line"></div>         
-            <div>隐私服务</div>
-            <div class="line"></div>   
-            <div>版权声明</div>
-            <div class="line"></div>  
-            <div>网站地图</div>
             <div class="clear"></div>
+        </div>       
+        <div class="clear"></div>
+        <div class="statement" >
+            <div  class="module-box">
+                <div class="color938D88 left">©2016厂盟智能 沪ICP备 1999888 号</div>         
+                <div class="left mLeft50">
+                    <div><a href="/About/About?#list">服务条款</a></div>   
+                    <div class="line"></div>         
+                    <div><a href="/About/About?#list">隐私服务</a></div>
+                    <div class="line"></div>   
+                    <div><a href="/About/About?#list">版权声明</a></div>
+                    <div class="line"></div>  
+                    <div><a href="/About/About?#list">网站地图</a></div>
+                    <div class="clear"></div>
+                </div>
+                
+                <div class="clear"></div>
+            </div>           
         </div>
         <div class="clear"></div>
     </footer>
-    @*<div class="getback-FH">
-        <div title="返回顶部" class="iconfont-back iconfont">&#xe643;</div>
-    </div>*@
+
+    <script src="/Scripts/jquery-1.11.1.js"></script>
+    <script src="/Scripts/sea.js"></script>
+    <script src="/Scripts/sea-config.js"></script>
     <script type="text/javascript">
         seajs.use(["scripts/layout"], function (layout) {
-            layout.init();
+            layout.init('@ViewBag.name');
         });
     </script>
+    @RenderSection("scripts",false)
 </body>
 </html>

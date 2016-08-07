@@ -147,10 +147,10 @@ jQuery(document).ready(function($){
 	}
 
 	function updateVisibleContent(event, eventsContent) {       
-		var eventDate = event.data('date'),
+	    var eventDate = event.data('date'),
 			visibleContent = eventsContent.find('.selected'),
-			selectedContent = eventsContent.find('[data-date="'+ eventDate +'"]'),
-			selectedContentHeight = selectedContent.height();
+			selectedContent = eventsContent.find('[data-date="' + eventDate + '"]');
+			//selectedContentHeight = selectedContent.height();
 
 		if (selectedContent.index() > visibleContent.index()) {
 			var classEnetering = 'selected enter-right',
@@ -165,7 +165,7 @@ jQuery(document).ready(function($){
 			visibleContent.removeClass('leave-right leave-left');
 			selectedContent.removeClass('enter-left enter-right');
 		});
-		eventsContent.css('height', selectedContentHeight+'px');
+		//eventsContent.css('height', selectedContentHeight+'px');
 	}
 
 	function updateOlderEvents(event) {

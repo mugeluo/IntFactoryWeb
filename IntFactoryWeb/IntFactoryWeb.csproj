@@ -152,6 +152,7 @@
     <Content Include="modules\images\about\about_02.png" />
     <Content Include="modules\images\about\about_03.png" />
     <Content Include="modules\images\about\about_08.png" />
+    <Content Include="modules\images\case\anli-a.jpg" />
     <Content Include="modules\images\case\anlile-1.png" />
     <Content Include="modules\images\case\anlile-2.png" />
     <Content Include="modules\images\case\anlile-3.png" />
@@ -161,10 +162,19 @@
     <Content Include="modules\images\case\anlile-7.png" />
     <Content Include="modules\images\case\case-br.png" />
     <Content Include="modules\images\case\case-js1.png" />
+    <Content Include="modules\images\case\index-12.png" />
+    <Content Include="modules\images\case\js-a.png" />
+    <Content Include="modules\images\case\js-b.png" />
+    <Content Include="modules\images\case\js-c.png" />
     <Content Include="modules\images\home\br-0.png" />
     <Content Include="modules\images\home\br-1.png" />
     <Content Include="modules\images\home\br-3.png" />
     <Content Include="modules\images\home\br-4.png" />
+    <Content Include="modules\images\home\cloud-left.png" />
+    <Content Include="modules\images\home\cloud-right.png" />
+    <Content Include="modules\images\home\goodness-resource.png" />
+    <Content Include="modules\images\home\goodness-safe.png" />
+    <Content Include="modules\images\home\goodness-task.png" />
     <Content Include="modules\images\home\index-10.png" />
     <Content Include="modules\images\home\index-11.png" />
     <Content Include="modules\images\home\index-12.png" />
@@ -184,10 +194,14 @@
     <Content Include="modules\images\home\index-jxc0.png" />
     <Content Include="modules\images\home\index-jxc1.png" />
     <Content Include="modules\images\home\index-jxc2.png" />
+    <Content Include="modules\images\home\index-jxc3.png" />
     <Content Include="modules\images\home\index-kh0.png" />
     <Content Include="modules\images\home\index-kh1.png" />
     <Content Include="modules\images\home\index-kh2.png" />
     <Content Include="modules\images\home\index-_03.png" />
+    <Content Include="modules\images\home\kh-1.png" />
+    <Content Include="modules\images\home\kh-2.png" />
+    <Content Include="modules\images\home\kh3.png" />
     <Content Include="modules\images\home\shadow-line.png" />
     <Content Include="modules\images\ico-home.png" />
     <Content Include="modules\images\logo_login.png" />
@@ -209,11 +223,18 @@
     <Content Include="modules\images\ zngc-5.png" />
     <Content Include="modules\images\ zngc-6.png" />
     <Content Include="modules\plug\carousel\css\8dc3a597.css" />
+    <Content Include="modules\plug\carousel\css\carousel-index.css" />
     <Content Include="modules\plug\carousel\img\5a30b78c.png" />
     <Content Include="modules\plug\carousel\img\62371027.png" />
     <Content Include="modules\plug\carousel\img\b8cb3910.png" />
     <Content Include="modules\plug\carousel\js\6d510e95.js" />
+    <Content Include="modules\plug\carousel\js\carousel-index.js" />
     <Content Include="modules\plug\doT.js" />
+    <Content Include="modules\plug\flexslider\css\flexslider.css" />
+    <Content Include="modules\plug\flexslider\images\ad_ctr.png" />
+    <Content Include="modules\plug\flexslider\images\alpha.png" />
+    <Content Include="modules\plug\flexslider\images\dot.png" />
+    <Content Include="modules\plug\flexslider\js\flexslider.js" />
     <Content Include="modules\plug\jquery-horizon-line-switch\css\default.css" />
     <Content Include="modules\plug\jquery-horizon-line-switch\css\reset.css" />
     <Content Include="modules\plug\jquery-horizon-line-switch\css\style.css" />
@@ -227,6 +248,7 @@
     <Content Include="modules\plug\js-img-switching\index-img-switching.js" />
     <Content Include="modules\plug\js-img-switching\l.png" />
     <Content Include="modules\plug\js-img-switching\r.png" />
+    <Content Include="modules\scripts\about\baidumap.js" />
     <Content Include="modules\scripts\case\case.js" />
     <Content Include="modules\scripts\global.js" />
     <Content Include="modules\scripts\home\index.js" />
@@ -252,7 +274,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Content\" />
     <Folder Include="Models\" />
-    <Folder Include="modules\scripts\about\" />
     <Folder Include="modules\template\" />
   </ItemGroup>
   <ItemGroup>
@@ -272,6 +293,9 @@
     <Content Include="Views\Case\Case.cshtml" />
     <Content Include="Views\Product\Product.cshtml" />
     <Content Include="Views\Services\Services.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="modules\css\services.css.orig" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

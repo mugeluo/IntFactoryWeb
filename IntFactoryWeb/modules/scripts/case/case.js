@@ -1,10 +1,13 @@
-﻿define(function (require,exports,module) {
+﻿define(function (require, exports, module) {
+    var $ = require("jquery");
     var ObjectJS = {};
     ObjectJS.init = function () {
-        ObjectJS.bindEvent();
+        ObjectJS.bindEvent();        
+        var url = window.location.href.split("?")[1];
+        $("." + url).click();
     };
 
-    ObjectJS.bindEvent = function () {
+    ObjectJS.bindEvent = function () {  
         $(".industry li").click(function () {
             var _this = $(this);
             if (!_this.hasClass("hover")) {
