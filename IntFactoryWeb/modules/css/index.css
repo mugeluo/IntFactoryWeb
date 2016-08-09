@@ -14,6 +14,7 @@
 .txt-content .content-ul li{margin-bottom:40px;width:400px;cursor:pointer;}
 .content-ul li .title-div { font-size:18px;color:#999;}
 .content-ul li div:last-child { font-size:14px;color:#999;}
+.content-ul li i { color:#999;}
 .content-ul .hover .title-div { font-size:18px;color:#0cb39e;}
 .content-ul .hover div:last-child { font-size:14px;color:#0cb39e;}
 .content-ul .hover i{ color:#0cb39e;}
