@@ -52,7 +52,8 @@ input[type="file"] > input[type="button"]::-moz-focus-inner{padding:0;border:non
 .site-footer {width:100%;background-color:#434443;height:200px;}
 .site-footer .links{margin-top:20px;}
 .site-footer .links a{padding-bottom:20px;display: block; float: left;cursor:pointer;}
-.links a{ margin-right:20px;color:#ddd;}
+.links a{ margin-right:20px;color:#ddd;opacity:0.8}
+.links a:hover{color:#fff;}
 /*返回顶部*/
 .getback-FH { position:fixed;z-index:11112;color:#666;right:3%;bottom:8%;display:none;}
 .getback-FH .iconfont-back {font-size:30px;color:#4a98e7;cursor:pointer; }

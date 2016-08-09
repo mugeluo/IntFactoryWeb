@@ -11,12 +11,13 @@
 .content .ali-zngc img {margin-top:120px; }
 
 /*公用*/
+.title-desc { margin-bottom:70px;font-size:18px;}
 .txt-content .content-ul li{margin-bottom:40px;width:400px;cursor:pointer;}
-.content-ul li .title-div { font-size:18px;color:#999;}
-.content-ul li div:last-child { font-size:14px;color:#999;margin-left:40px;}
+.content-ul li .title-div { font-size:18px;color:#666;padding-bottom:5px;}
+.content-ul li div:last-child {color:#666;margin-left:40px;line-height:22px;}
 .content-ul li i { color:#999;}
 .content-ul .hover .title-div { font-size:18px;color:#0cb39e;}
-.content-ul .hover div:last-child { font-size:14px;color:#0cb39e;margin-left:40px;}
+.content-ul .hover div:last-child {color:#0cb39e;}
 .content-ul .hover i{ color:#0cb39e;}
 .img-content { position:absolute;top:50px;right:0;}
 .txt-content .head-title{color:#000;font-size:30px;margin-top:100px;margin-bottom:30px;}
