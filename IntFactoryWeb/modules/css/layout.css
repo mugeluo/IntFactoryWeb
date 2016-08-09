@@ -33,18 +33,20 @@ input[type="file"] > input[type="button"]::-moz-focus-inner{padding:0;border:non
 .header-menu {height:50px;position:fixed;z-index:11111;width:100%; top:0;left:0;}
 .site-header {width:1200px;margin:auto;}
 .site-header .nav li {float:left;margin-top:10px;cursor:pointer;width:60px;text-align:center;height:30px;line-height:30px;}
-.site-header .nav li a{ font-size:12px;color:#fff;Opacity:0.7}
+.site-header .nav li a{ color:#fff;Opacity:0.7}
 .nav li img { width:30px;}
 .nav li.hover{background-color:#fff; border-radius:3px;}
-.nav li a:hover{Opacity:1;color:#fff;}
-.nav li:nth-of-type(1) a:hover{border-bottom:0;}
-.site-header div a:first-child{ padding: 6px 17px; margin-right: 20px; font-size: 12px; cursor: pointer;
+.nav li:hover a{Opacity:1;color:#fff;}
+.site-header div a:first-child{ padding: 5px 15px; margin-right: 20px; cursor: pointer;
                                 border-radius:3px;color:#fff;border:1px solid transparent;opacity:0.7}
 .site-header div a:hover:first-child{color:#fff;background-color:#0cb39e;}
-.site-header div .register{color:#fff;padding: 6px 17px;  font-size: 12px; cursor: pointer;
+.site-header div .register{color:#fff;padding:5px 15px; cursor: pointer;
                                 border:1px solid #fff;border-radius:3px;opacity:0.7}
 .site-header div .register:hover{opacity:1;background-color:#fff;color:#0cb39e;}
+
+/*内容*/
 .main-content { background-color:#fff;}
+
 /*footer样式*/
 
 .site-footer {width:100%;background-color:#434443;height:200px;}
