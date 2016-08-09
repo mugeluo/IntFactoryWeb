@@ -4,218 +4,193 @@
 }
 @section css{
     <link href="/modules/css/index.css" rel="stylesheet" />    
-    <link href="/modules/plug/carousel/css/carousel-index.css" rel="stylesheet" />
-    <link href="/modules/plug/flexslider/css/flexslider.css" rel="stylesheet" />
 }
 @section scripts{
-    <script src="/Scripts/jquery-1.11.1.js"></script>
-    <script src="/modules/plug/carousel/js/carousel-index.js"></script>
-    @*<script src="/modules/plug/flexslider/js/flexslider.js"></script>*@
+    <script src="/Scripts/jquery-1.11.1.js"></script>   
     <script type="text/javascript">
         seajs.use(["scripts/home/index"], function (ObjectJS) {
             ObjectJS.init();
-        });
-
-        //$(function () {
-        //    var bannerSlider = new Slider($('#banner_tabs'), {
-        //        time: 5000,
-        //        delay: 3000,
-        //        event: 'hover',
-        //        auto: true,
-        //        mode: 'fade',
-        //        controller: $('#bannerCtrl'),
-        //        activeControllerCls: 'active'
-        //    });
-        //    $('#banner_tabs .flex-prev').click(function () {
-        //        bannerSlider.prev()
-        //    });
-        //    $('#banner_tabs .flex-next').click(function () {
-        //        bannerSlider.next()
-        //    });
-        //});
+        });        
     </script>
 }
 
-<!-- 轮播广告 -->
-<div id="banner_tabs" class="flexslider">
-	<ul class="slides">
-		<li>
-			<a title="" target="_blank" href="#">
-				<img   class="left" style="width:50%;" src="/modules/images/home/cloud-left.png">
-                <img  class="right"   style="width:50%;" src="/modules/images/home/cloud-right.png">
-			</a>
-		</li>
-	@*	<li>
-			<a title="" href="#">
-                <img  alt="" src="/modules/images/home/br-4.png">
-			</a>
-		</li>*@
-	</ul>
-	@*<ul class="flex-direction-nav">
-		<li><a class="flex-prev" href="javascript:;">Previous</a></li>
-		<li><a class="flex-next" href="javascript:;">Next</a></li>
-	</ul>
-	<ol id="bannerCtrl" class="flex-control-nav flex-control-paging">
-		<li><a>1</a></li>
-		<li><a>2</a></li>
-	</ol>*@
-</div>
-
-<div class="img-head" id="img-head">  
-    <div class="center-img">
-        <div class="floating">
-            <div class="title1">CRM + 进销存 = 二当家</div>
-            <div class="colortxt txt">让营销行云流水</div>        
-            <div class="register"><a class="register-a" href="http://edj.yunxiaokeji.com/Home/Register">免费注册</a></div>
-            <div class="details"><a href="/Services/Services">了解详情</a></div>
-        </div>
-        <div class="right">
-            <img style="width:500px;" src="/modules/images/home/index-_03.png" />
-        </div>
-        <div class="clear"></div>
-    </div> 
-</div>
-
-<div class="goodness-box">
-    <div class="goodness-content">
-        <div class="goodness-item">
-            <div class="goodness-icon">
-                <img  src="/modules/images/home/goodness-safe.png" />
-            </div>
-            <div class="goodness-title">全面防护</div>
-            <div class="goodness-des">阿里巴巴高配服务器，实时监控，保障您的数据安全</div>
-        </div>
-        <div class="goodness-item">
-            <div class="goodness-icon">
-                <img  src="/modules/images/home/goodness-task.png" />
-            </div>
-          <div class="goodness-title">跨平台协作</div>
-            <div class="goodness-des">一键分享到明道，跨平台协作，沟通无阻</div>
-        </div>
-        <div class="goodness-item" style="margin-right:0;">
-            <div class="goodness-icon">
-                <img  src="/modules/images/home/goodness-resource.png" />
-            </div>
-            <div class="goodness-title">企业多元化管理</div>
-            <div class="goodness-des">一个应用，解决多方面需求，降低企业成本</div>
-        </div>
-        <div class="clear"></div>
+<div class="head-content">
+    <div class="content">
+        <div>重新定义柔性生产</div>
+        <div class="content-desc">面对服装加工行业的智能化SaaS平台</div>
+        <a href="http://zngc.intfactory.cn/Home/Register">免费注册</a>
+        <div class="ali-zngc">
+            <img src="/modules/images/home/index-ali.png" />
+            <div>首家与阿里巴巴-淘工厂对接的ISV服务商</div>
+        </div>        
     </div>
 </div>
 
-<div class="title-main" style="margin-top:30px;">CRM(客户管理)</div>
-<div class="title-descripition" style="margin:30px auto 20px auto;">协助您搭建销售体系，提升团队效率和销售业绩</div>
-
-<div class="customer">
-    <div id="dg-container" class="dg-container inner">
-        <div class="dg-wrapper folded">                
-            <a data-index="0" class="outbound previous1">
-                <img src="/modules/images/home/kh-1.png" />                  
-            </a>
-            <a data-index="1" class="outbound dg-center">
-                <img src="/modules/images/home/kh-2.png">                
-            </a>
-            <a data-index="2" class="outbound next1">
-                <img src="/modules/images/home/kh3.png">                
-            </a>               
+<div class="visualization">
+    <div class="visualization-content">
+        <div class="txt-content">
+            <div class="head-title">可视化</div>
+            <ul class="content-ul">
+                <li class="hover" data-url="/modules/images/home/index-chk1.png">                    
+                    <i class="iconfont left font30 mRight10 mTop5">&#xe610;</i>
+                    <div class="title-div">信息可视化</div>
+                    <div>订单，任务，排期，库存等数据一目了然</div>
+                </li>
+                <li data-url="/modules/images/home/index-chk2.png">
+                    <i class="iconfont left font30 mRight10 mTop5">&#xe610;</i>
+                    <div class="title-div">进度监控</div>
+                    <div>订单，任务，排期，库存等数据一目了然</div>
+                </li>
+                <li style="margin:0;" data-url="/modules/images/home/index-chk3.png">
+                    <i class="iconfont left font30 mRight10 mTop5">&#xe610;</i>
+                    <div class="title-div">时间到期预警</div>
+                    <div>订单，任务，排期，库存等数据一目了然</div>
+                </li>
+            </ul>
         </div>
-        <i class="iconfont dg-prev"></i>
-        <i class="iconfont dg-next"></i>
+        <div class="img-content">            
+            <img src="/modules/images/home/index-chk1.png" />
+        </div>
     </div>
-    <ul class="customer-details">
-        <li  data-index="0">
-            <div class="title-head">有效管理客户信息</div>
-            <div>360度客户视图，有效盘活客户线索，实时跟进重点客户，充分挖掘客户资源</div>
-        </li>
-        <li class="hover" data-index="1">
-            <div class="title-head">灵活配置销售体系</div>
-            <div>企业根据自身特性，制定销售体系，合理地管理和分配企业客户资源，灵活多变，拓展性强</div>
-        </li>
-        <li data-index="2" style="margin-right:0;">
-            <div class="title-head">实时统计客户信息</div>
-            <div>精准统计，提升业绩预判，重点商机实时跟进追踪</div>
-        </li>
-        <div class="clear"></div>
-    </ul>
-    <div class="customer-bevel"></div>
 </div>
 
-<div class="repertory">
-    <div class="title-main">进销存</div>
-    <div class="title-descripition">千万产品，管理就这么简单</div>
-    <div  class="module-box">
-        <ul class="repertory-details">
-            <li class="hover" data-url="/modules/images//home/index-jxc1.png">
-                <div class="title-head">产品信息,智能管理</div>
-                <div>产品分类、属性一次定义，快捷添加；智能搜索，快速精准</div>
+<div class="team">
+    <div class="team-content">
+        <div class="img-content">            
+            <img src="/modules/images/home/index-chk3.png" />
+        </div>
+        <div class="txt-content">
+            <div class="head-title">智能协作</div>
+            <ul class="content-ul">
+                <li class="hover" data-url="/modules/images/home/index-chk3.png">
+                    <i class="iconfont left font30 mRight10 mTop5">&#xe610;</i>
+                    <div class="title-div">工厂间协作</div>
+                    <div>订单，任务，排期，库存等数据一目了然</div>
+                </li>
+                <li style="margin:0;" data-url="/modules/images/home/index-chk2.png">
+                    <i class="iconfont left font30 mRight10 mTop5">&#xe610;</i>
+                    <div class="title-div">内部协作</div>
+                    <div>订单，任务，排期，库存等数据一目了然</div>
+                </li>               
+            </ul>
+        </div>        
+    </div>
+</div>
+
+<div class="share">
+    <div class="share-content">
+        <div class="txt-content">
+            <div class="head-title">资源共享</div>
+            <ul class="content-ul">
+                <li class="hover" data-url="/modules/images/home/index-chk2.png">
+                    <i class="iconfont left font30 mRight10 mTop5">&#xe610;</i>
+                    <div class="title-div">分享客户资源</div>
+                    <div>订单，任务，排期，库存等数据一目了然</div>
+                </li>
+                <li data-url="/modules/images/home/index-chk3.png">
+                    <i class="iconfont left font30 mRight10 mTop5">&#xe610;</i>
+                    <div class="title-div">原材料共享</div>
+                    <div>订单，任务，排期，库存等数据一目了然</div>
+                </li>
+                <li style="margin:0;" data-url="/modules/images/home/index-chk1.png">
+                    <i class="iconfont left font30 mRight10 mTop5">&#xe610;</i>
+                    <div class="title-div">共享服装款式</div>
+                    <div>订单，任务，排期，库存等数据一目了然</div>
+                </li>
+            </ul>
+        </div>
+        <div class="img-content">            
+            <img src="~/modules/images/home/index-chk2.png" />
+        </div>
+    </div>
+</div>
+
+<div class="demo">
+    <h2>让服装生产更智能</h2>
+</div>
+
+<div class="case">
+    <div style="width:1200px;margin:auto;">
+        <div class="center font30 pTop40 mBottom100">客户案例</div>
+        <ul class="case-company">
+            <li>                
+                <img src="/modules/images/case/anlile-1.png" />
+                <a href="/Case/Case">
+                    <div class="bg">
+                        <div class="company">杭州慕白科技有限公司</div>
+                        <div class="case-desc">
+                            <div>杭州慕白服饰有限公司</div>
+                            <p>为什么选择智能工厂？</p>
+                            <p>因为我们公司采用的是小组作业中心制，来自公司不同的部门，不同小组处理不同类型的客户项目</p>
+                        </div>   
+                    </div>
+                </a>                                            
             </li>
-            <li data-url="/modules/images//home/index-jxc2.png">
-                <div class="title-head">库存管理，高效轻便</div>
-                <div>库存动态预警，订单状态快捷筛选，有效管理产品进出库存</div>
+            <li>                
+                <img src="/modules/images/case/anlile-1.png" />
+                <a href="/Case/Case">
+                    <div class="bg">
+                        <div class="company">杭州慕白科技有限公司</div>
+                        <div class="case-desc">
+                            <div>杭州慕白服饰有限公司</div>
+                            <p>为什么选择智能工厂？</p>
+                            <p>因为我们公司采用的是小组作业中心制，来自公司不同的部门，不同小组处理不同类型的客户项目</p>
+                        </div>   
+                    </div>
+                </a>                                           
             </li>
-            <li data-url="/modules/images//home/index-jxc3.png">
-                <div class="title-head">库存统计，形象直观</div>
-                <div>数据报表导出，数据统计图形化，让数据说话</div>
+            <li style="margin:0;">                
+                <img src="/modules/images/case/anlile-1.png" />
+                <a href="/Case/Case">
+                    <div class="bg">
+                        <div class="company">杭州慕白科技有限公司</div>
+                        <div class="case-desc">
+                            <div>杭州慕白服饰有限公司</div>
+                            <p>为什么选择智能工厂？</p>
+                            <p>因为我们公司采用的是小组作业中心制，来自公司不同的部门，不同小组处理不同类型的客户项目</p>
+                        </div>   
+                    </div>
+                </a>                       
             </li>
-            <div class="clear"></div>
+            <li>                
+                <img src="/modules/images/case/anlile-1.png" />
+                <a href="/Case/Case">
+                    <div class="bg">
+                        <div class="company">杭州慕白科技有限公司</div>
+                        <div class="case-desc">
+                            <div>杭州慕白服饰有限公司</div>
+                            <p>为什么选择智能工厂？</p>
+                            <p>因为我们公司采用的是小组作业中心制，来自公司不同的部门，不同小组处理不同类型的客户项目</p>
+                        </div>   
+                    </div>
+                </a>                            
+            </li>
+            <li>                
+                <img src="/modules/images/case/anlile-1.png" />
+                <a href="/Case/Case">
+                    <div class="bg">
+                        <div class="company">杭州慕白科技有限公司</div>
+                        <div class="case-desc">
+                            <div>杭州慕白服饰有限公司</div>
+                            <p>为什么选择智能工厂？</p>
+                            <p>因为我们公司采用的是小组作业中心制，来自公司不同的部门，不同小组处理不同类型的客户项目</p>
+                        </div>   
+                    </div>
+                </a>                                
+            </li>
+            <li style="margin:0;">                
+                <img src="/modules/images/case/anlile-1.png" />
+                <a href="/Case/Case">
+                    <div class="bg">
+                        <div class="company">杭州慕白科技有限公司</div>
+                        <div class="case-desc">
+                            <div>杭州慕白服饰有限公司</div>
+                            <p>为什么选择智能工厂？</p>
+                            <p>因为我们公司采用的是小组作业中心制，来自公司不同的部门，不同小组处理不同类型的客户项目</p>
+                        </div>   
+                    </div>
+                </a>                   
+            </li>            
         </ul>
-        <div class="jxc-img">        
-            <img src="/modules/images/home/index-jxc1.png" />       
-        </div>
-        <div class="clear"></div>
-    </div>    
-    <div class="repertory-bevel-down"></div>
-</div>
-
-<div class="member">
-     <div class="module-box">
-        <div class="member-img">
-            <img src="/modules/images/home/index-dls0.png" />
-        </div>  
-        <ul class="member-details">
-            <li data-url="/modules/images/home/index-dls0.png">
-                <div class="tLeft title-main">会员管理</div>
-                <div class="tLeft mTop40">提供会员等级、折扣设置，通过打标签、分组，有针对性地实施营销计划</div>
-            </li>           
-            <div class="clear"></div>        
-        </ul>
-    </div>
-</div>
-
-<div class="applicable-industry">
-    <div class="title-main">超过300家企业使用二当家</div>
-    <div  class="industry-box">
-        <div class="img left">
-            <img style="width:100%;height:100%;" src="/modules/images/home/index-9.png" />        
-            <div class="education">服装</div>
-            <a href="/Case/Case?clothing">
-                <div class="education-floating">
-                    <div class="font22">服装库存管理</div>
-                </div>
-            </a>       
-        </div>
-        <div class="img2">
-            <img style="width:100%;height:100%;" src="/modules/images/home/index-12.png" />
-            <div class="garment">酒水</div>
-            <a href="/Case/Case?drinks">
-                <div class="garment-floating">
-                    <div class="font22">酒水营销</div>
-                </div>
-            </a>
-        </div>
-        <div class="clear"></div>
-    </div>
-</div>
-
-<div class="probation">
-    <div style="width:800px;margin:auto">
-        <img src="/modules/images/home/index-11.png" />
-        <div class="probation-txt">
-            <div>让工作变得简单，从现在开始使用</div>
-            <div class="mBottom40">现在注册，可享受60天免费试用</div>
-            <a href="http://edj.yunxiaokeji.com/Home/Register">立即免费试用</a>
-        </div>
-        <div class="clear"></div>
     </div>    
 </div>
-

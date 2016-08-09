@@ -32,40 +32,25 @@ input[type="file"] > input[type="button"]::-moz-focus-inner{padding:0;border:non
 /*header样式*/
 .header-menu {height:50px;position:fixed;z-index:11111;width:100%; top:0;left:0;}
 .site-header {width:1200px;margin:auto;}
-.site-header .nav li {float:left;margin-right:35px;margin-top:15px;cursor:pointer;}
-.site-header .nav li a{ font-size:14px;color:#fff;Opacity:0.7}
-.nav li img { height:30px;width:30px;margin-top:-5px;}
-.nav li.hover {border-bottom:2px solid #fff;padding-bottom:3px; }
-.nav li a:hover{Opacity:1;border-bottom:2px solid #fff;padding-bottom:3px;}
+.site-header .nav li {float:left;margin-top:10px;cursor:pointer;width:60px;text-align:center;height:30px;line-height:30px;}
+.site-header .nav li a{ font-size:12px;color:#fff;Opacity:0.7}
+.nav li img { width:30px;}
+.nav li.hover{background-color:#fff; border-radius:3px;}
+.nav li a:hover{Opacity:1;color:#fff;}
 .nav li:nth-of-type(1) a:hover{border-bottom:0;}
-.site-header div a:first-child{ padding: 4px 15px; margin-right: 20px; font-size: 14px; cursor: pointer;
-                                border-radius:3px;color:#fff;border:1px solid transparent;}
-.site-header div a:hover:first-child{background-color:#ccc;border:1px solid #ccc;}
-.site-header div .register{color:#fff;padding: 4px 15px;  font-size: 14px; cursor: pointer;
-                                border:1px solid #fff;border-radius:3px;}
-.site-header div .register:hover{background-color:#66aaf0;border:1px solid #66aaf0;}
+.site-header div a:first-child{ padding: 6px 17px; margin-right: 20px; font-size: 12px; cursor: pointer;
+                                border-radius:3px;color:#fff;border:1px solid transparent;opacity:0.7}
+.site-header div a:hover:first-child{color:#fff;background-color:#0cb39e;}
+.site-header div .register{color:#fff;padding: 6px 17px;  font-size: 12px; cursor: pointer;
+                                border:1px solid #fff;border-radius:3px;opacity:0.7}
+.site-header div .register:hover{opacity:1;background-color:#fff;color:#0cb39e;}
 .main-content { background-color:#fff;}
 /*footer样式*/
-.site-footer {width:100%;background-color:#434443;}
+
+.site-footer {width:100%;background-color:#434443;height:200px;}
 .site-footer .links{margin-top:20px;}
-.site-footer .menu-footer{margin-right:25px;float:left;}
-.site-footer .menu-footer li:first-child{color:#CCCAC4;font-size:16px;cursor:inherit;}
-.site-footer .menu-footer li:not(first-child){margin-top:10px;cursor:pointer;}
-.site-footer .menu-footer li:not(first-child) a{color:#938D88;}
-.site-footer .menu-footer li:not(first-child) a:hover{color:#fff;opacity:0.8}
-.site-footer .party-footer {margin-top:30px;position:relative;}
-.site-footer .party-footer .wx-public{position:absolute;z-index:222;top:-180px;right:50px;width:258px;height:258px;display:none;}
-.party-footer .icon-party li { float:left;}
-.party-footer .address-footer { float:left;margin-top:10px;}
-.party-footer .address-footer span {color:#938D88 !important;}
-.party-footer .address-footer div {color:#938D88 !important; }
-.party-footer .address-footer a {color:#938D88 !important; }
-.party-footer .address-footer a:hover {color:#fff !important;opacity:0.5 }
-.site-footer .statement{border-top:1px solid #938D88;padding:15px 0 40px 0;margin-top:30px;}
-.site-footer .statement span{font-size:14px;}
-.site-footer .statement .left div{color:#938D88;margin-right:15px;float:left;}
-.site-footer .statement .left div a{color:#938D88;}
-.site-footer .statement .line{background-color:#938D88;width:2px;height:12px;margin-top:3px;}
+.site-footer .links a{padding-bottom:20px;display: block; float: left;cursor:pointer;}
+.links a{ margin-right:20px;color:#ddd;}
 /*返回顶部*/
 .getback-FH { position:fixed;z-index:11112;color:#666;right:3%;bottom:8%;display:none;}
 .getback-FH .iconfont-back {font-size:30px;color:#4a98e7;cursor:pointer; }

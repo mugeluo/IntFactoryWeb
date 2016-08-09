@@ -13,7 +13,7 @@ define(function (require, exports, module) {
     }
     //绑定事件
     LayoutObject.bindEvent = function (name) {
-        $(".site-header ." + name).addClass("hover").find("a").css("Opacity", "1");
+        $(".site-header ." + name).addClass("hover").find("a").css("color", "#0cb39e");
          
         //窗体滚动 置顶头部
         $(window).scroll(function () {

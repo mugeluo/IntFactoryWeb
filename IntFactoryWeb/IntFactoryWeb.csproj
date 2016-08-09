@@ -125,6 +125,7 @@
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\CaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PricingController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\ServicesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -166,46 +167,20 @@
     <Content Include="modules\images\case\js-a.png" />
     <Content Include="modules\images\case\js-b.png" />
     <Content Include="modules\images\case\js-c.png" />
-    <Content Include="modules\images\home\br-0.png" />
-    <Content Include="modules\images\home\br-1.png" />
-    <Content Include="modules\images\home\br-3.png" />
-    <Content Include="modules\images\home\br-4.png" />
-    <Content Include="modules\images\home\cloud-left.png" />
-    <Content Include="modules\images\home\cloud-right.png" />
-    <Content Include="modules\images\home\goodness-resource.png" />
-    <Content Include="modules\images\home\goodness-safe.png" />
-    <Content Include="modules\images\home\goodness-task.png" />
-    <Content Include="modules\images\home\index-10.png" />
-    <Content Include="modules\images\home\index-11.png" />
-    <Content Include="modules\images\home\index-12.png" />
-    <Content Include="modules\images\home\index-2.png" />
-    <Content Include="modules\images\home\index-3.png" />
-    <Content Include="modules\images\home\index-4.png" />
-    <Content Include="modules\images\home\index-5.png" />
-    <Content Include="modules\images\home\index-6.png" />
-    <Content Include="modules\images\home\index-7.png" />
-    <Content Include="modules\images\home\index-8.png" />
-    <Content Include="modules\images\home\index-9.png" />
-    <Content Include="modules\images\home\index-br0-cloud-left.png" />
-    <Content Include="modules\images\home\index-br0-cloud-right.png" />
-    <Content Include="modules\images\home\index-dls0.png" />
-    <Content Include="modules\images\home\index-dls1.png" />
-    <Content Include="modules\images\home\index-dls2.png" />
-    <Content Include="modules\images\home\index-jxc0.png" />
-    <Content Include="modules\images\home\index-jxc1.png" />
-    <Content Include="modules\images\home\index-jxc2.png" />
-    <Content Include="modules\images\home\index-jxc3.png" />
-    <Content Include="modules\images\home\index-kh0.png" />
-    <Content Include="modules\images\home\index-kh1.png" />
-    <Content Include="modules\images\home\index-kh2.png" />
-    <Content Include="modules\images\home\index-_03.png" />
+    <Content Include="modules\images\home\index-ali.png" />
+    <Content Include="modules\images\home\index-background1.png" />
+    <Content Include="modules\images\home\index-background2.png" />
+    <Content Include="modules\images\home\index-background3.png" />
+    <Content Include="modules\images\home\index-chk2.png" />
+    <Content Include="modules\images\home\index-chk3.png" />
+    <Content Include="modules\images\home\index-chk1.png" />
+    <Content Include="modules\images\home\index-slogan.png" />
+    <Content Include="modules\images\home\index-top-page.png" />
+    <Content Include="modules\images\home\index-top.png" />
     <Content Include="modules\images\home\kh-1.png" />
     <Content Include="modules\images\home\kh-2.png" />
     <Content Include="modules\images\home\kh3.png" />
-    <Content Include="modules\images\home\shadow-line.png" />
-    <Content Include="modules\images\ico-home.png" />
     <Content Include="modules\images\logo_login.png" />
-    <Content Include="modules\images\qrcode_for_gh_4dda5c475611_344.jpg" />
     <Content Include="modules\images\services\service-br.png" />
     <Content Include="modules\images\services\service-bt.png" />
     <Content Include="modules\images\services\service-ico1.png" />
@@ -296,6 +271,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="modules\css\services.css.orig" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Pricing\Pricing.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

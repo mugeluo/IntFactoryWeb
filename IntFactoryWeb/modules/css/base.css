@@ -42,6 +42,7 @@
 .font20 {font-size:20px !important; }
 .font22 {font-size:22px !important; }
 .font24 {font-size:24px !important; }
+.font30 {font-size:30px !important; }
 
 /*字体加粗*/
 .fontbold { font-weight:bold;}
@@ -80,6 +81,7 @@
 .pTop10 {padding-top:10px;}
 .pTop20 {padding-top:20px;}
 .pTop30 {padding-top:30px;}
+.pTop40 {padding-top:40px;}
 .pTop50 {padding-top:50px;}
 
 .pBottom2 {padding-bottom:2px !important;}
@@ -162,6 +164,7 @@
 .mBottom30 {margin-bottom:30px;}
 .mBottom40 {margin-bottom:40px;}
 .mBottom50 {margin-bottom:50px;}
+.mBottom100 {margin-bottom:100px;}
 
 /*常用宽度*/
 .width20 { width:20px; }
