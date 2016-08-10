@@ -20,15 +20,18 @@
             ObjectJS.bindItemHover(this, $(".share .img-content img"));
         });
 
-        $(".case-company li .bg").hover(function () {            
-            var _this = $(this);
-            _this.find(".company").hide();
-            _this.find(".case-desc").show();
-        }, function () {
-            var _this = $(this);
-            _this.find(".company").show();
-            _this.find(".case-desc").hide();
-        });       
+        $(".case-company li .bg").hover(
+            function () {
+                var _this = $(this);
+                _this.find(".company").hide();
+                _this.find(".case-desc").show();
+            },
+            function () {
+                var _this = $(this);
+                _this.find(".company").show();
+                _this.find(".case-desc").hide();
+            }
+        );
     };
 
     ObjectJS.bindItemHover = function (obj, document) {        
@@ -41,7 +44,6 @@
         if (!$(obj).hasClass("hover")) {
             $(obj).addClass("hover").siblings().removeClass("hover");
         }
-
     };    
 
     module.exports = ObjectJS;
