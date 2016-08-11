@@ -29,7 +29,7 @@
 .beijing {top:50px;right:150px;}
 .shanghai {bottom:100px;right:70px;}
 .hangzhou {bottom:40px;right:120px;}
-.information i{float:left;margin-right:15px;font-size:24px;color:#aaa;}
+.information i{float:left;margin-right:15px;font-size:24px;color:#aaa;width:25px;height:30px;}
 .information .txt{color:#aaa;font-size:18px;}
 .information .hover i,.information .hover .txt{color:#0cb39e;}
 
