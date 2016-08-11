@@ -8,7 +8,7 @@
 .team .content::after{display:block;content:"";clear:both;}
 .team .content li{float:left;width:300px;margin-right:50px;}
 .content li .details { margin-top:50px;border-top:1px solid #ccc;padding-top:20px;}
-.content li .head-photo {height: 40px;width:40px;background-color:#333;float:left;border-radius:50%;margin: 5px 20px 0px 20px;}
+.content li .head-photo {height: 36px;width:36px;background-color:#333;float:left;border-radius:50%;margin: 5px 20px 0px 20px;}
 .content li .desc div{ color:#666;font-size:18px;}
 
 /*联系我们*/
