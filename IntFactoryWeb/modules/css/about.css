@@ -1,13 +1,15 @@
 ﻿.head-information { height:600px;background:url(/modules/images/about/about-1.png)no-repeat center bottom #0cb39e; }
 .head-information .information {max-width:800px;margin:auto;}
 .head-information .information div:first-child{color:#fff;font-size:30px;text-align:center;padding-top:200px;opacity:0.9}
-.head-information .information div:last-child{line-height:24px;margin-top:100px;color:#fff;opacity:0.7}
+.head-information .information div:last-child{line-height:24px;margin-top:80px;color:#fff;opacity:0.7}
 
 .team { height:400px;background-color:#f8f8f8;}
-.team .team-content{width:1200px;margin:auto;}
-.team .team-content .switch{margin-top:120px;cursor:pointer;font-size:18px;color:#4a98e7;}
-.team .team-content .switch-left{color:#ccc;}
-.team .content{margin:auto;width:1000px;padding-top:30px;float:left;margin-left: 80px;}
+.team .team-content{width:1200px;margin:auto;position:relative;}
+.team .team-content::after{display:block;content:"";clear:both;}
+.team .team-content .switch{cursor:pointer;font-size:18px;color:#4a98e7;font-weight:bold;}
+.team .team-content .switch-left{color:#ccc;margin-top:120px;}
+.team .team-content .switch-right{position:absolute;top:120px;right:0;}
+.team .content{margin:auto;width:1000px;padding-top:30px;margin-left: 80px;}
 .team .content::after{display:block;content:"";clear:both;}
 .team .content li{float:left;width:300px;margin-right:50px;}
 .content li i { color:#ddd;}
@@ -23,7 +25,7 @@
 .contant-us .information::before{display:block;content:"";height:100px;}
 .information .contant-details div { line-height:30px;color:#efefef;}
 .contant-details div a { color:#fff;}
-.company {position:absolute;width:150px;cursor:pointer;}
+.company {position:absolute;width:150px;cursor:pointer;height:30px;}
 .beijing {top:50px;right:150px;}
 .shanghai {bottom:100px;right:70px;}
 .hangzhou {bottom:40px;right:120px;}

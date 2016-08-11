@@ -145,6 +145,7 @@
     <Content Include="modules\css\iconfont\iconfont.svg" />
     <Content Include="modules\css\index.css" />
     <Content Include="modules\css\layout.css" />
+    <Content Include="modules\css\pricing.css" />
     <Content Include="modules\css\product.css" />
     <Content Include="modules\css\services.css" />
     <Content Include="modules\images\about\about-1.png" />
@@ -177,6 +178,8 @@
     <Content Include="modules\images\home\kh-2.png" />
     <Content Include="modules\images\home\kh3.png" />
     <Content Include="modules\images\logo_login.png" />
+    <Content Include="modules\images\pricing\pricing-background1.png" />
+    <Content Include="modules\images\pricing\pricing-background2.png" />
     <Content Include="modules\images\services\service-br.png" />
     <Content Include="modules\images\services\service-bt.png" />
     <Content Include="modules\images\services\service-ico1.png" />

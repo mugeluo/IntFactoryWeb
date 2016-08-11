@@ -39,8 +39,8 @@ input[type="file"] > input[type="button"]::-moz-focus-inner{padding:0;border:non
 .nav li.hover{background-color:#fff; border-radius:3px;}
 .nav li:hover a{Opacity:1;color:#fff;}
 .site-header div a:first-child{ padding: 5px 15px; margin-right: 20px; cursor: pointer;
-                                border-radius:3px;color:#fff;border:1px solid transparent;opacity:0.7}
-.site-header div a:first-child:hover{color:#fff;background-color:#0cb39e;}
+                                border-radius:3px;color:#fff;border:1px solid transparent;opacity:0.8}
+.site-header div a:first-child:hover{color:#aaa;background-color:#fff;}
 .site-header div .register{color:#fff;padding:5px 15px; cursor: pointer;
                                 border:1px solid #fff;border-radius:3px;opacity:0.7}
 .site-header div .register:hover{opacity:1;background-color:#fff;color:#0cb39e;}
@@ -64,6 +64,6 @@ input[type="file"] > input[type="button"]::-moz-focus-inner{padding:0;border:non
     width:1200px;
     margin:auto;
 }
-.host-timeline {text-align:center;margin-bottom:40px;padding-top:40px;font-size:24px!important;color:#000!important; }
+.host-timeline {text-align:center;margin-bottom:40px;padding-top:40px;font-size:24px;color:#000!important; }
 
 

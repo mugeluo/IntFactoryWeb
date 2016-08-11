@@ -32,6 +32,12 @@
                 _this.find(".case-desc").hide();
             }
         );
+
+        setTimeout(function () {
+            $(".img-load").each(function () {
+                $(this).attr("src",$(this).data("src"));
+            })
+        },1000);
     };
 
     ObjectJS.bindItemHover = function (obj, document) {        
