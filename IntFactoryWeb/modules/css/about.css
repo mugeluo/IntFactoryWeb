@@ -1,11 +1,13 @@
-﻿/*.site-header div a:first-child:hover{color:#fff;background-color:#068b7a;}*/
-.head-information { height:600px;background:url(/modules/images/about/about-1.png)no-repeat center bottom #0cb39e; }
+﻿.head-information { height:600px;background:url(/modules/images/about/about-1.png)no-repeat center bottom #0cb39e; }
 .head-information .information {max-width:800px;margin:auto;}
 .head-information .information div:first-child{color:#fff;font-size:30px;text-align:center;padding-top:200px;opacity:0.9}
 .head-information .information div:last-child{line-height:24px;margin-top:100px;color:#fff;opacity:0.7}
 
 .team { height:400px;background-color:#f8f8f8;}
-.team .content{margin:auto;width:1000px;padding-top:30px;}
+.team .team-content{width:1200px;margin:auto;}
+.team .team-content .switch{margin-top:120px;cursor:pointer;font-size:18px;color:#4a98e7;}
+.team .team-content .switch-left{color:#ccc;}
+.team .content{margin:auto;width:1000px;padding-top:30px;float:left;margin-left: 80px;}
 .team .content::after{display:block;content:"";clear:both;}
 .team .content li{float:left;width:300px;margin-right:50px;}
 .content li i { color:#ddd;}
@@ -17,10 +19,10 @@
 /*联系我们*/
 .contant-us {height:400px;background:url(/modules/images/about/about-2.png)no-repeat center;background-size: 100% 100%;}
 .contant-us .information{width:1200px;margin:auto;position:relative;height:100%;}
-.contant-us .information .contant-details{background-color:#0cb39e;width:600px;padding:30px 40px;}
+.contant-us .information .contant-details{background-color:#0cb39e;width:600px;padding:30px 40px;opacity:0.7;}
 .contant-us .information::before{display:block;content:"";height:100px;}
-.information .contant-details div { font-size:18px;line-height:30px;color:#efefef;}
-.contant-details div a { color:#fff;font-size:18px;}
+.information .contant-details div { line-height:30px;color:#efefef;}
+.contant-details div a { color:#fff;}
 .company {position:absolute;width:150px;cursor:pointer;}
 .beijing {top:50px;right:150px;}
 .shanghai {bottom:100px;right:70px;}
@@ -28,8 +30,6 @@
 .information i{float:left;margin-right:15px;font-size:24px;color:#aaa;}
 .information .txt{color:#aaa;font-size:18px;}
 .information .hover i,.information .hover .txt{color:#0cb39e;}
-/*地图*/
-.map{width:100%;height:400px;}
 
 
 
