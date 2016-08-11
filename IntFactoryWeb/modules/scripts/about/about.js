@@ -6,9 +6,9 @@
 
     ObjectJS.bindEvent = function () {
 
-        var arr = [{ phone: "合作：18221077623", email: "邮箱：customer@yunxiaokeji.com", address: "地址：上海市长宁区中山西路1279弄6号国峰科技大厦6楼", code: "邮编：200050" }, { phone: "合作：2", email: "邮箱：customer@yunxiaokeji.com", address: "地址：北京市长宁区中山西路1279弄6号国峰科技大厦6楼", code: "邮编：200020" }, { phone: "合作：3", email: "邮箱：customer@yunxiaokeji.com", address: "地址：杭州市长宁区中山西路1279弄6号国峰科技大厦6楼", code: "邮编：200010" }]
+        var arr = [{ phone: "合作：<a>18221077623</a>", email: "邮箱：<a>customer@yunxiaokeji.com</a>", address: "地址：上海市长宁区中山西路<a>1279</a>弄<a>6</a>号国峰科技大厦6楼", code: "邮编：<a>200050</a>" }, { phone: "合作：<a>18221077624</a>", email: "邮箱：<a>customer@yunxiaokeji.com</a>", address: "地址：北京市长宁区中山西路<a>1279</a>弄<a>6</a>号国峰科技大厦6楼", code: "邮编：<a>200030</a>" }, { phone: "合作：<a>18221077625</a>", email: "邮箱：<a>customer@yunxiaokeji.com</a>", address: "地址：杭州市长宁区中山西路<a>1279</a>弄<a>6</a>号国峰科技大厦6楼", code: "邮编：<a>200010</a>" }]
 
-        $(".company").click(function () {
+        $(".company").hover(function () {
             var _this = $(this), id = _this.data("id");
             if (!_this.hasClass("hover")) {
                 _this.addClass("hover").siblings().removeClass("hover");
