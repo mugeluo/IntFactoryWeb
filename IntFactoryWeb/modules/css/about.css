@@ -7,9 +7,10 @@
 .team .team-content{width:1200px;margin:auto;position:relative;}
 .team .team-content::after{display:block;content:"";clear:both;}
 .team .team-content .switch{cursor:pointer;font-size:18px;color:#4a98e7;font-weight:bold;}
-.team .team-content .switch-left{color:#ccc;margin-top:120px;}
+.team .team-content .switch-left{margin-top:120px;}
 .team .team-content .switch-right{position:absolute;top:120px;right:0;}
-.team .content{margin:auto;width:1000px;padding-top:30px;margin-left: 80px;}
+.team .team-content .content-txt{position:relative;height:250px;overflow:hidden;width:1000px;margin:auto;}
+.team .content{margin:auto;width:1000px;padding-top:30px;position:absolute;}
 .team .content::after{display:block;content:"";clear:both;}
 .team .content li{float:left;width:300px;margin-right:50px;}
 .content li i { color:#ddd;}
