@@ -35,7 +35,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner{padding:0;border:non
 .site-header .nav li {float:left;margin-top:10px;cursor:pointer;width:60px;text-align:center;height:30px;line-height:30px;}
 .site-header .nav li a{ color:#fff;Opacity:0.7}
 .intfactory { color:#fff;font-size:16px;}
-.nav li img { width:30px;}
+.nav li i { width:30px;color:#fff;line-height:20px;}
 .nav li.hover{background-color:#fff; border-radius:3px;}
 .nav li:hover a{Opacity:1;color:#fff;}
 .site-header div a:first-child{ padding: 5px 15px; margin-right: 20px; cursor: pointer;

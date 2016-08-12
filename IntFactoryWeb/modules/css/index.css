@@ -10,6 +10,8 @@
 .content .ali-zngc div:last-child{color:#fff;font-size:24px;margin-top:20px;opacity:0.9}
 .content .ali-zngc img {margin-top:120px; }
 
+.nav li i { float:none !important;color:#0cb39e;margin:0;}
+
 /*公用*/
 .intfactory { color:#0cb39e;}
 .title-desc { margin-bottom:70px;font-size:18px;}
