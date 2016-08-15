@@ -6,7 +6,7 @@
 .team { height:400px;background-color:#f8f8f8;}
 .team .team-content{width:1200px;margin:auto;position:relative;}
 .team .team-content::after{display:block;content:"";clear:both;}
-.team .team-content .switch{cursor:pointer;font-size:18px;color:#4a98e7;font-weight:bold;}
+.team .team-content .switch{cursor:pointer;font-size:18px;color:#0cb39e;font-weight:bold;}
 .team .team-content .switch-left{margin-top:120px;}
 .team .team-content .switch-right{position:absolute;top:120px;right:0;}
 .team .team-content .content-txt{position:relative;height:250px;overflow:hidden;width:1000px;margin:auto;}
