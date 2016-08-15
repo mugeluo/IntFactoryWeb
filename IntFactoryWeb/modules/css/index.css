@@ -41,11 +41,11 @@
 .share .share-content{width:1200px;margin:auto;position:relative;height:100%;}
 .share-content .txt-content { position:absolute;top:0;left:50px;z-index:10;}
 
-.demo {height:400px;width:100%;background:url(/modules/images/home/index-slogan.png) center;}
-.demo h2{text-align:center;font-size:40px;color:#fff;padding-top:180px;}
+.demo {height:300px;width:100%;background:url(/modules/images/home/index-slogan.png) center;}
+.demo h2{text-align:center;font-size:40px;color:#fff;line-height:300px;}
 
 /*案例*/
-.case { background-color:#c9e4e1;height:400px;}
+.case { background-color:#c9e4e1;height:420px;}
 /*清除浮动*/
 .case .case-company::after{display: table; content: ""; clear: both;}
 .case .case-company li{width:360px;height:200px;position:relative;float:left;margin-right:60px;margin-bottom:40px;}
