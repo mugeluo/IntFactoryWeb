@@ -1,9 +1,9 @@
-﻿.head-information { height:600px;
+﻿.head-information { height:500px;
                     background:url(/modules/images/pricing/pricing-background1.png)no-repeat center bottom #0cb39e; }
 .head-information .head-title{font-size:30px;color:#fff;padding-top:150px;width:450px;margin:auto;text-align:center;}
 .tilte-version{width:800px;margin:auto;}
 .tilte-version::after{display:block;content:"";clear:both;}
-.tilte-version .templent { width:300px;height:600px;background-color:#fff;margin-top:-300px;border:1px solid #ccc;
+.tilte-version .templent { width:300px;height:600px;background-color:#fff;margin-top:-200px;border:1px solid #ccc;
                            border-radius:5px;}
 .tilte-version .templent .title-name{height:100px;background-color:#f8f8f8;color:#000;font-size:30px;text-align:center;
                                  line-height:100px;}
