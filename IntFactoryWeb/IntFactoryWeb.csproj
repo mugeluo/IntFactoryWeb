@@ -262,9 +262,6 @@
     <Content Include="Views\Services\Services.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="modules\css\services.css.orig" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Pricing\Pricing.cshtml" />
   </ItemGroup>
   <ItemGroup>

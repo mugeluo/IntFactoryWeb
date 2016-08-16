@@ -35,7 +35,8 @@ table td span{position:absolute;color: #1eb452;right:20px;}
 .else { background-color:#f8f8f8;height:500px;}
 .else .services-else{width:900px;margin:auto;position:relative;}
 .else .services-else::after{display:block;content:"";clear:both;}
-.else .services-else .iconfont{color:#0cb39e;font-size:22px;text-align:center}
+.else .services-else .iconfont{color:#0cb39e;font-size:18px;text-align:center;border:1px solid #0cb39e;
+                               border-radius:50%;padding:5px;}
 .else .services-else ul {width:258px;height:198px; border:1px solid #0cb39e;float:left;margin-right:50px;
                          position:relative;border-top:0px;background-color: #0cb39e;border-radius:3px;}
 .services-else ul .content-title { color:#fff;font-size:18px;text-align:center;margin-top:40px;}
@@ -44,7 +45,7 @@ table td span{position:absolute;color: #1eb452;right:20px;}
 .services-else ul .href-address a{ color:#fff;border:1px solid #fff;font-size:12px;border-radius:5px;
                                    padding:5px 20px;cursor:pointer;}
 .services-else ul .href-address a:hover{color:#0cb39e;background-color: #fff}
-.services-else ul .font-icon { position:absolute;top:-25px;left:117px;z-index:3;}
+.services-else ul .font-icon { position:absolute;top:-35px;left:113px;z-index:3;}
 .line-across { position:absolute;border-top:1px solid #0cb39e;width:620px;top:50px;left:128px;}
 .line-across-one { position:absolute;border-right:1px solid #0cb39e;height:50px;top:50px;left:128px;}
 .line-across-two { position:absolute;border-right:1px solid #0cb39e;height:75px;top:25px;left:438px;}
