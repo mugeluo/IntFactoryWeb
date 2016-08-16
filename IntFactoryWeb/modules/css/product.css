@@ -1,1 +1,36 @@
-﻿
+﻿.head-information { height:800px;background:url(/modules/images/product/product-top-bg.png) center #0cb39e;
+                    background-size:100% 100%;position:relative;}
+.information { width:100%;margin:auto;position:absolute;text-align:center;bottom:-5px;}
+
+/*共用*/
+.title { font-size:30px; color:#000;margin-bottom:40px;}
+.title-desc { font-size:18px;color:#666;line-height:30px;}
+
+.workbench {height:700px; }
+.workbench .workbench-desc{width:1200px;margin:auto;}
+.workbench .workbench-desc::after{display:block;content:"";clear:both; }
+.workbench .workbench-desc .workbench-desc-txt{float:right;margin-top:100px;width:400px;margin-right:50px;}
+
+/*客户*/
+.customer {height:700px;background-color:#f8f8f8; }
+.customer .customer-desc{width:100%;margin:auto;}
+.customer .customer-desc::after{display:block;content:"";clear:both; }
+.customer .customer-desc .customer-desc-txt{float:left;margin-top:130px;width:300px;margin-left:50px;}
+
+/*订单*/
+.order {height:700px;background-color:#f2f2f2; }
+.order .order-desc{width:100%;margin:auto;}
+.order .order-desc::after{display:block;content:"";clear:both; }
+.order .order-desc .order-desc-txt{float:right;margin-top:100px;width:300px;margin-right:50px;}
+
+/*客户*/
+.task {height:700px; }
+.task .task-desc{width:100%;margin:auto;}
+.task .task-desc::after{display:block;content:"";clear:both; }
+.task .task-desc .task-desc-txt{float:left;margin-top:130px;width:300px;margin-left:50px;}
+
+/*材料*/
+.product {height:700px;background-color:#f2f2f2; }
+.product .product-desc{width:100%;margin:auto;}
+.product .product-desc::after{display:block;content:"";clear:both; }
+.product .product-desc .product-desc-txt{float:right;margin-top:100px;width:300px;margin-right:50px;}

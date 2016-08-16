@@ -180,6 +180,13 @@
     <Content Include="modules\images\logo_login.png" />
     <Content Include="modules\images\pricing\pricing-background1.png" />
     <Content Include="modules\images\pricing\pricing-background2.png" />
+    <Content Include="modules\images\product\product-top-bg.png" />
+    <Content Include="modules\images\product\product-top.png" />
+    <Content Include="modules\images\product\product1.png" />
+    <Content Include="modules\images\product\product5.png" />
+    <Content Include="modules\images\product\product6.png" />
+    <Content Include="modules\images\product\product7.png" />
+    <Content Include="modules\images\product\product8.png" />
     <Content Include="modules\images\services\service-bg.png" />
     <Content Include="modules\images\services\service-pic1.png" />
     <Content Include="modules\images\services\service-pic2.png" />

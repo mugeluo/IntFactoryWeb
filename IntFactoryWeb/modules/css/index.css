@@ -1,4 +1,4 @@
-﻿.head-content { height:700px;background:url(/modules/images/home/index-top.png) center #999;}
+﻿.head-content { height:700px;background:url(/modules/images/home/index-top.png)no-repeat center #999;}
 .head-content .content{width: 1200px; margin: auto;text-align: center;height:600px;position:relative;padding-top:200px;}
 .head-content .content div:first-child{margin-bottom:50px;color:#fff;font-size:30px;}
 .head-content .content .content-desc{color:#fefefe;margin-bottom:70px;font-size:18px;opacity:0.7}

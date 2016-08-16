@@ -1,6 +1,6 @@
 ﻿.head-information { height:500px;
                     background:url(/modules/images/pricing/pricing-background1.png)no-repeat center bottom #0cb39e; }
-.head-information .head-title{font-size:30px;color:#fff;padding-top:150px;width:450px;margin:auto;text-align:center;}
+.head-information .head-title{font-size:30px;color:#fff;padding-top:180px;margin:auto;text-align:center;}
 .tilte-version{width:800px;margin:auto;}
 .tilte-version::after{display:block;content:"";clear:both;}
 .tilte-version .templent { width:300px;height:600px;background-color:#fff;margin-top:-200px;border:1px solid #ccc;
