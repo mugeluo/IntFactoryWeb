@@ -1,5 +1,5 @@
-﻿.head-information { height:800px;background:url(/modules/images/product/product-top-bg.png) center #0cb39e;
-                    background-size:100% 100%;position:relative;}
+﻿.head-information { height:800px;background:url(/modules/images/product/product-top-bg.png) no-repeat bottom right #0cb39e;
+                    position:relative;}
 .information { width:100%;margin:auto;position:absolute;text-align:center;bottom:-5px;}
 
 /*共用*/

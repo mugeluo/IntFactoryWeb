@@ -32,7 +32,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner{padding:0;border:non
 /*header样式*/
 .header-menu {height:50px;position:fixed;z-index:11111;width:100%; top:0;left:0;}
 .site-header {width:1200px;margin:auto;}
-.site-header .nav li {float:left;margin-top:10px;cursor:pointer;width:60px;text-align:center;height:30px;line-height:30px;}
+.site-header .nav li {float:left;margin-top:10px;cursor:pointer;width:70px;text-align:center;height:30px;line-height:30px;}
 .site-header .nav li a{ color:#fff;Opacity:0.7}
 .intfactory { color:#fff;font-size:16px;}
 .nav li i { width:30px;color:#fff;line-height:20px;}

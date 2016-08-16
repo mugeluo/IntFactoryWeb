@@ -1,5 +1,4 @@
-﻿.head-information {height:500px;background:url(/modules/images/services/service-top-bg.png) center #0cb39e;
-                   background-size:100% 100%; }
+﻿.head-information {height:500px;background:url(/modules/images/services/service-top-bg.png)no-repeat bottom right #0cb39e;}
 .head-information .information{width:1200px;margin:auto;padding-top:200px;text-align:center;}
 .trait::after {display:block;content:"";clear:both; }
 .trait li { float:left;width:400px;}
