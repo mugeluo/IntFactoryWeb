@@ -253,9 +253,6 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="modules\css\iconfont\iconfont.eot" />
-    <Content Include="modules\css\iconfont\iconfont.ttf" />
-    <Content Include="modules\css\iconfont\iconfont.woff" />
     <Content Include="modules\plug\jquery-horizon-line-switch\fonts\icomoon.eot" />
     <Content Include="modules\plug\jquery-horizon-line-switch\fonts\icomoon.ttf" />
     <Content Include="modules\plug\jquery-horizon-line-switch\fonts\icomoon.woff" />
@@ -269,6 +266,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Pricing\Pricing.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="modules\css\iconfont\iconfont.eot" />
+    <Content Include="modules\css\iconfont\iconfont.ttf" />
+    <Content Include="modules\css\iconfont\iconfont.woff" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

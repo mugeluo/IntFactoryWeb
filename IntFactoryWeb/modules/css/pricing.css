@@ -45,8 +45,6 @@ table td span{position:absolute;color: #1eb452;right:20px;}
                                    padding:5px 20px;cursor:pointer;}
 .services-else ul .href-address a:hover{color:#0cb39e;background-color: #fff}
 .services-else ul .font-icon { position:absolute;top:-25px;left:117px;z-index:3;}
-/*.line-left { position:absolute;top:0;left:0;border-top:1px solid #0cb39e;width:115px;}
-.line-right {position:absolute; top:0;right:0;border-top:1px solid #0cb39e;width:118px;}*/
 .line-across { position:absolute;border-top:1px solid #0cb39e;width:620px;top:50px;left:128px;}
 .line-across-one { position:absolute;border-right:1px solid #0cb39e;height:50px;top:50px;left:128px;}
 .line-across-two { position:absolute;border-right:1px solid #0cb39e;height:75px;top:25px;left:438px;}
