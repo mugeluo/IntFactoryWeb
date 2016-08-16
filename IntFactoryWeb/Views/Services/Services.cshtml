@@ -5,182 +5,94 @@
 @section css{
     <link href="/modules/css/services.css" rel="stylesheet" />
 }
-@*@section scripts{
+@section scripts{
     <script type="text/javascript">
         seajs.use(["scripts/services/services"], function (ObjectJS) {
             ObjectJS.init();
         });
     </script>
-}*@
-<div class="head-information">
-    <img style="width:100%;height:100%;" src="/modules/images/services/service-br.png" />
+}
+<div class="head-information">    
     <div class="information">
-        <div class="font24 mTop150">我们提供7*24小时在线服务</div>
-        <div class="desc">您的每一个需求和建议，都是我们进步的原动力</div>        
+        <div class="font30 colorfff mBottom50">服务特点</div>
+        <ul class="trait">
+            <li>
+                <i class="iconfont">&#xe624;</i>
+                <div class="font24 colorfff mBottom20">专业</div>
+                <div class="trait-desc">多年行业经验</div>
+                <div class="trait-desc">为您提供最合理的解决方案</div>
+            </li>
+            <li>
+                <i class="iconfont">&#xe624;</i>
+                <div class="font24 colorfff mBottom20">专属</div>
+                <div class="trait-desc">专属产品顾问</div>
+                <div class="trait-desc">一对一培训指导</div>
+            </li>
+            <li>
+                <i class="iconfont">&#xe624;</i>
+                <div class="font24 colorfff mBottom20">专注</div>
+                <div class="trait-desc">7*24小时</div>
+                <div class="trait-desc">全天候在线支持</div>
+            </li>
+        </ul>        
     </div>
 </div>
 
-<div class="service-pricing">
-    <div class="host-timeline">产品定价</div>
-    <div class="pricing-details">
-        <ul>
-            <li>免费版</li>
-            <li class="font22 mBottom10">￥0</li>
-            <li class="color-pricing ">适用于个人或微型团队</li>
-            <li class="btn-click btn-click-login"><a class="font16" href="http://edj.yunxiaokeji.com/Home/Register">立即注册</a></li>
-            <li class="line-pricing"></li>
-            <li class="details-function">免费账户<a>5</a>人</li>
-            <li class="details-function">企业账户附件上传总大小<=<a>10G</a></li>
-            <li class="details-function">有效添加客户/会员数<=<a>50</a>人</li>
-            <li class="details-function">有效添加产品总数<=<a>100</a>个</li>
-            <li class="details-function">含基础报表统计</li>
-        </ul>
-        <ul>
-            <li>专业版</li>
-            <li class="font22 mBottom10">￥2,000+</li>
-            <li class="color-pricing ">适用于小型团队</li>
-            <li class="btn-click login-trial"><a class="font16" href="http://edj.yunxiaokeji.com/Home/Register">免费试用</a></li>
-            <li class="line-pricing"></li>
-            <li class="details-function" style="margin:0;text-align:center;margin-bottom:20px;">"免费版"所有功能</li>
-            <li class="details-function" style="margin:0;text-align:center;margin-bottom:20px;">数据指标不设限制</li>
-            <li class="details-function" style="margin:0;text-align:center;margin-bottom:20px;">所有报表统计功能</li>            
-        </ul>
-        <ul style="margin-right:0;">
-            <li>定制服务</li>
-            <li class="font22 mBottom10">￥？？？</li>
-            <li class="color-pricing ">适用于各规模团队与企业</li>
-            <li class="btn-click login-trial"><a class="font16" href="/About/About?#list">联系我们</a></li>
-            <li class="line-pricing"></li>
-            <li class="details-function">提供企业级解决方案</li>
-            <li class="details-function">根据企业需求专业定制</li>
-            <li class="details-function">项目结束后免费维护一年</li>            
-        </ul>
-    </div>
+<div class="services-project">
+    <div class="font30 color000 center pTop40 mBottom100">服务项目</div>
+    <ul class="project">
+        <li>
+            <img src="/modules/images/services/service-pic1.png" />
+            <div class="project-title">全天在线</div>
+            <div class="project-desc">24小时全天候为您在线</div>
+            <div class="project-desc">不论何时，第一时间解决您的疑惑</div>
+        </li>
+        <li>
+            <img src="/modules/images/services/service-pic1.png" />
+            <div class="project-title">上门培训</div>
+            <div class="project-desc">覆盖地区上海、广东、浙江、江西</div>
+            <div class="project-desc">综合企业特点，提供解决方案，进行演示</div>
+        </li>
+        <li style="margin:0">
+            <img src="/modules/images/services/service-pic1.png" />
+            <div class="project-title">活动沙龙</div>
+            <div class="project-desc">线下组织企业成员深层交流，为企业排忧解难，促进行业间经验交流、分享</div>
+            
+        </li>
+    </ul>
 </div>
 
-<div class="price-list">
-    <div class="host-timeline">价格表</div>
-    <table>
-        <tr class="bgcolor-title">
-            <td></td>
-            <td class="no-border-left font14">1年价格(元)</td>
-            <td class="no-border-left font14">2年价格(元)</td>
-            <td class="no-border-left font14">3年价格(元)</td>
-        </tr>
-        <tr class="bgcolor-price">
-            <td><div class="use-number">5用户</div></td>
-            <td data-number="1200.00" data-time="1">2,000</td>
-            <td data-number="2400.00" data-time="2">4,000</td>
-            <td data-number="3600.00" data-time="3">6,000</td>
-        </tr>
-        <tr>
-            <td><div class="use-number">10用户</div></td>
-            <td data-number="2400.00" data-time="1">4,000</td>
-            <td data-number="4200.00" data-time="2">7,600</td>
-            <td data-number="5600.00" data-time="3">10,800</td>
-        </tr>
-        <tr class="bgcolor-price">
-            <td><div class="use-number">20用户</div></td>
-            <td data-number="4600.00" data-time="1">8,000</td>
-            <td data-number="8200.00" data-time="2">15,200</td>
-            <td data-number="10800.00" data-time="3">21,600</td>
-        </tr>
-        <tr>
-            <td><div class="use-number">50用户</div></td>
-            <td data-number="10800.00" data-time="1">19,000</td>
-            <td data-number="19200.00" data-time="2">36,100</td>
-            <td data-number="25600.00" data-time="3">51,300</td>
-        </tr>
-        <tr class="bgcolor-price">
-            <td><div class="use-number">100用户</div></td>
-            <td data-number="19800.00" data-time="1">36,000</td>
-            <td data-number="35600.00" data-time="2">64,800</td>
-            <td data-number="46800.00" data-time="3">92,700</td>
-        </tr>
-    </table>
-    <div class="reminder">此价格仅供参考,具体收费以实际为准</div>
-    <div class="price-line"></div>
-</div>
-
-@* 费用估算 *@
-@*<div class="estimate">
-    <div class="center font24 clocr-title pTop30 mBottom40">费用估算</div>
-    <div class="estimate-price">
-        <ul class="mRight50">
-            <li>
-                <div>使用人数</div>
-                <div class="use-line use-number-txt">
-                    <div style="width:0%"></div>
-                    <div class="btn-number" style="margin-left:0%"></div>
-                </div>
-                <input class="user-numb" type="text" value="1" />/人
-            </li>
-            <li>
-                <div>时间</div>
-                <div class="left mRight20">
-                    <i class="round hover" data-year="1">
-                        <span style="display: inline-block;"></span>
-                    </i>
-                    <span style="padding: 3px; font-size: 16px;">1/年</span>
-                </div>
-                <div class="left mRight20">
-                    <i class="round" data-year="2">
-                        <span style="display: inline-block;"></span>
-                    </i>
-                    <span style="padding: 3px; font-size: 16px;">2/年</span>
-                </div>
-                <div>
-                    <i class="round" data-year="3">
-                        <span style="display: inline-block;"></span>
-                    </i>
-                    <span style="padding: 3px; font-size: 16px;">3/年</span>
-                </div>    
-            </li>
-            <li>
-                <div>折扣</div>
-                <div class="use-line discount">
-                    <div style="width:0%"></div>
-                    <div class="btn-number" style="margin-left:0%"></div>
-                </div>
-                <input class="user-discount" type="text" value="0" />/折
-            </li>
-        </ul>
-        <div class="cost">
-            <div>服务费用</div>
-            <div class="check-box iconfont">&#xe626;</div>
-            <div>                
-                部署服务：<span>￥1000</span>/次
-            </div>
-            <div class="check-box iconfont">&#xe626;</div>
-            <div>                
-                制度培训：<span>￥4000</span>/小时
-            </div>
-            <div class="count">
-                总计价格：￥<span>1200.00</span>元
-            </div>
-        </div>
+<div class="secure">
+    <div class="font30 colorfff center pTop40 mBottom50">安全介绍</div>
+    <ul class="secure-desc">
+        <li class="hover" data-id="one">
+            <i class="iconfont">&#xe624;</i>
+            <div class="secure-desc-title">硬件安全保障<div class="triangle"></div><div class="triangle2"></div></div>            
+        </li>
+        <li data-id="two">
+            <i class="iconfont">&#xe624;</i>
+            <div class="secure-desc-title">全面的容灾举措<div class="triangle"></div><div class="triangle2"></div></div>            
+        </li>
+        <li data-id="three" style="margin:0;">
+            <i class="iconfont">&#xe624;</i>
+            <div class="secure-desc-title">良好的职业操守<div class="triangle"></div><div class="triangle2"></div></div>            
+        </li>
+    </ul>
+    <div class="secure-desc-txt one">
+        <div class="secure-txt">数据安全首先是存放数据的服务器在物理上的安全。一旦服务器发生故障、丢失数据会给企业带来巨大损失。</div>
+        <div class="secure-txt">厂盟智能使用的是阿里巴巴聚石塔高配集群服务器，附件存储使用的是“七牛”第三方服务器存储，保障数据随时完整可用。</div>
+        <div class="secure-txt">阿里巴巴服务器提供自动快照备份，同时还提供DDoS 防护、木马查杀、防暴力破解等一系列安全举措，在网络层和硬件层面上我们提供坚实的后盾。</div>
     </div>
-</div>*@
-
-<div class="technical-support">   
-    <div class="details">        
-        <ul class="mRight50">
-            <li><img src="/modules/images/services/service-ico1.png" /></li>            
-            <li class="font16">定制化服务</li>
-            <li>对于有个性化需求的客户，我们提供针对性的定制功能开发，基于二当家平台做各种拓展功能</li>
-            <li><a href="/About/About?#list">了解详情&nbsp;></a></li>
-        </ul>
-        <ul class="mRight50">
-            <li><img src="/modules/images/services/service-ico3.png" /></li>            
-            <li class="font16">技术化支持</li>
-            <li>针对新用户，我们会提供免费的培训指导，帮助您和您的团队更快捷有效的使用二当家</li>
-            <li><a href="/About/About?#list">了解详情&nbsp;></a></li>
-        </ul>
-        <ul>
-            <li><img src="/modules/images/services/service-ico2.png" /></li>            
-            <li class="font16">销售咨询</li>
-            <li style="height:57px;">销售经理为您解答专业版报价,二当家部署实施方案的各种问题</li>
-            <li><a href="/About/About?#list">了解详情&nbsp;></a></li>
-        </ul>
-    </div>    
+    <div class="secure-desc-txt two hide">
+        <div class="secure-txt">为保障客户数据永不丢失并能7x24小时不间断流畅运行，</div>
+        <div class="secure-txt">厂盟智能使用多台服务器相互备份和异地备份的方式，每天凌晨在多个地理位置留下加密的数据备份，同时，我们使用的是集群服务器和数据库技术，能够在最大程度上保障系统能够稳定流畅地运行。</div>
+        <div class="secure-txt">厂盟智能平台支持客户数据的批量导出，报表输出等功能，可以确保客户数据最高的灵活度。</div>
+    </div>
+    <div class="secure-desc-txt three hide">
+        <div class="secure-txt">厂盟智能与所有购买用户签订协议，保证不会将用户产生的具体数据提供任何无关第三方，</div>
+        <div class="secure-txt">所有服务购买合同中包括数据保密条款，厂盟智能主动承担保密的法律和经济责任</div>
+        <div class="secure-txt">我们对数据使用流程制定了严格的制度。只有公司技术负责人才可以掌握生产服务器及业务数据库密码。</div>
+        <div class="secure-txt">对数据的维护操作，必须由公司技术负责人执行，其他开发团队、维护团队不能独立接触到真实客户数据。</div>
+    </div>
+    
 </div>

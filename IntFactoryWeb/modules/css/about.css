@@ -1,7 +1,7 @@
 ﻿.head-information { height:500px;background:url(/modules/images/about/about-1.png)no-repeat center bottom #0cb39e; }
 .head-information .information {max-width:800px;margin:auto;}
 .head-information .information div:first-child{color:#fff;font-size:30px;text-align:center;padding-top:150px;opacity:0.9}
-.head-information .information div:last-child{line-height:24px;margin-top:80px;color:#fff;}
+.head-information .information p{line-height:24px;margin-top:80px;color:#fff;}
 
 .team { height:400px;background-color:#f8f8f8;}
 .team .team-content{width:1200px;margin:auto;position:relative;}
