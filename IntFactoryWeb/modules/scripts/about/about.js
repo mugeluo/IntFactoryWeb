@@ -8,16 +8,19 @@
        
         $(".switch-right").click(function () {            
             ObjectJS.bindClick();
-            console.log($(".team-one").attr("left"));
+            console.log($(".team-one").css("left"));
+            if ($(".team-one").left()) {
+
+            }
         });
 
         $(".switch-left").click(function () {            
             ObjectJS.bindClick();
         });
 
-        setInterval(function () {            
-            ObjectJS.bindClick();
-        }, 5000);
+        //setInterval(function () {            
+        //    ObjectJS.bindClick();
+        //}, 500000);
 
         var arr = [{ phone: "合作：<a>18221077623</a>", email: "邮箱：<a>customer@yunxiaokeji.com</a>", address: '地址：<a href="http://j.map.baidu.com/FvBYv">上海市长宁区中山西路1279弄6号国峰科技大厦6楼</a></div>', code: "邮编：<a>200050</a>" },  { phone: "合作：<a>18221077625</a>", email: "邮箱：<a>customer@yunxiaokeji.com</a>", address: '地址：<a href="http://j.map.baidu.com/FvBYv">杭州市长宁区中山西路1279弄6号国峰科技大厦6楼</a></div>', code: "邮编：<a>200010</a>" }]
 
@@ -45,7 +48,7 @@
             ObjectJS.num = 2;
         } else {
             $(".team-one").animate({ left: "0px" });
-            $(".team-two").animate({ left: "1000px" });
+            $(".team-two").animate({ left: "-1000px" });
             ObjectJS.num = 1;
         }
     }
