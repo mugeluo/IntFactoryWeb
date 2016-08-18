@@ -7,20 +7,18 @@
     ObjectJS.num = 1;
 
     ObjectJS.bindEvent = function () {       
-        $(".switch-right").click(function () {           
-            ObjectJS.bindClick("-1000px", "1000px");
-            //clearInterval(timer);
-            //setInterval(timer);
+        $(".switch-right").click(function () {
+            clearInterval(timer);
+            ObjectJS.bindClick("right");                        
         });
         
-        $(".switch-left").click(function () {           
-            ObjectJS.bindClick("1000px", "-1000px");
-            //clearInterval(timer);
-            //setInterval(timer);
+        $(".switch-left").click(function () {
+            clearInterval(timer);
+            ObjectJS.bindClick("left");                     
         });
 
         var timer = setInterval(function () {            
-            ObjectJS.bindClick("-1000px", "1000px");
+            ObjectJS.bindClick("right");
         }, 5000);
 
         var arr = [{ phone: "合作：<a>18221077623</a>", email: "邮箱：<a>customer@yunxiaokeji.com</a>", address: '地址：<a href="http://j.map.baidu.com/FvBYv">上海市长宁区中山西路1279弄6号国峰科技大厦6楼</a></div>', code: "邮编：<a>200050</a>" },  { phone: "合作：<a>18221077625</a>", email: "邮箱：<a>customer@yunxiaokeji.com</a>", address: '地址：<a href="http://j.map.baidu.com/FvBYv">杭州市长宁区中山西路1279弄6号国峰科技大厦6楼</a></div>', code: "邮编：<a>200010</a>" }]
@@ -42,22 +40,27 @@
         });
     };
 
-    ObjectJS.bindClick = function (number, num) {      
-        if (ObjectJS.num == 1) {  
-            $(".team-one").animate({ left: number }, 600);
-            $(".team-two").animate({ left: "0px" }, 600);
+    ObjectJS.bindClick = function (obj) {      
+        if (obj=="right") {
+            if (ObjectJS.num != 1) {
+                $(".content-txt").append($(".content-txt ul:first"));
+                $(".content-txt ul:first").css("left", "0px");
+                $(".content-txt ul:last").css({ left: "1000px" }, 600);
+            }
             ObjectJS.num = 2;
-            setTimeout(function () {
-                $(".team-one").css("left", num);
-            }, 650);
+            $(".content-txt ul:first").animate({ left: "-1000px" }, 600);
+            $(".content-txt ul:last").animate({ left: "0px" }, 600);
         } else {
-            $(".team-one").animate({ left: "0px" }, 600);
-            $(".team-two").animate({ left: number }, 600);
-            ObjectJS.num = 1;
-            setTimeout(function () {
-                $(".team-two").css("left", num);
-            }, 650);
+            $(".content-txt").prepend($(".content-txt ul:last"));
+            $(".content-txt ul:last").css("left", "0px");
+            $(".content-txt ul:first").css({ left: "-1000px" }, 600);
+            $(".content-txt ul:last").animate({ left: "1000px" }, 600);
+            $(".content-txt ul:first").animate({ left: "0px" }, 600);
         }
+
+        //setInterval(function () {
+        //    ObjectJS.bindClick(obj);
+        //}, 5000);
     }
 
     module.exports = ObjectJS;
