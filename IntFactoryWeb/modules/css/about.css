@@ -27,7 +27,7 @@
 .contant-us .information::before{display:block;content:"";height:100px;}
 .information .contant-details div { line-height:30px;color:#fff;}
 .contant-details div a { color:#fff;}
-.company {position:absolute;width:150px;cursor:pointer;height:30px;}
+.company {position:absolute;width:180px;cursor:pointer;height:30px;}
 .beijing {top:50px;right:150px;}
 .shanghai {bottom:100px;right:70px;}
 .hangzhou {bottom:40px;right:120px;}

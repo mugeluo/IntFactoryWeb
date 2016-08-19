@@ -21,7 +21,7 @@
             ObjectJS.bindClick("right");
         }, 5000);
 
-        var arr = [{ phone: "合作：<a>18221077623</a>", email: "邮箱：<a>customer@yunxiaokeji.com</a>", address: '地址：<a href="http://j.map.baidu.com/FvBYv">上海市长宁区中山西路1279弄6号国峰科技大厦6楼</a></div>', code: "邮编：<a>200050</a>" },  { phone: "合作：<a>18221077625</a>", email: "邮箱：<a>customer@yunxiaokeji.com</a>", address: '地址：<a href="http://j.map.baidu.com/FvBYv">杭州市长宁区中山西路1279弄6号国峰科技大厦6楼</a></div>', code: "邮编：<a>200010</a>" }]
+        var arr = [{ email: "邮箱：<a>tech@intfactory.cn</a>", address: '地址：<a target="_blank" href="http://j.map.baidu.com/FvBYv">上海市长宁区中山西路1279弄6号国峰科技大厦6楼</a></div>', code: "邮编：<a>200050</a>" }, { email: "邮箱：<a>customer@intfactory.cn</a>", address: '地址：<a target="_blank" href="http://j.map.baidu.com/1J1EC">杭州市余杭区高教路970号联合广场6号楼5楼</a></div>', code: "邮编：<a>311100</a>" }]
 
         $(".company").click(function () {
             var _this = $(this), id = _this.data("id"), font = _this.data("html");
@@ -29,7 +29,11 @@
                 _this.addClass("hover").siblings().removeClass("hover");
             };
             $(".contant-details").fadeOut(function () {
-                $(".contant-details .phone").html(arr[id].phone);
+                if (id==1) {
+                    $(".contant-details .phone").show();
+                } else {
+                    $(".contant-details .phone").hide();
+                }
                 $(".contant-details .email").html(arr[id].email);
                 $(".contant-details .address").html(arr[id].address);
                 $(".contant-details .code").html(arr[id].code);
