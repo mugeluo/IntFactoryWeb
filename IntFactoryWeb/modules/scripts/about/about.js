@@ -5,7 +5,7 @@
     };
 
     ObjectJS.num = 1;
-
+    ObjectJS.status = true;
     ObjectJS.bindEvent = function () {       
         $(".switch-right").click(function () {
             clearInterval(timer);
@@ -40,20 +40,26 @@
         });
     };
 
-    ObjectJS.bindClick = function (obj) {      
-        if (obj=="right") {
+    ObjectJS.bindClick = function (obj) {
+        
+        if (obj == "right") {
             if (ObjectJS.num != 1) {
                 $(".content-txt").append($(".content-txt ul:first"));
                 $(".content-txt ul:first").css("left", "0px");
                 $(".content-txt ul:last").css({ left: "1000px" }, 600);
             }
             ObjectJS.num = 2;
+            ObjectJS.status = false;
             $(".content-txt ul:first").animate({ left: "-1000px" }, 600);
             $(".content-txt ul:last").animate({ left: "0px" }, 600);
         } else {
-            $(".content-txt").prepend($(".content-txt ul:last"));
-            $(".content-txt ul:last").css("left", "0px");
-            $(".content-txt ul:first").css({ left: "-1000px" }, 600);
+            if (ObjectJS.status) {
+                $(".content-txt").prepend($(".content-txt ul:last"));
+                $(".content-txt ul:last").css("left", "0px");
+                $(".content-txt ul:first").css({ left: "-1000px" }, 600);
+            }
+            ObjectJS.status = true;
+            ObjectJS.num = 1;
             $(".content-txt ul:last").animate({ left: "1000px" }, 600);
             $(".content-txt ul:first").animate({ left: "0px" }, 600);
         }
