@@ -154,6 +154,7 @@
     <Content Include="modules\images\about\about2.png" />
     <Content Include="modules\images\about\about3.png" />
     <Content Include="modules\images\about\about4.png" />
+    <Content Include="modules\images\about\zhougong.png" />
     <Content Include="modules\images\case\anli-a.jpg" />
     <Content Include="modules\images\case\anlile-1.png" />
     <Content Include="modules\images\case\anlile-2.png" />

@@ -13,7 +13,7 @@
 .nav li i { float:none !important;color:#0cb39e;margin:0;}
 
 /*公用*/
-.intfactory {}
+.intfactory {color:#fff;background-color:#0cb39e;}
 .title-desc { margin-bottom:70px;font-size:18px;}
 .txt-content .content-ul li{margin-bottom:40px;width:400px;cursor:pointer;}
 .content-ul li .title-div { font-size:18px;color:#666;padding-bottom:5px;}
@@ -24,7 +24,7 @@
 .content-ul .hover i{ color:#0cb39e;}
 .img-content { position:absolute;top:50px;right:0;}
 .txt-content .head-title{color:#000;font-size:30px;margin-top:70px;margin-bottom:70px;}
-.iconfont { float:left;font-size:30px;margin-top:5px;margin-right:10px;}
+.iconfont { float:left;font-size:26px;margin-top:2px;}
 /*可视化*/
 .visualization { height:650px;background:url(/modules/images/home/index-background1.png)no-repeat right bottom #f8f8f8;}
 .visualization .visualization-content{width:1200px;margin:auto;position:relative;height:100%;}
