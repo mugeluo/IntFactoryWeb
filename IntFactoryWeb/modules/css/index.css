@@ -13,7 +13,7 @@
 .nav li i { float:none !important;color:#0cb39e;margin:0;}
 
 /*公用*/
-.intfactory { color:#0cb39e;}
+.intfactory {}
 .title-desc { margin-bottom:70px;font-size:18px;}
 .txt-content .content-ul li{margin-bottom:40px;width:400px;cursor:pointer;}
 .content-ul li .title-div { font-size:18px;color:#666;padding-bottom:5px;}
