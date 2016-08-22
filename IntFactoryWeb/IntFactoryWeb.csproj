@@ -168,6 +168,11 @@
     <Content Include="modules\images\case\js-a.png" />
     <Content Include="modules\images\case\js-b.png" />
     <Content Include="modules\images\case\js-c.png" />
+    <Content Include="modules\images\home\cm-a2.png" />
+    <Content Include="modules\images\home\cm-a3.png" />
+    <Content Include="modules\images\home\cm-b2.png" />
+    <Content Include="modules\images\home\cm-c2.png" />
+    <Content Include="modules\images\home\cm-c3.png" />
     <Content Include="modules\images\home\IMG_8305.png" />
     <Content Include="modules\images\home\index-ali.png" />
     <Content Include="modules\images\home\index-background1.png" />

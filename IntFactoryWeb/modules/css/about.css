@@ -23,7 +23,7 @@
 /*联系我们*/
 .contant-us {height:400px;background:url(/modules/images/about/about-2.png)no-repeat center;background-size: 100% 100%;}
 .contant-us .information{width:1200px;margin:auto;position:relative;height:100%;}
-.contant-us .information .contant-details{background-color:rgba(12,179,158,0.7);width:600px;padding:30px 40px;}
+.contant-us .information .contant-details{background-color:rgba(12,179,158,0.7);width:450px;padding:30px 40px;height:180px;}
 .contant-us .information::before{display:block;content:"";height:100px;}
 .information .contant-details div { line-height:30px;color:#fff;}
 .contant-details div a { color:#fff;}
