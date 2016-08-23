@@ -284,6 +284,9 @@
     <Content Include="modules\css\iconfont\iconfont.ttf" />
     <Content Include="modules\css\iconfont\iconfont.woff" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\NewIndex.cshtml" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
