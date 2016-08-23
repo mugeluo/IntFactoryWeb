@@ -1,7 +1,0 @@
-﻿.publicity {text-align:center; }
-.publicity img{width:100%;margin-top:-5px;}
-.site-header { position:fixed;z-index:100;background:rgba(255,255,255,0.9);width:100%;top:0;}
-.site-header .container{height:30px;padding:15px 20px;}
-.container .logo span { font-size:20px;color:#007aff;margin-top:3px;margin-left:5px;}
-.container .login a{border:1px solid #aaa;padding:2px 5px; color:#999;border-radius:3px;font-size:20px;}
-.container .login a:hover{background-color:#aaa;color:#fff;}

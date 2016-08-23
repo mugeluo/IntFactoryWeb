@@ -1,5 +1,5 @@
 ﻿.head-content { height:700px;background:url(/modules/images/home/index-top.png) no-repeat center #999;background-size:100% 100%;}
-.head-content .content{width: 1200px; margin: auto;text-align: center;height:600px;position:relative;padding-top:200px;}
+.head-content .content{text-align: center;height:600px;position:relative;padding-top:200px;}
 .head-content .content div:first-child{margin-bottom:50px;color:#fff;font-size:30px;}
 .head-content .content .content-desc{color:#fefefe;margin-bottom:70px;font-size:18px;opacity:0.7}
 .head-content .content a{color:#fff;border-radius:5px;padding:17px 60px;box-shadow: 2px 3px 3px #444;
@@ -27,19 +27,19 @@
 .iconfont { float:left;font-size:26px;margin-top:2px;}
 /*可视化*/
 .visualization { height:650px;background:url(/modules/images/home/index-background1.png)no-repeat right bottom #f8f8f8;}
-.visualization .visualization-content{width:1200px;margin:auto;position:relative;height:100%;}
-.visualization-content .txt-content { position:absolute;top:0;left:50px;z-index:10;}
+.visualization .visualization-content{position:relative;height:100%;}
+.visualization-content .txt-content { position:absolute;top:0;left:0;z-index:10;}
 
 /*协作*/
 .team { height:650px;background:url(/modules/images/home/index-background2.png)no-repeat center bottom #ededed;}
-.team .team-content{width:1200px;margin:auto;position:relative;height:100%;}
+.team .team-content{position:relative;height:100%;}
 .team-content .txt-content { position:absolute;top:0;right:0;z-index:10;}
 .team-content .img-content { position:absolute;top:50px;left:0;}
 
 /*资源共享*/
 .share { height:650px; background:url(/modules/images/home/index-background3.png)no-repeat left bottom #f8f8f8;}
-.share .share-content{width:1200px;margin:auto;position:relative;height:100%;}
-.share-content .txt-content { position:absolute;top:0;left:50px;z-index:10;}
+.share .share-content{position:relative;height:100%;}
+.share-content .txt-content { position:absolute;top:0;left:0;z-index:10;}
 
 .demo {height:300px;width:100%;background:url(/modules/images/home/index-slogan.png) center;}
 .demo h2{text-align:center;font-size:40px;color:#fff;line-height:300px;}
@@ -55,3 +55,7 @@
 .case-company .bg .case-desc {width:320px;margin:auto;margin-left:20px;color:#fff;margin-top:60px;display:none;}
 .case-desc div { color:#8fece0;padding-bottom:3px;border-bottom:1px solid #8fece0;font-size:16px;text-align:center;}
 .case-desc p { color:#fff;line-height:20px;margin-top:20px;}
+
+.contentwidth {
+    width:1200px;margin:auto;
+}
