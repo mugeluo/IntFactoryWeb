@@ -138,6 +138,7 @@
     <Content Include="modules\css\about.css" />
     <Content Include="modules\css\base.css" />
     <Content Include="modules\css\case.css" />
+    <Content Include="modules\css\home\index.css" />
     <Content Include="modules\css\iconfont\demo.css" />
     <Content Include="modules\css\iconfont\demo.html" />
     <Content Include="modules\css\iconfont\iconfont.css" />
@@ -168,9 +169,12 @@
     <Content Include="modules\images\case\js-a.png" />
     <Content Include="modules\images\case\js-b.png" />
     <Content Include="modules\images\case\js-c.png" />
+    <Content Include="modules\images\home\cm-a1.png" />
     <Content Include="modules\images\home\cm-a2.png" />
     <Content Include="modules\images\home\cm-a3.png" />
+    <Content Include="modules\images\home\cm-b1.png" />
     <Content Include="modules\images\home\cm-b2.png" />
+    <Content Include="modules\images\home\cm-c1.png" />
     <Content Include="modules\images\home\cm-c2.png" />
     <Content Include="modules\images\home\cm-c3.png" />
     <Content Include="modules\images\home\IMG_8305.png" />
@@ -178,9 +182,6 @@
     <Content Include="modules\images\home\index-background1.png" />
     <Content Include="modules\images\home\index-background2.png" />
     <Content Include="modules\images\home\index-background3.png" />
-    <Content Include="modules\images\home\index-chk2.png" />
-    <Content Include="modules\images\home\index-chk3.png" />
-    <Content Include="modules\images\home\index-chk1.png" />
     <Content Include="modules\images\home\index-slogan.png" />
     <Content Include="modules\images\home\index-top-page.png" />
     <Content Include="modules\images\home\index-top.png" />
@@ -234,7 +235,6 @@
     <Content Include="modules\scripts\case\case.js" />
     <Content Include="modules\scripts\global.js" />
     <Content Include="modules\scripts\home\index.js" />
-    <Content Include="modules\scripts\home\newindex.js" />
     <Content Include="modules\scripts\layout.js" />
     <Content Include="modules\scripts\services\services.js" />
     <Content Include="Scripts\jquery-1.11.1.js" />
@@ -283,9 +283,6 @@
     <Content Include="modules\css\iconfont\iconfont.eot" />
     <Content Include="modules\css\iconfont\iconfont.ttf" />
     <Content Include="modules\css\iconfont\iconfont.woff" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Home\NewIndex.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
