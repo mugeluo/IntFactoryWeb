@@ -16,5 +16,8 @@ namespace IntFactoryWeb.Controllers
             return View();
         }
 
+        public ActionResult NewIndex() {
+            return View();
+        }
     }
 }
