@@ -17,7 +17,9 @@ namespace IntFactoryWeb.Areas.Manage
             context.MapRoute(
                 "Manage_default",
                 "Manage/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+
+                new { action = "Index", id = UrlParameter.Optional },
+                new string[] { "IntFactoryWeb.Areas.Manage.Controllers" }
             );
         }
     }

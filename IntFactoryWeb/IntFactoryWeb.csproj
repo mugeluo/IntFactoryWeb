@@ -301,9 +301,6 @@
     <Content Include="Areas\Manage\Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\副本 _ViewStart.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Areas\Manage\Views\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
