@@ -1,7 +1,31 @@
-﻿@{
-    ViewBag.Title = "_Layout";
-}
+﻿<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <link href="/modules/css/base.css" rel="stylesheet" />
+    <link href="/modules/css/layout.css" rel="stylesheet" />
+    @RenderSection("css", false)
+    
+    
+</head>
+<body>
 
-<h2>2222222222222222222</h2>
 
-@RenderBody() 
+    @RenderBody() 
+
+
+
+
+
+    <script src="/Scripts/jquery-1.11.1.js"></script>
+    <script src="/Scripts/sea.js"></script>
+    <script src="/Scripts/sea-config.js"></script>    
+    <script type="text/javascript">
+        seajs.use(["/modules/manage/scripts/layout"], function (ObjectJS) {
+            ObjectJS.init();
+        });
+    </script>
+    @RenderSection("scripts",false)
+</body>
+</html>
+
+

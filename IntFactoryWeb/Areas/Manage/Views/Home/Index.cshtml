@@ -1,5 +1,19 @@
 ﻿@{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "后台";
 }
 
-<h2>Index</h2>
+@section css{
+    <link href="/modules/manage/css/index.css" rel="stylesheet" />
+}
+@section scripts{
+    <script src="/Scripts/jquery-1.11.1.js"></script>
+    <script type="text/javascript">
+        seajs.use(["/modules/manage/scripts/index"], function (ObjectJS) {
+            ObjectJS.init();
+        });
+    </script>
+}
+<div>账号:</div><input type="text" class="account" />
+<div>密码:</div><input type="text" class="password" />
+<div class="btn-ok hand">添加</div>
+
