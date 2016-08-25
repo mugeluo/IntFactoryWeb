@@ -1,0 +1,15 @@
+﻿{%
+     for(var i=0,j=$data.length; i < j ; i++){ 
+        var item=$data[i];
+%}
+<tr>
+    <td><img src='{%=item.Img==""?"/modules/manage/images/img-noimg.png":item.Img%}' /></td>
+    <td>{%=item.Name%}</td>
+    <td>{%=item.CreateTime.toDate("yyyy-MM-dd hh:mm:ss")%}</td>
+    <td>{%=item.Type=="0"?"功能":item.Type=="1"?"问题":"指引"%}</td>
+    <td data-id="{%=item.TypeID%}">
+        <span class="update">编辑</span>
+        <span class="delete">删除</span>
+    </td>
+</tr>
+{% } %}

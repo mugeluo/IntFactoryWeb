@@ -1,0 +1,43 @@
+﻿/*全局样式*/
+* { padding: 0; margin: 0; font-size:14px; color:#333; font-family:'Microsoft YaHei' !important; }/*033d91*/
+body {font-family:'Microsoft YaHei' !important; }
+li{ list-style-type:none;}
+a {  text-decoration: none;}
+
+input[type="text"] { border:solid 1px #ccc; border-radius:2px;height:25px; line-height:25px; padding:0 5px; }
+input[type="text"]:focus { border:solid 1px #318ae4; }
+
+input[type="password"] { border:solid 1px #ccc; border-radius:2px;height:25px; line-height:25px; padding:0 5px; }
+input[type="password"]:focus { border:solid 1px #318ae4; }
+
+textarea { min-height: 60px; border:solid 1px #ccc; border-radius:2px;text-indent:3px;resize:none;}
+textarea:focus { border:solid 1px #666;}
+table { border-collapse:collapse;}
+select{ border:solid 1px #ccc; border-radius:2px; height:25px; line-height:25px; padding:0 5px;}
+select option{ padding:2px; }
+
+img{border:none;}
+button,submit,input,select,textarea{outline:none;}
+button,submit,input,select{vertical-align:middle;}
+button,submit,input[type="button"],input[type="submit"]{cursor:pointer;-webkit-appearance:none;}
+textarea{resize:none;outline:none;}
+button::-moz-focus-inner,
+submit::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+input[type="file"] > input[type="button"]::-moz-focus-inner{padding:0;border:none;}
+
+/*头部*/
+.header {  height:50px; width:100%; background-color:#2F73B8; position:fixed; top:0; z-index:1999; opacity:0.9; box-shadow:0 0 5px #2F73B8;}
+.header .menu{width:1200px;margin:auto;}
+.header .menu li{float:left;margin-right:20px;line-height:50px;cursor:pointer;position:relative;}
+.menu li a { color:#BFD2F2;font-size:18px;}
+.header .menu::after{display:block;content:"";clear:both;}
+.menu .hover a{color:#fff;border-bottom:3px solid #fff;padding-bottom:10px;}
+
+.nav-list { width:180px;position:fixed;left:0;top:50px;height:100%;background-color:#fff;opacity:0.9;box-shadow:0 0 5px #ccc;}
+.nav-list .list li{text-align:center;cursor:pointer;line-height:50px;}
+.nav-list .list li:hover{background-color:#f2f4f8 }
+
+.main-content { margin:50px 0px 50px 180px;}

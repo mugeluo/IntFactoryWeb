@@ -21,10 +21,23 @@ namespace IntFactoryBusiness
         public List<UsersEntity> GetUesrs()
         {
             List<UsersEntity> list = new List<UsersEntity>();
-            DataSet ds = HelpCenterDAL.BaseProvider.GetUesrs();
+            DataSet ds = HelpCenterDAL.BaseProvider.GetTypes();
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
                 UsersEntity model = new UsersEntity();
+                model.FillData(dr);
+                list.Add(model);
+            }
+            return list;
+        }
+        
+        public List<TypeEntity> GetTypes()
+        {
+            List<TypeEntity> list = new List<TypeEntity>();
+            DataSet ds = HelpCenterDAL.BaseProvider.GetTypes();
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                TypeEntity model = new TypeEntity();
                 model.FillData(dr);
                 list.Add(model);
             }
@@ -41,6 +54,11 @@ namespace IntFactoryBusiness
             return HelpCenterDAL.BaseProvider.InsertUsers(UserID, Acccount, Password);
         }
 
+        public bool InsertType( string Name, string Types, string UserID)
+        {
+            var TypeID = Guid.NewGuid().ToString().ToLower();
+            return HelpCenterDAL.BaseProvider.InsertType(TypeID, Name, Types, UserID);
+        }
 
         #endregion
 

@@ -21,6 +21,13 @@ namespace IntFactoryDAL
             return ds;
         }
 
+        public DataSet GetTypes()
+        {
+            string sqlTxt = string.Empty;
+            sqlTxt = "select * from Type";
+            DataSet ds = GetDataSet(sqlTxt);
+            return ds;
+        }
 
         #endregion
 
@@ -34,6 +41,13 @@ namespace IntFactoryDAL
             return num == 1 ? true : false;
         }
 
+        public bool InsertType(string TypeID, string Name, string Types, string UserID)
+        {            
+            string sqlTxt = string.Empty;
+            sqlTxt = "insert into Type (TypeID,Name,Type,UserID) values('" + TypeID + "','" + Name + "','" + Types + "','" + UserID + "')";
+            var num = ExecuteNonQuery(sqlTxt);
+            return num == 1 ? true : false;
+        }
 
         #endregion
 

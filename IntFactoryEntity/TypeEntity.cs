@@ -12,14 +12,19 @@ namespace IntFactoryEntity
 
         public string TypeID { get; set; }
 
-        public string Nmae { get; set; }
+        public string Name { get; set; }
 
         public DateTime CreateTime { get; set; }
 
         public string Img { get; set; }
 
-        public int Type { get; set; }
+        public string Type { get; set; }
 
         public string UserID { get; set; }
+
+        public void FillData(System.Data.DataRow dr)
+        {
+            dr.FillData(this);
+        }
     }
 }

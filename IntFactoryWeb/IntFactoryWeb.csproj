@@ -220,8 +220,13 @@
     <Content Include="modules\images\ zngc-5.png" />
     <Content Include="modules\images\ zngc-6.png" />
     <Content Include="modules\manage\css\index.css" />
+    <Content Include="modules\manage\css\layout.css" />
+    <Content Include="modules\manage\images\ico-loading.gif" />
+    <Content Include="modules\manage\images\img-noimg.png" />
     <Content Include="modules\manage\scripts\index.js" />
     <Content Include="modules\manage\scripts\layout.js" />
+    <Content Include="modules\manage\template\nav-list.html" />
+    <Content Include="modules\manage\template\type\type-list.html" />
     <Content Include="modules\plug\doT.js" />
     <Content Include="modules\plug\flexslider\css\flexslider.css" />
     <Content Include="modules\plug\flexslider\images\ad_ctr.png" />
@@ -266,8 +271,6 @@
     <Folder Include="Areas\Manage\Models\" />
     <Folder Include="Content\" />
     <Folder Include="Models\" />
-    <Folder Include="modules\manage\images\" />
-    <Folder Include="modules\manage\template\" />
     <Folder Include="modules\template\" />
   </ItemGroup>
   <ItemGroup>
@@ -324,6 +327,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Manage\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Manage\Views\Home\AddType.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

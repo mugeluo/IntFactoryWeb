@@ -1,16 +1,37 @@
 ﻿<html>
 <head>
-    <title>@ViewBag.Title</title>
+    <title>@ViewBag.Title</title>    
     <link href="/modules/css/base.css" rel="stylesheet" />
-    <link href="/modules/css/layout.css" rel="stylesheet" />
+    <link href="/modules/manage/css/layout.css" rel="stylesheet" />
     @RenderSection("css", false)
     
     
 </head>
 <body>
+    <header class="header">
+        <ul class="menu">
+            <li class="hover" data-id="0">
+                <a>分类模块</a>
+            </li>
+            <li data-id="1">
+                <a>详情描述</a>
+            </li>
+            <li data-id="2">
+                <a>系统设置</a>
+            </li>
+        </ul>
+    </header>
 
+    <nav class="nav-list">
+        <ul class="list">
+            
+        </ul>
+    </nav>
 
-    @RenderBody() 
+    <div class="main-content">
+        @RenderBody()
+    </div>
+     
 
 
 
