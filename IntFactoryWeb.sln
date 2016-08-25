@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntFactoryWeb", "IntFactoryWeb\IntFactoryWeb.csproj", "{7F4E09FB-5F0C-423A-B272-7732023066D3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntFactoryManage", "IntFactoryManage\IntFactoryManage.csproj", "{99E93186-E9EA-4F31-86CD-EDAD76836DCF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{7F4E09FB-5F0C-423A-B272-7732023066D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F4E09FB-5F0C-423A-B272-7732023066D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F4E09FB-5F0C-423A-B272-7732023066D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99E93186-E9EA-4F31-86CD-EDAD76836DCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99E93186-E9EA-4F31-86CD-EDAD76836DCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99E93186-E9EA-4F31-86CD-EDAD76836DCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99E93186-E9EA-4F31-86CD-EDAD76836DCF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
