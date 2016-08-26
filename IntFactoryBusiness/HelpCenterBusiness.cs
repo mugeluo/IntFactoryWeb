@@ -54,10 +54,16 @@ namespace IntFactoryBusiness
             return HelpCenterDAL.BaseProvider.InsertUsers(UserID, Acccount, Password);
         }
 
-        public bool InsertType( string Name, string Types, string UserID)
+        public bool InsertType(string Name, string Types, string UserID)
         {
             var TypeID = Guid.NewGuid().ToString().ToLower();
             return HelpCenterDAL.BaseProvider.InsertType(TypeID, Name, Types, UserID);
+        }
+
+        public bool InsertContent(string TypeID, string Title, string Content, string UserID)
+        {
+            var HelpID = Guid.NewGuid().ToString().ToLower();
+            return HelpCenterDAL.BaseProvider.InsertContent(HelpID,TypeID, Title, Content, UserID);
         }
 
         #endregion

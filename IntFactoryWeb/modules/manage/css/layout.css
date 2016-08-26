@@ -36,8 +36,23 @@ input[type="file"] > input[type="button"]::-moz-focus-inner{padding:0;border:non
 .header .menu::after{display:block;content:"";clear:both;}
 .menu .hover a{color:#fff;border-bottom:3px solid #fff;padding-bottom:10px;}
 
-.nav-list { width:180px;position:fixed;left:0;top:50px;height:100%;background-color:#fff;opacity:0.9;box-shadow:0 0 5px #ccc;}
-.nav-list .list li{text-align:center;cursor:pointer;line-height:50px;}
-.nav-list .list li:hover{background-color:#f2f4f8 }
+nav { width:180px; position:fixed; left:0; top:50px; height:100%; background-color:#fff; opacity:0.9; box-shadow:0 0 5px #ccc;}
+nav .controller { border-top:solid 1px #eee; padding:5px 0; }
+nav .controller-box {  height:42px; cursor:pointer; }
+nav .controller-name { height:40px; cursor:pointer; text-align:center; }
+nav .controller .open { border-left:solid 6px #999; border-top:solid 6px transparent ;border-bottom:solid 6px transparent; 
+                             width:0px; height:0px; margin:14px 0 0 45px; transform:rotate(0deg);}
+nav .controller-box .name{ font-size:15px; line-height:40px; color:#666; display:inline-block; padding-left:10px; }
+nav .controller-box .point { width:6px; height:6px; border-radius:3px; background-color:red; float:left; display:inline-block; margin-top:12px; margin-left:3px; }
+nav .controller .rotate { transform:rotate(90deg); }
+nav .action-box {}
+nav .action-box .action {  height:40px; line-height:40px;}
+nav .action-box a { width:100%; display:inline-block; color:#666; text-align:center; height:40px;}
+nav .action-box a .name{ position:relative;display:inline-block; height:40px; font-size:13px;}
+nav .action-box .action:hover { background-color:#ccc; }
+nav .action-box .action:hover a,nav .action-box .select a{ color:#4a98e7; text-decoration:none; }
+nav .action-box .select { background-color:#f2f4f8 !important; height:40px; line-height:40px; }
+nav .action-box .point { width:6px; height:6px; border-radius:3px; background-color:red; display:inline-block; position:absolute; top:12px; right:-10px; }
 
-.main-content { margin:50px 0px 50px 180px;}
+
+.main-content { padding:50px 0px 50px 180px;}

@@ -4,32 +4,53 @@
 
     var ObjectJS = {};
 
-    ObjectJS.init = function () {
-        ObjectJS.bindEvent();
-        ObjectJS.GetData(0);
+    ObjectJS.init = function (name) {
+        ObjectJS.bindEvent(name);
     };
 
-    ObjectJS.bindEvent = function () {
-        $(".menu li").click(function () {            
-            var _this = $(this),id=_this.data("id");
-            if (!_this.hasClass("hvoer")) {
-                _this.addClass("hover").siblings().removeClass("hover");
-                ObjectJS.GetData(id);
+    ObjectJS.bindEvent = function (name) {
+        var _self = this;
+        $(".menu ." + name).addClass("hover").find("a").css("color", "#fff");
+        if (name == "Index") {
+            $(".nav-list").hide();
+        }
+
+        $(".controller-box").click(function () {
+            var _this = $(this).parent();
+            if (!_this.hasClass("select")) {
+                _self.setRotateR(_this.find(".open"), 0, 90);
+                _this.addClass("select");
+                _this.find(".action-box").slideDown(200);
+            } else {
+                _self.setRotateL(_this.find(".open"), 90, 0);
+                _this.removeClass("select");
+                _this.find(".action-box").slideUp(200);
             }
-            
-        });
+        });      
     };
 
-    ObjectJS.GetData = function (id) {        
-        Global.post("/Manage/Home/GetTypes", {}, function (data) {
-            if (data.items.length > 0) {
-                $(".list").empty();
-                Dot.exec("/manage/template/nav-list.html", function (template) {
-                    var innerHtml = template(data.items);
-                    $(".list").append(innerHtml);
-                })
-            }
-        })
+    //旋转按钮（顺时针）
+    ObjectJS.setRotateR = function (obj, i, v) {
+        var _self = this;
+        if (i < v) {
+            i += 3;
+            setTimeout(function () {
+                obj.css("transform", "rotate(" + i + "deg)");
+                _self.setRotateR(obj, i, v);
+            }, 5)
+        }
+    };
+
+    //旋转按钮(逆时针)
+    ObjectJS.setRotateL = function (obj, i, v) {
+        var _self = this;
+        if (i > v) {
+            i -= 3;
+            setTimeout(function () {
+                obj.css("transform", "rotate(" + i + "deg)");
+                _self.setRotateL(obj, i, v);
+            }, 5)
+        }
     };
 
     module.exports = ObjectJS;

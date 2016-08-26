@@ -1,0 +1,30 @@
+﻿.type-list { margin-top:60px;}
+.type-list::after{display:block;content:"";clear:both;}
+.type-list div:first-child{float:left;margin-left:30px;font-size:22px;}
+.type-list .add-type { border:0;padding:5px 10px;text-align:center;cursor:pointer;float:right;margin-right:30px;border-radius:3px;background-color:#4a98e7;}
+.type-list .add-type a{color:#fff;}
+.type-list .add-type:hover{background-color:#318ae4;}
+
+.category { width:700px;margin-left:80px;margin-top:50px;}
+.category tr td { border:1px solid #ccc;text-align:center;line-height:40px;}
+.category .update,.category .delete{cursor:pointer;}
+.category .update:hover,.category .delete:hover{color:#4a98e7}
+
+.btn-add { width:300px;text-align:center;border-radius:3px;width:50px;background-color:#4a98e7;color:#fff;padding:5px;margin-left:120px;cursor:pointer;}
+
+
+/*添加分类*/
+.addtype { margin-top:100px;text-align:center;width:300px;margin-left:50px;}
+.addtype li{margin-bottom:25px;line-height:25px;}
+
+.selector li { float:left;width:60px;margin-right:20px;}
+.selector::after { display:block;content:"";clear:both;}
+.selector .ico-radiobox {width: 20px;height: 20px;display: inline-block;background-color: #fff;border: solid 1px #ccc;text-align: center;border-radius: 11px;
+                         cursor: pointer;box-shadow: 0 0 2px #ddd inset;line-height: 20px !important;float:left;}
+.selector .hover span {background-color: #4a98e7;display: inline-block;height: 12px;width: 12px;border-radius: 6px;margin-top: 4px;}
+
+
+/*添加分类详情*/
+.add-details { margin-top:50px;margin-left:50px;}
+.add-details .details::after{display:block;content:"";clear:both;}
+.add-details .details li{margin-bottom:20px;} 

@@ -20,23 +20,7 @@ namespace IntFactoryWeb.Areas.Manage.Controllers
             return View();
         }
 
-        public ActionResult AddType()
-        {
-            return View();
-        }
-
         #region ajax
-
-        public JsonResult GetTypes() 
-        {
-            var list = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetTypes();
-            JsonDictionary.Add("items",list);
-            return new JsonResult
-            {
-                Data = JsonDictionary,
-                JsonRequestBehavior = JsonRequestBehavior.AllowGet
-            };
-        }
 
         public JsonResult InsertUsers(string Account,string Password)
         {
@@ -49,17 +33,7 @@ namespace IntFactoryWeb.Areas.Manage.Controllers
             };
         }
 
-        public JsonResult InsertType(string Name, string Types)
-        {
-            var UserID = "2faf2062-6f13-4d01-8187-d343eff27222";
-            var bl = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.InsertType(Name, Types, UserID);
-            JsonDictionary.Add("status", bl);
-            return new JsonResult
-            {
-                Data = JsonDictionary,
-                JsonRequestBehavior = JsonRequestBehavior.AllowGet
-            };
-        }
+
 
         #endregion
 

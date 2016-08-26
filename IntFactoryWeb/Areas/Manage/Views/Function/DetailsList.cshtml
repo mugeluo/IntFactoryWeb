@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "后台 | 详情列表";
+    ViewBag.Name = "Function";
+    ViewBag.navName = "details";    
+}
+@section css{    
+    <link href="/modules/manage/css/function/function.css" rel="stylesheet" />
+}
+@section scripts{
+    <script type="text/javascript">
+        seajs.use(["/modules/manage/scripts/function/function"], function (ObjectJS) {
+            ObjectJS.init('@ViewBag.navName');
+        });
+    </script>
+}
+
+1444

@@ -1,20 +1,2 @@
-﻿.type-list { margin-top:60px;}
-.type-list::after{display:block;content:"";clear:both;}
-.type-list div:first-child{float:left;margin-left:30px;font-size:22px;}
-.type-list .add-type { border:0;padding:5px 10px;text-align:center;cursor:pointer;float:right;margin-right:30px;border-radius:3px;background-color:#4a98e7;}
-.type-list .add-type a{color:#fff;}
-.type-list .add-type:hover{background-color:#318ae4;}
-
-.category { width:700px;margin-left:80px;margin-top:50px;}
-.category tr td { border:1px solid #ccc;text-align:center;line-height:40px;}
-.category .update,.category .delete{cursor:pointer;}
-.category .update:hover,.category .delete:hover{color:#4a98e7}
-
-
-
-/*添加分类*/
-.addtype { margin-top:100px;text-align:center;width:300px;margin-left:50px;}
-.addtype li{margin-bottom:25px;line-height:25px;}
-
-.btn-add-type { width:300px;text-align:center;}
+﻿
 

@@ -20,18 +20,6 @@
                 }
             })
         });
-
-        $(".btn-add-type").click(function () {
-            var acc = $(".name").val();
-            var pwd = $(".type").val();
-            Global.post("/Manage/Home/InsertType", { Name: acc, Types: pwd }, function (data) {
-                if (data.status) {
-                    alert("添加成功");
-                } else {
-                    alert("添加失败");
-                }
-            })
-        });
     };
 
     ObjectJS.getTypeList = function () {

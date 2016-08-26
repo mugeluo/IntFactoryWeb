@@ -3,29 +3,56 @@
     <title>@ViewBag.Title</title>    
     <link href="/modules/css/base.css" rel="stylesheet" />
     <link href="/modules/manage/css/layout.css" rel="stylesheet" />
-    @RenderSection("css", false)
-    
-    
+    @RenderSection("css", false)    
 </head>
 <body>
     <header class="header">
         <ul class="menu">
-            <li class="hover" data-id="0">
-                <a>分类模块</a>
+            <li class="Index">
+                <a href="/Manage/Home/Index">首页</a>
             </li>
-            <li data-id="1">
-                <a>详情描述</a>
-            </li>
-            <li data-id="2">
+            <li class="Function">
+                <a href="/Manage/Function/Function">帮助中心</a>
+            </li>            
+            <li class="Setting">
                 <a>系统设置</a>
             </li>
         </ul>
     </header>
 
     <nav class="nav-list">
-        <ul class="list">
-            
-        </ul>
+        <div class="controller select" data-code="102010000">
+            <div class="controller-box">
+                <div class="controller-name">
+                    <span class="open left rotate" style="transform: rotate(90deg);"></span>
+                    <span class="name left">分类管理</span>
+                </div>
+            </div>
+            <ul class="action-box" style="display: block;">
+                <li class="action list-type">
+                    <a href="/Manage/Function/Function"><span class="name">分类列表</span></a>
+                </li>
+                <li class="action add-type">
+                    <a href="/Manage/Function/AddType"><span class="name">分类添加</span></a>
+                </li>
+            </ul>
+        </div>
+        <div class="controller select" data-code="102010000">
+            <div class="controller-box">
+                <div class="controller-name">
+                    <span class="open left rotate" style="transform: rotate(90deg);"></span>
+                    <span class="name left">内容管理</span>
+                </div>
+            </div>
+            <ul class="action-box" style="display: block;">
+                <li class="action details">
+                    <a href="/Manage/Function/DetailsList"><span class="name">内容列表</span></a>
+                </li>
+                <li class="action add-type-details">
+                    <a href="/Manage/Function/FunctionDetails"><span class="name">内容添加</span></a>
+                </li>
+            </ul>
+        </div>
     </nav>
 
     <div class="main-content">
@@ -42,7 +69,7 @@
     <script src="/Scripts/sea-config.js"></script>    
     <script type="text/javascript">
         seajs.use(["/modules/manage/scripts/layout"], function (ObjectJS) {
-            ObjectJS.init();
+            ObjectJS.init('@ViewBag.Name');
         });
     </script>
     @RenderSection("scripts",false)

@@ -123,6 +123,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Manage\Controllers\BaseController.cs" />
+    <Compile Include="Areas\Manage\Controllers\FunctionController.cs" />
     <Compile Include="Areas\Manage\Controllers\HomeController.cs" />
     <Compile Include="Areas\Manage\ManageAreaRegistration.cs" />
     <Compile Include="Controllers\AboutController.cs" />
@@ -219,13 +220,14 @@
     <Content Include="modules\images\ zngc-4.png" />
     <Content Include="modules\images\ zngc-5.png" />
     <Content Include="modules\images\ zngc-6.png" />
-    <Content Include="modules\manage\css\index.css" />
+    <Content Include="modules\manage\css\function\function.css" />
+    <Content Include="modules\manage\css\home\index.css" />
     <Content Include="modules\manage\css\layout.css" />
     <Content Include="modules\manage\images\ico-loading.gif" />
     <Content Include="modules\manage\images\img-noimg.png" />
+    <Content Include="modules\manage\scripts\function\function.js" />
     <Content Include="modules\manage\scripts\index.js" />
     <Content Include="modules\manage\scripts\layout.js" />
-    <Content Include="modules\manage\template\nav-list.html" />
     <Content Include="modules\manage\template\type\type-list.html" />
     <Content Include="modules\plug\doT.js" />
     <Content Include="modules\plug\flexslider\css\flexslider.css" />
@@ -329,7 +331,16 @@
     <Content Include="Areas\Manage\Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\Manage\Views\Home\AddType.cshtml" />
+    <Content Include="Areas\Manage\Views\Function\Function.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Manage\Views\Function\AddType.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Manage\Views\Function\FunctionDetails.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Manage\Views\Function\DetailsList.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

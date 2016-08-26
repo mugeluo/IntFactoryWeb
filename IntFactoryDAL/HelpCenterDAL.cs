@@ -49,6 +49,14 @@ namespace IntFactoryDAL
             return num == 1 ? true : false;
         }
 
+        public bool InsertContent(string HelpID,string TypeID,string Title,string Content,string UserID)
+        {
+            string sqlTxt = string.Empty;
+            sqlTxt = "insert into Help (HelpID,TypeID,Title,Content,UserID) values('" + HelpID + "','" + TypeID + "','" + Title + "','" + Content + "','" + UserID + "')";
+            var num = ExecuteNonQuery(sqlTxt);
+            return num == 1 ? true : false;
+        }
+
         #endregion
 
         #region 编辑
