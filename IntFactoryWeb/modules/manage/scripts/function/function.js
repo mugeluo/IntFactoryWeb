@@ -5,14 +5,18 @@
     var ObjectJS = {};
     ObjectJS.type = 0;
     ObjectJS.init = function (navName) {
-        ObjectJS.bindEvent(navName);
-        ObjectJS.getTypeList();
+        ObjectJS.bindEvent(navName);        
     };
 
-    ObjectJS.bindEvent = function (navName) {
-        
+    ObjectJS.bindEvent = function (navName) {        
         $(".controller .action-box .action").removeClass("select");
         $(".controller .action-box ." + navName).addClass("select")
+
+        if (navName == "list-type") {
+            ObjectJS.getTypeList();
+        } else if (navName == "details") {
+            ObjectJS.getContentList();
+        }
 
         $(".selector li i").click(function () {
             var _this = $(this), id = _this.data("id");
@@ -45,7 +49,7 @@
             if (title=="" || desc=="") {
                 alert("内容不能为空");
                 return;
-            }
+            }            
             Global.post("/Manage/Function/InsertContent", { TypeID: typeID, Title: title, desc: desc }, function (data) {
                 if (data.status) {
                     alert("添加成功");
@@ -53,9 +57,7 @@
                     alert("添加失败");
                 }
             })
-        });
-        
-        
+        });       
     };
 
     ObjectJS.getTypeList = function () {
@@ -67,6 +69,15 @@
                 })
             }
         })
+    }
+
+    ObjectJS.getContentList = function () {
+        Global.post("/Manage/Function/GetContent", {}, function (data) {
+            Dot.exec("/manage/template/type/type-details-list.html",function(temp){
+                var innerHtml = temp(data.items);
+                $(".category-details").append(innerHtml);
+            })
+        });
     }
 
     module.exports = ObjectJS;

@@ -228,6 +228,7 @@
     <Content Include="modules\manage\scripts\function\function.js" />
     <Content Include="modules\manage\scripts\index.js" />
     <Content Include="modules\manage\scripts\layout.js" />
+    <Content Include="modules\manage\template\type\type-details-list.html" />
     <Content Include="modules\manage\template\type\type-list.html" />
     <Content Include="modules\plug\doT.js" />
     <Content Include="modules\plug\flexslider\css\flexslider.css" />

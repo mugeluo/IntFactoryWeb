@@ -13,27 +13,40 @@
         });
     </script>
 }
-<a style="margin-top:20px;margin-left:50px;font-size:18px;display:block;color:#4a98e7;" href="/Manage/Function/Function">返回列表</a>
-<ul class="addtype">
-    <li>
-        <div class="left">分类:</div><input type="text" class="name" />
-    </li>
-    <li>
-        <div class="left">类型:</div>
-        <ul class="selector mLeft80">
+<div class="header-box">
+    <a href="/Manage/Function/Function" class="header-title left">返回列表</a>   
+</div>
+
+<div class="content-body">
+    <div class="add-details">
+        <ul class="addtype">            
             <li>
-                <i class="ico-radiobox hover" data-id="0"><span></span></i>
-                <div>功能</div>
+                <div class="left">类型:</div>
+                <ul class="selector mLeft80">
+                    <li>
+                        <i class="ico-radiobox hover" data-id="0"><span></span></i>
+                        <div>功能</div>
+                    </li>
+                    <li>
+                        <i class="ico-radiobox" data-id="1"><span></span></i>
+                        <div>问题</div>
+                    </li>
+                    <li style="margin:0;">
+                        <i class="ico-radiobox" data-id="2"><span></span></i>
+                        <div>指引</div>
+                    </li>
+                </ul>
             </li>
             <li>
-                <i class="ico-radiobox" data-id="1"><span></span></i>
-                <div>问题</div>
+                <div class="left">分类:</div><input type="text" class="name" />
             </li>
-            <li style="margin:0;">
-                <i class="ico-radiobox" data-id="2"><span></span></i>
-                <div>指引</div>
+            <li>
+                <div class="left">附件：</div>
+                <div>
+                    <span>图片上传</span>
+                </div>
             </li>
-        </ul>
-    </li>
-</ul>  
-<div class="btn-add add-category">添加</div>
+        </ul>  
+        <div class="btn-add add-category">添加</div>
+    </div>
+</div>

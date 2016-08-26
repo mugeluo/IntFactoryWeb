@@ -1,6 +1,6 @@
 ﻿/*全局样式*/
 * { padding: 0; margin: 0; font-size:14px; color:#333; font-family:'Microsoft YaHei' !important; }/*033d91*/
-body {font-family:'Microsoft YaHei' !important; }
+body {font-family:'Microsoft YaHei' !important;background-color:#f2f4f8; }
 li{ list-style-type:none;}
 a {  text-decoration: none;}
 
@@ -56,3 +56,4 @@ nav .action-box .point { width:6px; height:6px; border-radius:3px; background-co
 
 
 .main-content { padding:50px 0px 50px 180px;}
+.main-content::after{display:block;content:"";clear:both;}

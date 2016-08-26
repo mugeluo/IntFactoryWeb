@@ -14,14 +14,21 @@ namespace IntFactoryEntity
 
         public string TypeID { get; set; }
 
+        public TypeEntity Types { get; set; }
+
         public string Title { get; set; }
 
-        public string Contetnt { get; set; }
+        public string Content { get; set; }
 
         public DateTime CreatTime { get; set; }
 
         public string UserID { get; set; }
 
         public int Number { get; set; }
+
+        public void FillData(System.Data.DataRow dr)
+        {
+            dr.FillData(this);
+        }
     }
 }

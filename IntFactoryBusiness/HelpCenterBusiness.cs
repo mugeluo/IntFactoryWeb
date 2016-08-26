@@ -30,6 +30,17 @@ namespace IntFactoryBusiness
             }
             return list;
         }
+
+        public TypeEntity GetTypesByTypeID(string TypeID)
+        {
+            DataSet ds = HelpCenterDAL.BaseProvider.GetTypesByTypeID(TypeID);
+            TypeEntity model = new TypeEntity();
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                model.FillData(dr);                
+            }
+            return model;
+        }
         
         public List<TypeEntity> GetTypes()
         {
@@ -39,6 +50,21 @@ namespace IntFactoryBusiness
             {
                 TypeEntity model = new TypeEntity();
                 model.FillData(dr);
+                list.Add(model);
+            }
+            return list;
+        }
+
+        public List<HelpEntity> GetContent()
+        {
+            List<HelpEntity> list = new List<HelpEntity>();
+            DataTable dt = HelpCenterDAL.BaseProvider.GetContent();
+            foreach (DataRow dr in dt.Rows)
+            {
+                HelpEntity model = new HelpEntity();
+                model.FillData(dr);
+
+                model.Types = HelpCenterBusiness.BaseBusiness.GetTypesByTypeID(model.TypeID);
                 list.Add(model);
             }
             return list;

@@ -2,7 +2,7 @@
     var list = (List<IntFactoryEntity.TypeEntity>)ViewBag.List;
     ViewBag.Title = "后台 | 添加内容";
     ViewBag.Name = "Function";
-    ViewBag.navName = "add-type-details";
+    ViewBag.navName = "type-details";
 }
 
 @section css{    
@@ -15,29 +15,31 @@
         });
     </script>
 }
-<a style="margin-top:20px;margin-left:50px;font-size:18px;display:block;color:#4a98e7;" href="/Manage/Function/DetailsList">返回列表</a>
-<div class="add-details">
-    <ul class="details">
-        <li>
-            <div class="left mRight20">分类类型：</div>
-            <select>
-                @foreach (var item in list)
-                {
-                    <option data-id="@(item.TypeID)">@(item.Name)</option>
-                }        
-            </select>
-        </li>
-        <li>
-            <div class="left mRight50">标题：</div>
-            <input type="text" class="title" />
-        </li>
-        <li>
-            <div class="left mRight50">描述：</div>
-            <textarea class="desc"></textarea>
-        </li>
-    </ul>
-    <div class="btn-add add-type-details">添加</div>
-
-
+<div class="header-box">
+    <a href="/Manage/Function/DetailsList" class="header-title left">返回列表</a>   
+</div>
+<div class="content-body">
+    <div class="add-details">
+        <ul class="details">
+            <li>
+                <div class="left mRight20">分类类型：</div>
+                <select>
+                    @foreach (var item in list)
+                    {
+                        <option data-id="@(item.TypeID)">@(item.Name)</option>
+                    }        
+                </select>
+            </li>
+            <li>
+                <div class="left mRight50">标题：</div>
+                <input type="text" class="title" />
+            </li>
+            <li>
+                <div class="left mRight50">描述：</div>
+                <textarea class="desc"></textarea>
+            </li>
+        </ul>
+        <div class="btn-add add-type-details">添加</div>
+    </div>
 </div>
 

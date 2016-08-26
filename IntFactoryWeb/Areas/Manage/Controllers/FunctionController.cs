@@ -43,7 +43,18 @@ namespace IntFactoryWeb.Areas.Manage.Controllers
                 Data = JsonDictionary,
                 JsonRequestBehavior = JsonRequestBehavior.AllowGet
             };
-        }        
+        }
+
+        public JsonResult GetContent()
+        {
+            var list = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetContent();
+            JsonDictionary.Add("items", list);
+            return new JsonResult
+            {
+                Data = JsonDictionary,
+                JsonRequestBehavior = JsonRequestBehavior.AllowGet
+            };
+        }
 
         public JsonResult InsertType(string Name, string Types)
         {

@@ -29,6 +29,22 @@ namespace IntFactoryDAL
             return ds;
         }
 
+        public DataSet GetTypesByTypeID(string TypeID)
+        {
+            string sqlTxt = string.Empty;
+            sqlTxt = "select * from Type where TypeID='" + TypeID + "'";
+            DataSet ds = GetDataSet(sqlTxt);
+            return ds;
+        }
+
+        public DataTable GetContent()
+        {
+            string sqlTxt = string.Empty;
+            sqlTxt = "select * from Help";
+            DataTable dt = GetDataTable(sqlTxt);
+            return dt;
+        }
+
         #endregion
 
         #region 添加
