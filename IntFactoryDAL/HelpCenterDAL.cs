@@ -16,7 +16,7 @@ namespace IntFactoryDAL
         public DataSet GetUesrs()
         {
             string sqlTxt = string.Empty;
-            sqlTxt = "select * from Users";
+            sqlTxt = "select * from Users order by ID";
             DataSet ds = GetDataSet(sqlTxt);
             return ds;
         }
@@ -24,7 +24,7 @@ namespace IntFactoryDAL
         public DataSet GetTypes()
         {
             string sqlTxt = string.Empty;
-            sqlTxt = "select * from Type";
+            sqlTxt = "select * from Type order by ID";
             DataSet ds = GetDataSet(sqlTxt);
             return ds;
         }
@@ -40,7 +40,7 @@ namespace IntFactoryDAL
         public DataTable GetContent()
         {
             string sqlTxt = string.Empty;
-            sqlTxt = "select * from Help";
+            sqlTxt = "select * from Help order by ID";
             DataTable dt = GetDataTable(sqlTxt);
             return dt;
         }

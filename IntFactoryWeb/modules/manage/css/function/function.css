@@ -9,19 +9,19 @@
 
 
 
-.btn-add { width:300px;text-align:center;border-radius:3px;width:50px;background-color:#4a98e7;color:#fff;padding:5px;margin-left:95px;cursor:pointer;}
+.btn-add { width:300px;text-align:center;border-radius:3px;width:50px;background-color:#4a98e7;color:#fff;padding:5px;cursor:pointer;}
 
 
 /*添加分类*/
 .addtype { text-align:center;width:300px;}
-.addtype li{margin-bottom:10px;line-height:25px;}
+.addtype .items{margin-bottom:30px;line-height:25px;}
 
 .selector li { float:left;width:60px;margin-right:20px;}
 .selector::after { display:block;content:"";clear:both;}
 .selector .ico-radiobox {width: 20px;height: 20px;display: inline-block;background-color: #fff;border: solid 1px #ccc;text-align: center;border-radius: 11px;
                          cursor: pointer;box-shadow: 0 0 2px #ddd inset;line-height: 20px !important;float:left;}
 .selector .hover span {background-color: #4a98e7;display: inline-block;height: 12px;width: 12px;border-radius: 6px;margin-top: 4px;}
-.img-upload {background-color:#4a98e7;padding:5px;width:60px; }
+.img-upload {background-color: #4a98e7;padding: 5px;border-radius: 3px;color: #fff;cursor:pointer; }
 
 .content-body{ overflow:auto; background-color:#fff; clear:both; margin:0 20px; padding:10px 0; box-shadow:0px 10px 10px #ddd; }
 

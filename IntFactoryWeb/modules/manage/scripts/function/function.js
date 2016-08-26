@@ -28,7 +28,7 @@
         });
 
         $(".add-category").click(function () {
-            var txt = $(".name").val();
+            var txt = $(".type").val();
             if (txt=="") {
                 alert("分类不能为空");
                 return;
