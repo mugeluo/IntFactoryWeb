@@ -10,7 +10,7 @@ input[type="text"]:focus { border:solid 1px #318ae4; }
 input[type="password"] { border:solid 1px #ccc; border-radius:2px;height:25px; line-height:25px; padding:0 5px; }
 input[type="password"]:focus { border:solid 1px #318ae4; }
 
-textarea { min-height: 60px; border:solid 1px #ccc; border-radius:2px;text-indent:3px;resize:none;}
+textarea { min-height: 60px; border:solid 1px #ccc; border-radius:2px;resize:none;padding:2px 5px;}
 textarea:focus { border:solid 1px #666;}
 table { border-collapse:collapse;}
 select{ border:solid 1px #ccc; border-radius:2px; height:25px; line-height:25px; padding:0 5px;}
@@ -57,3 +57,18 @@ nav .action-box .point { width:6px; height:6px; border-radius:3px; background-co
 
 .main-content { padding:50px 0px 50px 180px;}
 .main-content::after{display:block;content:"";clear:both;}
+
+/*alert 弹出层样式*/
+.alert-layer {position: fixed; z-index:99998; top:0; left:0;right:0; bottom:0; background-color:#666; opacity:0.6;}
+
+.alert { border: 1px solid #2F73B8; background-color: #fff; font-size: 13px; position: fixed; top:35%; z-index: 99999; 
+         min-width: 330px; max-width:450px; box-shadow: 0 0 2px #666; overflow:auto; }
+
+.alert .alert-header { height:30px;line-height:30px; font-weight:bold; font-size:14px; color:#fff; text-indent:15px; background-color:#2F73B8;}
+.alert .alert-wrap { line-height:20px; margin:20px 15px;word-wrap: break-word;  word-break:break-all; text-align:center; }
+.alert .alert-bottom { height:25px; margin:10px 15px 15px; text-align:center; }
+
+.alert .confirm { padding:5px 10px; background-color:#4a98e7; color:#fff; border:none; cursor:pointer; display:inline-block; border-radius:2px; }
+.alert .confirm:hover {  background-color:#2F73B8;  }
+.alert .close { padding:5px 10px; background-color:#ccc; color:#666; border:none; cursor:pointer; display:inline-block; border-radius:2px; }
+.alert .close:hover {  background-color:#999; color:#fff; }

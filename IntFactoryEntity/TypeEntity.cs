@@ -18,9 +18,11 @@ namespace IntFactoryEntity
 
         public string Img { get; set; }
 
-        public string Type { get; set; }
+        public string Types { get; set; }
 
         public string UserID { get; set; }
+
+        public int Status { get; set; }
 
         public void FillData(System.Data.DataRow dr)
         {

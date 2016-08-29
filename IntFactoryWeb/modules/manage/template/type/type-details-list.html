@@ -2,15 +2,14 @@
 	for(var i=0, j=$data.length; i < j; i++){
 	var item = $data[i];
 %}
-<tr class="list-item" data-id="{%=item.HelpID%}">
-    <td class="center">{%=item.Title%}</td>
-    <!--<td class="center">{%=item.Content%}</td>-->    
+<tr class="list-item">
+    <td class="center">{%=item.Title%}</td> 
     <td class="center">{%=item.Types.Name%}</td>
     <td class="center">{%=item.Number%}</td>
     <td class="center">{%=item.CreatTime.toDate("yyyy-MM-dd hh:mm:ss")%}</td>
-    <td class="center" data-id="{%=item.TypeID%}">
-        <span class="update">编辑</span>
-        <span class="delete">删除</span>
+    <td class="center operation">
+        <span class="update" data-id="{%=item.HelpID%}" data-typeid="{%=item.TypeID%}">编辑</span>
+        <span class="delete" data-id="{%=item.HelpID%}">删除</span>
     </td>
     
 </tr>

@@ -27,8 +27,8 @@
 
 /*内容表格样式*/
 .table-list { width: 100%; border-spacing: 0px;}
-.table-list .update,.table-list .delete{cursor:pointer;}
-.table-list .update:hover,.table-list .delete:hover{color:#4a98e7}
+.table-list .operation span{cursor:pointer;}
+.table-list .operation span:hover{color:#4a98e7}
 .table-list .tr-header{ height:35px; text-align:center; }
 .table-list .tr-header td{ height:35px; border-bottom:solid 2px #e6e6e6; font-size:13px; font-weight:bold; color:#666; padding:0 5px;
                            white-space:nowrap; overflow: hidden; text-overflow:ellipsis; }
@@ -54,3 +54,7 @@
 .add-details { margin:30px 0 30px 50px;}
 .add-details .details::after{display:block;content:"";clear:both;}
 .add-details .details li{margin-bottom:20px;} 
+
+
+.update-details .details::after{display:block;content:"";clear:both;}
+.update-details .details li { margin-bottom: 20px;margin-top:10px; }

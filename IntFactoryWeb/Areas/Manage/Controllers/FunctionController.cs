@@ -47,8 +47,10 @@ namespace IntFactoryWeb.Areas.Manage.Controllers
 
         public JsonResult GetContent()
         {
-            var list = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetContent();
-            JsonDictionary.Add("items", list);
+            var list = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetTypes();
+            var obj = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetContent();
+            JsonDictionary.Add("items", obj);
+            JsonDictionary.Add("list", list);
             return new JsonResult
             {
                 Data = JsonDictionary,
@@ -77,6 +79,50 @@ namespace IntFactoryWeb.Areas.Manage.Controllers
             {
                 Data = JsonDictionary,
                 JsonRequestBehavior = JsonRequestBehavior.AllowGet                
+            };
+        }
+
+        public JsonResult UpdateType(string TypeID,string Name,string Types)
+        {
+            var bl = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.UpdateType(TypeID, Name, Types);
+            JsonDictionary.Add("status", bl);
+            return new JsonResult
+            {
+                Data = JsonDictionary,
+                JsonRequestBehavior = JsonRequestBehavior.AllowGet
+            };
+        }
+
+        public JsonResult UpdateContent(string HelpID, string Title, string Content, string TypeID)
+        {
+            var bl = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.UpdateContent(HelpID, Title, Content, TypeID);
+            JsonDictionary.Add("status", bl);
+            return new JsonResult
+            {
+                Data = JsonDictionary,
+                JsonRequestBehavior = JsonRequestBehavior.AllowGet
+            };
+        }
+
+        public JsonResult DeleteType(string TypeID)
+        {
+            var bl = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.DeleteType(TypeID);
+            JsonDictionary.Add("status",bl);
+            return new JsonResult
+            {
+                Data = JsonDictionary,
+                JsonRequestBehavior = JsonRequestBehavior.AllowGet
+            };
+        }
+
+        public JsonResult DeleteContent(string HelpID)
+        {
+            var bl = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.DeleteContent(HelpID);
+            JsonDictionary.Add("status", bl);
+            return new JsonResult
+            {
+                Data = JsonDictionary,
+                JsonRequestBehavior = JsonRequestBehavior.AllowGet
             };
         }
 
