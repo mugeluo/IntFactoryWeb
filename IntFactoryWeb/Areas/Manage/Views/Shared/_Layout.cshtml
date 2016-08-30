@@ -3,6 +3,7 @@
     <title>@ViewBag.Title</title>    
     <link href="/modules/css/base.css" rel="stylesheet" />
     <link href="/modules/manage/css/layout.css" rel="stylesheet" />
+    <link href="/modules/manage/css/iconfont/iconfont.css" rel="stylesheet" />
     @RenderSection("css", false)    
 </head>
 <body>
@@ -15,44 +16,61 @@
                 <a href="/Manage/Function/Function">帮助中心</a>
             </li>            
             <li class="Setting">
-                <a>系统设置</a>
+                <a href="/Manage/System/Users">系统设置</a>
             </li>
         </ul>
     </header>
 
     <nav class="nav-list">
-        <div class="controller select" data-code="102010000">
+        <div class="controller select functions">
             <div class="controller-box">
                 <div class="controller-name">
                     <span class="open left rotate" style="transform: rotate(90deg);"></span>
-                    <span class="name left">分类管理</span>
+                    <span class="name left">模块管理</span>
                 </div>
             </div>
             <ul class="action-box" style="display: block;">
-                <li class="action list-type">
-                    <a href="/Manage/Function/Function"><span class="name">分类列表</span></a>
-                </li>
                 <li class="action add-type">
                     <a href="/Manage/Function/AddType"><span class="name">分类添加</span></a>
                 </li>
+                <li class="action list-type">
+                    <a href="/Manage/Function/Function"><span class="name">分类列表</span></a>
+                </li>                
             </ul>
         </div>
-        <div class="controller select" data-code="102010000">
+        <div class="controller select functions">
             <div class="controller-box">
                 <div class="controller-name">
                     <span class="open left rotate" style="transform: rotate(90deg);"></span>
                     <span class="name left">内容管理</span>
                 </div>
             </div>
-            <ul class="action-box" style="display: block;">
-                <li class="action details">
-                    <a href="/Manage/Function/DetailsList"><span class="name">内容列表</span></a>
-                </li>
+            <ul class="action-box" style="display: block;">                
                 <li class="action type-details">
                     <a href="/Manage/Function/FunctionDetails"><span class="name">内容添加</span></a>
                 </li>
+                <li class="action details-list">
+                    <a href="/Manage/Function/DetailsList"><span class="name">内容列表</span></a>
+                </li>
             </ul>
         </div>
+        <div class="controller select setting">
+            <div class="controller-box">
+                <div class="controller-name">
+                    <span class="open left rotate" style="transform: rotate(90deg);"></span>
+                    <span class="name left">管理员管理</span>
+                </div>
+            </div>
+            <ul class="action-box" style="display: block;">
+                <li class="action userlist">
+                    <a href="/Manage/System/Users"><span class="name">管理员列表</span></a>
+                </li>
+                <li class="action add-users">
+                    <a href="/Manage/System/AddUsers"><span class="name">管理员添加</span></a>
+                </li>
+            </ul>
+        </div>
+
     </nav>
 
     <div class="main-content">

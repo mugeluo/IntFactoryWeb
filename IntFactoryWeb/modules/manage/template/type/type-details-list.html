@@ -6,10 +6,10 @@
     <td class="center">{%=item.Title%}</td> 
     <td class="center">{%=item.Types.Name%}</td>
     <td class="center">{%=item.Number%}</td>
-    <td class="center">{%=item.CreatTime.toDate("yyyy-MM-dd hh:mm:ss")%}</td>
+    <td class="center">{%=item.CreateTime.toDate("yyyy-MM-dd hh:mm:ss")%}</td>
     <td class="center operation">
-        <span class="update" data-id="{%=item.HelpID%}" data-typeid="{%=item.TypeID%}">编辑</span>
-        <span class="delete" data-id="{%=item.HelpID%}">删除</span>
+        <span class="update iconfont" data-id="{%=item.HelpID%}" data-typeid="{%=item.TypeID%}"></span>
+        <span class="delete iconfont mLeft20 font20" data-id="{%=item.HelpID%}"></span>
     </td>
     
 </tr>

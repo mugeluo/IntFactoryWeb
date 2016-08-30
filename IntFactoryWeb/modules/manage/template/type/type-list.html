@@ -2,7 +2,7 @@
      for(var i=0,j=$data.length; i < j ; i++){ 
         var item=$data[i];
 %}
-<tr>
+<tr class="lists">
     <td class="center"><img src='{%=item.Img==""?"/modules/manage/images/img-noimg.png":item.Img%}' /></td>
     <td class="center">
         <span class="span span-name">{%=item.Name%}</span>
@@ -25,12 +25,10 @@
             </li>
         </ul>
     </td>
-    <td class="center">{%=item.CreateTime.toDate("yyyy-MM-dd hh:mm:ss")%}</td>
+    <td class="center">{%=item.CreateTime.toDate("yyyy-MM-dd hh:mm:ss")%}</td>    
     <td class="center operation" data-id="{%=item.TypeID%}">
-        <span class="update" data-id="{%=item.TypeID%}">编辑</span>
-        <span class="delete" data-id="{%=item.TypeID%}">删除</span>
-        <span class="save hide" data-id="{%=item.TypeID%}">保存</span>
-        <span class="cancel hide">取消</span>
+        <span class="update iconfont" data-id="{%=item.TypeID%}"></span>
+        <span class="delete iconfont font20 mLeft20" data-id="{%=item.TypeID%}"></span>
     </td>
 </tr>
 {% } %}

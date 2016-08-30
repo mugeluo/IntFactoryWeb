@@ -24,6 +24,10 @@ namespace IntFactoryEntity
 
         public int Status { get; set; }
 
+        public int PageSize { get; set; }
+
+        public int PageIndex { get; set; }
+
         public void FillData(System.Data.DataRow dr)
         {
             dr.FillData(this);

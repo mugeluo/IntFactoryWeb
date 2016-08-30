@@ -20,13 +20,18 @@ namespace IntFactoryEntity
 
         public string Content { get; set; }
 
-        public DateTime CreatTime { get; set; }
+        public DateTime CreateTime { get; set; }
 
         public string UserID { get; set; }
 
         public int Number { get; set; }
 
         public int Status { get; set; }
+
+        public int PageSize { get; set; }
+
+        public int PageIndex { get; set; }
+
 
         public void FillData(System.Data.DataRow dr)
         {

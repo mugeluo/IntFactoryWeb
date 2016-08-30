@@ -21,28 +21,64 @@ namespace IntFactoryDAL
             return ds;
         }
 
-        public DataSet GetTypes()
+        public DataSet GetTypes(int pageSize, int pageIndex, ref int totalCount, ref int pageCount)
+        {
+            string tableName = "Type";
+            string key = "TypeID";
+            SqlParameter[] param ={ new SqlParameter("@totalCount",totalCount),
+                                    new SqlParameter("@pageCount",pageCount),
+                                    new SqlParameter("@tableName",tableName),
+                                    new SqlParameter("@key",key),
+                                    new SqlParameter("@pageSize",pageSize),
+                                    new SqlParameter("@pageIndex",pageIndex)                                    
+                                 };
+            param[0].Value = totalCount;
+            param[1].Value = pageCount;
+
+            param[0].Direction = ParameterDirection.InputOutput;
+            param[1].Direction = ParameterDirection.InputOutput;
+            DataSet ds = GetDataSet("P_GetTypeList", param, CommandType.StoredProcedure);
+            totalCount = Convert.ToInt32(param[0].Value);
+            pageCount = Convert.ToInt32(param[1].Value);
+            return ds;
+        }
+
+        public DataSet GetTypeList()
         {
             string sqlTxt = string.Empty;
             sqlTxt = "select * from Type  where Status<>9";
-            DataSet ds = GetDataSet(sqlTxt);
+            DataSet ds = GetDataSet(sqlTxt);            
             return ds;
         }
 
-        public DataSet GetTypesByTypeID(string TypeID)
+        public DataSet GetContent(int pageSize, int pageIndex, ref int totalCount, ref int pageCount)
         {
-            string sqlTxt = string.Empty;
-            sqlTxt = "select * from Type where TypeID='" + TypeID + "'";
-            DataSet ds = GetDataSet(sqlTxt);
+            string tableName = "Help";
+            string key = "HelpID";
+            SqlParameter[] param ={ new SqlParameter("@totalCount",totalCount),
+                                    new SqlParameter("@pageCount",pageCount),
+                                     new SqlParameter("@tableName",tableName),
+                                    new SqlParameter("@key",key),
+                                    new SqlParameter("@pageSize",pageSize),
+                                    new SqlParameter("@pageIndex",pageIndex)                                    
+                                 };
+            param[0].Value = totalCount;
+            param[1].Value = pageCount;
+
+            param[0].Direction = ParameterDirection.InputOutput;
+            param[1].Direction = ParameterDirection.InputOutput;
+            DataSet ds = GetDataSet("P_GetTypeList", param, CommandType.StoredProcedure);
+            totalCount = Convert.ToInt32(param[0].Value);
+            pageCount = Convert.ToInt32(param[1].Value);
             return ds;
         }
 
-        public DataTable GetContent()
+        public DataTable GetTypesByTypeID(string TypeID)
         {
             string sqlTxt = string.Empty;
-            sqlTxt = "select * from Help  where Status<>9";
-            DataTable dt = GetDataTable(sqlTxt);
-            return dt;
+            sqlTxt = "select * from Type  where Status<>9 and TypeID='"+TypeID+"'";
+            DataTable ds = GetDataTable(sqlTxt);
+            return ds;
         }
 
         #endregion

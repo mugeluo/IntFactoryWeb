@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "AddUsers";
+    ViewBag.Name = "Setting";
+    ViewBag.navName = "add-users"; 
+}
+@section css{
+    <link href="/modules/manage/css/system/users.css" rel="stylesheet" />
+}
+@section scripts{
+    <script type="text/javascript">
+        seajs.use(["/modules/manage/scripts/users"], function (ObjectJS) {
+            ObjectJS.init('@ViewBag.navName');
+        });
+    </script>
+}
+
+<h2>AddUsers</h2>

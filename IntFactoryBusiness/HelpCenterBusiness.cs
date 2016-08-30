@@ -21,7 +21,7 @@ namespace IntFactoryBusiness
         public List<UsersEntity> GetUesrs()
         {
             List<UsersEntity> list = new List<UsersEntity>();
-            DataSet ds = HelpCenterDAL.BaseProvider.GetTypes();
+            DataSet ds = HelpCenterDAL.BaseProvider.GetUesrs();
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
                 UsersEntity model = new UsersEntity();
@@ -33,19 +33,19 @@ namespace IntFactoryBusiness
 
         public TypeEntity GetTypesByTypeID(string TypeID)
         {
-            DataSet ds = HelpCenterDAL.BaseProvider.GetTypesByTypeID(TypeID);
+            DataTable ds = HelpCenterDAL.BaseProvider.GetTypesByTypeID(TypeID);
             TypeEntity model = new TypeEntity();
-            foreach (DataRow dr in ds.Tables[0].Rows)
+            foreach (DataRow dr in ds.Rows)
             {
                 model.FillData(dr);                
             }
             return model;
         }
-        
-        public List<TypeEntity> GetTypes()
+
+        public List<TypeEntity> GetTypes(int pageSize, int pageIndex, ref int totalCount, ref int pageCount)
         {
             List<TypeEntity> list = new List<TypeEntity>();
-            DataSet ds = HelpCenterDAL.BaseProvider.GetTypes();
+            DataSet ds = HelpCenterDAL.BaseProvider.GetTypes(pageSize, pageIndex, ref totalCount, ref pageCount);
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
                 TypeEntity model = new TypeEntity();
@@ -55,11 +55,24 @@ namespace IntFactoryBusiness
             return list;
         }
 
-        public List<HelpEntity> GetContent()
+        public List<TypeEntity> GetTypeList()
+        {
+            List<TypeEntity> list = new List<TypeEntity>();
+            DataSet ds = HelpCenterDAL.BaseProvider.GetTypeList();
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                TypeEntity model = new TypeEntity();
+                model.FillData(dr);
+                list.Add(model);
+            }
+            return list;
+        }
+
+        public List<HelpEntity> GetContent(int pageSize, int pageIndex, ref int totalCount, ref int pageCount)
         {
             List<HelpEntity> list = new List<HelpEntity>();
-            DataTable dt = HelpCenterDAL.BaseProvider.GetContent();
-            foreach (DataRow dr in dt.Rows)
+            DataSet ds = HelpCenterDAL.BaseProvider.GetContent(pageSize, pageIndex, ref totalCount, ref pageCount);
+            foreach (DataRow dr in ds.Tables[0].Rows)
             {
                 HelpEntity model = new HelpEntity();
                 model.FillData(dr);

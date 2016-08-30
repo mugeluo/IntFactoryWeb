@@ -18,35 +18,30 @@
 </div>
 
 <div class="content-body">
-    <div class="add-details">
-        <ul class="addtype">            
-            <li class="items">
-                <div class="left">类型:</div>
-                <ul class="selector mLeft80">
-                    <li>
-                        <i class="ico-radiobox hover" data-id="0"><span></span></i>
-                        <div>功能</div>
-                    </li>
-                    <li>
-                        <i class="ico-radiobox" data-id="1"><span></span></i>
-                        <div>问题</div>
-                    </li>
-                    <li style="margin:0;">
-                        <i class="ico-radiobox" data-id="2"><span></span></i>
-                        <div>指引</div>
-                    </li>
+    <div class="">
+        <ul class="table-add">            
+            <li>
+                <span class="column-title">类型:</span>
+                <select>
+                    <option data-id="0">功能</option>
+                    <option data-id="1">问题</option>
+                    <option data-id="2">指引</option>
+                </select>
+            </li>
+            <li>
+                 <span class="column-title">分类：</span> 
+                 <span><input type="text" maxlength="20" class="type"></span>
+            </li>
+            <li>
+                <span class="column-title">附件:</span>
+                <span class="btn" style="margin:0">图片上传</span>
+            </li>
+            <li>
+                <ul id="orderImages" class="order-imgs addimg hide">
+
                 </ul>
             </li>
-            <li class="items">
-                <div class="left">分类:</div><input type="text" class="type" />
-            </li>
-            <li class="items">
-                <div class="left">附件：</div> 
-                <div style="width:100px;margin-left:65px;">
-                    <span class="img-upload">图片上传</span>
-                </div>    
-            </li>
         </ul>  
-        <div class="btn-add add-category">添加</div>
+        <div class="btn add-category">添加</div>
     </div>
 </div>

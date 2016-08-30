@@ -13,6 +13,12 @@
         $(".menu ." + name).addClass("hover").find("a").css("color", "#fff");
         if (name == "Index") {
             $(".nav-list").hide();
+        } else if (name == "Function") {
+            $(".controller").hide();
+            $(".functions").show();
+        } else {
+            $(".controller").hide();
+            $(".setting").show();
         }
 
         $(".controller-box").click(function () {

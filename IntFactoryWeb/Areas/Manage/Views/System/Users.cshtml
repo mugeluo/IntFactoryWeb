@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Users";
+    ViewBag.Name = "Setting";
+    ViewBag.navName = "userlist"; 
+}
+@section css{
+    <link href="/modules/manage/css/system/users.css" rel="stylesheet" />
+}
+@section scripts{
+    <script type="text/javascript">
+        seajs.use(["/modules/manage/scripts/users"], function (ObjectJS) {
+            ObjectJS.init('@ViewBag.navName');
+        });
+    </script>
+}
+
+<div class="header-box">
+    <span class="header-title left">管理员列表</span>
+    <div class="add-type"><a href="/Manage/System/AddUsers">添加管理员</a></div>
+</div>
+
+<div class="content-body">
+    <table class="table-list category mTop10">
+        <tr class="tr-header">        
+            <td>账号</td>
+            <td>创建时间</td>
+            <td width="120">操作</td> 
+        </tr>
+    </table>
+</div>

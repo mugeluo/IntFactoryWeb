@@ -125,6 +125,7 @@
     <Compile Include="Areas\Manage\Controllers\BaseController.cs" />
     <Compile Include="Areas\Manage\Controllers\FunctionController.cs" />
     <Compile Include="Areas\Manage\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Manage\Controllers\SystemController.cs" />
     <Compile Include="Areas\Manage\ManageAreaRegistration.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\CaseController.cs" />
@@ -222,15 +223,30 @@
     <Content Include="modules\images\ zngc-6.png" />
     <Content Include="modules\manage\css\function\function.css" />
     <Content Include="modules\manage\css\home\index.css" />
+    <Content Include="modules\manage\css\iconfont\demo.css" />
+    <Content Include="modules\manage\css\iconfont\demo.html" />
+    <Content Include="modules\manage\css\iconfont\iconfont.css" />
+    <Content Include="modules\manage\css\iconfont\iconfont.svg" />
     <Content Include="modules\manage\css\layout.css" />
+    <Content Include="modules\manage\css\system\users.css" />
     <Content Include="modules\manage\images\ico-loading.gif" />
     <Content Include="modules\manage\images\img-noimg.png" />
     <Content Include="modules\manage\scripts\function\function.js" />
+    <Content Include="modules\manage\scripts\function\type.js" />
     <Content Include="modules\manage\scripts\index.js" />
     <Content Include="modules\manage\scripts\layout.js" />
+    <Content Include="modules\manage\scripts\users.js" />
     <Content Include="modules\manage\template\content\updata-content.html" />
+    <Content Include="modules\manage\template\content\updata-type.html" />
+    <Content Include="modules\manage\template\system\userlist.html" />
     <Content Include="modules\manage\template\type\type-details-list.html" />
     <Content Include="modules\manage\template\type\type-list.html" />
+    <Content Include="modules\plug\datapager\images\next.png" />
+    <Content Include="modules\plug\datapager\images\previous.png" />
+    <Content Include="modules\plug\datapager\images\snext.png" />
+    <Content Include="modules\plug\datapager\images\sprevious.png" />
+    <Content Include="modules\plug\datapager\paginate.js" />
+    <Content Include="modules\plug\datapager\style.css" />
     <Content Include="modules\plug\doT.js" />
     <Content Include="modules\plug\easydialog\easydialog.css" />
     <Content Include="modules\plug\easydialog\easydialog.js" />
@@ -250,6 +266,16 @@
     <Content Include="modules\plug\jquery-horizon-line-switch\js\jquery.mobile.custom.min.js" />
     <Content Include="modules\plug\jquery-horizon-line-switch\js\main.js" />
     <Content Include="modules\plug\jquery-horizon-line-switch\js\modernizr.js" />
+    <Content Include="modules\plug\qiniustorage\css\highlight.css" />
+    <Content Include="modules\plug\qiniustorage\css\main.css" />
+    <Content Include="modules\plug\qiniustorage\plupload\moxie.js" />
+    <Content Include="modules\plug\qiniustorage\plupload\moxie.min.js" />
+    <Content Include="modules\plug\qiniustorage\plupload\Moxie.swf" />
+    <Content Include="modules\plug\qiniustorage\plupload\plupload.dev.js" />
+    <Content Include="modules\plug\qiniustorage\plupload\plupload.full.min.js" />
+    <Content Include="modules\plug\qiniustorage\plupload\plupload.min.js" />
+    <Content Include="modules\plug\qiniustorage\qiniu\multiple.js" />
+    <Content Include="modules\plug\qiniustorage\qiniu\qiniu.js" />
     <Content Include="modules\scripts\about\about.js" />
     <Content Include="modules\scripts\case\case.js" />
     <Content Include="modules\scripts\global.js" />
@@ -279,6 +305,7 @@
     <Folder Include="Areas\Manage\Models\" />
     <Folder Include="Content\" />
     <Folder Include="Models\" />
+    <Folder Include="modules\plug\umeditor\" />
     <Folder Include="modules\template\" />
   </ItemGroup>
   <ItemGroup>
@@ -347,6 +374,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Manage\Views\Function\DetailsList.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Manage\Views\System\Users.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Manage\Views\System\AddUsers.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="modules\manage\css\iconfont\iconfont.eot" />
+    <Content Include="modules\manage\css\iconfont\iconfont.ttf" />
+    <Content Include="modules\manage\css\iconfont\iconfont.woff" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

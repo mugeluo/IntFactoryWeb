@@ -9,9 +9,12 @@
     <link href="/modules/manage/css/function/function.css" rel="stylesheet" />
 }
 @section scripts{
+    <script src="/modules/plug/umeditor/ueditor.config.js"></script>
+    <script src="/modules/plug/umeditor/umeditor.min.js"></script>
     <script type="text/javascript">
         seajs.use(["/modules/manage/scripts/function/function"], function (ObjectJS) {
-            ObjectJS.init('@ViewBag.navName');
+            var um = UE.getEditor('remark');
+            ObjectJS.init(um,'@ViewBag.navName');
         });
     </script>
 }
@@ -19,10 +22,10 @@
     <a href="/Manage/Function/DetailsList" class="header-title left">返回列表</a>   
 </div>
 <div class="content-body">
-    <div class="add-details">
-        <ul class="details">
+    <div class="">
+        <ul class="table-add">
             <li>
-                <div class="left mRight20">分类类型：</div>
+                <span class="column-title">类型:</span>               
                 <select>
                     @foreach (var item in list)
                     {
@@ -31,15 +34,15 @@
                 </select>
             </li>
             <li>
-                <div class="left mRight50">标题：</div>
+                <span class="column-title">标题:</span>
                 <input type="text" class="title" />
             </li>
             <li>
-                <div class="left mRight50">描述：</div>
-                <textarea class="desc"></textarea>
+                <span class="column-title left">描述:</span>
+                <div style="margin-left:65px;" id="remark"></div>
             </li>
         </ul>
-        <div class="btn-add add-type-details">添加</div>
+        <div class="btn add-type-details">添加</div>
     </div>
 </div>
 

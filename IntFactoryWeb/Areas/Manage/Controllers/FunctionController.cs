@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Script.Serialization;
+using IntFactoryEntity;
 
 namespace IntFactoryWeb.Areas.Manage.Controllers
 {
@@ -28,16 +30,23 @@ namespace IntFactoryWeb.Areas.Manage.Controllers
 
         public ActionResult FunctionDetails()
         {
-            ViewBag.List = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetTypes();
+            ViewBag.List = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetTypeList();
             return View();                         
         }
 
         #region ajax
 
-        public JsonResult GetTypes()
+        public JsonResult GetTypes(string filter)
         {
-            var list = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetTypes();
+            JavaScriptSerializer jssl = new JavaScriptSerializer();
+            TypeEntity model = jssl.Deserialize<TypeEntity>(filter);
+            int totalCount = 0;
+            int pageCount = 0;
+
+            var list = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetTypes(model.PageSize, model.PageIndex,ref totalCount, ref pageCount);
             JsonDictionary.Add("items", list);
+            JsonDictionary.Add("totalCount", totalCount);
+            JsonDictionary.Add("pageCount", pageCount);
             return new JsonResult
             {
                 Data = JsonDictionary,
@@ -45,12 +54,18 @@ namespace IntFactoryWeb.Areas.Manage.Controllers
             };
         }
 
-        public JsonResult GetContent()
+        public JsonResult GetContent(string filter)
         {
-            var list = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetTypes();
-            var obj = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetContent();
+            JavaScriptSerializer jssl = new JavaScriptSerializer();
+            HelpEntity model = jssl.Deserialize<HelpEntity>(filter);
+            int totalCount = 0;
+            int pageCount = 0;
+            var list = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetTypeList();
+            var obj = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetContent(model.PageSize, model.PageIndex, ref totalCount, ref pageCount);
             JsonDictionary.Add("items", obj);
             JsonDictionary.Add("list", list);
+            JsonDictionary.Add("totalCount", totalCount);
+            JsonDictionary.Add("pageCount", pageCount);
             return new JsonResult
             {
                 Data = JsonDictionary,
