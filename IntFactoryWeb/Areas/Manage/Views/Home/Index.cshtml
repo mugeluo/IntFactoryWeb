@@ -1,5 +1,22 @@
 ﻿@{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "后台 | 首页";
+    ViewBag.Name = "Index";
 }
 
-<h2>Index</h2>
+@section css{
+    <link href="/modules/manage/css/home/index.css" rel="stylesheet" />
+}
+@section scripts{    
+    <script type="text/javascript">
+        seajs.use(["/modules/manage/scripts/index"], function (ObjectJS) {
+            ObjectJS.init();
+        });
+    </script>
+}
+@*<div>账号:</div><input type="text" class="account" />
+<div>密码:</div><input type="text" class="password" />
+<div class="btn-ok hand">添加</div>*@
+
+<div style="margin-top:100px;text-align:center;font-size:26px;">欢迎来到帮助中心后台</div>
+
+

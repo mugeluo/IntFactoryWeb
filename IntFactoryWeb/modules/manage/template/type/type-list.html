@@ -1,0 +1,36 @@
+﻿{%
+     for(var i=0,j=$data.length; i < j ; i++){ 
+        var item=$data[i];
+%}
+<tr>
+    <td class="center"><img src='{%=item.Img==""?"/modules/manage/images/img-noimg.png":item.Img%}' /></td>
+    <td class="center">
+        <span class="span span-name">{%=item.Name%}</span>
+        <input class="hide input type-name" type="text" value="{%=item.Name%}" />
+    </td>    
+    <td class="center">
+        <span class="span span-types">{%=item.Types=="0"?"功能":item.Types=="1"?"问题":"指引"%}</span>
+        <ul class="selector hide input" style="height:25px;line-height:25px;">
+            <li>
+                <i class='ico-radiobox {%=item.Types=="0"?"hover":""%}' data-id="0"><span></span></i>
+                <div>功能</div>
+            </li>
+            <li>
+                <i class='ico-radiobox {%=item.Types=="1"?"hover":""%}' data-id="1"><span></span></i>
+                <div>问题</div>
+            </li>
+            <li style="margin:0;">
+                <i class='ico-radiobox {%=item.Types=="2"?"hover":""%}' data-id="2"><span></span></i>
+                <div>指引</div>
+            </li>
+        </ul>
+    </td>
+    <td class="center">{%=item.CreateTime.toDate("yyyy-MM-dd hh:mm:ss")%}</td>
+    <td class="center operation" data-id="{%=item.TypeID%}">
+        <span class="update" data-id="{%=item.TypeID%}">编辑</span>
+        <span class="delete" data-id="{%=item.TypeID%}">删除</span>
+        <span class="save hide" data-id="{%=item.TypeID%}">保存</span>
+        <span class="cancel hide">取消</span>
+    </td>
+</tr>
+{% } %}

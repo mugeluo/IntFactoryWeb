@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "后台 | 分类列表";
+    ViewBag.Name = "Function";
+    ViewBag.navName = "list-type";
+}
+
+@section css{
+    <link href="/modules/manage/css/function/function.css" rel="stylesheet" />
+}
+@section scripts{    
+    <script type="text/javascript">
+        seajs.use(["/modules/manage/scripts/function/function"], function (ObjectJS) {
+            ObjectJS.init('@ViewBag.navName');
+        });
+    </script>
+}
+@*<div>账号:</div><input type="text" class="account" />
+<div>密码:</div><input type="text" class="password" />
+<div class="btn-ok hand">添加</div>*@
+
+<div class="header-box">
+    <span class="header-title left">分类列表</span>
+    <div class="add-type"><a href="/Manage/Function/FunctionDetails">添加分类</a></div>
+</div>
+
+<div class="content-body">
+    <table class="table-list category mTop10">
+        <tr class="tr-header">        
+            <td width="100">图片</td>
+            <td width="100" style="width:15%">名称</td>            
+            <td width="100" style="width:15%">类型</td>
+            <td width="200">创建时间</td>
+            <td width="120">操作</td> 
+        </tr>
+    </table>
+</div>

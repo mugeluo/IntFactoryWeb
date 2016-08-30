@@ -122,6 +122,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Manage\Controllers\BaseController.cs" />
+    <Compile Include="Areas\Manage\Controllers\FunctionController.cs" />
     <Compile Include="Areas\Manage\Controllers\HomeController.cs" />
     <Compile Include="Areas\Manage\ManageAreaRegistration.cs" />
     <Compile Include="Controllers\AboutController.cs" />
@@ -218,7 +220,22 @@
     <Content Include="modules\images\ zngc-4.png" />
     <Content Include="modules\images\ zngc-5.png" />
     <Content Include="modules\images\ zngc-6.png" />
+    <Content Include="modules\manage\css\function\function.css" />
+    <Content Include="modules\manage\css\home\index.css" />
+    <Content Include="modules\manage\css\layout.css" />
+    <Content Include="modules\manage\images\ico-loading.gif" />
+    <Content Include="modules\manage\images\img-noimg.png" />
+    <Content Include="modules\manage\scripts\function\function.js" />
+    <Content Include="modules\manage\scripts\index.js" />
+    <Content Include="modules\manage\scripts\layout.js" />
+    <Content Include="modules\manage\template\content\updata-content.html" />
+    <Content Include="modules\manage\template\type\type-details-list.html" />
+    <Content Include="modules\manage\template\type\type-list.html" />
     <Content Include="modules\plug\doT.js" />
+    <Content Include="modules\plug\easydialog\easydialog.css" />
+    <Content Include="modules\plug\easydialog\easydialog.js" />
+    <Content Include="modules\plug\easydialog\ico-close-hover.png" />
+    <Content Include="modules\plug\easydialog\ico-close.png" />
     <Content Include="modules\plug\flexslider\css\flexslider.css" />
     <Content Include="modules\plug\flexslider\images\ad_ctr.png" />
     <Content Include="modules\plug\flexslider\images\alpha.png" />
@@ -262,10 +279,6 @@
     <Folder Include="Areas\Manage\Models\" />
     <Folder Include="Content\" />
     <Folder Include="Models\" />
-    <Folder Include="modules\manage\css\" />
-    <Folder Include="modules\manage\images\" />
-    <Folder Include="modules\manage\scripts\" />
-    <Folder Include="modules\manage\template\" />
     <Folder Include="modules\template\" />
   </ItemGroup>
   <ItemGroup>
@@ -305,6 +318,35 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Manage\Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IntFactoryBusiness\IntFactoryBusiness.csproj">
+      <Project>{fc44d8b5-e40c-4fd5-9100-328211af7828}</Project>
+      <Name>IntFactoryBusiness</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IntFactoryDAL\IntFactoryDAL.csproj">
+      <Project>{5f7ae2a9-e587-40a8-b6b8-5da07dcc0607}</Project>
+      <Name>IntFactoryDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IntFactoryEntity\IntFactoryEntity.csproj">
+      <Project>{a73a897b-981e-40b5-ad31-5707be591377}</Project>
+      <Name>IntFactoryEntity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Manage\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Manage\Views\Function\Function.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Manage\Views\Function\AddType.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Manage\Views\Function\FunctionDetails.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Manage\Views\Function\DetailsList.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

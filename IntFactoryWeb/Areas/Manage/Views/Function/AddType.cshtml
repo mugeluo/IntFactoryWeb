@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "后台 | 添加分类";
+    ViewBag.Name = "Function";
+    ViewBag.navName = "add-type";
+}
+@section css{    
+    <link href="/modules/manage/css/function/function.css" rel="stylesheet" />
+}
+@section scripts{
+    <script type="text/javascript">
+        seajs.use(["/modules/manage/scripts/function/function"], function (ObjectJS) {
+            ObjectJS.init('@ViewBag.navName');
+        });
+    </script>
+}
+<div class="header-box">
+    <a href="/Manage/Function/Function" class="header-title left">返回列表</a>   
+</div>
+
+<div class="content-body">
+    <div class="add-details">
+        <ul class="addtype">            
+            <li class="items">
+                <div class="left">类型:</div>
+                <ul class="selector mLeft80">
+                    <li>
+                        <i class="ico-radiobox hover" data-id="0"><span></span></i>
+                        <div>功能</div>
+                    </li>
+                    <li>
+                        <i class="ico-radiobox" data-id="1"><span></span></i>
+                        <div>问题</div>
+                    </li>
+                    <li style="margin:0;">
+                        <i class="ico-radiobox" data-id="2"><span></span></i>
+                        <div>指引</div>
+                    </li>
+                </ul>
+            </li>
+            <li class="items">
+                <div class="left">分类:</div><input type="text" class="type" />
+            </li>
+            <li class="items">
+                <div class="left">附件：</div> 
+                <div style="width:100px;margin-left:65px;">
+                    <span class="img-upload">图片上传</span>
+                </div>    
+            </li>
+        </ul>  
+        <div class="btn-add add-category">添加</div>
+    </div>
+</div>
