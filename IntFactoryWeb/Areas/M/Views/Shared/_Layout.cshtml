@@ -1,0 +1,46 @@
+﻿<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <link href="/modules/css/iconfont/iconfont.css" rel="stylesheet" />
+    <link href="/modules/css/base.css" rel="stylesheet" />
+    <link href="/modules/m/css/layout.css" rel="stylesheet" />
+    @RenderSection("css", false)    
+</head>
+<body>
+    <header class="header">
+        <div class="left logo">厂盟</div>
+        <div class="right iconfont"></div>
+    </header>
+
+    <div class="main-content">
+        @RenderBody()
+    </div>
+     
+    <footer>
+        <div class="footer-content">
+            <ul class="left">
+                <li><a>11111111</a></li>
+                <li><a>22222222</a></li>
+            </ul>
+
+            <ul class="right">
+                <li><a>33333333</a></li>
+                <li><a>4444444444</a></li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+        <div class="footer-title">1111111111111111111111</div>
+    </footer>
+    <script src="/Scripts/jquery-1.11.1.js"></script>
+    <script src="/Scripts/sea.js"></script>
+    <script src="/Scripts/sea-config.js"></script>    
+    <script type="text/javascript">
+     @*   seajs.use(["/modules/manage/scripts/layout"], function (ObjectJS) {
+            ObjectJS.init('@ViewBag.Name');
+        });*@
+    </script>
+    @RenderSection("scripts",false)
+</body>
+</html>
+
+

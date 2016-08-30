@@ -126,6 +126,8 @@
     <Compile Include="Areas\Manage\Controllers\FunctionController.cs" />
     <Compile Include="Areas\Manage\Controllers\HomeController.cs" />
     <Compile Include="Areas\Manage\ManageAreaRegistration.cs" />
+    <Compile Include="Areas\M\Controllers\HomeController.cs" />
+    <Compile Include="Areas\M\MAreaRegistration.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\CaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -142,7 +144,6 @@
     <Content Include="modules\css\about.css" />
     <Content Include="modules\css\base.css" />
     <Content Include="modules\css\case.css" />
-    <Content Include="modules\css\home\index.css" />
     <Content Include="modules\css\iconfont\demo.css" />
     <Content Include="modules\css\iconfont\demo.html" />
     <Content Include="modules\css\iconfont\iconfont.css" />
@@ -231,6 +232,11 @@
     <Content Include="modules\manage\template\content\updata-content.html" />
     <Content Include="modules\manage\template\type\type-details-list.html" />
     <Content Include="modules\manage\template\type\type-list.html" />
+    <Content Include="modules\m\css\index.css" />
+    <Content Include="modules\m\css\layout.css" />
+    <Content Include="modules\m\images\index\info-1.png" />
+    <Content Include="modules\m\images\index\info-2.png" />
+    <Content Include="modules\m\images\index\info-3.png" />
     <Content Include="modules\plug\doT.js" />
     <Content Include="modules\plug\easydialog\easydialog.css" />
     <Content Include="modules\plug\easydialog\easydialog.js" />
@@ -277,8 +283,10 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Manage\Models\" />
+    <Folder Include="Areas\M\Models\" />
     <Folder Include="Content\" />
     <Folder Include="Models\" />
+    <Folder Include="modules\m\scripts\" />
     <Folder Include="modules\template\" />
   </ItemGroup>
   <ItemGroup>
@@ -347,6 +355,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Manage\Views\Function\DetailsList.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\M\Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\M\Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\M\Views\_ViewStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\M\Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
