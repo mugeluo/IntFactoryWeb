@@ -1,0 +1,35 @@
+﻿.head-content { height:500px;background:url(/modules/images/about/about-1.png)no-repeat center bottom #0cb39e;background-size:100% 100%;}
+.head-content .content{text-align: center;width:280px;margin:auto;}
+.head-content .content .title{color:#fff;font-size:30px;padding:140px 0 50px 0;}
+.head-content .title-desc{font-size:20px;color:#fff;opacity:0.8;}
+
+.synopsis { height:250px;width:280px;margin:auto;}
+.synopsis div{color:#555;line-height:25px;margin-top:50px;text-indent:2em;}
+
+.host-timeline {text-align:center;margin-bottom:40px;padding-top:40px;font-size:24px;color:#000!important; }
+
+.team { height:400px;background-color:#f8f8f8;}
+.team .team-content{width:320px;margin:auto;position:relative;}
+.team .team-content::after{display:block;content:"";clear:both;}
+.team .team-content .switch{font-size:30px;color:#0cb39e;font-weight:bold;position:absolute;z-index:33;top:107px;}
+.team .team-content .switch-right{right:0;}
+.team .team-content .content-txt{position:relative;height:250px;overflow:hidden;width:255px;margin:auto;}
+.team .content{padding-top:30px;}
+.team .content::after{display:block;content:"";clear:both;}
+.team .content li{float:left;width:260px;margin:auto;position:absolute;z-index:22;}
+.content li i { color:#ddd;margin-top:-5px;font-size:28px;}
+.content li .remarks { color:#999;font-size:18px;height:50px;line-height:25px;margin-left:22px;}
+.content li .details { margin-top:50px;border-top:1px solid #ccc;padding-top:20px;}
+.content li .head-photo {height: 36px;width:36px;background-color:#333;float:left;border-radius:50%;margin: 5px 20px 0px 20px;}
+.content li .desc div{ color:#666;font-size:18px;}
+
+.contant-us .company li { width:280px;margin:auto;margin-bottom:20px;}
+.contant-us .company .hover .title { border:1px solid #0cb39e;background-color:#0cb39e;height:60px;border-radius:5px;line-height:60px;}
+.contant-us .company .hover .title i{ color:#fff;}
+.contant-us .company .hover .title span { color:#fff;}
+.contant-us .company li .title { border:1px solid #0cb39e;height:60px;border-radius:5px;line-height:60px;color:#0cb39e;}
+.contant-us .company .title i{ color:#0cb39e;font-size:30px;margin-left:20px;margin-right:20px;}
+.contant-us .company .title span { color:#0cb39e;font-size:26px;}
+.contant-us .company .desc { margin:10px 0px 10px 20px;}
+.contant-us .company .desc div{line-height:30px;}
+.contant-us .company .desc .address a{display:block;margin-left:40px;}

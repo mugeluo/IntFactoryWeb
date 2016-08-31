@@ -1,24 +1,38 @@
-﻿.head-content { height:400px;background:url(/modules/images/home/index-top.png) no-repeat center #999;background-size:100% 100%;}
-.head-content .content{text-align: center;}
+﻿.head-content { height:400px;background:url(/modules/images/home/index-top.png) no-repeat center;background-size:100% 100%;}
+.head-content .content{text-align: center;background-color: rgba(12, 179, 158,0.5);height:400px;}
 .head-content .content .title{color:#fff;font-size:30px;padding:140px 0 120px 0;}
-.head-content .content .register{color:#fff;border-radius:5px;padding:17px 60px;box-shadow: 2px 3px 3px #444;
-                         margin-bottom:30px;cursor:pointer;background-color:#0cb39e;font-size:20px;}
-.head-content .content .register:hover{background-color:#068b7a;}
+.head-content .content .register{color:#0cb39e;border-radius:5px;padding:17px 60px;margin-bottom:30px;cursor:pointer;background-color:#fff;font-size:24px;}
 
 .item {
-    height:440px;
+    height:500px;
     padding:30px 0;
 }
-
+.task{
+    background-color:#f8f8f8;   
+}
+.task .list{ 
+    width: 220px;
+    margin: auto;
+    margin-top:20px;
+}
+.resource .item-content{
+    border-bottom:3px solid #f8f8f8;
+    padding-bottom:50px;
+}
+.teamwork .item-content .title {     
+    color:#0cb39e!important;
+    margin-top:10px;
+}
 .item .item-content {
-    width:320px;
+    width:280px;
     margin:0 auto;
     text-align:center;
 }
 
 .item .item-content .title {
-    font-size:18px;
-    line-height:30px;
+    font-size:24px;
+    line-height:35px;
+    color:#000;
 }
 
 .item .item-content .list{
@@ -27,7 +41,7 @@
 
 .item .item-content .list li {
     float:left;
-    margin-right:30px;
+    margin-right:10px;
     width:86px;
     text-align:center;
 }
@@ -41,16 +55,26 @@
     width:60px;
     height:60px;
     border-radius:30px;
-    background-color:#aaa;
+    background-color:#999;
     line-height:60px;
-    color:#fff;
+    color:#ccc;
     font-size:30px;
     margin:0 auto;
+}
+
+.item .item-content .list .hover .logo{
+    background-color:#0cb39e;
+    color:#fff;
+}
+
+.item .item-content .list .hover .logo-des{
+    color:#0cb39e;
 }
 
 .item .item-content .list .logo-des {
     padding-top:5px;
     color:#999;
+    font-size:12px;
 }
 
 .item .item-content .img {
@@ -58,8 +82,15 @@
 }
 
 .item .item-content .des {
-    margin-top:20px;
-    font-size:16px;
-    line-height:26px;
+    margin-top:50px;
+    font-size:16px;   
     color:#333;
+}
+.item .item-content .des .register {
+    color:#fff;
+    border-radius:5px;
+    padding:17px 60px;  
+
+    background-color:#0cb39e;
+    font-size:24px;
 }

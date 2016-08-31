@@ -1,8 +1,16 @@
 ﻿@{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "厂盟智能 | 首页";
 }
 @section css{
     <link href="/modules/m/css/index.css" rel="stylesheet" /> 
+}
+@section scripts{
+    <script src="/Scripts/jquery-1.11.1.js"></script>   
+    <script type="text/javascript">
+        seajs.use(["/modules/m/scripts/index"], function (ObjectJS) {
+            ObjectJS.init();
+        });        
+    </script>
 }
 <div class="head-content">
     <div class="content">
@@ -13,90 +21,101 @@
 
 <div class="item infomation">
     <div class="item-content">
-        <div class="title">111111111111111</div>
-        <div class="title">1111111111111111</div>
+        <div class="title">去纸笔化，去表格化</div>
+        <div class="title">各类信息一目了然</div>
         <div class="list">
             <ul>
-                <li>
+                <li class="hover" data-img="/modules/m/images/index/infomation-1.png" data-id="0">
                     <div class="logo iconfont">&#xe60a;</div>
-                    <div class="logo-des">111111</div>
+                    <div class="logo-des">数据可视化</div>
                 </li>
-                <li>
+                <li data-img="/modules/m/images/index/infomation-2.png" data-id="1">
                     <div class="logo iconfont">&#xe60b;</div>
-                    <div class="logo-des">111111</div>
+                    <div class="logo-des">生产流程可视化</div>
                 </li>
-                <li>
+                <li data-img="/modules/m/images/index/infomation-3.png" data-id="2">
                     <div class="logo iconfont">&#xe60c;</div>
-                    <div class="logo-des">111111</div>
+                    <div class="logo-des">信息预警</div>
                 </li>
             </ul>
             <div class="clear"></div>
         </div>
         <div class="img">
-            <img src="/modules/m/images/index/info-1.png" />
+            <img src="/modules/m/images/index/infomation-1.png" />
         </div>
         <div class="des">
-            11111111111111111111111111111 11111111111111111111111111111                                                                           
+            客户、订单、材料、供应商等数据直接录入平台，安全存储，随时随地查看                                                                           
         </div>
     </div>
 </div>
 
 <div class="item task">
     <div class="item-content">
-        <div class="title">111111111111111</div>
-        <div class="title">1111111111111111</div>
+        <div class="title">工厂抱团齐发展</div>
+        <div class="title">员工协作零距离</div>
         <div class="list">
             <ul>
-                <li>
-                    <div class="logo iconfont">&#xe60a;</div>
-                    <div class="logo-des">111111</div>
+                <li class="hover" data-img="/modules/m/images/index/task-1.png" data-id="0">
+                    <div class="logo iconfont">&#xe60d;</div>
+                    <div class="logo-des">内部协作</div>
                 </li>
-                <li>
-                    <div class="logo iconfont">&#xe60b;</div>
-                    <div class="logo-des">111111</div>
-                </li>
-                <li>
-                    <div class="logo iconfont">&#xe60c;</div>
-                    <div class="logo-des">111111</div>
-                </li>
+                <li data-img="/modules/m/images/index/task-2.png" data-id="1">
+                    <div class="logo iconfont">&#xe60e;</div>
+                    <div class="logo-des">工厂间协作</div>
+                </li>                
             </ul>
             <div class="clear"></div>
         </div>
         <div class="img">
-            <img src="/modules/m/images/index/info-1.png" />
+            <img src="/modules/m/images/index/task-1.png" />
         </div>
         <div class="des">
-            11111111111111111111111111111 11111111111111111111111111111                                                                           
+            订单开始后任务自动派发，任务负责人可灵活选择参与人员，自由讨论，降低沟通成本，提高生产效率   
         </div>
     </div>
 </div>
 
 <div class="item resource">
     <div class="item-content">
-        <div class="title">111111111111111</div>
-        <div class="title">1111111111111111</div>
+        <div class="title">分享资源</div>
+        <div class="title">实现资源最大化</div>
         <div class="list">
             <ul>
-                <li>
-                    <div class="logo iconfont">&#xe60a;</div>
-                    <div class="logo-des">111111</div>
+                <li class="hover" data-img="/modules/m/images/index/resource-1.png" data-id="0">
+                    <div class="logo iconfont">&#xe60f;</div>
+                    <div class="logo-des">原材料共享</div>
                 </li>
-                <li>
-                    <div class="logo iconfont">&#xe60b;</div>
-                    <div class="logo-des">111111</div>
+                <li data-img="/modules/m/images/index/resource-2.png" data-id="1">
+                    <div class="logo iconfont">&#xe610;</div>
+                    <div class="logo-des">客户信息共享</div>
                 </li>
-                <li>
-                    <div class="logo iconfont">&#xe60c;</div>
-                    <div class="logo-des">111111</div>
+                <li data-img="/modules/m/images/index/resource-3.png" data-id="2">
+                    <div class="logo iconfont">&#xe611;</div>
+                    <div class="logo-des">款式共享</div>
                 </li>
             </ul>
             <div class="clear"></div>
         </div>
         <div class="img">
-            <img src="/modules/m/images/index/info-1.png" />
+            <img src="/modules/m/images/index/resource-1.png" />
         </div>
         <div class="des">
-            11111111111111111111111111111 11111111111111111111111111111                                                                           
+            平台入驻优质材料供应商，解决找材料费时费力等难题，降低材料采购成本   
+        </div>
+    </div>
+</div>
+
+<div class="item teamwork">
+    <div class="item-content">
+        <div class="title">首家与阿里巴巴-淘工厂</div>
+        <div class="title">对接的ISV服务商</div>
+        
+        <div class="img">
+            <img src="/modules/m/images/index/mobile-ind-bttom1.png" />
+            <img class="mTop20" src="/modules/m/images/index/mobile-ind-bttom2.png" />
+        </div>
+        <div class="des">
+            <a class="register" href="http://zngc.intfactory.cn/Home/Register">免费注册</a>                                                                      
         </div>
     </div>
 </div>

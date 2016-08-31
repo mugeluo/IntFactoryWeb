@@ -1,0 +1,127 @@
+﻿@{
+    ViewBag.Title = "厂盟智能 | 定价";    
+}
+@section css{
+    <link href="/modules/m/css/pricing.css" rel="stylesheet" />
+}
+@section scripts{
+    <script src="/Scripts/jquery-1.11.1.js"></script>   
+    <script type="text/javascript">
+        seajs.use(["/modules/m/scripts/pricing"], function (ObjectJS) {
+            ObjectJS.init();
+        });        
+    </script>
+}
+<div class="head-content">
+    <div class="content">
+        <div class="title">
+            <span>柔性化生产模式</span>
+            <span>带来全方面变革</span>
+        </div>     
+    </div>
+</div>
+<div class="tilte-version">
+    <div class="templent mBottom50" style="margin-top:-200px;">
+        <div class="title-name">专业版</div>
+        <div class="center font18 color666 mTop30">￥人数/时间</div>
+        <div class="btn-click"><a class="colorfff " href="http://zngc.intfactory.cn/Home/Register">免费试用</a></div>
+        <ol class="desc-version">
+            <li>● 基础用户数5人</li>
+            <li>● 免费上门培训</li>
+            <li>● 专属顾问一对一</li>
+            <li>● 附件上传大小不设限制</li>
+            <li>● 7*24小时在线服务</li>
+            <li>● 所有应用模块</li>           
+        </ol>
+        <div class="price-list">        
+            <table>
+                <tr class="bgcolor-title">
+                    <td></td>
+                    <td class="no-border-left font14">
+                        <div class="hover time" data-id="0">1年</div>
+                    </td>
+                    <td class="no-border-left font14">
+                        <div class="time" data-id="1">2年</div>
+                    </td>
+                    <td class="no-border-left font14">
+                        <div class="time" data-id="2">3年</div>
+                    </td>
+                </tr>
+                <tr class="bgcolor-price">
+                    <td><div class="use-number">5用户</div></td>
+                    <td data-time="1" colspan="3">
+                        <div class="money money1">￥2,400</div>
+                        <div class="unit">(元)</div>
+                    </td>                    
+                </tr>
+                <tr>
+                    <td><div class="use-number">10用户</div></td>
+                    <td data-time="1" colspan="3">
+                        <div class="money money2">￥4,800</div>
+                        <div class="unit">(元)</div>
+                    </td>
+                </tr>
+                <tr class="bgcolor-price">
+                    <td><div class="use-number">20用户</div></td>
+                    <td data-time="1" colspan="3">
+                        <div class="money money3">￥9,200</div>
+                        <div class="unit">(元)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><div class="use-number">50用户</div></td>
+                    <td data-time="1" colspan="3">
+                        <div class="money money4">￥21,600</div>
+                        <div class="unit">(元)</div>
+                    </td>
+                </tr>
+                <tr class="bgcolor-price">
+                    <td><div class="use-number">100用户</div></td>
+                    <td data-time="1" colspan="3">
+                        <div class="money money5">￥39,600</div>
+                        <div class="unit">(元)</div>
+                    </td>
+                </tr>
+            </table>    
+        </div>
+    </div>
+    <div class="templent">
+        <div class="title-name">定制版</div>
+        <div class="center font18 color666 mTop30">￥请咨询</div>
+        <div class="btn-click-contact"><a href="/About/About?#list">联系我们</a></div>
+        <ol class="desc-version">
+            <li>● 专业版所有功能</li>
+            <li>● 根据企业需求专业定制</li>
+            <li>● 提供企业级解决方案</li>
+            <li>● 项目结束后免费维护一年</li>                    
+        </ol>
+    </div>
+</div>
+
+<div class="else">
+    <ul>
+        <li class="icon"><i class="iconfont">&#xe600;</i></li>
+        <li class="content-title">超级工厂</li>
+        <li class="content-desc">园区部署，对区域性的联合工厂,提供园区部署方案</li>
+        <li class="href-address">
+            <a href="/About/About?#list">联系我们</a>
+        </li>
+    </ul>
+    <ul>
+        <li class="icon"><i class="iconfont">&#xe601;</i></li>
+        <li class="content-title">客户端</li>
+        <li class="content-desc">针对智能工厂用户，专门提供进销存成品管理平台“二当家”</li>
+        <li class="href-address">
+            <a href="http://yunxiaokeji.com/">立即试用</a>
+        </li>
+    </ul>
+    <ul>
+        <li class="icon"><i class="iconfont">&#xe602;</i></li>
+        <li class="content-title">解决方案</li>
+        <li class="content-desc">根据企业不同特性，提供专业解决方案，专属顾问免费上门培训</li>
+        <li class="href-address">
+            <a href="/M/Pricing/Pricing">查看详情</a>
+        </li>
+    </ul>
+</div>
+

@@ -1,0 +1,39 @@
+﻿.head-information { height:500px;background:url(/modules/images/about/about-1.png)no-repeat center bottom #0cb39e; 
+                    background-size:100%}
+.head-information .information {max-width:800px;margin:auto;}
+.head-information .information div:first-child{color:#fff;font-size:30px;text-align:center;padding-top:150px;opacity:0.9}
+.head-information .information p{line-height:24px;margin-top:80px;color:#fff;}
+
+.team { height:400px;background-color:#f8f8f8;}
+.team .team-content{width:1200px;margin:auto;position:relative;}
+.team .team-content::after{display:block;content:"";clear:both;}
+.team .team-content .switch{cursor:pointer;font-size:24px;color:#0cb39e;font-weight:bold;}
+.team .team-content .switch-left{margin-top:110px;}
+.team .team-content .switch-right{position:absolute;top:110px;right:0;}
+.team .team-content .content-txt{position:relative;height:250px;overflow:hidden;width:1000px;margin:auto;}
+.team .content{margin:auto;width:1000px;padding-top:30px;position:absolute;}
+.team .content::after{display:block;content:"";clear:both;}
+.team .content li{float:left;width:300px;margin-right:50px;}
+.content li i { color:#ddd;margin-top:-5px;font-size:28px;}
+.content li .remarks { color:#999;font-size:18px;height:50px;line-height:25px;margin-left:22px;}
+.content li .details { margin-top:50px;border-top:1px solid #ccc;padding-top:20px;}
+.content li .head-photo {height: 36px;width:36px;background-color:#333;float:left;border-radius:50%;margin: 5px 20px 0px 20px;}
+.content li .desc div{ color:#666;font-size:18px;}
+
+/*联系我们*/
+.contant-us {height:400px;background:url(/modules/images/about/about-2.png)no-repeat center;background-size: 100% 100%;}
+.contant-us .information{width:1200px;margin:auto;position:relative;height:100%;}
+.contant-us .information .contant-details{background-color:rgba(12,179,158,0.7);width:450px;padding:30px 40px;height:180px;}
+.contant-us .information::before{display:block;content:"";height:100px;}
+.information .contant-details div { line-height:30px;color:#fff;}
+.contant-details div a { color:#fff;}
+.company {position:absolute;width:180px;cursor:pointer;height:30px;}
+.beijing {top:50px;right:150px;}
+.shanghai {bottom:100px;right:70px;}
+.hangzhou {bottom:40px;right:120px;}
+.information i{float:left;margin-right:15px;font-size:24px;color:#aaa;width:25px;height:30px;}
+.information .txt{color:#aaa;font-size:18px;}
+.information .hover i,.information .hover .txt{color:#0cb39e;}
+
+
+

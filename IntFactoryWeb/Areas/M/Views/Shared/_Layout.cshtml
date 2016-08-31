@@ -1,15 +1,29 @@
 ﻿<html>
 <head>
     <title>@ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
     <link href="/modules/css/iconfont/iconfont.css" rel="stylesheet" />
     <link href="/modules/css/base.css" rel="stylesheet" />
     <link href="/modules/m/css/layout.css" rel="stylesheet" />
     @RenderSection("css", false)    
 </head>
 <body>
-    <header class="header">
-        <div class="left logo">厂盟</div>
-        <div class="right iconfont"></div>
+    <header>
+        <div class="header">
+            <a href="/M/Home/index"><div class="left iconfont icon">&#xe614;</div></a>
+            <div class="right menu-icon">
+                <i class="iconfont">&#xe60a;</i>                
+            </div>
+        </div>
+        <ul class="menu hide">
+            <li><a href="/M/Home/index">首页</a></li>
+            <li><a href="/M/Product/Product">产品</a></li>
+            <li><a href="/M/Pricing/Pricing">定价</a></li>
+            <li><a href="/M/Services/Services">服务</a></li>
+            <li><a href="/M/About/About">关于</a></li>
+            <li class="free-login"><a href="http://zngc.intfactory.cn/home/login">登录</a></li>
+            <li class="free-register"><a target="_blank" href="http://zngc.intfactory.cn/Home/Register">免费注册</a></li>
+        </ul>
     </header>
 
     <div class="main-content">
@@ -19,25 +33,29 @@
     <footer>
         <div class="footer-content">
             <ul class="left">
-                <li><a>11111111</a></li>
-                <li><a>22222222</a></li>
+                <li><a href="/M/About/About?#list">帮助</a></li>
+                <li><a href="/M/About/About?#list">反馈</a></li>
+                <li><a href="/M/Pricing/Pricing">购买</a></li>
+                <li><a href="/M/About/About?#list">联系我们</a></li>
             </ul>
 
             <ul class="right">
-                <li><a>33333333</a></li>
-                <li><a>4444444444</a></li>
+                <li><a>开发者</a></li>
+                <li><a>服务条款</a></li>
+                <li><a target="_blank" href="http://j.map.baidu.com/FvBYv">网站地图</a></li>
+                <li><a href="/M/About/About?#list">合作伙伴</a></li>
             </ul>
             <div class="clear"></div>
         </div>
-        <div class="footer-title">1111111111111111111111</div>
+        <div class="footer-title">©2016厂盟智能 浙ICP备16001314号-1</div>
     </footer>
     <script src="/Scripts/jquery-1.11.1.js"></script>
     <script src="/Scripts/sea.js"></script>
     <script src="/Scripts/sea-config.js"></script>    
     <script type="text/javascript">
-     @*   seajs.use(["/modules/manage/scripts/layout"], function (ObjectJS) {
-            ObjectJS.init('@ViewBag.Name');
-        });*@
+        seajs.use(["/modules/m/scripts/layout"], function (ObjectJS) {
+            ObjectJS.init();
+        });
     </script>
     @RenderSection("scripts",false)
 </body>

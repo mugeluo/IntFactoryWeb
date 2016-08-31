@@ -28,27 +28,66 @@ input[type="button"]::-moz-focus-inner,
 input[type="submit"]::-moz-focus-inner,
 input[type="file"] > input[type="button"]::-moz-focus-inner{padding:0;border:none;}
 
-header {
-    padding:10px;
+header {   
+    padding:10px 0px;
     position:fixed;
     z-index:1000;
     top:0;
     left:0;
+    width:100%;
+    background-color:rgba(0,0,0,0.5);
+}
+header .header{
+    width:320px;
+    margin:auto;
+}
+header .header::after{
+    display:block;
+    content:"";
+    clear:both;
+}
+header .header .icon {
+   font-size:34px;
+    color:#fff;    
 }
 
-header .logo {
-    width:40px;
-    height:40px;
-    line-height:40px;
+header .iconfont{
+    font-size:34px;
+    color:#fff;
+    padding-right:6px;
+}
+
+header .header .menu { 
+    width:100%;
+    background-color:rgba(0,0,0,0.5);
+    position:fixed;
+    
+}
+header .menu li{
     text-align:center;
-    border-radius:20px;
-    background-color:#fdfdfd;
-    color:#aaa;
-    font-size:14px;
-    font-weight:bold;
+    margin-top:10px;
+    margin-bottom:20px;
+}
+header .menu li a{
+    color:#fff;
+}
+header .menu .free-login a{
+    color:#0cb39e;
+    border-radius:5px;
+    padding:5px 30px;
+    margin-bottom:30px;
+    background-color:#fff;
+}
+header .menu .free-register a{
+    color:#fff;
+    border-radius:5px;
+    padding:5px 15px;
+    margin-bottom:30px;
+    background-color:#0cb39e;
 }
 
 .main-content {
+    
 }
 
 footer {
@@ -57,7 +96,7 @@ footer {
 }
 
 footer .footer-content{
-    width:300px;
+    width:180px;
     margin:0 auto;
 }
 
