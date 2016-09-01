@@ -10,7 +10,7 @@
 
     ObjectJS.bindEvent = function () {
 
-        $(document).click(function (e) {
+        $(document).click(function (e) {            
             //隐藏下拉
             if (!$(e.target).parents().hasClass("menu-icon") && !$(e.target).hasClass("menu-icon")) {
                 $(".menu").slideUp();
