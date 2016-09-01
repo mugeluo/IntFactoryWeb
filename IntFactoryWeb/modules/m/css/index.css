@@ -19,6 +19,9 @@
     border-bottom:3px solid #eee;
     padding-bottom:50px;
 }
+.teamwork { 
+    height:450px;
+}
 .teamwork .item-content .title {     
     color:#0cb39e!important;
     margin-top:10px;
@@ -82,12 +85,21 @@
 }
 
 .item .item-content .des {
+    margin-top:20px;
+    font-size:16px;   
+    color:#777;
+    line-height:24px;
+    height:72px;
+}
+
+.item .item-content .desc {
     margin-top:50px;
     font-size:16px;   
     color:#777;
     line-height:24px;
 }
-.item .item-content .des .register {
+
+.item .item-content .desc .register {
     color:#fff;
     border-radius:5px;
     padding:17px 60px;  

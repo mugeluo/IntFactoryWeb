@@ -33,8 +33,7 @@
         }, 1000);
     };
 
-    ObjectJS.bindItemClick = function (obj, document, arr, txtDocument) {
-        
+    ObjectJS.bindItemClick = function (obj, document, arr, txtDocument) {        
         var url = $(obj).data("img"),id=$(obj).data("id");
         if (document.attr("src") != url) {
             document.fadeOut(500, function () {
@@ -43,8 +42,10 @@
         }
         if (!$(obj).hasClass("hover")) {
             $(obj).addClass("hover").siblings().removeClass("hover");
-        }
-        $(txtDocument).html(arr[id].text);
+        }        
+        $(obj).parent().parent().parent().find(".des").fadeOut(500, function () {
+            $(txtDocument).fadeIn().html(arr[id].text);
+        });        
     };
 
     module.exports = ObjectJS;
