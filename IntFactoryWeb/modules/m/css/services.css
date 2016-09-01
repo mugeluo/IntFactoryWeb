@@ -1,5 +1,6 @@
-﻿.head-content { height:500px;background:url(/modules/images/services/service-top-bg.png)no-repeat bottom right #0cb39e;background-size:100% 100%;}
-.head-content .content .title{color:#fff;font-size:30px;padding:200px 0 100px 0;width:280px;margin:auto;}
+﻿.head-content { height:400px;background:url(/modules/images/services/service-top-bg.png)no-repeat center #0cb39e;background-size:auto 100%;}
+.head-content .content .title{padding:100px 0 50px 0;width:280px;margin:auto;}
+.head-content .content .title span { color:#fff;font-size:30px;display:block;text-align:center;}
 .trait { width:280px;margin:auto;}
 .trait::after {display:block;content:"";clear:both; }
 .trait li { width:90px;float:left;margin-right:5px;text-align:center;}

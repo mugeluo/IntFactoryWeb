@@ -47,15 +47,16 @@ header .header::after{
     clear:both;
 }
 header .header .icon {
-   font-size:34px;
+    font-size:36px;
     color:#0cb39e;  
     margin-left:10px;  
+    height:40px;
 }
 
 header .icons-menu{
     border:1px solid #0cb39e;
     border-radius:3px;
-    padding:5px 12px;
+    padding:5px 15px;
     margin-right:10px;
     margin-top:5px;
     color:#0cb39e;
@@ -65,7 +66,7 @@ header .menu {
     width:100%;
     background-color:rgba(250,250,250,0.97);
     position:fixed;
-    top:57px;
+    top:60px;
 }
 header .menu li{
     text-align:center;

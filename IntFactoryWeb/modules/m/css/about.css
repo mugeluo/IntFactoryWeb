@@ -1,4 +1,4 @@
-﻿.head-content { height:500px;background:url(/modules/images/about/about-1.png)no-repeat center bottom #0cb39e;background-size:100% 100%;}
+﻿.head-content { height:400px;background:url(/modules/images/about/about-1.png)no-repeat #0cb39e;background-size:auto 100%;}
 .head-content .content{text-align: center;width:280px;margin:auto;}
 .head-content .content .title{color:#fff;font-size:30px;padding:140px 0 50px 0;}
 .head-content .title-desc{font-size:20px;color:#fff;opacity:0.8;}
@@ -19,7 +19,7 @@
 .team .content li{float:left;width:260px;margin:auto;position:absolute;z-index:22;}
 .content li i { color:#ddd;margin-top:-5px;font-size:28px;}
 .content li .remarks { color:#999;font-size:18px;height:50px;line-height:25px;margin-left:22px;}
-.content li .details { margin-top:50px;border-top:1px solid #ccc;padding-top:20px;}
+.content li .details { margin-top:30px;border-top:1px solid #ccc;padding-top:20px;}
 .content li .head-photo {height: 36px;width:36px;background-color:#333;float:left;border-radius:50%;margin: 5px 20px 0px 50px;}
 .content li .desc div{ color:#666;font-size:18px;}
 

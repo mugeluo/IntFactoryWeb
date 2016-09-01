@@ -1,5 +1,5 @@
-﻿.head-content { height:500px;background:url(/modules/images/pricing/pricing-background1.png)no-repeat center bottom #0cb39e;background-size:100% 100%; }
-.head-content .content .title{color:#fff;font-size:30px;padding:140px 0 120px 0;}
+﻿.head-content { height:400px;background:url(/modules/images/pricing/pricing-background1.png)no-repeat center bottom #0cb39e;background-size:100% 100%; }
+.head-content .content .title{color:#fff;font-size:30px;padding:100px 0 120px 0;}
 .head-content .content .title span{color:#fff;font-size:30px;text-align:center;display:block;}
 
 .tilte-version{width:280px; margin:auto;}
