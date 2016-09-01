@@ -73,12 +73,20 @@ namespace IntFactoryDAL
             return ds;
         }
 
-        public DataTable GetTypesByTypeID(string TypeID)
+        public DataTable GetTypesByTypeID(string typeID)
         {
             string sqlTxt = string.Empty;
-            sqlTxt = "select * from Type  where Status<>9 and TypeID='"+TypeID+"'";
+            sqlTxt = "select * from Type  where Status<>9 and TypeID='"+typeID+"'";
             DataTable ds = GetDataTable(sqlTxt);
             return ds;
+        }
+
+        public DataTable GetContentByHelpID(string helpID)
+        {
+            string sqlTxt = string.Empty;
+            sqlTxt = "select * from Help where Status<>9 and HelpID='" + helpID + "'";
+            DataTable dt = GetDataTable(sqlTxt);
+            return dt;
         }
 
         #endregion
@@ -87,22 +95,22 @@ namespace IntFactoryDAL
 
         #region 添加
 
-        public bool InsertUsers(string UserID,string Account,string Password) 
+        public bool InsertUsers(string userID,string account,string password) 
         {
             string sqlTxt = string.Empty;
-            sqlTxt = "insert into Users (UserID,Account,Password) values('"+UserID+"','"+Account+"','"+Password+"')";
+            sqlTxt = "insert into Users (UserID,Account,Password) values('"+userID+"','"+account+"','"+password+"')";
             var num= ExecuteNonQuery(sqlTxt);
             return num == 1 ? true : false;
         }
 
-        public int InsertType(string TypeID, string Name, string Types, string UserID)
+        public int InsertType(string typeID, string name, string types, string userID)
         {            
             int result = 0;
             SqlParameter[] param ={ new SqlParameter("@Result",result),
-                                    new SqlParameter("@TypeID",TypeID),
-                                    new SqlParameter("@Name",Name),
-                                    new SqlParameter("@Types",Types),
-                                    new SqlParameter("@UserID",UserID)
+                                    new SqlParameter("@TypeID",typeID),
+                                    new SqlParameter("@Name",name),
+                                    new SqlParameter("@Types",types),
+                                    new SqlParameter("@UserID",userID)
                                  };
             param[0].Direction = ParameterDirection.Output;
             ExecuteNonQuery("P_InsertType", param, CommandType.StoredProcedure);
@@ -110,15 +118,15 @@ namespace IntFactoryDAL
             return result;
         }
 
-        public int InsertContent(string HelpID, string TypeID, string Title, string Content, string UserID)
+        public int InsertContent(string helpID, string typeID, string title, string content, string userID)
         {
             int result = 0;
             SqlParameter[] param ={ new SqlParameter("@Result",result),
-                                    new SqlParameter("@HelpID",HelpID),
-                                    new SqlParameter("@TypeID",TypeID),
-                                    new SqlParameter("@Title",Title),
-                                    new SqlParameter("@UserID",UserID),
-                                    new SqlParameter("@Content",Content)
+                                    new SqlParameter("@HelpID",helpID),
+                                    new SqlParameter("@TypeID",typeID),
+                                    new SqlParameter("@Title",title),
+                                    new SqlParameter("@UserID",userID),
+                                    new SqlParameter("@Content",content)
                                  };
             param[0].Direction = ParameterDirection.Output;
             ExecuteNonQuery("P_InsertContent", param, CommandType.StoredProcedure);
@@ -132,18 +140,18 @@ namespace IntFactoryDAL
 
         #region 编辑
 
-        public bool UpdateType(string TypeID, string Name, string Types)
+        public bool UpdateType(string typeID, string name, string types)
         {
             string sqlTxt = string.Empty;
-            sqlTxt = "Update Type set Name='"+Name+"',Types='"+Types+"' where TypeID='" + TypeID + "'";
+            sqlTxt = "Update Type set Name='"+name+"',Types='"+types+"' where TypeID='" + typeID + "'";
             var num = ExecuteNonQuery(sqlTxt);
             return num == 1 ? true : false;
         }
 
-        public bool UpdateContent(string HelpID,string Title,string Content,string TypeID)
+        public bool UpdateContent(string helpID,string title,string content,string typeID)
         {
             string sqlTxt = string.Empty;
-            sqlTxt = "Update Help set Title='" + Title + "',Content='" + Content + "',TypeID='" + TypeID + "' where HelpID='" + HelpID + "'";
+            sqlTxt = "Update Help set Title='" + title + "',Content='" + content + "',TypeID='" + typeID + "' where HelpID='" + helpID + "'";
             var num = ExecuteNonQuery(sqlTxt);
             return num == 1 ? true : false;
         }
@@ -154,11 +162,11 @@ namespace IntFactoryDAL
 
         #region 删除
 
-        public int DeleteType(string TypeID) 
+        public int DeleteType(string typeID) 
         {
             int result = 0;
             SqlParameter[] param ={ new SqlParameter("@Result",result),
-                                    new SqlParameter("@TypeID",TypeID)                                    
+                                    new SqlParameter("@TypeID",typeID)                                    
                                  };
             param[0].Direction = ParameterDirection.Output;
             ExecuteNonQuery("P_DeleteType", param, CommandType.StoredProcedure);
@@ -166,10 +174,10 @@ namespace IntFactoryDAL
             return result;
         }
 
-        public bool DeleteContent(string HelpID)
+        public bool DeleteContent(string helpID)
         {
             string sqlTxt = string.Empty;
-            sqlTxt = "Update Help set Status=9 where HelpID='" + HelpID+"'";
+            sqlTxt = "Update Help set Status=9 where HelpID='" + helpID+"'";
             var num = ExecuteNonQuery(sqlTxt);
             return num == 1 ? true : false;
         }

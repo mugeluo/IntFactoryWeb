@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "后台 | 添加内容";
+    ViewBag.Name = "Function";
+        
+}
+
+@section css{    
+    <link href="/modules/manage/css/function/function.css" rel="stylesheet" />
+}
+@section scripts{
+    <script src="/modules/plug/umeditor/ueditor.config.js"></script>
+    <script src="/modules/plug/umeditor/umeditor.min.js"></script>
+    <script type="text/javascript">
+        seajs.use(["/modules/manage/scripts/function/function"], function (ObjectJS) {
+            var um = UE.getEditor('remark');
+            ObjectJS.init(um,'@ViewBag.navName');
+        });
+    </script>
+}
+<div class="header-box">
+    <a href="/Manage/Function/DetailsList" class="header-title left">返回列表</a>   
+</div>
+<div class="content-body">
+    <div class="">
+        <ul class="table-add">
+            <li>
+                <span class="column-title">类型:</span>               
+                <select>
+                    @foreach (var item in list)
+                    {
+                        <option data-id="@(item.TypeID)">@(item.Name)</option>
+                    }        
+                </select>
+            </li>
+            <li>
+                <span class="column-title">标题:</span>
+                <input type="text" class="title" />
+            </li>
+            <li>
+                <span class="column-title left">描述:</span>
+                <div style="margin-left:65px;" id="remark"></div>
+            </li>
+        </ul>
+        <div class="btn add-type-details">添加</div>
+    </div>
+</div>

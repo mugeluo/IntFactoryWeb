@@ -31,9 +31,9 @@ namespace IntFactoryBusiness
             return list;
         }
 
-        public TypeEntity GetTypesByTypeID(string TypeID)
+        public TypeEntity GetTypesByTypeID(string typeID)
         {
-            DataTable ds = HelpCenterDAL.BaseProvider.GetTypesByTypeID(TypeID);
+            DataTable ds = HelpCenterDAL.BaseProvider.GetTypesByTypeID(typeID);
             TypeEntity model = new TypeEntity();
             foreach (DataRow dr in ds.Rows)
             {
@@ -83,26 +83,37 @@ namespace IntFactoryBusiness
             return list;
         }
 
+        public HelpEntity GetContentByHelpID(string helpID)
+        {
+            HelpEntity list = new HelpEntity();
+            DataTable dt = HelpCenterDAL.BaseProvider.GetContentByHelpID(helpID);
+            foreach (DataRow dr in dt.Rows )
+            {
+                list.FillData(dr);
+            }
+            return list;
+        }
+
         #endregion
 
 
         #region 添加
-        public bool InsertUsers(string Acccount,string Password)
+        public bool InsertUsers(string acccount,string password)
         {
-            var UserID = Guid.NewGuid().ToString().ToLower();
-            return HelpCenterDAL.BaseProvider.InsertUsers(UserID, Acccount, Password);
+            var userID = Guid.NewGuid().ToString().ToLower();
+            return HelpCenterDAL.BaseProvider.InsertUsers(userID, acccount, password);
         }
 
-        public int InsertType(string Name, string Types, string UserID)
+        public int InsertType(string name, string types, string userID)
         {
-            var TypeID = Guid.NewGuid().ToString().ToLower();
-            return HelpCenterDAL.BaseProvider.InsertType(TypeID, Name, Types, UserID);
+            var typeID = Guid.NewGuid().ToString().ToLower();
+            return HelpCenterDAL.BaseProvider.InsertType(typeID, name, types, userID);
         }
 
-        public int InsertContent(string TypeID, string Title, string Content, string UserID)
+        public int InsertContent(string typeID, string title, string content, string userID)
         {
-            var HelpID = Guid.NewGuid().ToString().ToLower();
-            return HelpCenterDAL.BaseProvider.InsertContent(HelpID,TypeID, Title, Content, UserID);
+            var helpID = Guid.NewGuid().ToString().ToLower();
+            return HelpCenterDAL.BaseProvider.InsertContent(helpID,typeID, title, content, userID);
         }
 
         #endregion
@@ -111,14 +122,14 @@ namespace IntFactoryBusiness
 
         #region 编辑
 
-        public bool UpdateType(string TypeID, string Name, string Types)
+        public bool UpdateType(string typeID, string name, string types)
         {
-            return HelpCenterDAL.BaseProvider.UpdateType(TypeID, Name, Types);
+            return HelpCenterDAL.BaseProvider.UpdateType(typeID, name, types);
         }
 
-        public bool UpdateContent(string HelpID, string Title, string Content, string TypeID)
+        public bool UpdateContent(string helpID, string title, string content, string typeID)
         {
-            return HelpCenterDAL.BaseProvider.UpdateContent(HelpID, Title, Content,TypeID);
+            return HelpCenterDAL.BaseProvider.UpdateContent(helpID, title, content,typeID);
         }
 
         #endregion
@@ -126,14 +137,14 @@ namespace IntFactoryBusiness
 
         #region 删除
 
-        public int DeleteType(string TypeID)
+        public int DeleteType(string typeID)
         {
-            return HelpCenterDAL.BaseProvider.DeleteType(TypeID);
+            return HelpCenterDAL.BaseProvider.DeleteType(typeID);
         }
 
-        public bool DeleteContent(string HelpID)
+        public bool DeleteContent(string helpID)
         {
-            return HelpCenterDAL.BaseProvider.DeleteContent(HelpID);
+            return HelpCenterDAL.BaseProvider.DeleteContent(helpID);
         }
         #endregion
     }

@@ -33,6 +33,11 @@ namespace IntFactory.HelpCenter.Areas.Manage.Controllers
             return View();
         }
 
+        public ActionResult UpdateContent()
+        {
+            return View();
+        }
+
         #region ajax
 
         public JsonResult GetTypes(string filter)
@@ -72,10 +77,21 @@ namespace IntFactory.HelpCenter.Areas.Manage.Controllers
             };
         }
 
-        public JsonResult InsertType(string Name, string Types)
+        public JsonResult GetContentByHelpID(string id)
         {
-            var UserID = "2faf2062-6f13-4d01-8187-d343eff27222";
-            var bl = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.InsertType(Name, Types, UserID);
+            var list = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetContentByHelpID(id);
+            JsonDictionary.Add("items",list);
+            return new JsonResult
+            {
+                Data = JsonDictionary,
+                JsonRequestBehavior = JsonRequestBehavior.AllowGet
+            };
+        }
+
+        public JsonResult InsertType(string name, string types)
+        {
+            var userID = "2faf2062-6f13-4d01-8187-d343eff27222";
+            var bl = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.InsertType(name, types, userID);
             JsonDictionary.Add("status", bl);
             return new JsonResult
             {
@@ -84,10 +100,10 @@ namespace IntFactory.HelpCenter.Areas.Manage.Controllers
             };
         }
 
-        public JsonResult InsertContent(string TypeID, string Title, string desc)
+        public JsonResult InsertContent(string typeID, string title, string desc)
         {
-            var UserID = "2faf2062-6f13-4d01-8187-d343eff27222";
-            var bl = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.InsertContent(TypeID, Title, desc, UserID);
+            var userID = "2faf2062-6f13-4d01-8187-d343eff27222";
+            var bl = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.InsertContent(typeID, title, desc, userID);
             JsonDictionary.Add("status", bl);
             return new JsonResult
             {
@@ -96,9 +112,9 @@ namespace IntFactory.HelpCenter.Areas.Manage.Controllers
             };
         }
 
-        public JsonResult UpdateType(string TypeID, string Name, string Types)
+        public JsonResult UpdateType(string typeID, string name, string types)
         {
-            var bl = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.UpdateType(TypeID, Name, Types);
+            var bl = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.UpdateType(typeID, name, types);
             JsonDictionary.Add("status", bl);
             return new JsonResult
             {
@@ -107,9 +123,9 @@ namespace IntFactory.HelpCenter.Areas.Manage.Controllers
             };
         }
 
-        public JsonResult UpdateContent(string HelpID, string Title, string Content, string TypeID)
+        public JsonResult UpdateContent(string helpID, string title, string content, string typeID)
         {
-            var bl = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.UpdateContent(HelpID, Title, Content, TypeID);
+            var bl = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.UpdateContent(helpID, title, content, typeID);
             JsonDictionary.Add("status", bl);
             return new JsonResult
             {
@@ -118,9 +134,9 @@ namespace IntFactory.HelpCenter.Areas.Manage.Controllers
             };
         }
 
-        public JsonResult DeleteType(string TypeID)
+        public JsonResult DeleteType(string typeID)
         {
-            var bl = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.DeleteType(TypeID);
+            var bl = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.DeleteType(typeID);
             JsonDictionary.Add("status", bl);
             return new JsonResult
             {
@@ -129,9 +145,9 @@ namespace IntFactory.HelpCenter.Areas.Manage.Controllers
             };
         }
 
-        public JsonResult DeleteContent(string HelpID)
+        public JsonResult DeleteContent(string helpID)
         {
-            var bl = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.DeleteContent(HelpID);
+            var bl = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.DeleteContent(helpID);
             JsonDictionary.Add("status", bl);
             return new JsonResult
             {

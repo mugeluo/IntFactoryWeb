@@ -244,6 +244,7 @@
     <Content Include="modules\m\images\product\mobile-product4.png" />
     <Content Include="modules\m\images\product\mobile-product5.png" />
     <Content Include="modules\m\scripts\about.js" />
+    <Content Include="modules\m\scripts\font.js" />
     <Content Include="modules\m\scripts\index.js" />
     <Content Include="modules\m\scripts\layout.js" />
     <Content Include="modules\m\scripts\pricing.js" />
