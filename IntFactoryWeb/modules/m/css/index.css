@@ -16,7 +16,7 @@
     margin-top:20px;
 }
 .resource .item-content{
-    border-bottom:3px solid #f8f8f8;
+    border-bottom:3px solid #eee;
     padding-bottom:50px;
 }
 .teamwork .item-content .title {     
@@ -85,6 +85,7 @@
     margin-top:50px;
     font-size:16px;   
     color:#777;
+    line-height:24px;
 }
 .item .item-content .des .register {
     color:#fff;
