@@ -5,5 +5,6 @@
 .bgcolor { background-color:#f8f8f8;}
 .item .item-content {width:280px;margin:0 auto;text-align:center;}
 .item .title{font-size:24px;color:#000;line-height:35px;padding-top:30px;}
-.item .title-desc{font-size:16px;color:#999;margin-top:30px;line-height:25px;}
+.item .title-desc{margin-top:30px;}
+.item .title-desc span{font-size:14px;color:#999;line-height:25px;display:block;}
 .item .img{margin-top:30px;}

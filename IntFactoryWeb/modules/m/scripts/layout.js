@@ -17,6 +17,12 @@
             }
         });
 
+        //头部双击 返回顶部
+        //$("header").dblclick(function () {            
+        //    $('body,html').animate({ scrollTop: 0 }, 300);
+        //    return false;
+        //});
+
         $(".menu-icon").click(function () {
             $(".menu").slideToggle();
         });
