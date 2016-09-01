@@ -13,7 +13,7 @@
 .tilte-version .templent .desc-version{width:180px;margin:auto;margin-top:60px;}
 .tilte-version .templent .desc-version li{color:#666;margin-bottom:20px;}
 
-.price-list { width:260px;margin:auto; }
+.price-list { width:260px;margin:50px auto 0px auto; }
 .price-list table { margin-bottom:20px;border-collapse:collapse;width:100%}
 .price-list table td{border-top:1px solid #ccc;text-align:center;height:50px;border-bottom:0px;border-right:0px;position:relative;}
 table td span{position:absolute;color: #1eb452;right:20px;}
@@ -26,13 +26,13 @@ table td span{position:absolute;color: #1eb452;right:20px;}
 .price-list table tr:first-child td:last-child { border-right:1px solid #ccc;}
 .price-list table tr td:first-child{width:78px;border-right:1px solid #ccc;}
 .price-list table tr:last-child td{border-bottom:1px solid #ccc;}
-.price-list table .use-number {border: 1px solid #666;padding: 2px 5px;border-radius: 25px;width: 55px;margin: auto;font-size:12px; }
+.price-list table .use-number {border: 1px solid #666;padding: 2px 5px;border-radius: 25px;width: 50px;margin: auto;font-size:12px; }
 
 .else { background-color:#f8f8f8;margin-top:30px;}
 .else ul{padding-bottom:40px;}
 .else ul .icon{text-align:center;padding-top:20px;}
 .else ul .icon .iconfont{color:#0cb39e;font-size:64px;}
-.else ul .content-title { color:#333;font-size:18px;text-align:center;margin-top:20px;}
+.else ul .content-title { color:#333;font-size:24px;text-align:center;margin-top:20px;}
 .else ul .content-desc {color:#666;text-align:center;width:210px;margin:auto; margin-top:20px;margin-bottom:40px;line-height:25px;}
 .else ul .href-address { text-align:center;}
 .else ul .href-address a{ color:#0cb39e;border:1px solid #0cb39e;font-size:12px;border-radius:5px;padding:5px 20px;cursor:pointer;}
