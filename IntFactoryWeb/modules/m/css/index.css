@@ -19,6 +19,9 @@
     border-bottom:3px solid #eee;
     padding-bottom:50px;
 }
+.teamwork { 
+    height:450px;
+}
 .teamwork .item-content .title {     
     color:#0cb39e!important;
     margin-top:10px;
