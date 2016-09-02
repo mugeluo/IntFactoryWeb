@@ -56,7 +56,7 @@ namespace IntFactoryDAL
             return ds;
         }
 
-        public DataSet GetContent(int types, string keyWords, string beginTime, string endTime, string orderBy, int pageSize, int pageIndex, ref int totalCount, ref int pageCount)
+        public DataSet GetContent(string typeID, string keyWords, string beginTime, string endTime, string orderBy, int pageSize, int pageIndex, ref int totalCount, ref int pageCount)
         {
             string tableName = "Help";
             string key = "HelpID";
@@ -64,7 +64,7 @@ namespace IntFactoryDAL
                                     new SqlParameter("@pageCount",pageCount),
                                     new SqlParameter("@tableName",tableName),
                                     new SqlParameter("@key",key),
-                                    new SqlParameter("@types",types),
+                                    new SqlParameter("@typeID",typeID),
                                     new SqlParameter("@keyWords",keyWords),
                                     new SqlParameter("@beginTime",beginTime),
                                     new SqlParameter("@endTime",endTime),

@@ -71,7 +71,7 @@ namespace IntFactory.HelpCenter.Areas.Manage.Controllers
             int totalCount = 0;
             int pageCount = 0;
             var list = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetTypeList();
-            var obj = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetContent(model.Types, model.Keywords, model.BeginTime, model.EndTime, model.OrderBy, model.PageSize, model.PageIndex, ref totalCount, ref pageCount);
+            var obj = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetContent(model.TypeID, model.Keywords, model.BeginTime, model.EndTime, model.OrderBy, model.PageSize, model.PageIndex, ref totalCount, ref pageCount);
             JsonDictionary.Add("items", obj);
             JsonDictionary.Add("list", list);
             JsonDictionary.Add("totalCount", totalCount);

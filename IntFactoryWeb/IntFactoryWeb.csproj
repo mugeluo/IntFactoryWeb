@@ -199,6 +199,11 @@
     <Content Include="modules\images\logo_login.png" />
     <Content Include="modules\images\pricing\pricing-background1.png" />
     <Content Include="modules\images\pricing\pricing-background2.png" />
+    <Content Include="modules\images\product\mobile-produtct1.png" />
+    <Content Include="modules\images\product\mobile-produtct2.png" />
+    <Content Include="modules\images\product\mobile-produtct3.png" />
+    <Content Include="modules\images\product\mobile-produtct4.png" />
+    <Content Include="modules\images\product\mobile-produtct5.png" />
     <Content Include="modules\images\product\product-top-bg.png" />
     <Content Include="modules\images\product\product-top.png" />
     <Content Include="modules\images\product\product1.png" />
