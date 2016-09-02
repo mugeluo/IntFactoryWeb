@@ -36,14 +36,14 @@
     ObjectJS.bindItemClick = function (obj, document, arr, txtDocument) {        
         var url = $(obj).data("img"),id=$(obj).data("id");
         if (document.attr("src") != url) {
-            document.fadeOut(500, function () {
+            document.fadeOut(function () {
                 $(this).fadeIn().attr("src", url);
             })
         }
         if (!$(obj).hasClass("hover")) {
             $(obj).addClass("hover").siblings().removeClass("hover");
         }        
-        $(obj).parent().parent().parent().find(".des").fadeOut(500, function () {
+        $(obj).parent().parent().parent().find(".des").fadeOut(function () {
             $(txtDocument).fadeIn().html(arr[id].text);
         });        
     };

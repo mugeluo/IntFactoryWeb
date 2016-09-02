@@ -81,10 +81,10 @@ namespace IntFactoryBusiness
             return list;
         }
 
-        public List<HelpEntity> GetContent(int types, string keyWords, string beginTime, string endTime, string orderBy, int pageSize, int pageIndex, ref int totalCount, ref int pageCount)
+        public List<HelpEntity> GetContent(string typeID, string keyWords, string beginTime, string endTime, string orderBy, int pageSize, int pageIndex, ref int totalCount, ref int pageCount)
         {
             List<HelpEntity> list = new List<HelpEntity>();
-            DataSet ds = HelpCenterDAL.BaseProvider.GetContent(types, keyWords, beginTime, endTime, orderBy, pageSize, pageIndex, ref totalCount, ref pageCount);
+            DataSet ds = HelpCenterDAL.BaseProvider.GetContent(typeID, keyWords, beginTime, endTime, orderBy, pageSize, pageIndex, ref totalCount, ref pageCount);
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
                 HelpEntity model = new HelpEntity();

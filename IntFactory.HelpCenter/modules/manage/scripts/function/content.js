@@ -9,7 +9,7 @@
     var ObjectJS = {};
 
     var Params = {
-        Types: "-1",
+        TypeID: "",
         Keywords: "",
         BeginTime: "",
         EndTime: "",
@@ -45,12 +45,12 @@
 
         //选择模块
         $(".customer-source .item").click(function () {
-            var _this = $(this), type = _this.data("idsource");
+            var _this = $(this), typeID = _this.data("id");
             if (!_this.hasClass("hover")) {
                 _this.siblings().removeClass("hover");
                 _this.addClass("hover");
 
-                Params.Types = type;
+                Params.TypeID = typeID;
                 ObjectJS.getContentList();
 
             }

@@ -10,6 +10,8 @@ namespace IntFactory.HelpCenter.Models
     {
         public int Types { get; set; }
 
+        public string TypeID{get; set; }
+
         public string Keywords { get; set; }
 
         public string BeginTime { get; set; }
