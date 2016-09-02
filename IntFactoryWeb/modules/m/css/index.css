@@ -79,7 +79,7 @@
 }
 
 .item .item-content .img {
-    margin-top:30px;
+    margin-top:30px;    
 }
 
 .item .item-content .img .img-load{
@@ -87,11 +87,13 @@
 }
 
 .item .item-content .des {
-    margin-top:20px;
+    margin-top:20px;    
+    height:72px;
+}
+.item .item-content .des span{
     font-size:16px;   
     color:#777;
     line-height:24px;
-    height:72px;
 }
 
 .item .item-content .desc {

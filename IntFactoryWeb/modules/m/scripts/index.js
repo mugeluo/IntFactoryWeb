@@ -15,15 +15,15 @@
         var arrResource = [{ text: "平台入驻优质材料供应商，解决找材料费时费力等难题，降低材料采购成本" }, { text: "工厂之间共享客户资源，让淡季不再淡，旺季不再忙，实现利润最大化" }, { text: "为有自主研发能力的工厂提供样衣中心，方便客户选款拼单" }];
 
         $(".infomation .list ul li").click(function () {
-            ObjectJS.bindItemClick(this, $(".infomation .img img"), arrInfomation, ".infomation .des");
+            ObjectJS.bindItemClick(this, $(".infomation .img img"), arrInfomation, ".infomation .des span");
         });
 
         $(".task .list ul li").click(function () {
-            ObjectJS.bindItemClick(this, $(".task .img img"), arrTask, ".task .des");
+            ObjectJS.bindItemClick(this, $(".task .img img"), arrTask, ".task .des span");
         });
 
         $(".resource .list ul li").click(function () {
-            ObjectJS.bindItemClick(this, $(".resource .img img"), arrResource, ".resource .des");
+            ObjectJS.bindItemClick(this, $(".resource .img img"), arrResource, ".resource .des span");
         });
 
         setTimeout(function () {
@@ -36,6 +36,8 @@
     ObjectJS.bindItemClick = function (obj, document, arr, txtDocument) {        
         var url = $(obj).data("img"),id=$(obj).data("id");
         if (document.attr("src") != url) {
+            var height = document.height();
+            document.parent().height(height+"px");
             document.fadeOut(function () {
                 $(this).fadeIn().attr("src", url);
             })
@@ -43,7 +45,7 @@
         if (!$(obj).hasClass("hover")) {
             $(obj).addClass("hover").siblings().removeClass("hover");
         }        
-        $(obj).parent().parent().parent().find(".des").fadeOut(function () {
+        $(obj).parent().parent().parent().find(".des span").fadeOut(function () {
             $(txtDocument).fadeIn().html(arr[id].text);
         });        
     };
