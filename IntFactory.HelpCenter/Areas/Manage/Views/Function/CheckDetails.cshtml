@@ -1,8 +1,8 @@
 ﻿@{
-    ViewBag.Title = "后台 | 编辑内容";
-    var list = (List<IntFactoryEntity.TypeEntity>)ViewBag.List;
-    var model = (IntFactoryEntity.HelpEntity) ViewBag.model;
-    ViewBag.Name = "Function";
+    ViewBag.Title = "内容查看";
+    var item = (IntFactoryEntity.TypeEntity)ViewBag.item;
+    var model = (IntFactoryEntity.HelpEntity)ViewBag.model;
+    ViewBag.Name = "Function";  
 }
 @section css{    
     <link href="/modules/manage/css/function/function.css" rel="stylesheet" />
@@ -19,32 +19,27 @@
 }
 <div class="header-box">
     <a href="/Manage/Function/DetailsList" class="header-title left">返回列表</a>   
+    <div class="add-type"><a href="/Manage/Function/UpdateDetails/@(model.HelpID)">编辑内容</a></div>
 </div>
 <div class="content-body">
     <div class="">
         <ul class="table-add">
             <li>
-                <span class="column-title">类型:</span>               
-                <select>
-                    @foreach (var item in list)
-                    {
-                        <option data-id="@(item.TypeID)">@(item.Name)</option>
-                    }        
-                </select>
+                <span class="column-title">类型:</span>  
+                <input type="text" disabled="disabled" value="@(item.Name)" />                  
             </li>
             <li>
                 <span class="column-title">标题:</span>
-                <input type="text" class="title" />
+                <input type="text" disabled="disabled" class="title" />
             </li>
             <li>
                 <span class="column-title">关键字:</span>
-                <input type="text" class="keywords" />
+                <input type="text" disabled="disabled" class="keywords" />
             </li>
             <li>
                 <span class="column-title left">描述:</span>
                 <div style="margin-left:65px;" id="remark"></div>
             </li>
         </ul>
-        <div class="btn-ok update-details">保存</div>
     </div>
 </div>

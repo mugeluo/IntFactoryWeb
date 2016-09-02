@@ -1,4 +1,7 @@
-
+* { 
+    font-size:12px;
+}
+.btnccc {  padding:5px 10px; background-color:#ccc; color:#333; border:none; cursor:pointer; display:inline-block; border-radius:2px; line-height:18px; }
 .daterangepicker { position: absolute; color: inherit; background: #fff; border-radius: 4px; width: 278px; padding: 4px; margin-top: 1px; top: 100px; left: 20px; /* Calendars */ }
     .daterangepicker:before, .daterangepicker:after { position: absolute; display: inline-block; border-bottom-color: rgba(0, 0, 0, 0.2); content: ''; }
     .daterangepicker:before { top: -7px; border-right: 7px solid transparent; border-left: 7px solid transparent; border-bottom: 7px solid #ccc; }

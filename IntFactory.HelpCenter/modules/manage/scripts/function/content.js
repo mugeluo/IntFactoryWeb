@@ -176,7 +176,9 @@
                         ObjectJS.getContentList();
                     }
                 });
-            }            
+            } else {
+                $(".category-details").append("<tr class='list-item'><td class='center' colspan='5'>暂无数据<td></tr>");
+            }
         });
     }
 

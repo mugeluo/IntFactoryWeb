@@ -7,7 +7,10 @@
     ObjectJS.init = function (name, navName) {
         ObjectJS.bindEvent(name);
         $(".action-box .action").removeClass("select");
-        $(".action-box #" + navName).addClass("select")
+        if (navName!="") {
+            $(".action-box #" + navName).addClass("select");
+        }
+        
     };
 
     ObjectJS.bindEvent = function (name) {

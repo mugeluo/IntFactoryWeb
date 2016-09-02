@@ -7,6 +7,7 @@
     require("daterangepicker");
 
     var ObjectJS = {};
+    ObjectJS.types=0;
     var Params = {
         Types:"-1",
         Keywords: "",
@@ -102,16 +103,8 @@
                 }
             })
         });
-
-        $("#select .item .check-lump").click(function () {
-            var _this = $(this);
-            if (!_this.hasClass("hover")) {
-                $("#select .item .check-lump").removeClass("hover");
-                _this.addClass("hover");
-            };
-        });
-
-
+        ObjectJS.bingSelect();
+        
     };
 
     ObjectJS.getTypeList = function () {
@@ -133,9 +126,8 @@
                                     header: "编辑模块",
                                     content: innerText,
                                     yesFn: function () {
-                                        var type = $(".type").val();
-                                        var types = $(".table-add select option:selected").data("id");
-                                        Global.post("/Manage/Function/UpdateType", { TypeID: typeID, Name: type, Types: types }, function (e) {
+                                        var type = $(".type").val();                                        
+                                        Global.post("/Manage/Function/UpdateType", { TypeID: typeID, Name: type, Types: ObjectJS.types }, function (e) {
                                             if (e.status) {
                                                 ObjectJS.getTypeList();
                                             } else {
@@ -149,11 +141,14 @@
                                 }
                             });
 
+                            ObjectJS.bingSelect();
+
                             for (var i = 0; i < data.items.length; i++) {
                                 var item = data.items[i];
                                 if (item.TypeID == typeID) {
                                     $(".type").val(item.Name);
-                                    $("#show-model-detail .table-add select option[data-id=" + item.Types + "]").attr("selected", "true");
+                                    $("#select .item .check-lump").removeClass("hover");
+                                    $("#select .item .check-lump[data-id=" + item.Types + "]").addClass("hover");
                                 }
                             }                            
                         });
@@ -201,6 +196,17 @@
                 });
             }
         })
+    }
+
+    ObjectJS.bingSelect = function () {
+        $("#select .item .check-lump").click(function () {
+            var _this = $(this),id=_this.data("id");
+            ObjectJS.types=id;
+            if (!_this.hasClass("hover")) {
+                $("#select .item .check-lump").removeClass("hover");
+                _this.addClass("hover");
+            };
+        });
     }
 
     module.exports = ObjectJS;

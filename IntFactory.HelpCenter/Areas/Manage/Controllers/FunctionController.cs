@@ -44,6 +44,21 @@ namespace IntFactory.HelpCenter.Areas.Manage.Controllers
             return View();
         }
 
+        public ActionResult CheckDetails(string id)
+        {
+            var list = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetTypeList();           
+            var model = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetContentByHelpID(id);
+            foreach (var item in list)
+            {
+                if (item.TypeID==model.TypeID)
+                {
+                    ViewBag.item = item;
+                }
+            }
+            ViewBag.model = model;
+            return View();
+        }
+
         #region ajax
 
         public JsonResult GetTypes(string filter)
