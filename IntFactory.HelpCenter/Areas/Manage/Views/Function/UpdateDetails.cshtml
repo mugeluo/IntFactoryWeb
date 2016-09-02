@@ -1,10 +1,9 @@
 ﻿@{
+    ViewBag.Title = "UpdateDetails";
     var list = (List<IntFactoryEntity.TypeEntity>)ViewBag.List;
-    ViewBag.Title = "后台 | 添加内容";
+    var model = (IntFactoryEntity.HelpEntity) ViewBag.model;
     ViewBag.Name = "Function";
-    ViewBag.navName = "type-details";
 }
-
 @section css{    
     <link href="/modules/manage/css/function/function.css" rel="stylesheet" />
 }
@@ -12,9 +11,9 @@
     <script src="/modules/plug/umeditor/ueditor.config.js"></script>
     <script src="/modules/plug/umeditor/umeditor.min.js"></script>
     <script type="text/javascript">
-        seajs.use(["/modules/manage/scripts/function/function"], function (ObjectJS) {
+        seajs.use(["/modules/manage/scripts/function/update-content"], function (ObjectJS) {
             var um = UE.getEditor('remark');
-            ObjectJS.init(um,'@ViewBag.navName');
+            ObjectJS.init(um, '@Html.ToJSONString(model)');
         });
     </script>
 }
@@ -38,11 +37,14 @@
                 <input type="text" class="title" />
             </li>
             <li>
+                <span class="column-title">关键字:</span>
+                <input type="text" class="keywords" />
+            </li>
+            <li>
                 <span class="column-title left">描述:</span>
                 <div style="margin-left:65px;" id="remark"></div>
             </li>
         </ul>
-        <div class="btn add-type-details">添加</div>
+        <div class="btn update-details">保存</div>
     </div>
 </div>
-

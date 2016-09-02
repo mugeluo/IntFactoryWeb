@@ -36,6 +36,7 @@ header {
     left:0;
     width:100%;
     background-color:rgba(250,250,250,0.97);
+    border-bottom:1px solid #ccc;
 }
 header .header{
     
@@ -121,6 +122,4 @@ footer .footer-title {
     text-align:center;
     color:#fff;
     opacity:0.8;
-}
-@media only screen and (min-width: 768px) {
 }

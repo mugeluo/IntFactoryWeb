@@ -1,8 +1,8 @@
 ﻿
-.selector li { float:left;width:60px;margin-right:20px;}
+.selector .item { float:left;width:100px;margin-right:20px;}
 .selector::after { display:block;content:"";clear:both;}
 .selector .ico-radiobox {width: 20px;height: 20px;display: inline-block;background-color: #fff;border: solid 1px #ccc;text-align: center;border-radius: 11px;
-                         cursor: pointer;box-shadow: 0 0 2px #ddd inset;line-height: 20px !important;float:left;}
+                         cursor: pointer;box-shadow: 0 0 2px #ddd inset;line-height: 20px !important;float:left;margin-right:5px;}
 .selector .hover span {background-color: #4a98e7;display: inline-block;height: 12px;width: 12px;border-radius: 6px;margin-top: 4px;}
 .img-upload {background-color: #4a98e7;padding: 5px;border-radius: 3px;color: #fff;cursor:pointer; }
 

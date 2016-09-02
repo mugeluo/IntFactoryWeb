@@ -1,8 +1,6 @@
 ﻿define(function (require, exports, module) {
 
     var ObjectJS = {};
-    ObjectJS.num = 1;
-    ObjectJS.status = true;
 
     ObjectJS.init = function () {
         ObjectJS.bindEvent();

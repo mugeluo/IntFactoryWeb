@@ -4,8 +4,10 @@
 
     var ObjectJS = {};
 
-    ObjectJS.init = function (name) {
+    ObjectJS.init = function (name, navName) {
         ObjectJS.bindEvent(name);
+        $(".action-box .action").removeClass("select");
+        $(".action-box #" + navName).addClass("select")
     };
 
     ObjectJS.bindEvent = function (name) {

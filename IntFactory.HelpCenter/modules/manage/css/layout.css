@@ -70,6 +70,34 @@ nav .action-box .point { width:6px; height:6px; border-radius:3px; background-co
 
 .content-body{ overflow:auto; background-color:#fff; clear:both; margin:0 20px; padding:10px 0; box-shadow:0px 10px 10px #ddd; }
 
+/*搜索项*/
+.search-body { margin:0 20px; min-height:35px; }
+.search-item { clear:both; overflow:auto; margin-bottom:10px; }
+.search-item li{ float:left; height:23px; line-height:23px; border:solid 1px #fff; margin-right:10px; }
+.search-item li.item{ color:#666; cursor:pointer; padding:0 10px;}
+.search-item .column-name{ width:60px; color:#999; }
+.search-item .item:hover{ color:#4A99E8; }
+.search-item .item.hover{ border:solid 1px #4A99E8; color:#4A99E8;}
+
+.search-items { clear:both;overflow:auto; height:35px; margin:10px 20px;}
+
+/*排序*/
+.search-sort {  border-top:dashed 1px #ccc;  border-bottom:dashed 1px #ccc; background-color:#f9f9f9; height:40px; margin-top:10px; }
+.search-sort li{ float:left; padding:0 20px; line-height:40px; color:#666; }
+.search-sort .sort-item { position:relative; cursor:pointer; }
+
+.search-sort .sort-item:hover { color:#4a98e7; }
+.search-sort .sort-item.hover { color:#4a98e7; }
+
+.search-sort .sort-item .asc { position:absolute; top:16px; right:5px;  border-bottom:solid 5px #ccc; border-left:solid 5px transparent ;border-right:solid 5px transparent ; display:inline-block;}
+.search-sort .sort-item .desc { position:absolute; top:23px; right:5px;  border-top:solid 5px #ccc; border-left:solid 5px transparent ;border-right:solid 5px transparent ; display:inline-block;}
+
+.search-sort .sort-item .asc.hover {  border-bottom:solid 5px #4a98e7;}
+.search-sort .sort-item .desc.hover { border-top:solid 5px #4a98e7;}
+
+/*日期*/
+.ipt-date{ background:url(/modules/images/icondate.png) no-repeat left 4px center; height:28px !important;line-height:28px; text-indent:20px; width:180px;margin-right:20px;}
+
 /*内容表格样式*/
 .table-list { width: 100%; border-spacing: 0px;}
 .table-list .operation span{cursor:pointer;color:#4a98e7;display:inline-block;vertical-align: middle;}

@@ -125,12 +125,17 @@
     <Compile Include="Areas\Manage\Controllers\BaseController.cs" />
     <Compile Include="Areas\Manage\Controllers\FunctionController.cs" />
     <Compile Include="Areas\Manage\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Manage\Controllers\PlugController.cs" />
     <Compile Include="Areas\Manage\Controllers\SystemController.cs" />
     <Compile Include="Areas\Manage\ManageAreaRegistration.cs" />
+    <Compile Include="Common\Common.cs" />
+    <Compile Include="Common\ExpandClass.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\FilterHelp.cs" />
+    <Compile Include="Models\FilterTypes.cs" />
     <Compile Include="modules\plug\umeditor\net\App_Code\Config.cs" />
     <Compile Include="modules\plug\umeditor\net\App_Code\ConfigHandler.cs" />
     <Compile Include="modules\plug\umeditor\net\App_Code\CrawlerHandler.cs" />
@@ -236,9 +241,13 @@
     <Content Include="modules\manage\css\layout.css" />
     <Content Include="modules\manage\css\system\users.css" />
     <Content Include="modules\manage\images\ico-loading.gif" />
+    <Content Include="modules\images\icondate.png" />
+    <Content Include="modules\manage\images\ico_search.png" />
+    <Content Include="modules\manage\images\ico_searchhover.png" />
     <Content Include="modules\manage\images\img-noimg.png" />
-    <Content Include="modules\manage\scripts\function\function.js" />
-    <Content Include="modules\manage\scripts\function\type.js" />
+    <Content Include="modules\manage\scripts\function\content.js" />
+    <Content Include="modules\manage\scripts\function\classification.js" />
+    <Content Include="modules\manage\scripts\function\update-content.js" />
     <Content Include="modules\manage\scripts\index.js" />
     <Content Include="modules\manage\scripts\layout.js" />
     <Content Include="modules\manage\scripts\users.js" />
@@ -253,6 +262,9 @@
     <Content Include="modules\plug\datapager\images\sprevious.png" />
     <Content Include="modules\plug\datapager\paginate.js" />
     <Content Include="modules\plug\datapager\style.css" />
+    <Content Include="modules\plug\daterangepicker\daterangepicker.css" />
+    <Content Include="modules\plug\daterangepicker\daterangepicker.js" />
+    <Content Include="modules\plug\daterangepicker\moment.js" />
     <Content Include="modules\plug\doT.js" />
     <Content Include="modules\plug\easydialog\easydialog.css" />
     <Content Include="modules\plug\easydialog\easydialog.js" />
@@ -282,6 +294,9 @@
     <Content Include="modules\plug\qiniustorage\plupload\plupload.min.js" />
     <Content Include="modules\plug\qiniustorage\qiniu\multiple.js" />
     <Content Include="modules\plug\qiniustorage\qiniu\qiniu.js" />
+    <Content Include="modules\plug\seach_keys\demo.html" />
+    <Content Include="modules\plug\seach_keys\seach_keys.js" />
+    <Content Include="modules\plug\seach_keys\style.css" />
     <Content Include="modules\plug\umeditor\dialogs\anchor\anchor.html" />
     <Content Include="modules\plug\umeditor\dialogs\attachment\attachment.css" />
     <Content Include="modules\plug\umeditor\dialogs\attachment\attachment.html" />
@@ -599,7 +614,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Manage\Models\" />
-    <Folder Include="Models\" />
     <Folder Include="modules\css\home\" />
     <Folder Include="modules\plug\umeditor\net\upload\images\" />
     <Folder Include="modules\template\" />
@@ -610,7 +624,7 @@
   <ItemGroup>
     <Content Include="Areas\Manage\Views\Function\AddType.cshtml" />
     <Content Include="Areas\Manage\Views\Function\DetailsList.cshtml" />
-    <Content Include="Areas\Manage\Views\Function\FunctionDetails.cshtml" />
+    <Content Include="Areas\Manage\Views\Function\AddDetails.cshtml" />
     <Content Include="Areas\Manage\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Manage\Views\System\AddUsers.cshtml" />
     <Content Include="Areas\Manage\Views\System\Users.cshtml" />
@@ -618,6 +632,10 @@
     <Content Include="Areas\Manage\Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Intfactory\Qiniu\Qiniu.4.5.csproj">
+      <Project>{ad4ea9d1-11c2-4bf6-8a06-72a966bc1b80}</Project>
+      <Name>Qiniu.4.5</Name>
+    </ProjectReference>
     <ProjectReference Include="..\IntFactoryBusiness\IntFactoryBusiness.csproj">
       <Project>{fc44d8b5-e40c-4fd5-9100-328211af7828}</Project>
       <Name>IntFactoryBusiness</Name>
@@ -674,7 +692,7 @@
     <Content Include="Areas\Manage\Views\Function\Function.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\Manage\Views\Function\UpdateContent.cshtml" />
+    <Content Include="Areas\Manage\Views\Function\UpdateDetails.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

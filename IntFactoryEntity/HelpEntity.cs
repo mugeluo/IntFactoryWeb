@@ -18,6 +18,10 @@ namespace IntFactoryEntity
 
         public string Title { get; set; }
 
+        public string KeyWords { get; set; }
+
+        public string Sort { get; set; }
+
         public string Content { get; set; }
 
         public DateTime CreateTime { get; set; }

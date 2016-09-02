@@ -1,10 +1,10 @@
 ﻿.head-content { height:400px;background:url(/modules/images/product/product-top-bg.png) no-repeat center #0cb39e;background-size:auto 100%;}
 .head-content .content{text-align: center;background-color: rgba(12, 179, 158,0.5);height:400px;}
 .head-content .content .title{color:#fff;font-size:30px;padding:140px 0 120px 0;margin:0px 20px;}
-.item { height:400px;}
 .bgcolor { background-color:#f8f8f8;}
-.item .item-content {width:280px;margin:0 auto;text-align:center;}
+.item .item-content {width:90%;margin:0 auto;text-align:center;}
 .item .title{font-size:24px;color:#000;line-height:35px;padding-top:30px;}
 .item .title-desc{margin-top:30px;}
 .item .title-desc span{font-size:14px;color:#999;line-height:25px;display:block;}
 .item .img{margin-top:30px;}
+.item .img img{width:100%;margin-bottom:50px;box-shadow: 3px 3px 3px #ccc;}

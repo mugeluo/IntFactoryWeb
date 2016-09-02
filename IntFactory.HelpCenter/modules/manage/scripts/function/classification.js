@@ -1,13 +1,20 @@
 ﻿define(function (require, exports, module) {
     var Global = require("global"),
         Dot = require("dot"),
+        moment = require("moment"),
         Easydialog = require("easydialog");
     require("pager");
+    require("daterangepicker");
 
     var ObjectJS = {};
     var Params = {
+        Types:"-1",
+        Keywords: "",
+        BeginTime:"",
+        EndTime: "",
         PageIndex: 1,
-        PageSize: 5
+        PageSize: 5,
+        OrderBy: "Type.CreateTime desc",
     }
     ObjectJS.init = function () {
         ObjectJS.bindEvent();
@@ -15,7 +22,96 @@
     };
 
     ObjectJS.bindEvent = function () {
-        
+        //日期插件
+        $("#iptCreateTime").daterangepicker({
+            showDropdowns: true,
+            empty: true,
+            opens: "right",
+            ranges: {
+                '今天': [moment(), moment()],
+                '昨天': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                '上周': [moment().subtract(6, 'days'), moment()],
+                '本月': [moment().startOf('month'), moment().endOf('month')]
+            }
+        }, function (start, end, label) {
+            Params.PageIndex = 1;
+            Params.BeginTime = start ? start.format("YYYY-MM-DD") : "";
+            Params.EndTime = end ? end.format("YYYY-MM-DD") : "";
+            ObjectJS.getTypeList();
+        });
+
+        //选择模块
+        $(".customer-source .item").click(function () {
+            var _this = $(this), type = _this.data("idsource");
+            if (!_this.hasClass("hover")) {
+                _this.siblings().removeClass("hover");
+                _this.addClass("hover");                
+               
+                Params.Types = type;
+                ObjectJS.getTypeList();
+                
+            }
+        });
+
+        //关键字搜索
+        require.async("search", function () {
+            $(".searth-module").searchKeys(function (keyWords) {
+                Params.PageIndex = 1;
+                Params.Keywords = keyWords;
+                ObjectJS.getTypeList();                
+            });
+        });
+
+        //排序
+        $(".sort-item").click(function () {
+            var _this = $(this);
+            if (_this.hasClass("hover")) {
+                if (_this.find(".asc").hasClass("hover")) {
+                    _this.find(".asc").removeClass("hover");
+                    _this.find(".desc").addClass("hover");
+                    Params.OrderBy = _this.data("column") + " desc ";
+                } else {
+                    _this.find(".desc").removeClass("hover");
+                    _this.find(".asc").addClass("hover");
+                    Params.OrderBy = _this.data("column") + " asc ";
+                }
+            } else {
+                _this.addClass("hover").siblings().removeClass("hover");
+                _this.siblings().find(".hover").removeClass("hover");
+                _this.find(".desc").addClass("hover");
+                Params.OrderBy = _this.data("column") + " desc ";
+            }
+            Params.PageIndex = 1;
+            ObjectJS.getTypeList();
+        });
+
+        $(".add-category").click(function () {
+            var types = $("#select .item .hover").data("id");
+            var txt = $(".type").val();
+            if (txt == "") {
+                alert("分类不能为空");
+                return;
+            }
+            Global.post("/Manage/Function/InsertType", { Name: txt, Types: types }, function (data) {
+                if (data.status == 1) {
+                    alert("添加成功");
+                } else if (data.status == 0) {
+                    alert("添加失败");
+                } else {
+                    alert("分类名称已存在");
+                }
+            })
+        });
+
+        $("#select .item .check-lump").click(function () {
+            var _this = $(this);
+            if (!_this.hasClass("hover")) {
+                $("#select .item .check-lump").removeClass("hover");
+                _this.addClass("hover");
+            };
+        });
+
+
     };
 
     ObjectJS.getTypeList = function () {

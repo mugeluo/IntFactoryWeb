@@ -1,10 +1,9 @@
-﻿.head-content { height:400px;background:url(/modules/images/home/index-top.png) no-repeat center;background-size:100% 100%;}
+﻿.head-content { height:400px;background:url(/modules/images/home/index-top.png) no-repeat center;}
 .head-content .content{text-align: center;background-color: rgba(12, 179, 158,0.5);height:400px;}
 .head-content .content .title{color:#fff;font-size:30px;padding:140px 0 120px 0;}
 .head-content .content .register{color:#0cb39e;border-radius:5px;padding:15px 52px;margin-bottom:30px;cursor:pointer;background-color:#fff;font-size:24px;}
 
-.item {
-    height:500px;
+.item {    
     padding:30px 0;
 }
 .task{
@@ -20,14 +19,14 @@
     padding-bottom:50px;
 }
 .teamwork { 
-    height:450px;
+   
 }
 .teamwork .item-content .title {     
     color:#0cb39e!important;
     margin-top:10px;
 }
 .item .item-content {
-    width:280px;
+    width:90%;
     margin:0 auto;
     text-align:center;
 }
@@ -43,9 +42,8 @@
 }
 
 .item .item-content .list li {
-    float:left;
-    margin-right:10px;
-    width:86px;
+    float:left;    
+    width:33%;
     text-align:center;
 }
 
@@ -84,6 +82,10 @@
     margin-top:30px;
 }
 
+.item .item-content .img .img-load{
+    width:80%;
+}
+
 .item .item-content .des {
     margin-top:20px;
     font-size:16px;   
@@ -97,6 +99,7 @@
     font-size:16px;   
     color:#777;
     line-height:24px;
+    margin-bottom:20px;
 }
 
 .item .item-content .desc .register {
@@ -107,4 +110,6 @@
     background-color:#0cb39e;
     font-size:24px;
 }
-
+@media only screen and (min-width: 1000px) {
+    .item .item-content { width:1000px;}
+}

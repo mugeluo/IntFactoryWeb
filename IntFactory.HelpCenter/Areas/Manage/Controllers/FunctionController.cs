@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Script.Serialization;
 using IntFactoryEntity;
+using IntFactory.HelpCenter.Models;
 
 namespace IntFactory.HelpCenter.Areas.Manage.Controllers
 {
@@ -24,17 +25,22 @@ namespace IntFactory.HelpCenter.Areas.Manage.Controllers
 
         public ActionResult DetailsList()
         {
-            return View();
-        }
-
-        public ActionResult FunctionDetails()
-        {
             ViewBag.List = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetTypeList();
             return View();
         }
 
-        public ActionResult UpdateContent()
+        public ActionResult AddDetails()
         {
+            var list=IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetTypesByType("0");
+            ViewBag.List = list;                
+            return View();
+        }       
+
+        public ActionResult UpdateDetails(string id)
+        {
+            ViewBag.List = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetTypeList();
+            var model = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetContentByHelpID(id);
+            ViewBag.model = model;
             return View();
         }
 
@@ -43,11 +49,11 @@ namespace IntFactory.HelpCenter.Areas.Manage.Controllers
         public JsonResult GetTypes(string filter)
         {
             JavaScriptSerializer jssl = new JavaScriptSerializer();
-            TypeEntity model = jssl.Deserialize<TypeEntity>(filter);
+            FilterTypes model = jssl.Deserialize<FilterTypes>(filter);
             int totalCount = 0;
             int pageCount = 0;
 
-            var list = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetTypes(model.PageSize, model.PageIndex, ref totalCount, ref pageCount);
+            var list = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetTypes(model.Types, model.Keywords, model.BeginTime, model.EndTime,model.OrderBy, model.PageSize, model.PageIndex, ref totalCount, ref pageCount);
             JsonDictionary.Add("items", list);
             JsonDictionary.Add("totalCount", totalCount);
             JsonDictionary.Add("pageCount", pageCount);
@@ -61,11 +67,11 @@ namespace IntFactory.HelpCenter.Areas.Manage.Controllers
         public JsonResult GetContent(string filter)
         {
             JavaScriptSerializer jssl = new JavaScriptSerializer();
-            HelpEntity model = jssl.Deserialize<HelpEntity>(filter);
+            FilterTypes model = jssl.Deserialize<FilterTypes>(filter);
             int totalCount = 0;
             int pageCount = 0;
             var list = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetTypeList();
-            var obj = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetContent(model.PageSize, model.PageIndex, ref totalCount, ref pageCount);
+            var obj = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetContent(model.Types, model.Keywords, model.BeginTime, model.EndTime, model.OrderBy, model.PageSize, model.PageIndex, ref totalCount, ref pageCount);
             JsonDictionary.Add("items", obj);
             JsonDictionary.Add("list", list);
             JsonDictionary.Add("totalCount", totalCount);
@@ -77,9 +83,8 @@ namespace IntFactory.HelpCenter.Areas.Manage.Controllers
             };
         }
 
-        public JsonResult GetContentByHelpID(string id)
-        {
-            var list = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetContentByHelpID(id);
+        public JsonResult GetTypeByTypes(string type) {
+            var list = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetTypesByType(type);
             JsonDictionary.Add("items",list);
             return new JsonResult
             {
@@ -87,7 +92,7 @@ namespace IntFactory.HelpCenter.Areas.Manage.Controllers
                 JsonRequestBehavior = JsonRequestBehavior.AllowGet
             };
         }
-
+                
         public JsonResult InsertType(string name, string types)
         {
             var userID = "2faf2062-6f13-4d01-8187-d343eff27222";
@@ -100,10 +105,10 @@ namespace IntFactory.HelpCenter.Areas.Manage.Controllers
             };
         }
 
-        public JsonResult InsertContent(string typeID, string title, string desc)
+        public JsonResult InsertContent(string typeID, string title,string keyWords, string keywords, string desc)
         {
             var userID = "2faf2062-6f13-4d01-8187-d343eff27222";
-            var bl = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.InsertContent(typeID, title, desc, userID);
+            var bl = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.InsertContent(typeID, title, keyWords, desc, userID);
             JsonDictionary.Add("status", bl);
             return new JsonResult
             {
@@ -123,9 +128,9 @@ namespace IntFactory.HelpCenter.Areas.Manage.Controllers
             };
         }
 
-        public JsonResult UpdateContent(string helpID, string title, string content, string typeID)
+        public JsonResult UpdateContent(string id, string title, string keyWords, string content, string typeID)
         {
-            var bl = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.UpdateContent(helpID, title, content, typeID);
+            var bl = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.UpdateContent(id, title, keyWords, content, typeID);
             JsonDictionary.Add("status", bl);
             return new JsonResult
             {

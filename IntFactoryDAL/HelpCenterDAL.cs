@@ -21,7 +21,7 @@ namespace IntFactoryDAL
             return ds;
         }
 
-        public DataSet GetTypes(int pageSize, int pageIndex, ref int totalCount, ref int pageCount)
+        public DataSet GetTypes(int types, string keyWords, string beginTime, string endTime, string orderBy, int pageSize, int pageIndex, ref int totalCount, ref int pageCount)
         {
             string tableName = "Type";
             string key = "TypeID";
@@ -29,6 +29,11 @@ namespace IntFactoryDAL
                                     new SqlParameter("@pageCount",pageCount),
                                     new SqlParameter("@tableName",tableName),
                                     new SqlParameter("@key",key),
+                                    new SqlParameter("@types",types),
+                                    new SqlParameter("@keyWords",keyWords),
+                                    new SqlParameter("@beginTime",beginTime),
+                                    new SqlParameter("@endTime",endTime),
+                                    new SqlParameter("@orderBy",orderBy),
                                     new SqlParameter("@pageSize",pageSize),
                                     new SqlParameter("@pageIndex",pageIndex)                                    
                                  };
@@ -51,23 +56,28 @@ namespace IntFactoryDAL
             return ds;
         }
 
-        public DataSet GetContent(int pageSize, int pageIndex, ref int totalCount, ref int pageCount)
+        public DataSet GetContent(int types, string keyWords, string beginTime, string endTime, string orderBy, int pageSize, int pageIndex, ref int totalCount, ref int pageCount)
         {
             string tableName = "Help";
             string key = "HelpID";
             SqlParameter[] param ={ new SqlParameter("@totalCount",totalCount),
                                     new SqlParameter("@pageCount",pageCount),
-                                     new SqlParameter("@tableName",tableName),
+                                    new SqlParameter("@tableName",tableName),
                                     new SqlParameter("@key",key),
+                                    new SqlParameter("@types",types),
+                                    new SqlParameter("@keyWords",keyWords),
+                                    new SqlParameter("@beginTime",beginTime),
+                                    new SqlParameter("@endTime",endTime),
+                                    new SqlParameter("@orderBy",orderBy),
                                     new SqlParameter("@pageSize",pageSize),
-                                    new SqlParameter("@pageIndex",pageIndex)                                    
+                                    new SqlParameter("@pageIndex",pageIndex)                                
                                  };
             param[0].Value = totalCount;
             param[1].Value = pageCount;
 
             param[0].Direction = ParameterDirection.InputOutput;
             param[1].Direction = ParameterDirection.InputOutput;
-            DataSet ds = GetDataSet("P_GetTypeList", param, CommandType.StoredProcedure);
+            DataSet ds = GetDataSet("P_GetContentList", param, CommandType.StoredProcedure);
             totalCount = Convert.ToInt32(param[0].Value);
             pageCount = Convert.ToInt32(param[1].Value);
             return ds;
@@ -78,6 +88,13 @@ namespace IntFactoryDAL
             string sqlTxt = string.Empty;
             sqlTxt = "select * from Type  where Status<>9 and TypeID='"+typeID+"'";
             DataTable ds = GetDataTable(sqlTxt);
+            return ds;
+        }
+        public DataSet GetTypesByType(string type)
+        {
+            string sqlTxt = string.Empty;
+            sqlTxt = "select * from Type  where Status<>9 and Types='" + type + "'";
+            DataSet ds = GetDataSet(sqlTxt);
             return ds;
         }
 
@@ -118,13 +135,14 @@ namespace IntFactoryDAL
             return result;
         }
 
-        public int InsertContent(string helpID, string typeID, string title, string content, string userID)
+        public int InsertContent(string helpID, string typeID, string title, string keyWords, string content, string userID)
         {
             int result = 0;
             SqlParameter[] param ={ new SqlParameter("@Result",result),
                                     new SqlParameter("@HelpID",helpID),
                                     new SqlParameter("@TypeID",typeID),
                                     new SqlParameter("@Title",title),
+                                    new SqlParameter("@KeyWords",keyWords),
                                     new SqlParameter("@UserID",userID),
                                     new SqlParameter("@Content",content)
                                  };
@@ -148,10 +166,10 @@ namespace IntFactoryDAL
             return num == 1 ? true : false;
         }
 
-        public bool UpdateContent(string helpID,string title,string content,string typeID)
+        public bool UpdateContent(string helpID, string title, string keyWords, string content, string typeID)
         {
             string sqlTxt = string.Empty;
-            sqlTxt = "Update Help set Title='" + title + "',Content='" + content + "',TypeID='" + typeID + "' where HelpID='" + helpID + "'";
+            sqlTxt = "Update Help set Title='" + title + "',KeyWords='" + keyWords + "',Content='" + content + "',TypeID='" + typeID + "' where HelpID='" + helpID + "'";
             var num = ExecuteNonQuery(sqlTxt);
             return num == 1 ? true : false;
         }

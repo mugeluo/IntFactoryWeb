@@ -1,15 +1,15 @@
 ﻿@{
     ViewBag.Title = "后台 | 添加分类";
     ViewBag.Name = "Function";
-    ViewBag.navName = "add-type";
+    ViewBag.navName = "add-Type";
 }
 @section css{    
     <link href="/modules/manage/css/function/function.css" rel="stylesheet" />
 }
 @section scripts{
-    <script type="text/javascript">
-        seajs.use(["/modules/manage/scripts/function/function"], function (ObjectJS) {
-            ObjectJS.init('@ViewBag.navName');
+    <script type="text/javascript">        
+        seajs.use(["/modules/manage/scripts/function/classification"], function (ObjectJS) {
+            ObjectJS.init();
         });
     </script>
 }
@@ -21,12 +21,21 @@
     <div class="">
         <ul class="table-add">            
             <li>
-                <span class="column-title">类型:</span>
-                <select>
-                    <option data-id="0">功能</option>
-                    <option data-id="1">问题</option>
-                    <option data-id="2">指引</option>
-                </select>
+                <span class="column-title left">模块:</span>
+                <div class="selector" id="select">
+                    <div class="item">
+                        <i class="ico-radiobox check-lump hover" data-id="0"><span></span></i>
+                        功能模块
+                    </div>
+                    <div class="item">
+                        <i class="ico-radiobox check-lump" data-id="1"><span></span></i>
+                        常见问题
+                    </div>
+                    <div class="item">
+                        <i class="ico-radiobox check-lump" data-id="2"><span></span></i>
+                        新手指引
+                    </div>
+                </div>
             </li>
             <li>
                  <span class="column-title">分类：</span> 

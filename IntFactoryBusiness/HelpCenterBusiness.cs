@@ -42,10 +42,23 @@ namespace IntFactoryBusiness
             return model;
         }
 
-        public List<TypeEntity> GetTypes(int pageSize, int pageIndex, ref int totalCount, ref int pageCount)
+        public List<TypeEntity> GetTypesByType(string type)
         {
             List<TypeEntity> list = new List<TypeEntity>();
-            DataSet ds = HelpCenterDAL.BaseProvider.GetTypes(pageSize, pageIndex, ref totalCount, ref pageCount);
+            DataSet ds = HelpCenterDAL.BaseProvider.GetTypesByType(type);            
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                TypeEntity model = new TypeEntity();
+                model.FillData(dr);
+                list.Add(model);
+            }
+            return list;
+        }
+
+        public List<TypeEntity> GetTypes(int types, string keyWords, string beginTime, string endTime, string orderBy, int pageSize, int pageIndex, ref int totalCount, ref int pageCount)
+        {
+            List<TypeEntity> list = new List<TypeEntity>();
+            DataSet ds = HelpCenterDAL.BaseProvider.GetTypes(types,keyWords,beginTime,endTime,orderBy,pageSize, pageIndex, ref totalCount, ref pageCount);
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
                 TypeEntity model = new TypeEntity();
@@ -68,10 +81,10 @@ namespace IntFactoryBusiness
             return list;
         }
 
-        public List<HelpEntity> GetContent(int pageSize, int pageIndex, ref int totalCount, ref int pageCount)
+        public List<HelpEntity> GetContent(int types, string keyWords, string beginTime, string endTime, string orderBy, int pageSize, int pageIndex, ref int totalCount, ref int pageCount)
         {
             List<HelpEntity> list = new List<HelpEntity>();
-            DataSet ds = HelpCenterDAL.BaseProvider.GetContent(pageSize, pageIndex, ref totalCount, ref pageCount);
+            DataSet ds = HelpCenterDAL.BaseProvider.GetContent(types, keyWords, beginTime, endTime, orderBy, pageSize, pageIndex, ref totalCount, ref pageCount);
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
                 HelpEntity model = new HelpEntity();
@@ -110,10 +123,10 @@ namespace IntFactoryBusiness
             return HelpCenterDAL.BaseProvider.InsertType(typeID, name, types, userID);
         }
 
-        public int InsertContent(string typeID, string title, string content, string userID)
+        public int InsertContent(string typeID, string title, string keyWords, string content, string userID)
         {
             var helpID = Guid.NewGuid().ToString().ToLower();
-            return HelpCenterDAL.BaseProvider.InsertContent(helpID,typeID, title, content, userID);
+            return HelpCenterDAL.BaseProvider.InsertContent(helpID, typeID, title, keyWords, content, userID);
         }
 
         #endregion
@@ -127,9 +140,9 @@ namespace IntFactoryBusiness
             return HelpCenterDAL.BaseProvider.UpdateType(typeID, name, types);
         }
 
-        public bool UpdateContent(string helpID, string title, string content, string typeID)
+        public bool UpdateContent(string helpID, string title, string keyWords, string content, string typeID)
         {
-            return HelpCenterDAL.BaseProvider.UpdateContent(helpID, title, content,typeID);
+            return HelpCenterDAL.BaseProvider.UpdateContent(helpID, title, keyWords,content,typeID);
         }
 
         #endregion

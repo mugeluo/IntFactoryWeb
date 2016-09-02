@@ -24,8 +24,8 @@
 .price-list table .use-number {border: 1px solid #aaa;padding: 2px 5px;border-radius: 25px;width: 50px;margin: auto;font-size:12px; color:#aaa;}
 .price-list .time-selected {width:240px; margin:auto;}
 .price-list .time-selected::after{display:block;content:"";clear:both;}
-.price-list .time-selected li{float:left;width:33%;text-align:center;}
-.price-list .time-selected li span{padding:5px 20px;border:1px solid #fff;}
+.price-list .time-selected li{float:left;width:33%;text-align:center;height:32px;line-height:32px;}
+.price-list .time-selected li span{padding:5px 20px;}
 .price-list .time-selected .hover span{border:1px solid #0cb39e;color:#fff;background-color:#0cb39e;border-radius:5px;}
 /*.price-list .time-selected li i{margin-right:10px;}*/
 /*.price-list .ico-radiobox {width: 20px;height: 20px;display: inline-block;background-color: #fff;border: solid 1px #ccc;text-align: center;border-radius: 11px;
