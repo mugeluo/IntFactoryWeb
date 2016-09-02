@@ -63,37 +63,33 @@ header .icons-menu{
     color:#0cb39e;
 }
 
-header .menu { 
+header .menu-ul { 
     width:100%;
     background-color:rgba(250,250,250,0.97);
     position:fixed;
     top:60px;
 }
-header .menu li{
+header .menu-ul li{
     text-align:center;
     line-height:40px;    
     margin:0px 15px 8px 15px;
 }
-header .menu li a{
+header .menu-ul li a{
     color:#0cb39e;
     width:100%;
     height:40px;
     display:block;
 }
-header .menu .free-login a{
+header .menu-ul .free-login a{
     color:#fff;
     border:1px solid #0cb39e;  
     border-radius:3px;     
     background-color:#0cb39e;
 }
-header .menu .free-register a{
+header .menu-ul .free-register a{
     color:#0cb39e;
     border-radius:3px;
     border:1px #0cb39e solid;
-}
-
-.main-content {
-    
 }
 
 footer {
