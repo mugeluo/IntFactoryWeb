@@ -117,10 +117,10 @@ namespace IntFactoryBusiness
             return HelpCenterDAL.BaseProvider.InsertUsers(userID, acccount, password);
         }
 
-        public int InsertType(string name, string types, string userID)
+        public int InsertType(string name, string types,string img ,string userID)
         {
             var typeID = Guid.NewGuid().ToString().ToLower();
-            return HelpCenterDAL.BaseProvider.InsertType(typeID, name, types, userID);
+            return HelpCenterDAL.BaseProvider.InsertType(typeID, name, types,img, userID);
         }
 
         public int InsertContent(string typeID, string title, string keyWords, string content, string userID)

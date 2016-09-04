@@ -595,6 +595,7 @@
     <Content Include="modules\scripts\home\newindex.js" />
     <Content Include="modules\scripts\layout.js" />
     <Content Include="modules\scripts\services\services.js" />
+    <Content Include="modules\template\task-file-upload-img.html" />
     <Content Include="Scripts\jquery-1.11.1.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\sea-config.js" />
@@ -617,7 +618,6 @@
     <Folder Include="Areas\Manage\Models\" />
     <Folder Include="modules\css\home\" />
     <Folder Include="modules\plug\umeditor\net\upload\images\" />
-    <Folder Include="modules\template\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

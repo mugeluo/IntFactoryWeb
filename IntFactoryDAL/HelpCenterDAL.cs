@@ -120,12 +120,13 @@ namespace IntFactoryDAL
             return num == 1 ? true : false;
         }
 
-        public int InsertType(string typeID, string name, string types, string userID)
+        public int InsertType(string typeID, string name, string types,string img, string userID)
         {            
             int result = 0;
             SqlParameter[] param ={ new SqlParameter("@Result",result),
                                     new SqlParameter("@TypeID",typeID),
                                     new SqlParameter("@Name",name),
+                                    new SqlParameter("@img",img),
                                     new SqlParameter("@Types",types),
                                     new SqlParameter("@UserID",userID)
                                  };

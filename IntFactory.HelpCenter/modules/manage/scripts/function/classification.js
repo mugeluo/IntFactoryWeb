@@ -5,6 +5,7 @@
         Easydialog = require("easydialog");
     require("pager");
     require("daterangepicker");
+    var Upload = require("upload");
 
     var ObjectJS = {};
     ObjectJS.types=0;
@@ -40,6 +41,19 @@
             Params.EndTime = end ? end.format("YYYY-MM-DD") : "";
             ObjectJS.getTypeList();
         });
+
+        
+        var uploader = Upload.uploader({
+            browse_button: 'uploadImg',
+            picture_container: "cateGoryImages",
+            successItems: "#cateGoryImages li",
+            image_view: "?imageView2/1/w/60/h/60",                
+            file_path: "/Content/UploadFiles/HelpCenter/",
+            maxSize: 5,
+            fileType: 1,
+            init: {}
+        });
+        
 
         //选择模块
         $(".customer-source .item").click(function () {
@@ -93,7 +107,8 @@
                 alert("分类不能为空");
                 return;
             }
-            Global.post("/Manage/Function/InsertType", { Name: txt, Types: types }, function (data) {
+            var img = $("#orderImages li img").attr("src");
+            Global.post("/Manage/Function/InsertType", { Name: txt, Types: types ,img:img}, function (data) {
                 if (data.status == 1) {
                     alert("添加成功");
                 } else if (data.status == 0) {
