@@ -120,10 +120,10 @@ namespace IntFactory.HelpCenter.Areas.Manage.Controllers
             };
         }
 
-        public JsonResult InsertContent(string typeID, string title,string keyWords, string keywords, string desc)
+        public JsonResult InsertContent(string typeID, string sort,string title,string keyWords, string keywords, string desc)
         {
             var userID = "2faf2062-6f13-4d01-8187-d343eff27222";
-            var bl = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.InsertContent(typeID, title, keyWords, desc, userID);
+            var bl = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.InsertContent(typeID, sort, title, keyWords, desc, userID);
             JsonDictionary.Add("status", bl);
             return new JsonResult
             {

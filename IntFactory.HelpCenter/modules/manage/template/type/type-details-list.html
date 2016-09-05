@@ -3,7 +3,8 @@
 	var item = $data[i];
 %}
 <tr class="list-item">
-    <td class="center"><a href="/Manage/Function/CheckDetails/{%=item.HelpID%}">{%=item.Title%}</a></td> 
+    <td class="center"><a href="/Manage/Function/CheckDetails/{%=item.HelpID%}">{%=item.Title%}</a></td>
+    <td class="center">{%=item.Sort%}</td> 
     <td class="center">{%=item.KeyWords==""?"--":item.KeyWords%}</td> 
     <td class="center">{%=item.Types.Name%}</td>
     <td class="center">{%=item.Number%}</td>

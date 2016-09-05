@@ -18,6 +18,19 @@ namespace IntFactoryBusiness
 
         #region 查询
 
+        public List<UsersEntity> GetUesrsByAccound(string userName,string pwd)
+        {
+            List<UsersEntity> list = new List<UsersEntity>();
+            DataSet ds = HelpCenterDAL.BaseProvider.GetUesrsByAccound(userName, pwd);
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                UsersEntity model = new UsersEntity();
+                model.FillData(dr);
+                list.Add(model);
+            }
+            return list;
+        }
+
         public List<UsersEntity> GetUesrs()
         {
             List<UsersEntity> list = new List<UsersEntity>();
@@ -111,10 +124,10 @@ namespace IntFactoryBusiness
 
 
         #region 添加
-        public bool InsertUsers(string acccount,string password)
+        public int InsertUsers(string acccount,string password,string name,string remark)
         {
             var userID = Guid.NewGuid().ToString().ToLower();
-            return HelpCenterDAL.BaseProvider.InsertUsers(userID, acccount, password);
+            return HelpCenterDAL.BaseProvider.InsertUsers(userID, acccount, password,name,remark);
         }
 
         public int InsertType(string name, string types,string img ,string userID)
@@ -123,10 +136,10 @@ namespace IntFactoryBusiness
             return HelpCenterDAL.BaseProvider.InsertType(typeID, name, types,img, userID);
         }
 
-        public int InsertContent(string typeID, string title, string keyWords, string content, string userID)
+        public int InsertContent(string typeID, string sort,string title, string keyWords, string content, string userID)
         {
             var helpID = Guid.NewGuid().ToString().ToLower();
-            return HelpCenterDAL.BaseProvider.InsertContent(helpID, typeID, title, keyWords, content, userID);
+            return HelpCenterDAL.BaseProvider.InsertContent(helpID, typeID,sort, title, keyWords, content, userID);
         }
 
         #endregion
@@ -145,6 +158,11 @@ namespace IntFactoryBusiness
             return HelpCenterDAL.BaseProvider.UpdateContent(helpID, title, keyWords,content,typeID);
         }
 
+        public bool UpdateUsers(string userID, string acc, string pwd, string name, string remark) 
+        {
+            return HelpCenterDAL.BaseProvider.UpdateUsers(userID,acc,pwd,name,remark);
+        }
+
         #endregion
 
 
@@ -159,6 +177,12 @@ namespace IntFactoryBusiness
         {
             return HelpCenterDAL.BaseProvider.DeleteContent(helpID);
         }
+
+        public bool DeleteUsers(string userID)
+        {
+            return HelpCenterDAL.BaseProvider.DeleteUsers(userID);
+        }
+
         #endregion
     }
 }

@@ -18,11 +18,20 @@
 
 <div class="header-box">
     <span class="header-title left">内容列表</span>
-    <div class="add-type"><a href="/Manage/Function/AddDetails">添加内容</a></div>
+    <div class="add-type"><a href="/Manage/Function/AddDetails" class="btn-add">添加内容</a></div>
 </div>
 <div class="content-body">
     <div class="search-body mTop10">
-        <ul class="search-item customer-source">
+        <ul class="search-item module-source">
+            <li class="column-name">模块：</li>
+            <li data-idsource=""class="item hover">全部</li>
+            <li data-idsource="0" class="item">功能模块</li>
+            <li data-idsource="1" class="item">常见问题</li>
+            <li data-idsource="2" class="item">新手指引</li>
+        </ul>
+    </div>
+    <div class="search-body mTop10">
+        <ul class="search-item category-source">
             <li class="column-name">分类：</li>
             <li class="item hover" data-id="">全部</li>
             @foreach (var item in list)
@@ -52,7 +61,8 @@
     </div>
     <table class="table-list category-details mTop10">
         <tr class="tr-header">        
-            <td width="100" style="width:15%;">标题</td>             
+            <td width="100" style="width:15%;">标题</td>   
+            <td width="100" style="width:15%;">排序</td>
             <td width="100" style="width:15%;">关键字</td>             
             <td width="100">所属分类</td>
             <td width="100">点击次数</td>

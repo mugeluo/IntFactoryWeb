@@ -1,22 +1,21 @@
 ﻿define(function (require, exports, module) {
     var Global = require("global"),
-        Dot = require("dot"), editor
+        Dot = require("dot");
+
     var ObjectJS = {};
 
-    ObjectJS.init = function (Editor, model) {
-        var _self = this;
-        editor = Editor;
+    ObjectJS.init = function (model) {
+        var _self = this;        
         model = JSON.parse(model.replace(/&quot;/g, '"'));
         ObjectJS.bindEvent(model);
     };
 
     ObjectJS.bindEvent = function (model) {        
         $(".table-add option[data-id=" + model.TypeID + "]").attr("selected", "true");
-        $(".title").val(model.Title);
-        $(".keywords").val(model.KeyWords);
-        editor.ready(function () {
-            editor.setContent(decodeURI(model.Content));
-        });
+        $(".title").html(model.Title);
+        $(".keywords").html(model.KeyWords);
+        $("#remark").html(decodeURI(model.Content));
+        
 
         $(".update-details").click(function () {
             ObjectJS.updateContent(model.HelpID);

@@ -206,6 +206,10 @@
     <Content Include="modules\images\home\kh-2.png" />
     <Content Include="modules\images\home\kh3.png" />
     <Content Include="modules\images\home\newindex.png" />
+    <Content Include="modules\images\ico-btnadd.png" />
+    <Content Include="modules\images\ico-delete.png" />
+    <Content Include="modules\images\iconback-blue.png" />
+    <Content Include="modules\images\iconback.png" />
     <Content Include="modules\images\logo_login.png" />
     <Content Include="modules\images\pricing\pricing-background1.png" />
     <Content Include="modules\images\pricing\pricing-background2.png" />
@@ -234,6 +238,7 @@
     <Content Include="modules\images\ zngc-6.png" />
     <Content Include="modules\manage\css\function\function.css" />
     <Content Include="modules\manage\css\home\index.css" />
+    <Content Include="modules\manage\css\home\login.css" />
     <Content Include="modules\manage\css\iconfont\demo.css" />
     <Content Include="modules\manage\css\iconfont\demo.html" />
     <Content Include="modules\manage\css\iconfont\iconfont.css" />
@@ -251,9 +256,11 @@
     <Content Include="modules\manage\scripts\function\update-content.js" />
     <Content Include="modules\manage\scripts\index.js" />
     <Content Include="modules\manage\scripts\layout.js" />
+    <Content Include="modules\manage\scripts\login.js" />
     <Content Include="modules\manage\scripts\users.js" />
     <Content Include="modules\manage\template\content\updata-content.html" />
     <Content Include="modules\manage\template\content\updata-type.html" />
+    <Content Include="modules\manage\template\system\update-users.html" />
     <Content Include="modules\manage\template\system\userlist.html" />
     <Content Include="modules\manage\template\type\type-details-list.html" />
     <Content Include="modules\manage\template\type\type-list.html" />
@@ -298,6 +305,8 @@
     <Content Include="modules\plug\seach_keys\demo.html" />
     <Content Include="modules\plug\seach_keys\seach_keys.js" />
     <Content Include="modules\plug\seach_keys\style.css" />
+    <Content Include="modules\plug\tip_layer\tip_layer.css" />
+    <Content Include="modules\plug\tip_layer\tip_layer.js" />
     <Content Include="modules\plug\umeditor\dialogs\anchor\anchor.html" />
     <Content Include="modules\plug\umeditor\dialogs\attachment\attachment.css" />
     <Content Include="modules\plug\umeditor\dialogs\attachment\attachment.html" />
@@ -697,6 +706,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Manage\Views\Function\CheckDetails.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Manage\Views\Home\Login.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

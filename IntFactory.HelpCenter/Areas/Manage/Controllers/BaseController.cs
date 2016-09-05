@@ -10,6 +10,24 @@ namespace IntFactory.HelpCenter.Areas.Manage.Controllers
     {
         //
         // GET: /Manage/Base/
+        /// <summary>
+        /// 当前登录用户
+        /// </summary>
+        protected IntFactoryEntity.UsersEntity CurrentUser
+        {
+            get
+            {
+                if (Session["ClientManager"] == null)
+                {
+                    return null;
+                }
+                else
+                {
+                    return (IntFactoryEntity.UsersEntity)Session["ClientManager"];
+                }
+            }
+            set { Session["ClientManager"] = value; }
+        }
 
         protected Dictionary<string, object> JsonDictionary = new Dictionary<string, object>();
 

@@ -17,23 +17,61 @@ namespace IntFactory.HelpCenter.Areas.Manage.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            if (Session["ClientManager"] == null)
+            {
+                return Redirect("/Manage/Home/Login");
+            }
+            else
+            {
+                return Redirect("/Manage/Function/Function");               
+            };            
         }
 
-        #region ajax
+        public ActionResult Login()
+        {            
+            if (Session["ClientManager"] == null)
+            {
+                return View();
+            }
+            else
+            {
+                return Redirect("/Manage/Function/Function");
+            };   
+        }
 
-        public JsonResult InsertUsers(string Account,string Password)
+        public ActionResult Logout()
         {
-            var bl=IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.InsertUsers(Account,Password);
-            JsonDictionary.Add("status",bl);
+            HttpCookie cook = Request.Cookies["manage_helpcenter_system"];
+            if (cook != null)
+            {                
+                Response.Cookies.Add(cook);
+            }
+            Session["ClientManager"] = null;
+
+            return Redirect("/Manage/Home/Login");
+        }
+
+        #region ajax        
+
+        public JsonResult UserLogin(string userName, string pwd)
+        {
+            var item = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetUesrsByAccound(userName, pwd);
+            JsonDictionary.Add("items", item);
+            if (item.Count>0)
+            {
+                //保持登录状态
+                HttpCookie cook = new HttpCookie("manage_helpcenter_system");
+                cook["username"] = userName;
+                cook["pwd"] = pwd;                
+                cook.Expires = DateTime.Now.AddDays(7);
+                Response.Cookies.Add(cook);
+            }
             return new JsonResult
             {
                 Data = JsonDictionary,
                 JsonRequestBehavior = JsonRequestBehavior.AllowGet
             };
         }
-
-
 
         #endregion
 

@@ -43,7 +43,7 @@
         });    
 
         //选择模块
-        $(".customer-source .item").click(function () {
+        $(".module-source .item").click(function () {
             var _this = $(this), type = _this.data("idsource");
             if (!_this.hasClass("hover")) {
                 _this.siblings().removeClass("hover");
@@ -95,9 +95,13 @@
                 return;
             }
             var img = $("#cateGoryImages li img").attr("src");
+            if (img==undefined) {
+                img = 'null';
+            }
             Global.post("/Manage/Function/InsertType", { Name: txt, Types: types ,img:img}, function (data) {
                 if (data.status == 1) {
                     alert("添加成功");
+                    window.location = "/Manage/Function/Function";
                 } else if (data.status == 0) {
                     alert("添加失败");
                 } else {
@@ -154,7 +158,7 @@
                                     $(".type").val(item.Name);
                                     $("#select .item .check-lump").removeClass("hover");
                                     $("#select .item .check-lump[data-id=" + item.Types + "]").addClass("hover");
-                                    $("#cateGoryImages").html("<li><img src="+item.Img+"><span class='ico-delete qn-delete hide'></span></li>");
+                                    $("#cateGoryImages").html("<li><img src="+item.Img+"></li>");
                                 }
                             }
 
@@ -163,10 +167,10 @@
                     });
 
                     innerHtml.find(".delete").click(function () {
+                        var _this = $(this);
+                        var typeID = _this.data("id");
                         var confirmMsg = "确定删除此分类?";
-                        confirm(confirmMsg, function () {
-                            var _this = $(this);
-                            var typeID = _this.data("id");
+                        confirm(confirmMsg, function () {                            
                             Global.post("/Manage/Function/DeleteType", { TypeID: typeID }, function (data) {
                                 if (data.status == 1) {
                                     _this.parent().parent().fadeOut(400, function () {

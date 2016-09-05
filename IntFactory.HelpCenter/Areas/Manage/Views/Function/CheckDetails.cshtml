@@ -11,34 +11,34 @@
     <script src="/modules/plug/umeditor/ueditor.config.js"></script>
     <script src="/modules/plug/umeditor/umeditor.min.js"></script>
     <script type="text/javascript">
-        seajs.use(["/modules/manage/scripts/function/update-content"], function (ObjectJS) {
-            var um = UE.getEditor('remark');
-            ObjectJS.init(um, '@Html.ToJSONString(model)');
+        seajs.use(["/modules/manage/scripts/function/update-content"], function (ObjectJS) {            
+            ObjectJS.init('@Html.ToJSONString(model)');
         });
     </script>
 }
 <div class="header-box">
     <a href="/Manage/Function/DetailsList" class="header-title left">返回列表</a>   
-    <div class="add-type"><a href="/Manage/Function/UpdateDetails/@(model.HelpID)">编辑内容</a></div>
+    <div class="add-type"><a href="/Manage/Function/UpdateDetails/@(model.HelpID)" class="btn-add">编辑内容</a></div>
 </div>
 <div class="content-body">
     <div class="">
         <ul class="table-add">
             <li>
                 <span class="column-title">类型:</span>  
-                <input type="text" disabled="disabled" value="@(item.Name)" />                  
+                <label>@(item.Name)</label>                          
             </li>
             <li>
                 <span class="column-title">标题:</span>
-                <input type="text" disabled="disabled" class="title" />
+                <label class="title"></label>                
             </li>
             <li>
                 <span class="column-title">关键字:</span>
-                <input type="text" disabled="disabled" class="keywords" />
+                <label class="keywords" ></label>                
             </li>
             <li>
                 <span class="column-title left">描述:</span>
-                <div style="margin-left:65px;" id="remark"></div>
+                <div id="remark"></div>
+                @*<div style="margin-left:65px;" id="remark"></div>*@
             </li>
         </ul>
     </div>

@@ -6,6 +6,7 @@
 
     ObjectJS.init = function (name, navName) {
         ObjectJS.bindEvent(name);
+        ObjectJS.placeholderSupport();
         $(".action-box .action").removeClass("select");
         if (navName!="") {
             $(".action-box #" + navName).addClass("select");
@@ -26,6 +27,13 @@
             $(".setting").show();
         }
 
+        $(document).click(function (e) {
+            if (!$(e.target).parents().hasClass("currentuser") && !$(e.target).hasClass("currentuser")) {
+                $(".dropdown-userinfo").fadeOut("1000");
+            }            
+        });
+
+
         $(".controller-box").click(function () {
             var _this = $(this).parent();
             if (!_this.hasClass("select")) {
@@ -37,7 +45,11 @@
                 _this.removeClass("select");
                 _this.find(".action-box").slideUp(200);
             }
-        });      
+        });
+
+        $("#currentUser").click(function () {            
+            $(".dropdown-userinfo").fadeIn("1000");
+        });
     };
 
     //旋转按钮（顺时针）
@@ -63,6 +75,25 @@
             }, 5)
         }
     };
+
+    // 判断浏览器是否支持 placeholder
+    ObjectJS.placeholderSupport = function () {
+        if (!('placeholder' in document.createElement('input'))) {
+            $('[placeholder]').focus(function () {
+                var input = $(this);
+                if (input.val() == input.attr('placeholder')) {
+                    input.val('');
+                    input.removeClass('placeholder');
+                }
+            }).blur(function () {
+                var input = $(this);
+                if (input.val() == '' || input.val() == input.attr('placeholder')) {
+                    input.addClass('placeholder');
+                    input.val(input.attr('placeholder'));
+                }
+            }).blur();
+        };
+    }
 
     module.exports = ObjectJS;
 })

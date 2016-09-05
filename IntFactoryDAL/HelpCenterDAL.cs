@@ -11,12 +11,22 @@ namespace IntFactoryDAL
     public class HelpCenterDAL:BaseDAL
     {
         public static HelpCenterDAL BaseProvider = new HelpCenterDAL();
+
+
         #region 查询
+
+        public DataSet GetUesrsByAccound(string userName, string pwd)
+        {
+            string sqlTxt = string.Empty;
+            sqlTxt = "select * from Users where Status<>9 and Account='" + userName + "' and Password='"+pwd+"'";
+            DataSet ds = GetDataSet(sqlTxt);
+            return ds;
+        }
 
         public DataSet GetUesrs()
         {
             string sqlTxt = string.Empty;
-            sqlTxt = "select * from Users where Status<>9";
+            sqlTxt = "select * from Users where Status<>9 ";
             DataSet ds = GetDataSet(sqlTxt);
             return ds;
         }
@@ -90,10 +100,18 @@ namespace IntFactoryDAL
             DataTable ds = GetDataTable(sqlTxt);
             return ds;
         }
+
         public DataSet GetTypesByType(string type)
         {
             string sqlTxt = string.Empty;
-            sqlTxt = "select * from Type  where Status<>9 and Types='" + type + "'";
+            if (type=="")
+            {
+                sqlTxt = "select * from Type  where Status<>9";
+            }else
+            {
+                sqlTxt = "select * from Type  where Status<>9 and Types='" + type + "'";
+            }
+            
             DataSet ds = GetDataSet(sqlTxt);
             return ds;
         }
@@ -112,12 +130,20 @@ namespace IntFactoryDAL
 
         #region 添加
 
-        public bool InsertUsers(string userID,string account,string password) 
+        public int InsertUsers(string userID,string account,string password,string name,string remark) 
         {
-            string sqlTxt = string.Empty;
-            sqlTxt = "insert into Users (UserID,Account,Password) values('"+userID+"','"+account+"','"+password+"')";
-            var num= ExecuteNonQuery(sqlTxt);
-            return num == 1 ? true : false;
+            int result = 0;
+            SqlParameter[] param ={ new SqlParameter("@Result",result),
+                                    new SqlParameter("@UserID",userID),
+                                    new SqlParameter("@Account",account),
+                                    new SqlParameter("@Password",password),
+                                    new SqlParameter("@Name",name),
+                                    new SqlParameter("@Remark",remark)
+                                 };
+            param[0].Direction = ParameterDirection.Output;
+            ExecuteNonQuery("P_InsertUsers", param, CommandType.StoredProcedure);
+            result = Convert.ToInt32(param[0].Value);
+            return result;
         }
 
         public int InsertType(string typeID, string name, string types,string img, string userID)
@@ -136,12 +162,13 @@ namespace IntFactoryDAL
             return result;
         }
 
-        public int InsertContent(string helpID, string typeID, string title, string keyWords, string content, string userID)
+        public int InsertContent(string helpID, string typeID,string sort, string title, string keyWords, string content, string userID)
         {
             int result = 0;
             SqlParameter[] param ={ new SqlParameter("@Result",result),
                                     new SqlParameter("@HelpID",helpID),
                                     new SqlParameter("@TypeID",typeID),
+                                    new SqlParameter("@Sort",sort),
                                     new SqlParameter("@Title",title),
                                     new SqlParameter("@KeyWords",keyWords),
                                     new SqlParameter("@UserID",userID),
@@ -175,6 +202,14 @@ namespace IntFactoryDAL
             return num == 1 ? true : false;
         }
 
+        public bool UpdateUsers(string userID, string acc, string pwd, string name, string remark)
+        {
+            string sqlTxt = string.Empty;
+            sqlTxt = "Update Users set Account='" + acc + "',Passwords='" + pwd + "',UserName='" + name + "',Remark='" + remark + "' where UserID='" + userID + "'";
+            var num = ExecuteNonQuery(sqlTxt);
+            return num == 1 ? true : false;
+        }
+
         #endregion
 
 
@@ -197,6 +232,14 @@ namespace IntFactoryDAL
         {
             string sqlTxt = string.Empty;
             sqlTxt = "Update Help set Status=9 where HelpID='" + helpID+"'";
+            var num = ExecuteNonQuery(sqlTxt);
+            return num == 1 ? true : false;
+        }
+
+        public bool DeleteUsers(string userID)
+        {
+            string sqlTxt = string.Empty;
+            sqlTxt = "Update Users set Status=9 where UserID='" + userID + "'";
             var num = ExecuteNonQuery(sqlTxt);
             return num == 1 ? true : false;
         }

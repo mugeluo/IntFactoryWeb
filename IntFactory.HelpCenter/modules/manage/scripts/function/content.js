@@ -44,7 +44,7 @@
         });
 
         //选择模块
-        $(".customer-source .item").click(function () {
+        $(".category-source .item").click(function () {
             var _this = $(this), typeID = _this.data("id");
             if (!_this.hasClass("hover")) {
                 _this.siblings().removeClass("hover");
@@ -54,6 +54,25 @@
                 ObjectJS.getContentList();
 
             }
+        });
+
+        $(".module-source .item").click(function () {
+            var _this = $(this), type = _this.data("idsource");
+            if (!_this.hasClass("hover")) {
+                _this.siblings().removeClass("hover");
+                _this.addClass("hover");
+            };
+            Global.post("/Manage/Function/GetTypeByTypes", { type: type }, function (data) {
+                if (data.items.length > 0) {
+                    $(".category-source .item:gt(0)").remove();                    
+                    for (var i = 0; i < data.items.length; i++) {
+                        var item = data.items[i];
+                        $(".category-source").append("<li class='item' data-id=" + item.TypeID + ">" + item.Name + "</li>");
+                    }
+                } else {
+                    alert("网络波动，请重试");
+                }
+            });
         });
 
         //关键字搜索
@@ -105,21 +124,22 @@
                     alert("网络波动，请重试");
                 }
             });
-
         });
 
         $(".add-type-details").click(function () {            
             var typeID = $("select option:selected").data("id");
+            var sort = $(".sort").val();
             var title = $(".title").val();
             var keywords = $(".keywords").val();
             var desc = encodeURI(editor.getContent());
-            if (title=="" || desc=="") {
+            if (title=="" || desc==""||sort=="") {
                 alert("内容不能为空");
                 return;
             }            
-            Global.post("/Manage/Function/InsertContent", { typeID: typeID, title: title, keywords: keywords, desc: desc }, function (data) {
+            Global.post("/Manage/Function/InsertContent", { typeID: typeID, sort: sort, title: title, keywords: keywords, desc: desc }, function (data) {
                 if (data.status == 1) {
                     alert("添加成功");
+                    window.location = "/Manage/Function/DetailsList";
                 } else if (data.status == 0) {
                     alert("添加失败");
                 } else {
@@ -136,13 +156,13 @@
                 Dot.exec("/manage/template/type/type-details-list.html",function(temp){
                     var innerHtml = temp(data.items);
                     innerHtml = $(innerHtml);
-                    $(".category-details").append(innerHtml);                    
+                    $(".category-details").append(innerHtml);
 
                     innerHtml.find(".delete").click(function () {
+                        var _this = $(this);
+                        var helpID = _this.data("id");
                         var confirmMsg = "确定删除此分类?";            
-                        confirm(confirmMsg, function () {
-                            var _this = $(this);
-                            var helpID = _this.data("id");
+                        confirm(confirmMsg, function () {                            
                             Global.post("/Manage/Function/DeleteContent", { HelpID: helpID }, function (data) {
                                 if (data.status) {
                                     _this.parent().parent().fadeOut(400, function () {
@@ -177,7 +197,7 @@
                     }
                 });
             } else {
-                $(".category-details").append("<tr class='list-item'><td class='center' colspan='5'>暂无数据<td></tr>");
+                $(".category-details").append("<tr class='list-item' style='height:100px;'><td class='center font16' colspan='6'>暂无数据<td></tr>");
             }
         });
     }

@@ -1,4 +1,7 @@
-﻿<html>
+﻿@{
+    IntFactoryEntity.UsersEntity CurrentUser = (IntFactoryEntity.UsersEntity)Session["ClientManager"];
+}
+<html>
 <head>
     <title>@ViewBag.Title</title>    
     <link href="/modules/css/base.css" rel="stylesheet" />
@@ -8,6 +11,11 @@
 </head>
 <body>
     <header class="header">
+        <div class="logo left">
+            <a href="/Home/Index">
+                <img id="companyLogo" src="http://o9h6bx3r4.bkt.clouddn.com//Content/UploadFiles/Task/2016.8.16/1471341033512.png?imageView2/1/w/26/h/26"></a>
+        </div>
+        <div class="left companyname long" id="companyName" title="云销科技">云销科技</div>
         <ul class="menu">
             <li class="Index">
                 <a href="/Manage/Home/Index">首页</a>
@@ -19,6 +27,15 @@
                 <a href="/Manage/System/Users">系统设置</a>
             </li>
         </ul>
+        <div id="currentUser" class="currentuser right">            
+            <span class="username">
+                burt
+            </span>
+            <span class="dropdown hide">
+                <span class="dropdown-top"></span>
+                <span class="dropdown-bottom"></span>
+            </span>
+        </div>
     </header>
 
     <nav class="nav-list">
@@ -72,6 +89,14 @@
         </div>
 
     </nav>
+
+    @*点击头像展开下拉列表*@
+    <div class="dropdown-userinfo hide">
+        <div class="top-lump"></div>
+        <ul class="items-list">             
+            <li class="item"><a href="/Manage/Home/Logout">安全退出</a></li>
+        </ul>
+    </div>
 
     <div class="main-content">
         @RenderBody()
