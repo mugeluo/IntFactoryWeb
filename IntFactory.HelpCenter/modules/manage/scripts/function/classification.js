@@ -40,20 +40,7 @@
             Params.BeginTime = start ? start.format("YYYY-MM-DD") : "";
             Params.EndTime = end ? end.format("YYYY-MM-DD") : "";
             ObjectJS.getTypeList();
-        });
-
-        
-        var uploader = Upload.uploader({
-            browse_button: 'uploadImg',
-            picture_container: "cateGoryImages",
-            successItems: "#cateGoryImages li",
-            image_view: "?imageView2/1/w/60/h/60",                
-            file_path: "/Content/UploadFiles/HelpCenter/",
-            maxSize: 5,
-            fileType: 1,
-            init: {}
-        });
-        
+        });    
 
         //选择模块
         $(".customer-source .item").click(function () {
@@ -107,7 +94,7 @@
                 alert("分类不能为空");
                 return;
             }
-            var img = $("#orderImages li img").attr("src");
+            var img = $("#cateGoryImages li img").attr("src");
             Global.post("/Manage/Function/InsertType", { Name: txt, Types: types ,img:img}, function (data) {
                 if (data.status == 1) {
                     alert("添加成功");
@@ -118,8 +105,10 @@
                 }
             })
         });
+
         ObjectJS.bingSelect();
-        
+
+        ObjectJS.bindUpload();
     };
 
     ObjectJS.getTypeList = function () {
@@ -134,7 +123,7 @@
                     innerHtml.find(".update").click(function () {
                         var _this = $(this), typeID = _this.data("id");
                         Dot.exec("/manage/template/content/updata-type.html", function (template) {
-                            var innerText = template(data.items);
+                            var innerText = template(data.items);                            
                             Easydialog.open({
                                 container: {
                                     id: "show-model-detail",
@@ -142,7 +131,8 @@
                                     content: innerText,
                                     yesFn: function () {
                                         var type = $(".type").val();                                        
-                                        Global.post("/Manage/Function/UpdateType", { TypeID: typeID, Name: type, Types: ObjectJS.types }, function (e) {
+                                        var img = $("#cateGoryImages li img").attr("src");                                        
+                                        Global.post("/Manage/Function/UpdateType", { TypeID: typeID, Name: type,img:img, Types: ObjectJS.types }, function (e) {
                                             if (e.status) {
                                                 ObjectJS.getTypeList();
                                             } else {
@@ -164,8 +154,11 @@
                                     $(".type").val(item.Name);
                                     $("#select .item .check-lump").removeClass("hover");
                                     $("#select .item .check-lump[data-id=" + item.Types + "]").addClass("hover");
+                                    $("#cateGoryImages").html("<li><img src="+item.Img+"><span class='ico-delete qn-delete hide'></span></li>");
                                 }
-                            }                            
+                            }
+
+                            ObjectJS.bindUpload();
                         });
                     });
 
@@ -211,6 +204,20 @@
                 });
             }
         })
+    }
+
+    ObjectJS.bindUpload = function () {
+        var uploader = Upload.uploader({
+            browse_button: 'uploadImg',
+            picture_container: "cateGoryImages",
+            successItems: "#cateGoryImages li",
+            image_view: "?imageView2/1/w/60/h/60",
+            file_path: "/Content/UploadFiles/HelpCenter/",
+            maxSize: 5,
+            fileType: 1,
+            multi_selection: false,
+            init: {}
+        });
     }
 
     ObjectJS.bingSelect = function () {

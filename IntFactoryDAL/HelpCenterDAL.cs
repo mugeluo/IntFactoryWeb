@@ -126,7 +126,7 @@ namespace IntFactoryDAL
             SqlParameter[] param ={ new SqlParameter("@Result",result),
                                     new SqlParameter("@TypeID",typeID),
                                     new SqlParameter("@Name",name),
-                                    new SqlParameter("@img",img),
+                                    new SqlParameter("@Img",img),
                                     new SqlParameter("@Types",types),
                                     new SqlParameter("@UserID",userID)
                                  };
@@ -159,10 +159,10 @@ namespace IntFactoryDAL
 
         #region 编辑
 
-        public bool UpdateType(string typeID, string name, string types)
+        public bool UpdateType(string typeID, string name,string img, string types)
         {
             string sqlTxt = string.Empty;
-            sqlTxt = "Update Type set Name='"+name+"',Types='"+types+"' where TypeID='" + typeID + "'";
+            sqlTxt = "Update Type set Name='" + name + "',Img='" + img + "',Types='" + types + "' where TypeID='" + typeID + "'";
             var num = ExecuteNonQuery(sqlTxt);
             return num == 1 ? true : false;
         }

@@ -132,9 +132,9 @@ namespace IntFactory.HelpCenter.Areas.Manage.Controllers
             };
         }
 
-        public JsonResult UpdateType(string typeID, string name, string types)
+        public JsonResult UpdateType(string typeID, string name, string img,string types)
         {
-            var bl = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.UpdateType(typeID, name, types);
+            var bl = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.UpdateType(typeID, name,img, types);
             JsonDictionary.Add("status", bl);
             return new JsonResult
             {

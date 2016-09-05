@@ -162,3 +162,13 @@ nav .action-box .point { width:6px; height:6px; border-radius:3px; background-co
         -o-transition:all 0.3s;        
 }
 .btn:hover { background-color:#2F73B8; }
+
+/*删除 叉*/
+.ico-delete{ background:url(/modules/images/ico-delete.png) no-repeat; height:20px; min-width:20px; line-height:20px; 
+    cursor:pointer;
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #fff;
+    border-radius: 10px;
+}

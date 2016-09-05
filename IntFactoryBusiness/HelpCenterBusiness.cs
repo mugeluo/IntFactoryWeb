@@ -135,9 +135,9 @@ namespace IntFactoryBusiness
 
         #region 编辑
 
-        public bool UpdateType(string typeID, string name, string types)
+        public bool UpdateType(string typeID, string name,string img, string types)
         {
-            return HelpCenterDAL.BaseProvider.UpdateType(typeID, name, types);
+            return HelpCenterDAL.BaseProvider.UpdateType(typeID, name,img, types);
         }
 
         public bool UpdateContent(string helpID, string title, string keyWords, string content, string typeID)
