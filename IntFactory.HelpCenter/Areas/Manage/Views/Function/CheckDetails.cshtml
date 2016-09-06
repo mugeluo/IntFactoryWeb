@@ -11,8 +11,8 @@
     <script src="/modules/plug/umeditor/ueditor.config.js"></script>
     <script src="/modules/plug/umeditor/umeditor.min.js"></script>
     <script type="text/javascript">
-        seajs.use(["/modules/manage/scripts/function/update-content"], function (ObjectJS) {            
-            ObjectJS.init('@Html.ToJSONString(model)');
+        seajs.use(["/modules/manage/scripts/function/checkdetails"], function (ObjectJS) {            
+            ObjectJS.init("",'@Html.ToJSONString(model)');
         });
     </script>
 }
@@ -30,6 +30,10 @@
             <li>
                 <span class="column-title">标题:</span>
                 <label class="title"></label>                
+            </li>
+            <li>
+                <span class="column-title">排序:</span>
+                <label class="sort"></label>                
             </li>
             <li>
                 <span class="column-title">关键字:</span>

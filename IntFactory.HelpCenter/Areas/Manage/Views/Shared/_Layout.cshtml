@@ -1,5 +1,6 @@
 ﻿@{
-    IntFactoryEntity.UsersEntity CurrentUser = (IntFactoryEntity.UsersEntity)Session["ClientManager"];
+    //IntFactoryEntity.UsersEntity CurrentUser = (IntFactoryEntity.UsersEntity)Session["ClientManager"];
+    
 }
 <html>
 <head>
@@ -16,20 +17,32 @@
                 <img id="companyLogo" src="http://o9h6bx3r4.bkt.clouddn.com//Content/UploadFiles/Task/2016.8.16/1471341033512.png?imageView2/1/w/26/h/26"></a>
         </div>
         <div class="left companyname long" id="companyName" title="云销科技">云销科技</div>
-        <ul class="menu">
+        <ul class="menu"id="modulesMenu">
             <li class="Index">
-                <a href="/Manage/Home/Index">首页</a>
+                <a href="/Manage/Home/Index" class="">
+                    <img class="ico" data-ico="/Content/menuico/home.png" data-hover="/Content/menuico/homehover.png" src="/Content/menuico/home.png">
+                    <span class="name">首页</span>
+                    <span class="cursor"></span>
+                </a> 
             </li>
             <li class="Function">
-                <a href="/Manage/Function/Function">帮助中心</a>
+                <a class="" href="/Manage/Function/Function">
+                    <img class="ico" data-ico="/Content/menuico/custom.png" data-hover="/Content/menuico/customhover.png" src="/Content/menuico/custom.png"> 
+                    <span class="name">帮助中心</span>
+                    <span class="cursor"></span>
+                </a>
             </li>            
             <li class="Setting">
-                <a href="/Manage/System/Users">系统设置</a>
+                <a class="" href="/Manage/System/Users">
+                    <img class="ico" data-ico="/Content/menuico/system.png" data-hover="/Content/menuico/systemhover.png" src="/Content/menuico/system.png"> 
+                    <span class="name">系统设置</span>
+                    <span class="cursor"></span>
+                </a> 
             </li>
         </ul>
         <div id="currentUser" class="currentuser right">            
             <span class="username">
-                burt
+                aaaa
             </span>
             <span class="dropdown hide">
                 <span class="dropdown-top"></span>
@@ -110,7 +123,7 @@
     <script src="/Scripts/jquery-1.11.1.js"></script>
     <script src="/Scripts/sea.js"></script>
     <script src="/Scripts/sea-config.js"></script>    
-    <script type="text/javascript">
+    <script type="text/javascript">        
         seajs.use(["/modules/manage/scripts/layout"], function (ObjectJS) {
             ObjectJS.init('@ViewBag.Name', '@ViewBag.navName');
         });

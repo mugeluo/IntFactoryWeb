@@ -130,6 +130,7 @@
     <Compile Include="Areas\Manage\ManageAreaRegistration.cs" />
     <Compile Include="Common\Common.cs" />
     <Compile Include="Common\ExpandClass.cs" />
+    <Compile Include="Common\UserAuthorize.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -148,6 +149,26 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\menuico\account.png" />
+    <Content Include="Content\menuico\accounthover.png" />
+    <Content Include="Content\menuico\agents.png" />
+    <Content Include="Content\menuico\agentshover.png" />
+    <Content Include="Content\menuico\custom.png" />
+    <Content Include="Content\menuico\customhover.png" />
+    <Content Include="Content\menuico\home.png" />
+    <Content Include="Content\menuico\homehover.png" />
+    <Content Include="Content\menuico\info.png" />
+    <Content Include="Content\menuico\infohover.png" />
+    <Content Include="Content\menuico\report.png" />
+    <Content Include="Content\menuico\reporthover.png" />
+    <Content Include="Content\menuico\sales.png" />
+    <Content Include="Content\menuico\saleshover.png" />
+    <Content Include="Content\menuico\stock.png" />
+    <Content Include="Content\menuico\stockhover.png" />
+    <Content Include="Content\menuico\system.png" />
+    <Content Include="Content\menuico\systemhover.png" />
+    <Content Include="Content\menuico\task.png" />
+    <Content Include="Content\menuico\taskhover.png" />
     <Content Include="Global.asax" />
     <Content Include="Areas\Manage\Views\Web.config" />
     <Content Include="Areas\Manage\Views\Home\Index.cshtml" />

@@ -13,8 +13,7 @@ namespace IntFactory.HelpCenter.Areas.Manage.Controllers
     public class HomeController : BaseController
     {
         //
-        // GET: /Manage/Home/
-
+        // GET: /Manage/Home/        
         public ActionResult Index()
         {
             if (Session["ClientManager"] == null)
@@ -23,27 +22,47 @@ namespace IntFactory.HelpCenter.Areas.Manage.Controllers
             }
             else
             {
-                return Redirect("/Manage/Function/Function");               
-            };            
+                if (CurrentUser.UserID != "")
+                {
+                    return View();
+                }
+            }; 
+            return View();
         }
-
+                
         public ActionResult Login()
-        {            
-            if (Session["ClientManager"] == null)
+        {
+            if (Session["ClientManager"] != null)
             {
-                return View();
+                return Redirect("/Manage/Home/Index");
             }
-            else
+            HttpCookie cook = Request.Cookies["manage_helpcenter_system"];
+            if (cook != null)
             {
-                return Redirect("/Manage/Function/Function");
-            };   
+                if (cook["status"] == "1")
+                {
+                    IntFactoryEntity.UsersEntity model = IntFactoryBusiness.HelpCenterBusiness.GetUserByUserName(cook["username"], cook["pwd"]);
+                    if (model != null)
+                    {
+                        Session["ClientManager"] = model;
+                        return Redirect("/Manage/Home/Index");
+                    }
+                }
+                else
+                {
+                    ViewBag.UserName = cook["username"];
+                }
+            }
+
+            return View();            
         }
 
         public ActionResult Logout()
         {
             HttpCookie cook = Request.Cookies["manage_helpcenter_system"];
             if (cook != null)
-            {                
+            {
+                cook["status"] = "0";
                 Response.Cookies.Add(cook);
             }
             Session["ClientManager"] = null;
@@ -59,13 +78,16 @@ namespace IntFactory.HelpCenter.Areas.Manage.Controllers
             JsonDictionary.Add("items", item);
             if (item.Count>0)
             {
+                Session["ClientManager"] = item;
                 //保持登录状态
                 HttpCookie cook = new HttpCookie("manage_helpcenter_system");
                 cook["username"] = userName;
-                cook["pwd"] = pwd;                
+                cook["pwd"] = pwd;
+                cook["status"] = "1";
                 cook.Expires = DateTime.Now.AddDays(7);
                 Response.Cookies.Add(cook);
             }
+            
             return new JsonResult
             {
                 Data = JsonDictionary,

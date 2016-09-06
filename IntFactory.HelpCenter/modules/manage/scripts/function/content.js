@@ -43,18 +43,7 @@
             ObjectJS.getContentList();
         });
 
-        //选择模块
-        $(".category-source .item").click(function () {
-            var _this = $(this), typeID = _this.data("id");
-            if (!_this.hasClass("hover")) {
-                _this.siblings().removeClass("hover");
-                _this.addClass("hover");
-
-                Params.TypeID = typeID;
-                ObjectJS.getContentList();
-
-            }
-        });
+        ObjectJS.bindCateGory();
 
         $(".module-source .item").click(function () {
             var _this = $(this), type = _this.data("idsource");
@@ -69,6 +58,7 @@
                         var item = data.items[i];
                         $(".category-source").append("<li class='item' data-id=" + item.TypeID + ">" + item.Name + "</li>");
                     }
+                    ObjectJS.bindCateGory();
                 } else {
                     alert("网络波动，请重试");
                 }
@@ -201,6 +191,20 @@
             }
         });
     }
+
+    ObjectJS.bindCateGory = function () {
+        //选择模块
+        $(".category-source .item").click(function () {
+            var _this = $(this), typeID = _this.data("id");
+            if (!_this.hasClass("hover")) {
+                _this.siblings().removeClass("hover");
+                _this.addClass("hover");
+
+                Params.TypeID = typeID;
+                ObjectJS.getContentList();
+            }
+        });
+    };
 
     module.exports = ObjectJS;
 })

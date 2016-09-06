@@ -18,7 +18,7 @@ namespace IntFactoryDAL
         public DataSet GetUesrsByAccound(string userName, string pwd)
         {
             string sqlTxt = string.Empty;
-            sqlTxt = "select * from Users where Status<>9 and Account='" + userName + "' and Password='"+pwd+"'";
+            sqlTxt = "select * from Users where Status<>9 and Account='" + userName + "' and Passwords='"+pwd+"'";
             DataSet ds = GetDataSet(sqlTxt);
             return ds;
         }
@@ -55,6 +55,14 @@ namespace IntFactoryDAL
             DataSet ds = GetDataSet("P_GetTypeList", param, CommandType.StoredProcedure);
             totalCount = Convert.ToInt32(param[0].Value);
             pageCount = Convert.ToInt32(param[1].Value);
+            return ds;
+        }
+
+        public DataSet GetUserByUserName(string loginname, string pwd)
+        {
+            string sqlTxt = string.Empty;
+            sqlTxt = "select * from Users where Status<>9 and Account='" + loginname + "' and Passwords='"+pwd+"'";
+            DataSet ds = GetDataSet(sqlTxt);
             return ds;
         }
 
@@ -194,10 +202,10 @@ namespace IntFactoryDAL
             return num == 1 ? true : false;
         }
 
-        public bool UpdateContent(string helpID, string title, string keyWords, string content, string typeID)
+        public bool UpdateContent(string helpID, string title,string sort, string keyWords, string content, string typeID)
         {
             string sqlTxt = string.Empty;
-            sqlTxt = "Update Help set Title='" + title + "',KeyWords='" + keyWords + "',Content='" + content + "',TypeID='" + typeID + "' where HelpID='" + helpID + "'";
+            sqlTxt = "Update Help set Title='" + title + "',Sort='" + sort + "',KeyWords='" + keyWords + "',Content='" + content + "',TypeID='" + typeID + "' where HelpID='" + helpID + "'";
             var num = ExecuteNonQuery(sqlTxt);
             return num == 1 ? true : false;
         }

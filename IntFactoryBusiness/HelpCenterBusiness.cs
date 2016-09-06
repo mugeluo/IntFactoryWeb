@@ -44,6 +44,19 @@ namespace IntFactoryBusiness
             return list;
         }
 
+        public static UsersEntity GetUserByUserName(string loginname, string pwd)
+        {
+            DataSet ds = HelpCenterDAL.BaseProvider.GetUserByUserName(loginname, pwd);
+            UsersEntity model = null;
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                model = new UsersEntity();
+                model.FillData(dr);               
+            };
+
+            return model;
+        }
+
         public TypeEntity GetTypesByTypeID(string typeID)
         {
             DataTable ds = HelpCenterDAL.BaseProvider.GetTypesByTypeID(typeID);
@@ -153,9 +166,9 @@ namespace IntFactoryBusiness
             return HelpCenterDAL.BaseProvider.UpdateType(typeID, name,img, types);
         }
 
-        public bool UpdateContent(string helpID, string title, string keyWords, string content, string typeID)
+        public bool UpdateContent(string helpID, string title,string sort, string keyWords, string content, string typeID)
         {
-            return HelpCenterDAL.BaseProvider.UpdateContent(helpID, title, keyWords,content,typeID);
+            return HelpCenterDAL.BaseProvider.UpdateContent(helpID, title,sort, keyWords,content,typeID);
         }
 
         public bool UpdateUsers(string userID, string acc, string pwd, string name, string remark) 

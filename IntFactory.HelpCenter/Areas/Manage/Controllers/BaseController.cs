@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace IntFactory.HelpCenter.Areas.Manage.Controllers
 {
+    //[IntFactory.HelpCenter.Common.UserAuthorize]
     public class BaseController : Controller
     {
         //
@@ -22,7 +23,7 @@ namespace IntFactory.HelpCenter.Areas.Manage.Controllers
                     return null;
                 }
                 else
-                {
+                {                   
                     return (IntFactoryEntity.UsersEntity)Session["ClientManager"];
                 }
             }

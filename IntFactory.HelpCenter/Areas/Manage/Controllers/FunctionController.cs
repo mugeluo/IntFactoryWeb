@@ -15,7 +15,7 @@ namespace IntFactory.HelpCenter.Areas.Manage.Controllers
         // GET: /Manage/Function/
 
         public ActionResult Function()
-        {
+        {            
             return View();
         }
         public ActionResult AddType()
@@ -39,8 +39,7 @@ namespace IntFactory.HelpCenter.Areas.Manage.Controllers
         public ActionResult UpdateDetails(string id)
         {
             ViewBag.List = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetTypeList();
-            var model = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetContentByHelpID(id);
-            ViewBag.model = model;
+            ViewBag.model = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetContentByHelpID(id);            
             return View();
         }
 
@@ -66,8 +65,7 @@ namespace IntFactory.HelpCenter.Areas.Manage.Controllers
             JavaScriptSerializer jssl = new JavaScriptSerializer();
             FilterTypes model = jssl.Deserialize<FilterTypes>(filter);
             int totalCount = 0;
-            int pageCount = 0;
-
+            int pageCount = 0;            
             var list = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetTypes(model.Types, model.Keywords, model.BeginTime, model.EndTime,model.OrderBy, model.PageSize, model.PageIndex, ref totalCount, ref pageCount);
             JsonDictionary.Add("items", list);
             JsonDictionary.Add("totalCount", totalCount);
@@ -143,9 +141,9 @@ namespace IntFactory.HelpCenter.Areas.Manage.Controllers
             };
         }
 
-        public JsonResult UpdateContent(string id, string title, string keyWords, string content, string typeID)
+        public JsonResult UpdateContent(string id, string title,string sort, string keyWords, string content, string typeID)
         {
-            var bl = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.UpdateContent(id, title, keyWords, content, typeID);
+            var bl = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.UpdateContent(id, title,sort, keyWords, content, typeID);
             JsonDictionary.Add("status", bl);
             return new JsonResult
             {

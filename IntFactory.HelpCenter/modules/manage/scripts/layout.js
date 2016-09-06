@@ -16,7 +16,7 @@
 
     ObjectJS.bindEvent = function (name) {
         var _self = this;
-        $(".menu ." + name).addClass("hover").find("a").css("color", "#fff");
+        $(".menu ." + name).find("a").addClass("select");
         if (name == "Index") {
             $(".nav-list").hide();
         } else if (name == "Function") {
@@ -33,7 +33,21 @@
             }            
         });
 
+        //一级菜单图标事件处理
+        $("#modulesMenu a").mouseenter(function () {
+            var _this = $(this).find("img");
+            _this.attr("src", _this.data("hover"));
+        });
 
+        $("#modulesMenu a").mouseleave(function () {
+            if (!$(this).hasClass("select")) {
+                var _this = $(this).find("img");
+                _this.attr("src", _this.data("ico"));
+            }
+        });
+
+        $("#modulesMenu .select img").attr("src", $("#modulesMenu .select img").data("hover"));
+                
         $(".controller-box").click(function () {
             var _this = $(this).parent();
             if (!_this.hasClass("select")) {
