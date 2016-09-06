@@ -1,7 +1,7 @@
 ﻿@{
     ViewBag.Title = "内容查看";
     var item = (IntFactoryEntity.TypeEntity)ViewBag.item;
-    var model = (IntFactoryEntity.HelpEntity)ViewBag.model;
+    var model = (IntFactoryEntity.ContentEntity)ViewBag.model;
     ViewBag.Name = "Function";  
 }
 @section css{    
@@ -11,14 +11,14 @@
     <script src="/modules/plug/umeditor/ueditor.config.js"></script>
     <script src="/modules/plug/umeditor/umeditor.min.js"></script>
     <script type="text/javascript">
-        seajs.use(["/modules/manage/scripts/function/checkdetails"], function (ObjectJS) {            
+        seajs.use(["/modules/manage/scripts/function/details"], function (ObjectJS) {            
             ObjectJS.init("",'@Html.ToJSONString(model)');
         });
     </script>
 }
 <div class="header-box">
-    <a href="/Manage/Function/DetailsList" class="header-title left">返回列表</a>   
-    <div class="add-type"><a href="/Manage/Function/UpdateDetails/@(model.HelpID)" class="btn-add">编辑内容</a></div>
+    <a href="/Manage/HelpCenter/DetailList" class="header-title left">返回列表</a>   
+    <div class="add-type"><a href="/Manage/HelpCenter/UpdateDetail/@(model.ContentID)" class="btn-add">编辑内容</a></div>
 </div>
 <div class="content-body">
     <div class="">
@@ -40,9 +40,8 @@
                 <label class="keywords" ></label>                
             </li>
             <li>
-                <span class="column-title left">描述:</span>
-                <div id="remark"></div>
-                @*<div style="margin-left:65px;" id="remark"></div>*@
+                @*<span class="column-title left">描述:</span>*@
+                <div id="remark"></div>                
             </li>
         </ul>
     </div>

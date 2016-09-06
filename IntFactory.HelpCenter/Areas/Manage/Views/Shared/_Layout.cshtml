@@ -1,5 +1,5 @@
 ﻿@{
-    //IntFactoryEntity.UsersEntity CurrentUser = (IntFactoryEntity.UsersEntity)Session["ClientManager"];
+    IntFactoryEntity.UsersEntity CurrentUser = (IntFactoryEntity.UsersEntity)Session["ClientManager"];
     
 }
 <html>
@@ -26,7 +26,7 @@
                 </a> 
             </li>
             <li class="Function">
-                <a class="" href="/Manage/Function/Function">
+                <a class="" href="/Manage/HelpCenter/TypeList">
                     <img class="ico" data-ico="/Content/menuico/custom.png" data-hover="/Content/menuico/customhover.png" src="/Content/menuico/custom.png"> 
                     <span class="name">帮助中心</span>
                     <span class="cursor"></span>
@@ -42,7 +42,7 @@
         </ul>
         <div id="currentUser" class="currentuser right">            
             <span class="username">
-                aaaa
+                @*@(CurrentUser.Name)*@aaaa
             </span>
             <span class="dropdown hide">
                 <span class="dropdown-top"></span>
@@ -61,10 +61,10 @@
             </div>
             <ul class="action-box" style="display: block;">
                 <li class="action" id="add-Type">
-                    <a href="/Manage/Function/AddType"><span class="name">添加分类</span></a>
+                    <a href="/Manage/HelpCenter/AddType"><span class="name">添加分类</span></a>
                 </li>
                 <li class="action" id="list-Type">
-                    <a href="/Manage/Function/Function"><span class="name">分类列表</span></a>
+                    <a href="/Manage/HelpCenter/TypeList"><span class="name">分类列表</span></a>
                 </li>                
             </ul>
         </div>
@@ -77,10 +77,10 @@
             </div>
             <ul class="action-box" style="display: block;">                
                 <li class="action" id="add-Details">
-                    <a href="/Manage/Function/AddDetails"><span class="name">添加内容</span></a>
+                    <a href="/Manage/HelpCenter/AddDetail"><span class="name">添加内容</span></a>
                 </li>
                 <li class="action" id="details-List">
-                    <a href="/Manage/Function/DetailsList"><span class="name">内容列表</span></a>
+                    <a href="/Manage/HelpCenter/DetailList"><span class="name">内容列表</span></a>
                 </li>
             </ul>
         </div>
@@ -123,7 +123,7 @@
     <script src="/Scripts/jquery-1.11.1.js"></script>
     <script src="/Scripts/sea.js"></script>
     <script src="/Scripts/sea-config.js"></script>    
-    <script type="text/javascript">        
+    <script type="text/javascript">   
         seajs.use(["/modules/manage/scripts/layout"], function (ObjectJS) {
             ObjectJS.init('@ViewBag.Name', '@ViewBag.navName');
         });

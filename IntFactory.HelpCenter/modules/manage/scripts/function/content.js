@@ -15,7 +15,7 @@
         EndTime: "",
         PageIndex: 1,
         PageSize: 5,
-        OrderBy: "Help.CreateTime desc",
+        OrderBy: "Content.CreateTime desc",
     }
 
     ObjectJS.init = function (Editor) {        
@@ -51,7 +51,7 @@
                 _this.siblings().removeClass("hover");
                 _this.addClass("hover");
             };
-            Global.post("/Manage/Function/GetTypeByTypes", { type: type }, function (data) {
+            Global.post("/Manage/HelpCenter/GetTypeByTypes", { type: type }, function (data) {
                 if (data.items.length > 0) {
                     $(".category-source .item:gt(0)").remove();                    
                     for (var i = 0; i < data.items.length; i++) {
@@ -103,7 +103,7 @@
                 $("#selector .item .check-lump").removeClass("hover");
                 _this.addClass("hover");
             }
-            Global.post("/Manage/Function/GetTypeByTypes", { type: type }, function (data) {
+            Global.post("/Manage/HelpCenter/GetTypeByTypes", { type: type }, function (data) {
                 if (data.items.length>0) {
                     $("#classIfication").empty();
                     for (var i = 0; i < data.items.length; i++) {
@@ -126,10 +126,10 @@
                 alert("内容不能为空");
                 return;
             }            
-            Global.post("/Manage/Function/InsertContent", { typeID: typeID, sort: sort, title: title, keywords: keywords, desc: desc }, function (data) {
+            Global.post("/Manage/HelpCenter/InsertContent", { typeID: typeID, sort: sort, title: title, keywords: keywords, desc: desc }, function (data) {
                 if (data.status == 1) {
                     alert("添加成功");
-                    window.location = "/Manage/Function/DetailsList";
+                    window.location = "/Manage/HelpCenter/DetailList";
                 } else if (data.status == 0) {
                     alert("添加失败");
                 } else {
@@ -140,7 +140,7 @@
     };
 
     ObjectJS.getContentList = function () {        
-        Global.post("/Manage/Function/GetContent", { filter: JSON.stringify(Params) }, function (data) {
+        Global.post("/Manage/HelpCenter/GetContent", { filter: JSON.stringify(Params) }, function (data) {
             $(".list-item").remove();
             if (data.items.length>0) {
                 Dot.exec("/manage/template/type/type-details-list.html",function(temp){
@@ -153,7 +153,7 @@
                         var helpID = _this.data("id");
                         var confirmMsg = "确定删除此分类?";            
                         confirm(confirmMsg, function () {                            
-                            Global.post("/Manage/Function/DeleteContent", { HelpID: helpID }, function (data) {
+                            Global.post("/Manage/HelpCenter/DeleteContent", { HelpID: helpID }, function (data) {
                                 if (data.status) {
                                     _this.parent().parent().fadeOut(400, function () {
                                         _this.remove();

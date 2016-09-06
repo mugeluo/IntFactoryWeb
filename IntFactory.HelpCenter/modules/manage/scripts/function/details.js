@@ -14,7 +14,7 @@
         $(".title").html(model.Title);
         $(".sort").html(model.Sort==""?"--":model.Sort);
         $(".keywords").html(model.KeyWords);
-        $("#remark").html(decodeURI(model.Content));
+        $("#remark").html(decodeURI(model.Detail));
     };
 
     module.exports = ObjectJS;

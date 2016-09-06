@@ -4,12 +4,12 @@
 %}
 <tr class="lists">
     <td class="center">
-        <img src='{%=item.Img=="null"?"/modules/manage/images/img-noimg.png":item.Img==""?"/modules/manage/images/img-noimg.png":item.Img%}' /></td>
+        <img src='{%=item.Icon=="null"?"/modules/manage/images/img-noimg.png":item.Icon==""?"/modules/manage/images/img-noimg.png":item.Icon%}' /></td>
     <td class="center">
         <span class="span span-name">{%=item.Name%}</span>        
     </td>    
     <td class="center">
-        <span class="span span-types">{%=item.Types=="0"?"功能模块":item.Types=="1"?"常见问题":"新手指引"%}</span>        
+        <span class="span span-types">{%=item.ModuleType==1?"功能模块":item.ModuleType==2?"常见问题":"新手指引"%}</span>        
     </td>
     <td class="center">{%=item.CreateTime.toDate("yyyy-MM-dd hh:mm:ss")%}</td>    
     <td class="center operation" data-id="{%=item.TypeID%}">

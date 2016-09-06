@@ -17,7 +17,7 @@
         $(".sort").val(model.Sort);
         $(".keywords").val(model.KeyWords);
         editor.ready(function () {
-            editor.setContent(decodeURI(model.Content));
+            editor.setContent(decodeURI(model.Detail));
         });
         
 
@@ -32,7 +32,7 @@
         var sort = $(".sort").val();
         var keywords = $(".keywords").val();
         var content = encodeURI(editor.getContent());
-        Global.post("/Manage/Function/UpdateContent", {
+        Global.post("/Manage/HelpCenter/UpdateContent", {
             id: id,
             title: title,
             sort: sort,
@@ -42,7 +42,7 @@
         }, function (e) {
             if (e.status) {                                            
                 alert("修改成功");
-                window.location = "/Manage/Function/DetailsList";
+                window.location = "/Manage/HelpCenter/DetailList";
             } else {
                 alert("修改失败");
             }

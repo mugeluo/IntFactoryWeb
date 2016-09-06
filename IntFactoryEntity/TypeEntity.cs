@@ -8,25 +8,27 @@ namespace IntFactoryEntity
 {
     public class TypeEntity
     {
-        public int ID { get; set; }
+        public int AutoID{ get; set; }
 
         public string TypeID { get; set; }
 
         public string Name { get; set; }
 
+        public string Remark { get; set; }
+
         public DateTime CreateTime { get; set; }
 
-        public string Img { get; set; }
+        public string Icon{ get; set; }
 
-        public string Types { get; set; }
+        public int ModuleType{ get; set; }
 
-        public string UserID { get; set; }
+        public string CreateUserID{ get; set; }
 
         public int Status { get; set; }
 
-        public int PageSize { get; set; }
+        //public int PageSize { get; set; }
 
-        public int PageIndex { get; set; }
+        //public int PageIndex { get; set; }
 
         public void FillData(System.Data.DataRow dr)
         {

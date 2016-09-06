@@ -36,7 +36,8 @@ namespace IntFactory.HelpCenter.Areas.Manage.Controllers
 
         public JsonResult SaveUser(string acc,string pwd,string name,string remark)
         {
-            var bl = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.InsertUsers(acc,pwd,name,remark);
+            var createUserID="03234a5b-3d8e-43d1-9b2b-7d9d7f315fa4";
+            var bl = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.InsertUsers(acc, pwd, name, remark, createUserID);
             JsonDictionary.Add("status", bl);
             return new JsonResult
             {

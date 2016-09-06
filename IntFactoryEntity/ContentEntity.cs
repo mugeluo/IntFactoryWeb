@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace IntFactoryEntity
 {
-    public class HelpEntity
+    public class ContentEntity
     {
-        public int ID { get; set; }
+        public int AutoID{ get; set; }
 
-        public string HelpID { get; set; }
+        public string ContentID{ get; set; }
 
         public string TypeID { get; set; }
 
@@ -20,21 +20,21 @@ namespace IntFactoryEntity
 
         public string KeyWords { get; set; }
 
-        public string Sort { get; set; }
+        public int Sort { get; set; }
 
-        public string Content { get; set; }
+        public string Detail { get; set; }
 
         public DateTime CreateTime { get; set; }
 
-        public string UserID { get; set; }
+        public string CreateUserID { get; set; }
 
-        public int Number { get; set; }
+        public int ClickNumber { get; set; }
 
         public int Status { get; set; }
 
-        public int PageSize { get; set; }
+        //public int PageSize { get; set; }
 
-        public int PageIndex { get; set; }
+        //public int PageIndex { get; set; }
 
 
         public void FillData(System.Data.DataRow dr)

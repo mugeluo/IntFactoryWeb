@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using IntFactoryEntity;
 
 namespace IntFactory.HelpCenter.Areas.Manage.Controllers
 {
@@ -14,21 +15,21 @@ namespace IntFactory.HelpCenter.Areas.Manage.Controllers
         /// <summary>
         /// 当前登录用户
         /// </summary>
-        protected IntFactoryEntity.UsersEntity CurrentUser
-        {
-            get
-            {
-                if (Session["ClientManager"] == null)
-                {
-                    return null;
-                }
-                else
-                {                   
-                    return (IntFactoryEntity.UsersEntity)Session["ClientManager"];
-                }
-            }
-            set { Session["ClientManager"] = value; }
-        }
+        //protected UsersEntity CurrentUser
+        //{
+        //    get
+        //    {
+        //        if (Session["ClientManager"] == null)
+        //        {
+        //            return null;
+        //        }
+        //        else
+        //        {                   
+        //            return (UsersEntity)Session["ClientManager"];
+        //        }
+        //    }
+        //    set { Session["ClientManager"] = value; }
+        //}
 
         protected Dictionary<string, object> JsonDictionary = new Dictionary<string, object>();
 

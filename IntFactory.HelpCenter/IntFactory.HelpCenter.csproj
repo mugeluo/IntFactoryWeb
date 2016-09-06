@@ -123,7 +123,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Manage\Controllers\BaseController.cs" />
-    <Compile Include="Areas\Manage\Controllers\FunctionController.cs" />
+    <Compile Include="Areas\Manage\Controllers\HelpCenterController.cs" />
     <Compile Include="Areas\Manage\Controllers\HomeController.cs" />
     <Compile Include="Areas\Manage\Controllers\PlugController.cs" />
     <Compile Include="Areas\Manage\Controllers\SystemController.cs" />
@@ -271,7 +271,7 @@
     <Content Include="modules\manage\images\ico_search.png" />
     <Content Include="modules\manage\images\ico_searchhover.png" />
     <Content Include="modules\manage\images\img-noimg.png" />
-    <Content Include="modules\manage\scripts\function\checkdetails.js" />
+    <Content Include="modules\manage\scripts\function\details.js" />
     <Content Include="modules\manage\scripts\function\content.js" />
     <Content Include="modules\manage\scripts\function\classification.js" />
     <Content Include="modules\manage\scripts\function\update-content.js" />
@@ -653,9 +653,9 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\Manage\Views\Function\AddType.cshtml" />
-    <Content Include="Areas\Manage\Views\Function\DetailsList.cshtml" />
-    <Content Include="Areas\Manage\Views\Function\AddDetails.cshtml" />
+    <Content Include="Areas\Manage\Views\HelpCenter\AddType.cshtml" />
+    <Content Include="Areas\Manage\Views\HelpCenter\DetailList.cshtml" />
+    <Content Include="Areas\Manage\Views\HelpCenter\AddDetail.cshtml" />
     <Content Include="Areas\Manage\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Manage\Views\System\AddUsers.cshtml" />
     <Content Include="Areas\Manage\Views\System\Users.cshtml" />
@@ -720,13 +720,13 @@
     <Content Include="modules\plug\umeditor\third-party\video-js\font\vjs.woff" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\Manage\Views\Function\Function.cshtml" />
+    <Content Include="Areas\Manage\Views\HelpCenter\TypeList.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\Manage\Views\Function\UpdateDetails.cshtml" />
+    <Content Include="Areas\Manage\Views\HelpCenter\UpdateDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\Manage\Views\Function\CheckDetails.cshtml" />
+    <Content Include="Areas\Manage\Views\HelpCenter\Detail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Manage\Views\Home\Login.cshtml" />

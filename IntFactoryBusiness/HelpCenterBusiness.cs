@@ -21,6 +21,7 @@ namespace IntFactoryBusiness
         public List<UsersEntity> GetUesrsByAccound(string userName,string pwd)
         {
             List<UsersEntity> list = new List<UsersEntity>();
+            pwd = HelpCenter.Encrypt.GetEncryptPwd(pwd, userName);
             DataSet ds = HelpCenterDAL.BaseProvider.GetUesrsByAccound(userName, pwd);
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
@@ -46,7 +47,8 @@ namespace IntFactoryBusiness
 
         public static UsersEntity GetUserByUserName(string loginname, string pwd)
         {
-            DataSet ds = HelpCenterDAL.BaseProvider.GetUserByUserName(loginname, pwd);
+            pwd = HelpCenter.Encrypt.GetEncryptPwd(pwd, loginname);
+            DataSet ds = HelpCenterDAL.BaseProvider.GetUesrsByAccound(loginname, pwd);
             UsersEntity model = null;
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
@@ -68,7 +70,7 @@ namespace IntFactoryBusiness
             return model;
         }
 
-        public List<TypeEntity> GetTypesByType(string type)
+        public List<TypeEntity> GetTypesByType(int type)
         {
             List<TypeEntity> list = new List<TypeEntity>();
             DataSet ds = HelpCenterDAL.BaseProvider.GetTypesByType(type);            
@@ -107,13 +109,13 @@ namespace IntFactoryBusiness
             return list;
         }
 
-        public List<HelpEntity> GetContent(string typeID, string keyWords, string beginTime, string endTime, string orderBy, int pageSize, int pageIndex, ref int totalCount, ref int pageCount)
+        public List<ContentEntity> GetContent(string typeID, string keyWords, string beginTime, string endTime, string orderBy, int pageSize, int pageIndex, ref int totalCount, ref int pageCount)
         {
-            List<HelpEntity> list = new List<HelpEntity>();
+            List<ContentEntity> list = new List<ContentEntity>();
             DataSet ds = HelpCenterDAL.BaseProvider.GetContent(typeID, keyWords, beginTime, endTime, orderBy, pageSize, pageIndex, ref totalCount, ref pageCount);
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
-                HelpEntity model = new HelpEntity();
+                ContentEntity model = new ContentEntity();
                 model.FillData(dr);
 
                 model.Types = HelpCenterBusiness.BaseBusiness.GetTypesByTypeID(model.TypeID);
@@ -122,10 +124,10 @@ namespace IntFactoryBusiness
             return list;
         }
 
-        public HelpEntity GetContentByHelpID(string helpID)
+        public ContentEntity GetContentByContentID(string contentID)
         {
-            HelpEntity list = new HelpEntity();
-            DataTable dt = HelpCenterDAL.BaseProvider.GetContentByHelpID(helpID);
+            ContentEntity list = new ContentEntity();
+            DataTable dt = HelpCenterDAL.BaseProvider.GetContentByContentID(contentID);
             foreach (DataRow dr in dt.Rows )
             {
                 list.FillData(dr);
@@ -137,22 +139,23 @@ namespace IntFactoryBusiness
 
 
         #region 添加
-        public int InsertUsers(string acccount,string password,string name,string remark)
+        public int InsertUsers(string acccount, string password, string name, string remark, string createUserID)
         {
             var userID = Guid.NewGuid().ToString().ToLower();
-            return HelpCenterDAL.BaseProvider.InsertUsers(userID, acccount, password,name,remark);
+            password = HelpCenter.Encrypt.GetEncryptPwd(password, acccount);
+            return HelpCenterDAL.BaseProvider.InsertUsers(userID, acccount, password, name, remark,createUserID);
         }
 
-        public int InsertType(string name, string types,string img ,string userID)
+        public int InsertType(string name,string remark ,int types,string img ,string userID)
         {
             var typeID = Guid.NewGuid().ToString().ToLower();
-            return HelpCenterDAL.BaseProvider.InsertType(typeID, name, types,img, userID);
+            return HelpCenterDAL.BaseProvider.InsertType(typeID, name,remark, types,img, userID);
         }
 
         public int InsertContent(string typeID, string sort,string title, string keyWords, string content, string userID)
         {
-            var helpID = Guid.NewGuid().ToString().ToLower();
-            return HelpCenterDAL.BaseProvider.InsertContent(helpID, typeID,sort, title, keyWords, content, userID);
+            var contentID = Guid.NewGuid().ToString().ToLower();
+            return HelpCenterDAL.BaseProvider.InsertContent(contentID, typeID, sort, title, keyWords, content, userID);
         }
 
         #endregion
@@ -166,9 +169,9 @@ namespace IntFactoryBusiness
             return HelpCenterDAL.BaseProvider.UpdateType(typeID, name,img, types);
         }
 
-        public bool UpdateContent(string helpID, string title,string sort, string keyWords, string content, string typeID)
+        public bool UpdateContent(string contentID, string title, string sort, string keyWords, string content, string typeID)
         {
-            return HelpCenterDAL.BaseProvider.UpdateContent(helpID, title,sort, keyWords,content,typeID);
+            return HelpCenterDAL.BaseProvider.UpdateContent(contentID, title, sort, keyWords, content, typeID);
         }
 
         public bool UpdateUsers(string userID, string acc, string pwd, string name, string remark) 
@@ -186,9 +189,9 @@ namespace IntFactoryBusiness
             return HelpCenterDAL.BaseProvider.DeleteType(typeID);
         }
 
-        public bool DeleteContent(string helpID)
+        public bool DeleteContent(string contentID)
         {
-            return HelpCenterDAL.BaseProvider.DeleteContent(helpID);
+            return HelpCenterDAL.BaseProvider.DeleteContent(contentID);
         }
 
         public bool DeleteUsers(string userID)

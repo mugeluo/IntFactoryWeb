@@ -22,10 +22,10 @@ namespace IntFactory.HelpCenter.Areas.Manage.Controllers
             }
             else
             {
-                if (CurrentUser.UserID != "")
-                {
-                    return View();
-                }
+                //if (CurrentUser.UserID != "")
+                //{
+                //    return View();
+                //}
             }; 
             return View();
         }
@@ -41,7 +41,7 @@ namespace IntFactory.HelpCenter.Areas.Manage.Controllers
             {
                 if (cook["status"] == "1")
                 {
-                    IntFactoryEntity.UsersEntity model = IntFactoryBusiness.HelpCenterBusiness.GetUserByUserName(cook["username"], cook["pwd"]);
+                    var model = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetUesrsByAccound(cook["username"], cook["pwd"]);
                     if (model != null)
                     {
                         Session["ClientManager"] = model;

@@ -31,7 +31,7 @@
             Global.post("/Manage/Home/UserLogin", {userName: $("#iptUserName").val(),pwd: $("#iptPwd").val()},function (data) {
                 _this.html("登录").attr("disabled", "false");                
                 if (data.items.length>0) {
-                    window.location = "/Manage/Function/Function"
+                    window.location = "/Manage/Home/Index"
                 } else {
                     alert("账号或密码不正确");
                 }

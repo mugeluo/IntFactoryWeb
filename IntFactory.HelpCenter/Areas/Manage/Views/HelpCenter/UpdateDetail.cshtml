@@ -1,7 +1,7 @@
 ﻿@{
     ViewBag.Title = "后台 | 编辑内容";
     var list = (List<IntFactoryEntity.TypeEntity>)ViewBag.List;
-    var model = (IntFactoryEntity.HelpEntity) ViewBag.model;
+    var model = (IntFactoryEntity.ContentEntity) ViewBag.model;
     ViewBag.Name = "Function";
 }
 @section css{    
@@ -18,7 +18,7 @@
     </script>
 }
 <div class="header-box">
-    <a href="/Manage/Function/DetailsList" class="header-title left">返回列表</a>   
+    <a href="/Manage/HelpCenter/DetailList" class="header-title left">返回列表</a>   
 </div>
 <div class="content-body">
     <div class="">

@@ -8,7 +8,7 @@
     var Upload = require("upload");
 
     var ObjectJS = {};
-    ObjectJS.types=0;
+    
     var Params = {
         Types:"-1",
         Keywords: "",
@@ -90,6 +90,7 @@
         $(".add-category").click(function () {
             var types = $("#select .item .hover").data("id");
             var txt = $(".type").val();
+            var desc = $(".desc").val();
             if (txt == "") {
                 alert("分类不能为空");
                 return;
@@ -98,10 +99,10 @@
             if (img==undefined) {
                 img = 'null';
             }
-            Global.post("/Manage/Function/InsertType", { Name: txt, Types: types ,img:img}, function (data) {
+            Global.post("/Manage/HelpCenter/InsertType", { Name: txt,desc:desc,Types: types ,img:img}, function (data) {
                 if (data.status == 1) {
                     alert("添加成功");
-                    window.location = "/Manage/Function/Function";
+                    window.location = "/Manage/HelpCenter/TypeList";
                 } else if (data.status == 0) {
                     alert("添加失败");
                 } else {
@@ -116,9 +117,9 @@
     };
 
     ObjectJS.getTypeList = function () {
-        Global.post("/Manage/Function/GetTypes", { filter: JSON.stringify(Params) }, function (data) {
-            if (data.items.length > 0) {
-                $(".lists").remove();
+        Global.post("/Manage/HelpCenter/GetTypes", { filter: JSON.stringify(Params) }, function (data) {
+            $(".lists").remove();
+            if (data.items.length > 0) {                
                 Dot.exec("/manage/template/type/type-list.html", function (template) {
                     var innerHtml = template(data.items);
                     innerHtml = $(innerHtml);
@@ -136,7 +137,7 @@
                                     yesFn: function () {
                                         var type = $(".type").val();                                        
                                         var img = $("#cateGoryImages li img").attr("src");                                        
-                                        Global.post("/Manage/Function/UpdateType", { TypeID: typeID, Name: type,img:img, Types: ObjectJS.types }, function (e) {
+                                        Global.post("/Manage/HelpCenter/UpdateType", { TypeID: typeID, Name: type, img: img, Types:Params.Types}, function (e) {
                                             if (e.status) {
                                                 ObjectJS.getTypeList();
                                             } else {
@@ -157,8 +158,8 @@
                                 if (item.TypeID == typeID) {
                                     $(".type").val(item.Name);
                                     $("#select .item .check-lump").removeClass("hover");
-                                    $("#select .item .check-lump[data-id=" + item.Types + "]").addClass("hover");
-                                    $("#cateGoryImages").html("<li><img src="+item.Img+"></li>");
+                                    $("#select .item .check-lump[data-id=" + item.ModuleType + "]").addClass("hover");
+                                    $("#cateGoryImages").html("<li><img src=" + item.Icon + "></li>");
                                 }
                             }
 
@@ -171,7 +172,7 @@
                         var typeID = _this.data("id");
                         var confirmMsg = "确定删除此分类?";
                         confirm(confirmMsg, function () {                            
-                            Global.post("/Manage/Function/DeleteType", { TypeID: typeID }, function (data) {
+                            Global.post("/Manage/HelpCenter/DeleteType", { TypeID: typeID }, function (data) {
                                 if (data.status == 1) {
                                     _this.parent().parent().fadeOut(400, function () {
                                         _this.remove();
@@ -206,6 +207,8 @@
                         ObjectJS.getTypeList();
                     }
                 });
+            } else {
+                $(".category").append("<tr class='lists' style='height:100px;'><td class='center font16' colspan='4'>暂无数据<td></tr>");
             }
         })
     }
@@ -227,7 +230,7 @@
     ObjectJS.bingSelect = function () {
         $("#select .item .check-lump").click(function () {
             var _this = $(this),id=_this.data("id");
-            ObjectJS.types=id;
+            Params.Types=id;
             if (!_this.hasClass("hover")) {
                 $("#select .item .check-lump").removeClass("hover");
                 _this.addClass("hover");

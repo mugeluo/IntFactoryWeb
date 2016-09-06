@@ -14,7 +14,7 @@
         
     };
 
-    ObjectJS.bindEvent = function (name) {
+    ObjectJS.bindEvent = function (name) {        
         var _self = this;
         $(".menu ." + name).find("a").addClass("select");
         if (name == "Index") {

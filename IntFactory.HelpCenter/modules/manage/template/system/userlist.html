@@ -3,8 +3,8 @@
         var item=$data[i];
 %}
 <tr class="list-item">
-    <td class="center">{%=item.Account%}</td>
-    <td class="center">{%=item.UserName%}</td>  
+    <td class="center">{%=item.AccountName%}</td>
+    <td class="center">{%=item.Name%}</td>  
     <td class="center">{%=item.CreateTime.toDate("yyyy-MM-dd hh:mm:ss")%}</td>
     <td class="center operation">
         <span class="update iconfont" data-id="{%=item.UserID%}"></span>

@@ -9,17 +9,19 @@ namespace IntFactoryEntity
     [Serializable]
     public class UsersEntity
     {
-        public int ID { get; set; }
+        public int AutoID { get; set; }
 
         public string UserID { get; set; }
 
-        public string UserName { get; set; }
+        public string Name { get; set; }
 
-        public string Account { get; set; }
+        public string AccountName { get; set; }
 
-        public string Passwords { get; set; }
+        public string Password { get; set; }
 
         public DateTime CreateTime { get; set; }
+
+        public string CreateUserID { get; set; }
 
         public int Status { get; set; }
 

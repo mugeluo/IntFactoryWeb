@@ -9,44 +9,45 @@ using IntFactory.HelpCenter.Models;
 
 namespace IntFactory.HelpCenter.Areas.Manage.Controllers
 {
-    public class FunctionController : BaseController
+    public class HelpCenterController : BaseController
     {
         //
         // GET: /Manage/Function/
 
-        public ActionResult Function()
+        public ActionResult TypeList()
         {            
             return View();
         }
+
         public ActionResult AddType()
         {
             return View();
         }
 
-        public ActionResult DetailsList()
+        public ActionResult DetailList()
         {
             ViewBag.List = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetTypeList();
             return View();
         }
 
-        public ActionResult AddDetails()
+        public ActionResult AddDetail()
         {
-            var list=IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetTypesByType("0");
+            var list=IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetTypesByType(1);
             ViewBag.List = list;                
             return View();
         }       
 
-        public ActionResult UpdateDetails(string id)
+        public ActionResult UpdateDetail(string id)
         {
             ViewBag.List = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetTypeList();
-            ViewBag.model = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetContentByHelpID(id);            
+            ViewBag.model = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetContentByContentID(id);            
             return View();
         }
 
-        public ActionResult CheckDetails(string id)
+        public ActionResult Detail(string id)
         {
             var list = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetTypeList();           
-            var model = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetContentByHelpID(id);
+            var model = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetContentByContentID(id);
             foreach (var item in list)
             {
                 if (item.TypeID==model.TypeID)
@@ -96,7 +97,7 @@ namespace IntFactory.HelpCenter.Areas.Manage.Controllers
             };
         }
 
-        public JsonResult GetTypeByTypes(string type) {
+        public JsonResult GetTypeByTypes(int type) {
             var list = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetTypesByType(type);
             JsonDictionary.Add("items",list);
             return new JsonResult
@@ -106,10 +107,10 @@ namespace IntFactory.HelpCenter.Areas.Manage.Controllers
             };
         }
                 
-        public JsonResult InsertType(string name, string types,string img)
+        public JsonResult InsertType(string name,string desc, int types,string img)
         {
-            var userID = "2faf2062-6f13-4d01-8187-d343eff27222";
-            var bl = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.InsertType(name, types,img, userID);
+            var userID = "03234a5b-3d8e-43d1-9b2b-7d9d7f315fa4";
+            var bl = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.InsertType(name,desc, types,img, userID);
             JsonDictionary.Add("status", bl);
             return new JsonResult
             {
@@ -118,9 +119,9 @@ namespace IntFactory.HelpCenter.Areas.Manage.Controllers
             };
         }
 
-        public JsonResult InsertContent(string typeID, string sort,string title,string keyWords, string keywords, string desc)
+        public JsonResult InsertContent(string typeID, string sort,string title,string keyWords, string desc)
         {
-            var userID = "2faf2062-6f13-4d01-8187-d343eff27222";
+            var userID = "03234a5b-3d8e-43d1-9b2b-7d9d7f315fa4";
             var bl = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.InsertContent(typeID, sort, title, keyWords, desc, userID);
             JsonDictionary.Add("status", bl);
             return new JsonResult

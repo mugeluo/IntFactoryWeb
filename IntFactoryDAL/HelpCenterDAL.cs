@@ -18,7 +18,7 @@ namespace IntFactoryDAL
         public DataSet GetUesrsByAccound(string userName, string pwd)
         {
             string sqlTxt = string.Empty;
-            sqlTxt = "select * from Users where Status<>9 and Account='" + userName + "' and Passwords='"+pwd+"'";
+            sqlTxt = "select * from Users where Status<>9 and AccountName='" + userName + "' and Password='" + pwd + "'";
             DataSet ds = GetDataSet(sqlTxt);
             return ds;
         }
@@ -57,15 +57,7 @@ namespace IntFactoryDAL
             pageCount = Convert.ToInt32(param[1].Value);
             return ds;
         }
-
-        public DataSet GetUserByUserName(string loginname, string pwd)
-        {
-            string sqlTxt = string.Empty;
-            sqlTxt = "select * from Users where Status<>9 and Account='" + loginname + "' and Passwords='"+pwd+"'";
-            DataSet ds = GetDataSet(sqlTxt);
-            return ds;
-        }
-
+     
         public DataSet GetTypeList()
         {
             string sqlTxt = string.Empty;
@@ -76,8 +68,8 @@ namespace IntFactoryDAL
 
         public DataSet GetContent(string typeID, string keyWords, string beginTime, string endTime, string orderBy, int pageSize, int pageIndex, ref int totalCount, ref int pageCount)
         {
-            string tableName = "Help";
-            string key = "HelpID";
+            string tableName = "Content";
+            string key = "ContentID";
             SqlParameter[] param ={ new SqlParameter("@totalCount",totalCount),
                                     new SqlParameter("@pageCount",pageCount),
                                     new SqlParameter("@tableName",tableName),
@@ -109,25 +101,25 @@ namespace IntFactoryDAL
             return ds;
         }
 
-        public DataSet GetTypesByType(string type)
+        public DataSet GetTypesByType(int type)
         {
             string sqlTxt = string.Empty;
-            if (type=="")
+            if (type==0)
             {
                 sqlTxt = "select * from Type  where Status<>9";
             }else
             {
-                sqlTxt = "select * from Type  where Status<>9 and Types='" + type + "'";
+                sqlTxt = "select * from Type  where Status<>9 and ModuleType='" + type + "'";
             }
             
             DataSet ds = GetDataSet(sqlTxt);
             return ds;
         }
 
-        public DataTable GetContentByHelpID(string helpID)
+        public DataTable GetContentByContentID(string contentID)
         {
             string sqlTxt = string.Empty;
-            sqlTxt = "select * from Help where Status<>9 and HelpID='" + helpID + "'";
+            sqlTxt = "select * from Content where Status<>9 and ContentID='" + contentID + "'";
             DataTable dt = GetDataTable(sqlTxt);
             return dt;
         }
@@ -138,15 +130,16 @@ namespace IntFactoryDAL
 
         #region 添加
 
-        public int InsertUsers(string userID,string account,string password,string name,string remark) 
+        public int InsertUsers(string userID, string accountName, string password, string name, string remark, string createUserID) 
         {
             int result = 0;
             SqlParameter[] param ={ new SqlParameter("@Result",result),
                                     new SqlParameter("@UserID",userID),
-                                    new SqlParameter("@Account",account),
+                                    new SqlParameter("@AccountName",accountName),
                                     new SqlParameter("@Password",password),
                                     new SqlParameter("@Name",name),
-                                    new SqlParameter("@Remark",remark)
+                                    new SqlParameter("@Remark",remark),
+                                    new SqlParameter("@CreateUserID",createUserID)
                                  };
             param[0].Direction = ParameterDirection.Output;
             ExecuteNonQuery("P_InsertUsers", param, CommandType.StoredProcedure);
@@ -154,12 +147,13 @@ namespace IntFactoryDAL
             return result;
         }
 
-        public int InsertType(string typeID, string name, string types,string img, string userID)
+        public int InsertType(string typeID, string name,string remark, int types,string img, string userID)
         {            
             int result = 0;
             SqlParameter[] param ={ new SqlParameter("@Result",result),
                                     new SqlParameter("@TypeID",typeID),
                                     new SqlParameter("@Name",name),
+                                    new SqlParameter("@Remark",remark),
                                     new SqlParameter("@Img",img),
                                     new SqlParameter("@Types",types),
                                     new SqlParameter("@UserID",userID)
@@ -170,17 +164,17 @@ namespace IntFactoryDAL
             return result;
         }
 
-        public int InsertContent(string helpID, string typeID,string sort, string title, string keyWords, string content, string userID)
+        public int InsertContent(string contentID, string typeID, string sort, string title, string keyWords, string detail, string userID)
         {
             int result = 0;
             SqlParameter[] param ={ new SqlParameter("@Result",result),
-                                    new SqlParameter("@HelpID",helpID),
+                                    new SqlParameter("@ContentID",contentID),
                                     new SqlParameter("@TypeID",typeID),
                                     new SqlParameter("@Sort",sort),
                                     new SqlParameter("@Title",title),
                                     new SqlParameter("@KeyWords",keyWords),
                                     new SqlParameter("@UserID",userID),
-                                    new SqlParameter("@Content",content)
+                                    new SqlParameter("@Detail",detail)
                                  };
             param[0].Direction = ParameterDirection.Output;
             ExecuteNonQuery("P_InsertContent", param, CommandType.StoredProcedure);
@@ -197,15 +191,15 @@ namespace IntFactoryDAL
         public bool UpdateType(string typeID, string name,string img, string types)
         {
             string sqlTxt = string.Empty;
-            sqlTxt = "Update Type set Name='" + name + "',Img='" + img + "',Types='" + types + "' where TypeID='" + typeID + "'";
+            sqlTxt = "Update Type set Name='" + name + "',Icon='" + img + "',ModuleType='" + types + "' where TypeID='" + typeID + "'";
             var num = ExecuteNonQuery(sqlTxt);
             return num == 1 ? true : false;
         }
 
-        public bool UpdateContent(string helpID, string title,string sort, string keyWords, string content, string typeID)
+        public bool UpdateContent(string contentID, string title, string sort, string keyWords, string content, string typeID)
         {
             string sqlTxt = string.Empty;
-            sqlTxt = "Update Help set Title='" + title + "',Sort='" + sort + "',KeyWords='" + keyWords + "',Content='" + content + "',TypeID='" + typeID + "' where HelpID='" + helpID + "'";
+            sqlTxt = "Update Content set Title='" + title + "',Sort=" + sort + ",KeyWords='" + keyWords + "',Detail='" + content + "',TypeID='" + typeID + "' where contentID='" + contentID + "'";
             var num = ExecuteNonQuery(sqlTxt);
             return num == 1 ? true : false;
         }
@@ -236,10 +230,10 @@ namespace IntFactoryDAL
             return result;
         }
 
-        public bool DeleteContent(string helpID)
+        public bool DeleteContent(string contentID)
         {
             string sqlTxt = string.Empty;
-            sqlTxt = "Update Help set Status=9 where HelpID='" + helpID+"'";
+            sqlTxt = "Update Content set Status=9 where ContentID='" + contentID + "'";
             var num = ExecuteNonQuery(sqlTxt);
             return num == 1 ? true : false;
         }
