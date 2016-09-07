@@ -229,6 +229,8 @@
     <Content Include="modules\images\home\newindex.png" />
     <Content Include="modules\images\ico-btnadd.png" />
     <Content Include="modules\images\ico-delete.png" />
+    <Content Include="modules\images\ico-loading.gif" />
+    <Content Include="modules\images\ico-loading.jpg" />
     <Content Include="modules\images\iconback-blue.png" />
     <Content Include="modules\images\iconback.png" />
     <Content Include="modules\images\logo_login.png" />

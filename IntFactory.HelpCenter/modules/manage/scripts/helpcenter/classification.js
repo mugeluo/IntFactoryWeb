@@ -117,8 +117,9 @@
     };
 
     ObjectJS.getTypeList = function () {
+        $(".tr-header").after("<tr><td colspan='15'><div class='data-loading'><div></td></tr>");
         Global.post("/Manage/HelpCenter/GetTypes", { filter: JSON.stringify(Params) }, function (data) {
-            $(".lists").remove();
+            $(".tr-header").nextAll().remove();
             if (data.items.length > 0) {                
                 Dot.exec("/manage/template/type/type-list.html", function (template) {
                     var innerHtml = template(data.items);
@@ -180,7 +181,7 @@
                                 } else if (data.status == 0) {
                                     alert("删除失败");
                                 } else {
-                                    alert("请先删除分类下数据");
+                                    alert("请先删除该分类下数据");
                                 }
                             })
                         });

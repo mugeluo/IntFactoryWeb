@@ -108,9 +108,8 @@ namespace IntFactory.HelpCenter.Areas.Manage.Controllers
         }
                 
         public JsonResult InsertType(string name,string desc, int types,string img)
-        {
-            var userID = "03234a5b-3d8e-43d1-9b2b-7d9d7f315fa4";
-            var bl = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.InsertType(name,desc, types,img, userID);
+        {            
+            var bl = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.InsertType(name,desc, types,img, CurrentUser.UserID);
             JsonDictionary.Add("status", bl);
             return new JsonResult
             {
@@ -121,8 +120,7 @@ namespace IntFactory.HelpCenter.Areas.Manage.Controllers
 
         public JsonResult InsertContent(string typeID, string sort,string title,string keyWords, string desc)
         {
-            var userID = "03234a5b-3d8e-43d1-9b2b-7d9d7f315fa4";
-            var bl = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.InsertContent(typeID, sort, title, keyWords, desc, userID);
+            var bl = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.InsertContent(typeID, sort, title, keyWords, desc, CurrentUser.UserID);
             JsonDictionary.Add("status", bl);
             return new JsonResult
             {

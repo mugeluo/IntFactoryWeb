@@ -195,6 +195,9 @@ nav .action-box .point { width:6px; height:6px; border-radius:3px; background-co
 .table-add .column-title-template { color:#333; width:60px;font-size:12px;}
 .table-boeder{border-bottom:0;padding-bottom:0;}
 
+/*图片loading*/
+.data-loading { padding: 80px 0px; font-size: 16px;text-align: center; color: #666; background:url(/modules/images/ico-loading.gif) no-repeat center center;background-size:45px 45px; background-color:#fff; }
+
 /*       按钮和图标               */
 .btn {  padding:5px 10px; background-color:#4a98e7; color:#fff; border:none; cursor:pointer; display:inline-block; border-radius:2px; line-height:18px;
         -moz-transition:all 0.3s;

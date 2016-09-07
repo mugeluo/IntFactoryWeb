@@ -34,10 +34,10 @@ namespace IntFactoryBusiness
             return list;
         }
 
-        public List<UsersEntity> GetUesrs()
+        public List<UsersEntity> GetUesrs(string keyWords, string beginTime, string endTime, string orderBy, int pageSize, int pageIndex, ref int totalCount, ref int pageCount)
         {
             List<UsersEntity> list = new List<UsersEntity>();
-            DataSet ds = HelpCenterDAL.BaseProvider.GetUesrs();
+            DataSet ds = HelpCenterDAL.BaseProvider.GetUesrs(keyWords,beginTime,endTime,orderBy,pageSize,pageIndex,ref totalCount,ref pageCount);
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
                 UsersEntity model = new UsersEntity();

@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Script.Serialization;
 using System.Web.Mvc;
+using IntFactory.HelpCenter.Models;
 
 namespace IntFactory.HelpCenter.Areas.Manage.Controllers
 {
@@ -23,10 +25,16 @@ namespace IntFactory.HelpCenter.Areas.Manage.Controllers
 
         #region ajax
 
-        public JsonResult GetUsers()
+        public JsonResult GetUsers(string filter)
         {
-            var list = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetUesrs();
+            JavaScriptSerializer jssl = new JavaScriptSerializer();
+            FilterTypes model = jssl.Deserialize<FilterTypes>(filter);
+            int totalCount = 0;
+            int pageCount = 0;
+            var list = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetUesrs(model.Keywords,model.BeginTime,model.EndTime,model.OrderBy,model.PageSize,model.PageIndex,ref totalCount,ref pageCount);
             JsonDictionary.Add("items", list);
+            JsonDictionary.Add("totalCount", totalCount);
+            JsonDictionary.Add("pageCount", pageCount);
             return new JsonResult
             {
                 Data = JsonDictionary,
@@ -35,9 +43,8 @@ namespace IntFactory.HelpCenter.Areas.Manage.Controllers
         }
 
         public JsonResult SaveUser(string acc,string pwd,string name,string remark)
-        {
-            var createUserID="03234a5b-3d8e-43d1-9b2b-7d9d7f315fa4";
-            var bl = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.InsertUsers(acc, pwd, name, remark, createUserID);
+        {            
+            var bl = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.InsertUsers(acc, pwd, name, remark, CurrentUser.UserID);
             JsonDictionary.Add("status", bl);
             return new JsonResult
             {

@@ -149,9 +149,10 @@
         
     };
 
-    ObjectJS.getContentList = function () {        
+    ObjectJS.getContentList = function () {
+        $(".tr-header").after("<tr><td colspan='15'><div class='data-loading'><div></td></tr>");
         Global.post("/Manage/HelpCenter/GetContent", { filter: JSON.stringify(Params) }, function (data) {
-            $(".list-item").remove();
+            $(".tr-header").nextAll().remove();
             if (data.items.length>0) {
                 Dot.exec("/manage/template/type/type-details-list.html",function(temp){
                     var innerHtml = temp(data.items);

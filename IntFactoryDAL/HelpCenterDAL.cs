@@ -23,22 +23,32 @@ namespace IntFactoryDAL
             return dt;
         }
 
-        public DataSet GetUesrs()
+        public DataSet GetUesrs(string keyWords, string beginTime, string endTime, string orderBy, int pageSize, int pageIndex, ref int totalCount, ref int pageCount)
         {
-            string sqlTxt = string.Empty;
-            sqlTxt = "select * from Users where Status<>9 ";
-            DataSet ds = GetDataSet(sqlTxt);
+            SqlParameter[] param ={ new SqlParameter("@totalCount",totalCount),
+                                    new SqlParameter("@pageCount",pageCount),     
+                                    new SqlParameter("@keyWords",keyWords),
+                                    new SqlParameter("@beginTime",beginTime),
+                                    new SqlParameter("@endTime",endTime),
+                                    new SqlParameter("@orderBy",orderBy),
+                                    new SqlParameter("@pageSize",pageSize),
+                                    new SqlParameter("@pageIndex",pageIndex)                                    
+                                 };
+            param[0].Value = totalCount;
+            param[1].Value = pageCount;
+
+            param[0].Direction = ParameterDirection.InputOutput;
+            param[1].Direction = ParameterDirection.InputOutput;
+            DataSet ds = GetDataSet("P_GetUserList", param, CommandType.StoredProcedure);
+            totalCount = Convert.ToInt32(param[0].Value);
+            pageCount = Convert.ToInt32(param[1].Value);
             return ds;
         }
 
         public DataSet GetTypes(int types, string keyWords, string beginTime, string endTime, string orderBy, int pageSize, int pageIndex, ref int totalCount, ref int pageCount)
-        {
-            string tableName = "Type";
-            string key = "TypeID";
+        {            
             SqlParameter[] param ={ new SqlParameter("@totalCount",totalCount),
-                                    new SqlParameter("@pageCount",pageCount),
-                                    new SqlParameter("@tableName",tableName),
-                                    new SqlParameter("@key",key),
+                                    new SqlParameter("@pageCount",pageCount),                                    
                                     new SqlParameter("@types",types),
                                     new SqlParameter("@keyWords",keyWords),
                                     new SqlParameter("@beginTime",beginTime),

@@ -9,8 +9,7 @@ using IntFactoryDAL;
 using IntFactoryBusiness;
 
 namespace IntFactory.HelpCenter.Areas.Manage.Controllers
-{
-    
+{    
     public class HomeController : Controller
     {
         //

@@ -7,6 +7,16 @@
     require("daterangepicker");
 
     var ObjectJS = {};
+
+    var Params = {  
+        Keywords: "",
+        BeginTime: "",
+        EndTime: "",
+        PageIndex: 1,
+        PageSize: 5,
+        OrderBy: "Users.CreateTime desc",
+    }
+
     ObjectJS.init = function (navName) {
         ObjectJS.bindEvent(navName);        
     };
@@ -18,13 +28,42 @@
             ObjectJS.getUsers();
         }
 
+        //日期插件
+        $("#iptCreateTime").daterangepicker({
+            showDropdowns: true,
+            empty: true,
+            opens: "right",
+            ranges: {
+                '今天': [moment(), moment()],
+                '昨天': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                '上周': [moment().subtract(6, 'days'), moment()],
+                '本月': [moment().startOf('month'), moment().endOf('month')]
+            }
+        }, function (start, end, label) {
+            Params.PageIndex = 1;
+            Params.BeginTime = start ? start.format("YYYY-MM-DD") : "";
+            Params.EndTime = end ? end.format("YYYY-MM-DD") : "";
+            ObjectJS.getUsers();
+        });
+
+        //关键字搜索
+        require.async("search", function () {
+            $(".searth-module").searchKeys(function (keyWords) {
+                Params.PageIndex = 1;
+                Params.Keywords = keyWords;
+                ObjectJS.getUsers();
+            });
+        });
+
         $("#btnSave").click(function () {
             ObjectJS.saveUser();
         });
     };
 
     ObjectJS.getUsers = function () {
-        Global.post("/Manage/System/GetUsers", {}, function (data) {
+        $(".tr-header").after("<tr><td colspan='15'><div class='data-loading'><div></td></tr>");
+        Global.post("/Manage/System/GetUsers", { filter: JSON.stringify(Params) }, function (data) {
+            $(".tr-header").nextAll().remove();
             if (data.items.length > 0) {
                 $(".list-item").remove();
                 Dot.exec("/Manage/template/system/userlist.html", function (e) {
@@ -96,6 +135,29 @@
                         });
                     });
                 });
+
+                $("#pager").paginate({
+                    total_count: data.totalCount,
+                    count: data.pageCount,
+                    start: Params.PageIndex,
+                    display: 5,
+                    border: true,
+                    border_color: '#fff',
+                    text_color: '#333',
+                    background_color: '#fff',
+                    border_hover_color: '#ccc',
+                    text_hover_color: '#000',
+                    background_hover_color: '#efefef',
+                    rotate: true,
+                    images: false,
+                    mouse: 'slide',
+                    onChange: function (page) {
+                        Params.PageIndex = page;
+                        ObjectJS.getUsers();
+                    }
+                });
+            } else {
+                $(".users-list").append("<tr class='list-item' style='height:100px;'><td class='center font16' colspan='3'>暂无数据<td></tr>");
             }
         })
     };
