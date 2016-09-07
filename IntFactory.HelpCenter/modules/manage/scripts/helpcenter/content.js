@@ -102,7 +102,7 @@
             if (!_this.hasClass("hover")) {
                 $("#selector .item .check-lump").removeClass("hover");
                 _this.addClass("hover");
-            }
+            }       
             Global.post("/Manage/HelpCenter/GetTypeByTypes", { type: type }, function (data) {
                 if (data.items.length>0) {
                     $("#classIfication").empty();

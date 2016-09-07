@@ -15,12 +15,12 @@ namespace IntFactoryDAL
 
         #region 查询
 
-        public DataSet GetUesrsByAccound(string userName, string pwd)
+        public DataTable GetUesrsByAccound(string userName, string pwd)
         {
             string sqlTxt = string.Empty;
             sqlTxt = "select * from Users where Status<>9 and AccountName='" + userName + "' and Password='" + pwd + "'";
-            DataSet ds = GetDataSet(sqlTxt);
-            return ds;
+            DataTable dt = GetDataTable(sqlTxt);
+            return dt;
         }
 
         public DataSet GetUesrs()

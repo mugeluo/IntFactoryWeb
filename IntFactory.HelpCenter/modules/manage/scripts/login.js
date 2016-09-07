@@ -17,7 +17,7 @@
         });
 
         //登录
-        $("#btnLogin").click(function () {
+        $("#btnLogin").click(function () {            
             var _this = $(this);
             if (!$("#iptUserName").val()) {
                 $(".registerErr").html("请输入账号").slideDown();
@@ -29,8 +29,8 @@
             }            
             _this.html("登录中...").attr("disabled", "disabled");
             Global.post("/Manage/Home/UserLogin", {userName: $("#iptUserName").val(),pwd: $("#iptPwd").val()},function (data) {
-                _this.html("登录").attr("disabled", "false");                
-                if (data.items.length>0) {
+                _this.html("登录").attr("disabled", "false");               
+                if (data.items) {
                     window.location = "/Manage/Home/Index"
                 } else {
                     alert("账号或密码不正确");

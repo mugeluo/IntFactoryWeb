@@ -6,13 +6,13 @@
 }
 
 @section css{    
-    <link href="/modules/manage/css/function/function.css" rel="stylesheet" />
+    <link href="/modules/manage/css/helpcenter/helpcenter.css" rel="stylesheet" />
 }
 @section scripts{
     <script src="/modules/plug/umeditor/ueditor.config.js"></script>
     <script src="/modules/plug/umeditor/umeditor.min.js"></script>
     <script type="text/javascript">        
-        seajs.use(["/modules/manage/scripts/function/content"], function (ObjectJS) {
+        seajs.use(["/modules/manage/scripts/helpcenter/content"], function (ObjectJS) {
             var um = UE.getEditor('remark');
             ObjectJS.init(um);
         });

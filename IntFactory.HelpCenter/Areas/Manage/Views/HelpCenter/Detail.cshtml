@@ -5,13 +5,13 @@
     ViewBag.Name = "Function";  
 }
 @section css{    
-    <link href="/modules/manage/css/function/function.css" rel="stylesheet" />
+    <link href="/modules/manage/css/helpcenter/helpcenter.css" rel="stylesheet" />
 }
 @section scripts{
     <script src="/modules/plug/umeditor/ueditor.config.js"></script>
     <script src="/modules/plug/umeditor/umeditor.min.js"></script>
     <script type="text/javascript">
-        seajs.use(["/modules/manage/scripts/function/details"], function (ObjectJS) {            
+        seajs.use(["/modules/manage/scripts/helpcenter/details"], function (ObjectJS) {
             ObjectJS.init("",'@Html.ToJSONString(model)');
         });
     </script>

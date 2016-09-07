@@ -76,7 +76,7 @@ namespace IntFactory.HelpCenter.Areas.Manage.Controllers
         {
             var item = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetUesrsByAccound(userName, pwd);
             JsonDictionary.Add("items", item);
-            if (item.Count>0)
+            if (item!=null)
             {
                 Session["ClientManager"] = item;
                 //保持登录状态

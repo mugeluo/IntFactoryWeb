@@ -18,16 +18,18 @@ namespace IntFactoryBusiness
 
         #region 查询
 
-        public List<UsersEntity> GetUesrsByAccound(string userName,string pwd)
+        public UsersEntity GetUesrsByAccound(string userName,string pwd)
         {
-            List<UsersEntity> list = new List<UsersEntity>();
+            UsersEntity list = null;
             pwd = HelpCenter.Encrypt.GetEncryptPwd(pwd, userName);
-            DataSet ds = HelpCenterDAL.BaseProvider.GetUesrsByAccound(userName, pwd);
-            foreach (DataRow dr in ds.Tables[0].Rows)
+            DataTable dt = HelpCenterDAL.BaseProvider.GetUesrsByAccound(userName, pwd);
+            if (dt.Rows.Count > 0)
             {
-                UsersEntity model = new UsersEntity();
-                model.FillData(dr);
-                list.Add(model);
+                list = new UsersEntity();
+                foreach (DataRow dr in dt.Rows)
+                {
+                    list.FillData(dr);
+                }
             }
             return list;
         }
@@ -43,20 +45,6 @@ namespace IntFactoryBusiness
                 list.Add(model);
             }
             return list;
-        }
-
-        public static UsersEntity GetUserByUserName(string loginname, string pwd)
-        {
-            pwd = HelpCenter.Encrypt.GetEncryptPwd(pwd, loginname);
-            DataSet ds = HelpCenterDAL.BaseProvider.GetUesrsByAccound(loginname, pwd);
-            UsersEntity model = null;
-            foreach (DataRow dr in ds.Tables[0].Rows)
-            {
-                model = new UsersEntity();
-                model.FillData(dr);               
-            };
-
-            return model;
         }
 
         public TypeEntity GetTypesByTypeID(string typeID)

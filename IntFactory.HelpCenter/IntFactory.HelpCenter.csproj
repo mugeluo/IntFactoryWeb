@@ -257,7 +257,7 @@
     <Content Include="modules\images\ zngc-4.png" />
     <Content Include="modules\images\ zngc-5.png" />
     <Content Include="modules\images\ zngc-6.png" />
-    <Content Include="modules\manage\css\function\function.css" />
+    <Content Include="modules\manage\css\helpcenter\helpcenter.css" />
     <Content Include="modules\manage\css\home\index.css" />
     <Content Include="modules\manage\css\home\login.css" />
     <Content Include="modules\manage\css\iconfont\demo.css" />
@@ -271,10 +271,10 @@
     <Content Include="modules\manage\images\ico_search.png" />
     <Content Include="modules\manage\images\ico_searchhover.png" />
     <Content Include="modules\manage\images\img-noimg.png" />
-    <Content Include="modules\manage\scripts\function\details.js" />
-    <Content Include="modules\manage\scripts\function\content.js" />
-    <Content Include="modules\manage\scripts\function\classification.js" />
-    <Content Include="modules\manage\scripts\function\update-content.js" />
+    <Content Include="modules\manage\scripts\helpcenter\details.js" />
+    <Content Include="modules\manage\scripts\helpcenter\content.js" />
+    <Content Include="modules\manage\scripts\helpcenter\classification.js" />
+    <Content Include="modules\manage\scripts\helpcenter\update-content.js" />
     <Content Include="modules\manage\scripts\index.js" />
     <Content Include="modules\manage\scripts\layout.js" />
     <Content Include="modules\manage\scripts\login.js" />
