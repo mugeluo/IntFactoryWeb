@@ -84,6 +84,7 @@
     };
 
     ObjectJS.getUsers = function () {
+        $(".tr-header").nextAll().remove();
         $(".tr-header").after("<tr><td colspan='15'><div class='data-loading'><div></td></tr>");
         Global.post("/Manage/System/GetUsers", { filter: JSON.stringify(Params) }, function (data) {
             $(".tr-header").nextAll().remove();

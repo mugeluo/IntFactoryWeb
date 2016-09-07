@@ -95,10 +95,7 @@
                 alert("分类不能为空");
                 return;
             }
-            var img = $("#cateGoryImages li img").attr("src");
-            if (img==undefined) {
-                img = 'null';
-            }
+            var img = $("#cateGoryImages li img").attr("src");            
             Global.post("/Manage/HelpCenter/InsertType", { Name: txt,desc:desc,Types: types ,img:img}, function (data) {
                 if (data.status == 1) {
                     alert("添加成功");
@@ -117,6 +114,7 @@
     };
 
     ObjectJS.getTypeList = function () {
+        $(".tr-header").nextAll().remove();
         $(".tr-header").after("<tr><td colspan='15'><div class='data-loading'><div></td></tr>");
         Global.post("/Manage/HelpCenter/GetTypes", { filter: JSON.stringify(Params) }, function (data) {
             $(".tr-header").nextAll().remove();

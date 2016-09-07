@@ -150,6 +150,7 @@
     };
 
     ObjectJS.getContentList = function () {
+        $(".tr-header").nextAll().remove();
         $(".tr-header").after("<tr><td colspan='15'><div class='data-loading'><div></td></tr>");
         Global.post("/Manage/HelpCenter/GetContent", { filter: JSON.stringify(Params) }, function (data) {
             $(".tr-header").nextAll().remove();
@@ -164,7 +165,7 @@
                         var contentID = _this.data("id");
                         var confirmMsg = "确定删除此分类?";            
                         confirm(confirmMsg, function () {                            
-                            Global.post("/Manage/HelpCenter/DeleteContent", { contentID: ContentID }, function (data) {
+                            Global.post("/Manage/HelpCenter/DeleteContent", { contentID: contentID }, function (data) {
                                 if (data.status) {
                                     _this.parent().parent().fadeOut(400, function () {
                                         _this.remove();
