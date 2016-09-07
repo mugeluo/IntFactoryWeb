@@ -9,7 +9,8 @@
     var ObjectJS = {};
 
     var Params = {
-        TypeID: "",
+        Types: 0,
+        TypeID:"",
         Keywords: "",
         BeginTime: "",
         EndTime: "",
@@ -45,12 +46,17 @@
 
         ObjectJS.bindCateGory();
 
+        //模块选择
         $(".module-source .item").click(function () {
             var _this = $(this), type = _this.data("idsource");
             if (!_this.hasClass("hover")) {
                 _this.siblings().removeClass("hover");
                 _this.addClass("hover");
             };
+            Params.Types = type;
+            $(".category-source .item").removeClass("hover");
+            $(".category-source .item:first").addClass("hover");
+            Params.TypeID = "";
             Global.post("/Manage/HelpCenter/GetTypeByTypes", { type: type }, function (data) {
                 if (data.items.length > 0) {
                     $(".category-source .item:gt(0)").remove();                    
@@ -59,6 +65,7 @@
                         $(".category-source").append("<li class='item' data-id=" + item.TypeID + ">" + item.Name + "</li>");
                     }
                     ObjectJS.bindCateGory();
+                    ObjectJS.getContentList();
                 } else {
                     alert("网络波动，请重试");
                 }
@@ -97,6 +104,7 @@
             ObjectJS.getContentList();
         });
 
+        //添加详情--模块选择
         $("#selector .item .check-lump").click(function () {
             var _this = $(this), type=_this.data("id");
             if (!_this.hasClass("hover")) {
@@ -116,12 +124,13 @@
             });
         });
 
+        //添加详情
         $(".add-type-details").click(function () {            
             var typeID = $("select option:selected").data("id");
             var sort = $(".sort").val();
             var title = $(".title").val();
             var keywords = $(".keywords").val();
-            var desc = encodeURI(editor.getContent());
+            var desc = encodeURI(editor.getContent());            
             if (title=="" || desc==""||sort=="") {
                 alert("内容不能为空");
                 return;
@@ -150,10 +159,10 @@
 
                     innerHtml.find(".delete").click(function () {
                         var _this = $(this);
-                        var helpID = _this.data("id");
+                        var contentID = _this.data("id");
                         var confirmMsg = "确定删除此分类?";            
                         confirm(confirmMsg, function () {                            
-                            Global.post("/Manage/HelpCenter/DeleteContent", { HelpID: helpID }, function (data) {
+                            Global.post("/Manage/HelpCenter/DeleteContent", { contentID: ContentID }, function (data) {
                                 if (data.status) {
                                     _this.parent().parent().fadeOut(400, function () {
                                         _this.remove();
@@ -193,7 +202,7 @@
     }
 
     ObjectJS.bindCateGory = function () {
-        //选择模块
+        //选择分类
         $(".category-source .item").click(function () {
             var _this = $(this), typeID = _this.data("id");
             if (!_this.hasClass("hover")) {

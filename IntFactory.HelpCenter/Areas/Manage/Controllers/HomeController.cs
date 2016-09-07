@@ -19,14 +19,7 @@ namespace IntFactory.HelpCenter.Areas.Manage.Controllers
             if (Session["ClientManager"] == null)
             {
                 return Redirect("/Manage/Home/Login");
-            }
-            else
-            {
-                //if (CurrentUser.UserID != "")
-                //{
-                //    return View();
-                //}
-            }; 
+            }            
             return View();
         }
                 
@@ -47,10 +40,6 @@ namespace IntFactory.HelpCenter.Areas.Manage.Controllers
                         Session["ClientManager"] = model;
                         return Redirect("/Manage/Home/Index");
                     }
-                }
-                else
-                {
-                    ViewBag.UserName = cook["username"];
                 }
             }
 

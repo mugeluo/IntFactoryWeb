@@ -22,11 +22,11 @@
         
 
         $(".update-details").click(function () {
-            ObjectJS.updateContent(model.HelpID);
+            ObjectJS.updateContent(model.ContentID);
         });
     };
 
-    ObjectJS.updateContent = function (id) {
+    ObjectJS.updateContent = function (id) {        
         var typeid = $(".table-add option:selected").data("id");
         var title = $(".title").val();
         var sort = $(".sort").val();

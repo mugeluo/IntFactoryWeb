@@ -17,20 +17,20 @@
     </script>
 }
 <div class="header-box">
-    <a href="/Manage/HelpCenter/DetailList" class="header-title left">返回列表</a>   
+    <a class="header-title left">内容详情</a>   
     <div class="add-type"><a href="/Manage/HelpCenter/UpdateDetail/@(model.ContentID)" class="btn-add">编辑内容</a></div>
 </div>
 <div class="content-body">
     <div class="">
         <ul class="table-add">
             <li>
-                <span class="column-title">类型:</span>  
-                <label>@(item.Name)</label>                          
-            </li>
-            <li>
                 <span class="column-title">标题:</span>
                 <label class="title"></label>                
             </li>
+            <li>
+                <span class="column-title">类型:</span>  
+                <label>@(item.Name)</label>                          
+            </li>            
             <li>
                 <span class="column-title">排序:</span>
                 <label class="sort"></label>                

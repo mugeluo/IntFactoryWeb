@@ -66,14 +66,11 @@ namespace IntFactoryDAL
             return ds;
         }
 
-        public DataSet GetContent(string typeID, string keyWords, string beginTime, string endTime, string orderBy, int pageSize, int pageIndex, ref int totalCount, ref int pageCount)
-        {
-            string tableName = "Content";
-            string key = "ContentID";
+        public DataSet GetContent(int moduleType, string typeID, string keyWords, string beginTime, string endTime, string orderBy, int pageSize, int pageIndex, ref int totalCount, ref int pageCount)
+        {            
             SqlParameter[] param ={ new SqlParameter("@totalCount",totalCount),
-                                    new SqlParameter("@pageCount",pageCount),
-                                    new SqlParameter("@tableName",tableName),
-                                    new SqlParameter("@key",key),
+                                    new SqlParameter("@pageCount",pageCount),                                   
+                                    new SqlParameter("@ModuleType",moduleType),
                                     new SqlParameter("@typeID",typeID),
                                     new SqlParameter("@keyWords",keyWords),
                                     new SqlParameter("@beginTime",beginTime),
