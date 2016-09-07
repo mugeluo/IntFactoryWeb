@@ -55,6 +55,29 @@
             });
         });
 
+        //排序
+        $(".sort-item").click(function () {
+            var _this = $(this);
+            if (_this.hasClass("hover")) {
+                if (_this.find(".asc").hasClass("hover")) {
+                    _this.find(".asc").removeClass("hover");
+                    _this.find(".desc").addClass("hover");
+                    Params.OrderBy = _this.data("column") + " desc ";
+                } else {
+                    _this.find(".desc").removeClass("hover");
+                    _this.find(".asc").addClass("hover");
+                    Params.OrderBy = _this.data("column") + " asc ";
+                }
+            } else {
+                _this.addClass("hover").siblings().removeClass("hover");
+                _this.siblings().find(".hover").removeClass("hover");
+                _this.find(".desc").addClass("hover");
+                Params.OrderBy = _this.data("column") + " desc ";
+            }
+            Params.PageIndex = 1;
+            ObjectJS.getUsers();
+        });
+
         $("#btnSave").click(function () {
             ObjectJS.saveUser();
         });

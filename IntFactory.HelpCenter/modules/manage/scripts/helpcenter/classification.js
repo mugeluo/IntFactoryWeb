@@ -219,7 +219,7 @@
             browse_button: 'uploadImg',
             picture_container: "cateGoryImages",
             successItems: "#cateGoryImages li",
-            image_view: "?imageView2/1/w/60/h/60",
+            //image_view: "?imageView2/1/w/60/h/60",
             file_path: "/Content/UploadFiles/HelpCenter/",
             maxSize: 5,
             fileType: 1,

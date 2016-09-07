@@ -155,7 +155,7 @@ nav .action-box .point { width:6px; height:6px; border-radius:3px; background-co
 .table-list td a{ color:#4a98e7;  vertical-align:middle;}
 .table-list td a:hover{ color:red; text-decoration:underline; }
 
-.table-list td img{ width:50px; height:50px; display:inline-block;  vertical-align:middle;}
+.table-list td img{ width:60px; height:60px; display:inline-block;  vertical-align:middle;}
 
 .table-list .ico-check { vertical-align:middle; }
 .table-list .ico-checked { vertical-align:middle; }
@@ -194,6 +194,8 @@ nav .action-box .point { width:6px; height:6px; border-radius:3px; background-co
 .table-add .category-title { color:#999; width:60px;}
 .table-add .column-title-template { color:#333; width:60px;font-size:12px;}
 .table-boeder{border-bottom:0;padding-bottom:0;}
+
+.category-img li img { width:60px;height:60px;}
 
 /*图片loading*/
 .data-loading { padding: 80px 0px; font-size: 16px;text-align: center; color: #666; background:url(/modules/images/ico-loading.gif) no-repeat center center;background-size:45px 45px; background-color:#fff; }
