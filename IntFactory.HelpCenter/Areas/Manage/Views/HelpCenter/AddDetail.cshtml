@@ -19,7 +19,8 @@
     </script>
 }
 <div class="header-box">
-    <a href="/Manage/HelpCenter/DetailList" class="header-title left">返回列表</a>   
+    <a href="/Manage/HelpCenter/DetailList" class="header-title left">添加内容</a>   
+    <a class="btn-back right" href="javascript:if(history.length>1){ history.go(-1);} else{}">返回</a> 
 </div>
 <div class="content-body">
     <div class="">
@@ -49,11 +50,7 @@
                         <option data-id="@(item.TypeID)">@(item.Name)</option>
                     }        
                 </select>
-            </li>
-            <li>
-                <span class="column-title">排序:</span>
-                <input type="number" class="sort" />
-            </li>
+            </li>            
             <li>
                 <span class="column-title">标题:</span>
                 <input type="text" class="title" />
@@ -61,6 +58,10 @@
             <li>
                 <span class="column-title">关键字:</span>
                 <input type="text" class="keywords" />
+            </li>
+            <li>
+                <span class="column-title">排序:</span>
+                <input type="number" class="sort" />
             </li>
             <li>
                 <span class="column-title left">内容:</span>

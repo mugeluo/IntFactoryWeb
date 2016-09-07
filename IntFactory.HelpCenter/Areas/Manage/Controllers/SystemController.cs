@@ -12,7 +12,7 @@ namespace IntFactory.HelpCenter.Areas.Manage.Controllers
         // GET: /Manage/System/
 
         public ActionResult Users()
-        {
+        {            
             return View();
         }
 

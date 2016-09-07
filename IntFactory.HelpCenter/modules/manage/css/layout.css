@@ -30,7 +30,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner{padding:0;border:non
 
 /*头部*/
 .header {  height:50px; width:100%; background-color:#2F73B8; position:fixed; top:0; z-index:1999; opacity:0.9; box-shadow:0 0 5px #2F73B8;}
-.header .menu li{float:left;margin-right:20px;line-height:50px;cursor:pointer;position:relative;}
+.header .menu li{float:left;margin-right:20px;cursor:pointer;position:relative;}
 
 header .logo {margin-top:13px; margin-left:10px; }
 header .logo img{ height:26px; width:26px; border-radius:13px; }
@@ -96,7 +96,7 @@ nav .action-box .point { width:6px; height:6px; border-radius:3px; background-co
 .main-content::after{display:block;content:"";clear:both;}
 
 .header-box::after{display:block;content:"";clear:both;}
-.header-box .add-type { border:0;text-align:center;cursor:pointer;float:right;margin-right:30px;border-radius:3px;background-color:#4a98e7;}
+.header-box .add-type { border:0;text-align:center;cursor:pointer;float:right;border-radius:3px;background-color:#4a98e7;}
 .header-box .add-type a{color:#fff;}
 .header-box .add-type:hover{background-color:#318ae4;}
 .header-box { background-color:#fff; padding:15px 20px 5px 20px; min-height:28px; overflow:auto; margin-bottom:20px; }

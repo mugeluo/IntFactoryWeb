@@ -16,7 +16,7 @@
         EndTime: "",
         PageIndex: 1,
         PageSize: 5,
-        OrderBy: "Content.CreateTime desc",
+        OrderBy: "Content.Sort,Content.CreateTime desc",
     }
 
     ObjectJS.init = function (Editor) {        
@@ -99,12 +99,12 @@
                 _this.siblings().find(".hover").removeClass("hover");
                 _this.find(".desc").addClass("hover");
                 Params.OrderBy = _this.data("column") + " desc ";
-            }
+            }            
             Params.PageIndex = 1;
             ObjectJS.getContentList();
         });
 
-        //添加详情--模块选择
+        //添加内容--模块选择
         $("#selector .item .check-lump").click(function () {
             var _this = $(this), type=_this.data("id");
             if (!_this.hasClass("hover")) {
@@ -124,7 +124,7 @@
             });
         });
 
-        //添加详情
+        //添加内容
         $(".add-type-details").click(function () {            
             var typeID = $("select option:selected").data("id");
             var sort = $(".sort").val();
@@ -145,7 +145,8 @@
                     alert("标题已存在");
                 }
             })
-        });     
+        });
+        
     };
 
     ObjectJS.getContentList = function () {        

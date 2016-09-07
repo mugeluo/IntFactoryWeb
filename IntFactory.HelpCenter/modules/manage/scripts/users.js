@@ -68,13 +68,12 @@
                             });                           
 
                             for (var i = 0; i < data.items.length; i++) {
-                                
                                 var item = data.items[i];
                                 if (item.UserID == userID) {
-                                   $("#loginname").val(item.Account);
-                                   $("#loginpass").val(item.Passwords);
-                                   $("#name").val(item.UserName);
-                                   $("#remark").val(item.Remark);
+                                   $("#loginname").val(item.AccountName);
+                                   $("#loginpass").val(item.Password);
+                                   $("#name").val(item.Name);
+                                   $("#remark").val(item.Remaek);
                                 }
                             }                            
                         });

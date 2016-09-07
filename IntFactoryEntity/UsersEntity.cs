@@ -25,7 +25,7 @@ namespace IntFactoryEntity
 
         public int Status { get; set; }
 
-        public string Remark { get; set; }
+        public string Remaek { get; set; }
 
         public void FillData(System.Data.DataRow dr)
         {

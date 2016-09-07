@@ -135,7 +135,7 @@ namespace IntFactoryDAL
                                     new SqlParameter("@AccountName",accountName),
                                     new SqlParameter("@Password",password),
                                     new SqlParameter("@Name",name),
-                                    new SqlParameter("@Remark",remark),
+                                    new SqlParameter("@Remaek",remark),
                                     new SqlParameter("@CreateUserID",createUserID)
                                  };
             param[0].Direction = ParameterDirection.Output;

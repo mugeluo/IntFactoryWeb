@@ -15,7 +15,7 @@ namespace IntFactory.HelpCenter.Areas.Manage.Controllers
         // GET: /Manage/Function/
 
         public ActionResult TypeList()
-        {            
+        {                      
             return View();
         }
 

@@ -7,7 +7,7 @@ using IntFactoryEntity;
 
 namespace IntFactory.HelpCenter.Areas.Manage.Controllers
 {
-    //[IntFactory.HelpCenter.Common.UserAuthorize]
+    [IntFactory.HelpCenter.Common.UserAuthorize]
     public class BaseController : Controller
     {
         //

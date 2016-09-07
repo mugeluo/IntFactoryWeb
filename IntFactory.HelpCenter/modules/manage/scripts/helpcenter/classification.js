@@ -132,7 +132,7 @@
                             Easydialog.open({
                                 container: {
                                     id: "show-model-detail",
-                                    header: "编辑模块",
+                                    header: "编辑分类",
                                     content: innerText,
                                     yesFn: function () {
                                         var type = $(".type").val();                                        

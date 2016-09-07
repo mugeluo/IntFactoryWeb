@@ -10,10 +10,13 @@ using IntFactoryBusiness;
 
 namespace IntFactory.HelpCenter.Areas.Manage.Controllers
 {
-    public class HomeController : BaseController
+    
+    public class HomeController : Controller
     {
         //
         // GET: /Manage/Home/        
+        protected Dictionary<string, object> JsonDictionary = new Dictionary<string, object>();
+
         public ActionResult Index()
         {
             if (Session["ClientManager"] == null)
