@@ -21,8 +21,8 @@
         OrderBy: "Content.Sort,Content.CreateTime desc",
     }
 
-    ObjectJS.init = function (Editor) {        
-        ObjectJS.bindEvent();        
+    ObjectJS.init = function (Editor) {             
+        ObjectJS.bindEvent();
         editor = Editor;
         ObjectJS.getContentList();
     };
@@ -70,7 +70,7 @@
                     for (var i = 0; i < data.items.length; i++) {
                         var item = data.items[i];
                         $(".category-source").append("<li class='item' data-id=" + item.TypeID + ">" + item.Name + "</li>");
-                    }
+                    }                    
                     ObjectJS.bindCateGory();
                     ObjectJS.getContentList();
                 } else {
