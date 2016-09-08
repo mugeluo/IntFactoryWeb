@@ -10,7 +10,7 @@
 }
 @section scripts{
     <script type="text/javascript">
-        seajs.use(["/modules/manage/scripts/helpcenter/content"], function (ObjectJS) {
+        seajs.use(["/modules/manage/scripts/helpcenter/contents"], function (ObjectJS) {
             ObjectJS.init(null,null);
         });
     </script>
@@ -51,7 +51,7 @@
     <div class="search-sort">
         <ul class=" left">
             <li>排序</li>
-            <li class="sort-item hover" data-column="c.Sort">
+            <li class="sort-item hover" data-column="c.CreateTime">
                 创建日期
                 <span class="asc"></span>
                 <span class="desc hover"></span>
@@ -67,8 +67,8 @@
     <table class="table-list category-details mTop10">
         <tr class="tr-header">        
             <td width="100" style="width:15%;">标题</td> 
-            <td width="100">所属分类</td>
-            <td width="100" style="width:15%;">模块</td>
+            <td width="100">分类</td>
+            <td width="100" style="width:15%;">分类模块</td>
             <td width="100">点击次数</td>
             <td width="100">排序</td>
             <td width="200">创建时间</td> 

@@ -34,7 +34,7 @@ namespace IntFactory.HelpCenter.Areas.Manage.Controllers
             return View();
         }
 
-        public ActionResult UpdateContent(string id)
+        public ActionResult EditContent(string id)
         {
             var model = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetContentByContentID(id);
             ViewBag.List = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetTypesByModuleType((ModuleTypeEnum)model.Type.ModuleType);
@@ -75,10 +75,8 @@ namespace IntFactory.HelpCenter.Areas.Manage.Controllers
             FilterTypes model = jssl.Deserialize<FilterTypes>(filter);
             int totalCount = 0;
             int pageCount = 0;
-            //var list = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetTypes();
             var items = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetContents(model.Types, model.TypeID, model.Keywords, model.BeginTime, model.EndTime, model.OrderBy, model.PageSize, model.PageIndex, ref totalCount, ref pageCount);
             JsonDictionary.Add("items", items);
-            //JsonDictionary.Add("list", list);
             JsonDictionary.Add("totalCount", totalCount);
             JsonDictionary.Add("pageCount", pageCount);
 
@@ -121,10 +119,11 @@ namespace IntFactory.HelpCenter.Areas.Manage.Controllers
             };
         }
 
-        public JsonResult UpdateType(string typeID, string name, string img,string types)
+        public JsonResult UpdateType(string typeID, string name, string icon,int moduleType)
         {
-            var bl = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.UpdateType(typeID, name,img, types);
+            var bl = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.UpdateType(typeID, name, icon, moduleType);
             JsonDictionary.Add("status", bl);
+
             return new JsonResult
             {
                 Data = JsonDictionary,

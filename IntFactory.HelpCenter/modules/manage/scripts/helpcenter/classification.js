@@ -142,9 +142,9 @@
                                     yesFn: function () {
                                         var type = $(".type").val();                                        
                                         var img = $("#cateGoryImages li img").attr("src");                                        
-                                        Global.post("/Manage/HelpCenter/UpdateType", { TypeID: typeID, Name: type, img: img, Types: moduleType }, function (e) {
+                                        Global.post("/Manage/HelpCenter/UpdateType", { TypeID: typeID, Name: type, icon: img, moduleType: moduleType }, function (e) {
                                             if (e.status) {
-                                                ObjectJS.getTypeList();
+                                                //ObjectJS.getTypeList();
                                             } else {
                                                 alert("修改失败");
                                             }

@@ -76,7 +76,7 @@ namespace IntFactoryDAL
             return ds;
         }
 
-        public DataSet GetContent(int moduleType, string typeID, string keyWords, string beginTime, string endTime, string orderBy, int pageSize, int pageIndex, ref int totalCount, ref int pageCount)
+        public DataSet GetContents(int moduleType, string typeID, string keyWords, string beginTime, string endTime, string orderBy, int pageSize, int pageIndex, ref int totalCount, ref int pageCount)
         {            
             SqlParameter[] param ={ 
                                     new SqlParameter("@totalCount",totalCount),
@@ -193,20 +193,23 @@ namespace IntFactoryDAL
 
         #region 编辑
 
-        public bool UpdateType(string typeID, string name,string img, string types)
+        public bool UpdateType(string typeID, string name, string icon, int moduleType)
         {
-            string sqlTxt = string.Empty;
-            sqlTxt = "Update Type set Name='" + name + "',Icon='" + img + "',ModuleType='" + types + "' where TypeID='" + typeID + "'";
-            var num = ExecuteNonQuery(sqlTxt);
-            return num == 1 ? true : false;
+            string sqlTxt = "Update Type set Name=@name,Icon=@icon,ModuleType=@moduleType where TypeID=@typeID" ;
+            SqlParameter[] param={ 
+                                    new SqlParameter("@typeID",typeID),
+                                    new SqlParameter("@name",name),
+                                    new SqlParameter("@icon",icon),
+                                    new SqlParameter("@moduleType",moduleType)
+            };
+            return ExecuteNonQuery(sqlTxt, param,CommandType.Text) > 0;
         }
 
         public bool UpdateContent(string contentID, string title, string sort, string keyWords, string content, string typeID)
         {
-            string sqlTxt = string.Empty;
-            sqlTxt = "Update Content set Title='" + title + "',Sort=" + sort + ",KeyWords='" + keyWords + "',Detail='" + content + "',TypeID='" + typeID + "' where contentID='" + contentID + "'";
-            var num = ExecuteNonQuery(sqlTxt);
-            return num == 1 ? true : false;
+            string sqlTxt= "Update Content set Title='" + title + "',Sort=" + sort + ",KeyWords='" + keyWords + "',Detail='" + content + "',TypeID='" + typeID + "' where contentID='" + contentID + "'";
+           
+            return ExecuteNonQuery(sqlTxt)>0;
         }
 
         public bool UpdateUsers(string userID, string acc, string pwd, string name, string remark)
