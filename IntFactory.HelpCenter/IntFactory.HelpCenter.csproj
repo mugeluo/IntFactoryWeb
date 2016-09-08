@@ -207,7 +207,6 @@
     <Content Include="modules\manage\images\ico_search.png" />
     <Content Include="modules\manage\images\ico_searchhover.png" />
     <Content Include="modules\manage\images\img-noimg.png" />
-    <Content Include="modules\manage\scripts\helpcenter\details.js" />
     <Content Include="modules\manage\scripts\helpcenter\content.js" />
     <Content Include="modules\manage\scripts\helpcenter\classification.js" />
     <Content Include="modules\manage\scripts\helpcenter\update-content.js" />

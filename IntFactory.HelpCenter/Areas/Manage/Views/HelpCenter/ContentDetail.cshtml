@@ -7,24 +7,20 @@
     <link href="/modules/manage/css/helpcenter/helpcenter.css" rel="stylesheet" />
 }
 @section scripts{
-    <script src="/modules/plug/umeditor/ueditor.config.js"></script>
-    <script src="/modules/plug/umeditor/umeditor.min.js"></script>
-    <script type="text/javascript">
-        seajs.use(["/modules/manage/scripts/helpcenter/details"], function (ObjectJS) {
-            ObjectJS.init("",'@Html.ToJSONString(model)');
-        });
+    <script type="text/javascript">        
+        $("#remark").html(decodeURI("@(model.Detail)"));        
     </script>
 }
 <div class="header-box">
     <a class="header-title left">内容详情</a>   
-    <div class="add-type"><a href="/Manage/HelpCenter/UpdateDetail/@(model.ContentID)" class="btn-add">编辑内容</a></div>
+    <div class="add-type"><a href="/Manage/HelpCenter/UpdateContent/@(model.ContentID)" class="btn-add">编辑内容</a></div>
 </div>
 <div class="content-body">
     <div class="">
         <ul class="table-add">
             <li>
                 <span class="column-title">标题:</span>
-                <label class="title"></label>                
+                <label class="title">@(model.Title)</label>                
             </li>
             <li>
                 <span class="column-title">类型:</span>  
@@ -32,11 +28,11 @@
             </li>            
             <li>
                 <span class="column-title">排序:</span>
-                <label class="sort"></label>                
+                <label class="sort">@(model.Sort)</label>                
             </li>
             <li>
                 <span class="column-title">关键字:</span>
-                <label class="keywords" ></label>                
+                <label class="keywords" >@(model.KeyWords)</label>                
             </li>
             <li>
                 @*<span class="column-title left">描述:</span>*@
