@@ -11,7 +11,8 @@
         ObjectJS.bindEvent(model);
     };
 
-    ObjectJS.bindEvent = function (model) {
+    ObjectJS.bindEvent = function (model) {        
+        $("#selector .item .check-lump[data-id=" + model.Types.ModuleType + "]").addClass("hover");
         $(".table-add option[data-id=" + model.TypeID + "]").attr("selected", "true");
         $(".title").val(model.Title);
         $(".sort").val(model.Sort);
@@ -19,10 +20,28 @@
         editor.ready(function () {
             editor.setContent(decodeURI(model.Detail));
         });
-        
-
+                
         $(".update-details").click(function () {
             ObjectJS.updateContent(model.ContentID);
+        });
+
+        $("#selector .item .check-lump").click(function () {            
+            var _this = $(this), id = _this.data("id");
+            if (!_this.hasClass("hover")) {
+                $("#selector .item .check-lump").removeClass("hover");
+                _this.addClass("hover");
+            };
+            Global.post("/Manage/HelpCenter/GetTypeByTypes", { type: id }, function (data) {
+                if (data.items.length > 0) {
+                    $("#classIfication").empty();
+                    for (var i = 0; i < data.items.length; i++) {
+                        var item = data.items[i];
+                        $("#classIfication").append("<option data-id=" + item.TypeID + ">" + item.Name + "</option>");
+                    }
+                } else {
+                    alert("网络波动，请重试");
+                }
+            });
         });
     };
 
@@ -48,6 +67,6 @@
             }
         });
     }
-
+        
     module.exports = ObjectJS;
 });

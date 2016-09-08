@@ -119,6 +119,8 @@ namespace IntFactoryBusiness
             foreach (DataRow dr in dt.Rows )
             {
                 list.FillData(dr);
+                list.Types = HelpCenterBusiness.BaseBusiness.GetTypesByTypeID(list.TypeID);
+
             }
             return list;
         }

@@ -39,8 +39,9 @@ namespace IntFactory.HelpCenter.Areas.Manage.Controllers
 
         public ActionResult UpdateDetail(string id)
         {
-            ViewBag.List = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetTypeList();
-            ViewBag.model = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetContentByContentID(id);            
+            var model = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetContentByContentID(id);
+            ViewBag.List = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetTypesByType(model.Types.ModuleType);
+            ViewBag.model =model;
             return View();
         }
 

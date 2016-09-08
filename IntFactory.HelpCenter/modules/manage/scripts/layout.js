@@ -17,13 +17,11 @@
     ObjectJS.bindEvent = function (name) {        
         var _self = this;
         $(".menu ." + name).find("a").addClass("select");
-        if (name == "Index") {
-            $(".nav-list").hide();
-        } else if (name == "Function") {
-            $(".controller").hide();
+        if (name == "Function") {
+            $(".nav-list").show();
             $(".functions").show();
-        } else {
-            $(".controller").hide();
+        } else if (name == "Setting") {
+            $(".nav-list").show();
             $(".setting").show();
         }
 

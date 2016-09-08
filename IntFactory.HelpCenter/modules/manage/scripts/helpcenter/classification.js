@@ -8,7 +8,7 @@
     var Upload = require("upload");
 
     var ObjectJS = {};
-    
+    var moduleType = 0;
     var Params = {
         Types:"-1",
         Keywords: "",
@@ -108,7 +108,7 @@
             })
         });
 
-        ObjectJS.bingSelect();
+        ObjectJS.bindSelect("select");
 
         ObjectJS.bindUpload();
     };
@@ -123,7 +123,7 @@
                     var innerHtml = template(data.items);
                     innerHtml = $(innerHtml);
                     $(".category").append(innerHtml);
-
+                    
                     innerHtml.find(".update").click(function () {
                         var _this = $(this), typeID = _this.data("id");
                         Dot.exec("/manage/template/content/updata-type.html", function (template) {
@@ -136,7 +136,7 @@
                                     yesFn: function () {
                                         var type = $(".type").val();                                        
                                         var img = $("#cateGoryImages li img").attr("src");                                        
-                                        Global.post("/Manage/HelpCenter/UpdateType", { TypeID: typeID, Name: type, img: img, Types:Params.Types}, function (e) {
+                                        Global.post("/Manage/HelpCenter/UpdateType", { TypeID: typeID, Name: type, img: img, Types: moduleType }, function (e) {
                                             if (e.status) {
                                                 ObjectJS.getTypeList();
                                             } else {
@@ -150,11 +150,12 @@
                                 }
                             });
 
-                            ObjectJS.bingSelect();
+                            ObjectJS.bindSelect("update");                           
 
                             for (var i = 0; i < data.items.length; i++) {
                                 var item = data.items[i];
                                 if (item.TypeID == typeID) {
+                                    moduleType = item.ModuleType;
                                     $(".type").val(item.Name);
                                     $("#select .item .check-lump").removeClass("hover");
                                     $("#select .item .check-lump[data-id=" + item.ModuleType + "]").addClass("hover");
@@ -226,10 +227,15 @@
         });
     }
 
-    ObjectJS.bingSelect = function () {
+    ObjectJS.bindSelect = function (obj) {
         $("#select .item .check-lump").click(function () {
-            var _this = $(this),id=_this.data("id");
-            Params.Types=id;
+            var _this = $(this), id = _this.data("id");
+            if (obj=="update") {
+                moduleType = id;
+            } else {
+                Params.Types=id;
+            }
+            
             if (!_this.hasClass("hover")) {
                 $("#select .item .check-lump").removeClass("hover");
                 _this.addClass("hover");
