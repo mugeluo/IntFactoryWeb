@@ -9,6 +9,8 @@
 
     var ObjectJS = {};
     var moduleType = 0;
+    ObjectJS.isLoading = true;
+
     var Params = {
         Types:"-1",
         Keywords: "",
@@ -44,6 +46,9 @@
 
         //选择模块
         $(".module-source .item").click(function () {
+            if (!ObjectJS.isLoading) {
+                return;
+            }
             var _this = $(this), type = _this.data("idsource");
             if (!_this.hasClass("hover")) {
                 _this.siblings().removeClass("hover");
@@ -51,7 +56,6 @@
                
                 Params.Types = type;
                 ObjectJS.getTypeList();
-                
             }
         });
 
@@ -114,9 +118,11 @@
     };
 
     ObjectJS.getTypeList = function () {
+        ObjectJS.isLoading = false;
         $(".tr-header").nextAll().remove();
         $(".tr-header").after("<tr><td colspan='15'><div class='data-loading'><div></td></tr>");
         Global.post("/Manage/HelpCenter/GetTypes", { filter: JSON.stringify(Params) }, function (data) {
+            ObjectJS.isLoading = true;
             $(".tr-header").nextAll().remove();
             if (data.items.length > 0) {                
                 Dot.exec("/manage/template/type/type-list.html", function (template) {
@@ -229,6 +235,9 @@
 
     ObjectJS.bindSelect = function (obj) {
         $("#select .item .check-lump").click(function () {
+            if (!ObjectJS.isLoading) {
+                return;
+            }
             var _this = $(this), id = _this.data("id");
             if (obj=="update") {
                 moduleType = id;

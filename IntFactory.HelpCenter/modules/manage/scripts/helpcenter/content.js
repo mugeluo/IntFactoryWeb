@@ -8,6 +8,8 @@
 
     var ObjectJS = {};
 
+    ObjectJS.isLoading = true;
+
     var Params = {
         Types: 0,
         TypeID:"",
@@ -48,6 +50,9 @@
 
         //模块选择
         $(".module-source .item").click(function () {
+            if (!ObjectJS.isLoading) {
+                return;
+            }
             var _this = $(this), type = _this.data("idsource");
             if (!_this.hasClass("hover")) {
                 _this.siblings().removeClass("hover");
@@ -57,7 +62,9 @@
             $(".category-source .item").removeClass("hover");
             $(".category-source .item:first").addClass("hover");
             Params.TypeID = "";
+            ObjectJS.isLoading = false;
             Global.post("/Manage/HelpCenter/GetTypeByTypes", { type: type }, function (data) {
+                ObjectJS.isLoading = true;
                 if (data.items.length > 0) {
                     $(".category-source .item:gt(0)").remove();                    
                     for (var i = 0; i < data.items.length; i++) {
@@ -106,12 +113,17 @@
 
         //添加内容--模块选择
         $("#selector .item .check-lump").click(function () {
+            if (!ObjectJS.isLoading) {
+                return;
+            }
             var _this = $(this), type=_this.data("id");
             if (!_this.hasClass("hover")) {
                 $("#selector .item .check-lump").removeClass("hover");
                 _this.addClass("hover");
-            }       
+            }
+            ObjectJS.isLoading = false;
             Global.post("/Manage/HelpCenter/GetTypeByTypes", { type: type }, function (data) {
+                ObjectJS.isLoading = true;
                 if (data.items.length>0) {
                     $("#classIfication").empty();
                     for (var i = 0; i < data.items.length; i++) {
@@ -146,14 +158,15 @@
                 }
             })
         });
-        
     };
 
     ObjectJS.getContentList = function () {
+        ObjectJS.isLoading = false;
         $(".tr-header").nextAll().remove();
         $(".tr-header").after("<tr><td colspan='15'><div class='data-loading'><div></td></tr>");
         Global.post("/Manage/HelpCenter/GetContent", { filter: JSON.stringify(Params) }, function (data) {
             $(".tr-header").nextAll().remove();
+            ObjectJS.isLoading = true;
             if (data.items.length>0) {
                 Dot.exec("/manage/template/type/type-details-list.html",function(temp){
                     var innerHtml = temp(data.items);
@@ -207,6 +220,9 @@
     ObjectJS.bindCateGory = function () {
         //选择分类
         $(".category-source .item").click(function () {
+            if (!ObjectJS.isLoading) {
+                return;
+            }
             var _this = $(this), typeID = _this.data("id");
             if (!_this.hasClass("hover")) {
                 _this.siblings().removeClass("hover");
