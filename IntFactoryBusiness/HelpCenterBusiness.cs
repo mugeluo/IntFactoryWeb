@@ -58,16 +58,17 @@ namespace IntFactoryBusiness
             return model;
         }
 
-        public List<TypeEntity> GetTypesByType(int type)
+        public List<TypeEntity> GetTypesByModuleType(ModuleTypeEnum moduleType)
         {
             List<TypeEntity> list = new List<TypeEntity>();
-            DataSet ds = HelpCenterDAL.BaseProvider.GetTypesByType(type);            
-            foreach (DataRow dr in ds.Tables[0].Rows)
+            DataTable dt = HelpCenterDAL.BaseProvider.GetTypesByModuleType((int)moduleType);            
+            foreach (DataRow dr in dt.Rows)
             {
                 TypeEntity model = new TypeEntity();
                 model.FillData(dr);
                 list.Add(model);
             }
+
             return list;
         }
 
@@ -84,7 +85,7 @@ namespace IntFactoryBusiness
             return list;
         }
 
-        public List<TypeEntity> GetTypeList()
+        public List<TypeEntity> GetTypes()
         {
             List<TypeEntity> list = new List<TypeEntity>();
             DataSet ds = HelpCenterDAL.BaseProvider.GetTypeList();
@@ -97,7 +98,7 @@ namespace IntFactoryBusiness
             return list;
         }
 
-        public List<ContentEntity> GetContent(int moduleType, string typeID, string keyWords, string beginTime, string endTime, string orderBy, int pageSize, int pageIndex, ref int totalCount, ref int pageCount)
+        public List<ContentEntity> GetContents(int moduleType, string typeID, string keyWords, string beginTime, string endTime, string orderBy, int pageSize, int pageIndex, ref int totalCount, ref int pageCount)
         {
             List<ContentEntity> list = new List<ContentEntity>();
             DataSet ds = HelpCenterDAL.BaseProvider.GetContent(moduleType, typeID, keyWords, beginTime, endTime, orderBy, pageSize, pageIndex, ref totalCount, ref pageCount);
@@ -105,8 +106,6 @@ namespace IntFactoryBusiness
             {
                 ContentEntity model = new ContentEntity();
                 model.FillData(dr);
-
-                model.Types = HelpCenterBusiness.BaseBusiness.GetTypesByTypeID(model.TypeID);
                 list.Add(model);
             }
             return list;
@@ -114,15 +113,14 @@ namespace IntFactoryBusiness
 
         public ContentEntity GetContentByContentID(string contentID)
         {
-            ContentEntity list = new ContentEntity();
+            ContentEntity item = new ContentEntity();
             DataTable dt = HelpCenterDAL.BaseProvider.GetContentByContentID(contentID);
             foreach (DataRow dr in dt.Rows )
             {
-                list.FillData(dr);
-                list.Types = HelpCenterBusiness.BaseBusiness.GetTypesByTypeID(list.TypeID);
-
+                item.FillData(dr);
             }
-            return list;
+
+            return item;
         }
 
         #endregion

@@ -78,7 +78,8 @@ namespace IntFactoryDAL
 
         public DataSet GetContent(int moduleType, string typeID, string keyWords, string beginTime, string endTime, string orderBy, int pageSize, int pageIndex, ref int totalCount, ref int pageCount)
         {            
-            SqlParameter[] param ={ new SqlParameter("@totalCount",totalCount),
+            SqlParameter[] param ={ 
+                                    new SqlParameter("@totalCount",totalCount),
                                     new SqlParameter("@pageCount",pageCount),                                   
                                     new SqlParameter("@ModuleType",moduleType),
                                     new SqlParameter("@typeID",typeID),
@@ -97,6 +98,7 @@ namespace IntFactoryDAL
             DataSet ds = GetDataSet("P_GetContentList", param, CommandType.StoredProcedure);
             totalCount = Convert.ToInt32(param[0].Value);
             pageCount = Convert.ToInt32(param[1].Value);
+
             return ds;
         }
 
@@ -108,25 +110,21 @@ namespace IntFactoryDAL
             return ds;
         }
 
-        public DataSet GetTypesByType(int type)
+        public DataTable GetTypesByModuleType(int moduleType)
         {
-            string sqlTxt = string.Empty;
-            if (type==0)
+            string sqlTxt = "select * from Type  where Status<>9";
+            if (moduleType !=-1)
             {
-                sqlTxt = "select * from Type  where Status<>9";
-            }else
-            {
-                sqlTxt = "select * from Type  where Status<>9 and ModuleType='" + type + "'";
+                sqlTxt += "  and ModuleType="+moduleType;
             }
-            
-            DataSet ds = GetDataSet(sqlTxt);
-            return ds;
+
+            return GetDataTable(sqlTxt);
         }
 
         public DataTable GetContentByContentID(string contentID)
         {
             string sqlTxt = string.Empty;
-            sqlTxt = "select * from Content where Status<>9 and ContentID='" + contentID + "'";
+            sqlTxt = " select *,t.name as typename,t.moduletype  from Content as c left join type as t on c.typeid=t.typeid where c.Status<>9 and c.ContentID='" + contentID + "'";
             DataTable dt = GetDataTable(sqlTxt);
             return dt;
         }

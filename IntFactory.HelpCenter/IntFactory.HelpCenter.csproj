@@ -589,8 +589,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Manage\Views\HelpCenter\AddType.cshtml" />
-    <Content Include="Areas\Manage\Views\HelpCenter\DetailList.cshtml" />
-    <Content Include="Areas\Manage\Views\HelpCenter\AddDetail.cshtml" />
+    <Content Include="Areas\Manage\Views\HelpCenter\Contents.cshtml" />
+    <Content Include="Areas\Manage\Views\HelpCenter\AddContent.cshtml" />
     <Content Include="Areas\Manage\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Manage\Views\System\AddUsers.cshtml" />
     <Content Include="Areas\Manage\Views\System\Users.cshtml" />
@@ -652,13 +652,13 @@
     <Content Include="modules\plug\umeditor\third-party\video-js\font\vjs.woff" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\Manage\Views\HelpCenter\TypeList.cshtml" />
+    <None Include="Areas\Manage\Views\HelpCenter\Types.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\Manage\Views\HelpCenter\UpdateDetail.cshtml" />
+    <Content Include="Areas\Manage\Views\HelpCenter\UpdateContent.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\Manage\Views\HelpCenter\Detail.cshtml" />
+    <Content Include="Areas\Manage\Views\HelpCenter\ContentDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Manage\Views\Home\Login.cshtml" />

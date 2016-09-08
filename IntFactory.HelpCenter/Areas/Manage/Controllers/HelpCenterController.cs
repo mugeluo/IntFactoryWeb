@@ -11,10 +11,7 @@ namespace IntFactory.HelpCenter.Areas.Manage.Controllers
 {
     public class HelpCenterController : BaseController
     {
-        //
-        // GET: /Manage/Function/
-
-        public ActionResult TypeList()
+        public ActionResult Types()
         {                      
             return View();
         }
@@ -24,39 +21,32 @@ namespace IntFactory.HelpCenter.Areas.Manage.Controllers
             return View();
         }
 
-        public ActionResult DetailList()
+        public ActionResult Contents()
         {
-            ViewBag.List = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetTypeList();
+            ViewBag.List = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetTypes();
             return View();
         }
 
-        public ActionResult AddDetail()
+        public ActionResult AddContent()
         {
-            var list=IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetTypesByType(1);
+            var list=IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetTypesByModuleType(ModuleTypeEnum.Function);
             ViewBag.List = list;                
             return View();
-        }       
+        }
 
-        public ActionResult UpdateDetail(string id)
+        public ActionResult UpdateContent(string id)
         {
             var model = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetContentByContentID(id);
-            ViewBag.List = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetTypesByType(model.Types.ModuleType);
+            ViewBag.List = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetTypesByModuleType((ModuleTypeEnum)model.Type.ModuleType);
             ViewBag.model =model;
             return View();
         }
 
-        public ActionResult Detail(string id)
-        {
-            var list = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetTypeList();           
+        public ActionResult ContentDetail(string id)
+        {   
             var model = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetContentByContentID(id);
-            foreach (var item in list)
-            {
-                if (item.TypeID==model.TypeID)
-                {
-                    ViewBag.item = item;
-                }
-            }
             ViewBag.model = model;
+
             return View();
         }
 
@@ -85,12 +75,13 @@ namespace IntFactory.HelpCenter.Areas.Manage.Controllers
             FilterTypes model = jssl.Deserialize<FilterTypes>(filter);
             int totalCount = 0;
             int pageCount = 0;
-            var list = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetTypeList();
-            var obj = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetContent(model.Types,model.TypeID, model.Keywords, model.BeginTime, model.EndTime, model.OrderBy, model.PageSize, model.PageIndex, ref totalCount, ref pageCount);
-            JsonDictionary.Add("items", obj);
-            JsonDictionary.Add("list", list);
+            //var list = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetTypes();
+            var items = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetContents(model.Types, model.TypeID, model.Keywords, model.BeginTime, model.EndTime, model.OrderBy, model.PageSize, model.PageIndex, ref totalCount, ref pageCount);
+            JsonDictionary.Add("items", items);
+            //JsonDictionary.Add("list", list);
             JsonDictionary.Add("totalCount", totalCount);
             JsonDictionary.Add("pageCount", pageCount);
+
             return new JsonResult
             {
                 Data = JsonDictionary,
@@ -98,8 +89,8 @@ namespace IntFactory.HelpCenter.Areas.Manage.Controllers
             };
         }
 
-        public JsonResult GetTypeByTypes(int type) {
-            var list = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetTypesByType(type);
+        public JsonResult GetTypesByModuleType(int type) {
+            var list = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetTypesByModuleType((ModuleTypeEnum)type);
             JsonDictionary.Add("items",list);
             return new JsonResult
             {
