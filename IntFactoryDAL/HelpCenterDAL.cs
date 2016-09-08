@@ -214,7 +214,7 @@ namespace IntFactoryDAL
         public bool UpdateUsers(string userID, string acc, string pwd, string name, string remark)
         {
             string sqlTxt = string.Empty;
-            sqlTxt = "Update Users set Account='" + acc + "',Passwords='" + pwd + "',UserName='" + name + "',Remark='" + remark + "' where UserID='" + userID + "'";
+            sqlTxt = "Update Users set AccountName='" + acc + "',Password='" + pwd + "',Name='" + name + "',Remaek='" + remark + "' where UserID='" + userID + "'";
             var num = ExecuteNonQuery(sqlTxt);
             return num == 1 ? true : false;
         }
