@@ -13,17 +13,15 @@ define(function (require, exports, module) {
     }
     //绑定事件
     LayoutObject.bindEvent = function (name) {
-        $(".site-header ." + name).addClass("hover").find("a").css("color", "#0cb39e");
+        $(".site-header ." + name).addClass("hover");
          
         //窗体滚动 置顶头部
         $(window).scroll(function () {
             if ($(document).scrollTop()>80){ 
                 $(".getback-FH").fadeIn(500);
-                $(".header-menu").css("background", "rgba(0,0,0,0.7)");
             }  
             else {                  
                 $(".getback-FH").fadeOut(1000);
-                $(".header-menu").css("background", "0");
             }  
         });         
              
@@ -36,16 +34,8 @@ define(function (require, exports, module) {
         $("header").dblclick(function () {
             $('body,html').animate({ scrollTop: 0 }, 300);
             return false;
-        });       
-
-        $("#wx-photo").hover(         
-            function () {
-                $(".wx-public").show();
-            },
-            function () {
-                $(".wx-public").hide();
-            }
-        );
+        });  
+        
     }
 
     // 判断浏览器是否支持 placeholder

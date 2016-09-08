@@ -144,7 +144,6 @@
     <Content Include="modules\css\about.css" />
     <Content Include="modules\css\base.css" />
     <Content Include="modules\css\case.css" />
-    <Content Include="modules\css\home\index.css" />
     <Content Include="modules\css\iconfont\demo.css" />
     <Content Include="modules\css\iconfont\demo.html" />
     <Content Include="modules\css\iconfont\iconfont.css" />
@@ -297,6 +296,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Content\" />
     <Folder Include="Models\" />
+    <Folder Include="modules\css\home\" />
     <Folder Include="modules\template\" />
   </ItemGroup>
   <ItemGroup>

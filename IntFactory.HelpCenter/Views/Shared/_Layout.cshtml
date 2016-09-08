@@ -4,13 +4,65 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <link href="/modules/css/base.css" rel="stylesheet" />
+    <link href="/modules/css/layout.css" rel="stylesheet" />
+
+    <link rel="shortcut icon" href="/modules/images/logo_login.png">
+    @RenderSection("css", false)
+@*    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")*@
 </head>
 <body>
-    @RenderBody()
 
-    @Scripts.Render("~/bundles/jquery")
-    @RenderSection("scripts", required: false)
+    <header class="header-menu" data-isbg="0">
+        <div class="site-header">
+            <div class="helpcenter-icon">
+                <i class="iconfont">&#xe614;</i>
+            </div>
+            <ul class="left nav">  
+                <li class="Index"><a href="/Home/Index">帮助中心</a></li>
+                <li class="Pricing"><a href="">功能描述</a></li>
+                <li class="Services"><a href="">常见问题</a></li>                
+                <li class="About"><a href="">新手指南</a></li>
+                <li class="About"><a href="">反馈</a></li>
+            </ul>
+            <div class="right mTop15 mRight10">
+                <a href="http://zngc.intfactory.cn/Home/Login">登录</a>
+                <a class="register" href="http://zngc.intfactory.cn/Home/Register">注册</a> 
+                <div class="clear"></div>               
+            </div>   
+        </div>
+    </header>
+
+   <div class="main-content">
+        @RenderBody()        
+    </div>
+
+    <footer class="site-footer">
+        <div  class="module-box">
+            <div class="left links">               
+                <a href="/About/About?#list">帮助</a>
+                <a href="/About/About?#list">反馈</a>
+                <a href="/Pricing/Pricing">购买</a>
+                <a href="/About/About?#list">联系我们</a>
+                <a href="http://j.map.baidu.com/FvBYv">网站地图</a>
+                <div style="color:#bbb;">©2016厂盟智能 浙ICP备16001314号-1</div>  
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div> 
+    </footer>
+
+
+
+    <script src="/Scripts/jquery-1.11.1.js"></script>
+    <script src="/Scripts/sea.js"></script>
+    <script src="/Scripts/sea-config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["scripts/layout"], function (layout) {
+            layout.init('@(ViewBag.TitleName)')
+        });
+    </script>
+    @RenderSection("scripts",false)
 </body>
 </html>

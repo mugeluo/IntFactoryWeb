@@ -1,0 +1,5 @@
+﻿.head-content { height:600px;background-color:#0cb39e;}
+.head-content .content-top {background:url(/modules/images/home/help-ind1.png)no-repeat left;}
+.head-content .content-top .head-title {font-size:30px;color:#fff;padding-top:80px;text-align:center; }
+.head-content .content-top .head-search{width:800px;margin:auto;background-color:#fff;height:50px;border-radius:2px;}
+.head-content .content-top .head-search .search-txt{font-size:18px;color:#999;line-height:50px;margin-left:10px;}

@@ -30,13 +30,18 @@ input[type="submit"]::-moz-focus-inner,
 input[type="file"] > input[type="button"]::-moz-focus-inner{padding:0;border:none;}
 
 /*header样式*/
-.header-menu {height:50px;position:fixed;z-index:11111;width:100%; top:0;left:0;}
+.header-menu {height:50px;position:fixed;z-index:11111;width:100%; top:0;left:0;background-color:rgba(0,0,0,1)}
 .site-header {width:1200px;margin:auto;}
-.site-header .nav li {float:left;margin-top:10px;cursor:pointer;width:70px;text-align:center;height:30px;line-height:30px;}
+.site-header::after{display:block;content:"";clear:both;}
+.site-header .helpcenter-icon{width:50px;float:left;margin-top:2px;}
+.site-header .helpcenter-icon i{font-size:40px;color:#fff}
+.site-header .nav{margin-left:250px;}
+.site-header .nav::after{display:block;content:"";clear:both;}
+.site-header .nav li {float:left;margin-top:10px;cursor:pointer;width:100px;text-align:center;height:30px;line-height:30px;}
 .site-header .nav li a{ color:#fff;Opacity:0.7}
 .intfactory {width:30px;height:30px;border-radius:16px;background-color:#fff;color:#0cb39e;opacity:0.9; line-height:30px;text-align:center;margin-right:3px;font-size:26px !important;margin-top:2px;}
 .nav li i { width:30px;color:#fff;line-height:20px;}
-.nav li.hover{background-color:#fff; border-radius:3px;}
+.nav li.hover a{ border-bottom:2px solid #fff;padding-bottom:13px;opacity:1;}
 .nav li:hover a{Opacity:1;color:#fff;}
 .site-header div a:first-child{ padding: 5px 15px; margin-right: 20px; cursor: pointer;
                                 border-radius:3px;color:#fff;border:1px solid transparent;opacity:0.8}
