@@ -97,22 +97,24 @@
         //排序
         $(".sort-item").click(function () {
             var _this = $(this);
+            var asc = true;
             if (_this.hasClass("hover")) {
                 if (_this.find(".asc").hasClass("hover")) {
                     _this.find(".asc").removeClass("hover");
                     _this.find(".desc").addClass("hover");
-                    Params.OrderBy = _this.data("column") + " desc ";
+                    asc = false;
+                    
                 } else {
                     _this.find(".desc").removeClass("hover");
                     _this.find(".asc").addClass("hover");
-                    Params.OrderBy = _this.data("column") + " asc ";
                 }
             } else {
                 _this.addClass("hover").siblings().removeClass("hover");
                 _this.siblings().find(".hover").removeClass("hover");
                 _this.find(".desc").addClass("hover");
-                Params.OrderBy = _this.data("column") + " desc ";
-            }            
+                asc = false;
+            }
+            Params.OrderBy = _this.data("column") + (asc ?" asc":" desc ");
             Params.PageIndex = 1;
             ObjectJS.getContentList();
         });
@@ -169,7 +171,7 @@
             $(".tr-header").nextAll().remove();
             ObjectJS.isLoading = true;
             if (data.items.length>0) {
-                Dot.exec("/manage/template/type/type-details-list.html",function(temp){
+                Dot.exec("/manage/template/type/content-list.html",function(temp){
                     var innerHtml = temp(data.items);
                     innerHtml = $(innerHtml);
                     $(".category-details").append(innerHtml);

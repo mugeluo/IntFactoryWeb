@@ -101,7 +101,7 @@ namespace IntFactoryBusiness
         public List<ContentEntity> GetContents(int moduleType, string typeID, string keyWords, string beginTime, string endTime, string orderBy, int pageSize, int pageIndex, ref int totalCount, ref int pageCount)
         {
             List<ContentEntity> list = new List<ContentEntity>();
-            DataSet ds = HelpCenterDAL.BaseProvider.GetContent(moduleType, typeID, keyWords, beginTime, endTime, orderBy, pageSize, pageIndex, ref totalCount, ref pageCount);
+            DataSet ds = HelpCenterDAL.BaseProvider.GetContents(moduleType, typeID, keyWords, beginTime, endTime, orderBy, pageSize, pageIndex, ref totalCount, ref pageCount);
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
                 ContentEntity model = new ContentEntity();
@@ -152,9 +152,9 @@ namespace IntFactoryBusiness
 
         #region 编辑
 
-        public bool UpdateType(string typeID, string name,string img, string types)
+        public bool UpdateType(string typeID, string name,string icon, int moduleType)
         {
-            return HelpCenterDAL.BaseProvider.UpdateType(typeID, name,img, types);
+            return HelpCenterDAL.BaseProvider.UpdateType(typeID, name, icon, moduleType);
         }
 
         public bool UpdateContent(string contentID, string title, string sort, string keyWords, string content, string typeID)

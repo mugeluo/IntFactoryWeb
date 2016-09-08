@@ -13,7 +13,7 @@
 }
 <div class="header-box">
     <a class="header-title left">内容详情</a>   
-    <div class="add-type"><a href="/Manage/HelpCenter/UpdateContent/@(model.ContentID)" class="btn-add">编辑内容</a></div>
+    <div class="add-type"><a href="/Manage/HelpCenter/UpdateDetail/@(model.ContentID)" class="btn">编辑内容</a></div>
 </div>
 <div class="content-body">
     <div class="">
@@ -23,9 +23,13 @@
                 <label class="title">@(model.Title)</label>                
             </li>
             <li>
-                <span class="column-title">类型:</span>  
+                <span class="column-title">分类:</span>  
                 <label>@(model.TypeName)</label>                          
-            </li>            
+            </li>
+             <li>
+                <span class="column-title">分类模块:</span>  
+                <label>@(model.ModuleType==1?"功能模块":model.ModuleType==2?"常见问题":"新手指引")</label>                          
+            </li>                
             <li>
                 <span class="column-title">排序:</span>
                 <label class="sort">@(model.Sort)</label>                
