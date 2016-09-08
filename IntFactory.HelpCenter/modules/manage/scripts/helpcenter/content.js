@@ -19,7 +19,7 @@
         EndTime: "",
         PageIndex: 1,
         PageSize: 5,
-        OrderBy: "Content.Sort,Content.CreateTime desc",
+        OrderBy: "c.CreateTime desc",
     }
 
     ObjectJS.init = function (Editor, list) {
@@ -69,7 +69,7 @@
             $(".category-source .item:first").addClass("hover");
             Params.TypeID = "";
             ObjectJS.isLoading = false;
-            Global.post("/Manage/HelpCenter/GetTypeByTypes", { type: type }, function (data) {
+            Global.post("/Manage/HelpCenter/GetTypesByModuleType", { type: type }, function (data) {
                 ObjectJS.isLoading = true;
                 if (data.items.length > 0) {
                     $(".category-source .item:gt(0)").remove();                    
@@ -128,7 +128,7 @@
                 _this.addClass("hover");
             }
             ObjectJS.isLoading = false;
-            Global.post("/Manage/HelpCenter/GetTypeByTypes", { type: type }, function (data) {
+            Global.post("/Manage/HelpCenter/GetTypesByModuleType", { type: type }, function (data) {
                 ObjectJS.isLoading = true;
                 if (data.items.length>0) {
                     ObjectJS.cateGoryDropDown(data.items);

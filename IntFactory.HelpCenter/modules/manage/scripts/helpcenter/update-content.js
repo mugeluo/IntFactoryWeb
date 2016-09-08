@@ -35,7 +35,7 @@
                 $("#selector .item .check-lump").removeClass("hover");
                 _this.addClass("hover");
             };
-            Global.post("/Manage/HelpCenter/GetTypeByTypes", { type: id }, function (data) {
+            Global.post("/Manage/HelpCenter/GetTypesByModuleType", { type: id }, function (data) {
                 if (data.items.length > 0) {
                     ObjectJS.cateGoryDropDown(data.items, model,false);
                 } else {

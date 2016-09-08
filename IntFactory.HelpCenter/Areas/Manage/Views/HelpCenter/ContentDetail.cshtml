@@ -1,6 +1,5 @@
 ﻿@{
     ViewBag.Title = "后台 | 内容详情";
-    var item = (IntFactoryEntity.TypeEntity)ViewBag.item;
     var model = (IntFactoryEntity.ContentEntity)ViewBag.model;
     ViewBag.Name = "Function";  
 }
@@ -29,7 +28,7 @@
             </li>
             <li>
                 <span class="column-title">类型:</span>  
-                <label>@(item.Name)</label>                          
+                <label>@(model.TypeName)</label>                          
             </li>            
             <li>
                 <span class="column-title">排序:</span>

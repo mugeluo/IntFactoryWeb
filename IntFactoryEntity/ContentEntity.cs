@@ -14,7 +14,11 @@ namespace IntFactoryEntity
 
         public string TypeID { get; set; }
 
-        public TypeEntity Types { get; set; }
+        public string TypeName { get; set; }
+
+        public int ModuleType { get; set; }
+
+        public TypeEntity Type { get; set; }
 
         public string Title { get; set; }
 
@@ -31,10 +35,6 @@ namespace IntFactoryEntity
         public int ClickNumber { get; set; }
 
         public int Status { get; set; }
-
-        //public int PageSize { get; set; }
-
-        //public int PageIndex { get; set; }
 
 
         public void FillData(System.Data.DataRow dr)
