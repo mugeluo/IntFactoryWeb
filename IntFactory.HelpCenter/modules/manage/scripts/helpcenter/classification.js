@@ -165,7 +165,7 @@
                                     $(".type").val(item.Name);
                                     $("#select .item .check-lump").removeClass("hover");
                                     $("#select .item .check-lump[data-id=" + item.ModuleType + "]").addClass("hover");
-                                    $("#cateGoryImages").html("<li><img src=" + item.Icon + "></li>");
+                                    $("#cateGoryImages").html("<li><img src='" + item.Icon + "?imageView2/1/w/60/h/60'></li>");
                                 }
                             }
 

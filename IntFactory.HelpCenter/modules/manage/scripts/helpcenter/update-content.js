@@ -4,16 +4,20 @@
 
     var ObjectJS = {};
 
-    ObjectJS.init = function (Editor, model) {
+    ObjectJS.moduleTypes = "";
+
+    ObjectJS.init = function (Editor, model,list) {
         var _self = this;
         editor = Editor;
         model = JSON.parse(model.replace(/&quot;/g, '"'));
-        ObjectJS.bindEvent(model);
+        list = JSON.parse(list.replace(/&quot;/g, '"'));
+
+        ObjectJS.bindEvent(model,list);
     };
 
-    ObjectJS.bindEvent = function (model) {        
+    ObjectJS.bindEvent = function (model,list) {        
         $("#selector .item .check-lump[data-id=" + model.Types.ModuleType + "]").addClass("hover");
-        $(".table-add option[data-id=" + model.TypeID + "]").attr("selected", "true");
+        
         $(".title").val(model.Title);
         $(".sort").val(model.Sort);
         $(".keywords").val(model.KeyWords);
@@ -33,20 +37,17 @@
             };
             Global.post("/Manage/HelpCenter/GetTypeByTypes", { type: id }, function (data) {
                 if (data.items.length > 0) {
-                    $("#classIfication").empty();
-                    for (var i = 0; i < data.items.length; i++) {
-                        var item = data.items[i];
-                        $("#classIfication").append("<option data-id=" + item.TypeID + ">" + item.Name + "</option>");
-                    }
+                    ObjectJS.cateGoryDropDown(data.items, model,false);
                 } else {
                     alert("网络波动，请重试");
                 }
             });
         });
+
+        ObjectJS.cateGoryDropDown(list, model,true);
     };
 
-    ObjectJS.updateContent = function (id) {        
-        var typeid = $(".table-add option:selected").data("id");
+    ObjectJS.updateContent = function (id) {   
         var title = $(".title").val();
         var sort = $(".sort").val();
         var keywords = $(".keywords").val();
@@ -57,7 +58,7 @@
             sort: sort,
             keyWords: keywords,
             content: content,
-            typeID: typeid
+            typeID: ObjectJS.moduleTypes
         }, function (e) {
             if (e.status) {                                            
                 alert("修改成功");
@@ -66,6 +67,38 @@
                 alert("修改失败");
             }
         });
+    }
+    
+    ObjectJS.cateGoryDropDown = function (item,model,bl) {
+        $("#category_Down").empty();
+        require.async("dropdown", function () {
+            var types = [];
+            for (var i = 0; i < item.length; i++) {
+                types.push({
+                    ID: item[i].TypeID,
+                    Name: item[i].Name
+                })
+            }
+            ObjectJS.moduleTypes = item[0].TypeID;
+            $("#category_Down").dropdown({
+                prevText: "分类-",
+                defaultText: item[0].Name,
+                defaultValue: item[0].TypeID,
+                data: types,
+                dataValue: "ID",
+                dataText: "Name",
+                width: "110",
+                onChange: function (data) {
+                    if (ObjectJS.moduleTypes != data.value) {
+                       ObjectJS.moduleTypes = data.value;
+                    }
+                }
+            });
+            if (bl) {
+                $("#category_Down .dropdown-text").html("分类-" + model.Types.Name);
+            }
+        });
+
     }
         
     module.exports = ObjectJS;

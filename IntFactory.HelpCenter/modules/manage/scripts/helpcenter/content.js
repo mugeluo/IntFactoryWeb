@@ -9,6 +9,7 @@
     var ObjectJS = {};
 
     ObjectJS.isLoading = true;
+    ObjectJS.moduleTypes = "";
 
     var Params = {
         Types: 0,
@@ -21,13 +22,16 @@
         OrderBy: "Content.Sort,Content.CreateTime desc",
     }
 
-    ObjectJS.init = function (Editor) {             
-        ObjectJS.bindEvent();
+    ObjectJS.init = function (Editor, list) {
+        if (list!=null) {
+            list = JSON.parse(list.replace(/&quot;/g, '"'));
+        }
+        ObjectJS.bindEvent(list);
         editor = Editor;
         ObjectJS.getContentList();
     };
 
-    ObjectJS.bindEvent = function () {
+    ObjectJS.bindEvent = function (list) {
         //日期插件
         $("#iptCreateTime").daterangepicker({
             showDropdowns: true,
@@ -47,7 +51,9 @@
         });
 
         ObjectJS.bindCateGory();
-
+        if (list != null) {
+            ObjectJS.cateGoryDropDown(list);
+        }
         //模块选择
         $(".module-source .item").click(function () {
             if (!ObjectJS.isLoading) {
@@ -70,7 +76,7 @@
                     for (var i = 0; i < data.items.length; i++) {
                         var item = data.items[i];
                         $(".category-source").append("<li class='item' data-id=" + item.TypeID + ">" + item.Name + "</li>");
-                    }                    
+                    } 
                     ObjectJS.bindCateGory();
                     ObjectJS.getContentList();
                 } else {
@@ -125,11 +131,7 @@
             Global.post("/Manage/HelpCenter/GetTypeByTypes", { type: type }, function (data) {
                 ObjectJS.isLoading = true;
                 if (data.items.length>0) {
-                    $("#classIfication").empty();
-                    for (var i = 0; i < data.items.length; i++) {
-                        var item=data.items[i];
-                        $("#classIfication").append("<option data-id="+item.TypeID+">"+item.Name+"</option>");
-                    }                    
+                    ObjectJS.cateGoryDropDown(data.items);
                 } else {
                     alert("网络波动，请重试");
                 }
@@ -137,8 +139,7 @@
         });
 
         //添加内容
-        $(".add-type-details").click(function () {            
-            var typeID = $("select option:selected").data("id");
+        $(".add-type-details").click(function () { 
             var sort = $(".sort").val();
             var title = $(".title").val();
             var keywords = $(".keywords").val();
@@ -147,7 +148,7 @@
                 alert("内容不能为空");
                 return;
             }            
-            Global.post("/Manage/HelpCenter/InsertContent", { typeID: typeID, sort: sort, title: title, keywords: keywords, desc: desc }, function (data) {
+            Global.post("/Manage/HelpCenter/InsertContent", { typeID: ObjectJS.moduleTypes, sort: sort, title: title, keywords: keywords, desc: desc }, function (data) {
                 if (data.status == 1) {
                     alert("添加成功");
                     window.location = "/Manage/HelpCenter/DetailList";
@@ -233,6 +234,39 @@
             }
         });
     };
+
+    ObjectJS.cateGoryDropDown = function (item) {
+        $("#category_Down").empty();        
+        require.async("dropdown", function () {
+            var types = [];
+            for (var i = 0; i < item.length; i++) {
+                types.push({
+                    ID: item[i].TypeID,
+                    Name: item[i].Name
+                })
+            }
+            ObjectJS.moduleTypes = item[0].TypeID;
+            $("#category_Down").dropdown({
+                prevText: "分类-",
+                defaultText: item[0].Name,
+                defaultValue: item[0].TypeID,
+                data: types,
+                dataValue: "ID",
+                dataText: "Name",
+                width: "110",
+                onChange: function (data) {
+                    if (ObjectJS.moduleTypes != data.value) {
+                        if (ObjectJS.isLoading) {
+                            ObjectJS.moduleTypes = data.value;                            
+                        } else {
+                            alert("数据加载中，请稍等 !");
+                        }
+                    }
+                }
+            });
+        });
+
+    }
 
     module.exports = ObjectJS;
 })

@@ -14,7 +14,7 @@
     <script type="text/javascript">        
         seajs.use(["/modules/manage/scripts/helpcenter/content"], function (ObjectJS) {
             var um = UE.getEditor('remark');
-            ObjectJS.init(um);
+            ObjectJS.init(um,'@Html.ToJSONString(list)');
         });
     </script>
 }
@@ -43,13 +43,9 @@
                 </div>
             </li>
             <li>
-                <span class="column-title">类型:</span>
-                <select id="classIfication">
-                    @foreach (var item in list)
-                    {
-                        <option data-id="@(item.TypeID)">@(item.Name)</option>
-                    }        
-                </select>                
+                <span class="column-title left">类型:</span>
+                <div id="category_Down" style="margin-left:83px;"></div>
+                <div class="clear"></div>                       
             </li>            
             <li>
                 <span class="column-title">标题:</span>

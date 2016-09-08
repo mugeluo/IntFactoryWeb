@@ -12,8 +12,7 @@
         $(".title").html(model.Title);
         $(".sort").html(model.Sort==""?"--":model.Sort);
         $(".keywords").html(model.KeyWords);
-        $("#remark").html(decodeURI(model.Detail));
-        console.log(decodeURI(model.Detail));
+        $("#remark").html(decodeURI(model.Detail));        
     };
 
     module.exports = ObjectJS;
