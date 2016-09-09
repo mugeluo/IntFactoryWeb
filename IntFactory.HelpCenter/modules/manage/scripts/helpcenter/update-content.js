@@ -16,7 +16,7 @@
     };
 
     ObjectJS.bindEvent = function (model,list) {        
-        $("#selector .item .check-lump[data-id=" + model.Types.ModuleType + "]").addClass("hover");
+        $("#selector .item .check-lump[data-id=" + model.ModuleType + "]").addClass("hover");
         
         $(".title").val(model.Title);
         $(".sort").val(model.Sort);
@@ -62,7 +62,7 @@
         }, function (e) {
             if (e.status) {                                            
                 alert("修改成功");
-                window.location = "/Manage/HelpCenter/DetailList";
+                window.location = "/Manage/HelpCenter/Contents";
             } else {
                 alert("修改失败");
             }
@@ -94,8 +94,8 @@
                     }
                 }
             });
-            if (bl) {
-                $("#category_Down .dropdown-text").html("分类-" + model.Types.Name);
+            if (bl) {               
+                $("#category_Down .dropdown-text").html("分类-" + model.TypeName);
             }
         });
 

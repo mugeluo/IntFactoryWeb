@@ -12,7 +12,7 @@
     <script src="/modules/plug/umeditor/ueditor.config.js"></script>
     <script src="/modules/plug/umeditor/umeditor.min.js"></script>
     <script type="text/javascript">        
-        seajs.use(["/modules/manage/scripts/helpcenter/content"], function (ObjectJS) {
+        seajs.use(["/modules/manage/scripts/helpcenter/contents"], function (ObjectJS) {
             var um = UE.getEditor('remark');
             ObjectJS.init(um,'@Html.ToJSONString(list)');
         });

@@ -181,6 +181,7 @@
     <Content Include="modules\css\layout.css" />
     <Content Include="modules\images\home\help-ind1.png" />
     <Content Include="modules\images\home\help-ind2.png" />
+    <Content Include="modules\images\home\resource-3.png" />
     <Content Include="modules\images\ico-btnadd.png" />
     <Content Include="modules\images\ico-delete.png" />
     <Content Include="modules\images\ico-loading.gif" />
@@ -207,9 +208,8 @@
     <Content Include="modules\manage\images\ico_search.png" />
     <Content Include="modules\manage\images\ico_searchhover.png" />
     <Content Include="modules\manage\images\img-noimg.png" />
-    <Content Include="modules\manage\scripts\helpcenter\details.js" />
-    <Content Include="modules\manage\scripts\helpcenter\contents.js" />
     <Content Include="modules\manage\scripts\helpcenter\classification.js" />
+    <Content Include="modules\manage\scripts\helpcenter\contents.js" />
     <Content Include="modules\manage\scripts\helpcenter\update-content.js" />
     <Content Include="modules\manage\scripts\index.js" />
     <Content Include="modules\manage\scripts\layout.js" />
@@ -219,7 +219,7 @@
     <Content Include="modules\manage\template\content\updata-type.html" />
     <Content Include="modules\manage\template\system\update-users.html" />
     <Content Include="modules\manage\template\system\userlist.html" />
-    <Content Include="modules\manage\template\type\content-list.html" />
+    <Content Include="modules\manage\template\type\type-details-list.html" />
     <Content Include="modules\manage\template\type\type-list.html" />
     <Content Include="modules\plug\datapager\images\next.png" />
     <Content Include="modules\plug\datapager\images\previous.png" />
@@ -656,9 +656,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Areas\Manage\Views\HelpCenter\Types.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Areas\Manage\Views\HelpCenter\EditContent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Manage\Views\HelpCenter\ContentDetail.cshtml" />

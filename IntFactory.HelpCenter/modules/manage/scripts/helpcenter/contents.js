@@ -18,7 +18,7 @@
         BeginTime: "",
         EndTime: "",
         PageIndex: 1,
-        PageSize: 5,
+        PageSize: 10,
         OrderBy: "c.CreateTime desc",
     }
 
@@ -153,7 +153,7 @@
             Global.post("/Manage/HelpCenter/InsertContent", { typeID: ObjectJS.moduleTypes, sort: sort, title: title, keywords: keywords, desc: desc }, function (data) {
                 if (data.status == 1) {
                     alert("添加成功");
-                    window.location = "/Manage/HelpCenter/DetailList";
+                    window.location = "/Manage/HelpCenter/Contents";
                 } else if (data.status == 0) {
                     alert("添加失败");
                 } else {

@@ -17,7 +17,7 @@
         BeginTime:"",
         EndTime: "",
         PageIndex: 1,
-        PageSize: 5,
+        PageSize: 10,
         OrderBy: "Type.CreateTime desc",
     }
     ObjectJS.init = function () {
@@ -99,11 +99,11 @@
                 alert("分类不能为空");
                 return;
             }
-            var img = $("#cateGoryImages li img").attr("src");            
+            var img = $("#cateGoryImages li img").data("src");            
             Global.post("/Manage/HelpCenter/InsertType", { Name: txt,desc:desc,Types: types ,img:img}, function (data) {
                 if (data.status == 1) {
                     alert("添加成功");
-                    window.location = "/Manage/HelpCenter/TypeList";
+                    window.location = "/Manage/HelpCenter/Types";
                 } else if (data.status == 0) {
                     alert("添加失败");
                 } else {
@@ -141,10 +141,10 @@
                                     content: innerText,
                                     yesFn: function () {
                                         var type = $(".type").val();                                        
-                                        var img = $("#cateGoryImages li img").attr("src");                                        
+                                        var img = $("#cateGoryImages li img").data("src");                                        
                                         Global.post("/Manage/HelpCenter/UpdateType", { TypeID: typeID, Name: type, icon: img, moduleType: moduleType }, function (e) {
                                             if (e.status) {
-                                                //ObjectJS.getTypeList();
+                                                ObjectJS.getTypeList();
                                             } else {
                                                 alert("修改失败");
                                             }
@@ -165,7 +165,7 @@
                                     $(".type").val(item.Name);
                                     $("#select .item .check-lump").removeClass("hover");
                                     $("#select .item .check-lump[data-id=" + item.ModuleType + "]").addClass("hover");
-                                    $("#cateGoryImages").html("<li><img src='" + item.Icon + "?imageView2/1/w/60/h/60'></li>");
+                                    $("#cateGoryImages").html("<li><img src='" + item.Icon + "?imageView2/1/w/60/h/60' data-src="+item.Icon+"></li>");
                                 }
                             }
 
