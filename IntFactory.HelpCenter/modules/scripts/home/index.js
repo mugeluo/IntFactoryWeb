@@ -10,11 +10,13 @@
 
 
         $(".table-switch li").click(function () {
-            var _this = $(this);
+            var _this = $(this),id=_this.data("id");
             if (!_this.hasClass("hover")) {
                 _this.siblings().removeClass("hover");
                 _this.addClass("hover");
-            }
+            };
+            $(".problem-detail .problem-content").hide();
+            $(".problem-detail .problem-content").eq(id).show();
         });
 
         $(".function li").mouseenter(function () {
