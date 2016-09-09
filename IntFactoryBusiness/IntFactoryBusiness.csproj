@@ -43,10 +43,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\HelpCenter\HelpCenter.csproj">
-      <Project>{a9cd5ca7-f623-4884-b8e1-c6049a374598}</Project>
-      <Name>HelpCenter</Name>
-    </ProjectReference>
     <ProjectReference Include="..\IntFactoryDAL\IntFactoryDAL.csproj">
       <Project>{5f7ae2a9-e587-40a8-b6b8-5da07dcc0607}</Project>
       <Name>IntFactoryDAL</Name>
