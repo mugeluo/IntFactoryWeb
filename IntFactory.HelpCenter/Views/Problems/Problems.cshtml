@@ -1,0 +1,101 @@
+﻿@{
+    ViewBag.Title = "厂盟 | 常见问题";
+    ViewBag.TitleName = "Problems";
+}
+@section css{
+    <link href="/modules/css/Problems/problems.css" rel="stylesheet" />
+}
+@section scripts{
+    <script src="/Scripts/jquery-1.11.1.js"></script>   
+    <script type="text/javascript">
+        seajs.use(["scripts/problems/problems"], function (ObjectJS) {
+            ObjectJS.init();
+        });        
+    </script>
+}
+<div class="head-content-menu">
+    <div class="content">
+        <div class="head-menu">
+            <a href="/Home/Index">帮助中心</a>
+            <span>></span>
+            <a>常见问题</a>
+        </div>
+        <div class="head-search">            
+            <input class="search-txt" type="text" placeholder="搜索相关问题" />
+            <i class="iconfont">&#xe605;</i>
+        </div>
+    </div>
+</div>
+
+<div class="details">
+    <div class="category">
+        <ul class="category-menu">
+            <li class="hover">帮助<div class="category-line"></div></li>
+            <li>订单<div class="category-line"></div></li>
+            <li>任务<div class="category-line"></div></li>
+            <li>负责人<div class="category-line"></div></li>
+            <li>系统配置<div class="category-line"></div></li>
+        </ul>
+        <ul class="problems-details">
+            <li>
+                <div class="left">
+                    <div class="problems-title">首次登陆如何配置品类</div>
+                    <div class="problems-desc">重协作轻管理的团队；企业版适用于对于管理和办公有需求的团队</div>
+                    <div class="look-detail"><a href="/Problems/ProblemsDetail">查看详情 ></a></div>
+                </div>
+                <div class="right">
+                    <img src="/modules/images/home/1.png" />
+                </div>
+            </li>
+            <li>
+                <div class="left">
+                    <div class="problems-title">首次登陆如何配置品类</div>
+                    <div class="problems-desc">重协作轻管理的团队；企业版适用于对于管理和办公有需求的团队</div>
+                    <div class="look-detail"><a href="/Problems/ProblemsDetail">查看详情 ></a></div>
+                </div>
+                <div class="right">
+                    <img src="/modules/images/home/1.png" />
+                </div>
+            </li>
+            <li>
+                <div class="left">
+                    <div class="problems-title">首次登陆如何配置品类</div>
+                    <div class="problems-desc">重协作轻管理的团队；企业版适用于对于管理和办公有需求的团队</div>
+                    <div class="look-detail"><a href="/Problems/ProblemsDetail">查看详情 ></a></div>
+                </div>
+                <div class="right">
+                    <img src="/modules/images/home/1.png" />
+                </div>
+            </li>
+            <li>
+                <div class="left">
+                    <div class="problems-title">首次登陆如何配置品类</div>
+                    <div class="problems-desc">重协作轻管理的团队；企业版适用于对于管理和办公有需求的团队</div>
+                    <div class="look-detail"><a href="/Problems/ProblemsDetail">查看详情 ></a></div>
+                </div>
+                <div class="right">
+                    <img src="/modules/images/home/1.png" />
+                </div>
+            </li>
+        </ul>
+        <div class="load-more">加载更多</div>
+    </div>
+    <div class="example">
+        <ul>
+            <li><div>热门问题</div></li>
+            <li>· 如何快速上手智能工厂？</li>
+            <li>· 智能工厂是什么？</li>
+            <li>· 多成员使用是否有影响？</li>
+            <li>· 有个性化需求怎么办？</li>
+            <li>· 智能工厂的收费模式？</li>
+            <li>· 是否通过第三方账号登录？</li>
+            <li>· 如何快速上手智能工厂？</li>
+            <li>· 智能工厂是什么？</li>
+            <li>· 多成员使用是否有影响？</li>
+            <li>· 有个性化需求怎么办？</li>
+            <li>· 智能工厂的收费模式？</li>
+            <li>· 是否通过第三方账号登录？</li>
+            <li><a href="/Problems/HotProblems">更多 >></a></li>
+        </ul>
+    </div>
+</div>

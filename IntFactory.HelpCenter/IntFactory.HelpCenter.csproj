@@ -132,6 +132,7 @@
     <Compile Include="Common\ExpandClass.cs" />
     <Compile Include="Common\UserAuthorize.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProblemsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -179,9 +180,11 @@
     <Content Include="modules\css\iconfont\iconfont.css" />
     <Content Include="modules\css\iconfont\iconfont.svg" />
     <Content Include="modules\css\layout.css" />
+    <Content Include="modules\css\Problems\hotproblems.css" />
+    <Content Include="modules\css\Problems\problems.css" />
+    <Content Include="modules\images\home\1.png" />
     <Content Include="modules\images\home\help-ind1.png" />
     <Content Include="modules\images\home\help-ind2.png" />
-    <Content Include="modules\images\home\resource-3.png" />
     <Content Include="modules\images\ico-btnadd.png" />
     <Content Include="modules\images\ico-delete.png" />
     <Content Include="modules\images\ico-loading.gif" />
@@ -564,6 +567,7 @@
     <Content Include="modules\scripts\home\index.js" />
     <Content Include="modules\scripts\home\newindex.js" />
     <Content Include="modules\scripts\layout.js" />
+    <Content Include="modules\scripts\problems\problems.js" />
     <Content Include="modules\template\task-file-upload-img.html" />
     <Content Include="Scripts\jquery-1.11.1.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
@@ -656,6 +660,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Areas\Manage\Views\HelpCenter\Types.cshtml" />
+    <Content Include="Views\Problems\Problems.cshtml" />
+    <Content Include="Views\Problems\HotProblems.cshtml" />
+    <Content Include="Views\Problems\ProblemsDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Manage\Views\HelpCenter\ContentDetail.cshtml" />

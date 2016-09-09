@@ -2,17 +2,17 @@
 .head-content .content-top {background:url(/modules/images/home/help-ind1.png)no-repeat left;}
 .head-content .content-top .head-title {font-size:30px;color:#fff;padding-top:80px;text-align:center; }
 .head-content .content-top .head-search{text-align:center;border-radius:2px;position:relative;width:800px;margin:auto;}
-.content-top .head-search .search-txt{font-size:18px;color:#999;line-height:50px;margin-left:10px;width:800px;margin:auto;height:50px;margin-top:60px;}
+.content-top .head-search .search-txt{color:#999;line-height:50px;margin-left:10px;width:800px;margin:auto;height:50px;margin-top:60px;}
 .content-top .head-search .search-txt:focus{border:1px solid #0cb39e;}
-.content-top .head-search .iconfont{font-size:30px;color:#0cb39e;float:right;line-height:50px;cursor:pointer;position:absolute;z-index:11;bottom:0;right:0;}
+.content-top .head-search .iconfont{font-size:30px;color:#0cb39e;float:right;line-height:55px;cursor:pointer;position:absolute;z-index:11;bottom:0;right:0;}
 .head-content .content-top .head-txt{font-size:18px;color:#eee;text-align:center;margin-top:20px;}
 .head-content .content-bottom{background:url(/modules/images/home/help-ind2.png)no-repeat right 300px;}
 .head-content .content-bottom .function{width:800px;margin:auto;margin-top:50px;padding-bottom:100px;}
 .function li { float:left;margin-right:20px;margin-bottom:20px;width:178px;height:178px;border:1px solid #fff;border-radius:5px;position:relative;}
 .function li .iconfont{font-size:80px;color:#fff;text-align:center;margin-left:50px;line-height:120px;}
-.function li .desc{font-size:18px;text-align:center;width:180px;color:#fff}
+.function li .desc{text-align:center;width:180px;color:#fff}
 .function li .detail{position:absolute;z-index:22;top:0;left:0;width:180px;height:180px;background-color:#fff;border-radius:5px;cursor:pointer;}
-.function li .detail .txt{font-size:18px;color:#0cb39e;text-align:center;line-height:30px;width:140px;margin:auto;}
+.function li .detail .txt{color:#0cb39e;text-align:center;line-height:30px;width:140px;margin:auto;}
 
 .problem .table-switch { width:900px;margin:50px auto;}
 .problem .table-switch li{float:left;width:300px;text-align:center;cursor:pointer;position:relative;}
@@ -28,7 +28,7 @@
     bottom:-100px;    
     width:0;
     height:0;
-    border-width:0 29px 20px;
+    border-width:0 30px 21px;
     border-style:solid;
     border-color:transparent transparent #ccc;
     margin:40px auto;
@@ -38,18 +38,18 @@
     display:block;
     width:0;
     height:0;
-    border-width:0 28px 19px;
+    border-width:0 30px 21px;
     border-style:solid;
     border-color:transparent transparent #f8f8f8;
     position:absolute;
-    top:2px;
-    left:-28px;
+    top:1px;
+    left:-30px;
 }
 
 .problem .problem-detail { background-color:#f8f8f8;border-bottom:1px solid #ccc;border-top:1px solid #ccc;}
 .problem .problem-content ul{padding:50px 0px;width:300px;}
 .problem .problem-content ul li:first-child{font-size:24px;margin-bottom:20px;}
-.problem .problem-content ul li:not(first-child){font-size:14px;color:#666;line-height:2;}
+.problem .problem-content ul li:not(first-child){color:#666;line-height:2;}
 
 
 .title{font-size:30px;padding-top:30px;text-align:center;margin-bottom:50px;color:#000;}
@@ -61,7 +61,14 @@
 .new-guide .guide-img { width:960px;margin:auto;}
 .new-guide .guide-img li{float:left;margin-bottom:20px;margin-right:20px;width:300px;height:200px;position:relative;}
 .guide-img li img { width:300px;height:200px;}
-.guide-img li .txt { position:absolute;z-index:10;bottom:10px;left:10px;color:#000;opacity:0.8;font-size:16px;}
+.guide-img li .txt { position:absolute;z-index:10;bottom:10px;left:10px;color:#fff;opacity:0.8;font-size:16px;}
+.guide-img li .bg-jianbian { position:absolute;z-index:5;width:300px;height:200px;top:0;
+                             background: -moz-linear-gradient(top,rgba(0,0,0,0.1)50%,rgba(0,0,0,0.5));        
+                             background: -webkit-linear-gradient(top, rgba(0,0,0,0.1) 50%,rgba(0,0,0,0.5));
+                             background: -o-linear-gradient(top, rgba(0,0,0,0.1)50%,rgba(0,0,0,0.5));
+                             background: -ms-linear-gradient(top,rgba(0,0,0,0.1)50%,rgba(0,0,0,0.5));
+                             background: linear-gradient(top, rgba(0,0,0,0.1)50%,rgba(0,0,0,0.5));
+}
 
 /*联系客服*/
 .customer-service { background-color:#f2f2f2;}

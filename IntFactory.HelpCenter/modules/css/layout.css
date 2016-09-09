@@ -6,7 +6,8 @@ li{ list-style-type:none;}
 a {  text-decoration: none;}
 
 input[type="text"],input[type="number"] { border:solid 1px #ccc; border-radius:2px;height:25px; line-height:25px; padding:0 5px; }
-input[type="text"]:focus,input[type="number"]:focus { border:solid 1px #318ae4; }
+input[type="text"]:focus { border:solid 1px #318ae4; }
+input[type="number"]:focus{border:1px solid #ccc;}
 
 input[type="password"] { border:solid 1px #ccc; border-radius:2px;height:25px; line-height:25px; padding:0 5px; }
 input[type="password"]:focus { border:solid 1px #318ae4; }
@@ -53,6 +54,17 @@ input[type="file"] > input[type="button"]::-moz-focus-inner{padding:0;border:non
 /*内容*/
 .main-content { background-color:#fff;}
 
+/*常见问题 头部*/
+.head-content-menu { background-color:#0cb39e;height:120px;}
+.head-content-menu .content{width:1200px;margin:auto;}
+.head-content-menu .content .head-menu{padding-top:75px;float:left;margin-left:10px;}
+.head-content-menu .head-menu a, .head-menu span { color:#fff;opacity:0.9;cursor:pointer;}
+.head-content-menu .head-menu a:hover{opacity:1;}
+.head-content-menu .head-search{text-align:center;border-radius:2px;position:relative;float:right;margin-right:10px;}
+.head-content-menu .head-search .search-txt{color:#999;line-height:40px;margin-left:10px;width:300px;height:40px;margin-top:65px;}
+.head-content-menu .head-search .search-txt:focus{border:1px solid #0cb39e;}
+.head-content-menu .head-search .iconfont{font-size:30px;color:#0cb39e;float:right;line-height:45px;cursor:pointer;position:absolute;z-index:11;bottom:0;right:5px;}
+
 /*footer样式*/
 
 .site-footer {width:100%;background-color:#434443;height:150px;}
@@ -64,7 +76,6 @@ input[type="file"] > input[type="button"]::-moz-focus-inner{padding:0;border:non
 .getback-FH { position:fixed;z-index:11112;color:#666;right:3%;bottom:8%;display:none;}
 .getback-FH .iconfont-back {font-size:30px;color:#4a98e7;cursor:pointer; }
 /*页面首图描述*/
-.desc { opacity:0.7;width:340px;margin:auto;text-shadow:none !important;font-size:16px;}
 .module-box {
     width:1200px;
     margin:auto;

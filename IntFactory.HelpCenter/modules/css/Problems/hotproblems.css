@@ -1,0 +1,5 @@
+﻿.details { width:1200px; margin:auto;}
+.details ul{margin-top:20px;width:380px;margin-right:20px;float:left;margin-bottom:50px;}
+.details::after{display:block;content:"";clear:both;}
+.details ul li:first-child{color:#0cb39e;font-size:18px;border-bottom:1px solid #ccc;padding-bottom:10px;margin-bottom:20px;}
+.details ul li:not(first-child){color:#333;line-height:2;white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
