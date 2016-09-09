@@ -122,8 +122,6 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Areas\Manage\Controllers\BaseController.cs" />
-    <Compile Include="Areas\Manage\ManageAreaRegistration.cs" />
     <Compile Include="Common\ExpandClass.cs" />
     <Compile Include="Common\UserAuthorize.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -156,7 +154,6 @@
     <Content Include="Content\menuico\task.png" />
     <Content Include="Content\menuico\taskhover.png" />
     <Content Include="Global.asax" />
-    <Content Include="Areas\Manage\Views\Web.config" />
     <Content Include="modules\css\base.css" />
     <Content Include="modules\css\home\index.css" />
     <Content Include="modules\css\iconfont\demo.css" />
@@ -180,13 +177,6 @@
     <Content Include="modules\images\sns4.png" />
     <Content Include="modules\images\wechat.jpg" />
     <Content Include="modules\images\icondate.png" />
-    <Content Include="modules\manage\scripts\helpcenter\classification.js" />
-    <Content Include="modules\manage\scripts\helpcenter\contents.js" />
-    <Content Include="modules\manage\scripts\helpcenter\update-content.js" />
-    <Content Include="modules\manage\scripts\index.js" />
-    <Content Include="modules\manage\scripts\layout.js" />
-    <Content Include="modules\manage\scripts\login.js" />
-    <Content Include="modules\manage\scripts\users.js" />
     <Content Include="modules\plug\datapager\images\next.png" />
     <Content Include="modules\plug\datapager\images\previous.png" />
     <Content Include="modules\plug\datapager\images\snext.png" />
@@ -226,7 +216,6 @@
     <Content Include="modules\scripts\home\index.js" />
     <Content Include="modules\scripts\home\newindex.js" />
     <Content Include="modules\scripts\layout.js" />
-    <Content Include="modules\template\task-file-upload-img.html" />
     <Content Include="Scripts\jquery-1.11.1.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\sea-config.js" />
@@ -246,18 +235,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Manage\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Areas\Manage\Views\HelpCenter\AddType.cshtml" />
-    <Content Include="Areas\Manage\Views\HelpCenter\Contents.cshtml" />
-    <Content Include="Areas\Manage\Views\HelpCenter\AddContent.cshtml" />
-    <Content Include="Areas\Manage\Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\Manage\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Manage\Web.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\IntFactoryBusiness\IntFactoryBusiness.csproj">
@@ -281,12 +261,6 @@
     <Content Include="modules\plug\jquery-horizon-line-switch\fonts\icomoon.eot" />
     <Content Include="modules\plug\jquery-horizon-line-switch\fonts\icomoon.ttf" />
     <Content Include="modules\plug\jquery-horizon-line-switch\fonts\icomoon.woff" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Areas\Manage\Views\HelpCenter\Types.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Areas\Manage\Views\HelpCenter\ContentDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="modules\css\iconfont\iconfont.eot" />
