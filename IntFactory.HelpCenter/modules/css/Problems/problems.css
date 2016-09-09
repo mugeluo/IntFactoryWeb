@@ -25,3 +25,20 @@
 /*详情页*/
 
 .details-title {text-align:center;font-size:24px;color:#000;border-bottom:1px solid #ccc;line-height:50px;}
+.category .information {margin-top:10px; }
+.category .information li{float:left;color:#666;}
+.category .information li span{color:#666;font-size:12px;margin-right:30px;}
+
+.foot-problems { border-top:3px solid #0cb39e;width:1200px;margin:auto;margin-top:50px;}
+.foot-problems li{float:left;width:380px;height:200px;position:relative;margin:50px 20px 20px 0px;cursor:pointer;}
+.foot-problems::after{display:block;content:"";clear:both;}
+.foot-problems li img { width:380px;height:200px;}
+.foot-problems li .txt { position:absolute;z-index:10;bottom:40px;left:10px;color:#fff;display:block;}
+.foot-problems li .txt-desc{bottom:10px;font-size:16px;}
+.foot-problems li .bg-jianbian { position:absolute;z-index:5;width:380px;height:200px;top:0;
+                             background: -moz-linear-gradient(top,rgba(0,0,0,0.1)50%,rgba(0,0,0,0.5));        
+                             background: -webkit-linear-gradient(top, rgba(0,0,0,0.1) 50%,rgba(0,0,0,0.5));
+                             background: -o-linear-gradient(top, rgba(0,0,0,0.1)50%,rgba(0,0,0,0.5));
+                             background: -ms-linear-gradient(top,rgba(0,0,0,0.1)50%,rgba(0,0,0,0.5));
+                             background: linear-gradient(top, rgba(0,0,0,0.1)50%,rgba(0,0,0,0.5));
+}
