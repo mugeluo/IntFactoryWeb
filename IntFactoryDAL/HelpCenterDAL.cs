@@ -83,9 +83,10 @@ namespace IntFactoryDAL
 
         public DataTable GetContentByContentID(string contentID)
         {
-            string sqlTxt = string.Empty;
-            sqlTxt = " select *,t.name as typename,t.moduletype  from M_HelpContent as c left join M_Helptype as t on c.typeid=t.typeid where c.Status<>9 and c.ContentID='" + contentID + "'";
+            string sqlTxt = " select *,t.name as typename,t.moduletype  from M_HelpContent as c left join M_Helptype as t on c.typeid=t.typeid where c.Status<>9 and c.ContentID='" + contentID + "'";
+            sqlTxt += "  update M_HelpContent set ClickNumber=ClickNumber+1 where ContentID='" + contentID + "'";
             DataTable dt = GetDataTable(sqlTxt);
+
             return dt;
         }
 
