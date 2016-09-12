@@ -30,6 +30,8 @@
             $(".problem-detail .problem-content").hide();
             $(".problem-detail .problem-content").eq(id).show();
         });
+
+        
     };
 
     ObjectJS.getTypesList = function () {

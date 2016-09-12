@@ -133,7 +133,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\FilterHelp.cs" />
-    <Compile Include="Models\FilterTypes.cs" />
+    <Compile Include="Models\FilterHelpCenterType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -36,6 +36,11 @@ define(function (require, exports, module) {
             return false;
         });  
         
+        //搜索
+        $(".head-search .iconfont").click(function () {
+            window.location = "/Home/Search?" + $(".search-txt").val();
+        });
+
     }
 
     // 判断浏览器是否支持 placeholder

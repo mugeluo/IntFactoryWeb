@@ -6,7 +6,7 @@ using System.Web;
 namespace IntFactory.HelpCenter.Models
 {
     [Serializable]
-    public class FilterTypes
+    public class FilterHelpCenterType
     {
         public int Types { get; set; } 
 

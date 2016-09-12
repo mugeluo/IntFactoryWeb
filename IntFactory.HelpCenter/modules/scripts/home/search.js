@@ -7,8 +7,11 @@
     var ObjectJS = {};
 
     var Params = {
+        Types: 0,
         TypeID: "",
         Keywords: "",
+        BeginTime: "",
+        EndTime: "",
         PageIndex: 1,
         PageSize: 10,
         OrderBy: "c.CreateTime desc",
@@ -16,9 +19,12 @@
 
     ObjectJS.init = function () {
         ObjectJS.bindEvent();
+        ObjectJS.getContents();
     };
 
     ObjectJS.bindEvent = function () {
+        var txt = decodeURI(window.location.href.split("?")[1]);
+        Params.Keywords = txt;
 
         //排序
         $(".sort-item").click(function () {
@@ -45,29 +51,42 @@
             //ObjectJS.getContentList();
         });
 
-        $("#pager").paginate({
-            //total_count: data.totalCount,
-            //count: data.pageCount,
-            //start: Params.PageIndex,
-            total_count: 20,
-            count: 10,
-            start: 1,
-            display: 5,
-            border: true,
-            border_color: '#fff',
-            text_color: '#333',
-            background_color: '#fff',
-            border_hover_color: '#ccc',
-            text_hover_color: '#000',
-            background_hover_color: '#efefef',
-            rotate: true,
-            images: false,
-            mouse: 'slide',
-            onChange: function (page) {
-                Params.PageIndex = page;
-                //ObjectJS.getContentList();
-            }
-        });
+        
     };
+
+    ObjectJS.getContents = function (keyWords) {
+        Global.post("/Home/GetContents", { filter: JSON.stringify(Params) }, function (data) {
+            if (data.items.length>0) {
+                Dot.exec("/template/home/contents-list.html", function (template) {
+                    var innerHtml = template(data.items);
+                    innerHtml = $(innerHtml);
+                    $(".search-results").append(innerHtml);
+                });
+
+                $("#pager").paginate({
+                    total_count: data.totalCount,
+                    count: data.pageCount,
+                    start: Params.PageIndex,
+                    display: 5,
+                    border: true,
+                    border_color: '#fff',
+                    text_color: '#333',
+                    background_color: '#fff',
+                    border_hover_color: '#ccc',
+                    text_hover_color: '#000',
+                    background_hover_color: '#efefef',
+                    rotate: true,
+                    images: false,
+                    mouse: 'slide',
+                    onChange: function (page) {
+                        Params.PageIndex = page;
+                        ObjectJS.getContents();
+                    }
+                });
+            }
+        })
+    
+    }
+
     module.exports = ObjectJS;
 });
