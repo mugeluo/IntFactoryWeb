@@ -2,7 +2,17 @@
     ViewBag.Title = "厂盟 | 搜索";
     ViewBag.TitleName = "home";
 }
-
+@section css{
+    <link href="/modules/css/home/search.css" rel="stylesheet" />
+}
+@section scripts{
+    <script src="/Scripts/jquery-1.11.1.js"></script>   
+    <script type="text/javascript">
+        seajs.use(["scripts/home/search"], function (ObjectJS) {
+            ObjectJS.init();
+        });        
+    </script>
+}
 <div class="head-content-menu">
     <div class="content">
         <div class="head-menu">
@@ -12,7 +22,96 @@
         </div>
         <div class="head-search">            
             <input class="search-txt" type="text" placeholder="搜索相关问题" />
-            <i class="iconfont">&#xe605;</i>
+            <a href="/Home/Search" class="iconfont">&#xe605;</a>
         </div>
     </div>
 </div>
+<div style="background-color:#f9f9f9;">
+    <div class="search-content clear-after">
+        <div class="search-title clear-after">
+            <div class="search-sort">
+                <ul class="left">            
+                    <li class="sort-item hover" data-column="c.CreateTime" style="padding-left:10px;">
+                        创建日期
+                        <span class="asc"></span>
+                        <span class="desc hover"></span>
+                    </li>
+                    <li class="sort-item" data-column="c.ClickNumber">
+                        更新时间
+                        <span class="asc"></span>
+                        <span class="desc"></span>
+                    </li> 
+                    <li class="sort-item" data-column="c.Sort">
+                        最热
+                        <span class="asc"></span>
+                        <span class="desc"></span>
+                    </li>             
+                </ul>
+                <div class="clear"></div>
+            </div>
+            <div class="right mRight10" style="line-height:40px">搜索到 <a>6184</a> 个结果</div>
+        </div>
+        <ul class="search-results">
+            <li>
+                <div class="left">
+                    <div class="results-title clear-after">
+                        <a class="problem-title" href="/Problems/ProblemsDetail">首次登陆如何配置品质</a>
+                        <div class="right coloraaa">更新时间：<span class="coloraaa">2016-09-12</span></div>
+                    </div>
+                    <div class="results-desc">
+                        企业版还接入那更多的SaaS平台企业版还接入那更多的SaaS平台企业版还接入那更多的SaaS平台企业版还接入那更多的SaaS平台企业版还接入那更多的SaaS平台企业版还接入那更多的SaaS平台企业版还接入那更多的SaaS平台企业版还接入那更多的SaaS平台企业版还接入那更多的SaaS平台
+                    </div>
+                </div>
+                <div class="right">
+                    <img src="/modules/images/home/1.png" />
+                </div>
+            </li>
+            <li>
+                <div class="left">
+                    <div class="results-title">
+                        <a class="problem-title" href="/Problems/ProblemsDetail">首次登陆如何配置品质</a>
+                        <div class="right coloraaa">更新时间：<span class="coloraaa">2016-09-12</span></div>
+                    </div>
+                    <div class="results-desc">
+                        企业版还接入那更多的SaaS平台企业版还接入那更多的SaaS平台企业版还接入那更多的SaaS平台企业版还接入那更多的SaaS平台企业版还接入那更多的SaaS平台企业版还接入那更多的SaaS平台企业版还接入那更多的SaaS平台企业版还接入那更多的SaaS平台企业版还接入那更多的SaaS平台
+                    </div>
+                </div>
+                <div class="right">
+                    <img src="/modules/images/home/1.png" />
+                </div>
+            </li>
+            <li>
+                <div class="left">
+                    <div class="results-title">
+                        <a class="problem-title" href="/Problems/ProblemsDetail">首次登陆如何配置品质</a>
+                        <div class="right coloraaa">更新时间：<span class="coloraaa">2016-09-12</span></div>
+                    </div>
+                    <div class="results-desc">
+                        企业版还接入那更多的SaaS平台企业版还接入那更多的SaaS平台企业版还接入那更多的SaaS平台企业版还接入那更多的SaaS平台企业版还接入那更多的SaaS平台企业版还接入那更多的SaaS平台企业版还接入那更多的SaaS平台企业版还接入那更多的SaaS平台企业版还接入那更多的SaaS平台
+                    </div>
+                </div>
+                <div class="right">
+                    <img src="/modules/images/home/1.png" />
+                </div>
+            </li>
+            <li>
+                <div class="left">
+                    <div class="results-title">
+                        <a class="problem-title" href="/Problems/ProblemsDetail">首次登陆如何配置品质</a>
+                        <div class="right coloraaa">更新时间：<span class="coloraaa">2016-09-12</span></div>
+                    </div>
+                    <div class="results-desc">
+                        企业版还接入那更多的SaaS平台企业版还接入那更多的SaaS平台企业版还接入那更多的SaaS平台企业版还接入那更多的SaaS平台企业版还接入那更多的SaaS平台企业版还接入那更多的SaaS平台企业版还接入那更多的SaaS平台企业版还接入那更多的SaaS平台企业版还接入那更多的SaaS平台
+                    </div>
+                </div>
+                <div class="right">
+                    <img src="/modules/images/home/1.png" />
+                </div>
+            </li>
+        </ul>
+        <div class="right mRight10" style="line-height:40px;">本业共 <a>4</a> 个结果</div>
+        <div id="pager" class="center pBottom50"></div>
+    </div>
+</div>
+
+

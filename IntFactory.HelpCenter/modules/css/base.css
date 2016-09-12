@@ -5,6 +5,7 @@
 .middle { vertical-align:middle;}
 .bolder { font-weight:bold; }
 .clear { clear:both; }
+.clear-after::after { display:block;content:"";clear:both;}
 .tLeft { text-align:left !important;}
 .center { text-align:center; }
 .tRight { text-align:right !important;}
@@ -52,6 +53,7 @@
 .color555 { color:#555 !important; }
 .color666 { color:#666 !important; }
 .color999 { color:#999 !important; }
+.coloraaa { color:#aaa }
 .colorccc { color:#ccc !important; }
 .colorfff { color:#fff;}
 .color938D88 { color:#938D88 !important;}

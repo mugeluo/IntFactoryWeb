@@ -1,13 +1,24 @@
 ﻿define(function (require, exports, module) {
-
+    var Global = require("global"),
+        Dot = require("dot"),    
+        Easydialog = require("easydialog");
+    require("pager");
+    
     var ObjectJS = {};
+
+    var Params = {        
+        TypeID: "",
+        Keywords: "",        
+        PageIndex: 1,
+        PageSize: 10,
+        OrderBy: "c.CreateTime desc",
+    }
 
     ObjectJS.init = function () {
         ObjectJS.bindEvent();      
     };
 
     ObjectJS.bindEvent = function () {
-
 
         $(".table-switch li").click(function () {
             var _this = $(this),id=_this.data("id");

@@ -1,0 +1,87 @@
+﻿@charset "utf-8";
+/*! wegame 2015.03.17*/
+*+html .giftsHeader #searchInput{  padding: 3px;}/*IE7*/
+*+html .giftsHeader .searcher .hotGame{margin:6px;}/*IE7*/
+
+*+html .xianmian{background-color: #FF3238;margin-top: 5px;}/*IE7*/
+blockquote,body,button,code,dd,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,input,legend,li,ol,p,pre,td,textarea,th,ul{margin:0;padding:0}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:400}
+body{background:#FFF;color:#333;font-family:"Open Sans",Arial,"Hiragino Sans GB","Microsoft YaHei","微软雅黑",STHeiti,"WenQuanYi Micro Hei",SimSun,sans-serif;font-size:14px; height: 100%; min-width:1160px;_background-image:url(about:blank);_background-attachment:fixed}
+img{border:0; vertical-align: top;}
+
+ol,ul,li{list-style:none}
+:link,:visited,ins{text-decoration:none}
+table{border-collapse:collapse;border-spacing:0}
+sub,sup{font-size:100%;vertical-align:baseline}
+blockquote,q{quotes:'\201C' '\201D' '\2018' '\2019'}
+blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}
+button,input,optgroup,option,select,textarea{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit}
+button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+textarea{overflow:auto;resize:vertical;vertical-align:top}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+audio,canvas,video{display:inline-block}
+.clearfix:after,.clearfix:before{content:'\200b';display:block;height:0}
+.clearfix:after{clear:both}
+.clearfix{clear:both;*zoom:1}
+.wrap{margin:0 auto;width:1200px; position: relative;}
+.hide,.tmpl{display:none}
+a{  color: #333; text-decoration:none;outline:0;blr:expression(this.onFocus=this.blur())}
+a:hover{color:#111;text-decoration:none}
+em,i{font-style:normal}
+::selection{background-color:#FF3238;color:#FFF;text-shadow:0 1px 0 rgba(0,0,0,.3)}
+
+
+
+@charset "utf-8";
+*+html .articalSection .shareSection .ico{width: 20px;height: 22px;display: inline-block;vertical-align: middle;margin-top:15px;}/*IE7*/
+
+*+html .post_control {display: block; position: relative; margin: 0 auto; height: 41px; width: 49px; cursor: pointer;}/*IE7*/
+*+html .post_control{content: ''; position: absolute; top: 50%; left: 50%; height: 41px; width: 49px; margin: 180px 0 0 -20px; background: url(../images/20150813tuji/collectIcon_41.jpg) no-repeat; opacity: .31; visibility: visible; *margin-top: 165px;}/*IE7*/
+*+html .gamedetail1 .gameAppAbs .giftsNum{position: relative;}/*IE7*/
+*+html .gamedetail1 .gameAppAbs .giftsNum .process{position: absolute;}/*IE7*/
+*+html .gamedetail1 .gameAppAbs .giftsNum .process span{position: absolute;}/*IE7*/
+*+html .gamedetail1 .gameAppGifts .totalNum{position: absolute;left: 280px;}/*IE7*/
+*+html .position .largePanelTitle .path {display: inline-block !important; margin: -20px 0 0 50px;}/*IE7*/
+
+
+.wrap .toolsBar{ padding-bottom:20px; line-height: 16px; height: 16px;}
+.wrap .toolsBar .extra{ display:inline; float:right;}
+.wrap .toolsBar .extra .tip{ height: 16px; overflow: hidden;}
+.wrap .toolsBar .extra .tip i{ display: inline-block; background:url(../images/20150813tuji/keyvalue.png) no-repeat; height: 10px; width: 32px; vertical-align: middle;}
+.wrap .toolsBar .time{ color: #ababab; font-family: "helvetica_neue_lt_pro35_thin",Helvetica,Verdana;}
+
+
+.bigPicBox{ height: 606px; width: 1200px; position: relative; overflow: hidden;}
+.bigPicBox ul{ height: 606px; width: 600%; position:absolute; left: 0; top: 0;}
+.bigPicBox ul li{height: 606px; width: 1200px; background-color: #efefef; display: table-cell; text-align: center; vertical-align: middle;}
+.bigPicBox ul li img{ max-height: 606px; max-width: 1200px; overflow: hidden; vertical-align: middle;width:100%;}
+.prevABox{ display: block; height: 606px; width: 500px; position: absolute; top: 0; left: 0; z-index: 1;} 
+.prevABox .prevBtn i, .nextABox .nextBtn i{ display:block; height: 114px; background-color:rgba(115,115,115,0.9);font-size:30px;font-weight:bold;color:#fff;line-height:114px;
+                                            width: 40px; vertical-align:central; position: absolute; top: 234px; z-index: 99; cursor: pointer;text-align:center;}
+.prevABox .prevBtn i{ background-position: 0 0; left: 0;}
+.nextABox .nextBtn i{ background-position: -29px 0; right: 0;}
+.nextABox{ display: block; height: 606px; width: 500px; position: absolute; top: 0; right: 0; z-index: 1;}
+.nextABox .nextBtn{ float: right;}
+
+.imgTitle{font-size: 16px; line-height: 25px; padding: 20px 0 20px 85px; /* height: 75px; */ width: 1115px; position: relative; word-wrap: break-word; word-break: break-all; overflow: hidden;}
+.imgTitle span.num-title{ display: inline-block; color: #3d3d3d; font-size: 24px; height: 28px; position: absolute; top: 20px; left: 0;}
+.imgTitle span.num-title em{ float: left; color: #0cb39e; font-size: 33px; margin-top: -6px; position: relative;}
+.smallPicBox{ border: 1px solid #dbdbdb; padding:10px 0; height: 90px; width: 1200px; position: relative;}
+.smallPicUlBox{ display: inline; float: left; padding-top: 8px; height: 82px; width: 1200px; position: relative; left: 37px; top: 0; overflow:hidden;}
+.smallPicUlBox ul{ height: 82px; width: 600%; position: absolute; left: 0; top: 8px;}
+.smallPicUlBox ul li{ background-color: #efefef; float: left; height: 82px; width: 120px; margin-right: 11px;margin-left:10px; cursor: pointer; text-align:center; position: relative;}
+.smallPicUlBox ul li img{ max-width: 112px; height: 82px; overflow: hidden;}
+.smallPicUlBox ul li .mask{ display: none; float: left; border: 3px solid #0cb39e; height: 78px; width: 114px; position: absolute; left: 0; top: 0;}
+.smallPicUlBox ul li .mask em{display:inline-block; border-style:solid; font-size:0; margin-left: -8px; height:0; width:0; border-color:transparent  transparent #0cb39e transparent; position:absolute; left: 50%; top: -18px; _line-height:0; border-width:8px;}
+.smallPicUlBox ul li.current .mask,.smallPicUlBox ul li:hover .mask{ display: block;}
+.smallPicBox .smallPrevBtn,.smallPicBox .smallNextBtn{ background: url(/modules/plug/img-switch/images/tuji_btn.png) no-repeat -58px 0; height: 112px; width: 35px; position: absolute; top: 0; z-index: 3; vertical-align: top;}
+.smallPicUlBox ul li .desc{ display: none; height: 0; width: 0; font-size: 0;}
+.smallPicBox .smallPrevBtn{ border-right: 1px solid #e5e5e5; left: 0;}
+.smallPicBox .smallPrevBtn:hover{ background-position: -58px -110px;}
+.smallPicBox .smallNextBtn{ border-left: 1px solid #e5e5e5; right: 0; background-position: -93px 0;}
+.smallPicBox .smallNextBtn:hover{ background-position: -93px -110px;}
+.tujiTitle{ font-size: 34px; color: #111; border-left: solid 5px #ed0000; font-weight: 600; margin-top: 20px; line-height: 40px; padding-left: 15px; width: 985px;}
+.tujicomment{ margin-top: 40px;}
+
+

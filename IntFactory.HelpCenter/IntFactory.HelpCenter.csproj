@@ -125,6 +125,7 @@
     <Compile Include="Common\ExpandClass.cs" />
     <Compile Include="Common\UserAuthorize.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NewbieGuideController.cs" />
     <Compile Include="Controllers\ProblemsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -157,11 +158,13 @@
     <Content Include="Global.asax" />
     <Content Include="modules\css\base.css" />
     <Content Include="modules\css\home\index.css" />
+    <Content Include="modules\css\home\search.css" />
     <Content Include="modules\css\iconfont\demo.css" />
     <Content Include="modules\css\iconfont\demo.html" />
     <Content Include="modules\css\iconfont\iconfont.css" />
     <Content Include="modules\css\iconfont\iconfont.svg" />
     <Content Include="modules\css\layout.css" />
+    <Content Include="modules\css\newbieguide\newbieguide.css" />
     <Content Include="modules\css\Problems\hotproblems.css" />
     <Content Include="modules\css\Problems\problems.css" />
     <Content Include="modules\images\home\1.png" />
@@ -173,6 +176,8 @@
     <Content Include="modules\images\ico-loading.jpg" />
     <Content Include="modules\images\iconback-blue.png" />
     <Content Include="modules\images\iconback.png" />
+    <Content Include="modules\images\ico_search.png" />
+    <Content Include="modules\images\ico_searchhover.png" />
     <Content Include="modules\images\logo_login.png" />
     <Content Include="modules\images\sns1.png" />
     <Content Include="modules\images\sns2.png" />
@@ -201,6 +206,46 @@
     <Content Include="modules\plug\flexslider\images\alpha.png" />
     <Content Include="modules\plug\flexslider\images\dot.png" />
     <Content Include="modules\plug\flexslider\js\flexslider.js" />
+    <Content Include="modules\plug\img-switch\ad_next.png" />
+    <Content Include="modules\plug\img-switch\ad_prev.png" />
+    <Content Include="modules\plug\img-switch\ad_scroll_back.png" />
+    <Content Include="modules\plug\img-switch\ad_scroll_forward.png" />
+    <Content Include="modules\plug\img-switch\images\1.jpg" />
+    <Content Include="modules\plug\img-switch\images\10.jpg" />
+    <Content Include="modules\plug\img-switch\images\11.jpg" />
+    <Content Include="modules\plug\img-switch\images\12.jpg" />
+    <Content Include="modules\plug\img-switch\images\13.jpg" />
+    <Content Include="modules\plug\img-switch\images\14.jpg" />
+    <Content Include="modules\plug\img-switch\images\2.jpg" />
+    <Content Include="modules\plug\img-switch\images\3.jpg" />
+    <Content Include="modules\plug\img-switch\images\4.jpg" />
+    <Content Include="modules\plug\img-switch\images\5.jpg" />
+    <Content Include="modules\plug\img-switch\images\6.jpg" />
+    <Content Include="modules\plug\img-switch\images\7.jpg" />
+    <Content Include="modules\plug\img-switch\images\8.jpg" />
+    <Content Include="modules\plug\img-switch\images\9.jpg" />
+    <Content Include="modules\plug\img-switch\images\thumbs\t1.jpg" />
+    <Content Include="modules\plug\img-switch\images\thumbs\t10.jpg" />
+    <Content Include="modules\plug\img-switch\images\thumbs\t11.jpg" />
+    <Content Include="modules\plug\img-switch\images\thumbs\t12.jpg" />
+    <Content Include="modules\plug\img-switch\images\thumbs\t13.jpg" />
+    <Content Include="modules\plug\img-switch\images\thumbs\t14.jpg" />
+    <Content Include="modules\plug\img-switch\images\thumbs\t2.jpg" />
+    <Content Include="modules\plug\img-switch\images\thumbs\t3.jpg" />
+    <Content Include="modules\plug\img-switch\images\thumbs\t4.jpg" />
+    <Content Include="modules\plug\img-switch\images\thumbs\t5.jpg" />
+    <Content Include="modules\plug\img-switch\images\thumbs\t6.jpg" />
+    <Content Include="modules\plug\img-switch\images\thumbs\t7.jpg" />
+    <Content Include="modules\plug\img-switch\images\thumbs\t8.jpg" />
+    <Content Include="modules\plug\img-switch\images\thumbs\t9.jpg" />
+    <Content Include="modules\plug\img-switch\index.html" />
+    <Content Include="modules\plug\img-switch\jquery.ad-gallery.css" />
+    <Content Include="modules\plug\img-switch\js\jquery.ad-gallery.js" />
+    <Content Include="modules\plug\img-switch\js\jquery.ad-gallery.pack.js" />
+    <Content Include="modules\plug\img-switch\js\jquery.min.js" />
+    <Content Include="modules\plug\img-switch\js\zzsc.js" />
+    <Content Include="modules\plug\img-switch\loader.gif" />
+    <Content Include="modules\plug\img-switch\opa75.png" />
     <Content Include="modules\plug\jquery-horizon-line-switch\css\default.css" />
     <Content Include="modules\plug\jquery-horizon-line-switch\css\reset.css" />
     <Content Include="modules\plug\jquery-horizon-line-switch\css\style.css" />
@@ -218,6 +263,7 @@
     <Content Include="modules\scripts\global.js" />
     <Content Include="modules\scripts\home\index.js" />
     <Content Include="modules\scripts\home\newindex.js" />
+    <Content Include="modules\scripts\home\search.js" />
     <Content Include="modules\scripts\layout.js" />
     <Content Include="modules\scripts\problems\problems.js" />
     <Content Include="Scripts\jquery-1.11.1.js" />
@@ -239,6 +285,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="modules\template\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -276,6 +323,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Search.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\NewbieGuide\NewbieGuide.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

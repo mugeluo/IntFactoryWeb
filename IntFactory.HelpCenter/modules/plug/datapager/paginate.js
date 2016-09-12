@@ -26,22 +26,22 @@ define(function (require, exports, module) {
             border_color: '#4a9eee',
             text_color: '#333',
             background_color: '#fff',
-            border_hover_color: '#4a9eee',
+            border_hover_color: '#0cb39e',
             text_hover_color: '#fff',
-            background_hover_color: '#4a98e7',
+            background_hover_color: '#0cb39e',
             rotate: false,
             images: true,
             mouse: 'slide',
-            float: "right",
+            float: "",
             onChange: function () { return false; }
         };
         $.fn.draw = function (o, obj, selectedpage) {
             o.border_color = "#ccc";
             o.text_color = "#333";
             o.background_color = "#fff";
-            o.border_hover_color = "#4a9eee";
+            o.border_hover_color = "#0cb39e";
             o.text_hover_color = "#fff";
-            o.background_hover_color = "#4a98e7";
+            o.background_hover_color = "#0cb39e";
 
             if (o.display > o.count)
                 o.display = o.count;
