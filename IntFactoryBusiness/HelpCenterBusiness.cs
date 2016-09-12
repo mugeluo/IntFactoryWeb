@@ -16,31 +16,34 @@ namespace IntFactoryBusiness
     {
         public static HelpCenterBusiness BaseBusiness = new HelpCenterBusiness();
 
+        private static List<TypeEntity> Types = null;
+        private static DateTime TypesTime = DateTime.Now;
         #region 查询
         public List<TypeEntity> GetTypesByModuleType(ModuleTypeEnum moduleType)
         {
-            List<TypeEntity> list = new List<TypeEntity>();
-            DataTable dt = HelpCenterDAL.BaseProvider.GetTypesByModuleType((int)moduleType);
-            foreach (DataRow dr in dt.Rows)
-            {
-                TypeEntity model = new TypeEntity();
-                model.FillData(dr);
-                list.Add(model);
-            }
-
-            return list;
+            return GetTypes().FindAll(m => m.ModuleType == (int)moduleType);
         }
 
         public List<TypeEntity> GetTypes()
         {
             List<TypeEntity> list = new List<TypeEntity>();
-            DataSet ds = HelpCenterDAL.BaseProvider.GetTypeList();
-            foreach (DataRow dr in ds.Tables[0].Rows)
+            if (Types != null && TypesTime > DateTime.Now)
             {
-                TypeEntity model = new TypeEntity();
-                model.FillData(dr);
-                list.Add(model);
+                list = Types;
             }
+            else
+            {
+                DataSet ds = HelpCenterDAL.BaseProvider.GetTypeList();
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    TypeEntity model = new TypeEntity();
+                    model.FillData(dr);
+                    list.Add(model);
+                }
+                Types = list;
+                TypesTime = DateTime.Now.AddHours(2);
+            }
+
             return list;
         }
 
