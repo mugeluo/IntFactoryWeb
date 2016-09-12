@@ -2,7 +2,7 @@
 .head-content .content-top {background:url(/modules/images/home/help-ind1.png)no-repeat left;}
 .head-content .content-top .head-title {font-size:30px;color:#fff;padding-top:80px;text-align:center; }
 .head-content .content-top .head-search{text-align:center;border-radius:2px;position:relative;width:800px;margin:auto;}
-.content-top .head-search .search-txt{color:#999;line-height:50px;margin-left:10px;width:800px;margin:auto;height:50px;margin-top:60px;}
+.content-top .head-search .search-txt{color:#999;line-height:50px;margin-left:10px;width:800px;margin:auto;height:50px;margin-top:60px;font-size:16px;}
 .content-top .head-search .search-txt:focus{border:1px solid #0cb39e;}
 .content-top .head-search .iconfont{font-size:30px;color:#0cb39e;float:right;line-height:55px;cursor:pointer;position:absolute;z-index:11;bottom:0;right:0;}
 .head-content .content-top .head-txt{font-size:18px;color:#eee;text-align:center;margin-top:20px;}
@@ -74,9 +74,9 @@
 .customer-service { background-color:#f2f2f2;}
 .customer-service .content{width:1200px;margin:auto;}
 .content .content-txt li { float:left;width:300px;margin-bottom:50px;}
-.content-txt li .iconfont { font-size:40px;float:left;height:50px;line-height:45px;color:#0cb39e;border:2px solid #0cb39e;width:50px;border-radius:50%;text-align:center;
+.content-txt li .iconfont { font-size:40px;float:left;height:60px;line-height:55px;color:#0cb39e;border:2px solid #0cb39e;width:60px;border-radius:50%;text-align:center;
                             margin-right:10px;margin-left:50px;}
-.content-txt li div { line-height:25px;color:#0cb39e;}
+.content-txt li div { line-height:25px;color:#0cb39e;font-size:16px;margin-top:5px;}
 
 
 
