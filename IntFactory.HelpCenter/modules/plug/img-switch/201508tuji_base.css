@@ -56,9 +56,11 @@ em,i{font-style:normal}
 .bigPicBox ul{ height: 606px; width: 600%; position:absolute; left: 0; top: 0;}
 .bigPicBox ul li{height: 606px; width: 1200px; background-color: #efefef; display: table-cell; text-align: center; vertical-align: middle;}
 .bigPicBox ul li img{ max-height: 606px; max-width: 1200px; overflow: hidden; vertical-align: middle;width:100%;}
-.prevABox{ display: block; height: 606px; width: 500px; position: absolute; top: 0; left: 0; z-index: 1;} 
+.prevABox{ display: block; height: 606px; width: 500px; position: absolute; top: 0; left: 0; z-index: 1;}
+.prevABox .prevBtn{display:block; height: 114px; line-height:114px; width: 40px;position: absolute; top: 234px; z-index: 99; }
+.nextABox .nextBtn {display:block; height: 114px; line-height:114px; width: 40px;position: absolute; top: 234px; z-index: 99; right: 0;}
 .prevABox .prevBtn i, .nextABox .nextBtn i{ display:block; height: 114px; background-color:rgba(115,115,115,0.9);font-size:30px;font-weight:bold;color:#fff;line-height:114px;
-                                            width: 40px; vertical-align:central; position: absolute; top: 234px; z-index: 99; cursor: pointer;text-align:center;}
+                                            width: 40px; vertical-align:central; position: absolute;  z-index: 99; cursor: pointer;text-align:center;}
 .prevABox .prevBtn i{ background-position: 0 0; left: 0;}
 .nextABox .nextBtn i{ background-position: -29px 0; right: 0;}
 .nextABox{ display: block; height: 606px; width: 500px; position: absolute; top: 0; right: 0; z-index: 1;}

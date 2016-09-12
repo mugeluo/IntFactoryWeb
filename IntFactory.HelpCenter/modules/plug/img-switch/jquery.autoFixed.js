@@ -24,6 +24,17 @@ $(document).ready(function(){
     offsetDiv=$('.smallPicUlBox').offset().left,//得到小图片ul盒子的offset值
     liLength=$('.smallPicUlBox ul li').length;//得到小图片li的个数
 
+    $(".prevBtn,.nextBtn").hover(function () {
+    	$(this).find("i").show();
+    }, function () {
+    	$(this).find("i").hide();
+    });
+
+    $(".prevBtn i,.nextBtn i").mouseleave(function () {
+    	$(this).hide();
+    })
+
+
     //小图片ul盒子移动函数
     var moveSmallPic=function(){
         //删除所有小图片选中样式

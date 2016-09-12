@@ -15,7 +15,8 @@
     }
 
     ObjectJS.init = function () {
-        ObjectJS.bindEvent();      
+        ObjectJS.bindEvent();
+        ObjectJS.getTypesList();
     };
 
     ObjectJS.bindEvent = function () {
@@ -29,15 +30,29 @@
             $(".problem-detail .problem-content").hide();
             $(".problem-detail .problem-content").eq(id).show();
         });
-
-        $(".function li").mouseenter(function () {
-            var _this = $(this);
-            _this.find(".detail").show();
-        });
-        
-        $(".function li .detail").mouseleave(function () {
-            $(this).hide();
-        });        
     };
+
+    ObjectJS.getTypesList = function () {
+        Global.post("/Home/GetTypesByModuleType", { type: 1 }, function (data) {
+            if (data.items.length>0) {
+                Dot.exec("/template/home/get-types-list.html", function (template) {
+                    var innerHtml = template(data.items);
+                    innerHtml = $(innerHtml);
+                    $(".function").append(innerHtml);
+
+                    $(".function li").mouseenter(function () {
+                        var _this = $(this);
+                        _this.find(".detail").show();
+                    });
+
+                    $(".function li .detail").mouseleave(function () {
+                        $(this).hide();
+                    });
+
+                });
+            }
+        });
+    };
+
     module.exports = ObjectJS;
 });

@@ -1,0 +1,16 @@
+﻿{%
+     for(var i=0,j=$data.length; i < j ; i++){ 
+        var item=$data[i];
+%}
+
+<li>
+    <a>
+        <i class="iconfont">&#xe62a;</i>
+        <div class="desc">{%=item.Name%}</div>
+        <div class="detail hide">
+            <div class="txt mTop40">{%=item.Name%}</div>
+            <div class="txt">{%=item.Remark%}</div>
+        </div>
+    </a>
+</li>
+{% } %}      
