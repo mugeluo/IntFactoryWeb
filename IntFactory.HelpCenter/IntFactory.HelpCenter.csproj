@@ -40,6 +40,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Qiniu.4.5, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\Qiniu.4.5.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
@@ -65,9 +73,6 @@
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http">
     </Reference>
@@ -160,8 +165,6 @@
     <Content Include="Content\menuico\systemhover.png" />
     <Content Include="Content\menuico\task.png" />
     <Content Include="Content\menuico\taskhover.png" />
-    <Content Include="DLL\JsonObject.dll" />
-    <Content Include="DLL\Net.Sourceforge.Pinyin4j.dll" />
     <Content Include="DLL\Newtonsoft.Json.dll" />
     <Content Include="DLL\Qiniu.4.5.dll" />
     <Content Include="Global.asax" />
@@ -297,10 +300,6 @@
     <ProjectReference Include="..\IntFactoryWeb\IntFactoryWeb.csproj">
       <Project>{7f4e09fb-5f0c-423a-b272-7732023066d3}</Project>
       <Name>IntFactoryWeb</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Qiniu\Qiniu.4.5.csproj">
-      <Project>{5911e6ef-e7cc-4f44-844c-7cb1ea58a5cb}</Project>
-      <Name>Qiniu.4.5</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
