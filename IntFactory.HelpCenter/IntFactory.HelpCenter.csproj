@@ -122,12 +122,15 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Common\Common.cs" />
     <Compile Include="Common\ExpandClass.cs" />
     <Compile Include="Common\UserAuthorize.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\ContentsController.cs" />
+    <Compile Include="Controllers\FeedBackController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NewbieGuideController.cs" />
+    <Compile Include="Controllers\PlugController.cs" />
     <Compile Include="Controllers\ProblemsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -157,9 +160,14 @@
     <Content Include="Content\menuico\systemhover.png" />
     <Content Include="Content\menuico\task.png" />
     <Content Include="Content\menuico\taskhover.png" />
+    <Content Include="DLL\JsonObject.dll" />
+    <Content Include="DLL\Net.Sourceforge.Pinyin4j.dll" />
+    <Content Include="DLL\Newtonsoft.Json.dll" />
+    <Content Include="DLL\Qiniu.4.5.dll" />
     <Content Include="Global.asax" />
     <Content Include="modules\css\base.css" />
     <Content Include="modules\css\contents\contents.css" />
+    <Content Include="modules\css\feedback\feedback.css" />
     <Content Include="modules\css\home\index.css" />
     <Content Include="modules\css\home\search.css" />
     <Content Include="modules\css\iconfont\demo.css" />
@@ -170,11 +178,14 @@
     <Content Include="modules\css\newbieguide\newbieguide.css" />
     <Content Include="modules\css\Problems\hotproblems.css" />
     <Content Include="modules\css\Problems\problems.css" />
+    <Content Include="modules\images\feedback-bg.png" />
     <Content Include="modules\images\home\1.png" />
     <Content Include="modules\images\home\help-ind1.png" />
     <Content Include="modules\images\home\help-ind2.png" />
     <Content Include="modules\images\ico-btnadd.png" />
     <Content Include="modules\images\ico-delete.png" />
+    <Content Include="modules\images\ico-feedback-hover.png" />
+    <Content Include="modules\images\ico-feedback.png" />
     <Content Include="modules\images\ico-loading.gif" />
     <Content Include="modules\images\ico-loading.jpg" />
     <Content Include="modules\images\iconback-blue.png" />
@@ -220,12 +231,23 @@
     <Content Include="modules\plug\jquery-horizon-line-switch\js\jquery.mobile.custom.min.js" />
     <Content Include="modules\plug\jquery-horizon-line-switch\js\main.js" />
     <Content Include="modules\plug\jquery-horizon-line-switch\js\modernizr.js" />
+    <Content Include="modules\plug\qiniustorage\css\highlight.css" />
+    <Content Include="modules\plug\qiniustorage\css\main.css" />
+    <Content Include="modules\plug\qiniustorage\plupload\moxie.js" />
+    <Content Include="modules\plug\qiniustorage\plupload\moxie.min.js" />
+    <Content Include="modules\plug\qiniustorage\plupload\Moxie.swf" />
+    <Content Include="modules\plug\qiniustorage\plupload\plupload.dev.js" />
+    <Content Include="modules\plug\qiniustorage\plupload\plupload.full.min.js" />
+    <Content Include="modules\plug\qiniustorage\plupload\plupload.min.js" />
+    <Content Include="modules\plug\qiniustorage\qiniu\multiple.js" />
+    <Content Include="modules\plug\qiniustorage\qiniu\qiniu.js" />
     <Content Include="modules\plug\seach_keys\demo.html" />
     <Content Include="modules\plug\seach_keys\seach_keys.js" />
     <Content Include="modules\plug\seach_keys\style.css" />
     <Content Include="modules\plug\tip_layer\tip_layer.css" />
     <Content Include="modules\plug\tip_layer\tip_layer.js" />
     <Content Include="modules\scripts\contents\contents.js" />
+    <Content Include="modules\scripts\feedback\feedback.js" />
     <Content Include="modules\scripts\global.js" />
     <Content Include="modules\scripts\home\index.js" />
     <Content Include="modules\scripts\home\newindex.js" />
@@ -235,6 +257,7 @@
     <Content Include="modules\template\home\contents-list.html" />
     <Content Include="modules\template\home\get-types-list.html" />
     <Content Include="modules\template\problems\contentslist.html" />
+    <Content Include="modules\template\task-file-upload-img.html" />
     <Content Include="Scripts\jquery-1.11.1.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\sea-config.js" />
@@ -275,6 +298,10 @@
       <Project>{7f4e09fb-5f0c-423a-b272-7732023066d3}</Project>
       <Name>IntFactoryWeb</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Qiniu\Qiniu.4.5.csproj">
+      <Project>{5911e6ef-e7cc-4f44-844c-7cb1ea58a5cb}</Project>
+      <Name>Qiniu.4.5</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="modules\plug\jquery-horizon-line-switch\fonts\icomoon.eot" />
@@ -300,6 +327,9 @@
     <Content Include="modules\css\iconfont\iconfont.eot" />
     <Content Include="modules\css\iconfont\iconfont.ttf" />
     <Content Include="modules\css\iconfont\iconfont.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\FeedBack\FeedBack.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

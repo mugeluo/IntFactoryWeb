@@ -47,7 +47,7 @@
 }
 
 .problem .problem-detail { background-color:#f8f8f8;border-bottom:1px solid #ccc;border-top:1px solid #ccc;}
-.problem .problem-content ul{padding:50px 0px;width:300px;}
+.problem .problem-content ul{padding:50px 0px;margin-left:100px;}
 .problem .problem-content ul li:first-child{font-size:24px;margin-bottom:20px;}
 .problem .problem-content ul li:not(first-child){color:#666;line-height:2;}
 
@@ -76,7 +76,7 @@
 .content .content-txt li { float:left;width:300px;margin-bottom:50px;}
 .content-txt li .iconfont { float:left;height:60px;line-height:55px;color:#0cb39e;text-align:center;
                             margin-right:10px;margin-left:30px;font-size:60px;}
-.content-txt li div { line-height:25px;color:#0cb39e;font-size:16px;}
+.content-txt li div,.content-txt li div a { line-height:25px;color:#0cb39e;font-size:16px;}
 
 
 

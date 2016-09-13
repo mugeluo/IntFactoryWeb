@@ -55,8 +55,8 @@
 .ranges { font-size: 11px; float: none; margin: 4px; text-align: left; }
     .ranges ul { list-style: none; margin: 0 auto; padding: 0; width: 100%; }
     .ranges li { font-size: 13px; background: #f5f5f5; border: 1px solid #f5f5f5; border-radius: 4px; color: #08c; padding: 3px 12px; margin-bottom: 8px; cursor: pointer; }
-    .ranges li:hover { background: #08c; border: 1px solid #08c; color: #fff; }
-    .ranges li.active { background: #08c; border: 1px solid #08c; color: #fff; }
+    .ranges li:hover { background: #0cb39e; border: 1px solid #0cb39e; color: #fff; }
+    .ranges li.active { background: #0cb39e; border: 1px solid #0cb39e; color: #fff; }
 
 /*  Larger Screen Styling */
 @media (min-width: 564px) {

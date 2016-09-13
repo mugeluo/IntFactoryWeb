@@ -8,11 +8,12 @@
         <li class="">
             <div class="results-title clear-after">
                 <a class="problem-title" href="/Problems/ProblemsDetail">{%=item.Title%}</a>
-                <div class="right coloraaa">创建时间：<span class="coloraaa">{%=item.CreateTime.toDate("yy-MM-dd hh:mm:ss")%}</span></div>
+                <span class="font16"> --{%=item.ModuleType==1?"功能模块":item.ModuleType==2?"常见问题":"新手指引"%}</span>
+                <div class="right coloraaa"></div>
             </div>
-            <!--<div class="results-desc">
-                {%=detail%}
-            </div>-->
+            <div class="results-desc">
+                创建时间：<span class="">{%=item.CreateTime.toDate("yyyy-MM-dd hh:mm:ss")%}</span>
+            </div>
         </li>
         {% if(item.MainImg!=""){ %}
         <li class="right">

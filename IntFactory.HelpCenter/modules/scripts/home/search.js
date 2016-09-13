@@ -1,19 +1,21 @@
 ﻿define(function (require, exports, module) {
     var Global = require("global"),
         Dot = require("dot"),
+        moment = require("moment"),
         Easydialog = require("easydialog");
     require("pager");
+    require("daterangepicker");
 
     var ObjectJS = {};
 
     var Params = {
-        Types: 0,
+        Types: -1,
         TypeID: "",
         Keywords: "",
         BeginTime: "",
         EndTime: "",
         PageIndex: 1,
-        PageSize: 10,
+        PageSize: 5,
         OrderBy: "c.CreateTime desc",
     }
 
@@ -27,6 +29,24 @@
             Params.Keywords = txt;
             ObjectJS.getContents();
         }
+
+        //日期插件
+        $("#iptCreateTime").daterangepicker({
+            showDropdowns: true,
+            empty: true,
+            opens: "right",
+            ranges: {
+                '今天': [moment(), moment()],
+                '昨天': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                '上周': [moment().subtract(6, 'days'), moment()],
+                '本月': [moment().startOf('month'), moment().endOf('month')]
+            }
+        }, function (start, end, label) {
+            Params.PageIndex = 1;
+            Params.BeginTime = start ? start.format("YYYY-MM-DD") : "";
+            Params.EndTime = end ? end.format("YYYY-MM-DD") : "";
+            ObjectJS.getContents();
+        });
 
         //排序
         $(".sort-item").click(function () {
@@ -50,24 +70,25 @@
             }
             Params.OrderBy = _this.data("column") + (asc ? " asc" : " desc ");
             Params.PageIndex = 1;
-            //ObjectJS.getContentList();
+            ObjectJS.getContents();
         });
 
-        
+        $(".count-trem").find("a:first").html(Params.Keywords);
     };
 
-    ObjectJS.getContents = function (keyWords) {
+    ObjectJS.getContents = function () {
+        $(".search-results").empty();
         Global.post("/Home/GetContents", { filter: JSON.stringify(Params) }, function (data) {
             if (data.items.length>0) {
                 Dot.exec("/template/home/contents-list.html", function (template) {
                     var innerHtml = template(data.items);
                     innerHtml = $(innerHtml);
                     $(".search-results").append(innerHtml);
-
-                    $(".count-trem").find("a").html($(".search-results .item").length);
+                    $(".search-title2").find("a").html($(".search-results .item").length);
                 });
 
-                $(".search-title div:last").find("a").html(data.totalCount);
+                $(".count-trem").find("a:last").html(data.totalCount);
+                
 
                 $("#pager").paginate({
                     total_count: data.totalCount,
@@ -89,6 +110,8 @@
                         ObjectJS.getContents();
                     }
                 });
+            } else {
+                $(".search-results").append("<li class='center mTop30'>暂无数据</li>")
             }
         })
     

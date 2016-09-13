@@ -83,6 +83,12 @@ namespace IntFactoryBusiness
             return HelpCenterDAL.BaseProvider.InsertContent(contentID, typeID, sort, title, keyWords, content, userID);
         }
 
+        public static bool InsertFeedBack(FeedBack model)
+        {
+            return HelpCenterDAL.BaseProvider.InsertFeedBack(model.Title, model.ContactName, model.MobilePhone,
+                model.Type, model.FilePath, model.Remark);
+        }
+
         #endregion
     }
 }
