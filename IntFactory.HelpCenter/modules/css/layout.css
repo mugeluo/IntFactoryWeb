@@ -51,6 +51,44 @@ input[type="file"] > input[type="button"]::-moz-focus-inner{padding:0;border:non
                                 border:1px solid #fff;border-radius:3px;opacity:0.7}
 .site-header div .register:hover{opacity:1;background-color:#fff;color:#0cb39e;}
 
+/*弹出层-新建*/
+.easydialog-create { min-width:400px;  }
+.easydialog-create li{ margin-top:10px; }
+.easydialog-create li span{ display:inline-block; vertical-align:top;}
+.easydialog-create li input[type="text"]{ width:180px; }
+.easydialog-create li textarea{ width:350px; min-height:75px; }
+.easydialog-create li label{ line-height:20px; height:20px; cursor:pointer; }
+.easydialog-create li label input{ line-height:20px; height:20px; }
+
+/*alert 弹出层样式*/
+.alert {background-color: #333;opacity:0.8; font-size: 13px; position: fixed; top:35%; z-index: 99999; 
+         padding:20px;padding-left:40px;  overflow:auto; border-radius:5px;min-width:140px;max-width:260px;}
+.alert .alert-wrap { word-wrap: break-word;  word-break:break-all;color:#fff;font-size:14px;}
+.alert-wrap .alert-icon-right:before {content:"\e613";}
+.alert-wrap .alert-icon-right {color:#fefefe;font-size:20px;float:left;}
+.alert-wrap .alert-icon-warn:before {content:"\e64a";}
+.alert-wrap .alert-icon-warn {color:#fefefe;font-size:20px;float:left;}
+.alert-wrap .alert-msg {float:left;color:#fff;font-size:16px;line-height:24px; padding:0 20px 0 15px;max-width:160px;}
+.alert-wrap .alert-close:before {content:"\e628";}
+.alert-wrap .alert-close {float:left;color:#ddd;font-size:20px;padding-top:0px;cursor:pointer;}
+.alert-wrap .alert-close:hover {color:#fff;}
+
+
+.confirm-layer {position: fixed; z-index:99998; top:0; left:0;right:0; bottom:0; background-color:#000; opacity:0.7;}
+.confirm { border: 1px solid #ccc; background-color: #fff; font-size: 13px; position: fixed; top:35%; z-index: 99999; width:260px; overflow:auto;padding:20px;border-radius:3px; }
+.confirm .confirm-wrap { word-wrap: break-word;  word-break:break-all;font-size:16px;  }
+.confirm .confirm-bottom { margin-top:20px; text-align:right; }
+.confirm-bottom .sure { padding:10px 24px; background-color:#4a98e7; color:#fff; border:none; cursor:pointer; display:inline-block; border-radius:3px; }
+.confirm-bottom .sure:hover {  background-color:#2F73B8;  }
+.confirm-bottom .close { padding:5px 40px; color:#999; border:none; cursor:pointer; display:inline-block; }
+.confirm-bottom .close:hover {color:#4a98e7; }
+
+/*下拉菜单样式*/
+.dropdown { cursor:pointer; }
+.dropdown-ul { padding:10px 0; border:solid 1px #ccc; border-radius:5px; position:absolute; background-color:#fff; overflow:auto; box-shadow:0 0 5px #999; }
+.dropdown-ul li{ padding:0 20px; height:25px; line-height:25px; cursor:pointer; }
+.dropdown-ul li:hover{  background-color:#eee; color:#318ae4; }
+
 /*内容*/
 .main-content { background-color:#fff;}
 

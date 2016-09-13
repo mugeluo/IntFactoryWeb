@@ -1,20 +1,25 @@
 ﻿{%
      for(var i=0,j=$data.length; i < j ; i++){ 
-        var item=$data[i];
+        var item=$data[i],
+            detail=decodeURI(item.Detail);
 %}
-<li>
-    <div class="left">
-        <div class="results-title clear-after">
-            <a class="problem-title" href="/Problems/ProblemsDetail">{%=item.Title%}</a>
-            <div class="right coloraaa">创建时间：<span class="coloraaa">{%=item.CreateTime.toDate(yy-MM-dd hh:mm:ss)%}</span></div>
-        </div>
-        <div class="results-desc">
-            {%=item.%}
-        </div>
-    </div>
-    <div class="right">
-        <img src="/modules/images/home/1.png" />
-    </div>
+<li class="item">
+    <ul class="item-desc">
+        <li class="">
+            <div class="results-title clear-after">
+                <a class="problem-title" href="/Problems/ProblemsDetail">{%=item.Title%}</a>
+                <div class="right coloraaa">创建时间：<span class="coloraaa">{%=item.CreateTime.toDate("yy-MM-dd hh:mm:ss")%}</span></div>
+            </div>
+            <!--<div class="results-desc">
+                {%=detail%}
+            </div>-->
+        </li>
+        {% if(item.MainImg!=""){ %}
+        <li class="right">
+            <img src="{%=item.MainImg%}" />
+        </li>
+        {% } %}
+    </ul>               
 </li>
 
 

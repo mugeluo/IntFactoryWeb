@@ -18,6 +18,7 @@ namespace IntFactoryBusiness
 
         private static List<TypeEntity> Types = null;
         private static DateTime TypesTime = DateTime.Now;
+
         #region 查询
         public List<TypeEntity> GetTypesByModuleType(ModuleTypeEnum moduleType)
         {

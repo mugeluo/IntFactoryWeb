@@ -1,4 +1,5 @@
 ﻿@{
+    var list = (List<IntFactoryEntity.TypeEntity>)ViewBag.list;
     ViewBag.Title = "厂盟 | 常见问题";
     ViewBag.TitleName = "Problems";
 }
@@ -22,7 +23,7 @@
         </div>
         <div class="head-search">            
             <input class="search-txt" type="text" placeholder="搜索相关问题" />
-            <i class="iconfont">&#xe605;</i>
+            <i class="iconfont">&#xe618;</i>
         </div>
     </div>
 </div>
@@ -30,53 +31,16 @@
 <div class="details">
     <div class="category">
         <ul class="category-menu">
-            <li class="hover">帮助<div class="category-line"></div></li>
-            <li>订单<div class="category-line"></div></li>
-            <li>任务<div class="category-line"></div></li>
-            <li>负责人<div class="category-line"></div></li>
-            <li>系统配置<div class="category-line"></div></li>
+            @if (list.Count>0)
+            {
+                foreach (var item in list)
+                {
+                    <li class="" data-id="@(item.TypeID)">@(item.Name)<div class="category-line"></div></li>
+                }
+            }            
         </ul>
         <ul class="problems-details">
-            <li>
-                <div class="left">
-                    <div class="problems-title">首次登陆如何配置品类</div>
-                    <div class="problems-desc">重协作轻管理的团队；企业版适用于对于管理和办公有需求的团队重协作轻管理的团队；企业版适用于对于管理和办公有需求的团队重协作轻管理的团队；企业版适用于对于管理和办公有需求的团队重协作轻管理的团队；企业版适用于对于管理和办公有需求的团队</div>
-                    <div class="look-detail"><a href="/Problems/ProblemsDetail">查看详情 ></a></div>
-                </div>
-                <div class="right">
-                    <img src="/modules/images/home/1.png" />
-                </div>
-            </li>
-            <li>
-                <div class="left">
-                    <div class="problems-title">首次登陆如何配置品类</div>
-                    <div class="problems-desc">重协作轻管理的团队；企业版适用于对于管理和办公有需求的团队</div>
-                    <div class="look-detail"><a href="/Problems/ProblemsDetail">查看详情 ></a></div>
-                </div>
-                <div class="right">
-                    <img src="/modules/images/home/1.png" />
-                </div>
-            </li>
-            <li>
-                <div class="left">
-                    <div class="problems-title">首次登陆如何配置品类</div>
-                    <div class="problems-desc">重协作轻管理的团队；企业版适用于对于管理和办公有需求的团队</div>
-                    <div class="look-detail"><a href="/Problems/ProblemsDetail">查看详情 ></a></div>
-                </div>
-                <div class="right">
-                    <img src="/modules/images/home/1.png" />
-                </div>
-            </li>
-            <li>
-                <div class="left">
-                    <div class="problems-title">首次登陆如何配置品类</div>
-                    <div class="problems-desc">重协作轻管理的团队；企业版适用于对于管理和办公有需求的团队</div>
-                    <div class="look-detail"><a href="/Problems/ProblemsDetail">查看详情 ></a></div>
-                </div>
-                <div class="right">
-                    <img src="/modules/images/home/1.png" />
-                </div>
-            </li>
+            
         </ul>
         <div class="load-more">加载更多</div>
     </div>

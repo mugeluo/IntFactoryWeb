@@ -18,13 +18,15 @@
     }
 
     ObjectJS.init = function () {
-        ObjectJS.bindEvent();
-        ObjectJS.getContents();
+        ObjectJS.bindEvent();       
     };
 
     ObjectJS.bindEvent = function () {
         var txt = decodeURI(window.location.href.split("?")[1]);
-        Params.Keywords = txt;
+        if (txt != "") {
+            Params.Keywords = txt;
+            ObjectJS.getContents();
+        }
 
         //排序
         $(".sort-item").click(function () {
@@ -61,7 +63,11 @@
                     var innerHtml = template(data.items);
                     innerHtml = $(innerHtml);
                     $(".search-results").append(innerHtml);
+
+                    $(".count-trem").find("a").html($(".search-results .item").length);
                 });
+
+                $(".search-title div:last").find("a").html(data.totalCount);
 
                 $("#pager").paginate({
                     total_count: data.totalCount,

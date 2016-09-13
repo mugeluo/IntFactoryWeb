@@ -1,0 +1,22 @@
+﻿{%
+     for(var i=0,j=$data.length; i < j ; i++){ 
+        var item=$data[i],
+            detail=decodeURI(item.Detail);
+%}
+<li class="item">
+    <ul class="">
+        <li>
+            <div class="problems-title">{%=item.Title%}</div>
+            <div class="problems-desc">{%=detail%}</div>
+            <div class="look-detail"><a href="/Problems/ProblemsDetail/{%=item.ContentID%}">查看详情 ></a></div>
+        </li>
+        {% if(item.MainImg!=""){ %}
+        <li class="right">
+            <img src="{%=item.MainImg%}" />
+        </li>
+        {% } %}
+    </ul>
+</li>
+
+
+{% } %}

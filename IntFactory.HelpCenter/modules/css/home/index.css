@@ -16,9 +16,9 @@
 
 .problem .table-switch { width:900px;margin:50px auto;}
 .problem .table-switch li{float:left;width:300px;text-align:center;cursor:pointer;position:relative;}
-.table-switch li .iconfont { font-size:40px;color:#aaa;}
+.table-switch li .iconfont { font-size:50px;color:#aaa;}
 .table-switch li div { font-size:18px;margin-top:10px;color:#666;}
-.table-switch .hover .iconfont { font-size:40px;color:#0cb39e;}
+.table-switch .hover .iconfont { font-size:50px;color:#0cb39e;}
 .table-switch .hover div { color:#0cb39e;}
 .problem .problem-content { width:1200px;margin:auto;}
 
@@ -74,9 +74,9 @@
 .customer-service { background-color:#f2f2f2;}
 .customer-service .content{width:1200px;margin:auto;}
 .content .content-txt li { float:left;width:300px;margin-bottom:50px;}
-.content-txt li .iconfont { font-size:40px;float:left;height:60px;line-height:55px;color:#0cb39e;border:2px solid #0cb39e;width:60px;border-radius:50%;text-align:center;
-                            margin-right:10px;margin-left:50px;}
-.content-txt li div { line-height:25px;color:#0cb39e;font-size:16px;margin-top:5px;}
+.content-txt li .iconfont { float:left;height:60px;line-height:55px;color:#0cb39e;text-align:center;
+                            margin-right:10px;margin-left:30px;font-size:60px;}
+.content-txt li div { line-height:25px;color:#0cb39e;font-size:16px;}
 
 
 

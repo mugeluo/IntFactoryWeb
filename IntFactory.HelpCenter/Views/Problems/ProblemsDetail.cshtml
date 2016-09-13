@@ -1,10 +1,18 @@
 ﻿@{
+    var modol = (IntFactoryEntity.ContentEntity)ViewBag.list;
     ViewBag.Title = "厂盟 | 详情页";
     ViewBag.TitleName = "problems";
 }
 @section css{
     <link href="/modules/css/Problems/problems.css" rel="stylesheet" />
 }
+@section scripts{
+    
+    <script type="text/javascript">
+        $("#remark").html(decodeURI("@(modol.Detail)"));      
+    </script>
+}
+
 
 <div class="head-content-menu">
     <div class="content">
@@ -15,11 +23,11 @@
             <span>></span>
             <a href="/Problems/Problems">分类</a>
             <span>></span>
-            <a>初次登陆配置项</a>
+            <a>@(modol.TypeName)</a>
         </div>
         <div class="head-search">            
             <input class="search-txt" type="text" placeholder="搜索相关问题" />
-            <i class="iconfont">&#xe605;</i>
+            <i class="iconfont">&#xe618;</i>
         </div>
     </div>
 </div>
@@ -27,18 +35,15 @@
 <div class="details">
     <div class="category">
         <div class="details-title">初次登陆配置项</div>
-        <ul class="information">
+        <ul class="information clear-after">
             <li class="left">
                 创建时间：
-                <span>2016-09-02 10：33：06</span>
+                <span>@(modol.CreateTime)</span>
             </li> 
-            <li class="right">
-                创建人：
-                <span>孙悟空</span>
-            </li>
+            
             <li class="right">
                 浏览：
-                <span>9527</span>
+                <span>@(modol.ClickNumber)</span>
             </li>
         </ul>
         <div id="remark"></div>

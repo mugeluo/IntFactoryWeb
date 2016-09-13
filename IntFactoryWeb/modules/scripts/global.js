@@ -71,7 +71,8 @@
     }
 
     /*重写alert*/
-    window.alert = function (msg, url) {        
+    window.alert = function (msg, url) {
+
         $("#window_alert").remove();
 
         var _alter = $("<div id='window_alert' class='alert'></div>");

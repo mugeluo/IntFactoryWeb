@@ -22,6 +22,8 @@ namespace IntFactoryEntity
 
         public string Title { get; set; }
 
+        public string MainImg { get; set; }
+
         public string KeyWords { get; set; }
 
         public int Sort { get; set; }
