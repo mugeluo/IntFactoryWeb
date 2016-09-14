@@ -12,7 +12,7 @@ $(document).ready(function(){
     imgTitle=$('.imgTitle');
 
     //设置大图片ul的宽度
-    $('.bigPicBox ul').css({width:$('.smallPicUlBox ul li').length + '00%'});
+    //$('.bigPicBox ul').css({width:'100%'});
     imgTitle.html($('.smallPicUlBox ul li:first').find('.desc').html());
     
     var 
@@ -45,11 +45,11 @@ $(document).ready(function(){
         var currentOffsetLiB=$('.smallPicUlBox ul li.current').offset().left;
         //被选中的小图片是可见box中的最后一张也就是小图片第六张
         if(currentOffsetLiB-offsetDiv==399){
-            //if(liLength-initCount>1){
-            //    ulSMove.stop().animate({left:ulSMove.position().left-399},300);
-            //}else{
-            //    ulSMove.stop().animate({left:('-' + smallLiWidth * (liLength -7))},300);
-            //}                   
+            if(liLength-initCount>1){
+                ulSMove.stop().animate({left:ulSMove.position().left-399},300);
+            }else{
+                ulSMove.stop().animate({left:('-' + smallLiWidth * (liLength -7))},300);
+            }                   
         }
         else if(initCount==0){
             ulSMove.find("li:first").addClass("current");
@@ -63,8 +63,8 @@ $(document).ready(function(){
             }
         }
         else if(initCount==liLength-1){
-            //ulSMove.find("li:last").addClass("current");
-            //ulSMove.stop().animate({left:('-' + smallLiWidth * (liLength -7)-23)},300);
+            ulSMove.find("li:last").addClass("current");
+            ulSMove.stop().animate({left:('-' + smallLiWidth * (liLength -7)-23)},300);
         }
     }
 

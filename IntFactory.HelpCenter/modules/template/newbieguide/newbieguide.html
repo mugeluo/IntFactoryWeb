@@ -1,0 +1,16 @@
+﻿{%
+	for(var i=0, j=$data.length; i < j; i++){
+	var item = $data[i];
+%}
+
+<li class="" index="{%=i%}">
+	<div class="mask"><em></em></div>
+	<img src="{%=item.Icon%}?imageView2/1/w/120/h/84" alt="图{%=i+1%}">
+	<div class="desc">
+		<span class="num-title"><em>{%=i+1%}</em>/{%=j%}</span>
+		<p>{%=item.Remark%}</p>
+	</div>
+</li>
+
+
+{%}%}

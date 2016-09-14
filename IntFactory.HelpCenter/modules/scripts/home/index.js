@@ -18,7 +18,7 @@
     ObjectJS.init = function () {
         ObjectJS.bindEvent();
         ObjectJS.getTypes();
-        //ObjectJS.getTypesByModuleType(1);
+        //ObjectJS.getTypesByModuleType(3);
     };
 
     ObjectJS.bindEvent = function () {
@@ -39,24 +39,24 @@
     ObjectJS.getTypesByModuleType = function (moduleType) {
         Global.post("/Home/GetTypesByModuleType", { type: moduleType }, function (data) {
             if (data.items.length > 0) {
-                if (moduleType == 1) {
-                    Dot.exec("/template/home/function-types.html", function (template) {
-                        var innerHtml = template(data.items);
-                        innerHtml = $(innerHtml);
-                        $(".function").append(innerHtml);
+                //if (moduleType == 1) {
+                //    Dot.exec("/template/home/function-types.html", function (template) {
+                //        var innerHtml = template(data.items);
+                //        innerHtml = $(innerHtml);
+                //        $(".function").append(innerHtml);
 
-                        $(".function li").mouseenter(function () {
-                            var _this = $(this);
-                            _this.find(".detail").show();
-                        });
+                //        $(".function li").mouseenter(function () {
+                //            var _this = $(this);
+                //            _this.find(".detail").show();
+                //        });
 
-                        $(".function li .detail").mouseleave(function () {
-                            $(this).hide();
-                        });
-                    });
-                } else if (moduleType == 2) {
+                //        $(".function li .detail").mouseleave(function () {
+                //            $(this).hide();
+                //        });
+                //    });
+                //} else if (moduleType == 2) {
 
-                }
+                //}
             }
         });
     };

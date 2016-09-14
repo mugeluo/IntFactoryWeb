@@ -5,6 +5,14 @@
 @section css{
     <link href="/modules/css/Problems/hotproblems.css" rel="stylesheet" />
 }
+@section scripts{
+    <script type="text/javascript">
+        seajs.use(["scripts/problems/hotproblems"], function (ObjectJS) {
+            ObjectJS.init();
+        }); 
+    </script>
+}
+
 <div class="head-content-menu">
     <div class="content">
         <div class="head-menu">
@@ -22,31 +30,8 @@
 </div>
 
 <div class="details">
-    <ul>
-        <li>最多浏览</li>
-        <li>· 管理客户管理客户管理客户管理客户管理客户管理客户管理客户管理客户</li>
-        <li>· 管理客户</li>
-        <li>· 管理客户</li>
-        <li>· 管理客户</li>
-        <li>· 管理客户</li>
-        <li>· 管理客户</li>
-        <li>· 管理客户</li>
-        <li>· 管理客户</li>
-        <li>· 管理客户</li>
-        <li>· 管理客户</li>
-        <li>· 管理客户</li>
-        <li>· 管理客户</li>
-        <li>· 管理客户</li>
-        <li>· 管理客户</li>
-        <li>· 管理客户</li>
-        <li>· 管理客户</li>
-        <li>· 管理客户</li>
-        <li>· 管理客户</li>
-        <li>· 管理客户</li>
-        <li>· 管理客户</li>
-        <li>· 管理客户</li>
-        <li>· 管理客户</li>
-        <li>· 管理客户</li>
+    <ul class="number">
+        <li class="item-all">最多浏览</li>        
     </ul>
     <ul>
         <li>最多反馈</li>

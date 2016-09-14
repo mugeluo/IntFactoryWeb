@@ -1,4 +1,5 @@
 ﻿@{
+    var list = (List < IntFactoryEntity.TypeEntity > )ViewBag.item;
     ViewBag.Title = "厂盟 | 新手指南";
     ViewBag.TitleName = "NewbieGuide";
 }
@@ -8,6 +9,11 @@
 }
 @section scripts{
     <script src="/modules/plug/img-switch/jquery.autoFixed.js"></script>
+    <script type="text/javascript">
+        seajs.use(["scripts/newbieguide/newbieguide"], function (ObjectJS) {
+            ObjectJS.init('@(Html.ToJSONString(list))');
+        });
+    </script>
 }
 <div class="head-content-menu">
     <div class="content">
@@ -41,93 +47,29 @@
     <div class="wrap">
 	    <div class="bigPicBox">
 		    <ul style="width: 3300%;">
-	            <li><img src="http://resource.feng.com/resource/h061/h42/img201608181033330.jpg" alt="新手指引"></li>
-	            <li><img src="http://resource.feng.com/resource/h061/h42/img201608181033400.jpg" alt="新手指引"></li>
-	            <li><img src="http://resource.feng.com/resource/h061/h42/img201608181033450.jpg" alt="新手指引"></li>
-	            <li><img src="http://resource.feng.com/resource/h061/h42/img201608181033510.jpg" alt="新手指引"></li>
-	            <li><img src="http://resource.feng.com/resource/h061/h42/img201608181034040.jpg" alt="新手指引"></li>
-	            <li><img src="http://resource.feng.com/resource/h061/h42/img201608181034100.jpg" alt="新手指引"></li>
-	            <li><img src="http://resource.feng.com/resource/h061/h42/img201608181034160.jpg" alt="新手指引"></li>
-	            <li><img src="http://resource.feng.com/resource/h061/h42/img201608181034210.jpg" alt="新手指引"></li>	            
+                @if (list.Count>0)
+                {
+                    foreach (var item in list)
+                    {
+                        <li><img src="@(item.Icon)" alt="新手指引"></li>
+                    } 
+                }
 		    </ul>
 		    <a href="javascript:;" class="prevABox"><span class="prevBtn"><i style="display:none"><</i></span></a>
 		    <a href="javascript:;" class="nextABox"><span class="nextBtn"><i style="display:none">></i></span></a>
 	    </div>
 	    <div class="imgTitle">
-			<span class="num-title"><em>1</em>/8</span>
-			<p>如噩梦般的 9.11 恐怖袭击已过去将近 15 年时间，新世贸中心正在旧址上拔地而起，未来它将迎来苹果在内的 125 个品牌入驻。近日，苹果纽约世贸中心零售店正式开业，引来大量粉丝围观。</p>
+			<span class="num-title"><em>1</em>/@(list.Count)</span>
+			<p>@(list[0].Remark)</p>
 		</div>
 	    <div class="smallPicBox">
-		    <a href="javascript:;" class="smallPrevBtn" title="上一张"><i></i></a>
+		    <a href="javascript:;" class="smallPrevBtn" title="上一张"><i><</i></a>
 		    <div class="smallPicUlBox">
 			    <ul>
-				    <li class="current" index="0">
-					    <div class="mask"><em></em></div>
-					    <img src="http://img.weiphone.net/1/h061/h42/402c9219img201608181033330_112__82.jpg" alt="图1">
-					    <div class="desc">
-						    <span class="num-title"><em>1</em>/8</span>
-						    <p>如噩梦般的 9.11 恐怖袭击已过去将近 15 年时间，新世贸中心正在旧址上拔地而起，未来它将迎来苹果在内的 125 个品牌入驻。近日，苹果纽约世贸中心零售店正式开业，引来大量粉丝围观。</p>
-					    </div>
-				    </li>
-				    <li index="1">
-					    <div class="mask"><em></em></div>
-					    <img src="http://img.weiphone.net/1/h061/h42/ceb7d7adimg201608181033400_112__82.jpg" alt="图2">
-					    <div class="desc">
-						    <span class="num-title"><em>2</em>/8</span>
-						    <p>新 Apple Store 坐落在新世贸中心旁边，这栋设计风格颇为怪异的建筑名为 Oculus，外部是纯白色，造型神似一只体型巨大的和平鸽，也有浴火重生的寓意，由著名建筑师圣地亚哥·卡拉特拉瓦设计。</p>
-					    </div>
-				    </li>
-				    <li index="2">
-					    <div class="mask"><em></em></div>
-					    <img src="http://img.weiphone.net/1/h061/h42/896fcc19img201608181033450_112__82.jpg" alt="图3">
-					    <div class="desc">
-						    <span class="num-title"><em>3</em>/8</span>
-						    <p>此站点毗邻 9.11 纪念馆和世界贸易中心一号楼。</p>
-					    </div>
-				    </li>
-				    <li index="3">
-					    <div class="mask"><em></em></div>
-					    <img src="http://img.weiphone.net/1/h061/h42/f56524c0img201608181033510_112__82.jpg" alt="图4">
-					    <div class="desc">
-						    <span class="num-title"><em>4</em>/8</span>
-						    <p>连通数条从纽约来往新泽西的地铁线。</p>
-					    </div>
-				    </li>
-				    <li index="4">
-					    <div class="mask"><em></em></div>
-					    <img src="http://img.weiphone.net/1/h061/h42/d771d282img201608181034040_112__82.jpg" alt="图5">
-					    <div class="desc">
-						    <span class="num-title"><em>5</em>/8</span>
-						    <p>世贸中心交通枢纽的 Oculus 其本身的设计就妙不可言，而苹果新零售店一下子就占据了两层，显得十分大气。</p>
-					    </div>
-				    </li>
-				    <li index="5">
-					    <div class="mask"><em></em></div>
-					    <img src="http://img.weiphone.net/1/h061/h42/a943aac8img201608181034100_112__82.jpg" alt="图6">
-					    <div class="desc">
-						    <span class="num-title"><em>6</em>/8</span>
-						    <p>虽然该购物中心已经向公众开放，但我们看到很多店面筹备中。</p>
-					    </div>
-				    </li>
-				    <li index="6">
-					    <div class="mask"><em></em></div>
-					    <img src="http://img.weiphone.net/1/h061/h42/e5ce797dimg201608181034160_112__82.jpg" alt="图7">
-					    <div class="desc">
-						    <span class="num-title"><em>7</em>/8</span>
-						    <p>苹果零售店是最早一批对外界开放的零售商品牌之一。</p>
-					    </div>
-				    </li>
-				    <li index="7">
-					    <div class="mask"><em></em></div>
-					    <img src="http://img.weiphone.net/1/h061/h42/fc9e74c4img201608181034210_112__82.jpg" alt="图8">
-					    <div class="desc">
-						    <span class="num-title"><em>8</em>/8</span>
-						    <p>走进这苹果零售店，你就会发现它是如此的超凡脱俗，白色的地板，白色的墙壁和拱门优雅大气和古典的设计让人赏心悦目。此外，这些设计还与类似天幕结构的 Oculus 屋顶相连。走进其中，你仿佛置身巨兽腹中。</p>
-					    </div>
-				    </li>	    
+				    
 			    </ul>
 		    </div>
-		    <a href="javascript:;" class="smallNextBtn" title="下一张"><i></i></a>			
+		    <a href="javascript:;" class="smallNextBtn" title="下一张"><i>></i></a>			
 	    </div>		
     </div>
 </div>

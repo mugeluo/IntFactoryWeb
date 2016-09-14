@@ -4,7 +4,7 @@
 .head-content .content-top .head-search{text-align:center;border-radius:2px;position:relative;width:800px;margin:auto;}
 .content-top .head-search .search-txt{color:#999;line-height:50px;margin-left:10px;width:800px;margin:auto;height:50px;margin-top:60px;font-size:16px;}
 .content-top .head-search .search-txt:focus{border:1px solid #0cb39e;}
-.content-top .head-search .iconfont{font-size:30px;color:#0cb39e;float:right;line-height:55px;cursor:pointer;position:absolute;z-index:11;bottom:0;right:0;}
+.content-top .head-search .iconfont{font-size:30px;color:#0cb39e;float:right;line-height:50px;cursor:pointer;position:absolute;z-index:11;bottom:0;right:0;}
 .head-content .content-top .head-txt{font-size:18px;color:#eee;text-align:center;margin-top:20px;}
 .head-content .content-bottom{background:url(/modules/images/home/help-ind2.png)no-repeat right 300px;}
 .head-content .content-bottom .function{width:800px;margin:auto;margin-top:50px;padding-bottom:100px;}
@@ -47,7 +47,7 @@
 }
 
 .problem .problem-detail { background-color:#f8f8f8;border-bottom:1px solid #ccc;border-top:1px solid #ccc;}
-.problem .problem-content ul{padding:50px 0px;margin-left:100px;}
+.problem .problem-content ul{padding:50px 0px;margin-left:100px;width:195px;}
 .problem .problem-content ul li:first-child{font-size:24px;margin-bottom:20px;}
 .problem .problem-content ul li:not(first-child){color:#666;line-height:2;}
 
