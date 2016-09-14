@@ -31,9 +31,11 @@
             if (!_this.hasClass("hover")) {
                 _this.siblings().removeClass("hover");
                 _this.addClass("hover");
-            };
-            Params.TypeID = id;
-            ObjectJS.getContents();
+
+                Params.TypeID = id;
+                Params.PageIndex = 1;
+                ObjectJS.getContents();
+            }; 
         });
 
         $(".load-more").click(function () {
@@ -45,24 +47,24 @@
             }            
         });
 
-        Global.post("/Problems/GetClickNumberList", { }, function (data) {
+        Global.post("/Problems/GetClickNumberList", {}, function (data) {
             if (data.items.length > 0) {
                 for (var i = 0; i < data.items.length; i++) {
                     $(".example ul .item-all").after("<li class='item'><a href='/Problems/ProblemsDetail/" + data.items[i].ContentID + "'>· " + data.items[i].Title + "</a></li>");
                 }
-                
             }
-        })
+        });
     };
 
-    ObjectJS.getContents = function (status) {
-        if (!status) {
+    ObjectJS.getContents = function () {
+        if (Params.PageIndex==1) {
             $(".problems-details").empty();
         }
         $(".problems-details").append("<div class='data-loading'><div>");
         Global.post("/Problems/GetContents", { filter: JSON.stringify(Params) }, function (data) {
+            $(".problems-details").empty();
+
             if (data.items.length > 0) {
-                $(".problems-details").empty();
                 Dot.exec("/template/problems/contentslist.html", function (template) {
                     var innerHtml = template(data.items);
                     innerHtml = $(innerHtml);

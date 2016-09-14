@@ -253,7 +253,6 @@
     <Content Include="modules\scripts\feedback\feedback.js" />
     <Content Include="modules\scripts\global.js" />
     <Content Include="modules\scripts\home\index.js" />
-    <Content Include="modules\scripts\home\newindex.js" />
     <Content Include="modules\scripts\home\search.js" />
     <Content Include="modules\scripts\layout.js" />
     <Content Include="modules\scripts\newbieguide\newbieguide.js" />
