@@ -2,11 +2,19 @@
     ViewBag.Title = "厂盟 | 帮助中心";
     ViewBag.TitleName = "Contents";
 }
-@{
+@section css{
     <link href="/modules/css/contents/contents.css" rel="stylesheet" />
 }
-   
 
+@section scripts{
+    <script src="/Scripts/jquery-1.11.1.js"></script>   
+    <script type="text/javascript">
+        seajs.use(["scripts/contents/contents"], function (ObjectJS) {
+            ObjectJS.init();
+        });        
+    </script>
+}
+   
 <div class="head-content-menu">
     <div class="content">
         <ul class="content-title cleat-after">
@@ -18,5 +26,106 @@
             <li>系统设置</li>
             <li>智能工厂客户端</li>
         </ul>
+    </div>
+</div>
+
+<div class="content clear-after">
+    <div class="content-menu">
+        <div class="head-search">            
+            <input class="search-txt" type="text" placeholder="搜索相关问题" />
+            <i class="iconfont">&#xe618;</i>
+        </div>
+        <div class="menu">
+            <div class="menu-title tag">
+                <i class="iconfont">&#xe624;</i>
+                <span>工作台的基本信息</span>
+            </div>
+            <ul class="item">
+                <li class="hover"><span>超期排期和筛选</span></li>
+                <li><span>基本概念</span></li>
+                <li><span>创建账号</span></li>
+                <li><span>创建第一个客户</span></li>
+                <li><span>账户管理</span></li>
+                <li><span>权限控制</span></li>
+                <li><span>基本操作</span></li>
+            </ul> 
+            <div class="menu-title">
+                <i class="iconfont">&#xe624;</i>
+                <span>工作台的基本信息</span>
+            </div>
+            <ul class="item hide">
+                <li class="hover"><span>超期排期和筛选</span></li>
+                <li><span>基本概念</span></li>
+                <li><span>创建账号</span></li>
+                <li><span>创建第一个客户</span></li>
+                <li><span>账户管理</span></li>
+                <li><span>权限控制</span></li>
+                <li><span>基本操作</span></li>
+            </ul> 
+            <div class="menu-title">
+                <i class="iconfont">&#xe624;</i>
+                <span>工作台的基本信息</span>
+            </div>
+            <ul class="item hide">
+                <li class="hover"><span>超期排期和筛选</span></li>
+                <li><span>基本概念</span></li>
+                <li><span>创建账号</span></li>
+                <li><span>创建第一个客户</span></li>
+                <li><span>账户管理</span></li>
+                <li><span>权限控制</span></li>
+                <li><span>基本操作</span></li>
+            </ul> 
+            <div class="menu-title">
+                <i class="iconfont">&#xe624;</i>
+                <span>工作台的基本信息</span>
+            </div>
+            <ul class="item hide">
+                <li class="hover"><span>超期排期和筛选</span></li>
+                <li><span>基本概念</span></li>
+                <li><span>创建账号</span></li>
+                <li><span>创建第一个客户</span></li>
+                <li><span>账户管理</span></li>
+                <li><span>权限控制</span></li>
+                <li><span>基本操作</span></li>
+            </ul> 
+            <div class="menu-title">
+                <i class="iconfont">&#xe624;</i>
+                <span>工作台的基本信息</span>
+            </div>
+            <ul class="item hide">
+                <li class="hover"><span>超期排期和筛选</span></li>
+                <li><span>基本概念</span></li>
+                <li><span>创建账号</span></li>
+                <li><span>创建第一个客户</span></li>
+                <li><span>账户管理</span></li>
+                <li><span>权限控制</span></li>
+                <li><span>基本操作</span></li>
+            </ul>   
+        </div>
+    </div>
+    <div class="contents-remark">
+        <div id="remark" class="remark"></div>
+        <div class="contents-list">
+            <div class="left">
+                <ul class="problems-list">
+                    <li class="item-all">常见问题</li>
+                    <li>常见问题1</li>
+                    <li>常见问题2</li>
+                    <li>常见问题3</li>
+                    <li>常见问题4</li>
+                    <li>常见问题5</li>
+                </ul>
+            </div>
+            <div class="left">
+                <ul class="news-list">
+                    <li class="item-all">新手指南</li>
+                    <li>新手指南1</li>
+                    <li>新手指南2</li>
+                    <li>新手指南3</li>
+                    <li>新手指南4</li>
+                    <li>新手指南5</li>
+                </ul>
+            </div>
+        </div>
     </div>
 </div>
