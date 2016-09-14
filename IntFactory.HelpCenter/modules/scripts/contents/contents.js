@@ -28,6 +28,7 @@
     };
 
     ObjectJS.bindEvent = function () {
+
         $(".content-title li").click(function () {
             var _this = $(this);
             if (!_this.hasClass("hover")) {
@@ -50,18 +51,20 @@
             var _this = $(this);
             if (!_this.hasClass("tag")) {
                 _this.next().show();
-                _this.addClass("tag");
-                if (!_this.next().find("li").hasClass("hover")) {
-                    _this.next().find("li:first").addClass("hover");
-                    $("#title").html(_this.next().find("li:first").data("title"));
-                    $("#remark").html(decodeURI(_this.next().find("li:first").data("detail")));
-                }                
+                _this.addClass("tag");                          
             } else {
                 _this.removeClass("tag");
                 _this.next().hide();
             }
             
         });
+
+        //$(".head-content-search .iconfont").click(function () {
+        //    console.log($(".search-txt").val());
+        //});
+
+        $(".menu-title:first").click();
+        $(".item li:first").click();
 
     };
 

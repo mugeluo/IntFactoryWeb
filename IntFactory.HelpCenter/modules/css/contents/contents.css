@@ -4,11 +4,11 @@
 
 .content { width:1200px;margin:auto;}
 .content .content-menu{float:left;background-color:#eee;width:300px;min-height:800px;}
-.content .content-menu .head-search{text-align:center;border-radius:2px;position:relative;width:300px;margin:auto;border-bottom:1px dashed #ccc;}
-.head-search .search-txt{color:#999;line-height:30px;width:250px;margin:auto;height:30px;font-size:14px;margin:20px;}
-.head-search .search-txt:focus{border:1px solid #0cb39e;}
-.head-search .iconfont{font-size:20px;color:#999;cursor:pointer;position:absolute;z-index:11;bottom:23px;right:25px;}
-.head-search .iconfont:hover{color:#0cb39e;}
+.content .content-menu .head-content-search{text-align:center;border-radius:2px;position:relative;width:300px;margin:auto;border-bottom:1px dashed #ccc;}
+.head-content-search .search-txt{color:#999;line-height:30px;width:250px;margin:auto;height:30px;font-size:14px;margin:20px;}
+.head-content-search .search-txt:focus{border:1px solid #0cb39e;}
+.head-content-search .iconfont{font-size:20px;color:#999;cursor:pointer;position:absolute;z-index:11;bottom:23px;right:25px;}
+.head-content-search .iconfont:hover{color:#0cb39e;}
 
 .menu { margin-top:20px;margin-bottom:30px;}
 .menu-title { margin-left:20px;cursor:pointer;margin-top:15px;}
