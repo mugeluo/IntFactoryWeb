@@ -16,7 +16,7 @@
     </script>
 }
    
-<div class="head-content-menu">
+@*<div class="head-content-menu">
     <div class="content">
         <ul class="content-title cleat-after">
             <li class="hover">工作台</li>
@@ -28,7 +28,7 @@
             <li>智能工厂客户端</li>
         </ul>
     </div>
-</div>
+</div>*@
 
 <div class="content clear-after">
     <div class="content-menu">
@@ -47,7 +47,7 @@
                     </div>
                     <ul class="item hide">
                         @foreach (var detail in item.contents){
-                            <li class="" data-detail="@(detail.Detail)"><span>@(detail.Title)</span></li>
+                            <li class="" data-detail="@(detail.Detail)" data-title="@(detail.Title)"><span>@(detail.Title)</span></li>
                         }
                     </ul> 
                 }
@@ -56,6 +56,7 @@
         </div>
     </div>
     <div class="contents-remark">
+        <div id="title" class="title"></div>
         <div id="remark" class="remark">
 
         </div>

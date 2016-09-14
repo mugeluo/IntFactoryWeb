@@ -45,7 +45,7 @@
         });
 
         $(".load-more").click(function () {
-            if (Params.PageIndex != pageCount) {
+            if (Params.PageIndex < pageCount) {
                 Params.PageIndex++;
                 ObjectJS.getContents(true);
             } else {
@@ -70,6 +70,12 @@
                 });
             } else {
                 $(".problems-details").append("<li class='center mTop20 font16'>暂无数据</li>");
+            }
+            
+            if (data.items.length<Params.PageSize-1) {
+                $(".load-more").hide();
+            } else {
+                $(".load-more").show();
             }
         })
     }

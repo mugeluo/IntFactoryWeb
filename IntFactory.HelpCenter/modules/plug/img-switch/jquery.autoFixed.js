@@ -71,6 +71,7 @@ $(document).ready(function(){
 
     //查看下一张图片函数
     var nextPicShow = function () {
+        debugger
         initCount++;
         if(initCount<=liNum-1){
             ulMove.stop().animate({left:('-' + liWidth * initCount)},300);

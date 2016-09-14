@@ -28,9 +28,10 @@
 
 
 
-
-.content .contents-remark { float: left; width:900px;}
-.content .contents-remark .remark{min-height:500px;}
+.content { padding-top:50px;}
+.content .contents-remark { float: left; width:890px;margin-left:10px;}
+.content .contents-remark .title{font-size:30px;color:#000;margin-bottom:20px;margin-top:20px;}
+.content .contents-remark .remark{min-height:450px;}
 .contents-list { border-top:1px solid #ccc;margin:0px 20px;}
 .contents-list .contents-item { margin-top:20px;margin-left:25px;float:left;width:350px;}
 .contents-list .contents-item ul li:first-child{color:#000;}

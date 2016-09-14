@@ -24,7 +24,11 @@
 
         Params.ModuleType = 2;
         Params.OrderBy = 'c.ClickNumber asc';
-        ObjectJS.getContents("", $(".item-all"));
+        ObjectJS.getContents("", $(".number .item-all"));
+
+        Params.ModuleType = 2;
+        Params.OrderBy = 'c.CreateTime asc';
+        ObjectJS.getContents("", $(".create .item-all"));
     };
 
     ObjectJS.bindEvent = function () {
