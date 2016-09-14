@@ -22,6 +22,5 @@ namespace IntFactory.HelpCenter.Controllers
             ViewBag.item = item;
             return View();
         }
-
     }
 }

@@ -122,10 +122,23 @@ namespace IntFactoryBusiness
             return list;
         }
 
-        public List<ContentEntity> GetClickNumberList()
+        public List<ContentEntity> GetContentsByModuleType(int modelType)
+        {
+            List<ContentEntity> list = new List<ContentEntity>(modelType);
+            DataSet ds = HelpCenterDAL.BaseProvider.GetContentsByModuleType(modelType);
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                ContentEntity model = new ContentEntity();
+                model.FillData(dr);
+                list.Add(model);
+            }
+            return list;
+        }
+
+        public List<ContentEntity> GetNewbieGuides()
         {
             List<ContentEntity> list = new List<ContentEntity>();
-            DataSet ds = HelpCenterDAL.BaseProvider.GetClickNumberList();
+            DataSet ds = HelpCenterDAL.BaseProvider.GetNewbieGuides();
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
                 ContentEntity model = new ContentEntity();

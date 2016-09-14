@@ -34,6 +34,7 @@
 .contents-list { border-top:1px solid #ccc;margin:0px 20px;}
 .contents-list .contents-item { margin-top:20px;margin-left:25px;float:left;width:350px;}
 .contents-list .contents-item ul li:first-child{color:#000;}
+.contents-list .contents-item ul li:hover a{color:#0cb39e;}
 .contents-list .contents-item ul li{line-height:30px;font-size:16px;}
 .contents-list .contents-item ul li a{color:#555;font-size:16px;}
 
