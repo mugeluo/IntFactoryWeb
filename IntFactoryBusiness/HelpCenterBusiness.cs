@@ -62,11 +62,12 @@ namespace IntFactoryBusiness
             {
                 DataSet ds = HelpCenterDAL.BaseProvider.GetFunctionTypes();
                 DataTable contents=ds.Tables[1];
+                
                 foreach (DataRow dr in ds.Tables[0].Rows)
                 {
                     TypeEntity model = new TypeEntity();
                     model.FillData(dr);
-
+                    model.contents = new List<ContentEntity>();
                     foreach (DataRow c in contents.Select("typeid='"+model.TypeID+"'")) {
                         ContentEntity content = new ContentEntity();
                         content.FillData(c);
