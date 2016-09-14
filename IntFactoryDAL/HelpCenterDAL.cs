@@ -44,6 +44,15 @@ namespace IntFactoryDAL
             return ds;
         }
 
+        public DataSet GetFunctionTypes()
+        {
+            string sqlTxt = "select * from M_HelpType  where Status<>9 and moduletype=1";
+            sqlTxt += " select * from m_helpcontent where status<>9 and typeid in  (select typeid from M_HelpType  where Status<>9 and moduletype=1) ";
+            DataSet ds = GetDataSet(sqlTxt);
+
+            return ds;
+        }
+
         public DataSet GetContents(int moduleType, string typeID, string keyWords, string beginTime, string endTime, string orderBy, int pageSize, int pageIndex, ref int totalCount, ref int pageCount)
         {
             SqlParameter[] param ={ 
