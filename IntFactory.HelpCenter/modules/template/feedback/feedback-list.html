@@ -6,7 +6,7 @@
     <td class="center">{%=item.Type==1?"问题":item.Type==2?"建议":"需求"%}</td>
     <td class="center">{%=item.CreateTime.toDate("yyyy-MM-dd hh:mm:ss")%}</td>
     <td class="center">
-        <i class="iconfont font24 {%=item.Status==2?"tag":""%}">&#xe624;</i>
+        <i class="iconfont font22 {%=item.Status==2?"tag":""%}">&#xe624;</i>
         <span class="{%=item.Status==2?"tag":""%}">{%=item.Status==1?"待处理":item.Status==2?"已处理":item.Status==2?"驳回":"删除"%}</span>
     </td>
     
