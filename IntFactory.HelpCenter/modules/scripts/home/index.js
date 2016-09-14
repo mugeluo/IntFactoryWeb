@@ -5,7 +5,7 @@
     require("pager");
     
     var Params = {
-        Types: -1,
+        ModuleType: -1,
         TypeID: "",
         Keywords: "",
         BeginTime: "",
@@ -22,18 +22,28 @@
     };
 
     ObjectJS.bindEvent = function () {
-
         $(".table-switch li").click(function () {
             var _this = $(this),id=_this.data("id");
             if (!_this.hasClass("hover")) {
                 _this.siblings().removeClass("hover");
                 _this.addClass("hover");
-            };
-            $(".problem-detail .problem-content").hide();
-            $(".problem-detail .problem-content").eq(id).show();
-        });
+                $(".problem-detail .problem-content").hide();
+                var target = $(".problem-detail .problem-content").eq(id);
+                target.show();
+                var isget = target.data("isget");
 
-        
+                if (id == 1) {
+                    if (!isget) {
+                        target.data("isget",1);
+                        Params.OrderBy = "c.clicknumber desc";
+                        ObjectJS.getContents("", $("#hot-problems  ul").eq(0));
+
+                        Params.OrderBy = "c.createtime desc";
+                        ObjectJS.getContents("", $("#hot-problems  ul").eq(1));
+                    }
+                }
+            };
+        }); 
     };
 
     ObjectJS.getTypesByModuleType = function (moduleType) {
