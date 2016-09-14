@@ -121,8 +121,8 @@ input[type="file"] > input[type="button"]::-moz-focus-inner{padding:0;border:non
 
 /*排序*/
 .search-sort { background-color:#f9f9f9; height:50px;float:left;margin-bottom:20px;}
-.search-sort li{ float:left; padding:0 20px; line-height:50px; color:#666; }
-.search-sort .sort-item { position:relative; cursor:pointer; font-size:16px;}
+.search-sort li{ float:left; padding-right:20px; line-height:50px; color:#666; }
+.search-sort .sort-item { position:relative; cursor:pointer; font-size:14px;}
 
 .search-sort .sort-item:hover { color:#0cb39e; }
 .search-sort .sort-item.hover { color:#0cb39e; }
@@ -156,7 +156,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner{padding:0;border:non
 
 .table-list tr:not(:first-child){ height:35px; cursor:pointer; }
 .table-list tr:not(:first-child):hover { background-color: #f6f6f6; }
-.table-list tr:not(:first-child) td{ padding:5px; line-height:35px; border-bottom:solid 1px #eee; max-width:500px; color:#aaa; 
+.table-list tr:not(:first-child) td{ padding:5px; line-height:35px; border-bottom:solid 1px #eee; max-width:500px; color:#666; 
                                      white-space:nowrap; overflow: hidden; text-overflow:ellipsis;  }
 
 .table-list td a{ color:#4a98e7;  vertical-align:middle;}

@@ -43,6 +43,7 @@
                     }
                 } else if (id == 2) {
                     if (!isget) {
+                        target.data("isget", 1);
                         $("#zngc-functions ul").each(function () {
                             var _self = $(this);
                             ObjectJS.getContents(_self.data("id"), _self);

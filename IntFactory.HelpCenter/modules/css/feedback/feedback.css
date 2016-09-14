@@ -34,10 +34,10 @@
 .content-item .screening{margin-top:20px;}
 
 .feedback-details { width:1200px;border:1px solid #ccc;}
-.feedback-details tr td{font-size:18px;}
+.feedback-details tr td{font-size:16px;}
 .feedback-details tr:first-child {background-color:#ECFBF9;}
 .feedback-details .item td i{color:#aaa;vertical-align:middle;}
-.feedback-details .item td span{font-size:18px;color:#aaa;vertical-align:middle;}
+.feedback-details .item td span{font-size:16px;color:#aaa;vertical-align:middle;}
 .feedback-details .item .open-contents{text-decoration: underline;}
 .feedback-details .item .span{font-size:16px;color:#555;}
 .feedback-details .item .div{font-size:16px;color:#555;}
