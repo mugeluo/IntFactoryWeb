@@ -53,5 +53,16 @@ namespace IntFactory.HelpCenter.Controllers
             };
         }
 
+        public JsonResult GetClickNumberList()
+        {
+            var items = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetClickNumberList();
+            JsonDictionary.Add("items", items);           
+            return new JsonResult
+            {
+                Data = JsonDictionary,
+                JsonRequestBehavior = JsonRequestBehavior.AllowGet
+            };
+        }
+
     }
 }

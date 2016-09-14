@@ -140,7 +140,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\FilterHelp.cs" />
+    <Compile Include="Models\GetFeedBack.cs" />
     <Compile Include="Models\FilterHelpCenterType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -257,6 +257,8 @@
     <Content Include="modules\scripts\home\search.js" />
     <Content Include="modules\scripts\layout.js" />
     <Content Include="modules\scripts\problems\problems.js" />
+    <Content Include="modules\scripts\problems\problemsdetail.js" />
+    <Content Include="modules\template\feedback\feedback-list.html" />
     <Content Include="modules\template\home\contents-list.html" />
     <Content Include="modules\template\home\get-types-list.html" />
     <Content Include="modules\template\problems\contentslist.html" />

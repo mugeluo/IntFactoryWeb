@@ -31,20 +31,66 @@
         }
 
         //日期插件
-        $("#iptCreateTime").daterangepicker({
-            showDropdowns: true,
-            empty: true,
-            opens: "right",
-            ranges: {
-                '今天': [moment(), moment()],
-                '昨天': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-                '上周': [moment().subtract(6, 'days'), moment()],
-                '本月': [moment().startOf('month'), moment().endOf('month')]
-            }
-        }, function (start, end, label) {
-            Params.PageIndex = 1;
-            Params.BeginTime = start ? start.format("YYYY-MM-DD") : "";
-            Params.EndTime = end ? end.format("YYYY-MM-DD") : "";
+        //$("#iptCreateTime").daterangepicker({
+        //    showDropdowns: true,
+        //    empty: true,
+        //    opens: "right",
+        //    ranges: {
+        //        '今天': [moment(), moment()],
+        //        '昨天': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+        //        '上周': [moment().subtract(6, 'days'), moment()],
+        //        '本月': [moment().startOf('month'), moment().endOf('month')]
+        //    }
+        //}, function (start, end, label) {
+        //    Params.PageIndex = 1;
+        //    Params.BeginTime = start ? start.format("YYYY-MM-DD") : "";
+        //    Params.EndTime = end ? end.format("YYYY-MM-DD") : "";
+        //    ObjectJS.getContents();
+        //});
+
+        var d = new Date(),
+        years = d.getFullYear(),
+        month = d.getMonth() + 1,
+        days = d.getDate(),
+        week = d.getDate() - 7,
+        moth2 = month - 1,
+        moth3 = month - 3,
+        moth4 = month - 6;
+        var years2 = years, years3 = years, years4 = years;
+        if (week > 31) {
+            week -= 31;
+            month -= 1;
+        }
+        if (moth2>12) {
+            moth2 -= 12;
+            years2 -= 1;
+        }
+        if (moth3 > 12) {
+            moth3 -= 12;
+            years3 -= 1;
+        }
+        if (moth4 > 12) {
+            moth4 -= 12;
+            years4 -= 1;
+        }
+
+        var ndate = years + "-" + month + "-" + days;
+
+        $(".time-search .item").attr("data-endTime", ndate);
+        $(".time-search .time-day").attr("data-beginTime", ndate);
+        $(".time-search .time-week").attr("data-beginTime", years + "-" + month + "-" + week);
+        $(".time-search .time-moth").attr("data-beginTime", years2 + "-" + moth2 + "-" + days);
+        $(".time-search .time-moth-three").attr("data-beginTime", years3 + "-" + moth3 + "-" + days);
+        $(".time-search .time-year-six").attr("data-beginTime", years4 + "-" + moth4 + "-" + days);
+
+        $(".time-search li").click(function () {
+            var _this = $(this), beginTime = _this.data("begintime"), endTime = _this.data("endtime");
+            if (!_this.hasClass("hover")) {
+                _this.siblings().removeClass("hover");
+                _this.addClass("hover");
+            };
+            Params.BeginTime = beginTime;
+            Params.EndTime = endTime;
             ObjectJS.getContents();
         });
 
@@ -78,8 +124,10 @@
 
     ObjectJS.getContents = function () {
         $(".search-results").empty();
+        $(".search-results").append("<div class='data-loading'><div>");
         Global.post("/Home/GetContents", { filter: JSON.stringify(Params) }, function (data) {
-            if (data.items.length>0) {
+            if (data.items.length > 0) {
+                $(".search-results").empty();
                 Dot.exec("/template/home/contents-list.html", function (template) {
                     var innerHtml = template(data.items);
                     innerHtml = $(innerHtml);
@@ -114,7 +162,6 @@
                 $(".search-results").append("<li class='center mTop30'>暂无数据</li>")
             }
         })
-    
     }
 
     module.exports = ObjectJS;

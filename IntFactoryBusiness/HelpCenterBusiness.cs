@@ -73,6 +73,68 @@ namespace IntFactoryBusiness
             return item;
         }
 
+        public static List<FeedBack> GetFeedBacks(string keywords, string userID, string beginDate, string endDate, int type, int status, int pageSize, int pageIndex, out int totalCount, out int pageCount)
+        {
+            string sqlWhere = "1=1";
+            if (!string.IsNullOrEmpty(keywords))
+            {
+                sqlWhere += " and (Title like '%" + keywords + "%'";
+                sqlWhere += " or ContactName like '%" + keywords + "%'";
+                sqlWhere += " or MobilePhone like '%" + keywords + "%'";
+                sqlWhere += " or Remark like '%" + keywords + "%' )";
+            }
+
+            if (!string.IsNullOrEmpty(userID))
+            {
+                sqlWhere += " and CreateUserID='" + userID + "'";
+            }
+
+            if (status != -1)
+            {
+                sqlWhere += " and status=" + status;
+            }
+
+            if (type != -1)
+            {
+                sqlWhere += " and type=" + type;
+            }
+
+            if (!string.IsNullOrEmpty(beginDate))
+            {
+                sqlWhere += " and createtime>='" + beginDate + "'";
+            }
+
+            if (!string.IsNullOrEmpty(endDate))
+            {
+                sqlWhere += " and createtime<='" + DateTime.Parse(endDate).AddDays(1).ToString("yyyy-MM-dd") + "'";
+            }
+
+            DataTable dt = HelpCenterDAL.GetPagerData("FeedBack", "*", sqlWhere, "AutoID","", pageSize, pageIndex, out totalCount, out pageCount,0);
+            List<FeedBack> list = new List<FeedBack>();
+            FeedBack model;
+            foreach (DataRow item in dt.Rows)
+            {
+                model = new FeedBack();
+                model.FillData(item);
+                list.Add(model);
+            }
+
+            return list;
+        }
+
+        public List<ContentEntity> GetClickNumberList()
+        {
+            List<ContentEntity> list = new List<ContentEntity>();
+            DataSet ds = HelpCenterDAL.BaseProvider.GetClickNumberList();
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                ContentEntity model = new ContentEntity();
+                model.FillData(dr);
+                list.Add(model);
+            }
+            return list;
+        }
+
         #endregion
 
 

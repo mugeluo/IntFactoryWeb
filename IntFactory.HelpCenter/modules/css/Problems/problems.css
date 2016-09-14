@@ -9,8 +9,9 @@
 .problems-details .item{border-bottom:2px solid #eee;}
 .problems-details .item ul{display:table;width:100%;}
 .problems-details .item ul li{display:table-cell;vertical-align:top;}
-.problems-details .item .problems-title{font-size:20px;margin:20px 0;}
-.problems-details .item .problems-desc{margin-bottom:20px;color:#666;line-height:28px;}
+.problems-details .item .problems-title{margin:20px 0;}
+.problems-details .item .problems-title a{font-size:20px;color:#0cb39e;}
+.problems-details .item .problems-desc{margin-bottom:20px;color:#666;line-height:28px;height:56px;overflow:hidden;text-overflow:ellipsis;white-space: nowrap;width:100%;}
 .problems-details .item .look-detail{margin-bottom:20px;}
 .problems-details .item .look-detail a{color:#0cb39e;font-size:12px;cursor:pointer;}
 .problems-details .item .right img{width:200px;height:120px;margin:50px 0;}
@@ -22,7 +23,7 @@
 .example ul { width:380px;margin-right:5px;float:right;margin-top:50px;border:1px solid #ccc;margin-bottom:50px;}
 .example ul li:first-child{background-color:#f2f2f2;padding:11px;margin-bottom:10px;}
 .example ul li:first-child div{border-left:3px solid #0cb39e;font-size:20px;color:#666;padding:0px 10px;line-height:30px;}
-.example ul li:not(first-child){color:#0cb39e;padding-left:10px;line-height:1.8;cursor:pointer;}
+.example ul li:not(first-child) a{color:#0cb39e;padding-left:10px;line-height:1.8;cursor:pointer;}
 .example ul li:last-child a{color:#666;float:right;margin-right:10px;margin-top:10px;margin-bottom:10px;cursor:pointer;}
 
 /*详情页*/

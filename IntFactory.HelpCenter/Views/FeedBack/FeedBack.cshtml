@@ -16,84 +16,108 @@
 
 <div class="head-content-menu">
     <div class="content">
-        <span data-id="content-body">在线反馈</span>
-        <span class="hover" data-id="content-item">反馈查询</span>
+        <span class="hover" data-id="content-feedback">在线反馈</span>
+        <span data-id="content-item">反馈查询</span>
     </div>
 </div>
 
-<div class="content-body hide" style="box-shadow:none;">
-    <div class="feed-top">
-        <h1>在线反馈</h1>
-        @*  <p><span>智能工厂</span>客服随时准备为您服务，请提交详细的问题和想法给我们</p>*@
-    </div>
-    <div class="clear"></div>
-    <div class="feed-title descript-text">
-        <div>标题：</div>
-        <div><input type="text" class="txt-title" /></div>
-    </div>
-    <div class="clear"></div>
-    <div class="feed-type descript-text">
-        <div>反馈类型：</div>
-        <div>
-            <select class="dropdown-list">
-                <option value="1">问题</option>
-                <option value="2">意见</option>
-                <option value="3">需求</option>
-            </select>
+<div class="content-feedback">
+    <div class="content-body" style="box-shadow:none;">
+        <div class="feed-top">
+            <h1>在线反馈</h1>
         </div>
+        <div class="feed-type descript-text">
+            <div>反馈类型：</div>
+            <div>
+                <select class="dropdown-list">
+                    <option value="1">问题</option>
+                    <option value="2">意见</option>
+                    <option value="3">需求</option>
+                </select>
+            </div>
 
-    </div>
-    <div class="clear"></div>
-    <div class="feed-name descript-text">
-        <div>姓名：</div>
-        <div>
-            <input type="text" class="txt-name" />
         </div>
+        <div class="clear"></div>
+    
+        <div class="feed-description descript-text">
+            <div>具体问题：</div>
+            <div>
+                <textarea class="txt-description" placeholder="请描述一下您遇到的问题"></textarea>
+            </div>
 
-    </div>
-    <div class="clear"></div>
-
-    <div class="feed-phone descript-text">
-        <div>联系邮箱：</div>
-        <div>
-            <input type="text" class="txt-phone" />
         </div>
+        <div class="clear"></div>
 
-    </div>
-    <div class="clear"></div>
+        <div class="feed-annex descript-text" id="feedback-file">
+            <div>附件：</div>
+            <div style="line-height:40px;">
+                <span class="mRight20 btn" id="upload">
+                    选择附件
+                </span>
+                <span class="font14 color999">请把有问题的截图发给我们，方便分析、及时解决问题</span>
+                <ul class="mTop10" id="feed-images">
 
-    <div class="feed-annex descript-text" id="feedback-file">
-        <div>附件：</div>
-        <div style="line-height:40px;">
-            <span class="mRight20 btn" id="upload">
-                选择附件
-            </span>
-            <span class="font14 color999">请把有问题的截图发给我们，方便分析、及时解决问题</span>
-            <ul class="mTop10" id="feed-images">
-
-            </ul>
-        </div>
+                </ul>
+            </div>
             
-    </div>
-    <div class="clear"></div>
-
-    <div class="feed-description descript-text">
-        <div>描述：</div>
-        <div>
-            <textarea class="txt-description"></textarea>
         </div>
+        <div class="clear"></div>
+    
+        <div class="feed-name descript-text">
+            <div>姓名：</div>
+            <div>
+                <input type="text" class="txt-name" />
+            </div>
 
-    </div>
-    <div class="clear"></div>
-    <div class="feed-submit descript-text">
-        <div></div>
-        <div class="center">
-            <input type="button" id="btn-feedback" value="提交" />
         </div>
+        <div class="clear"></div>
+
+        <div class="feed-phone descript-text">
+            <div>联系邮箱：</div>
+            <div>
+                <input type="text" class="txt-phone" />
+            </div>
+
+        </div>
+        <div class="feed-submit descript-text">
+            <div></div>
+            <div class="center mTop50">
+                <input type="button" id="btn-feedback" value="提交" />
+            </div>
+        
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="customer-service">
+    <div class="title">联系客服</div>
+    <div class="clear-after">
+        <ul class="content-txt clear-both">
+            <li>
+                <i class="iconfont">&#xe620;</i>
+                <div>客服电话</div>
+                <div>0571-56570741</div>
+            </li>
+            <li>
+                <i class="iconfont">&#xe61f;</i>
+                <div>客服邮箱</div>
+                <div>customer@intfactory.cn</div>
+            </li>
+            <li>
+                <i class="iconfont">&#xe61c;</i>
+                <div>留言</div>
+                <div class="hand"><a href="/FeedBack/FeedBack">点击进入在线反馈</a></div>
+            </li>
+            <li>
+                <i class="iconfont">&#xe61b;</i>
+                <div>QQ交流群</div>
+                <div>121212121</div>
+            </li>
+        </ul>
     </div>
 </div>
+</div>
 
-<div class="content-item clear-after">
+<div class="content-item clear-after hide">
     <div class="screening clear-after">
         <div class="left font16" style="line-height:30px;margin-bottom:20px">筛选：</div>
         <div id="procesSing" class="left mLeft10"></div>
@@ -115,29 +139,15 @@
         </ul>
         <div class="clear"></div>
     </div>
-    <table class="table-list category-details mTop10">
+    <table class="table-list feedback-details mTop10">
         <tr class="tr-header">   
-            <td width="100" style="width:12%;">类型</td>     
-            <td width="100" style="width:12%;">标题</td> 
-            <td width="100" style="width:12%;">处理情况</td>
-            <td width="100" style="width:12%;">反馈时间</td>
+            <td width="100" style="width:12%;">类型</td>  
+            <td width="100" style="width:20%;">反馈时间</td>
+            <td width="100" style="width:15%;">处理情况</td>
             <td width="100">提问内容</td>
             <td width="100" style="width:12%;"></td>
         </tr>
-        <tr class="item">
-            <td class="center">问题</td>
-            <td class="center">111</td>
-            <td class="center">
-                <i class="iconfont font24">&#xe624;</i>
-                <span>待处理</span>
-            </td>
-            <td class="center">2016-09-12 12:06:01</td>
-            <td class="center">
-                <span class="long width100 span">登录问题登录问题登录问题登录问题登录问题登录问题登录问题</span>
-                <div class="hide div" style="white-space:normal;">登录问题登录问题登录问题登录问题登录问题登录问题登录问题</div>
-            </td>
-            <td class="center open-contents tag">展开</td>            
-        </tr>
+        
     </table>
-    <div id="pager" class="mTop20 mRight10"></div>
+    <div id="pager" class="center pBottom50"></div>
 </div>

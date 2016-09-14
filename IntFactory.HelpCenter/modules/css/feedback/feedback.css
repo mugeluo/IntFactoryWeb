@@ -33,12 +33,21 @@
 .content-item { width:1200px;margin:auto;}
 .content-item .screening{margin-top:20px;}
 
-.category-details { width:1200px;border:1px solid #ccc;}
-.category-details tr td{font-size:18px;}
-.category-details tr:first-child {background-color:#ECFBF9;}
-.category-details .item td i{color:#aaa;vertical-align:middle;}
-.category-details .item td span{font-size:18px;color:#aaa;vertical-align:middle;}
-.category-details .item .open-contents{text-decoration: underline;}
-.category-details .item .span{font-size:16px;}
-.category-details .item .div{font-size:16px;}
-.category-details .item .tag{color:#0cb39e;}
+.feedback-details { width:1200px;border:1px solid #ccc;}
+.feedback-details tr td{font-size:18px;}
+.feedback-details tr:first-child {background-color:#ECFBF9;}
+.feedback-details .item td i{color:#aaa;vertical-align:middle;}
+.feedback-details .item td span{font-size:18px;color:#aaa;vertical-align:middle;}
+.feedback-details .item .open-contents{text-decoration: underline;}
+.feedback-details .item .span{font-size:16px;color:#555;}
+.feedback-details .item .div{font-size:16px;color:#555;}
+.feedback-details .item .tag{color:#0cb39e;}
+
+/*联系客服*/
+.title{font-size:30px;padding-top:30px;text-align:center;margin-bottom:50px;color:#000;}
+.customer-service { background-color:#f2f2f2;}
+.customer-service .clear-after{width:1200px;margin:auto;}
+.clear-after .content-txt li { float:left;width:300px;margin-bottom:50px;}
+.content-txt li .iconfont { float:left;height:60px;line-height:55px;color:#0cb39e;text-align:center;
+                            margin-right:10px;margin-left:30px;font-size:60px;}
+.content-txt li div,.content-txt li div a { line-height:25px;color:#0cb39e;font-size:16px;}

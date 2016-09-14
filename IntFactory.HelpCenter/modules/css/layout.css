@@ -140,6 +140,12 @@ input[type="file"] > input[type="button"]::-moz-focus-inner{padding:0;border:non
         -webkit-transition:all 0.3s;
         -o-transition:all 0.3s;        
 }
+/*图片loading*/
+.dataLoading { padding: 85px 0px; font-size: 16px; text-align: center; color: #666; }
+
+.data-loading { padding: 85px 0px; font-size: 16px; text-align: center; color: #666;background:url(/modules/images/ico-loading.jpg) no-repeat center center; }
+.nodata-txt{ padding: 95px 0px; font-size: 16px; text-align: center; color: #666; }
+
 
 
 /*表格样式*/

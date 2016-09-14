@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Web.Script.Serialization;
 using IntFactoryBusiness;
 using IntFactoryEntity;
+using IntFactory.HelpCenter.Models;
 
 namespace IntFactory.HelpCenter.Controllers
 {
@@ -34,12 +35,15 @@ namespace IntFactory.HelpCenter.Controllers
             };
         }
 
-        public JsonResult GetFeedBacks(int pageIndex, int type, int status, string keyWords, string beginDate, string endDate)
+        public JsonResult GetFeedBacks(string filter)
         {
 
-            int totalCount = 0, pageCount = 0;
-            var list = FeedBackBusiness.GetFeedBacks(keyWords, string.Empty, beginDate, endDate, type, status, PageSize, pageIndex, out totalCount, out pageCount);
+            JavaScriptSerializer serializer = new JavaScriptSerializer();
+            GetFeedBack model = serializer.Deserialize<GetFeedBack>(filter);
 
+            int totalCount = 0, pageCount = 0;
+            var list = IntFactoryBusiness.HelpCenterBusiness.GetFeedBacks(model.Keywords,string.Empty,model.BeginTime,model.EndTime,model.Type,model.Status,model.PageSize,model.PageIndex,out totalCount,out pageCount); 
+           
             JsonDictionary.Add("items", list);
             JsonDictionary.Add("totalCount", totalCount);
             JsonDictionary.Add("pageCount", pageCount);
