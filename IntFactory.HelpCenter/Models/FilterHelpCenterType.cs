@@ -8,7 +8,7 @@ namespace IntFactory.HelpCenter.Models
     [Serializable]
     public class FilterHelpCenterType
     {
-        public int Types { get; set; } 
+        public int ModuleType { get; set; } 
 
         public string TypeID{get; set; }
 

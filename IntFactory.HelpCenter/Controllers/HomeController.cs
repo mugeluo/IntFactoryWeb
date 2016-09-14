@@ -37,18 +37,34 @@ namespace IntFactory.HelpCenter.Controllers
             };
         }
 
+        public JsonResult GetTypes()
+        {
+            var items = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetTypes();
+            var functionTypes = items.FindAll(m => m.ModuleType == 1);
+            var qaTypes = items.FindAll(m => m.ModuleType == 2);
+            var guidTypes = items.FindAll(m => m.ModuleType == 3);
+            JsonDictionary.Add("functionTypes", functionTypes);
+            JsonDictionary.Add("qaTypes", qaTypes);
+            JsonDictionary.Add("guidTypes", guidTypes);
+
+            return new JsonResult
+            {
+                Data = JsonDictionary,
+                JsonRequestBehavior = JsonRequestBehavior.AllowGet
+            };
+        }
+
         public JsonResult GetContents(string filter)
         {
             JavaScriptSerializer serializer = new JavaScriptSerializer();
             FilterHelpCenterType model = serializer.Deserialize<FilterHelpCenterType>(filter);
-
             int totalCount = 0;
             int pageCount = 0;
-            var items = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetContents(model.Types, model.TypeID, model.Keywords, model.BeginTime, model.EndTime, model.OrderBy, model.PageSize, model.PageIndex, ref totalCount, ref pageCount);
-
+            var items = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetContents(model.ModuleType, model.TypeID, model.Keywords, model.BeginTime, model.EndTime, model.OrderBy, model.PageSize, model.PageIndex, ref totalCount, ref pageCount);
             JsonDictionary.Add("items", items);
             JsonDictionary.Add("totalCount", totalCount);
             JsonDictionary.Add("pageCount", pageCount);
+
             return new JsonResult
             {
                 Data = JsonDictionary,
