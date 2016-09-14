@@ -10,18 +10,17 @@
     var ObjectJS = {};
     Params = {
         pageIndex: 1,
-        PageSize: 10,
+        PageSize: 5,
         type: -1,
         status: -1,
         BeginTime: '',
         EndTime: '',
         keyWords: '',
-        OrderBy: "c.CreateTime desc",
-        id: ''
+        OrderBy: "c.CreateTime desc"
     };
 
     ObjectJS.init = function () {
-        ObjectJS.bindEvent();
+        ObjectJS.bindEvent();        
     };
 
     ObjectJS.bindEvent = function () {
@@ -40,7 +39,7 @@
             Params.PageIndex = 1;
             Params.BeginTime = start ? start.format("YYYY-MM-DD") : "";
             Params.EndTime = end ? end.format("YYYY-MM-DD") : "";
-            
+            ObjectJS.getFeedBack();
         });
 
         //排序
@@ -65,7 +64,7 @@
             }
             Params.OrderBy = _this.data("column") + (asc ? " asc" : " desc ");
             Params.PageIndex = 1;
-            
+            ObjectJS.getFeedBack();
         });
 
         //关键字搜索
@@ -73,7 +72,7 @@
             $(".searth-module").searchKeys(function (keyWords) {
                 Params.PageIndex = 1;
                 Params.Keywords = keyWords;
-                //ObjectJS.getContentList();
+                ObjectJS.getFeedBack();
             });
         });
 
@@ -92,7 +91,7 @@
                         if (IsLoadding && IsLoaddingTwo) {
                             Params.type = data.value;
                             Params.pageIndex = 1;
-                          
+                            ObjectJS.getFeedBack();
                         } else {
                             alert("数据加载中，请稍等 !");
                         }
@@ -116,7 +115,7 @@
                         if (IsLoadding && IsLoaddingTwo) {
                             Params.status = data.value;
                             Params.pageIndex = 1;
-
+                            ObjectJS.getFeedBack();
                         } else {
                             alert("数据加载中，请稍等 !");
                         }
@@ -131,8 +130,11 @@
                 _this.siblings().removeClass("hover");
                 _this.addClass("hover");
             };
-            $(".content-body,.content-item").hide();
+            $(".content-feedback,.content-item").hide();
             $("." + id).show();
+            if (id == "content-item") {
+                ObjectJS.getFeedBack();
+            }
         });
 
         var upload = Upload.uploader({
@@ -148,10 +150,6 @@
 
         $("#btn-feedback").click(function () {
             var _this = $(this);
-            if ($(".txt-title").val() == "") {
-                alert("标题不能为空", 2);
-                return false;
-            }
             if ($(".txt-description").val().length >= 1000) {
                 alert("问题描述请在1000个字符以内", 2);
                 return false;
@@ -162,7 +160,7 @@
                 imgs += $(this).data("server") + $(this).data("filename") + ",";
             });
             var entity = {
-                Title: $(".txt-title").val(),
+                Title: "",
                 ContactName: $(".txt-name").val(),
                 MobilePhone: $(".txt-phone").val(),
                 Type: $(".dropdown-list").val(),
@@ -184,26 +182,53 @@
             });
         });
 
-        $(".open-contents").click(function () {
-            var _parent = $(this).parent(), _this = $(this);
-            if (_this.hasClass("tag")) {
-                _this.html("关闭").removeClass("tag");
-                _parent.find(".span").hide();
-                _parent.find(".div").show();
-            } else {
-                _this.html("展开").addClass("tag");
-                _parent.find(".span").show();
-                _parent.find(".div").hide();
-            }
-            
-        });
-
     };
 
     ObjectJS.getFeedBack = function () {
-        Global.post("", { fliter: JSON.stringify(Params) }, function (data) {
+        $(".tr-header").nextAll().remove();
+        $(".tr-header").after("<tr><td colspan='6'><div class='data-loading'><div></td></tr>");
+        Global.post("/FeedBack/GetFeedBacks", { filter: JSON.stringify(Params) }, function (data) {
+            $(".tr-header").nextAll().remove();
             if (data.items.length>0) {
+                Dot.exec("/template/feedback/feedback-list.html", function (template) {
+                    var innerHtml = template(data.items);
+                    innerHtml = $(innerHtml);
+                    $(".tr-header").after(innerHtml);
+                    
+                    $(".open-contents").click(function () {
+                        var _parent = $(this).parent(), _this = $(this),id=_this.data("id");
+                        if (_this.hasClass("tag")) {
+                            _this.html("关闭").removeClass("tag");
+                            _parent.find(".span").hide();
+                            _parent.find(".div").show();
+                            if (data.items[id].Content!="") {
+                                _parent.next().show();
+                            }
+                        } else {
+                            _this.html("展开").addClass("tag");
+                            _parent.find(".span").show();
+                            _parent.find(".div").hide();
+                            if (data.items[id].Content != "") {
+                                _parent.next().hide();
+                            }
+                        }
+                    });
+                });
 
+                $("#pager").paginate({
+                    total_count: data.totalCount,
+                    count: data.pageCount,
+                    start: Params.pageIndex,
+                    display: 5,
+                    border: true,
+                    rotate: true,
+                    images: false,
+                    mouse: 'slide',
+                    onChange: function (page) {
+                        Params.pageIndex = page;
+                        ObjectJS.getFeedBack();
+                    }
+                });
             }
         });
     }

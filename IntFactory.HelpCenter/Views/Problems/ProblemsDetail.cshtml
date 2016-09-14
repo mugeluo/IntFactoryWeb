@@ -7,9 +7,11 @@
     <link href="/modules/css/Problems/problems.css" rel="stylesheet" />
 }
 @section scripts{
-    
     <script type="text/javascript">
-        $("#remark").html(decodeURI("@(modol.Detail)"));      
+        $("#remark").html(decodeURI("@(modol.Detail)"));  
+        seajs.use(["scripts/problems/problemsdetail"], function (ObjectJS) {
+            ObjectJS.init();
+        }); 
     </script>
 }
 
@@ -50,19 +52,8 @@
     </div>
     <div class="example">
         <ul>
-            <li><div>热门问题</div></li>
-            <li>· 如何快速上手智能工厂？</li>
-            <li>· 智能工厂是什么？</li>
-            <li>· 多成员使用是否有影响？</li>
-            <li>· 有个性化需求怎么办？</li>
-            <li>· 智能工厂的收费模式？</li>
-            <li>· 是否通过第三方账号登录？</li>
-            <li>· 如何快速上手智能工厂？</li>
-            <li>· 智能工厂是什么？</li>
-            <li>· 多成员使用是否有影响？</li>
-            <li>· 有个性化需求怎么办？</li>
-            <li>· 智能工厂的收费模式？</li>
-            <li>· 是否通过第三方账号登录？</li>
+            <li class="item-all"><div>热门问题</div></li>
+            
             <li><a href="/Problems/HotProblems">更多 >></a></li>
         </ul>
     </div>

@@ -44,14 +44,25 @@
                 alert("最后一页啦");
             }            
         });
+
+        Global.post("/Problems/GetClickNumberList", { }, function (data) {
+            if (data.items.length > 0) {
+                for (var i = 0; i < data.items.length; i++) {
+                    $(".example ul .item-all").after("<li class='item'><a href='/Problems/ProblemsDetail/" + data.items[i].ContentID + "'>· " + data.items[i].Title + "</a></li>");
+                }
+                
+            }
+        })
     };
 
     ObjectJS.getContents = function (status) {
         if (!status) {
             $(".problems-details").empty();
-        }        
+        }
+        $(".problems-details").append("<div class='data-loading'><div>");
         Global.post("/Problems/GetContents", { filter: JSON.stringify(Params) }, function (data) {
             if (data.items.length > 0) {
+                $(".problems-details").empty();
                 Dot.exec("/template/problems/contentslist.html", function (template) {
                     var innerHtml = template(data.items);
                     innerHtml = $(innerHtml);

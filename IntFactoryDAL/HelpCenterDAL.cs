@@ -81,12 +81,50 @@ namespace IntFactoryDAL
             return GetDataTable(sqlTxt);
         }
 
+        public DataSet GetClickNumberList()
+        {
+            string sqlTxt = "select top 10 * from M_HelpContent where M_HelpContent.Status<>9 order by M_HelpContent.ClickNumber asc";
+            return GetDataSet(sqlTxt);
+        }
+
         public DataTable GetContentByContentID(string contentID)
         {
             string sqlTxt = " select *,t.name as typename,t.moduletype  from M_HelpContent as c left join M_Helptype as t on c.typeid=t.typeid where c.Status<>9 and c.ContentID='" + contentID + "'";
             sqlTxt += "  update M_HelpContent set ClickNumber=ClickNumber+1 where ContentID='" + contentID + "'";
             DataTable dt = GetDataTable(sqlTxt);
 
+            return dt;
+        }
+
+        public static DataTable GetPagerData(string tableName, string columns, string condition, string key, string orderColumn, int pageSize, int pageIndex, out int totalNum, out int pageCount, int isAsc)
+        {
+            string procName = "P_GetPagerData";
+            SqlParameter[] paras = { 
+                                        new SqlParameter("@tableName",DbType.String),
+                                        new SqlParameter("@columns",DbType.String),
+                                        new SqlParameter("@condition",DbType.String),
+                                        new SqlParameter("@key",DbType.String),
+                                        new SqlParameter("@orderColumn",DbType.String),
+                                        new SqlParameter("@pageSize",DbType.Int32),
+                                        new SqlParameter("@pageIndex",DbType.Int32),
+                                        new SqlParameter("@totalCount",DbType.Int32),
+                                        new SqlParameter("@pageCount",DbType.Int32),
+                                        new SqlParameter("@isAsc",DbType.Int32),
+                                   };
+            paras[0].Value = tableName;
+            paras[1].Value = columns;
+            paras[2].Value = condition;
+            paras[3].Value = key;
+            paras[4].Value = orderColumn;
+            paras[5].Value = pageSize;
+            paras[6].Value = pageIndex;
+            paras[7].Direction = ParameterDirection.Output;
+            paras[8].Direction = ParameterDirection.Output;
+            paras[9].Value = isAsc;
+
+            DataTable dt = GetDataTable(procName, paras, CommandType.StoredProcedure);
+            totalNum = Convert.ToInt32(paras[7].Value);
+            pageCount = Convert.ToInt32(paras[8].Value);
             return dt;
         }
 

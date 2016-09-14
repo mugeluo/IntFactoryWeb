@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Web.Script.Serialization;
 using IntFactoryBusiness;
 using IntFactoryEntity;
+using IntFactory.HelpCenter.Models;
 
 namespace IntFactory.HelpCenter.Controllers
 {
@@ -28,6 +29,26 @@ namespace IntFactory.HelpCenter.Controllers
             bool flag =IntFactoryBusiness.HelpCenterBusiness.InsertFeedBack(model);
             JsonDictionary.Add("Result", flag ? 1 : 0);
             return new JsonResult
+            {
+                Data = JsonDictionary,
+                JsonRequestBehavior = JsonRequestBehavior.AllowGet
+            };
+        }
+
+        public JsonResult GetFeedBacks(string filter)
+        {
+
+            JavaScriptSerializer serializer = new JavaScriptSerializer();
+            GetFeedBack model = serializer.Deserialize<GetFeedBack>(filter);
+
+            int totalCount = 0, pageCount = 0;
+            var list = IntFactoryBusiness.HelpCenterBusiness.GetFeedBacks(model.Keywords,string.Empty,model.BeginTime,model.EndTime,model.Type,model.Status,model.PageSize,model.PageIndex,out totalCount,out pageCount); 
+           
+            JsonDictionary.Add("items", list);
+            JsonDictionary.Add("totalCount", totalCount);
+            JsonDictionary.Add("pageCount", pageCount);
+
+            return new JsonResult()
             {
                 Data = JsonDictionary,
                 JsonRequestBehavior = JsonRequestBehavior.AllowGet
