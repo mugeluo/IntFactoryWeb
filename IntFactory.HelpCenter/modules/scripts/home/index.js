@@ -18,7 +18,6 @@
     ObjectJS.init = function () {
         ObjectJS.bindEvent();
         ObjectJS.getTypes();
-        //ObjectJS.getTypesByModuleType(3);
     };
 
     ObjectJS.bindEvent = function () {
@@ -118,7 +117,7 @@
             if (len > 0) {
                 for(var i=0;i<len;i++){
                     var item=items[i];
-                    $(targetObject).append("<li><a href='#'>. "+item.Title+"</a></li>");
+                    $(targetObject).append("<li><a href='/Problems/ProblemsDetail/" + item.ContentID + "'>. " + item.Title + "</a></li>");
                 }
                 
             }
