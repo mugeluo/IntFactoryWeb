@@ -11,7 +11,7 @@
 .head-search .iconfont:hover{color:#0cb39e;}
 
 .menu { margin-top:20px;margin-bottom:30px;}
-.menu-title { margin-left:20px;cursor:pointer;margin-top:10px;}
+.menu-title { margin-left:20px;cursor:pointer;margin-top:15px;}
 .menu-title i{color:#000;margin-right:5px;}
 .menu-title span{font-size:16px;color:#000;}
 .tag i{ color:#0cb39e;}
@@ -31,4 +31,11 @@
 
 .content .contents-remark { float: left; width:900px;}
 .content .contents-remark .remark{min-height:500px;}
+.contents-list { border-top:1px solid #ccc;margin:0px 20px;}
+.contents-list .contents-item { margin-top:20px;margin-left:25px;float:left;width:350px;}
+.contents-list .contents-item ul li:first-child{color:#000;}
+.contents-list .contents-item ul li{line-height:30px;font-size:16px;}
+.contents-list .contents-item ul li a{color:#555;font-size:16px;}
 
+.contents-list .contents-item .problems-list{border-right:1px solid #ccc;}
+.contents-list .contents-item .news-list{margin-left:30px;}
