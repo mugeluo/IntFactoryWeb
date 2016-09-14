@@ -8,12 +8,12 @@
     <link href="/modules/plug/img-switch/201508tuji_base.css" rel="stylesheet" />
 }
 @section scripts{
-    <script src="/modules/plug/img-switch/jquery.autoFixed.js"></script>
     <script type="text/javascript">
         seajs.use(["scripts/newbieguide/newbieguide"], function (ObjectJS) {
             ObjectJS.init('@(Html.ToJSONString(list))');
         });
     </script>
+    <script src="/modules/plug/img-switch/jquery.autoFixed.js"></script>
 }
 <div class="head-content-menu">
     <div class="content">
@@ -65,7 +65,7 @@
 	    <div class="smallPicBox">
 		    <a href="javascript:;" class="smallPrevBtn" title="上一张"><i><</i></a>
 		    <div class="smallPicUlBox">
-			    <ul>
+			    <ul style="width:100%">
 				    
 			    </ul>
 		    </div>
