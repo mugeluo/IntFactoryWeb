@@ -23,7 +23,7 @@
         Params.ModuleType = 2;
         ObjectJS.getContents("", $(".problems-list"));
 
-        Params.ModuleType = 3;
+        Params.OrderBy = "c.ClickNumber desc";
         ObjectJS.getContents("", $(".news-list"));
     };
 
@@ -56,14 +56,13 @@
             
         });
 
-
-
     };
 
     ObjectJS.getContents = function (typeid, targetObject) {
         Params.TypeID = typeid;
+        $(targetObject).append("<div class='data-loading'><div>");
         Global.post("/Home/getContents", { filter: JSON.stringify(Params) }, function (data) {
-            debugger
+            $(".data-loading").remove();
             var items = data.items;
             var len = items.length;
             if (len > 0) {

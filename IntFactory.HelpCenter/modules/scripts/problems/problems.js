@@ -9,17 +9,23 @@
     var pageCount = 0;
 
     var Params = {
+        ModuleType: -1,
         TypeID: "",
         Keywords: "",
         BeginTime: "",
         EndTime: "",
         PageIndex: 1,
-        PageSize: 5,
+        PageSize: 10,
         OrderBy: "c.CreateTime desc",
     }
+
     ObjectJS.init = function () {
         ObjectJS.bindEvent();
         ObjectJS.getContents();
+
+        Params.ModuleType = 2;
+        Params.OrderBy = 'c.ClickNumber asc';
+        ObjectJS.getContent("", $(".item-all"));
     };
 
     ObjectJS.bindEvent = function () {
@@ -46,14 +52,6 @@
                 alert("最后一页啦");
             }            
         });
-
-        Global.post("/Problems/GetClickNumberList", {}, function (data) {
-            if (data.items.length > 0) {
-                for (var i = 0; i < data.items.length; i++) {
-                    $(".example ul .item-all").after("<li class='item'><a href='/Problems/ProblemsDetail/" + data.items[i].ContentID + "'>· " + data.items[i].Title + "</a></li>");
-                }
-            }
-        });
     };
 
     ObjectJS.getContents = function () {
@@ -63,7 +61,6 @@
         $(".problems-details").append("<div class='data-loading'><div>");
         Global.post("/Problems/GetContents", { filter: JSON.stringify(Params) }, function (data) {
             $(".problems-details").empty();
-
             if (data.items.length > 0) {
                 Dot.exec("/template/problems/contentslist.html", function (template) {
                     var innerHtml = template(data.items);
@@ -76,6 +73,23 @@
             }
         })
     }
+
+    ObjectJS.getContent = function (typeid, targetObject) {
+        Params.TypeID = typeid;
+        $(targetObject).after("<div class='data-loading'><div>");
+        Global.post("/Home/getContents", { filter: JSON.stringify(Params) }, function (data) {
+            $(".data-loading").remove();
+            var items = data.items;
+            var len = items.length;
+            if (len > 0) {
+                for (var i = 0; i < len; i++) {
+                    var item = items[i];
+                    $(targetObject).after("<li><a href='/Problems/ProblemsDetail/" + item.ContentID + "'>. " + item.Title + "</a></li>");
+                }
+
+            }
+        });
+    };
 
     module.exports = ObjectJS;
 });
