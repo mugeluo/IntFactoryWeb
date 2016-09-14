@@ -6,10 +6,8 @@
     require("pager");
     require("daterangepicker");
 
-    var ObjectJS = {};
-
-    var ModuleType = {
-        Types: -1,
+    var Params = {
+        ModuleType: -1,
         TypeID: "",
         Keywords: "",
         BeginTime: "",
@@ -18,7 +16,7 @@
         PageSize: 5,
         OrderBy: "c.CreateTime desc",
     }
-
+    var ObjectJS = {};
     ObjectJS.init = function () {
         ObjectJS.bindEvent();       
     };
@@ -126,8 +124,8 @@
         $(".search-results").empty();
         $(".search-results").append("<div class='data-loading'><div>");
         Global.post("/Home/GetContents", { filter: JSON.stringify(Params) }, function (data) {
+            $(".search-results").empty();
             if (data.items.length > 0) {
-                $(".search-results").empty();
                 Dot.exec("/template/home/contents-list.html", function (template) {
                     var innerHtml = template(data.items);
                     innerHtml = $(innerHtml);
@@ -137,7 +135,6 @@
 
                 $(".count-trem").find("a:last").html(data.totalCount);
                 
-
                 $("#pager").paginate({
                     total_count: data.totalCount,
                     count: data.pageCount,
