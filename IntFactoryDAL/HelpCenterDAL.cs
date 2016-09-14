@@ -92,7 +92,7 @@ namespace IntFactoryDAL
 
         public DataSet GetClickNumberList()
         {
-            string sqlTxt = "select top 10 * from M_HelpContent where M_HelpContent.Status<>9 order by M_HelpContent.ClickNumber asc";
+            string sqlTxt = "select top 10 * from M_HelpContent where M_HelpContent.Status<>9 and M_HelpContent.TypeID in(select TypeID from M_HelpType where ModuleType=2 and M_HelpType.Status<>9) order by M_HelpContent.ClickNumber asc";
             return GetDataSet(sqlTxt);
         }
 
