@@ -21,7 +21,7 @@
     };
 
     ObjectJS.bindEvent = function (list) {
-        
+        console.log(list);
         Dot.exec("/template/newbieguide/newbieguide.html", function (template) {
             var innerHtml = template(list);
             innerHtml = $(innerHtml);

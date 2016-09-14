@@ -36,7 +36,7 @@ $(document).ready(function(){
 
 
     //小图片ul盒子移动函数
-    var moveSmallPic=function(){
+    var moveSmallPic = function () {
         //删除所有小图片选中样式
         $('.smallPicUlBox ul li').removeClass("current")
         //当前被点击的小图片添加选中样式
@@ -44,7 +44,8 @@ $(document).ready(function(){
         //得到当前被选中小图片li的offset值
         var currentOffsetLiB=$('.smallPicUlBox ul li.current').offset().left;
         //被选中的小图片是可见box中的最后一张也就是小图片第六张
-        if(currentOffsetLiB-offsetDiv==399){
+        if (currentOffsetLiB - offsetDiv == 151) {
+
             if(liLength-initCount>1){
                 ulSMove.stop().animate({left:ulSMove.position().left-399},300);
             }else{
@@ -56,7 +57,7 @@ $(document).ready(function(){
             ulSMove.stop().animate({left:0},300);
         }
         else if(currentOffsetLiB-offsetDiv==0){
-            if(liLength-initCount<8){//$('.smallPicUlBox ul li.current').index()
+            if(liLength-initCount<6){//$('.smallPicUlBox ul li.current').index()
                 ulSMove.stop().animate({left:ulSMove.position().left+399},300);                                     
             }else{
                 ulSMove.stop().animate({left:0},300);   
@@ -147,23 +148,23 @@ $(document).ready(function(){
             initCount=$(this).index();
             var currentOffsetLi=$(this).offset().left;
             //计算点击的是否为最后一张或者可视box的最后一张图片
-            //if(currentOffsetLi-offsetDiv==399){
-            //    if($(this).index()==liLength-1){
-            //        alert('亲，这是最后一张了哦!');
-            //        //window.location.href='URL'; 此处用来跳转到下一组图片集
-            //    }else{
-            //        ulSMove.stop().animate({left:ulSMove.position().left-399},300);
-            //    }
-            //}
-            ////计算点击的是否为第一张或者当前可视box的第一张图片
-            //else if(currentOffsetLi-offsetDiv==0){
-            //    if($(this).index()==0){
-            //        alert('亲，这是第一张了哦!');
-            //        //window.location.href='URL'; 此处用来跳转到上一组图片集
-            //    }else{
-            //        ulSMove.stop().animate({left:ulSMove.position().left+399},300);
-            //    }
-            //}               
+            if(currentOffsetLi-offsetDiv==399){
+                if($(this).index()==liLength-1){
+                    alert('亲，这是最后一张了哦!');
+                    //window.location.href='URL'; 此处用来跳转到下一组图片集
+                }else{
+                    ulSMove.stop().animate({left:ulSMove.position().left-399},300);
+                }
+            }
+            //计算点击的是否为第一张或者当前可视box的第一张图片
+            else if(currentOffsetLi-offsetDiv==0){
+                if($(this).index()==0){
+                    alert('亲，这是第一张了哦!');
+                    //window.location.href='URL'; 此处用来跳转到上一组图片集
+                }else{
+                    ulSMove.stop().animate({left:ulSMove.position().left+399},300);
+                }
+            }               
         });
     });         
 });

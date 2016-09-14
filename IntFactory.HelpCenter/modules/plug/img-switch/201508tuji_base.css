@@ -70,7 +70,7 @@ em,i{font-style:normal}
 .imgTitle span.num-title{ display: inline-block; color: #3d3d3d; font-size: 24px; height: 28px; position: absolute; top: 20px; left: 0;}
 .imgTitle span.num-title em{ float: left; color: #0cb39e; font-size: 33px; margin-top: -6px; position: relative;}
 .smallPicBox{ border: 1px solid #dbdbdb; padding:10px 0; height: 90px; width: 1200px; position: relative;margin-bottom:20px;}
-.smallPicUlBox{ display: inline; float: left; padding-top: 8px; height: 82px; width: 1200px; position: relative; left: 37px; top: 0; overflow:hidden;}
+.smallPicUlBox{ display: inline; float: left; padding-top: 8px; height: 82px; width: 1128px; position: relative; left: 37px; top: 0; overflow:hidden;}
 .smallPicUlBox ul{ height: 82px; width: 600%; position: absolute; left: 0; top: 8px;}
 .smallPicUlBox ul li{ background-color: #efefef; float: left; height: 82px; width: 120px; margin-right: 11px;margin-left:10px; cursor: pointer; text-align:center; position: relative;}
 .smallPicUlBox ul li img{ max-width: 112px; height: 82px; overflow: hidden;}

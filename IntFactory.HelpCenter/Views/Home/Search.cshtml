@@ -59,11 +59,11 @@
             <div class="mBottom10 font16">筛选</div>
             <ul class="time-search">
                 <li class=" time-all hover" data-beginTime="" data-endTime="">全部时间</li>
-                <li class="item time-day" data-beginTime="@DateTime.Now.AddDays(-1)" data-endTime="@DateTime.Now.Date">一天内</li>
-                <li class="item time-week" >一周内</li>
-                <li class="item time-moth" >一月内</li>
-                <li class="item time-moth-three" >三个月内</li>
-                <li class="item time-year-six">半年内</li>
+                <li class="item time-day" data-beginTime="@DateTime.Now.AddDays(-1).ToString("yyyy.MM.dd")" data-endTime="@DateTime.Now.Date.ToString("yyyy.MM.dd")">一天内</li>
+                <li class="item time-week" data-beginTime="@DateTime.Now.AddDays(-7).ToString("yyyy.MM.dd")" data-endTime="@DateTime.Now.Date.ToString("yyyy.MM.dd")" >一周内</li>
+                <li class="item time-moth" data-beginTime="@DateTime.Now.AddMonths(-1).ToString("yyyy.MM.dd")" data-endTime="@DateTime.Now.Date.ToString("yyyy.MM.dd")" >一月内</li>
+                <li class="item time-moth-three" data-beginTime="@DateTime.Now.AddMonths(-3).ToString("yyyy.MM.dd")" data-endTime="@DateTime.Now.Date.ToString("yyyy.MM.dd")" >三个月内</li>
+                <li class="item time-year-six" data-beginTime="@DateTime.Now.AddMonths(-6).ToString("yyyy.MM.dd")" data-endTime="@DateTime.Now.Date.ToString("yyyy.MM.dd")">半年内</li>
             </ul>
         </div>
     </div>
