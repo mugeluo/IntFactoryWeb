@@ -1,4 +1,4 @@
-﻿.details { width: 1200px; margin: auto; }
+﻿.details { width: 1200px; margin: auto; min-height:500px;}
 .details::after{display:block;content:"";clear:both;}
 .details .category{width:800px;float:left;margin-right:10px;}
 .details .category .category-menu{margin-top:20px;border-bottom:2px solid #eee;}
