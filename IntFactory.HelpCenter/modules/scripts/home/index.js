@@ -33,12 +33,20 @@
 
                 if (id == 1) {
                     if (!isget) {
-                        target.data("isget",1);
+                        target.data("isget", 1);
+                        Params.ModuleType = 2;
                         Params.OrderBy = "c.clicknumber desc";
                         ObjectJS.getContents("", $("#hot-problems  ul").eq(0));
 
                         Params.OrderBy = "c.createtime desc";
                         ObjectJS.getContents("", $("#hot-problems  ul").eq(1));
+                    }
+                } else if (id == 2) {
+                    if (!isget) {
+                        $("#zngc-functions ul").each(function () {
+                            var _self = $(this);
+                            ObjectJS.getContents(_self.data("id"), _self);
+                        });
                     }
                 }
             };
@@ -87,6 +95,11 @@
                         $(this).hide();
                     });
                 });
+
+                for (var i = 0; i < functionTypes.length; i++) {
+                    var item = functionTypes[i];
+                    $("#zngc-functions").append("<ul class='left' data-id='" + item.TypeID + "'><li>" + item.Name + "</ul></li>");
+                }
             }
 
             var qaTypes=data.qaTypes;
