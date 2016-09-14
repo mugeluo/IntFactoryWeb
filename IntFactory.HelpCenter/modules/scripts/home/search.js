@@ -8,7 +8,7 @@
 
     var ObjectJS = {};
 
-    var Params = {
+    var ModuleType = {
         Types: -1,
         TypeID: "",
         Keywords: "",

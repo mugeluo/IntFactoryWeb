@@ -51,10 +51,7 @@
 .problem .problem-content ul li:first-child{font-size:24px;margin-bottom:20px;}
 .problem .problem-content ul li:not(first-child){color:#666;line-height:2;}
 
-
 .title{font-size:30px;padding-top:30px;text-align:center;margin-bottom:50px;color:#000;}
-.clear-both::after{display:block;content:"";clear:both;}
-
 
 /*新手指南*/
 .new-guide { margin-bottom:50px;}
