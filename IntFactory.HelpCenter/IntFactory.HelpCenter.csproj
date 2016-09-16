@@ -321,9 +321,6 @@
     <Content Include="Views\NewbieGuide\NewbieGuide.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="modules\plug\img-switch\jquery.autoFixed.js" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Contents\Contents.cshtml" />
   </ItemGroup>
   <ItemGroup>
