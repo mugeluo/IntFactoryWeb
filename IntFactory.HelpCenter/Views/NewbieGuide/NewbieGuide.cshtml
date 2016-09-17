@@ -5,7 +5,7 @@
 }
 @section css{
     <link href="/modules/css/newbieguide/newbieguide.css" rel="stylesheet" />
-    <link href="/modules/plug/img-switch/201508tuji_base.css" rel="stylesheet" />
+    <link href="/modules/plug/img-switch/style.css" rel="stylesheet" />
 }
 @section scripts{
     <script type="text/javascript">
@@ -13,10 +13,9 @@
             ObjectJS.init('@(Html.ToJSONString(list))');
         });
     </script>
-    @*<script src="/modules/plug/img-switch/jquery.autoFixed.js"></script>*@
 }
 <div class="head-content-menu">
-    <div class="content">
+    <div class="content content-width">
         <div class="head-menu">
             <a href="/Home/Index">帮助中心</a>
             <span>></span>
@@ -31,16 +30,15 @@
     </div>
 </div>
 
-<div class="newbie">
+<div class="newbie content-width">
     <div class="newbie-title">新手快速入门</div>
     <div class="newbie-info clear-after">
         <ul class="left">
             <li>创建时间：<span>@(list[0].CreateTime)</span></li>
-            
         </ul>
-        <div class="right">
+        <ul class="right">
             <li>浏览：<span>9527</span></li>
-        </div>
+        </ul>
     </div>    
 
     <div class="wrap">

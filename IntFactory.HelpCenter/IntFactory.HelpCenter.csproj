@@ -223,7 +223,7 @@
     <Content Include="modules\plug\flexslider\images\alpha.png" />
     <Content Include="modules\plug\flexslider\images\dot.png" />
     <Content Include="modules\plug\flexslider\js\flexslider.js" />
-    <Content Include="modules\plug\img-switch\201508tuji_base.css" />
+    <Content Include="modules\plug\img-switch\style.css" />
     <Content Include="modules\plug\img-switch\images\tuji_btn.png" />
     <Content Include="modules\plug\jquery-horizon-line-switch\css\default.css" />
     <Content Include="modules\plug\jquery-horizon-line-switch\css\reset.css" />

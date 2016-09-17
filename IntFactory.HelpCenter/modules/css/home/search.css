@@ -1,5 +1,5 @@
-﻿.search-item { width:1200px;margin:auto;min-height:600px;}
-.search-content {width:900px;float:left;}
+﻿.search-item {min-height:600px;}
+.search-content {width:800px;float:left;}
 .search-content .search-title{border-bottom:solid 1px #ccc;}
 .search-results .item::after {display:block;content:"";clear:both; }
 .search-results .item { padding:20px 10px;border-bottom:dashed 1px #ccc;}
