@@ -69,7 +69,7 @@
                     pageCount = data.pageCount;
                 });
             } else {
-                $(".problems-details").append("<li class='center mTop20 font16'>暂无数据</li>");
+                $(".problems-details").append("<li class='nodata-txt'>暂无数据</li>");
             }
             
             if (data.items.length<Params.PageSize-1) {
@@ -92,7 +92,8 @@
                     var item = items[i];
                     $(targetObject).after("<li><a href='/Problems/ProblemsDetail/" + item.ContentID + "'>. " + item.Title + "</a></li>");
                 }
-
+            } else {
+                $(targetObject).after("<li class='nodata-txt'>暂无数据</li>");
             }
         });
     };

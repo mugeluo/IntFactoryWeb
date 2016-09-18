@@ -122,7 +122,7 @@
                     }
                 });
             } else {
-                $(".search-results").append("<li class='center mTop30'>暂无数据</li>")
+                $(".search-results").append("<li class='nodata-txt'>暂无数据</li>")
             }
         })
     }

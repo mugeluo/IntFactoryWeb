@@ -36,7 +36,7 @@
                 ulSMove = $('.smallPicUlBox ul').eq(0),
                 bigImgLi = $('.bigPicBox ul li'),
                 liNum = bigImgLi.length,
-                liWidth = 1000,
+                liWidth = 1100,
                 smallLiWidth = ulSMove.find("li").width(),
                 imgTitle = $('.imgTitle');
 
@@ -66,7 +66,6 @@
 
                 //小图片ul盒子移动函数
                 var moveSmallPic = function () {
-                    
                     //删除所有小图片选中样式
                     $('.smallPicUlBox ul li').removeClass("current")
                     //当前被点击的小图片添加选中样式
@@ -74,7 +73,8 @@
                     //得到当前被选中小图片li的offset值
                     var currentOffsetLiB = $('.smallPicUlBox ul li.current').offset().left;
                     //被选中的小图片是可见box中的最后一张也就是小图片第六张
-                    if (currentOffsetLiB - offsetDiv == 856) {
+                    if (currentOffsetLiB - offsetDiv == 997) {
+                        
                         if (liLength - initCount > 3) {
                             ulSMove.stop().animate({ left: ulSMove.position().left - 399 }, 300);
                         } else {
@@ -85,7 +85,7 @@
                         ulSMove.find("li:first").addClass("current");
                         ulSMove.stop().animate({ left: 0 }, 300);
                     }
-                    else if (currentOffsetLiB - offsetDiv == 0) {
+                    else if (currentOffsetLiB - offsetDiv == -68) {
                         if (liLength - initCount < 8) {//$('.smallPicUlBox ul li.current').index()
                             ulSMove.stop().animate({ left: ulSMove.position().left + 399 }, 300);
                         } else {
@@ -109,7 +109,7 @@
                         initCount = 0;
                         moveSmallPic();
                     }
-                    imgTitle.html($('.smallPicUlBox ul li').eq(initCount).find('.desc').html());
+                    $('.smallPicUlBox ul li').eq(initCount).click();
                 }
 
                 //点击大图片下一张按钮执行函数
@@ -135,7 +135,7 @@
                         initCount--;
                         moveSmallPic();
                     }
-                    imgTitle.html($('.smallPicUlBox ul li').eq(initCount).find('.desc').html());
+                    $('.smallPicUlBox ul li').eq(initCount).click();
                 };
 
                 //点击大图片上一张按钮执行函数
@@ -166,10 +166,15 @@
                     }
                 };
 
+                
+
                 //遍历每一张小图片
                 ulSMove.find("li").each(function (i) {
                     $(this).attr('index', i);
-                    $(this).click(function () {                        
+                    $(this).click(function () {
+                        $(".newbie-title").html($(this).find('.desc').data("title"));
+                        $(".newbie-info .left li span").html($(this).find('.desc').data("createtime"));
+                        $(".head-menu a:last").html($(this).find('.desc').data("title"));
                         imgTitle.html($(this).find('.desc').html());
                         ulSMove.find("li").removeClass("current");
                         $(this).addClass("current");
@@ -196,8 +201,14 @@
                         }
                     });
                 });
+
+                var url = window.location.href.split("?")[1];
+
+                $(".smallPicUlBox ul li").eq(url).click();
             });
         });
+
+        
     };
 
     module.exports = ObjectJS;

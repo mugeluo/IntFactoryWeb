@@ -16,7 +16,10 @@ namespace IntFactory.HelpCenter.Controllers
         // GET: /NewbieGuide/
 
         public ActionResult NewbieGuide()
-        {
+        {            
+            //int totalCount = 0;
+            //int pageCount = 0;
+            //var item = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetContents(3,"","","","","c.CreateTime desc",200,1, ref totalCount, ref pageCount);
             int type = 3;
             var item = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetTypesByModuleType((ModuleTypeEnum)type);
             ViewBag.item = item;

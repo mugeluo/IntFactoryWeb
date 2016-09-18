@@ -1,30 +1,24 @@
-﻿.content-title{ padding-top:70px;}
-.content-title li{ float:left;margin-right:50px;padding:5px 10px;border:1px solid #0cb39e;color:#fff;margin-left:20px;opacity:0.8;cursor:pointer;}
-.content-title .hover { border:1px solid #fff;background-color:#fff;color:#0cb39e;border-radius:3px;opacity:1;}
-
-.content {}
-.content .content-menu{float:left;background-color:#eee;width:250px;min-height:700px;}
+﻿.content .content-menu{float:left;background-color:#eee;width:250px;min-height:750px;}
 .content .content-menu .head-content-search{text-align:center;border-radius:2px;position:relative;margin:auto;border-bottom:1px dashed #ccc;}
 .head-content-search .search-txt{color:#999;line-height:30px;width:200px;margin:auto;height:30px;font-size:14px;margin:20px;}
 .head-content-search .search-txt:focus{border:1px solid #0cb39e;}
 .head-content-search .iconfont{font-size:20px;color:#999;cursor:pointer;position:absolute;z-index:11;bottom:23px;right:25px;}
 .head-content-search .iconfont:hover{color:#0cb39e;}
 
-.menu { margin-top:20px;margin-bottom:30px;}
 .menu-title { margin-left:20px;cursor:pointer;margin-top:15px;}
 .menu-title i{color:#000;margin-right:5px;}
 .menu-title span{font-size:16px;color:#000;}
-.tag i{ color:#0cb39e;}
-.tag span{ color:#0cb39e;}
+.tag i,.tag span{ color:#0cb39e;}
 .item { margin-left:50px;margin-top:10px;margin-bottom:10px;}
 .item li{margin-top:10px;cursor:pointer;padding-left:13px;line-height:25px;height:25px;}
-.item li span{font-size:16px;padding:5px;color:#666;}
-.item li:hover span{background-color:#0cb39e;color:#fff;}
-.item .hover{padding:0;}
-.item .hover::before{content:">";color:#0cb39e;font-size:18px;}
-.item .hover span{color:#0cb39e;}
+.item li span,.menu .items span{font-size:16px;padding:5px;color:#666;}
+.item li:hover span,.menu .items:hover span{background-color:#0cb39e;color:#fff;}
+.item .hover,.menu .hover{padding:0 !important;}
+.item .hover::before,.menu .hover::before{content:">";color:#0cb39e;font-size:18px;}
+.item .hover span,.menu .hover span{color:#0cb39e;}
 
-.content { padding-top:50px;}
+.menu .items {margin-left: 50px;margin-top: 25px;cursor: pointer;padding-left:13px;}
+
 .content .contents-remark { float: left; width:840px;margin-left:10px;}
 .content .contents-remark .title{font-size:30px;color:#000;margin-bottom:20px;margin-top:20px;}
 .content .contents-remark .remark{min-height:340px;}

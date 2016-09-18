@@ -55,7 +55,7 @@ em,i{font-style:normal}
 .bigPicBox{ height: 606px; width: 1100px; position: relative; overflow: hidden;}
 .bigPicBox ul{ height: 606px; width: 600%; position:absolute; left: 0; top: 0;}
 .bigPicBox ul li{height: 606px; width: 1100px; background-color: #efefef; display: table-cell; text-align: center; vertical-align: middle;}
-.bigPicBox ul li img{ max-height: 606px; max-width: 1100px; overflow: hidden; vertical-align: middle;}
+.bigPicBox ul li img{ max-height: 606px; max-width: 1100px; overflow: hidden; vertical-align: middle;width:1100px;}
 .prevABox{ display: block; height: 606px; width: 550px; position: absolute; top: 0; left: 0; z-index: 1;}
 .prevABox .prevBtn{display:block; height: 114px; line-height:114px; width: 40px;position: absolute; top: 234px; z-index: 99; }
 .nextABox .nextBtn {display:block; height: 114px; line-height:114px; width: 40px;position: absolute; top: 234px; z-index: 99; right: 0;}

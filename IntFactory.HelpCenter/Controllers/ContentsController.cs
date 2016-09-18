@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace IntFactory.HelpCenter.Controllers
 {
-    public class ContentsController : Controller
+    public class ContentsController : BaseController
     {
         //
         // GET: /Contents/

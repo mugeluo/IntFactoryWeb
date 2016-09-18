@@ -15,28 +15,14 @@
         });        
     </script>
 }
-   
-@*<div class="head-content-menu">
-    <div class="content">
-        <ul class="content-title cleat-after">
-            <li class="hover">工作台</li>
-            <li>客户</li>
-            <li>订单</li>
-            <li>任务</li>
-            <li>材料</li>
-            <li>系统设置</li>
-            <li>智能工厂客户端</li>
-        </ul>
-    </div>
-</div>*@
 
-<div class="content clear-after content-width">
+<div class="content clear-after content-width pTop50">
     <div class="content-menu">
         <div class="head-content-search">            
             <input class="search-txt" type="text" placeholder="搜索相关问题" />
             <i class="iconfont">&#xe618;</i>
         </div>
-        <div class="menu">
+        <div class="menu mTop20 mBottom30">
             @if (model.Count>0)
             {
                 foreach (var item in model)

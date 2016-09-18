@@ -54,31 +54,6 @@
         }); 
     };
 
-    ObjectJS.getTypesByModuleType = function (moduleType) {
-        Global.post("/Home/GetTypesByModuleType", { type: moduleType }, function (data) {
-            if (data.items.length > 0) {
-                //if (moduleType == 1) {
-                //    Dot.exec("/template/home/function-types.html", function (template) {
-                //        var innerHtml = template(data.items);
-                //        innerHtml = $(innerHtml);
-                //        $(".function").append(innerHtml);
-
-                //        $(".function li").mouseenter(function () {
-                //            var _this = $(this);
-                //            _this.find(".detail").show();
-                //        });
-
-                //        $(".function li .detail").mouseleave(function () {
-                //            $(this).hide();
-                //        });
-                //    });
-                //} else if (moduleType == 2) {
-
-                //}
-            }
-        });
-    };
-
     ObjectJS.getTypes = function () {
         Global.post("/Home/GetTypes", null, function (data) {
             var functionTypes=data.functionTypes;
@@ -114,12 +89,14 @@
             }
 
             var guidTypes = data.guidTypes;
+            
             if(guidTypes.length>0){
                 for (var i = 0; i < guidTypes.length; i++) {
                     var item = guidTypes[i];
-                    $(".new-guide ul").append('<li><img src="/modules/images/home/1.png" /><div class="bg-jianbian"></div><span class="txt">'+(i+1)+'.'+item.Name+'</span></li>');
+                    $(".new-guide ul").append('<li><a href="/NewbieGuide/NewbieGuide?'+i+'"><img src="' + item.Icon + '" /><div class="bg-jianbian"></div><span class="txt">' + (i + 1) + '.' + item.Name + '</span></li></a>');
                 }
             }
+            
         });
     };
 

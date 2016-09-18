@@ -87,14 +87,10 @@
                 dataText: "Name",
                 width: "120",
                 onChange: function (data) {
-                    if (Paras.orderType != data.value) {
-                        if (IsLoadding && IsLoaddingTwo) {
-                            Params.type = data.value;
-                            Params.pageIndex = 1;
-                            ObjectJS.getFeedBack();
-                        } else {
-                            alert("数据加载中，请稍等 !");
-                        }
+                    if (Params.orderType != data.value) {
+                        Params.status = data.value;
+                        Params.pageIndex = 1;
+                        ObjectJS.getFeedBack();
                     }
                 }
             });
@@ -111,14 +107,10 @@
                 dataText: "Name",
                 width: "120",
                 onChange: function (data) {
-                    if (Paras.orderType != data.value) {
-                        if (IsLoadding && IsLoaddingTwo) {
-                            Params.status = data.value;
-                            Params.pageIndex = 1;
-                            ObjectJS.getFeedBack();
-                        } else {
-                            alert("数据加载中，请稍等 !");
-                        }
+                    if (Params.orderType != data.value) {
+                        Params.type = data.value;
+                        Params.pageIndex = 1;
+                        ObjectJS.getFeedBack();
                     }
                 }
             });
@@ -189,19 +181,19 @@
         $(".tr-header").after("<tr><td colspan='6'><div class='data-loading'><div></td></tr>");
         Global.post("/FeedBack/GetFeedBacks", { filter: JSON.stringify(Params) }, function (data) {
             $(".tr-header").nextAll().remove();
-            if (data.items.length>0) {
+            if (data.items.length > 0) {
                 Dot.exec("/template/feedback/feedback-list.html", function (template) {
                     var innerHtml = template(data.items);
                     innerHtml = $(innerHtml);
                     $(".tr-header").after(innerHtml);
-                    
+
                     $(".open-contents").click(function () {
-                        var _parent = $(this).parent(), _this = $(this),id=_this.data("id");
+                        var _parent = $(this).parent(), _this = $(this), id = _this.data("id");
                         if (_this.hasClass("tag")) {
                             _this.html("关闭").removeClass("tag");
                             _parent.find(".span").hide();
                             _parent.find(".div").show();
-                            if (data.items[id].Content!="") {
+                            if (data.items[id].Content != "") {
                                 _parent.next().show();
                             }
                         } else {
@@ -229,6 +221,8 @@
                         ObjectJS.getFeedBack();
                     }
                 });
+            } else {
+                $(".tr-header").after("<tr><td colspan='5' class='nodata-txt'>暂无数据</td></tr>")
             }
         });
     }

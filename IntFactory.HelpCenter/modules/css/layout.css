@@ -13,7 +13,7 @@ input[type="password"] { border:solid 1px #ccc; border-radius:2px;height:25px; l
 input[type="password"]:focus { border:solid 1px #318ae4; }
 
 textarea { min-height: 60px; border:solid 1px #ccc; border-radius:2px;text-indent:3px;resize:none;}
-textarea:focus { border:solid 1px #666;}
+textarea:focus { border:solid 1px #0cb39e;}
 
 select{ border:solid 1px #ccc; border-radius:2px; height:25px; line-height:25px; padding:0 5px;}
 select option{ padding:2px; }
@@ -165,5 +165,6 @@ width:1100px!important;margin:auto;
 
 .table-list td img{ height:80px; width:80px; vertical-align:middle;}
 
-
+/*暂无数据*/
+.nodata-txt { padding: 30px 0px; font-size: 16px; text-align: center; color: #666; background-color:#fff; }
 

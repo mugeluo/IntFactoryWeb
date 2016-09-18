@@ -5,7 +5,7 @@
     require("pager");
 
     var Params = {
-        ModuleType: -1,
+        ModuleType: 1,
         TypeID: "",
         Keywords: "",
         BeginTime: "",
@@ -28,14 +28,6 @@
     };
 
     ObjectJS.bindEvent = function () {
-
-        $(".content-title li").click(function () {
-            var _this = $(this);
-            if (!_this.hasClass("hover")) {
-                _this.siblings().removeClass("hover");
-                _this.addClass("hover");
-            };
-        });
 
         $(".item li").click(function () {
             var _this = $(this), remark = _this.data("detail"),title=_this.data("title");
@@ -62,7 +54,7 @@
         $(".head-content-search .iconfont").click(function () {
             Params.Keywords = $(".search-txt").val();
             Params.ModuleType = 1;
-            ObjectJS.getContents("", $(".menu"));
+            ObjectJS.getContents("", $(".menu"),true);
         });
 
         $(".menu-title:first").click();
@@ -70,7 +62,12 @@
 
     };
 
-    ObjectJS.getContents = function (typeid, targetObject) {
+    ObjectJS.getContents = function (typeid, targetObject,status) {
+        if (status) {
+            $(targetObject).empty();
+            $("#title").empty();
+            $("#remark").empty();
+        }
         Params.TypeID = typeid;
         $(targetObject).append("<div class='data-loading'><div>");
         Global.post("/Home/getContents", { filter: JSON.stringify(Params) }, function (data) {
@@ -80,10 +77,26 @@
             if (len > 0) {
                 for (var i = 0; i < len; i++) {
                     var item = items[i];
-                    $(targetObject).append("<li><a href='/Problems/ProblemsDetail/" + item.ContentID + "'>. " + item.Title + "</a></li>");
+                    if (status) {
+                        $(targetObject).append("<div class='items' data-title='" + item.Title + "' data-desc='" + item.Detail + "'><span>" + item.Title + "</span></div>");
+                    } else {
+                        $(targetObject).append("<li><a href='/Problems/ProblemsDetail/" + item.ContentID + "'>. " + item.Title + "</a></li>");
+                    }                    
                 }
-
             }
+
+            $(targetObject).find(".items").click(function () {
+                var _this = $(this), title = _this.data("title"), desc = _this.data("desc");
+                if (!_this.hasClass("hover")) {
+                    _this.siblings().removeClass("hover");
+                    _this.addClass("hover");
+                    $("#title").html(title);
+                    $("#remark").html(decodeURI(desc));
+                }
+            });
+
+            $(targetObject).find(".items:first").click();
+
         });
     };
        
