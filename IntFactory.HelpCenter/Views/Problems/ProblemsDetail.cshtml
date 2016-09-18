@@ -23,7 +23,7 @@
             <span>></span>
             <a href="/Problems/Problems">常见问题</a>
             <span>></span>
-            <a href="/Problems/Problems">@(modol.TypeName)</a>
+            <a>@(modol.TypeName)</a>
         </div>
         <div class="head-search">            
             <input class="search-txt" type="text" placeholder="搜索相关问题" />
@@ -32,7 +32,7 @@
     </div>
 </div>
 
-<div class="details content-width">
+<div class="details content-width clear-after">
     <div class="category">
         <div class="details-title">@(modol.Title)</div>
         <ul class="information clear-after">
@@ -46,7 +46,7 @@
                 <span>@(modol.ClickNumber)</span>
             </li>
         </ul>
-        <div id="remark"></div>
+        <div id="remark" class="remark"></div>
     </div>
     <div class="example">
         <ul>

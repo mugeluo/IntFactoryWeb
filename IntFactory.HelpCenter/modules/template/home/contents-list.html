@@ -3,11 +3,11 @@
         var item=$data[i],
             detail=decodeURI(item.Detail);
 %}
-<li class="item">
+<li class="item clear-after">
     <ul class="item-desc">
         <li class="">
             <div class="results-title clear-after">
-                <a class="problem-title" href="/Problems/ProblemsDetail">{%=item.Title%}</a>
+                <a class="problem-title" href="/Problems/ProblemsDetail/{%=item.ContentID%}">{%=item.Title%}</a>
                 <span class="font16"> --{%=item.ModuleType==1?"功能模块":item.ModuleType==2?"常见问题":"新手指引"%}</span>
                 <div class="right coloraaa"></div>
             </div>

@@ -70,9 +70,11 @@
         //关键字搜索
         require.async("search", function () {
             $(".searth-module").searchKeys(function (keyWords) {
-                Params.PageIndex = 1;
-                Params.Keywords = keyWords;
-                ObjectJS.getFeedBack();
+                if (Params.Keywords!=keyWords) {
+                    Params.PageIndex = 1;
+                    Params.Keywords = keyWords;
+                    ObjectJS.getFeedBack();
+                }                
             });
         });
 
@@ -87,7 +89,7 @@
                 dataText: "Name",
                 width: "120",
                 onChange: function (data) {
-                    if (Params.orderType != data.value) {
+                    if (Params.status != data.value) {
                         Params.status = data.value;
                         Params.pageIndex = 1;
                         ObjectJS.getFeedBack();
@@ -107,7 +109,7 @@
                 dataText: "Name",
                 width: "120",
                 onChange: function (data) {
-                    if (Params.orderType != data.value) {
+                    if (Params.type != data.value) {
                         Params.type = data.value;
                         Params.pageIndex = 1;
                         ObjectJS.getFeedBack();

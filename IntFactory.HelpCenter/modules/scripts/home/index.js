@@ -102,7 +102,9 @@
 
     ObjectJS.getContents = function (typeid, targetObject) {
         Params.TypeID = typeid;
+        $(targetObject).append("<div class='data-loading'><div>");
         Global.post("/Home/getContents", { filter: JSON.stringify(Params) }, function (data) {
+            $(".data-loading").remove();
             var items=data.items;
             var len=items.length;
             if (len > 0) {

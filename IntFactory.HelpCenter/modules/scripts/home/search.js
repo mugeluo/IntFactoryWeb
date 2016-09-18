@@ -27,26 +27,7 @@
             Params.Keywords = txt;
             ObjectJS.getContents();
         }
-
-        //日期插件
-        //$("#iptCreateTime").daterangepicker({
-        //    showDropdowns: true,
-        //    empty: true,
-        //    opens: "right",
-        //    ranges: {
-        //        '今天': [moment(), moment()],
-        //        '昨天': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-        //        '上周': [moment().subtract(6, 'days'), moment()],
-        //        '本月': [moment().startOf('month'), moment().endOf('month')]
-        //    }
-        //}, function (start, end, label) {
-        //    Params.PageIndex = 1;
-        //    Params.BeginTime = start ? start.format("YYYY-MM-DD") : "";
-        //    Params.EndTime = end ? end.format("YYYY-MM-DD") : "";
-        //    ObjectJS.getContents();
-        //});
-
-       
+      
         $(".time-search li").click(function () {
             var _this = $(this), beginTime = _this.data("begintime"), endTime = _this.data("endtime");
             if (!_this.hasClass("hover")) {
@@ -55,6 +36,7 @@
             };
             Params.BeginTime = beginTime;
             Params.EndTime = endTime;
+            Params.PageIndex = 1;
             ObjectJS.getContents();
         });
 
@@ -97,32 +79,35 @@
                     innerHtml = $(innerHtml);
                     $(".search-results").append(innerHtml);
                     $(".search-title2").find("a").html($(".search-results .item").length);
-                });
 
-                $(".count-trem").find("a:last").html(data.totalCount);
-                
-                $("#pager").paginate({
-                    total_count: data.totalCount,
-                    count: data.pageCount,
-                    start: Params.PageIndex,
-                    display: 5,
-                    border: true,
-                    border_color: '#fff',
-                    text_color: '#333',
-                    background_color: '#fff',
-                    border_hover_color: '#ccc',
-                    text_hover_color: '#000',
-                    background_hover_color: '#efefef',
-                    rotate: true,
-                    images: false,
-                    mouse: 'slide',
-                    onChange: function (page) {
-                        Params.PageIndex = page;
-                        ObjectJS.getContents();
-                    }
+                    $(".count-trem").find("a:last").html(data.totalCount);
+
+                    $("#pager").paginate({
+                        total_count: data.totalCount,
+                        count: data.pageCount,
+                        start: Params.PageIndex,
+                        display: 5,
+                        border: true,
+                        border_color: '#fff',
+                        text_color: '#333',
+                        background_color: '#fff',
+                        border_hover_color: '#ccc',
+                        text_hover_color: '#000',
+                        background_hover_color: '#efefef',
+                        rotate: true,
+                        images: false,
+                        mouse: 'slide',
+                        onChange: function (page) {
+                            Params.PageIndex = page;
+                            ObjectJS.getContents();
+                        }
+                    });
                 });
             } else {
-                $(".search-results").append("<li class='nodata-txt'>暂无数据</li>")
+                $(".search-results").append("<li class='nodata-txt'>暂无数据</li>");
+                $("#pager").hide();
+                $(".search-title2").find("a").html(0);
+                $(".count-trem").find("a:last").html(0);
             }
         })
     }

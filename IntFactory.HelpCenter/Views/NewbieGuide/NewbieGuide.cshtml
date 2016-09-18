@@ -21,7 +21,7 @@
             <span>></span>
             <a href="/Problems/Problems">新手指南</a>
             <span>></span>
-            <a>新手快速入门</a>
+            <a>@(list[0].Name)</a>
         </div>
         <div class="head-search">            
             <input class="search-txt" type="text" placeholder="搜索相关问题" />
@@ -31,7 +31,7 @@
 </div>
 
 <div class="newbie content-width">
-    <div class="newbie-title">新手快速入门</div>
+    <div class="newbie-title">@(list[0].Name)</div>
     <div class="newbie-info clear-after">
         <ul class="left">
             <li>创建时间：<span>@(list[0].CreateTime)</span></li>

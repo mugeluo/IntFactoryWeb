@@ -1,14 +1,12 @@
 ﻿.search-item {min-height:600px;}
 .search-content {width:800px;float:left;}
 .search-content .search-title{border-bottom:solid 1px #ccc;}
-.search-results .item::after {display:block;content:"";clear:both; }
 .search-results .item { padding:20px 10px;border-bottom:dashed 1px #ccc;}
 .search-results .item .item-desc{display:table;width:100%;}
 .search-results .item .item-desc li{display:table-cell;vertical-align:top;width:100%;}
 .search-results .item .item-desc li:last-child{width:160px;margin-left:20px;}
 .search-results .item .right img{width:150px;height:80px;}
 .search-results .item .results-title{margin-bottom:20px;}
-.search-results .item .results-title::after{display:block;content:"";clear:both;}
 .search-results .item .results-title .problem-title{color:#0cb39e;font-size:18px;float:left;}
 .search-results .item .results-desc{font-size:16px;line-height:28px;color:#555;}
 .search-results .item .results-desc span{font-size:16px;color:#555;}

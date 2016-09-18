@@ -52,9 +52,13 @@
         });
 
         $(".head-content-search .iconfont").click(function () {
-            Params.Keywords = $(".search-txt").val();
-            Params.ModuleType = 1;
-            ObjectJS.getContents("", $(".menu"),true);
+            var keyWords = $(".search-txt").val();
+            if (Params.Keywords != keyWords) {
+                Params.Keywords = keyWords;
+                Params.ModuleType = 1;
+                ObjectJS.getContents("", $(".menu"), true);
+            }
+
         });
 
         $(".menu-title:first").click();
