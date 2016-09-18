@@ -2,7 +2,7 @@
 .head-content .content-top {background:url(/modules/images/home/help-ind1.png)no-repeat left;}
 .head-content .content-top .head-title {font-size:30px;color:#fff;padding-top:80px;text-align:center; }
 .head-content .content-top .head-search{text-align:center;border-radius:2px;position:relative;width:800px;margin:auto;}
-.content-top .head-search .search-txt{color:#999;line-height:50px;margin-left:10px;width:800px;margin:auto;height:50px;margin-top:60px;font-size:16px;}
+.content-top .head-search .search-txt{color:#999;line-height:50px;margin-left:10px;width:700px;margin:auto;height:50px;margin-top:60px;font-size:16px;}
 .content-top .head-search .search-txt:focus{border:1px solid #0cb39e;}
 .content-top .head-search .iconfont{font-size:30px;color:#0cb39e;float:right;line-height:50px;cursor:pointer;position:absolute;z-index:11;bottom:0;right:0;}
 .head-content .content-top .head-txt{font-size:18px;color:#eee;text-align:center;margin-top:20px;}
@@ -20,7 +20,7 @@
 .table-switch li div { font-size:18px;margin-top:10px;color:#666;}
 .table-switch .hover .iconfont { font-size:50px;color:#0cb39e;}
 .table-switch .hover div { color:#0cb39e;}
-.problem .problem-content { width:1200px;margin:auto;}
+.problem .problem-content {}
 
 /*三角形*/
 .table-switch .hover .triangle_border_up{
@@ -45,7 +45,7 @@
 }
 
 .problem .problem-detail { background-color:#f8f8f8;border-bottom:1px solid #ccc;border-top:1px solid #ccc;}
-.problem .problem-content ul{padding:50px 0px;margin-left:100px;width:195px;min-height:180px;}
+.problem .problem-content ul{padding:50px 0px;margin-left:75px;width:195px;min-height:180px;}
 .problem .problem-content ul li:first-child{font-size:24px;margin-bottom:20px;}
 .problem .problem-content ul li:not(first-child){color:#666;line-height:2;}
 
@@ -67,10 +67,10 @@
 
 /*联系客服*/
 .customer-service { background-color:#f2f2f2;}
-.customer-service .content{width:1200px;margin:auto;}
-.content .content-txt li { float:left;width:300px;margin-bottom:50px;}
+.customer-service .content{margin:auto;}
+.content .content-txt li { float:left;width:275px;padding-bottom:50px;}
 .content-txt li .iconfont { float:left;height:60px;line-height:55px;color:#0cb39e;text-align:center;
-                            margin-right:10px;margin-left:30px;font-size:60px;}
+                            margin-right:10px;margin-left:20px;font-size:60px;}
 .content-txt li div,.content-txt li div a { line-height:25px;color:#0cb39e;font-size:16px;}
 
 

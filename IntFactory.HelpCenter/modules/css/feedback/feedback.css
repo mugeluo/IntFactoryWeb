@@ -4,7 +4,7 @@
 .content span:first-child{margin-right:-6px;border-radius:5px 0px 0px 5px;}
 .content span:last-child{border-radius:0px 5px 5px 0px;}
 
-.content-body { max-width:1200px;margin:0 auto;background:url(/modules/images/feedback-bg.png) no-repeat 0 0;margin-top:62px;margin-bottom:100px;}
+.content-body { max-;margin:0 auto;background:url(/modules/images/feedback-bg.png) no-repeat 0 0;margin-top:62px;margin-bottom:100px;}
     
 .feed-top {width: 420px;margin: 30px auto;text-align:center;}
 .feed-top h1 { font-size:36px;font-weight:normal;color: #777;margin-bottom:10px;}
@@ -30,10 +30,10 @@
 #btn-feedback {border: 1px solid #0cb39e; width:200px;line-height:60px;height:60px;background-color:#0cb39e;color:#fff;text-align:center;cursor:pointer;
                transition:background-color 0.2s;font-size:24px;border-radius:5px;}
 
-.content-item { width:1200px;margin:auto;}
+.content-item {}
 .content-item .screening{margin-top:20px;}
 
-.feedback-details { width:1200px;border:1px solid #ccc;}
+.feedback-details { ;border:1px solid #ccc;}
 .feedback-details tr td{font-size:16px;}
 .feedback-details tr:first-child {background-color:#ECFBF9;}
 .feedback-details .item td i{color:#aaa;vertical-align:middle;}
@@ -46,8 +46,8 @@
 /*联系客服*/
 .title{font-size:30px;padding-top:30px;text-align:center;margin-bottom:50px;color:#000;}
 .customer-service { background-color:#f2f2f2;}
-.customer-service .clear-after{width:1200px;margin:auto;}
-.clear-after .content-txt li { float:left;width:300px;margin-bottom:50px;}
+.customer-service .clear-after{;margin:auto;}
+.clear-after .content-txt li { float:left;width:275px;margin-bottom:50px;}
 .content-txt li .iconfont { float:left;height:60px;line-height:55px;color:#0cb39e;text-align:center;
-                            margin-right:10px;margin-left:30px;font-size:60px;}
+                            margin-right:10px;margin-left:20px;font-size:60px;}
 .content-txt li div,.content-txt li div a { line-height:25px;color:#0cb39e;font-size:16px;}
