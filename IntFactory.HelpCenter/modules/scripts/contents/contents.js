@@ -59,9 +59,11 @@
             
         });
 
-        //$(".head-content-search .iconfont").click(function () {
-        //    console.log($(".search-txt").val());
-        //});
+        $(".head-content-search .iconfont").click(function () {
+            Params.Keywords = $(".search-txt").val();
+            Params.ModuleType = 1;
+            ObjectJS.getContents("", $(".menu"));
+        });
 
         $(".menu-title:first").click();
         $(".item li:first").click();
