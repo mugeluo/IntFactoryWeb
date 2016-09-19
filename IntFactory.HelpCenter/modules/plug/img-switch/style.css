@@ -24,7 +24,7 @@ audio,canvas,video{display:inline-block}
 .clearfix:after,.clearfix:before{content:'\200b';display:block;height:0}
 .clearfix:after{clear:both}
 .clearfix{clear:both;*zoom:1}
-.wrap{margin:0 auto;width:1100px; position: relative;}
+.wrap{margin:0 auto;width:1100px; position: relative;margin-bottom:70px;}
 .hide,.tmpl{display:none}
 a{  color: #333; text-decoration:none;outline:0;blr:expression(this.onFocus=this.blur())}
 a:hover{color:#111;text-decoration:none}

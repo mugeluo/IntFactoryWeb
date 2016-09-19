@@ -1,0 +1,30 @@
+﻿
+body .main-content{ background-color: #f2f4f8; height:850px;}
+.login-body { padding-top:200px;}
+.login-body .main { margin: 30px auto; width: 320px; background-color: #fff;padding:30px 20px 50px 20px;border-radius:3px;}
+.login-body .login-header { padding: 15px; }
+.login-body .login-title {
+    line-height:25px;
+    text-align:center;
+    color:#0cb39e; 
+    font-size:22px;
+}
+.login-body .login-bind {
+line-height:25px;color:#333; text-align:center; font-size:16px;
+}
+.login-body .headerTitle {margin-left:5px; color:#0cb39e; text-align:center; font-size:16px;font-weight:bold; line-height:24px;}
+.login-body .main .login{margin-top:25px;}
+.login-body .main .login .loginbar{ width:100%;height:40px; margin:10px 0px; background-color:#fff;position:relative;}
+.login-body .main .login a{color:#0cb39e;}
+.login-body .loginbar .input{ width:308px;border:solid 1px #ddd;color:#333;padding:5px;}
+.login-body .btnLogin { height:40px;line-height:40px; background-color:#0cb39e ; color:#fff; font-size:16px; text-align:center;
+border:none; cursor:pointer; display:inline-block; border-radius:2px; width:320px;}
+.login-body .txtBoxPassword { position: absolute; top: 0px; left: 0px; width: 298px;padding:0 5px; height: 40px; line-height: 40px; color: #999; display: block; }
+.login-body .registerErr { width: 100%; height: 40px; margin: 10px 0px; background-color: #ffd0d0; line-height: 40px; text-align: center; 
+                           color: red; border-radius: 3px; }
+
+
+
+
+
+

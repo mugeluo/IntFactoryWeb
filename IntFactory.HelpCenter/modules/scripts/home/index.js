@@ -58,25 +58,42 @@
         Global.post("/Home/GetTypes", null, function (data) {
             var functionTypes=data.functionTypes;
             if (functionTypes.length > 0) {
-                Dot.exec("/template/home/function-types.html", function (template) {
-                    var innerHtml = template(functionTypes);
-                    innerHtml = $(innerHtml);
-                    $(".function").append(innerHtml);
+                //Dot.exec("/template/home/function-types.html", function (template) {
+                    //var innerHtml = template(functionTypes);
+                    //innerHtml = $(innerHtml);
+                    //$(".function").append(innerHtml);
 
-                    $(".function li").mouseenter(function () {
-                        var _this = $(this);
-                        _this.find(".detail").show();
-                    });
-                    $(".function li .detail").mouseleave(function () {
-                        $(this).hide();
-                    });
+                for (var i = 0; i < 8; i++) {
+                    $(".function").append('<li data-id="' + i + '"><a><i class="iconfont"></i><div class="desc"></div><div class="detail hide"><div class="txt mTop40"></div><div class="txt"></div></div></a></li>');
+                }
+
+                var functionArray = [{ href: "/Contents/Contents/3caf07ed-5de1-4829-869a-3c47c7b420a7", iconfont: "&#xe621;", name: "工作台", remark: "工作台功能及其特点描述" }, { href: "/Contents/Contents/42c0bb53-07f1-43e7-857b-6ed589ec093f", iconfont: "&#xe61e;", name: "客户", remark: "客户功能及其特点描述" }, { href: "/Contents/Contents/cfa08906-0b09-44e0-978d-b0abb48c6735", iconfont: "&#xe623;", name: "订单", remark: "订单功能及其特点描述" }, { href: "/Contents/Contents/95088962-ec5d-4a3f-ae96-85827bee02e9", iconfont: "&#xe619;", name: "任务设置", remark: "任务设置功能及其特点描述" }, { href: "/Contents/Contents/08673e32-d738-4730-8580-d17d49855f8e", iconfont: "&#xe626;", name: "材料", remark: "材料功能及其特点描述" }, { href: "/Contents/Contents/e83b8979-4244-4f8a-bdfd-14bbe168b175", iconfont: "&#xe616;", name: "系统设置", remark: "系统设置功能及其特点描述" }, { href: "/Contents/Contents/e7a834a0-405f-4c30-8a5e-ab600af1c07c", iconfont: "&#xe622;", name: "绑定账号", remark: "绑定账号功能及其特点描述" }, { href: "/Contents/Contents/45daf2fc-3ffa-4fdf-8649-2128aa4ba333", iconfont: "&#xe61d;", name: "客户端", remark: "客户端功能及其特点描述" }];
+                    
+                $(".function li").each(function () {
+                    var _this = $(this), id = _this.data("id");
+                    _this.find("a").attr("href", functionArray[id].href);
+                    _this.find(".iconfont").html(functionArray[id].iconfont);
+                    _this.find(".desc").html(functionArray[id].name);
+                    _this.find(".detail .txt:first").html(functionArray[id].name);
+                    _this.find(".detail .txt:last").html(functionArray[id].remark);
                 });
+
+                $(".function li").mouseenter(function () {
+                    var _this = $(this);
+                    _this.find(".detail").show();
+                });
+                $(".function li .detail").mouseleave(function () {
+                    $(this).hide();
+                });
+                //});
 
                 for (var i = 0; i < functionTypes.length; i++) {
                     var item = functionTypes[i];
                     $("#zngc-functions").append("<ul class='left' data-id='" + item.TypeID + "'><li>" + item.Name + "</ul></li>");
                 }
             }
+
+
 
             var qaTypes=data.qaTypes;
             if (qaTypes.length > 0) {
@@ -96,13 +113,12 @@
                     $(".new-guide ul").append('<li><a href="/NewbieGuide/NewbieGuide?'+i+'"><img src="' + item.Icon + '" /><div class="bg-jianbian"></div><span class="txt">' + (i + 1) + '.' + item.Name + '</span></li></a>');
                 }
             }
-            
         });
     };
 
     ObjectJS.getContents = function (typeid, targetObject) {
         Params.TypeID = typeid;
-        $(targetObject).append("<div class='data-loading'><div>");
+        $(targetObject).append("<div class='data-loading' style='margin-left:-100px;'><div>");
         Global.post("/Home/getContents", { filter: JSON.stringify(Params) }, function (data) {
             $(".data-loading").remove();
             var items=data.items;

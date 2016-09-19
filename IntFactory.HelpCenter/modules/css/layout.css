@@ -37,22 +37,36 @@ width:1100px!important;margin:auto;
 .header-menu {height:50px;position:fixed;z-index:11111;width:100%; top:0;left:0;background-color:rgba(0,0,0,1)}
 .site-header {}
 .site-header::after{display:block;content:"";clear:both;}
-.site-header .helpcenter-icon{width:38px;height:38px;float:left;margin-top:5px;border:1px solid #ccc;border-radius:50%;color:#000;background-color:#fff;text-align:center;
+.site-header .helpcenter-icon{width:38px;height:38px;float:left;margin-top:5px;border:1px solid #ccc;border-radius:50%;color:#0cb39e;background-color:#fff;text-align:center;
                               line-height:40px;}
 .site-header .nav{margin-left:250px;}
 .site-header .nav::after{display:block;content:"";clear:both;}
-.site-header .nav li {float:left;margin-top:10px;cursor:pointer;width:100px;text-align:center;height:30px;line-height:30px;}
+.site-header .nav li {float:left;margin-top:10px;cursor:pointer;text-align:center;height:30px;line-height:30px;margin-right:40px;}
 .site-header .nav li a{ color:#fff;Opacity:0.7}
 .intfactory {width:30px;height:30px;border-radius:16px;background-color:#fff;color:#0cb39e;opacity:0.9; line-height:30px;text-align:center;margin-right:3px;font-size:26px !important;margin-top:2px;}
 .nav li i { width:30px;color:#fff;line-height:20px;}
 .nav li.hover a{ border-bottom:2px solid #fff;padding-bottom:14px;opacity:1;}
 .nav li:hover a{Opacity:1;color:#fff;}
-.site-header div a:first-child{ padding: 5px 15px; margin-right: 20px; cursor: pointer;
+.site-header div a:first-child{ padding: 5px 15px; margin-right: 5px; cursor: pointer;
                                 border-radius:3px;color:#fff;border:1px solid transparent;opacity:0.8}
 .site-header div a:first-child:hover{color:#aaa;background-color:#fff;}
 .site-header div .register{color:#fff;padding:5px 15px; cursor: pointer;
                                 border:1px solid #fff;border-radius:3px;opacity:0.7}
 .site-header div .register:hover{opacity:1;background-color:#fff;color:#0cb39e;}
+
+/*登录信息*/
+header .currentuser { margin-right:30px; cursor:pointer;}
+header .currentuser span{ display:inline-block; float:left;}
+header .currentuser .avatar { height:35px; width:35px; border:solid 1px #2F74B9; border-radius:18px; margin-top:7px;}
+header .currentuser .username { margin-left:10px; color:#eee; line-height:50px; font-size:14px; }
+
+header .currentuser .dropdown { width:16px; height:16px; position:relative; overflow:hidden; margin-left:5px; margin-top:24px; }
+header .dropdown .dropdown-top { border-top:solid 6px #eee; border-left:solid 6px transparent ;border-right:solid 6px transparent ; }
+header .dropdown .dropdown-bottom { border-top:solid 6px #2F74B9; border-left:solid 6px transparent ;
+                                    border-right:solid 6px transparent; position:absolute; top:-3px; left:0; }
+
+header .currentuser:hover .username{ color:#fff;}
+header .currentuser:hover .dropdown-top{ border-top:solid 6px #fff;}
 
 /*弹出层-新建*/
 .easydialog-create { min-width:400px;  }
@@ -67,12 +81,12 @@ width:1100px!important;margin:auto;
 .alert {background-color: #333;opacity:0.8; font-size: 13px; position: fixed; top:35%; z-index: 99999; 
          padding:20px;padding-left:40px;  overflow:auto; border-radius:5px;min-width:140px;max-width:260px;}
 .alert .alert-wrap { word-wrap: break-word;  word-break:break-all;color:#fff;font-size:14px;}
-.alert-wrap .alert-icon-right:before {content:"\e613";}
+.alert-wrap .alert-icon-right:before {content:"\e615";}
 .alert-wrap .alert-icon-right {color:#fefefe;font-size:20px;float:left;}
 .alert-wrap .alert-icon-warn:before {content:"\e64a";}
 .alert-wrap .alert-icon-warn {color:#fefefe;font-size:20px;float:left;}
 .alert-wrap .alert-msg {float:left;color:#fff;font-size:16px;line-height:24px; padding:0 20px 0 15px;max-width:160px;}
-.alert-wrap .alert-close:before {content:"\e628";}
+.alert-wrap .alert-close:before {content:"\e617";}
 .alert-wrap .alert-close {float:left;color:#ddd;font-size:20px;padding-top:0px;cursor:pointer;}
 .alert-wrap .alert-close:hover {color:#fff;}
 

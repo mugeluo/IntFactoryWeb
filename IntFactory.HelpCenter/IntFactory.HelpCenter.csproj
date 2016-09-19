@@ -172,6 +172,7 @@
     <Content Include="modules\css\contents\contents.css" />
     <Content Include="modules\css\feedback\feedback.css" />
     <Content Include="modules\css\home\index.css" />
+    <Content Include="modules\css\home\login.css" />
     <Content Include="modules\css\home\search.css" />
     <Content Include="modules\css\iconfont\demo.css" />
     <Content Include="modules\css\iconfont\demo.html" />
@@ -254,6 +255,7 @@
     <Content Include="modules\scripts\feedback\feedback.js" />
     <Content Include="modules\scripts\global.js" />
     <Content Include="modules\scripts\home\index.js" />
+    <Content Include="modules\scripts\home\login.js" />
     <Content Include="modules\scripts\home\search.js" />
     <Content Include="modules\scripts\layout.js" />
     <Content Include="modules\scripts\newbieguide\newbieguide.js" />
@@ -281,7 +283,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -331,6 +332,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\FeedBack\FeedBack.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Login.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

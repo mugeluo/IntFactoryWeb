@@ -1,4 +1,7 @@
 ﻿<!DOCTYPE html>
+@{
+    IntFactoryEntity.UsersEntity CurrentUser = (IntFactoryEntity.UsersEntity)Session["Manager"];    
+}
 <html>
 <head>
     <meta charset="utf-8" />
@@ -14,7 +17,7 @@
 
     <header class="header-menu " data-isbg="0">
         <div class="site-header content-width">
-            <a href="/Home/Index">
+            <a href="http://www.intfactory.cn/">
                 <div class="helpcenter-icon">厂盟</div>
             </a>            
             <ul class="left nav">  
@@ -24,11 +27,30 @@
                 <li class="NewbieGuide"><a href="/NewbieGuide/NewbieGuide">新手指南</a></li>
                 <li class="FeedBack"><a href="/FeedBack/FeedBack">反馈</a></li>
             </ul>
-            <div class="right mTop15">
-                <a href="http://zngc.intfactory.cn/Home/Login">登录</a>
-                <a class="register" href="http://zngc.intfactory.cn/Home/Register">注册</a> 
-                <div class="clear"></div>               
-            </div>   
+
+            @if (CurrentUser.LoginName!="")
+            {
+                <div id="currentUser" class="currentuser right">
+                    <span>
+                        <img src="@(string.IsNullOrEmpty(CurrentUser.Avatar)?"/modules/images/defaultavatar.png":CurrentUser.Avatar)" class="avatar" />
+                    </span>
+                    <span class="username">
+                        @(CurrentUser.Name)
+                    </span>
+                    <span class="dropdown">
+                        <span class="dropdown-top"></span>
+                        <span class="dropdown-bottom"></span>
+                    </span>
+                </div>
+            }
+            else
+            {
+                <div class="right mTop15">
+                    <a href="/Home/Login">登录</a>
+                    <a class="register" href="http://zngc.intfactory.cn/Home/Register">注册</a> 
+                    <div class="clear"></div>               
+                </div> 
+            }              
         </div>
     </header>
 

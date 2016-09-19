@@ -44,10 +44,16 @@ namespace IntFactoryDAL
             return ds;
         }
 
-        public DataSet GetFunctionTypes()
+        public DataSet GetFunctionTypes(string id)
         {
             string sqlTxt = "select * from M_HelpType  where Status<>9 and moduletype=1";
-            sqlTxt += " select * from m_helpcontent where status<>9 and typeid in  (select typeid from M_HelpType  where Status<>9 and moduletype=1) ";
+            string sqlWhere = "select typeid from M_HelpType  where Status<>9 and moduletype=1";
+            if (id!=null)
+            {
+                sqlTxt += "and TypeID='"+id+"'";
+                sqlWhere = "'" + id + "'";
+            }
+            sqlTxt += " select * from m_helpcontent where status<>9 and typeid in  (" + sqlWhere + ") ";
             DataSet ds = GetDataSet(sqlTxt);
 
             return ds;
@@ -141,6 +147,12 @@ namespace IntFactoryDAL
             totalNum = Convert.ToInt32(paras[7].Value);
             pageCount = Convert.ToInt32(paras[8].Value);
             return dt;
+        }
+
+        public DataTable UserLogin(string accound, string pwd)
+        {
+            string sqlTxt = "select * from Users where LoginName='"+accound+"' and LoginPWD='"+pwd+"'";
+            return GetDataTable(sqlTxt);
         }
 
         #endregion

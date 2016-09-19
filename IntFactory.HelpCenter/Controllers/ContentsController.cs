@@ -11,9 +11,9 @@ namespace IntFactory.HelpCenter.Controllers
         //
         // GET: /Contents/
 
-        public ActionResult Contents()
-        {
-            var model = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetFunctionTypes();
+        public ActionResult Contents(string id)
+        {           
+            var model = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetFunctionTypes(id);            
             ViewBag.model = model;
             return View();
         }

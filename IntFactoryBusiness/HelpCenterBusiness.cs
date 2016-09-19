@@ -21,6 +21,8 @@ namespace IntFactoryBusiness
 
         private static List<TypeEntity> FunctionTypes = null;
         private static DateTime FunctionTypesTime = DateTime.Now;
+        private static string FunctionTypesID = null;
+
 
         #region 查询
         public List<TypeEntity> GetTypesByModuleType(ModuleTypeEnum moduleType)
@@ -51,16 +53,16 @@ namespace IntFactoryBusiness
             return list;
         }
 
-        public List<TypeEntity> GetFunctionTypes()
+        public List<TypeEntity> GetFunctionTypes(string id)
         {
             List<TypeEntity> list = new List<TypeEntity>();
-            if (FunctionTypes != null && FunctionTypesTime > DateTime.Now)
+            if (FunctionTypes != null && FunctionTypesTime > DateTime.Now && FunctionTypesID==id)
             {
                 list = FunctionTypes;
             }
             else
             {
-                DataSet ds = HelpCenterDAL.BaseProvider.GetFunctionTypes();
+                DataSet ds = HelpCenterDAL.BaseProvider.GetFunctionTypes(id);
                 DataTable contents=ds.Tables[1];
                 
                 foreach (DataRow dr in ds.Tables[0].Rows)
@@ -77,6 +79,7 @@ namespace IntFactoryBusiness
                 }
                 FunctionTypes = list;
                 FunctionTypesTime = DateTime.Now.AddHours(2);
+                FunctionTypesID = id;
             }
 
             return list;
@@ -180,6 +183,18 @@ namespace IntFactoryBusiness
                 list.Add(model);
             }
             return list;
+        }
+
+        public UsersEntity UserLogin(string accound, string pwd)
+        {
+            UsersEntity item = new UsersEntity();
+            DataTable dt = HelpCenterDAL.BaseProvider.UserLogin(accound,pwd);
+            foreach (DataRow dr in dt.Rows)
+            {
+                item.FillData(dr);
+            }
+
+            return item;
         }
 
         #endregion

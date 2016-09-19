@@ -2,15 +2,15 @@
 .head-content .content-top {background:url(/modules/images/home/help-ind1.png)no-repeat left;}
 .head-content .content-top .head-title {font-size:30px;color:#fff;padding-top:80px;text-align:center; }
 .head-content .content-top .head-search{text-align:center;border-radius:2px;position:relative;width:800px;margin:auto;}
-.content-top .head-search .search-txt{color:#999;line-height:50px;margin-left:10px;width:700px;margin:auto;height:50px;margin-top:60px;font-size:16px;}
+.content-top .head-search .search-txt{color:#999;margin-left:10px;width:700px;margin:auto;margin-top:60px;font-size:16px;padding:8px 5px;border:1px solid #fff;}
 .content-top .head-search .search-txt:focus{border:1px solid #0cb39e;}
-.content-top .head-search .iconfont{font-size:30px;color:#0cb39e;float:right;line-height:50px;cursor:pointer;position:absolute;z-index:11;bottom:0;right:50px;}
+.content-top .head-search .iconfont{font-size:30px;color:#0cb39e;float:right;line-height:45px;cursor:pointer;position:absolute;z-index:11;bottom:0;right:50px;}
 .head-content .content-top .head-txt{font-size:18px;color:#eee;text-align:center;margin-top:20px;}
 .head-content .content-bottom{background:url(/modules/images/home/help-ind2.png)no-repeat right 300px;}
 .head-content .content-bottom .function{width:800px;margin:auto;margin-top:50px;padding-bottom:100px;}
 .function li { float:left;margin-right:20px;margin-bottom:20px;width:178px;height:178px;border:1px solid #fff;border-radius:5px;position:relative;}
 .function li .iconfont{font-size:80px;color:#fff;text-align:center;margin-left:50px;line-height:120px;}
-.function li .desc{text-align:center;width:180px;color:#fff}
+.function li .desc{text-align:center;width:180px;color:#fff;font-size:16px;}
 .function li .detail{position:absolute;z-index:22;top:0;left:0;width:180px;height:180px;background-color:#fff;border-radius:5px;cursor:pointer;}
 .function li .detail .txt{color:#0cb39e;text-align:center;line-height:30px;width:140px;margin:auto;}
 
@@ -29,6 +29,7 @@
 
 .problem .problem-detail { background-color:#f8f8f8;border-bottom:1px solid #ccc;border-top:1px solid #ccc;}
 .problem .problem-content ul{padding:50px 0px;margin-left:75px;width:195px;min-height:220px;}
+.problem .hot-problems ul{ margin-left:160px;}
 .problem .problem-content ul li:first-child{font-size:24px;margin-bottom:20px;}
 .problem .problem-content ul li:not(first-child){color:#666;line-height:2;}
 

@@ -10,7 +10,7 @@
     var ObjectJS = {};
     Params = {
         pageIndex: 1,
-        PageSize: 10,
+        PageSize: 20,
         type: -1,
         status: -1,
         BeginTime: '',
@@ -81,8 +81,8 @@
         require.async("dropdown", function () {
             var orderTypes = [{ ID: "1", Name: "待处理" }, { ID: "2", Name: "已处理" }, { ID: "3", Name: "驳回" }, { ID: "9", Name: "已删除" }];
             $("#procesSing").dropdown({
-                prevText: "处理情况-",
-                defaultText: "全部",
+                prevText: "处理情况",
+                defaultText: "",
                 defaultValue: "-1",
                 data: orderTypes,
                 dataValue: "ID",
@@ -90,6 +90,7 @@
                 width: "120",
                 onChange: function (data) {
                     if (Params.status != data.value) {
+                        $("#procesSing .dropdown-text").html(data.text);
                         Params.status = data.value;
                         Params.pageIndex = 1;
                         ObjectJS.getFeedBack();
@@ -101,8 +102,8 @@
         require.async("dropdown", function () {
             var orderTypes = [{ ID: "1", Name: "问题" }, { ID: "2", Name: "建议" }, { ID: "3", Name: "需求" }];
             $("#status").dropdown({
-                prevText: "反馈类型-",
-                defaultText: "全部",
+                prevText: "反馈类型",
+                defaultText: "",
                 defaultValue: "-1",
                 data: orderTypes,
                 dataValue: "ID",
@@ -110,6 +111,7 @@
                 width: "120",
                 onChange: function (data) {
                     if (Params.type != data.value) {
+                        $("#status .dropdown-text").html(data.text);
                         Params.type = data.value;
                         Params.pageIndex = 1;
                         ObjectJS.getFeedBack();

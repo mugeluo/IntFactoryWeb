@@ -44,8 +44,10 @@
         $(".menu-title").click(function () {
             var _this = $(this);
             if (!_this.hasClass("tag")) {
+                _this.siblings().removeClass("tag");
+                $(".item").hide();
+                _this.addClass("tag");
                 _this.next().show();
-                _this.addClass("tag");                          
             } else {
                 _this.removeClass("tag");
                 _this.next().hide();

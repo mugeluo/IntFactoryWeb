@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "厂盟 | 帮助中心-登录";
+    ViewBag.TitleName = "index";
+}
+@section css{
+    <link href="/modules/css/home/login.css" rel="stylesheet" />
+}
+@section scripts{
+    <script type="text/javascript">
+        seajs.use(["scripts/home/login"], function (ObjectJS) {
+            ObjectJS.initLogin();
+        });        
+    </script>
+}
+
+<div class="login-body">
+    <div class="main">
+        <div class="login-title">厂盟</div>
+
+        <div class="login">
+            <div class="registerErr hide"></div>
+            <div class="loginbar">
+                <input type="text" class="input" id="iptUserName" placeholder="请输入账号" maxlength="25">
+            </div>
+            <div class="loginbar" style="position:relative;">
+                <input type="password" class="input" id="iptPwd">
+                <div class="txtBoxPassword">请输入密码</div>
+            </div>
+            <div class="btnLogin mTop15" id="btnLogin">登录</div>
+            <div class="mTop30">
+                <div class="right">
+                    <a href="http://zngc.intfactory.cn/Home/FindPassword">忘记密码？</a><a style="padding:0 3px;">|</a>
+                    <a href="http://zngc.intfactory.cn/Home/Register">新用户注册</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

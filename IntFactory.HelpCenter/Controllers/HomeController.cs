@@ -18,12 +18,44 @@ namespace IntFactory.HelpCenter.Controllers
 
         public ActionResult Index()
         {
+            if (CurrentUser == null)
+            {
+                return Redirect("/Home/Login");
+            }
+            return View();
+        }
+
+        public ActionResult Login()
+        {
+            if (CurrentUser != null)
+            {
+                return Redirect("/Home/Index");
+            }
             return View();
         }
 
         public ActionResult Search()
         {
             return View();
+        }
+
+        public JsonResult UserLogin(string accound,string pwd)
+        {
+            bool bl = false;    
+
+            var model = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.UserLogin(accound, pwd);
+            if (model != null)
+            {
+                CurrentUser = model;
+                Session["Manager"] = model;
+                bl = true;
+            }
+            JsonDictionary.Add("result", bl);
+            return new JsonResult
+            {
+                Data = JsonDictionary,
+                JsonRequestBehavior = JsonRequestBehavior.AllowGet
+            };
         }
 
         public JsonResult GetTypesByModuleType(int type)
