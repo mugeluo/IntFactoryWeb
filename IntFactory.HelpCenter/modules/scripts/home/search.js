@@ -66,6 +66,8 @@
         });
 
         $(".count-trem").find("a:first").html(Params.Keywords);
+        
+        
     };
 
     ObjectJS.getContents = function () {

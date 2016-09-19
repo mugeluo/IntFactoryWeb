@@ -36,6 +36,8 @@
                 _this.addClass("hover");
                 $("#title").html(title);
                 $("#remark").html(decodeURI(remark));
+
+                $(".content-menu").css("height", $(".content").height());
             };
         });
 
@@ -100,6 +102,8 @@
             });
 
             $(targetObject).find(".items:first").click();
+
+            $(".content-menu").css("height", $(".content").height());
 
         });
     };

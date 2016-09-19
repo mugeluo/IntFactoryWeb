@@ -10,7 +10,7 @@
     var ObjectJS = {};
     Params = {
         pageIndex: 1,
-        PageSize: 5,
+        PageSize: 10,
         type: -1,
         status: -1,
         BeginTime: '',
@@ -224,7 +224,9 @@
                     }
                 });
             } else {
-                $(".tr-header").after("<tr><td colspan='5' class='nodata-txt'>暂无数据</td></tr>")
+                $(".tr-header").after("<tr><td colspan='5'><div class='nodata-txt'>暂无数据</div></td></tr>");
+                $("#pager").hide();
+                $(".table-list").addClass("mBottom60");
             }
         });
     }

@@ -48,7 +48,7 @@
                 {
                     foreach (var item in list)
                     {
-                        <li><img src="@(item.Icon)" alt="新手指引"></li>
+                        <li><img src="@(item.Icon==""?"/modules/images/img-noimg.png":item.Icon)" alt="新手指引"></li>
                     } 
                 }
 		    </ul>
