@@ -25,7 +25,7 @@
 
         Params.ModuleType = 2;
         Params.OrderBy = 'c.ClickNumber asc';
-        ObjectJS.getContent("", $(".item-all"));
+        ObjectJS.getContentHotProblems("", $(".item-all"));
     };
 
     ObjectJS.bindEvent = function () {
@@ -80,10 +80,10 @@
         })
     }
 
-    ObjectJS.getContent = function (typeid, targetObject) {
+    ObjectJS.getContentHotProblems = function (typeid, targetObject) {
         Params.TypeID = typeid;
         $(targetObject).after("<div class='data-loading'><div>");
-        Global.post("/Home/getContents", { filter: JSON.stringify(Params) }, function (data) {
+        Global.post("/Home/GetContents", { filter: JSON.stringify(Params) }, function (data) {
             $(".data-loading").remove();
             var items = data.items;
             var len = items.length;

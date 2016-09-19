@@ -28,7 +28,7 @@
                                                                 border-color:transparent transparent #f8f8f8;position:absolute;}
 
 .problem .problem-detail { background-color:#f8f8f8;border-bottom:1px solid #ccc;border-top:1px solid #ccc;}
-.problem .problem-content ul{padding:50px 0px;margin-left:75px;width:195px;min-height:180px;}
+.problem .problem-content ul{padding:50px 0px;margin-left:75px;width:195px;min-height:220px;}
 .problem .problem-content ul li:first-child{font-size:24px;margin-bottom:20px;}
 .problem .problem-content ul li:not(first-child){color:#666;line-height:2;}
 

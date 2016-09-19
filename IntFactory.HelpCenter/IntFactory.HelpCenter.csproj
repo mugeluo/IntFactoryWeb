@@ -195,6 +195,7 @@
     <Content Include="modules\images\iconback.png" />
     <Content Include="modules\images\ico_search.png" />
     <Content Include="modules\images\ico_searchhover.png" />
+    <Content Include="modules\images\img-noimg.png" />
     <Content Include="modules\images\logo_login.png" />
     <Content Include="modules\images\sns1.png" />
     <Content Include="modules\images\sns2.png" />
@@ -284,7 +285,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="modules\images\upload\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

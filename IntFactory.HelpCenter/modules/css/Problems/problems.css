@@ -7,14 +7,13 @@
 .problems-details .item{border-bottom:2px solid #eee;margin:30px 0px;}
 .problems-details .item ul{display:table;width:100%;}
 .problems-details .item ul li{display:table-cell;vertical-align:top;}
-.problems-details .item .problems-title{margin-bottom:5px;}
-.problems-details .item .problems-title a{font-size:22px;color:#333;}
-.problems-details .item .problems-desc{margin-bottom:20px;color:#666;line-height:28px;height:56px;overflow:hidden;text-overflow:ellipsis;}
+.problems-details .item .problems-title a{font-size:22px;color:#000;}
+.problems-details .item .problems-desc{margin-bottom:20px;margin-top:30px;color:#666;line-height:28px;height:56px;overflow:hidden;text-overflow:ellipsis;}
 .problems-details .item .problems-desc p, .problems-details .item .problems-desc a, .problems-details .item .problems-desc div, .problems-details .item .problems-desc span {
     color:#444!important;
 }
 .problems-details .item .look-detail{margin-bottom:20px;}
-.problems-details .item .look-detail a{color:#888;font-size:14px;cursor:pointer;}
+.problems-details .item .look-detail a{color:#0cb39e;font-size:14px;cursor:pointer;}
 .problems-details .item .right img{width:200px;height:120px;}
 
 .category .load-more{width:100%;background-color:#f2f2f2;text-align:center;height:40px;line-height:40px;margin:20px 0 40px 0;color:#999;cursor:pointer;}
