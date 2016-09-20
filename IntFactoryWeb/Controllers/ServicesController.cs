@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace IntFactoryWeb.Controllers
 {
-    public class ServicesController : Controller
+    public class ServicesController : BaseController
     {
         //
         // GET: /Services/

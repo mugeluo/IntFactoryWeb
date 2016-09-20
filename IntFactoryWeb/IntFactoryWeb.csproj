@@ -128,7 +128,9 @@
     <Compile Include="Areas\M\Controllers\ProductController.cs" />
     <Compile Include="Areas\M\Controllers\ServicesController.cs" />
     <Compile Include="Areas\M\MAreaRegistration.cs" />
+    <Compile Include="Common\UserAuthorize.cs" />
     <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PricingController.cs" />

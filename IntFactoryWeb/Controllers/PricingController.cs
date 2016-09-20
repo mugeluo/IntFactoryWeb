@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace IntFactoryWeb.Controllers
 {
-    public class PricingController : Controller
+    public class PricingController : BaseController
     {
         //
         // GET: /Pricing/

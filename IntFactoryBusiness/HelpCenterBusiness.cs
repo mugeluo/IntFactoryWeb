@@ -83,7 +83,6 @@ namespace IntFactoryBusiness
                 }
                 FunctionTypes = list;
                 FunctionTypesTime = DateTime.Now.AddHours(2);
-                FunctionTypesID = id;
             }
 
             return list;
