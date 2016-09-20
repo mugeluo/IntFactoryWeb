@@ -21,15 +21,7 @@ namespace IntFactoryBusiness
 
         private static List<TypeEntity> FunctionTypes = null;
         private static DateTime FunctionTypesTime = DateTime.Now;
-        private static string FunctionTypesID = null;
-
-
         #region 查询
-        public List<TypeEntity> GetTypesByModuleType(ModuleTypeEnum moduleType)
-        {
-            return GetTypes().FindAll(m => m.ModuleType == (int)moduleType);
-        }
-
         public List<TypeEntity> GetTypes()
         {
             List<TypeEntity> list = new List<TypeEntity>();
@@ -46,11 +38,17 @@ namespace IntFactoryBusiness
                     model.FillData(dr);
                     list.Add(model);
                 }
+
                 Types = list;
                 TypesTime = DateTime.Now.AddHours(2);
             }
 
             return list;
+        }
+
+        public List<TypeEntity> GetTypesByModuleType(ModuleTypeEnum moduleType)
+        {
+            return GetTypes().FindAll(m => m.ModuleType == (int)moduleType);
         }
 
         public TypeEntity GetFunctionType(string id) {
