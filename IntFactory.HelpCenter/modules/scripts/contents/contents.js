@@ -45,6 +45,7 @@
             var _this = $(this);
             if (!_this.hasClass("tag")) {
                 _this.siblings().removeClass("tag");
+                $(".item li").removeClass("hover");
                 $(".item").hide();
                 _this.addClass("tag");
                 _this.next().show();

@@ -1,4 +1,5 @@
 ﻿@{
+    IntFactoryEntity.UsersEntity CurrentUser = (IntFactoryEntity.UsersEntity)Session["Manager"];    
     ViewBag.Title = "厂盟 | 帮助中心";
     ViewBag.TitleName = "FeedBack";
 }
@@ -9,7 +10,7 @@
 @section scripts{
     <script type="text/javascript">
         seajs.use(["scripts/feedback/feedback"], function (ObjectJS) {
-            ObjectJS.init();
+            ObjectJS.init('@(Html.ToJSONString(CurrentUser))');
         });        
     </script>
 }
@@ -111,7 +112,7 @@
             <li>
                 <i class="iconfont">&#xe61b;</i>
                 <div>QQ交流群</div>
-                <div>121212121</div>
+                <div>495358994</div>
             </li>
         </ul>
     </div>

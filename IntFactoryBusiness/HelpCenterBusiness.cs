@@ -210,8 +210,7 @@ namespace IntFactoryBusiness
 
         public static bool InsertFeedBack(FeedBack model)
         {
-            return HelpCenterDAL.BaseProvider.InsertFeedBack(model.Title, model.ContactName, model.MobilePhone,
-                model.Type, model.FilePath, model.Remark);
+            return HelpCenterDAL.BaseProvider.InsertFeedBack(model.Title, model.ContactName, model.MobilePhone,model.Type, model.FilePath, model.Remark,model.CreateUserID);
         }
 
         #endregion

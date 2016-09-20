@@ -18,6 +18,9 @@
             }
         });
 
+        var href = window.location.href.split("?");
+        tag = href[href.length - 1];        
+
         //登录
         $("#btnLogin").click(function () {
             if (!$("#iptUserName").val()) {
@@ -38,7 +41,11 @@
             function (data) {
                 $("#btnLogin").html("登录").removeAttr("disabled");
                 if (data.result) {
-                    location.href = "/Home/Index";
+                    if (tag == "feedback") {
+                        location.href = '/FeedBack/FeedBack?feedback';
+                    } else {
+                        location.href = "/Home/Index";
+                    }                    
                 } else{
                     $(".registerErr").html("账号或密码有误").slideDown();
                 };
