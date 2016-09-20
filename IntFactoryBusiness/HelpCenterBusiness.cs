@@ -21,8 +21,10 @@ namespace IntFactoryBusiness
 
         private static List<TypeEntity> FunctionTypes = null;
         private static DateTime FunctionTypesTime = DateTime.Now;
+
         private static List<ContentEntity> Contents = null;
         private static DateTime ContentsTime = DateTime.Now;
+
         #region 查询
         public List<TypeEntity> GetTypes()
         {
@@ -50,9 +52,6 @@ namespace IntFactoryBusiness
 
         public List<TypeEntity> GetFunctionType(string id) {
             List<TypeEntity> item = new List<TypeEntity>();
-            return GetTypes().FindAll(m => m.ModuleType == (int)moduleType);
-        }
-
             var list = GetFunctionTypes();
             item.Add(list.Find(m => m.TypeID == id));
             return item;

@@ -55,18 +55,7 @@ namespace IntFactory.HelpCenter.Controllers
                 JsonRequestBehavior = JsonRequestBehavior.AllowGet
             };
         }
-
-        public JsonResult GetTypesByModuleType(int type)
-        {
-            var item = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetTypesByModuleType((ModuleTypeEnum)type);
-            JsonDictionary.Add("items",item);
-            return new JsonResult
-            {
-                Data = JsonDictionary,
-                JsonRequestBehavior = JsonRequestBehavior.AllowGet
-            };
-        }
-
+               
         public JsonResult GetTypes()
         {
             var items = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetTypes();
