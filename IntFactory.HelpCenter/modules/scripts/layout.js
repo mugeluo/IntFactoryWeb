@@ -14,7 +14,13 @@ define(function (require, exports, module) {
     //绑定事件
     LayoutObject.bindEvent = function (name) {
         $(".site-header ." + name).addClass("hover");
-         
+        
+        $(document).click(function (e) {
+            if (!$(e.target).parents().hasClass("currentuser") && !$(e.target).hasClass("currentuser")) {
+                $(".dropdown-userinfo").fadeOut("1000");
+            }
+        });
+
         //窗体滚动 置顶头部
         $(window).scroll(function () {
             if ($(document).scrollTop()>80){ 
@@ -39,6 +45,10 @@ define(function (require, exports, module) {
         //搜索
         $(".head-search .iconfont").click(function () {
             window.location = "/Home/Search?" + $(".search-txt").val();
+        });
+
+        $("#currentUser").click(function () {
+            $(".dropdown-userinfo").fadeIn("1000");
         });
 
     }

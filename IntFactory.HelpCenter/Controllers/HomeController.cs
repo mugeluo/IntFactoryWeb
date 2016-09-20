@@ -15,23 +15,21 @@ namespace IntFactory.HelpCenter.Controllers
     {
         //
         // GET: /Home/
-
+        
         public ActionResult Index()
-        {
-            if (CurrentUser == null)
-            {
-                return Redirect("/Home/Login");
-            }
+        {            
             return View();
         }
 
         public ActionResult Login()
         {
-            if (CurrentUser != null)
-            {
-                return Redirect("/Home/Index");
-            }
             return View();
+        }
+
+        public ActionResult Logout()
+        {
+            CurrentUser = null;
+            return Redirect("/Home/Login");
         }
 
         public ActionResult Search()

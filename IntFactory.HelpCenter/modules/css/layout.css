@@ -47,15 +47,15 @@ width:1100px!important;margin:auto;
 .nav li i { width:30px;color:#fff;line-height:20px;}
 .nav li.hover a{ border-bottom:2px solid #fff;padding-bottom:14px;opacity:1;}
 .nav li:hover a{Opacity:1;color:#fff;}
-.site-header div a:first-child{ padding: 5px 15px; margin-right: 5px; cursor: pointer;
+.site-header .login a:first-child{ padding: 5px 15px; margin-right: 5px; cursor: pointer;
                                 border-radius:3px;color:#fff;border:1px solid transparent;opacity:0.8}
-.site-header div a:first-child:hover{color:#aaa;background-color:#fff;}
-.site-header div .register{color:#fff;padding:5px 15px; cursor: pointer;
+.site-header .login a:first-child:hover{color:#aaa;background-color:#fff;}
+.site-header .login .register{color:#fff;padding:5px 15px; cursor: pointer;
                                 border:1px solid #fff;border-radius:3px;opacity:0.7}
-.site-header div .register:hover{opacity:1;background-color:#fff;color:#0cb39e;}
+.site-header .login .register:hover{opacity:1;background-color:#fff;color:#0cb39e;}
 
 /*登录信息*/
-header .currentuser { margin-right:30px; cursor:pointer;}
+header .currentuser { margin-right:30px; cursor:pointer;position:relative;}
 header .currentuser span{ display:inline-block; float:left;}
 header .currentuser .avatar { height:35px; width:35px; border:solid 1px #2F74B9; border-radius:18px; margin-top:7px;}
 header .currentuser .username { margin-left:10px; color:#eee; line-height:50px; font-size:14px; }
@@ -67,6 +67,15 @@ header .dropdown .dropdown-bottom { border-top:solid 6px #2F74B9; border-left:so
 
 header .currentuser:hover .username{ color:#fff;}
 header .currentuser:hover .dropdown-top{ border-top:solid 6px #fff;}
+
+.dropdown-userinfo { position:absolute; background-color:#fff; width:120px; border-radius:2px; border:solid 1px #eee;
+                     box-shadow:0 0 5px #ccc; top:50px; z-index:2000;}
+.dropdown-userinfo .top-lump { border-bottom:solid 10px #fff; border-left:solid 12px transparent ;border-right:solid 12px transparent; 
+                               width:0; height:0; position:absolute; left:50px; top:-9px; }
+.dropdown-userinfo .items-list { padding:5px 0; overflow:auto; }
+.dropdown-userinfo .items-list .item{ height:35px; line-height:35px; float:left; width:120px; }
+.dropdown-userinfo .items-list .item a{ width:70px;padding-left:30px; display:inline-block; font-size:14px; color:#666;}
+.dropdown-userinfo .items-list .item:hover{ background-color:#eee; }
 
 /*弹出层-新建*/
 .easydialog-create { min-width:400px;  }

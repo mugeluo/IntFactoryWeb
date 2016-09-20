@@ -28,30 +28,37 @@
                 <li class="FeedBack"><a href="/FeedBack/FeedBack">反馈</a></li>
             </ul>
 
-            @if (CurrentUser.LoginName!="")
+            @if (CurrentUser!=null)
             {
                 <div id="currentUser" class="currentuser right">
                     <span>
                         <img src="@(string.IsNullOrEmpty(CurrentUser.Avatar)?"/modules/images/defaultavatar.png":CurrentUser.Avatar)" class="avatar" />
                     </span>
                     <span class="username">
-                        @(CurrentUser.Name)
+                       @(CurrentUser.Name)
                     </span>
                     <span class="dropdown">
                         <span class="dropdown-top"></span>
                         <span class="dropdown-bottom"></span>
                     </span>
+                    <div class="dropdown-userinfo hide">
+                        <div class="top-lump"></div>
+                        <ul class="items-list">
+                            <li class="item"><a href="/Home/Logout">安全退出</a></li>
+                        </ul>
+                    </div>
                 </div>
             }
             else
             {
-                <div class="right mTop15">
+                <div class="right mTop15 login">
                     <a href="/Home/Login">登录</a>
                     <a class="register" href="http://zngc.intfactory.cn/Home/Register">注册</a> 
                     <div class="clear"></div>               
                 </div> 
             }              
         </div>
+        
     </header>
 
    <div class="main-content">

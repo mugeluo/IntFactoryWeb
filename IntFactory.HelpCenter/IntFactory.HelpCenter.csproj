@@ -182,6 +182,7 @@
     <Content Include="modules\css\newbieguide\newbieguide.css" />
     <Content Include="modules\css\Problems\hotproblems.css" />
     <Content Include="modules\css\Problems\problems.css" />
+    <Content Include="modules\images\defaultavatar.png" />
     <Content Include="modules\images\feedback-bg.png" />
     <Content Include="modules\images\home\1.png" />
     <Content Include="modules\images\home\help-ind1.png" />

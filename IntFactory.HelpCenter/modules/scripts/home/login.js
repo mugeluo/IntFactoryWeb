@@ -30,9 +30,9 @@
             }
            
             $(this).html("登录中...").attr("disabled", "disabled");
-
+           
             Global.post("/Home/UserLogin", {
-                userName: $("#iptUserName").val(),
+                accound: $("#iptUserName").val(),
                 pwd: $("#iptPwd").val()                
             },
             function (data) {

@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace IntFactory.HelpCenter.Controllers
 {
-
+    //[IntFactory.HelpCenter.Common.UserAuthorize]
     public class BaseController : Controller
     {
         protected IntFactoryEntity.UsersEntity CurrentUser
