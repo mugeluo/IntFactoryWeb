@@ -228,9 +228,15 @@
                     innerHtml = $(innerHtml);
                     $(".tr-header").after(innerHtml);
 
-                    $(".item td").click(function () {                        
+                    var isStatus=true;
+                    $(".item td").click(function () {     
+                        if (!isStatus) {
+                            isStatus = true;
+                            return;
+                        }
                         var _this = $(this).parent().find(".open-contents"), _parent = $(this).parent(), id = _this.data("id");
-                        if (_this.hasClass("tag")) {                            
+                        if (_this.hasClass("tag")) {
+                            isStatus = false;
                             _this.html("关闭").removeClass("tag");
                             _parent.find(".span").hide();
                             _parent.find(".div").show();
@@ -239,7 +245,11 @@
                             }
                         }
                     });
-                    $(".item .open-contents").click(function () {                        
+                    $(".item .open-contents").click(function () {
+                        if (!isStatus) {
+                            isStatus = true;
+                            return;
+                        }
                         var _parent = $(this).parent(), _this = $(this), id = _this.data("id");
                         if (!_this.hasClass("tag")) {                            
                             _this.html("展开").addClass("tag");
