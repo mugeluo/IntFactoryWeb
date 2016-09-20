@@ -123,7 +123,7 @@
             });
         });
 
-        $(".content span").click(function () {
+        $(".content span").click(function () {            
             var _this = $(this),id=_this.data("id");
             if (!_this.hasClass("hover")) {
                 _this.siblings().removeClass("hover");
@@ -144,6 +144,9 @@
                     $("." + id).show();
                     ObjectJS.getFeedBack();
                 }                
+            } else {
+                $(".content-feedback,.content-item").hide();
+                $(".content-feedback").show();
             }
         });
 

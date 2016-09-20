@@ -1,16 +1,11 @@
 ﻿@{
+    var QAcontents = (List<IntFactoryEntity.ContentEntity>)ViewBag.QAcontents;
+    var HotQAContents = (List<IntFactoryEntity.ContentEntity>)ViewBag.HotQAContents;
     ViewBag.Title = "厂盟 | 热门问题";
     ViewBag.TitleName = "problems";
 }
 @section css{
     <link href="/modules/css/Problems/hotproblems.css" rel="stylesheet" />
-}
-@section scripts{
-    <script type="text/javascript">
-        seajs.use(["scripts/problems/hotproblems"], function (ObjectJS) {
-            ObjectJS.init();
-        }); 
-    </script>
 }
 
 <div class="head-content-menu">
@@ -31,13 +26,25 @@
 
 <div class="details content-width clear-after">
     <ul class="number">
-        <li class="item-all">最多浏览</li>        
+        <li class="item-all">最多浏览</li> 
+        @{
+            foreach (var qa in HotQAContents)
+             {
+                 <li><a href='/Problems/ProblemsDetail/@qa.ContentID'>@qa.Title</a></li>
+             }
+        }       
     </ul>
     <ul>
         <li>最多反馈</li>
         <li>· 管理客户管理客户管理客户管理客户管理客户管理客户管理客户管理客户</li>
     </ul>
     <ul class="create" style="margin-right:0;">
-        <li class="item-all">最近更新</li>        
+        <li class="item-all">最近更新</li>  
+        @{
+            foreach (var qa in QAcontents)
+             {
+                 <li><a href='/Problems/ProblemsDetail/@qa.ContentID'>@qa.Title</a></li>
+             }
+        }      
     </ul>
 </div>

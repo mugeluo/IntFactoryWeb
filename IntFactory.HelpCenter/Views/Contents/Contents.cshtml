@@ -55,21 +55,22 @@
                 <ul class="problems-list">
                     <li class="item-all">常见问题</li>
                     @{
-                        foreach(var qa in QAcontents){
-                        <li><a href='/Problems/ProblemsDetail/@qa.ContentID'>@qa.Title</a></li>
+                        foreach(var qa in QAcontents)
+                        {
+                            <li><a href='/Problems/ProblemsDetail/@qa.ContentID'>@qa.Title</a></li>
                         }
-                        }
+                    }
                 </ul>
             </div>
             <div class="contents-item">
                 <ul class="news-list">
-                    <li class="item-all">热门指南</li>
+                    <li class="item-all">热门问题</li>
                     @{
                         foreach (var qa in HotQAContents)
                         {
-                        <li><a href='/Problems/ProblemsDetail/@qa.ContentID'>@qa.Title</a></li>
+                            <li><a href='/Problems/ProblemsDetail/@qa.ContentID'>@qa.Title</a></li>
                         }
-                        }
+                    }
                 </ul>
             </div>
         </div>

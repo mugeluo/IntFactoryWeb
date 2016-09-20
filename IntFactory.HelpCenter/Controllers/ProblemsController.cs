@@ -26,6 +26,8 @@ namespace IntFactory.HelpCenter.Controllers
 
         public ActionResult HotProblems()
         {
+            ViewBag.QAContents = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetQAContents();
+            ViewBag.HotQAContents = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetHotQAContents();
             return View();
         }
 
