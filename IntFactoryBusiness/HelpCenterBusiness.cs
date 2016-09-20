@@ -53,16 +53,22 @@ namespace IntFactoryBusiness
             return list;
         }
 
-        public List<TypeEntity> GetFunctionTypes(string id)
+        public TypeEntity GetFunctionType(string id) {
+            var list = GetFunctionTypes();
+
+            return list.Find(m => m.TypeID == id);
+        }
+
+        public List<TypeEntity> GetFunctionTypes()
         {
             List<TypeEntity> list = new List<TypeEntity>();
-            if (FunctionTypes != null && FunctionTypesTime > DateTime.Now && FunctionTypesID==id)
+            if (FunctionTypes != null && FunctionTypesTime > DateTime.Now)
             {
                 list = FunctionTypes;
             }
             else
             {
-                DataSet ds = HelpCenterDAL.BaseProvider.GetFunctionTypes(id);
+                DataSet ds = HelpCenterDAL.BaseProvider.GetFunctionTypes();
                 DataTable contents=ds.Tables[1];
                 
                 foreach (DataRow dr in ds.Tables[0].Rows)
