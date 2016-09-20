@@ -53,7 +53,7 @@ namespace IntFactoryBusiness
             return list;
         }
 
-        public TypeEntity GetFunctionTypes(string id) {
+        public TypeEntity GetFunctionType(string id) {
             var list = GetFunctionTypes();
 
             return list.Find(m => m.TypeID == id);
