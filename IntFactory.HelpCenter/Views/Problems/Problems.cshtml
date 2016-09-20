@@ -1,5 +1,6 @@
 ﻿@{
     var list = (List<IntFactoryEntity.TypeEntity>)ViewBag.list;
+    var HotQAContents = (List<IntFactoryEntity.ContentEntity>)ViewBag.HotQAContents;
     ViewBag.Title = "厂盟 | 常见问题";
     ViewBag.TitleName = "Problems";
 }
@@ -47,7 +48,12 @@
     <div class="example">
         <ul>
             <li class="item-all"><div>热门问题</div></li>
-            
+            @{
+                foreach (var qa in HotQAContents)
+                {
+                <li><a href='/Problems/ProblemsDetail/@qa.ContentID'>@qa.Title</a></li>
+                }
+                }
             <li><a href="/Problems/HotProblems">更多 >></a></li>
         </ul>
     </div>

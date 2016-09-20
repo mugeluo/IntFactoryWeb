@@ -1,6 +1,8 @@
 ﻿@{
     ViewBag.Title = "厂盟 | 帮助中心";
     ViewBag.TitleName = "Index";
+    var QAcontents = (List<IntFactoryEntity.ContentEntity>)ViewBag.QAcontents;
+    var HotQAContents = (List<IntFactoryEntity.ContentEntity>)ViewBag.HotQAContents;
 }
 @section css{
     <link href="/modules/css/home/index.css" rel="stylesheet" />
@@ -31,16 +33,16 @@
 
 <div class="problem">
     <ul class="table-switch clear-after">
-        <li class="hover" data-id="0">
-            <i class="iconfont">&#xe627;</i>
-            <div>常见问题</div>
+        <li data-id="0" class="hover" >
+            <i class="iconfont">&#xe61a;</i>
+            <div>热门问题</div>
             <div class="triangle_border_up">
                 <div class="triangle_border_inner"></div>
             </div>
         </li>
-        <li data-id="1">
-            <i class="iconfont">&#xe61a;</i>
-            <div>热门问题</div>
+       <li data-id="1">
+            <i class="iconfont">&#xe627;</i>
+            <div>常见问题</div>
             <div class="triangle_border_up">
                 <div class="triangle_border_inner"></div>
             </div>
@@ -54,22 +56,38 @@
         </li>
     </ul>
     <div class="problem-detail ">
-        <div class="problem-content clear-after content-width">
-            <ul class="left"></ul>
-            <ul class="left"></ul>
-            <ul class="left"></ul>
-            <ul class="left"></ul>
-        </div>
-        <div class="problem-content clear-after hide content-width hot-problems" id="hot-problems" style="width:900px;">
+        <div class="problem-content clear-after content-width hot-problems" id="hot-problems" style="width:900px;">
             <ul class="left">
                 <li>最多浏览</li>
+                @{
+                        foreach (var qa in HotQAContents)
+                        {
+                        <li><a href='/Problems/ProblemsDetail/@qa.ContentID'>@qa.Title</a></li>
+                        }
+                        }
             </ul>
             <ul class="left">
                 <li>最近更新</li>
+                @{
+                        foreach(var qa in QAcontents){
+                        <li><a href='/Problems/ProblemsDetail/@qa.ContentID'>@qa.Title</a></li>
+                        }
+                        }
             </ul>
             <ul class="left">
                 <li>最多反馈</li>
+                @{
+                        foreach(var qa in QAcontents){
+                        <li><a href='/Problems/ProblemsDetail/@qa.ContentID'>@qa.Title</a></li>
+                        }
+                        }
             </ul>
+        </div>
+        <div class="problem-content clear-after content-width hide" id="normal-problems">
+            <ul class="left"></ul>
+            <ul class="left"></ul>
+            <ul class="left"></ul>
+            <ul class="left"></ul>
         </div>
         <div class="problem-content  hide content-width clear-after" id="zngc-functions"></div>
         <div class="clear"></div>

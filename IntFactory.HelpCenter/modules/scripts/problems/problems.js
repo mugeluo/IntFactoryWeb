@@ -23,9 +23,9 @@
         ObjectJS.bindEvent();
         ObjectJS.getContents();
 
-        Params.ModuleType = 2;
-        Params.OrderBy = 'c.ClickNumber asc';
-        ObjectJS.getContentHotProblems("", $(".item-all"));
+        //Params.ModuleType = 2;
+        //Params.OrderBy = 'c.ClickNumber asc';
+        //ObjectJS.getContentHotProblems("", $(".item-all"));
     };
 
     ObjectJS.bindEvent = function () {

@@ -131,10 +131,10 @@
             };            
             if (id == "content-item") {
                 if (currentUser=="") {
-                    var confirmMsg = "您现在未登录，是否登录?";
+                    var confirmMsg = "登录后，您将查看您反馈的内容?";
                     confirm(confirmMsg, function () {
                         window.location = '/Home/Login?feedback';
-                    }, '', function () {
+                    }, "立即登录", function () {
                         $(".content-feedback,.content-item").hide();
                         $("." + id).show();
                         ObjectJS.getFeedBack();

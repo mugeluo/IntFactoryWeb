@@ -20,11 +20,11 @@
     ObjectJS.init = function () {              
         ObjectJS.bindEvent();
 
-        Params.ModuleType = 2;
-        ObjectJS.getContents("", $(".problems-list"));
+        //Params.ModuleType = 2;
+        //ObjectJS.getContents("", $(".problems-list"));
 
-        Params.OrderBy = "c.ClickNumber desc";
-        ObjectJS.getContents("", $(".news-list"));
+        //Params.OrderBy = "c.ClickNumber desc";
+        //ObjectJS.getContents("", $(".news-list"));
     };
 
     ObjectJS.bindEvent = function () {        
