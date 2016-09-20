@@ -120,7 +120,7 @@ header .currentuser:hover .dropdown-top{ border-top:solid 6px #fff;}
 
 /*常见问题 头部*/
 .head-content-menu { background-color:#0cb39e;height:120px;}
-.head-content-menu .content{;margin:auto;}
+.head-content-menu .content{margin:auto;}
 .head-content-menu .content .head-menu{padding-top:75px;float:left;}
 .head-content-menu .head-menu a, .head-menu span { color:#fff;opacity:0.9;cursor:pointer;font-size:16px;}
 .head-content-menu .head-menu a:hover{opacity:1;}
@@ -132,7 +132,7 @@ header .currentuser:hover .dropdown-top{ border-top:solid 6px #fff;}
 /*footer样式*/
 
 .site-footer {width:100%;background-color:#434443;height:150px;}
-.site-footer .module-box{;margin:auto;}
+.site-footer .module-box{margin:auto;}
 .site-footer .links{margin-top:20px;}
 .site-footer .links a{padding-bottom:20px;display: block; float: left;cursor:pointer;}
 .links a{ margin-right:20px;color:#ddd;opacity:0.8}
