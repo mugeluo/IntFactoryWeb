@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace IntFactoryWeb.Controllers
 {
-    public class CaseController : Controller
+    public class CaseController : BaseController
     {
         //
         // GET: /Case/
