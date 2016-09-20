@@ -194,6 +194,7 @@ namespace IntFactoryBusiness
         public UsersEntity UserLogin(string accound, string pwd)
         {
             UsersEntity item = new UsersEntity();
+            pwd =IntFactoryEntity.Encrypt.GetEncryptPwd(pwd, accound);
             DataTable dt = HelpCenterDAL.BaseProvider.UserLogin(accound,pwd);
             foreach (DataRow dr in dt.Rows)
             {
