@@ -93,7 +93,10 @@ namespace IntFactoryBusiness
             List<ContentEntity> list = new List<ContentEntity>();
             if (Contents != null && ContentsTime > DateTime.Now)
             {
-                list = Contents;
+                if (moduleType == 2 && orderBy == "c.ClickNumber desc")
+                {
+                    list = Contents;
+                }
             }
             else
             {
@@ -103,6 +106,11 @@ namespace IntFactoryBusiness
                     ContentEntity model = new ContentEntity();
                     model.FillData(dr);
                     list.Add(model);
+                }
+                if (moduleType == 2 || orderBy == "c.ClickNumber desc")
+                {
+                    Contents = list;
+                    ContentsTime = DateTime.Now.AddHours(2);
                 }
             }
             return list;

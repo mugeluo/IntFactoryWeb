@@ -16,7 +16,7 @@
         EndTime: "",
         PageIndex: 1,
         PageSize: 10,
-        OrderBy: "c.UpdateTime desc",
+        OrderBy: "c.CreateTime desc",
     }
 
     ObjectJS.init = function () {
