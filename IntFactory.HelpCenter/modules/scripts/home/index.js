@@ -49,20 +49,19 @@
     ObjectJS.getTypes = function () {
         Global.post("/Home/GetTypes", null, function (data) {
             var functionTypes=data.functionTypes;
-            if (functionTypes.length > 0) {
-                //Dot.exec("/template/home/function-types.html", function (template) {
-                    //var innerHtml = template(functionTypes);
-                    //innerHtml = $(innerHtml);
-                    //$(".function").append(innerHtml);
+            if (functionTypes.length > 0) {               
 
-                var functionArray = [{ id: "3caf07ed-5de1-4829-869a-3c47c7b420a7", iconfont: "&#xe621;", name: "工作台", remark: "工作台功能及其特点描述" },
+                var functionArray = [
+                   { id: "3caf07ed-5de1-4829-869a-3c47c7b420a7", iconfont: "&#xe621;", name: "工作台", remark: "工作台功能及其特点描述" },
                    { id: "42c0bb53-07f1-43e7-857b-6ed589ec093f", iconfont: "&#xe61e;", name: "客户", remark: "客户功能及其特点描述" },
                    { id: "cfa08906-0b09-44e0-978d-b0abb48c6735", iconfont: "&#xe623;", name: "订单", remark: "订单功能及其特点描述" },
                    { id: "95088962-ec5d-4a3f-ae96-85827bee02e9", iconfont: "&#xe619;", name: "任务设置", remark: "任务设置功能及其特点描述" },
                    { id: "08673e32-d738-4730-8580-d17d49855f8e", iconfont: "&#xe626;", name: "材料", remark: "材料功能及其特点描述" },
                    { id: "e83b8979-4244-4f8a-bdfd-14bbe168b175", iconfont: "&#xe616;", name: "系统设置", remark: "系统设置功能及其特点描述" },
                    { id: "e7a834a0-405f-4c30-8a5e-ab600af1c07c", iconfont: "&#xe622;", name: "绑定账号", remark: "绑定账号功能及其特点描述" },
-                   { id: "45daf2fc-3ffa-4fdf-8649-2128aa4ba333", iconfont: "&#xe61d;", name: "客户端", remark: "客户端功能及其特点描述" }];
+                   { id: "45daf2fc-3ffa-4fdf-8649-2128aa4ba333", iconfont: "&#xe61d;", name: "客户端", remark: "客户端功能及其特点描述" }
+                ];
+
                 for (var i = 0; i < 8; i++) {
                     var item = functionArray[i];
                     $(".function").append('<li ><a href="/Contents/Contents/' + item.id + '"><i class="iconfont">' + item.iconfont + '</i><div class="desc">' + item.name + '</div><div class="detail hide"><div class="txt mTop40">' + item.name + '</div><div class="txt">' + item.remark + '</div></div></a></li>');
@@ -75,8 +74,6 @@
                 $(".function li .detail").mouseleave(function () {
                     $(this).hide();
                 });
-
-                //});
 
                 for (var i = 0; i < functionTypes.length; i++) {
                     var item = functionTypes[i];
@@ -104,7 +101,7 @@
 
     ObjectJS.getContents = function (typeid, targetObject) {
         Params.TypeID = typeid;
-        $(targetObject).append("<div class='data-loading' style='margin-left:-100px;'><div>");
+        $(targetObject).append("<div class='data-loading' style='margin-left:-145px;'><div>");
         Global.post("/Home/getContents", { filter: JSON.stringify(Params) }, function (data) {
             $(".data-loading").remove();
             var items=data.items;

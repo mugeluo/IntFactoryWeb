@@ -19,12 +19,6 @@
 
     ObjectJS.init = function () {              
         ObjectJS.bindEvent();
-
-        //Params.ModuleType = 2;
-        //ObjectJS.getContents("", $(".problems-list"));
-
-        //Params.OrderBy = "c.ClickNumber desc";
-        //ObjectJS.getContents("", $(".news-list"));
     };
 
     ObjectJS.bindEvent = function () {        
@@ -60,7 +54,7 @@
             if (Params.Keywords != keyWords) {
                 Params.Keywords = keyWords;
                 Params.ModuleType = 1;
-                ObjectJS.getContents("", $(".menu"), true);
+                ObjectJS.getContents("", $(".menu"));
             }
 
         });
@@ -71,11 +65,10 @@
     };
 
     ObjectJS.getContents = function (typeid, targetObject,status) {
-        if (status) {
-            $(targetObject).empty();
-            $("#title").empty();
-            $("#remark").empty();
-        }
+        
+        $(targetObject).empty();
+        $("#title").empty();
+        $("#remark").empty();       
         Params.TypeID = typeid;
         $(targetObject).append("<div class='data-loading'><div>");
         Global.post("/Home/getContents", { filter: JSON.stringify(Params) }, function (data) {
@@ -85,12 +78,10 @@
             if (len > 0) {
                 for (var i = 0; i < len; i++) {
                     var item = items[i];
-                    if (status) {
-                        $(targetObject).append("<div class='items' data-title='" + item.Title + "' data-desc='" + item.Detail + "'><span>" + item.Title + "</span></div>");
-                    } else {
-                        $(targetObject).append("<li><a href='/Problems/ProblemsDetail/" + item.ContentID + "'>. " + item.Title + "</a></li>");
-                    }                    
+                    $(targetObject).append("<div class='items' data-title='" + item.Title + "' data-desc='" + item.Detail + "'><span>" + item.Title + "</span></div>");
                 }
+            } else {
+                $(targetObject).append('<div class="nodata-txt" style="background-color:#eee">暂无数据</div>');
             }
 
             $(targetObject).find(".items").click(function () {

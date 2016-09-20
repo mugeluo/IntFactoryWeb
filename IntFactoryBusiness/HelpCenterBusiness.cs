@@ -129,12 +129,7 @@ namespace IntFactoryBusiness
             }
 
             return list;
-        }
-
-        //public List<ContentEntity> GetHotContents()
-        //{
-
-        //}
+        }       
 
         public List<ContentEntity> GetContents(int moduleType, string typeID, string keyWords, string beginTime, string endTime, string orderBy, int pageSize, int pageIndex, ref int totalCount, ref int pageCount)
         {
