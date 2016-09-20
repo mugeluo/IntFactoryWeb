@@ -11,7 +11,7 @@
     <script src="/Scripts/jquery-1.11.1.js"></script>  
     <script type="text/javascript">
         seajs.use(["scripts/contents/contents"], function (ObjectJS) {
-            ObjectJS.init('@(Html.ToJSONString(model))');
+            ObjectJS.init();
         });        
     </script>
 }
@@ -23,7 +23,7 @@
             <i class="iconfont">&#xe618;</i>
         </div>
         <div class="menu mTop20 mBottom30">
-            @if (model.Count>0)
+            @if (model.Count > 0)
             {
                 foreach (var item in model)
                 {
@@ -31,13 +31,15 @@
                         <i class="iconfont">&#xe624;</i>
                         <span>@(item.Name)</span>
                     </div>
-                    <ul class="item hide">
-                        @foreach (var detail in item.contents){
+                    <ul class="item hide">                        
+                        @foreach (var detail in item.contents)
+                        {
                             <li class="" data-detail="@(detail.Detail)" data-title="@(detail.Title)"><span>@(detail.Title)</span></li>
                         }
+                                              
                     </ul> 
                 }
-            }
+            }            
             
         </div>
     </div>

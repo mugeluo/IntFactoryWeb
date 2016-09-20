@@ -12,12 +12,12 @@
         EndTime: "",
         PageIndex: 1,
         PageSize: 10,
-        OrderBy: "c.CreateTime desc",
+        OrderBy: "c.UpdateTime desc",
     }
 
     var ObjectJS = {};
 
-    ObjectJS.init = function () {
+    ObjectJS.init = function () {              
         ObjectJS.bindEvent();
 
         Params.ModuleType = 2;
@@ -27,8 +27,7 @@
         ObjectJS.getContents("", $(".news-list"));
     };
 
-    ObjectJS.bindEvent = function () {
-
+    ObjectJS.bindEvent = function () {        
         $(".item li").click(function () {
             var _this = $(this), remark = _this.data("detail"),title=_this.data("title");
             if (!_this.hasClass("hover")) {

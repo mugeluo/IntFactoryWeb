@@ -21,8 +21,9 @@ namespace IntFactoryBusiness
 
         private static List<TypeEntity> FunctionTypes = null;
         private static DateTime FunctionTypesTime = DateTime.Now;
-        private static string FunctionTypesID = null;
 
+        private static List<ContentEntity> Contents = null;
+        private static DateTime ContentsTime = DateTime.Now;
 
         #region 查询
         public List<TypeEntity> GetTypesByModuleType(ModuleTypeEnum moduleType)
@@ -53,10 +54,11 @@ namespace IntFactoryBusiness
             return list;
         }
 
-        public TypeEntity GetFunctionType(string id) {
+        public List<TypeEntity> GetFunctionType(string id) {
+            List<TypeEntity> item = new List<TypeEntity>();
             var list = GetFunctionTypes();
-
-            return list.Find(m => m.TypeID == id);
+            item.Add(list.Find(m => m.TypeID == id));
+            return item;
         }
 
         public List<TypeEntity> GetFunctionTypes()
@@ -85,7 +87,6 @@ namespace IntFactoryBusiness
                 }
                 FunctionTypes = list;
                 FunctionTypesTime = DateTime.Now.AddHours(2);
-                FunctionTypesID = id;
             }
 
             return list;
@@ -94,12 +95,19 @@ namespace IntFactoryBusiness
         public List<ContentEntity> GetContents(int moduleType, string typeID, string keyWords, string beginTime, string endTime, string orderBy, int pageSize, int pageIndex, ref int totalCount, ref int pageCount)
         {
             List<ContentEntity> list = new List<ContentEntity>();
-            DataSet ds = HelpCenterDAL.BaseProvider.GetContents(moduleType, typeID, keyWords, beginTime, endTime, orderBy, pageSize, pageIndex, ref totalCount, ref pageCount);
-            foreach (DataRow dr in ds.Tables[0].Rows)
+            if (Contents != null && ContentsTime > DateTime.Now)
             {
-                ContentEntity model = new ContentEntity();
-                model.FillData(dr);
-                list.Add(model);
+                list = Contents;
+            }
+            else
+            {
+                DataSet ds = HelpCenterDAL.BaseProvider.GetContents(moduleType, typeID, keyWords, beginTime, endTime, orderBy, pageSize, pageIndex, ref totalCount, ref pageCount);
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    ContentEntity model = new ContentEntity();
+                    model.FillData(dr);
+                    list.Add(model);
+                }
             }
             return list;
         }
