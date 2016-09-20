@@ -22,10 +22,6 @@
     ObjectJS.init = function () {
         ObjectJS.bindEvent();
         ObjectJS.getContents();
-
-        //Params.ModuleType = 2;
-        //Params.OrderBy = 'c.ClickNumber asc';
-        //ObjectJS.getContentHotProblems("", $(".item-all"));
     };
 
     ObjectJS.bindEvent = function () {
@@ -52,6 +48,8 @@
                 alert("最后一页啦");
             }            
         });
+
+        
     };
 
     ObjectJS.getContents = function () {
@@ -66,6 +64,7 @@
                     var innerHtml = template(data.items);
                     innerHtml = $(innerHtml);
                     $(".problems-details").append(innerHtml);
+                    $(".problems-desc").find("img").remove();
                     pageCount = data.pageCount;
                 });
             } else {

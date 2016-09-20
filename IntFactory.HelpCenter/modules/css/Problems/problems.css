@@ -7,11 +7,11 @@
 .problems-details .item{border-bottom:2px solid #eee;margin:30px 0px;}
 .problems-details .item ul{display:table;width:100%;}
 .problems-details .item ul li{display:table-cell;vertical-align:top;}
-.problems-details .item .problems-title a{font-size:22px;color:#000;}
+.problems-details .item .problems-title a{font-size:22px;color:#333;}
 .problems-details .item .problems-desc{margin-bottom:20px;margin-top:30px;color:#666;line-height:28px;height:56px;overflow:hidden;text-overflow:ellipsis;}
 .problems-details .item .problems-desc img{max-width:530px;}
 .problems-details .item .problems-desc p, .problems-details .item .problems-desc a, .problems-details .item .problems-desc div, .problems-details .item .problems-desc span {
-    color:#444!important;
+    color:#666!important;
 }
 .problems-details .item .look-detail{margin-bottom:20px;}
 .problems-details .item .look-detail a{color:#0cb39e;font-size:14px;cursor:pointer;}
@@ -30,8 +30,8 @@
 
 .details-title {text-align:center;font-size:24px;color:#000;border-bottom:1px solid #ccc;line-height:50px;}
 .category .information {margin-top:10px;margin-bottom:20px;}
-.category .information li{color:#aaa;font-size:16px}
-.category .information li span{color:#aaa;font-size:16px;margin-right:30px;}
+.category .information li{color:#aaa;font-size:12px}
+.category .information li span{color:#aaa;font-size:12px;margin-right:30px;}
 
 .remark img { max-width:750px;}
 

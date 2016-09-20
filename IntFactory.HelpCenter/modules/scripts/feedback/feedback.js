@@ -93,10 +93,14 @@
                 width: "120",
                 onChange: function (data) {
                     if (Params.status != data.value) {
+                        $("#procesSing .dropdown-text").html("");
                         $("#procesSing .dropdown-text").html(data.text);
                         Params.status = data.value;
                         Params.pageIndex = 1;
                         ObjectJS.getFeedBack();
+                    } else {
+                        $("#procesSing .dropdown-text").html("");
+                        $("#procesSing .dropdown-text").html(data.text);
                     }
                 }
             });
@@ -112,12 +116,16 @@
                 dataValue: "ID",
                 dataText: "Name",
                 width: "120",
-                onChange: function (data) {
+                onChange: function (data) {                    
                     if (Params.type != data.value) {
+                        $("#status .dropdown-text").html("");
                         $("#status .dropdown-text").html(data.text);
                         Params.type = data.value;
                         Params.pageIndex = 1;
                         ObjectJS.getFeedBack();
+                    } else {
+                        $("#status .dropdown-text").html("");
+                        $("#status .dropdown-text").html(data.text);
                     }
                 }
             });
@@ -168,6 +176,11 @@
                 return false;
             }
 
+            if ($(".txt-description").val()=='') {
+                alert("具体问题不能为空");
+                return;
+            }
+
             var imgs = '';
             $("#feed-images li").each(function () {
                 imgs += $(this).data("server") + $(this).data("filename") + ",";
@@ -215,16 +228,20 @@
                     innerHtml = $(innerHtml);
                     $(".tr-header").after(innerHtml);
 
-                    $(".open-contents").click(function () {
-                        var _parent = $(this).parent(), _this = $(this), id = _this.data("id");
-                        if (_this.hasClass("tag")) {
+                    $(".item td").click(function () {                        
+                        var _this = $(this).parent().find(".open-contents"), _parent = $(this).parent(), id = _this.data("id");
+                        if (_this.hasClass("tag")) {                            
                             _this.html("关闭").removeClass("tag");
                             _parent.find(".span").hide();
                             _parent.find(".div").show();
                             if (data.items[id].Content != "") {
                                 _parent.next().show();
                             }
-                        } else {
+                        }
+                    });
+                    $(".item .open-contents").click(function () {                        
+                        var _parent = $(this).parent(), _this = $(this), id = _this.data("id");
+                        if (!_this.hasClass("tag")) {                            
                             _this.html("展开").addClass("tag");
                             _parent.find(".span").show();
                             _parent.find(".div").hide();

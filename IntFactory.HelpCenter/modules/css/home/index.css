@@ -53,7 +53,7 @@
 .content .content-txt li { float:left;width:275px;padding-bottom:50px;}
 .content-txt li .iconfont { float:left;height:60px;line-height:55px;color:#0cb39e;text-align:center;
                             margin-right:10px;margin-left:20px;font-size:60px;}
-.content-txt li div,.content-txt li div a { line-height:25px;color:#0cb39e;font-size:16px;}
+.content-txt li div,.content-txt li a,.content-txt li div a { line-height:25px;color:#0cb39e;font-size:16px;}
 
 
 

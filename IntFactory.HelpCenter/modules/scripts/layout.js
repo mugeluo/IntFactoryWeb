@@ -25,9 +25,11 @@ define(function (require, exports, module) {
         $(window).scroll(function () {
             if ($(document).scrollTop()>80){ 
                 $(".getback-FH").fadeIn(500);
+                $(".header-menu").css("background", "rgba(0,0,0,0.7)");
             }  
             else {                  
                 $(".getback-FH").fadeOut(1000);
+                $(".header-menu").css("background", "rgba(0,0,0,1)");
             }  
         });         
              
