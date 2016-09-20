@@ -17,7 +17,10 @@ namespace IntFactory.HelpCenter.Controllers
         // GET: /Home/
         
         public ActionResult Index()
-        {            
+        {
+            ViewBag.QAContents = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetQAContents();
+            ViewBag.HotQAContents = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetHotQAContents();
+
             return View();
         }
 

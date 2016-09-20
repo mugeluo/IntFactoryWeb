@@ -21,7 +21,10 @@ namespace IntFactory.HelpCenter.Controllers
             {
                 var model = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetFunctionType(id);
                 ViewBag.model =model;
-            }   
+            }
+            ViewBag.QAContents = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetQAContents();
+            ViewBag.HotQAContents = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetHotQAContents();
+
             return View();
         }
 

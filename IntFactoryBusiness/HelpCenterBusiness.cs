@@ -22,9 +22,11 @@ namespace IntFactoryBusiness
         private static List<TypeEntity> FunctionTypes = null;
         private static DateTime FunctionTypesTime = DateTime.Now;
 
-        private static List<ContentEntity> Contents = null;
-        private static DateTime ContentsTime = DateTime.Now;
+        private static List<ContentEntity> HotQAContents = null;
+        private static DateTime HotQAContentsTime = DateTime.Now;
 
+        private static List<ContentEntity> QAContents = null;
+        private static DateTime QAContentsTime = DateTime.Now;
         #region 查询
         public List<TypeEntity> GetTypes()
         {
@@ -88,31 +90,68 @@ namespace IntFactoryBusiness
             return list;
         }
 
-        public List<ContentEntity> GetContents(int moduleType, string typeID, string keyWords, string beginTime, string endTime, string orderBy, int pageSize, int pageIndex, ref int totalCount, ref int pageCount)
+        public List<ContentEntity> GetHotQAContents() { 
+            List<ContentEntity> list = new List<ContentEntity>();
+            if (HotQAContents != null && HotQAContentsTime > DateTime.Now)
+            {
+                list = HotQAContents;
+            }
+            else
+            {
+                int pageTotal=0;
+                int pageCount=0;
+                list = GetContents(2, string.Empty, string.Empty, string.Empty, string.Empty,
+                    "c.clicknumber desc ", 10, 1, ref pageTotal, ref pageCount);
+                HotQAContents = list;
+                HotQAContentsTime = DateTime.Now.AddHours(2);
+            }
+
+            return list;
+        }
+
+        public List<ContentEntity> GetQAContents()
         {
             List<ContentEntity> list = new List<ContentEntity>();
-            if (Contents != null && ContentsTime > DateTime.Now)
+            if (QAContents != null && QAContentsTime > DateTime.Now)
             {
-                if (moduleType == 2 && orderBy == "c.ClickNumber desc")
+                list = QAContents;
                 {
-                    list = Contents;
                 }
             }
             else
             {
-                DataSet ds = HelpCenterDAL.BaseProvider.GetContents(moduleType, typeID, keyWords, beginTime, endTime, orderBy, pageSize, pageIndex, ref totalCount, ref pageCount);
-                foreach (DataRow dr in ds.Tables[0].Rows)
-                {
-                    ContentEntity model = new ContentEntity();
-                    model.FillData(dr);
-                    list.Add(model);
+                int pageTotal = 0;
+                int pageCount = 0;
+                list = GetContents(2, string.Empty, string.Empty, string.Empty, string.Empty,
+                    "c.updatetime desc ", 10, 1, ref pageTotal, ref pageCount);
+                QAContents = list;
+                QAContentsTime = DateTime.Now.AddHours(2);
+            }
+
+            return list;
+        }
+
+        //public List<ContentEntity> GetHotContents()
+        //{
+
+        //}
+
+        public List<ContentEntity> GetContents(int moduleType, string typeID, string keyWords, string beginTime, string endTime, string orderBy, int pageSize, int pageIndex, ref int totalCount, ref int pageCount)
+        {
+            List<ContentEntity> list = new List<ContentEntity>();
+            DataSet ds = HelpCenterDAL.BaseProvider.GetContents(moduleType, typeID, keyWords, beginTime, endTime, orderBy, pageSize, pageIndex, ref totalCount, ref pageCount);
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                ContentEntity model = new ContentEntity();
+                model.FillData(dr);
+                list.Add(model);
                 }
                 if (moduleType == 2 || orderBy == "c.ClickNumber desc")
                 {
                     Contents = list;
                     ContentsTime = DateTime.Now.AddHours(2);
-                }
             }
+
             return list;
         }
 
