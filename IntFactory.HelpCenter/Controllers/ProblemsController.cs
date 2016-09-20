@@ -16,9 +16,9 @@ namespace IntFactory.HelpCenter.Controllers
 
         public ActionResult Problems()
         {
-            int type = 2;
-            var list = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetTypesByModuleType((ModuleTypeEnum)type);
-            ViewBag.list = list;
+            var items = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetTypes();
+            var qaTypes = items.FindAll(m => m.ModuleType == 2);
+            ViewBag.list = qaTypes;
             return View();
         }
 

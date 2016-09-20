@@ -16,7 +16,7 @@
         EndTime: "",
         PageIndex: 1,
         PageSize: 10,
-        OrderBy: "c.CreateTime desc",
+        OrderBy: "c.UpdateTime desc",
     }
 
     ObjectJS.init = function () {
@@ -27,7 +27,7 @@
         ObjectJS.getContents("", $(".number .item-all"));
 
         Params.ModuleType = 2;
-        Params.OrderBy = 'c.CreateTime asc';
+        Params.OrderBy = 'c.UpdateTime asc';
         ObjectJS.getContents("", $(".create .item-all"));
     };
 

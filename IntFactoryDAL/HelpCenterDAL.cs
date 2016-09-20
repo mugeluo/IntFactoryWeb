@@ -173,7 +173,7 @@ namespace IntFactoryDAL
             return result;
         }
 
-        public bool InsertFeedBack(string title, string contactName, string mobilePhone, int type, string filePath, string remark)
+        public bool InsertFeedBack(string title, string contactName, string mobilePhone, int type, string filePath, string remark,string createUserID)
         {
             SqlParameter[] parms = { 
                                        new SqlParameter("@Title",title),
@@ -181,10 +181,11 @@ namespace IntFactoryDAL
                                        new SqlParameter("@MobilePhone",mobilePhone),
                                        new SqlParameter("@Type",type),
                                        new SqlParameter("@FilePath",filePath),
-                                       new SqlParameter("@Remark",remark)
+                                       new SqlParameter("@Remark",remark),
+                                       new SqlParameter("@CreateUserID",createUserID)
                                    };
 
-            string cmdText = "insert into feedback(Title,ContactName,MobilePhone,Type,FilePath,Remark) values(@Title,@ContactName,@MobilePhone,@Type,@FilePath,@Remark)";
+            string cmdText = "insert into feedback(Title,ContactName,MobilePhone,Type,FilePath,Remark,CreateUserID) values(@Title,@ContactName,@MobilePhone,@Type,@FilePath,@Remark,@CreateUserID)";
             return ExecuteNonQuery(cmdText, parms, CommandType.Text) > 0;
         }
 

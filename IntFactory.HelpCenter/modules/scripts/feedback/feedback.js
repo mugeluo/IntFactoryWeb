@@ -19,11 +19,14 @@
         OrderBy: "c.CreateTime desc"
     };
 
-    ObjectJS.init = function () {
-        ObjectJS.bindEvent();        
+    ObjectJS.init = function (currentUser) {        
+        if (currentUser != "") {
+            currentUser = JSON.parse(currentUser.replace(/&quot;/g, '"'));
+        };
+        ObjectJS.bindEvent(currentUser);
     };
 
-    ObjectJS.bindEvent = function () {
+    ObjectJS.bindEvent = function (currentUser) {
         //日期插件
         $("#iptCreateTime").daterangepicker({
             showDropdowns: true,
@@ -125,11 +128,22 @@
             if (!_this.hasClass("hover")) {
                 _this.siblings().removeClass("hover");
                 _this.addClass("hover");
-            };
-            $(".content-feedback,.content-item").hide();
-            $("." + id).show();
+            };            
             if (id == "content-item") {
-                ObjectJS.getFeedBack();
+                if (currentUser=="") {
+                    var confirmMsg = "您现在未登录，是否登录?";
+                    confirm(confirmMsg, function () {
+                        window.location = '/Home/Login?feedback';
+                    }, '', function () {
+                        $(".content-feedback,.content-item").hide();
+                        $("." + id).show();
+                        ObjectJS.getFeedBack();
+                    });
+                } else {
+                    $(".content-feedback,.content-item").hide();
+                    $("." + id).show();
+                    ObjectJS.getFeedBack();
+                }                
             }
         });
 
@@ -177,6 +191,13 @@
                 }
             });
         });
+
+        var href = window.location.href.split("?");
+        tag = href[href.length - 1];
+
+        if (tag == "feedback") {
+            $(".content span:last").click();
+        }
 
     };
 

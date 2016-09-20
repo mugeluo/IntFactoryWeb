@@ -12,7 +12,7 @@
         EndTime: "",
         PageIndex: 1,
         PageSize: 5,
-        OrderBy: "c.CreateTime desc",
+        OrderBy: "c.UpdateTime desc",
     }
     var ObjectJS = {};
     ObjectJS.init = function () {
@@ -38,7 +38,7 @@
                         Params.OrderBy = "c.clicknumber desc";
                         ObjectJS.getContents("", $("#hot-problems  ul").eq(0));
 
-                        Params.OrderBy = "c.createtime desc";
+                        Params.OrderBy = "c.UpdateTime desc";
                         ObjectJS.getContents("", $("#hot-problems  ul").eq(1));
                     }
                 } else if (id == 2) {
