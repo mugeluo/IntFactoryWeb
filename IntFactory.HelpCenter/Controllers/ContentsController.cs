@@ -13,7 +13,7 @@ namespace IntFactory.HelpCenter.Controllers
 
         public ActionResult Contents(string id)
         {           
-            var model = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetFunctionTypes(id);            
+            var model = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetFunctionType(id);            
             ViewBag.model = model;
             return View();
         }
