@@ -38,6 +38,7 @@
                         target.data("isget", 1);
                         $("#normal-problems ul").each(function () {
                             var _self = $(this);
+                            Params.ModuleType = 2;
                             ObjectJS.getContents(_self.data("id"), _self,id);
                         });
                     }
@@ -47,6 +48,7 @@
                         target.data("isget", 1);
                         $("#zngc-functions ul").each(function () {
                             var _self = $(this);
+                            Params.ModuleType = 1;
                             ObjectJS.getContents(_self.data("id"), _self,id);
                         });
                     }
