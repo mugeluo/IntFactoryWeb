@@ -26,6 +26,10 @@ namespace IntFactory.HelpCenter.Controllers
 
         public ActionResult Login()
         {
+            if (CurrentUser != null)
+            {
+                return Redirect("/Home/Index");
+            }
             return View();
         }
 
