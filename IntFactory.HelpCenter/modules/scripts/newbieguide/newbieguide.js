@@ -64,7 +64,7 @@
                 });
 
                 //小图片ul盒子移动函数
-                var moveSmallPic = function () {
+                var moveSmallPic = function (name) {
                     //删除所有小图片选中样式
                     $('.smallPicUlBox ul li').removeClass("current")
                     //当前被点击的小图片添加选中样式
@@ -74,26 +74,27 @@
                     
                     //被选中的小图片是可见box中的最后一张也就是小图片第七张
                     if (currentOffsetLiB - offsetDiv == 574) {
-                        if (liLength - initCount > 3) {
-                            ulSMove.stop().animate({ left: ulSMove.position().left - 282 }, 300);
+                        if (name!="prev") {
+                            if (liLength - initCount > 3) {
+                                ulSMove.stop().animate({ left: ulSMove.position().left - 282 }, 300);
+                            } else {
+                                ulSMove.stop().animate({ left: ('-' + 141 * (liLength - 6)) }, 300);
+                            }
                         } else {
-                            ulSMove.stop().animate({ left: ('-' + smallLiWidth * (liLength - 6)) }, 300);
+                            if (liLength - initCount < 8) {//$('.smallPicUlBox ul li.current').index()
+                                ulSMove.stop().animate({ left: ulSMove.position().left + 282 }, 300);
+                            } else {
+                                ulSMove.stop().animate({ left: 0 }, 300);
+                            }
                         }
                     }
                     else if (initCount == 0) {
                         ulSMove.find("li:first").addClass("current");
                         ulSMove.stop().animate({ left: 0 }, 300);
                     }
-                    else if (currentOffsetLiB - offsetDiv == 298) {
-                        if (liLength - initCount < 8) {//$('.smallPicUlBox ul li.current').index()
-                            ulSMove.stop().animate({ left: ulSMove.position().left + 282 }, 300);
-                        } else {
-                            ulSMove.stop().animate({ left: 0 }, 300);
-                        }
-                    }
-                    else if (initCount == liLength - 1) {
+                    else if (initCount == liLength - 1) {                        
                         ulSMove.find("li:last").addClass("current");
-                        ulSMove.stop().animate({ left: ('-' + smallLiWidth * (liLength - 6)) }, 300);
+                        ulSMove.stop().animate({ left: ('-' + 141 * (liLength - 7)) }, 300);
                     }
                 }
 
@@ -102,11 +103,11 @@
                     initCount++;
                     if (initCount <= liNum - 1) {
                         ulMove.stop().animate({ left: ('-' + liWidth * initCount) }, 300);
-                        moveSmallPic();
+                        moveSmallPic("next");
                     } else {
                         ulMove.stop().animate({ left: 0 }, 300);
                         initCount = 0;
-                        moveSmallPic();
+                        moveSmallPic("next");
                     }
                     $('.smallPicUlBox ul li').eq(initCount).click();
                 }
@@ -128,11 +129,11 @@
                     if (initCount == 0) {
                         ulMove.stop().animate({ left: '-' + liWidth * (liNum - 1) }, 300);
                         initCount = liNum - 1;
-                        moveSmallPic();
+                        moveSmallPic("prev");
                     } else {
                         ulMove.stop().animate({ left: '-' + liWidth * (initCount - 1) }, 300);
                         initCount--;
-                        moveSmallPic();
+                        moveSmallPic("prev");
                     }
                     $('.smallPicUlBox ul li').eq(initCount).click();
                 };
