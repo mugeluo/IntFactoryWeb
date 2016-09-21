@@ -157,7 +157,7 @@ namespace IntFactoryBusiness
             return item;
         }
 
-        public static List<FeedBack> GetFeedBacks(string keywords, string userID, string beginDate, string endDate, int type, int status, int pageSize, int pageIndex, out int totalCount, out int pageCount)
+        public static List<FeedBack> GetFeedBacks(string keywords, string userID, string orderby,string beginDate, string endDate, int type, int status, int pageSize, int pageIndex, out int totalCount, out int pageCount)
         {
             string sqlWhere = "1=1";
             if (!string.IsNullOrEmpty(keywords))
@@ -193,7 +193,7 @@ namespace IntFactoryBusiness
                 sqlWhere += " and createtime<='" + DateTime.Parse(endDate).AddDays(1).ToString("yyyy-MM-dd") + "'";
             }
 
-            DataTable dt = HelpCenterDAL.GetPagerData("FeedBack", "*", sqlWhere, "AutoID","", pageSize, pageIndex, out totalCount, out pageCount,0);
+            DataTable dt = HelpCenterDAL.GetPagerData("FeedBack", "*", sqlWhere, "AutoID",orderby, pageSize, pageIndex, out totalCount, out pageCount,0);
             List<FeedBack> list = new List<FeedBack>();
             FeedBack model;
             foreach (DataRow item in dt.Rows)

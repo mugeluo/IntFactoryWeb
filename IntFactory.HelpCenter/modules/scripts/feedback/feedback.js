@@ -16,7 +16,7 @@
         BeginTime: '',
         EndTime: '',
         keyWords: '',
-        OrderBy: "c.CreateTime desc"
+        OrderBy: "CreateTime desc"
     };
 
     ObjectJS.init = function (currentUser) {        
@@ -39,14 +39,14 @@
                 '本月': [moment().startOf('month'), moment().endOf('month')]
             }
         }, function (start, end, label) {
-            Params.PageIndex = 1;
+            Params.pageIndex = 1;
             Params.BeginTime = start ? start.format("YYYY-MM-DD") : "";
             Params.EndTime = end ? end.format("YYYY-MM-DD") : "";
             ObjectJS.getFeedBack();
         });
 
         //排序
-        $(".sort-item").click(function () {
+        $(".search-sort .sort-item").click(function () {            
             var _this = $(this);
             var asc = true;
             if (_this.hasClass("hover")) {
@@ -54,7 +54,6 @@
                     _this.find(".asc").removeClass("hover");
                     _this.find(".desc").addClass("hover");
                     asc = false;
-
                 } else {
                     _this.find(".desc").removeClass("hover");
                     _this.find(".asc").addClass("hover");
@@ -66,7 +65,7 @@
                 asc = false;
             }
             Params.OrderBy = _this.data("column") + (asc ? " asc" : " desc ");
-            Params.PageIndex = 1;
+            Params.pageIndex = 1;            
             ObjectJS.getFeedBack();
         });
 
@@ -74,7 +73,7 @@
         require.async("search", function () {
             $(".searth-module").searchKeys(function (keyWords) {
                 if (Params.Keywords!=keyWords) {
-                    Params.PageIndex = 1;
+                    Params.pageIndex = 1;
                     Params.Keywords = keyWords;
                     ObjectJS.getFeedBack();
                 }                
@@ -139,7 +138,7 @@
             };            
             if (id == "content-item") {
                 if (currentUser=="") {
-                    var confirmMsg = "登录后，您将查看您反馈的内容?";
+                    var confirmMsg = "登录后，您将查看您所反馈的内容?";
                     confirm(confirmMsg, function () {
                         window.location = '/Home/Login?feedback';
                     }, "立即登录", function () {
@@ -271,7 +270,7 @@
                     rotate: true,
                     images: false,
                     mouse: 'slide',
-                    onChange: function (page) {
+                    onChange: function (page) {                        
                         Params.pageIndex = page;
                         ObjectJS.getFeedBack();
                     }

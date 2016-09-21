@@ -14,7 +14,7 @@
 .descript-text { width:100%;margin:20px 0;}
 .descript-text div:first-child { float: left; text-align: right; width:30%;font-size:14px;color:#444;line-height:40px; }
 .descript-text div:last-child {float:left;width:48%; }
-.feed-title .txt-title,.feed-type .dropdown-list,.feed-name .txt-name,.feed-phone .txt-phone,.feed-description .txt-description {height:40px;line-height:40px; width:100%;box-sizing:border-box;border-radius:3px;font-size:14px;}
+.feed-title .txt-title,.feed-type .dropdown-list,.feed-name .txt-name,.feed-phone .txt-phone,.feed-description .txt-description {height:40px;padding:5px; width:100%;box-sizing:border-box;border-radius:3px;}
 .feed-type .dropdown-list option{font-size:14px;}
 .feed-annex .file-annex { line-height:40px;height:40px;width:150px;opacity:0;position:absolute;left:0;top:0;cursor:pointer;}
 
@@ -49,4 +49,4 @@
 .clear-after .content-txt li { float:left;width:275px;margin-bottom:50px;}
 .content-txt li .iconfont { float:left;height:60px;line-height:55px;color:#0cb39e;text-align:center;
                             margin-right:10px;margin-left:20px;font-size:60px;}
-.content-txt li div,.content-txt li div a { line-height:25px;color:#0cb39e;font-size:16px;}
+.content-txt li div,.content-txt li a,.content-txt li div a { line-height:25px;color:#0cb39e;font-size:16px;}

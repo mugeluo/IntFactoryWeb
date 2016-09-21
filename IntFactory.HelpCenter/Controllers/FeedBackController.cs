@@ -57,7 +57,7 @@ namespace IntFactory.HelpCenter.Controllers
             }
 
             int totalCount = 0, pageCount = 0;
-            var list = IntFactoryBusiness.HelpCenterBusiness.GetFeedBacks(model.Keywords, model.CreateUserID, model.BeginTime, model.EndTime, model.Type, model.Status, model.PageSize, model.PageIndex, out totalCount, out pageCount); 
+            var list = IntFactoryBusiness.HelpCenterBusiness.GetFeedBacks(model.Keywords, model.CreateUserID, model.OrderBy,model.BeginTime, model.EndTime, model.Type, model.Status, model.PageSize, model.PageIndex, out totalCount, out pageCount); 
            
             JsonDictionary.Add("items", list);
             JsonDictionary.Add("totalCount", totalCount);
