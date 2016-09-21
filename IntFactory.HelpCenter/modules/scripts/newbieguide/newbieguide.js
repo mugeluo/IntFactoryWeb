@@ -36,8 +36,7 @@
                 ulSMove = $('.smallPicUlBox ul').eq(0),
                 bigImgLi = $('.bigPicBox ul li'),
                 liNum = bigImgLi.length,
-                liWidth = 1100,
-                smallLiWidth = ulSMove.find("li").width(),
+                liWidth = 1100,                
                 imgTitle = $('.imgTitle');
 
                 //设置大图片ul的宽度

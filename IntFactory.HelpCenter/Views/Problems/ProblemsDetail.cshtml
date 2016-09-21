@@ -1,5 +1,6 @@
 ﻿@{
     var modol = (IntFactoryEntity.ContentEntity)ViewBag.list;
+    var HotQAContents = (List<IntFactoryEntity.ContentEntity>)ViewBag.HotQAContents;
     ViewBag.Title = "厂盟 | 详情页";
     ViewBag.TitleName = "problems";
 }
@@ -9,9 +10,6 @@
 @section scripts{
     <script type="text/javascript">
         $("#remark").html(decodeURI("@(modol.Detail)"));  
-        seajs.use(["scripts/problems/problemsdetail"], function (ObjectJS) {
-            ObjectJS.init();
-        }); 
     </script>
 }
 
@@ -51,7 +49,12 @@
     <div class="example">
         <ul>
             <li class="item-all"><div>热门问题</div></li>
-            
+            @{
+                foreach (var qa in HotQAContents)
+                {
+                <li><a href='/Problems/ProblemsDetail/@qa.ContentID'>@qa.Title</a></li>
+                }
+            }
             <li><a href="/Problems/HotProblems">更多 >></a></li>
         </ul>
     </div>

@@ -34,6 +34,7 @@ namespace IntFactory.HelpCenter.Controllers
         public ActionResult ProblemsDetail(string id)
         {
             var list = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetContentByContentID(id);
+            ViewBag.HotQAContents = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetHotQAContents();
             ViewBag.list = list;
             return View();
         }

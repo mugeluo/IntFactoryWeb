@@ -153,7 +153,6 @@ namespace IntFactoryDAL
         #endregion
 
 
-
         #region 添加
         public int InsertContent(string contentID, string typeID, string sort, string title, string keyWords, string detail, string userID)
         {

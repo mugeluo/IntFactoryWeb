@@ -79,23 +79,5 @@
         })
     }
 
-    ObjectJS.getContentHotProblems = function (typeid, targetObject) {
-        Params.TypeID = typeid;
-        $(targetObject).after("<div class='data-loading'><div>");
-        Global.post("/Home/GetContents", { filter: JSON.stringify(Params) }, function (data) {
-            $(".data-loading").remove();
-            var items = data.items;
-            var len = items.length;
-            if (len > 0) {
-                for (var i = 0; i < len; i++) {
-                    var item = items[i];
-                    $(targetObject).after("<li><a href='/Problems/ProblemsDetail/" + item.ContentID + "'>. " + item.Title + "</a></li>");
-                }
-            } else {
-                $(targetObject).after("<li class='nodata-txt'>暂无数据</li>");
-            }
-        });
-    };
-
     module.exports = ObjectJS;
 });

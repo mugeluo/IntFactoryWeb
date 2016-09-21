@@ -49,6 +49,13 @@ define(function (require, exports, module) {
             window.location = "/Home/Search?" + $(".search-txt").val();
         });
 
+        $(".head-search").keydown(function (e) {
+            if (e.keyCode == 13) {
+                $(".head-search .iconfont").click();
+                $(this).blur();
+            }
+        });
+
         $("#currentUser").click(function () {
             $(".dropdown-userinfo").fadeIn("1000");
         });

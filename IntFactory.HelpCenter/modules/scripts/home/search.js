@@ -26,6 +26,8 @@
         if (txt != "") {
             Params.Keywords = txt;
             ObjectJS.getContents();
+        } else {
+            $(".search-results").append("<li class='nodata-txt'>请输入搜索内容</li>");
         }
       
         $(".time-search li").click(function () {
