@@ -27,6 +27,7 @@ namespace IntFactoryBusiness
 
         private static List<ContentEntity> QAContents = null;
         private static DateTime QAContentsTime = DateTime.Now;
+
         #region 查询
         public List<TypeEntity> GetTypes()
         {

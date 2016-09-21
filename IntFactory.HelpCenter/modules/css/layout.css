@@ -116,7 +116,7 @@ header .currentuser:hover .dropdown-top{ border-top:solid 6px #fff;}
 .dropdown-ul li:hover{  background-color:#eee; color:#318ae4; }
 
 /*内容*/
-.main-content { background-color:#fff;}
+.main-content { background-color:#fff;min-height:900px;}
 
 /*常见问题 头部*/
 .head-content-menu { background-color:#0cb39e;height:120px;}

@@ -39,7 +39,7 @@ namespace IntFactoryDAL
         public DataSet GetTypeList()
         {
             string sqlTxt = string.Empty;
-            sqlTxt = "select * from M_HelpType  where Status<>9";
+            sqlTxt = "select * from M_HelpType where Status<>9 order by Sort asc";
             DataSet ds = GetDataSet(sqlTxt);
             return ds;
         }

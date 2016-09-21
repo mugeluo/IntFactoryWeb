@@ -38,7 +38,16 @@
                         target.data("isget", 1);
                         $("#normal-problems ul").each(function () {
                             var _self = $(this);
-                            ObjectJS.getContents(_self.data("id"), _self);
+                            ObjectJS.getContents(_self.data("id"), _self,id);
+                        });
+                    }
+                }
+                if (id==2) {
+                    if (!isget) {
+                        target.data("isget", 1);
+                        $("#zngc-functions ul").each(function () {
+                            var _self = $(this);
+                            ObjectJS.getContents(_self.data("id"), _self,id);
                         });
                     }
                 }
@@ -77,7 +86,7 @@
 
                 for (var i = 0; i < functionTypes.length; i++) {
                     var item = functionTypes[i];
-                    $("#zngc-functions").append("<ul class='left' data-id='" + item.TypeID + "'><li>" + item.Name + "</ul></li>");
+                    $("#zngc-functions ul").eq(i).data("id", item.TypeID).append("<li>" + item.Name + "</li>");
                 }
             }
 
@@ -90,8 +99,11 @@
             }
 
             var guidTypes = data.guidTypes;
-            if(guidTypes.length>0){
+            if (guidTypes.length > 0) {                
                 for (var i = 0; i < guidTypes.length; i++) {
+                    if (i>5) {
+                        return;
+                    }
                     var item = guidTypes[i];
                     $(".new-guide ul").append('<li><a href="/NewbieGuide/NewbieGuide?'+i+'"><img src="' + item.Icon + '" /><div class="bg-jianbian"></div><span class="txt">' + (i + 1) + '.' + item.Name + '</span></li></a>');
                 }
@@ -99,7 +111,7 @@
         });
     };
 
-    ObjectJS.getContents = function (typeid, targetObject) {
+    ObjectJS.getContents = function (typeid, targetObject,id) {
         Params.TypeID = typeid;
         $(targetObject).append("<div class='data-loading' style='margin-left:-145px;'><div>");
         Global.post("/Home/getContents", { filter: JSON.stringify(Params) }, function (data) {
@@ -108,10 +120,13 @@
             var len=items.length;
             if (len > 0) {
                 for(var i=0;i<len;i++){
-                    var item=items[i];
-                    $(targetObject).append("<li><a href='/Problems/ProblemsDetail/" + item.ContentID + "'>. " + item.Title + "</a></li>");
-                }
-                
+                    var item = items[i];
+                    if (id==1) {
+                        $(targetObject).append("<li><a href='/Problems/ProblemsDetail/" + item.ContentID + "'>. " + item.Title + "</a></li>");
+                    } else {
+                        $(targetObject).append("<li><a href='/Contents/Contents/" + item.TypeID + "'>. " + item.Title + "</a></li>");
+                    }                    
+                }                
             }
         });
     };
