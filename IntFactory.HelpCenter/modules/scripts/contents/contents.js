@@ -42,6 +42,8 @@
                 $(".item").hide();
                 _this.addClass("tag");
                 _this.next().show();
+                $("#title").html("");
+                $("#remark").html("");
             } else {
                 _this.removeClass("tag");
                 _this.next().hide();
@@ -56,7 +58,6 @@
                 Params.ModuleType = 1;
                 ObjectJS.getContents("", $(".menu"));
             }
-
         });
 
         $(".menu-title:first").click();
@@ -65,7 +66,6 @@
     };
 
     ObjectJS.getContents = function (typeid, targetObject,status) {
-        
         $(targetObject).empty();
         $("#title").empty();
         $("#remark").empty();       

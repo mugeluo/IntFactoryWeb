@@ -118,9 +118,7 @@ namespace IntFactoryBusiness
             List<ContentEntity> list = new List<ContentEntity>();
             if (QAContents != null && QAContentsTime > DateTime.Now)
             {
-                list = QAContents;
-                {
-                }
+                list = QAContents;               
             }
             else
             {
@@ -140,9 +138,7 @@ namespace IntFactoryBusiness
             List<ContentEntity> list = new List<ContentEntity>();
             if (FeedBackContents != null && FeedBackContentsTime > DateTime.Now)
             {
-                list = FeedBackContents;
-                {
-                }
+                list = FeedBackContents;                
             }
             else
             {
