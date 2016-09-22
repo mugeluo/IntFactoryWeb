@@ -80,7 +80,7 @@
                                 ulSMove.stop().animate({ left: ('-' + 141 * (initCount)-10) }, 300);
                             }
                         }
-                    } else if (currentOffsetLiB - offsetDiv == -131) {                        
+                    } else if (currentOffsetLiB - offsetDiv == -131 || currentOffsetLiB - offsetDiv == -141) {
                         if (name != "next") {
                             if (liLength - initCount > 7) {//$('.smallPicUlBox ul li.current').index()
                                 ulSMove.stop().animate({ left:ulSMove.position().left + 141 }, 300);
