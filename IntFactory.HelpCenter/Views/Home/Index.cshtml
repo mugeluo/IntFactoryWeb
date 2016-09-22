@@ -3,6 +3,7 @@
     ViewBag.TitleName = "Index";
     var QAcontents = (List<IntFactoryEntity.ContentEntity>)ViewBag.QAcontents;
     var HotQAContents = (List<IntFactoryEntity.ContentEntity>)ViewBag.HotQAContents;
+    var FeedBackContents = (List<IntFactoryEntity.ContentEntity>)ViewBag.FeedBackContents;
 }
 @section css{
     <link href="/modules/css/home/index.css" rel="stylesheet" />
@@ -77,7 +78,8 @@
             <ul class="left">
                 <li>最多反馈</li>
                 @{
-                    foreach(var qa in QAcontents){
+                    foreach (var qa in FeedBackContents)
+                    {
                     <li><a href='/Problems/ProblemsDetail/@qa.ContentID'>@qa.Title</a></li>
                     }
                 }

@@ -1,6 +1,7 @@
 ﻿@{
     var QAcontents = (List<IntFactoryEntity.ContentEntity>)ViewBag.QAcontents;
     var HotQAContents = (List<IntFactoryEntity.ContentEntity>)ViewBag.HotQAContents;
+    var FeedBackContents = (List<IntFactoryEntity.ContentEntity>)ViewBag.FeedBackContents;
     ViewBag.Title = "厂盟 | 热门问题";
     ViewBag.TitleName = "problems";
 }
@@ -36,7 +37,12 @@
     </ul>
     <ul>
         <li>最多反馈</li>
-        <li>· 管理客户管理客户管理客户管理客户管理客户管理客户管理客户管理客户</li>
+        @{
+            foreach (var qa in FeedBackContents)
+             {
+                 <li><a href='/Problems/ProblemsDetail/@qa.ContentID'>@qa.Title</a></li>
+             }
+        }    
     </ul>
     <ul class="create" style="margin-right:0;">
         <li class="item-all">最近更新</li>  

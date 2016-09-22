@@ -8,6 +8,9 @@
     var Upload = require("upload");
 
     var ObjectJS = {};
+
+    ObjectJS.isLoading = false;
+
     Params = {
         pageIndex: 1,
         PageSize: 20,
@@ -46,7 +49,10 @@
         });
 
         //排序
-        $(".search-sort .sort-item").click(function () {            
+        $(".search-sort .sort-item").click(function () {
+            if (!ObjectJS.isLoading) {
+                return;
+            }
             var _this = $(this);
             var asc = true;
             if (_this.hasClass("hover")) {
@@ -72,6 +78,9 @@
         //关键字搜索
         require.async("search", function () {
             $(".searth-module").searchKeys(function (keyWords) {
+                if (!ObjectJS.isLoading) {
+                    return;
+                }
                 if (Params.Keywords!=keyWords) {
                     Params.pageIndex = 1;
                     Params.Keywords = keyWords;
@@ -91,6 +100,9 @@
                 dataText: "Name",
                 width: "120",
                 onChange: function (data) {
+                    if (!ObjectJS.isLoading) {
+                        return;
+                    }
                     if (Params.status != data.value) {
                         $("#procesSing .dropdown-text").html("");
                         $("#procesSing .dropdown-text").html(data.text);
@@ -115,7 +127,10 @@
                 dataValue: "ID",
                 dataText: "Name",
                 width: "120",
-                onChange: function (data) {                    
+                onChange: function (data) {
+                    if (!ObjectJS.isLoading) {
+                        return;
+                    }
                     if (Params.type != data.value) {
                         $("#status .dropdown-text").html("");
                         $("#status .dropdown-text").html(data.text);
@@ -218,9 +233,11 @@
 
     ObjectJS.getFeedBack = function () {
         $(".tr-header").nextAll().remove();
+        ObjectJS.isLoading = false;
         $(".tr-header").after("<tr><td colspan='6'><div class='data-loading'><div></td></tr>");
         Global.post("/FeedBack/GetFeedBacks", { filter: JSON.stringify(Params) }, function (data) {
             $(".tr-header").nextAll().remove();
+            ObjectJS.isLoading = true;
             if (data.items.length > 0) {
                 Dot.exec("/template/feedback/feedback-list.html", function (template) {
                     var innerHtml = template(data.items);

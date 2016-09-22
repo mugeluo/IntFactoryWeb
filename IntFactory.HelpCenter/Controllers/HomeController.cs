@@ -20,7 +20,7 @@ namespace IntFactory.HelpCenter.Controllers
         {
             ViewBag.QAContents = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetQAContents();
             ViewBag.HotQAContents = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetHotQAContents();
-
+            ViewBag.FeedBackContents = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetFeedBackContents();
             return View();
         }
 

@@ -19,8 +19,7 @@ namespace IntFactory.HelpCenter.Controllers
             var items = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetTypes();
             var qaTypes = items.FindAll(m => m.ModuleType == 2);
             ViewBag.list = qaTypes;
-            ViewBag.HotQAContents = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetHotQAContents();
-
+            ViewBag.HotQAContents = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetHotQAContents();            
             return View();
         }
 
@@ -28,6 +27,7 @@ namespace IntFactory.HelpCenter.Controllers
         {
             ViewBag.QAContents = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetQAContents();
             ViewBag.HotQAContents = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetHotQAContents();
+            ViewBag.FeedBackContents = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetFeedBackContents();
             return View();
         }
 

@@ -17,6 +17,9 @@
         OrderBy: "c.CreateTime desc",
     }
     var ObjectJS = {};
+
+    ObjectJS.isLoading = true;
+
     ObjectJS.init = function () {
         ObjectJS.bindEvent();       
     };
@@ -35,6 +38,9 @@
             if (Params.Keywords == '') {                
                 return;
             }
+            if (!ObjectJS.isLoading) {
+                return;
+            }
             var _this = $(this), beginTime = _this.data("begintime"), endTime = _this.data("endtime");
             if (!_this.hasClass("hover")) {
                 _this.siblings().removeClass("hover");
@@ -51,6 +57,9 @@
             if (Params.Keywords == '') {
                 return;
             }
+            if (!ObjectJS.isLoading) {
+                return;
+            }
             var _this = $(this);
             var asc = true;
             if (_this.hasClass("hover")) {
@@ -58,7 +67,6 @@
                     _this.find(".asc").removeClass("hover");
                     _this.find(".desc").addClass("hover");
                     asc = false;
-
                 } else {
                     _this.find(".desc").removeClass("hover");
                     _this.find(".asc").addClass("hover");
@@ -80,9 +88,11 @@
 
     ObjectJS.getContents = function () {
         $(".search-results").empty();
+        ObjectJS.isLoading = false;
         $(".search-results").append("<div class='data-loading'><div>");
         Global.post("/Home/GetContents", { filter: JSON.stringify(Params) }, function (data) {
             $(".search-results").empty();
+            ObjectJS.isLoading = true;
             if (data.items.length > 0) {
                 Dot.exec("/template/home/contents-list.html", function (template) {
                     var innerHtml = template(data.items);

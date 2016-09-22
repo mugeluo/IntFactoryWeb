@@ -28,6 +28,9 @@ namespace IntFactoryBusiness
         private static List<ContentEntity> QAContents = null;
         private static DateTime QAContentsTime = DateTime.Now;
 
+        private static List<ContentEntity> FeedBackContents = null;
+        private static DateTime FeedBackContentsTime = DateTime.Now;
+
         #region 查询
         public List<TypeEntity> GetTypes()
         {
@@ -127,6 +130,28 @@ namespace IntFactoryBusiness
                     "c.updatetime desc ", 10, 1, ref pageTotal, ref pageCount);
                 QAContents = list;
                 QAContentsTime = DateTime.Now.AddHours(2);
+            }
+
+            return list;
+        }
+
+        public List<ContentEntity> GetFeedBackContents()
+        {
+            List<ContentEntity> list = new List<ContentEntity>();
+            if (FeedBackContents != null && FeedBackContentsTime > DateTime.Now)
+            {
+                list = FeedBackContents;
+                {
+                }
+            }
+            else
+            {
+                int pageTotal = 0;
+                int pageCount = 0;
+                list = GetContents(4, string.Empty, string.Empty, string.Empty, string.Empty,
+                    "c.ClickNumber desc ", 10, 1, ref pageTotal, ref pageCount);
+                FeedBackContents = list;
+                FeedBackContentsTime = DateTime.Now.AddHours(2);
             }
 
             return list;

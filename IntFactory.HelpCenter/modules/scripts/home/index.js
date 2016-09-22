@@ -15,6 +15,9 @@
         OrderBy: "c.CreateTime desc",
     }
     var ObjectJS = {};
+
+    ObjectJS.isLoading = true;
+
     ObjectJS.init = function () {
         ObjectJS.bindEvent();
         ObjectJS.getTypes();
@@ -22,6 +25,9 @@
 
     ObjectJS.bindEvent = function () {
         $(".table-switch li").click(function () {
+            if (!ObjectJS.isLoading) {
+                return;
+            }
             var _this = $(this),id=_this.data("id");
             if (!_this.hasClass("hover")) {
                 _this.siblings().removeClass("hover");
@@ -58,7 +64,9 @@
     };
 
     ObjectJS.getTypes = function () {
+        ObjectJS.isLoading = false;
         Global.post("/Home/GetTypes", null, function (data) {
+            ObjectJS.isLoading = true;
             var functionTypes=data.functionTypes;
             if (functionTypes.length > 0) {               
 
@@ -115,9 +123,11 @@
 
     ObjectJS.getContents = function (typeid, targetObject,id) {
         Params.TypeID = typeid;
+        ObjectJS.isLoading = false;
         $(targetObject).append("<div class='data-loading' style='margin-left:-145px;'><div>");
         Global.post("/Home/getContents", { filter: JSON.stringify(Params) }, function (data) {
             $(".data-loading").remove();
+            ObjectJS.isLoading = true;
             var items=data.items;
             var len=items.length;
             if (len > 0) {
