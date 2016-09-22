@@ -6,6 +6,8 @@
 
     var ObjectJS = {};
 
+    ObjectJS.isLoading = true;
+
     var pageCount = 0;
 
     var Params = {
@@ -29,6 +31,9 @@
         Params.TypeID = $(".category-menu li:first").data("id");
 
         $(".category ul li").click(function () {
+            if (!ObjectJS.isLoading) {
+                return;
+            }
             var _this = $(this), id = _this.data("id");
             if (!_this.hasClass("hover")) {
                 _this.siblings().removeClass("hover");
@@ -56,9 +61,11 @@
         if (Params.PageIndex==1) {
             $(".problems-details").empty();
         }
+        ObjectJS.isLoading = false;
         $(".problems-details").append("<div class='data-loading'><div>");
         Global.post("/Problems/GetContents", { filter: JSON.stringify(Params) }, function (data) {
             $(".problems-details").empty();
+            ObjectJS.isLoading = true;
             if (data.items.length > 0) {
                 Dot.exec("/template/problems/contentslist.html", function (template) {
                     var innerHtml = template(data.items);

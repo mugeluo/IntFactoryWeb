@@ -49,7 +49,7 @@ namespace IntFactory.HelpCenter.Controllers
             bool bl = false;    
 
             var model = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.UserLogin(accound, pwd);
-            if (model != null)
+            if (model.UserID!= null)
             {
                 CurrentUser = model;
                 Session["Manager"] = model;

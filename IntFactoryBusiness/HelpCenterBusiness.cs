@@ -271,6 +271,7 @@ namespace IntFactoryBusiness
 
 
         #region 添加
+
         public int InsertContent(string typeID, string sort, string title, string keyWords, string content, string userID)
         {
             var contentID = Guid.NewGuid().ToString().ToLower();
