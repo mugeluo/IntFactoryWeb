@@ -124,7 +124,7 @@
     ObjectJS.getContents = function (typeid, targetObject,id) {
         Params.TypeID = typeid;
         ObjectJS.isLoading = false;
-        $(targetObject).append("<div class='data-loading' style='margin-left:-145px;'><div>");
+        $(targetObject).append("<div class='data-loading' style='margin-left:-115px;'><div>");
         Global.post("/Home/getContents", { filter: JSON.stringify(Params) }, function (data) {
             $(".data-loading").remove();
             ObjectJS.isLoading = true;

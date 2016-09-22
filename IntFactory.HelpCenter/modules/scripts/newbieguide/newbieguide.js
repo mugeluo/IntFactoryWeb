@@ -72,16 +72,18 @@
                     var currentOffsetLiB = $('.smallPicUlBox ul li.current').offset().left;
                     
                     //被选中的小图片是可见box中的最后一张也就是小图片第七张
-                    if (currentOffsetLiB - offsetDiv == 433) {
+                    if (currentOffsetLiB - offsetDiv == 997) {
                         if (name!="prev") {
                             if (liLength - initCount >7) {
-                                ulSMove.stop().animate({ left: ulSMove.position().left - 423 }, 300);
+                                ulSMove.stop().animate({ left: ulSMove.position().left - 141 }, 300);
                             } else {
                                 ulSMove.stop().animate({ left: ('-' + 141 * (initCount)-10) }, 300);
                             }
-                        } else {
-                            if (liLength - initCount < 8) {//$('.smallPicUlBox ul li.current').index()
-                                ulSMove.stop().animate({ left: ulSMove.position().left + 423 }, 300);
+                        }
+                    } else if (currentOffsetLiB - offsetDiv == -131) {                        
+                        if (name != "next") {
+                            if (liLength - initCount > 7) {//$('.smallPicUlBox ul li.current').index()
+                                ulSMove.stop().animate({ left:ulSMove.position().left + 141 }, 300);
                             } else {
                                 ulSMove.stop().animate({ left: 0 }, 300);
                             }
@@ -91,7 +93,7 @@
                         ulSMove.find("li:first").addClass("current");
                         ulSMove.stop().animate({ left: 0 }, 300);
                     }
-                    else if (initCount == liLength - 1) {                        
+                    else if (initCount == liLength - 1) {
                         ulSMove.find("li:last").addClass("current");
                         ulSMove.stop().animate({ left: ('-' + 141 * (liLength - 7)) }, 300);
                     }
