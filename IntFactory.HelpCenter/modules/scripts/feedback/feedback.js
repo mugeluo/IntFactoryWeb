@@ -92,8 +92,8 @@
         require.async("dropdown", function () {
             var orderTypes = [{ ID: "1", Name: "待处理" }, { ID: "2", Name: "已处理" }, { ID: "3", Name: "驳回" }, { ID: "9", Name: "已删除" }];
             $("#procesSing").dropdown({
-                prevText: "处理情况",
-                defaultText: "",
+                prevText: "处理情况-",
+                defaultText: "全部",
                 defaultValue: "-1",
                 data: orderTypes,
                 dataValue: "ID",
@@ -120,8 +120,8 @@
         require.async("dropdown", function () {
             var orderTypes = [{ ID: "1", Name: "问题" }, { ID: "2", Name: "建议" }, { ID: "3", Name: "需求" }];
             $("#status").dropdown({
-                prevText: "反馈类型",
-                defaultText: "",
+                prevText: "反馈类型-",
+                defaultText: "全部",
                 defaultValue: "-1",
                 data: orderTypes,
                 dataValue: "ID",

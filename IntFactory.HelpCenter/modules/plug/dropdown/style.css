@@ -1,8 +1,8 @@
 ﻿
 /*下拉框插件样式*/
-.dropdown-module { position: relative; height:26px; border:solid 1px #ccc; border-radius:2px; cursor:pointer;z-index:1000; }
-.dropdown-module .dropdown-text { height:26px; line-height:26px; margin-left:5px; color:#666; }
-.dropdown-module .dropdown-ico { height:24px; width:24px; position:absolute; top:1px; right:1px; background-color:#ccc; }
+.dropdown-module { position: relative; height:28px; border:solid 1px #ccc; border-radius:2px; cursor:pointer;z-index:1000; }
+.dropdown-module .dropdown-text { height:28px; line-height:28px; margin-left:5px; color:#666; }
+.dropdown-module .dropdown-ico { height:24px; width:24px; position:absolute; top:2px; right:1px; background-color:#ccc; }
 .dropdown-module .dropdown-ico span{ border-top:solid 6px #fff; border-left:solid 6px transparent ;border-right:solid 6px transparent; 
                                      width:0px;height:0px; position:absolute; top:10px; right:6px; }
 
