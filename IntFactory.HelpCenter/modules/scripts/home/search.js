@@ -28,9 +28,13 @@
             ObjectJS.getContents();
         } else {
             $(".search-results").append("<li class='nodata-txt'>请输入搜索内容</li>");
+            return;
         }
       
         $(".time-search li").click(function () {
+            if (Params.Keywords == '') {                
+                return;
+            }
             var _this = $(this), beginTime = _this.data("begintime"), endTime = _this.data("endtime");
             if (!_this.hasClass("hover")) {
                 _this.siblings().removeClass("hover");
@@ -44,6 +48,9 @@
 
         //排序
         $(".sort-item").click(function () {
+            if (Params.Keywords == '') {
+                return;
+            }
             var _this = $(this);
             var asc = true;
             if (_this.hasClass("hover")) {
