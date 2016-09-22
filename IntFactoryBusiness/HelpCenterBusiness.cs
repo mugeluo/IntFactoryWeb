@@ -30,7 +30,7 @@ namespace IntFactoryBusiness
 
         private static List<ContentEntity> FeedBackContents = null;
         private static DateTime FeedBackContentsTime = DateTime.Now;
-
+        
         #region 查询
         public List<TypeEntity> GetTypes()
         {

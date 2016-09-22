@@ -98,20 +98,15 @@
                 data: orderTypes,
                 dataValue: "ID",
                 dataText: "Name",
-                width: "120",
+                width: "150",
                 onChange: function (data) {
                     if (!ObjectJS.isLoading) {
                         return;
                     }
-                    if (Params.status != data.value) {
-                        $("#procesSing .dropdown-text").html("");
-                        $("#procesSing .dropdown-text").html(data.text);
+                    if (Params.status != data.value) {                        
                         Params.status = data.value;
                         Params.pageIndex = 1;
                         ObjectJS.getFeedBack();
-                    } else {
-                        $("#procesSing .dropdown-text").html("");
-                        $("#procesSing .dropdown-text").html(data.text);
                     }
                 }
             });
@@ -126,20 +121,15 @@
                 data: orderTypes,
                 dataValue: "ID",
                 dataText: "Name",
-                width: "120",
+                width: "150",
                 onChange: function (data) {
                     if (!ObjectJS.isLoading) {
                         return;
                     }
-                    if (Params.type != data.value) {
-                        $("#status .dropdown-text").html("");
-                        $("#status .dropdown-text").html(data.text);
+                    if (Params.type != data.value) {                        
                         Params.type = data.value;
                         Params.pageIndex = 1;
                         ObjectJS.getFeedBack();
-                    } else {
-                        $("#status .dropdown-text").html("");
-                        $("#status .dropdown-text").html(data.text);
                     }
                 }
             });

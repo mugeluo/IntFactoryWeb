@@ -1,5 +1,5 @@
 ﻿@{
-    var modol = (IntFactoryEntity.ContentEntity)ViewBag.list;
+    var model = (IntFactoryEntity.ContentEntity)ViewBag.list;
     var HotQAContents = (List<IntFactoryEntity.ContentEntity>)ViewBag.HotQAContents;
     ViewBag.Title = "厂盟 | 详情页";
     ViewBag.TitleName = "problems";
@@ -8,8 +8,10 @@
     <link href="/modules/css/Problems/problems.css" rel="stylesheet" />
 }
 @section scripts{
-    <script type="text/javascript">
-        $("#remark").html(decodeURI("@(modol.Detail)"));  
+    <script type="text/javascript">        
+        var model = ('@(Html.ToJSONString(model))');
+        model = JSON.parse(model.replace(/&quot;/g, '"'));
+        $("#remark").html(decodeURI(model.Detail));
     </script>
 }
 
@@ -21,7 +23,7 @@
             <span>></span>
             <a href="/Problems/Problems">常见问题</a>
             <span>></span>
-            <a>@(modol.TypeName)</a>
+            <a>@(model.TypeName)</a>
         </div>
         <div class="head-search">            
             <input class="search-txt" type="text" placeholder="搜索相关问题" />
@@ -32,16 +34,16 @@
 
 <div class="details content-width clear-after">
     <div class="category">
-        <div class="details-title">@(modol.Title)</div>
+        <div class="details-title">@(model.Title)</div>
         <ul class="information clear-after">
             <li class="left">
                 更新时间：
-                <span>@(modol.UpdateTime)</span>
+                <span>@(model.UpdateTime)</span>
             </li> 
             
             <li class="right">
                 浏览：
-                <span>@(modol.ClickNumber)</span>
+                <span>@(model.ClickNumber)</span>
             </li>
         </ul>
         <div id="remark" class="remark"></div>
@@ -52,7 +54,7 @@
             @{
                 foreach (var qa in HotQAContents)
                 {
-                <li><a href='/Problems/ProblemsDetail/@qa.ContentID'>@qa.Title</a></li>
+                <li class="width300 long"><a href='/Problems/ProblemsDetail/@qa.ContentID'>· @qa.Title</a></li>
                 }
             }
             <li><a href="/Problems/HotProblems">更多 >></a></li>
