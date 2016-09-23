@@ -45,22 +45,16 @@
                         $("#normal-problems ul").each(function () {
                             var _self = $(this);
                             Params.ModuleType = 2;
-                            ObjectJS.getContents(_self.data("id"), _self,id);
-                        });
-                    }
-                }
-                if (id==2) {
-                    if (!isget) {
-                        target.data("isget", 1);
-                        $("#zngc-functions ul").each(function () {
-                            var _self = $(this);
-                            Params.ModuleType = 1;
+                            Params.PageSize = 7;
                             ObjectJS.getContents(_self.data("id"), _self,id);
                         });
                     }
                 }
             };
-        }); 
+        });                
+        $("#hot-problems").find("ul").each(function () {
+            $(this).find("li").eq(7).nextAll().remove();
+        });
     };
 
     ObjectJS.getTypes = function () {

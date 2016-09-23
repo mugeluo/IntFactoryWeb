@@ -325,11 +325,6 @@
     <Content Include="Views\Contents\Contents.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="modules\css\iconfont\iconfont.eot" />
-    <Content Include="modules\css\iconfont\iconfont.ttf" />
-    <Content Include="modules\css\iconfont\iconfont.woff" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\FeedBack\FeedBack.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -337,6 +332,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Login.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="modules\css\iconfont\iconfont.eot" />
+    <Content Include="modules\css\iconfont\iconfont.ttf" />
+    <Content Include="modules\css\iconfont\iconfont.woff" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
