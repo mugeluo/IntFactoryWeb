@@ -170,7 +170,7 @@ header .currentuser:hover .dropdown-top{ border-top:solid 6px #fff;}
 .dataLoading { padding: 85px 0px; font-size: 16px; text-align: center; color: #666; }
 
 .data-loading { padding: 85px 0px; font-size: 16px; text-align: center; color: #666;background:url(/modules/images/ico-loading.gif) no-repeat center center;
-                background-size:10%}
+                background-size:30px}
 .nodata-txt{ padding: 95px 0px; font-size: 16px; text-align: center; color: #666; }
 
 

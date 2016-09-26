@@ -24,14 +24,7 @@ namespace IntFactory.HelpCenter.Controllers
         {
             JavaScriptSerializer serializer = new JavaScriptSerializer();
             FeedBack model = serializer.Deserialize<FeedBack>(entity);
-            if(CurrentUser==null){
-                model.CreateUserID = "";
-            }
-            else
-	        {
-                model.CreateUserID = CurrentUser.UserID;
-	        }
-            
+            model.CreateUserID = CurrentUser.UserID;
 
             bool flag =IntFactoryBusiness.HelpCenterBusiness.InsertFeedBack(model);
             JsonDictionary.Add("Result", flag ? 1 : 0);
@@ -45,17 +38,9 @@ namespace IntFactory.HelpCenter.Controllers
         public JsonResult GetFeedBacks(string filter)
         {
             JavaScriptSerializer serializer = new JavaScriptSerializer();
-            GetFeedBack model = serializer.Deserialize<GetFeedBack>(filter);
-
-            if (CurrentUser == null)
-            {
-                model.CreateUserID = "";
-            }
-            else
-            {
-                model.CreateUserID = CurrentUser.UserID;
-            }
-
+            GetFeedBack model = serializer.Deserialize<GetFeedBack>(filter);      
+            model.CreateUserID = CurrentUser.UserID;
+            
             int totalCount = 0, pageCount = 0;
             var list = IntFactoryBusiness.HelpCenterBusiness.GetFeedBacks(model.Keywords, model.CreateUserID, model.OrderBy,model.BeginTime, model.EndTime, model.Type, model.Status, model.PageSize, model.PageIndex, out totalCount, out pageCount); 
            
