@@ -22,8 +22,6 @@
 .table-switch .hover .iconfont { font-size:50px;color:#0cb39e;}
 .table-switch .hover div { color:#0cb39e;}
 
-
-
 /*三角形*/
 .table-switch .hover .triangle_border_up{left:120px;bottom:-60px;  width:0;height:0;border-width:0 30px 21px;border-style:solid;
                                          border-color:transparent transparent #ccc;position:absolute;}

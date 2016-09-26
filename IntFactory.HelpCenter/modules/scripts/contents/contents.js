@@ -41,14 +41,13 @@
                 $(".item li").removeClass("hover");
                 $(".item").hide();
                 _this.addClass("tag");
-                _this.next().show();
-                $("#title").html("");
-                $("#remark").html("");
+                _this.next().show();                
             } else {
                 _this.removeClass("tag");
-                _this.next().hide();
+                _this.next().hide();               
             }
-            
+            $("#title").html("");
+            $("#remark").html("");
         });
 
         $(".head-content-search .iconfont").click(function () {

@@ -2,7 +2,7 @@
 /*全局样式*/
 * { padding: 0; margin: 0; font-size:14px; color:#333; font-family:'Microsoft YaHei' !important; }/*033d91*/
 body {font-family:'Microsoft YaHei' !important; }
-*:not([class*="icon"]):not([class*="mui-amount"]):not([class*="chaoshi"]):not([class*="top-nav"]):not([href*="ju.taobao.com"]):not([class*="Icon"]):not([class*="prev"]):not([class*="next"]):not([class*="pay-"]):not([class*="tm-shop-list-"]):not(b):not(ins):not(i):not(s){font-family:"Microsoft YaHei"!important;}
+/**:not([class*="icon"]):not([class*="mui-amount"]):not([class*="chaoshi"]):not([class*="top-nav"]):not([href*="ju.taobao.com"]):not([class*="Icon"]):not([class*="prev"]):not([class*="next"]):not([class*="pay-"]):not([class*="tm-shop-list-"]):not(b):not(ins):not(i):not(s){font-family:"Microsoft YaHei"!important;}*/
 li{ list-style-type:none;}
 a {  text-decoration: none;}
 
@@ -43,7 +43,7 @@ width:1100px!important;margin:auto;
 .site-header .nav{margin-left:250px;}
 .site-header .nav::after{display:block;content:"";clear:both;}
 .site-header .nav li {float:left;margin-top:10px;cursor:pointer;text-align:center;height:30px;line-height:30px;margin-right:40px;}
-.site-header .nav li a{ color:#fff;Opacity:0.7}
+.site-header .nav li a{ color:#fff;Opacity:0.7;padding:10px 0px;}
 .intfactory {width:30px;height:30px;border-radius:16px;background-color:#fff;color:#0cb39e;opacity:0.9; line-height:30px;text-align:center;margin-right:3px;font-size:26px !important;margin-top:2px;}
 .nav li i { width:30px;color:#fff;line-height:20px;}
 .nav li.hover a{ border-bottom:2px solid #fff;padding-bottom:14px;opacity:1;}

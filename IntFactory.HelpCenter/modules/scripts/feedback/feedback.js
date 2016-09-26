@@ -135,28 +135,23 @@
             });
         });
 
-        $(".content span").click(function () {            
+        $(".content span").click(function () {
+            if ($(this).data("id") == "content-item") {
+                if (currentUser == "") {
+                    alert("您还未登录，请先登录");
+                    return;
+                }
+            }
             var _this = $(this),id=_this.data("id");
-            if (!_this.hasClass("hover")) {
+            if (!_this.hasClass("hover")) {                
                 _this.siblings().removeClass("hover");
                 _this.addClass("hover");
             };            
             if (id == "content-item") {
-                if (currentUser=="") {
-                    var confirmMsg = "登录后，您将查看您所反馈的内容?";
-                    confirm(confirmMsg, function () {
-                        window.location = '/Home/Login?feedback';
-                    }, "立即登录", function () {
-                        $(".content-feedback,.content-item").hide();
-                        $("." + id).show();
-                        ObjectJS.getFeedBack();
-                    });
-                } else {
-                    $(".content-feedback,.content-item").hide();
-                    $("." + id).show();
-                    ObjectJS.getFeedBack();
-                }                
-            } else {
+                $(".content-feedback,.content-item").hide();
+                $("." + id).show();
+                ObjectJS.getFeedBack();                            
+            } else {                
                 $(".content-feedback,.content-item").hide();
                 $(".content-feedback").show();
             }
@@ -174,6 +169,7 @@
         });
 
         $("#btn-feedback").click(function () {
+            
             var _this = $(this);
             if ($(".txt-description").val().length >= 1000) {
                 alert("问题描述请在1000个字符以内", 2);
@@ -184,41 +180,48 @@
                 alert("具体问题不能为空");
                 return;
             }
+            if (currentUser == "") {
+                var confirmMsg = "您还没有登录，是否登录?";
+                confirm(confirmMsg, function () {
+                    Dot.exec("template/feedback/feedback-login.html", function (template) {
+                        var innerText = template([]);
+                        Easydialog.open({
+                            container: {
+                                id: "login-feedback",
+                                header: "用户登录",
+                                content: innerText,
+                                yesText: "登录",
+                                yesFn: function () {
+                                    if (!$("#iptUserName").val()) {
+                                        $(".registerErr").html("请输入账号").slideDown();
+                                        return;
+                                    }
+                                    if (!$("#iptPwd").val()) {
+                                        $(".registerErr").html("请输入密码").slideDown();
+                                        return;
+                                    }
 
-            var imgs = '';
-            $("#feed-images li").each(function () {
-                imgs += $(this).data("server") + $(this).data("filename") + ",";
-            });
-            var entity = {
-                Title: "",
-                ContactName: $(".txt-name").val(),
-                MobilePhone: $(".txt-phone").val(),
-                Type: $(".dropdown-list").val(),
-                FilePath: imgs,
-                Remark: $(".txt-description").val()
-            };
-            _this.val("提交中...");
-            _this.attr("disabled", true);
-            Global.post("/FeedBack/InsertFeedBack", { entity: JSON.stringify(entity) }, function (data) {
-                _this.val("提交");
-                _this.attr("disabled", false);
+                                    $(this).html("登录中...").attr("disabled", "disabled");
+                                    Global.post("/Home/UserLogin", {
+                                        accound: $("#iptUserName").val(),
+                                        pwd: $("#iptPwd").val()
+                                    },
+                                    function (data) {
+                                        ObjectJS.insertFeedback();
+                                    });                                   
+                                },
+                                callback: function () {
 
-                if (data.Result == 1) {
-                    alert("谢谢反馈");
-                    setTimeout(function () { window.opener = null; window.open('', '_self'); window.close(); }, 1000);
-                } else {
-                    alert("反馈失败");
-                }
-            });
+                                }
+                            }
+                        });
+                    });
+                }, "立即登录");
+                return;
+            } else {
+                ObjectJS.insertFeedback();
+            }
         });
-
-        var href = window.location.href.split("?");
-        tag = href[href.length - 1];
-
-        if (tag == "feedback") {
-            $(".content span:last").click();
-        }
-
     };
 
     ObjectJS.getFeedBack = function () {
@@ -288,6 +291,35 @@
                 $(".table-list").addClass("mBottom60");
             }
         });
+    }
+
+    ObjectJS.insertFeedback = function () {        
+        var imgs = '';
+        $("#feed-images li").each(function () {
+            imgs += $(this).data("server") + $(this).data("filename") + ",";
+        });
+        var entity = {
+            Title: "",
+            ContactName: $(".txt-name").val(),
+            MobilePhone: $(".txt-phone").val(),
+            Type: $(".dropdown-list").val(),
+            FilePath: imgs,
+            Remark: $(".txt-description").val()
+        };
+        $("#btn-feedback").val("提交中...");
+        $("#btn-feedback").attr("disabled", true);
+        Global.post("/FeedBack/InsertFeedBack", { entity: JSON.stringify(entity) }, function (data) {
+            $("#btn-feedback").val("提交");
+            $("#btn-feedback").attr("disabled", false);
+
+            if (data.Result == 1) {
+                alert("谢谢反馈");
+                setTimeout(function () { window.opener = null; window.open('', '_self'); window.close(); }, 1000);
+            } else {
+                alert("反馈失败");
+            }
+        });
+        
     }
 
     module.exports = ObjectJS;

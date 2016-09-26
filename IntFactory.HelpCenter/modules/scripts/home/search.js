@@ -30,7 +30,7 @@
             Params.Keywords = txt;
             ObjectJS.getContents();
         } else {
-            $(".search-results").append("<li class='nodata-txt'>请输入搜索内容</li>");
+            $(".search-results").append("<li class='nodata-txt red'>请输入搜索内容</li>");
             return;
         }
       
