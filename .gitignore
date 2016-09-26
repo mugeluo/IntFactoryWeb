@@ -32,3 +32,10 @@ UploadFiles
 *.dbmdl
 **/umeditor/net/upload
 *.sql
+
+#ignore thumbnails created by windows
+Thumbs.db
+#Ignore files build by Visual Studio
+[Tt]est[Rr]esult*
+*.dll
+Web.config
