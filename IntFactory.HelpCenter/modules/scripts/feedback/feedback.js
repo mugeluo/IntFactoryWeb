@@ -138,7 +138,7 @@
         $(".content span").click(function () {
             if ($(this).data("id") == "content-item") {
                 if (currentUser == "") {
-                    alert("您还未登录，请先登录");
+                    ObjectJS.loginCheck(true);                    
                     return;
                 }
             }
@@ -181,47 +181,18 @@
                 return;
             }
             if (currentUser == "") {
-                var confirmMsg = "您还没有登录，是否登录?";
-                confirm(confirmMsg, function () {
-                    Dot.exec("template/feedback/feedback-login.html", function (template) {
-                        var innerText = template([]);
-                        Easydialog.open({
-                            container: {
-                                id: "login-feedback",
-                                header: "用户登录",
-                                content: innerText,
-                                yesText: "登录",
-                                yesFn: function () {
-                                    if (!$("#iptUserName").val()) {
-                                        $(".registerErr").html("请输入账号").slideDown();
-                                        return;
-                                    }
-                                    if (!$("#iptPwd").val()) {
-                                        $(".registerErr").html("请输入密码").slideDown();
-                                        return;
-                                    }
-
-                                    $(this).html("登录中...").attr("disabled", "disabled");
-                                    Global.post("/Home/UserLogin", {
-                                        accound: $("#iptUserName").val(),
-                                        pwd: $("#iptPwd").val()
-                                    },
-                                    function (data) {
-                                        ObjectJS.insertFeedback();
-                                    });                                   
-                                },
-                                callback: function () {
-
-                                }
-                            }
-                        });
-                    });
-                }, "立即登录");
+                ObjectJS.loginCheck(false);
                 return;
             } else {
                 ObjectJS.insertFeedback();
             }
         });
+        var href = window.location.href.split("?");
+        tag = href[href.length - 1];
+
+        if (tag == "feedback") {
+            $(".content span:last").click();
+        }
     };
 
     ObjectJS.getFeedBack = function () {
@@ -320,6 +291,54 @@
             }
         });
         
+    }
+
+    ObjectJS.loginCheck = function (status) {
+        var confirmMsg = "您还没有登录，是否登录?";
+        confirm(confirmMsg, function () {
+            Dot.exec("template/feedback/feedback-login.html", function (template) {
+                var innerText = template([]);
+                Easydialog.open({
+                    container: {
+                        id: "login-feedback",
+                        header: "用户登录",
+                        content: innerText,
+                        yesText: "登录",
+                        yesFn: function () {
+                            if (!$("#iptUserName").val()) {
+                                $(".registerErr").html("请输入账号").slideDown();
+                                return;
+                            }
+                            if (!$("#iptPwd").val()) {
+                                $(".registerErr").html("请输入密码").slideDown();
+                                return;
+                            }
+
+                            $(this).html("登录中...").attr("disabled", "disabled");
+                            Global.post("/Home/UserLogin", {
+                                accound: $("#iptUserName").val(),
+                                pwd: $("#iptPwd").val()
+                            },
+                            function (data) {
+                                if (data.result) {                                    
+                                    if (status) {
+                                        window.location = location.href + "?feedback";
+                                    } else {
+                                        ObjectJS.insertFeedback();
+                                        window.location = location.href;
+                                    }                                   
+                                } else {
+                                    alert("账号或密码有误");
+                                }
+                            });
+                        },
+                        callback: function () {
+
+                        }
+                    }
+                });
+            });
+        }, "立即登录");
     }
 
     module.exports = ObjectJS;

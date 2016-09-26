@@ -41,11 +41,7 @@
             function (data) {
                 $("#btnLogin").html("登录").removeAttr("disabled");
                 if (data.result) {
-                    if (tag == "feedback") {
-                        location.href = '/FeedBack/FeedBack?feedback';
-                    } else {
-                        location.href = "/Home/Index";
-                    }                    
+                   location.href = "/Home/Index";           
                 } else{
                     $(".registerErr").html("账号或密码有误").slideDown();
                 };
