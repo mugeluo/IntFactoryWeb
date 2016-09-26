@@ -106,10 +106,10 @@ header .currentuser:hover .dropdown-top{ border-top:solid 6px #fff;}
 .confirm { border: 1px solid #ccc; background-color: #fff; font-size: 13px; position: fixed; top:35%; z-index: 99999; width:260px; overflow:auto;padding:20px;border-radius:3px; }
 .confirm .confirm-wrap { word-wrap: break-word;  word-break:break-all;font-size:16px;  }
 .confirm .confirm-bottom { margin-top:20px; text-align:right; }
-.confirm-bottom .sure { padding:10px 24px; background-color:#4a98e7; color:#fff; border:none; cursor:pointer; display:inline-block; border-radius:3px; }
-.confirm-bottom .sure:hover {  background-color:#2F73B8;  }
+.confirm-bottom .sure { padding:10px 24px; background-color:#0cb39e; color:#fff; border:none; cursor:pointer; display:inline-block; border-radius:3px; }
+.confirm-bottom .sure:hover {  background-color:#098a7a;  }
 .confirm-bottom .close { padding:5px 40px; color:#999; border:none; cursor:pointer; display:inline-block; }
-.confirm-bottom .close:hover {color:#4a98e7; }
+.confirm-bottom .close:hover {color:#0cb39e; }
 
 /*下拉菜单样式*/
 .dropdown { cursor:pointer; }
@@ -143,7 +143,7 @@ header .currentuser:hover .dropdown-top{ border-top:solid 6px #fff;}
 
 /*返回顶部*/
 .getback-FH { position:fixed;z-index:11112;color:#666;right:3%;bottom:8%;display:none;}
-.getback-FH .iconfont-back {font-size:30px;color:#4a98e7;cursor:pointer; }
+.getback-FH .iconfont-back {font-size:30px;color:#0cb39e;cursor:pointer; }
 
 /*排序*/
 .search-sort { background-color:#f9f9f9; margin-bottom:20px;}
@@ -186,7 +186,7 @@ header .currentuser:hover .dropdown-top{ border-top:solid 6px #fff;}
 .table-list tr:not(:first-child) td{ padding:5px; line-height:35px; border-bottom:solid 1px #eee; max-width:500px; color:#666; 
                                      white-space:nowrap; overflow: hidden; text-overflow:ellipsis;  }
 
-.table-list td a{ color:#4a98e7;  vertical-align:middle;}
+.table-list td a{ color:#0cb39e;  vertical-align:middle;}
 .table-list td a:hover{ color:red; text-decoration:underline; }
 
 .table-list td img{ height:80px; width:80px; vertical-align:middle;}
