@@ -51,6 +51,7 @@
         //排序
         $(".search-sort .sort-item").click(function () {
             if (!ObjectJS.isLoading) {
+                alert("数据正在加载中");
                 return;
             }
             var _this = $(this);
@@ -79,6 +80,7 @@
         require.async("search", function () {
             $(".searth-module").searchKeys(function (keyWords) {
                 if (!ObjectJS.isLoading) {
+                    alert("数据正在加载中");
                     return;
                 }
                 if (Params.Keywords!=keyWords) {
@@ -101,6 +103,7 @@
                 width: "150",
                 onChange: function (data) {
                     if (!ObjectJS.isLoading) {
+                        alert("数据正在加载中");
                         return;
                     }
                     if (Params.status != data.value) {                        
@@ -124,6 +127,7 @@
                 width: "150",
                 onChange: function (data) {
                     if (!ObjectJS.isLoading) {
+                        alert("数据正在加载中");
                         return;
                     }
                     if (Params.type != data.value) {                        

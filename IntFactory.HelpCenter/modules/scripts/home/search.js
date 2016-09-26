@@ -39,6 +39,7 @@
                 return;
             }
             if (!ObjectJS.isLoading) {
+                alert("数据正在加载中");
                 return;
             }
             var _this = $(this), beginTime = _this.data("begintime"), endTime = _this.data("endtime");
@@ -58,6 +59,7 @@
                 return;
             }
             if (!ObjectJS.isLoading) {
+                alert("数据正在加载中");
                 return;
             }
             var _this = $(this);

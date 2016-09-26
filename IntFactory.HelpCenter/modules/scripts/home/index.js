@@ -26,6 +26,7 @@
     ObjectJS.bindEvent = function () {
         $(".table-switch li").click(function () {
             if (!ObjectJS.isLoading) {
+                alert("数据正在加载中");
                 return;
             }
             var _this = $(this),id=_this.data("id");
