@@ -9,7 +9,8 @@
 .head-content .content-bottom{background:url(/modules/images/home/help-ind2.png)no-repeat right 300px;}
 .head-content .content-bottom .function{width:800px;margin:auto;margin-top:50px;padding-bottom:100px;}
 
-.function li { float:left;margin-right:20px;margin-bottom:20px;width:178px;height:178px;border:1px solid #fff;border-radius:5px;position:relative;}
+.function li { float:left;margin-right:20px;margin-bottom:20px;width:178px;height:178px;border:1px solid #fff;border-radius:5px;position:relative;
+               box-shadow: 2px 2px 2px #64d4c6;}
 .function li .iconfont{font-size:80px;color:#fff;text-align:center;margin-left:50px;line-height:120px;}
 .function li .desc{text-align:center;width:180px;color:#fff;font-size:16px;}
 .function li .detail{position:absolute;z-index:22;top:0;left:0;width:180px;height:180px;background-color:#fff;border-radius:5px;cursor:pointer;}
@@ -45,7 +46,7 @@
 
 /*新手指南*/
 .new-guide .guide-img { width:960px;margin:auto;}
-.new-guide .guide-img li{float:left;margin-bottom:20px;margin-right:20px;width:300px;height:200px;position:relative;}
+.new-guide .guide-img li{float:left;margin-bottom:20px;margin-right:20px;width:300px;height:200px;position:relative;box-shadow: 3px 3px 3px #f3f3f3;}
 .guide-img li img { width:300px;height:200px;}
 .guide-img li .txt { position:absolute;z-index:10;bottom:10px;left:10px;color:#fff;opacity:0.8;font-size:16px;}
 .guide-img li .bg-jianbian { position:absolute;z-index:5;width:300px;height:200px;top:0;

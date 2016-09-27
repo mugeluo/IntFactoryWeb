@@ -12,6 +12,7 @@
         seajs.use(["scripts/newbieguide/newbieguide"], function (ObjectJS) {
             ObjectJS.init('@(Html.ToJSONString(list))');
         });
+        $(".imgTitle").html(decodeURI("@(list[0].Detail)"));
     </script>
 }
 <div class="head-content-menu">
@@ -57,7 +58,7 @@
 	    </div>
 	    <div class="imgTitle">
 			<span class="num-title"><em>1</em>/@(list.Count)</span>
-			<p>@(list[0].Detail)</p>
+			<p></p>
 		</div>
 	    <div class="smallPicBox">
 		    <a href="javascript:;" class="smallPrevBtn" title="上一张"><i><</i></a>

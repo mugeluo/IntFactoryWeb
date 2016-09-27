@@ -199,10 +199,7 @@
                         //}
                     });
                 });
-
-                var url = window.location.href.split("?")[1];
-
-                $(".smallPicUlBox ul li").eq(url).click();
+                                
             });
         });
 

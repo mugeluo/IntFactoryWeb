@@ -20,7 +20,7 @@
 .category .load-more{width:100%;background-color:#f2f2f2;text-align:center;height:40px;line-height:40px;margin:20px 0 40px 0;color:#999;cursor:pointer;}
 .category .load-more:hover { color:#fff;background-color:#0cb39e;border-radius:3px;}
 
-.example ul { width:330px;margin-right:5px;float:right;margin-top:50px;border:1px solid #dedede;margin-bottom:50px;box-shadow: 3px 3px 0px #f8f8f8;}
+.example ul { width:330px;margin-right:5px;float:right;margin-top:50px;border:1px solid #dedede;margin-bottom:50px;box-shadow: 3px 3px 3px #f8f8f8;}
 .example ul li:first-child{background-color:#f2f2f2;padding:11px;margin-bottom:10px;}
 .example ul li:first-child div{border-left:3px solid #0cb39e;font-size:20px;color:#666;padding:0px 10px;line-height:30px;}
 .example ul li:not(first-child) a{color:#0cb39e;padding-left:10px;line-height:2;cursor:pointer;}

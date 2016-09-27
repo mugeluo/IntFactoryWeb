@@ -66,7 +66,8 @@ em,i{font-style:normal}
 .nextABox{ display: block; height: 606px; width: 550px; position: absolute; top: 0; right: 0; z-index: 1;}
 .nextABox .nextBtn{ float: right;}
 
-.imgTitle{font-size: 16px; line-height: 25px; padding: 20px 0 20px 85px; /* height: 75px; */ width: 915px; position: relative; word-wrap: break-word; word-break: break-all; overflow: hidden;}
+.imgTitle{font-size: 16px; line-height: 25px; padding: 20px 0 20px 85px; min-height:50px; width: 915px; position: relative; 
+          word-wrap: break-word; word-break: break-all; overflow: hidden;}
 .imgTitle span.num-title{ display: inline-block; color: #3d3d3d; font-size: 24px; height: 28px; position: absolute; top: 20px; left: 0;}
 .imgTitle span.num-title em{ float: left; color: #0cb39e; font-size: 33px; margin-top: -6px; position: relative;}
 .smallPicBox{ border: 1px solid #dbdbdb; padding:10px 0; height: 90px; width: 1100px; position: relative;margin-bottom:20px;}
