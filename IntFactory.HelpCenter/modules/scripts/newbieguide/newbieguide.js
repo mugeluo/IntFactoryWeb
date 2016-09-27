@@ -170,6 +170,7 @@
                 ulSMove.find("li").each(function (i) {
                     $(this).attr('index', i);
                     $(this).click(function () {
+                        
                         $(".newbie-title").html($(this).find('.desc').data("title"));
                         $(".newbie-info .left li span").html($(this).find('.desc').data("createtime"));
                         $(".head-menu a:last").html($(this).find('.desc').data("title"));
@@ -180,21 +181,16 @@
                         initCount = $(this).index();
                         var currentOffsetLi = $(this).offset().left;
                         //计算点击的是否为最后一张或者可视box的最后一张图片
-                        //if (currentOffsetLi - offsetDiv == 282) {
-                        //    if ($(this).index() == liLength - 1) {
-                        //        alert('亲，这是最后一张了哦!');
-                        //        //window.location.href='URL'; 此处用来跳转到下一组图片集
-                        //    } else {
-                        //        ulSMove.stop().animate({ left: ulSMove.position().left - 282 }, 300);
-                        //    }
-                        //}
-                        //    //计算点击的是否为第一张或者当前可视box的第一张图片
-                        //else if (currentOffsetLi - offsetDiv == 0) {
+                        
+                        //if (currentOffsetLi - offsetDiv == 10) {
                         //    if ($(this).index() == 0) {
                         //        alert('亲，这是第一张了哦!');
-                        //        //window.location.href='URL'; 此处用来跳转到上一组图片集
-                        //    } else {
-                        //        ulSMove.stop().animate({ left: ulSMove.position().left + 282 }, 300);
+                        //        window.location.href = "http://localhost:1820/NewbieGuide/NewbieGuide/700c3a2e-c45b-40e0-a06f-069b2c2b2f3d";
+                        //    }
+                        //} else {
+                        //    if ($(this).index() == liLength - 1) {
+                        //        alert('亲，这是最后一张了哦!');
+                        //        indow.location.href = "http://localhost:1820/NewbieGuide/NewbieGuide/1a7cf277-5ff5-4245-bdfb-bfaa87d92553";
                         //    }
                         //}
                     });
