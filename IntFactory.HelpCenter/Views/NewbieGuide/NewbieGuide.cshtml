@@ -1,5 +1,5 @@
 ﻿@{
-    var list = (List < IntFactoryEntity.TypeEntity > )ViewBag.item;
+    var list = (List < IntFactoryEntity.ContentEntity > )ViewBag.item;
     ViewBag.Title = "厂盟 | 新手指南";
     ViewBag.TitleName = "NewbieGuide";
 }
@@ -21,7 +21,7 @@
             <span>></span>
             <a href="/NewbieGuide/NewbieGuide">新手指南</a>
             <span>></span>
-            <a>@(list[0].Name)</a>
+            <a>@(list[0].TypeName)</a>
         </div>
         <div class="head-search">            
             <input class="search-txt" type="text" placeholder="搜索相关问题" />
@@ -31,7 +31,7 @@
 </div>
 
 <div class="newbie content-width">
-    <div class="newbie-title">@(list[0].Name)</div>
+    <div class="newbie-title">@(list[0].Title)</div>
     @*<div class="newbie-info clear-after">
         <ul class="left">
             <li>创建时间：<span>@(list[0].CreateTime)</span></li>
@@ -48,7 +48,7 @@
                 {
                     foreach (var item in list)
                     {
-                        <li><img src="@(item.Icon==""?"/modules/images/img-noimg.png":item.Icon)" alt="新手指引"></li>
+                        <li><img src="@(item.MainImg==""?"/modules/images/img-noimg.png":item.MainImg)" alt="新手指引"></li>
                     } 
                 }
 		    </ul>
@@ -57,7 +57,7 @@
 	    </div>
 	    <div class="imgTitle">
 			<span class="num-title"><em>1</em>/@(list.Count)</span>
-			<p>@(list[0].Remark)</p>
+			<p>@(list[0].Detail)</p>
 		</div>
 	    <div class="smallPicBox">
 		    <a href="javascript:;" class="smallPrevBtn" title="上一张"><i><</i></a>

@@ -110,7 +110,7 @@
                         return;
                     }
                     var item = guidTypes[i];
-                    $(".new-guide ul").append('<li><a href="/NewbieGuide/NewbieGuide?'+i+'"><img src="' + item.Icon + '" /><div class="bg-jianbian"></div><span class="txt">' + (i + 1) + '.' + item.Name + '</span></li></a>');
+                    $(".new-guide ul").append('<li><a href="/NewbieGuide/NewbieGuide/'+item.TypeID+'"><img src="' + item.Icon + '" /><div class="bg-jianbian"></div><span class="txt">' + (i + 1) + '.' + item.Name + '</span></li></a>');
                 }
             }
         });

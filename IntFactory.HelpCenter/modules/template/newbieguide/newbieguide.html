@@ -1,14 +1,15 @@
 ﻿{%
 	for(var i=0, j=$data.length; i < j; i++){
-	var item = $data[i];
+	var item = $data[i],
+        detail=decodeURI(item.Detail);
 %}
 
 <li class="" index="{%=i%}">
 	<div class="mask"><em></em></div>
-	<img src='{%=item.Icon==""?"/modules/images/img-noimg.png":item.Icon%}?imageView2/1/w/120/h/84"%} alt="图{%=i+1%}'>
-	<div class="desc" data-title="{%=item.Name%}" data-createtime='{%=item.CreateTime.toDate("yyyy-MM-dd hh:mm:ss")%}' data-num="ClickNumber">
+	<img src='{%=item.MainImg==""?"/modules/images/img-noimg.png":item.MainImg%}?imageView2/1/w/120/h/84"%} alt="图{%=i+1%}'>
+	<div class="desc" data-title="{%=item.Title%}" data-createtime='{%=item.CreateTime.toDate("yyyy-MM-dd hh:mm:ss")%}' data-num="ClickNumber">
 		<span class="num-title"><em>{%=i+1%}</em>/{%=j%}</span>
-		<p>{%=item.Remark%}</p>
+		<p>{%=detail%}</p>
 	</div>
 </li>
 

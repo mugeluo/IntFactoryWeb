@@ -151,7 +151,18 @@ namespace IntFactoryBusiness
             }
 
             return list;
+        }
+
+        public List<ContentEntity> GetContentsByTypeID(string typeID)
+        {
+            List<ContentEntity> list = new List<ContentEntity>();
+            int pageTotal = 0;
+            int pageCount = 0;
+            list = GetContents(3, typeID, string.Empty, string.Empty, string.Empty, "c.CreateTime desc ", 10, 1, ref pageTotal, ref pageCount);
+
+            return list;
         }       
+
 
         public List<ContentEntity> GetContents(int moduleType, string typeID, string keyWords, string beginTime, string endTime, string orderBy, int pageSize, int pageIndex, ref int totalCount, ref int pageCount)
         {
