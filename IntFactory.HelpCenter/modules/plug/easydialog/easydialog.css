@@ -19,8 +19,8 @@ button::-moz-focus-inner { border: 0; padding: 0; margin: 0; }
 .easyDialog_wrapper .btn_highlight,
 .easyDialog_wrapper .btn_normal { border:none; border-radius: 2px; cursor: pointer; font-family: "Microsoft yahei", Arial; float: right; 
                                   font-size: 12px; padding: 6px 15px; }
-.easyDialog_wrapper .btn_highlight { margin-left:10px; background: #4a98e7; color: #fff; }
-.easyDialog_wrapper .btn_highlight:hover { background: #2F73B8; }
+.easyDialog_wrapper .btn_highlight { margin-left:10px; background: #0cb39e; color: #fff; }
+.easyDialog_wrapper .btn_highlight:hover { background: #098a7a; }
 
 .btn_normal{border-color: white!important;background-color: white!important;}
 
