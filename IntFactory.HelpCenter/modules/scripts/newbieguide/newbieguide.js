@@ -198,8 +198,6 @@
                                 
             });
         });
-
-        
     };
 
     module.exports = ObjectJS;
