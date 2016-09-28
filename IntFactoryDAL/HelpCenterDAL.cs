@@ -46,9 +46,9 @@ namespace IntFactoryDAL
 
         public DataSet GetFunctionTypes()
         {
-            string sqlTxt = "select * from M_HelpType  where Status<>9 and moduletype=1";
+            string sqlTxt = "select * from M_HelpType  where Status<>9 and moduletype=1 order by Sort asc,CreateTime desc";
             string sqlWhere = "select typeid from M_HelpType  where Status<>9 and moduletype=1";
-            sqlTxt += " select * from m_helpcontent where status<>9 and typeid in  (" + sqlWhere + ") ";
+            sqlTxt += " select * from m_helpcontent where status<>9 and typeid in  (" + sqlWhere + ") order by Sort asc,CreateTime desc";
             DataSet ds = GetDataSet(sqlTxt);
 
             return ds;

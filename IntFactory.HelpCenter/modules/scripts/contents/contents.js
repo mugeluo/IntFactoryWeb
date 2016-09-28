@@ -30,7 +30,9 @@
                 $("#title").html(title);
                 $("#remark").html(decodeURI(remark));
 
-                $(".content-menu").css("height", $(".content").height());
+                setTimeout(function () {
+                    $(".content-menu").css("height", $(".content").height());
+                }, 500);                
             };
         });
 
@@ -45,9 +47,7 @@
             } else {
                 _this.removeClass("tag");
                 _this.next().hide();               
-            }
-            $("#title").html("");
-            $("#remark").html("");
+            }          
         });
 
         $(".head-content-search .iconfont").click(function () {
@@ -66,8 +66,7 @@
 
     ObjectJS.getContents = function (typeid, targetObject,status) {
         $(targetObject).empty();
-        $("#title").empty();
-        $("#remark").empty();       
+            
         Params.TypeID = typeid;
         $(targetObject).append("<div class='data-loading'><div>");
         Global.post("/Home/getContents", { filter: JSON.stringify(Params) }, function (data) {
@@ -95,7 +94,9 @@
 
             $(targetObject).find(".items:first").click();
 
-            $(".content-menu").css("height", $(".content").height());
+            setTimeout(function () {
+                $(".content-menu").css("height", $(".content").height());
+            }, 500);
 
         });
     };

@@ -8,6 +8,7 @@
 .problems-details .item ul{display:table;width:100%;}
 .problems-details .item ul li{display:table-cell;vertical-align:top;}
 .problems-details .item .problems-title a{font-size:22px;color:#333;}
+.problems-details .item .problems-title a:hover{color:#0cb39e;}
 .problems-details .item .problems-desc{margin-bottom:20px;margin-top:30px;color:#666;line-height:28px;height:56px;overflow:hidden;text-overflow:ellipsis;}
 .problems-details .item .problems-desc img{max-width:530px;}
 .problems-details .item .problems-desc p, .problems-details .item .problems-desc a, .problems-details .item .problems-desc div, .problems-details .item .problems-desc span {
