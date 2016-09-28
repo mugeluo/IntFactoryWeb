@@ -33,7 +33,7 @@
 .problem .problem-content ul{padding:50px 0px;margin-left:105px;width:165px;min-height:220px;}
 .problem .hot-problems ul{ margin-left:160px;}
 .problem .problem-content ul li:first-child{font-size:24px;margin-bottom:20px;}
-.problem .problem-content ul li:not(first-child){color:#666;line-height:2;}
+.problem .problem-content ul li:not(first-child){color:#666;line-height:2;width:100%;}
 .problem .problem-content ul li a:hover {color:#0cb39e; }
 
 .download-functions { text-align:center;width:300px;height:150px;margin:125px auto;border:1px dashed #0cb39e;border-radius:5px;cursor:pointer;}

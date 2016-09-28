@@ -17,6 +17,7 @@
     var ObjectJS = {};
 
     ObjectJS.isLoading = true;
+    ObjectJS.typesID=[];
 
     ObjectJS.init = function () {
         ObjectJS.bindEvent();
@@ -44,11 +45,14 @@
                     if (!isget) {
                         target.data("isget", 1);
                         $("#normal-problems ul").each(function () {
+                            
                             var _self = $(this);
-                            Params.ModuleType = 2;
-                            Params.PageSize = 7;
-                            ObjectJS.getContents(_self.data("id"), _self,id);
+                            ObjectJS.typesID.push({
+                                typeid: _self.data("id"),
+                                targetObject:_self
+                            });                            
                         });
+                        ObjectJS.getContents("", "", id);
                     }
                 }
             };
@@ -99,7 +103,7 @@
             if (qaTypes.length > 0) {
                 for (var i = 0; i < qaTypes.length; i++) {
                     var item=qaTypes[i];
-                    $("#normal-problems ul").eq(i).data("id", item.TypeID).append("<li>" + item.Name + "</li>");
+                    $("#normal-problems ul").eq(i).data("id", item.TypeID).append("<li class='long'>" + item.Name + "</li>");
                 }
             }
 
@@ -108,7 +112,7 @@
                 for (var i = 0; i < guidTypes.length; i++) {
                     if (i>5) {
                         return;
-                    }
+                    }                    
                     var item = guidTypes[i];
                     $(".new-guide ul").append('<li><a href="/NewbieGuide/NewbieGuide/'+item.TypeID+'"><img src="' + item.Icon + '" /><div class="bg-jianbian"></div><span class="txt">' + (i + 1) + '.' + item.Name + '</span></li></a>');
                 }
@@ -116,26 +120,47 @@
         });
     };
 
-    ObjectJS.getContents = function (typeid, targetObject,id) {
+    ObjectJS.getContents = function (typeid, targetObject, id) {
         Params.TypeID = typeid;
-        ObjectJS.isLoading = false;
-        $(targetObject).append("<div class='data-loading' style='margin-left:-115px;'><div>");
-        Global.post("/Home/getContents", { filter: JSON.stringify(Params) }, function (data) {
-            $(".data-loading").remove();
-            ObjectJS.isLoading = true;
-            var items=data.items;
-            var len=items.length;
-            if (len > 0) {
-                for(var i=0;i<len;i++){
-                    var item = items[i];
-                    if (id==1) {
-                        $(targetObject).append("<li><a href='/Problems/ProblemsDetail/" + item.ContentID + "'>. " + item.Title + "</a></li>");
-                    } else {
-                        $(targetObject).append("<li><a href='/Contents/Contents/" + item.TypeID + "'>. " + item.Title + "</a></li>");
-                    }                    
-                }                
-            }
-        });
+        if (id==1) {            
+            Params.ModuleType = 2;
+            Params.PageSize = 7;
+            ObjectJS.isLoading = false;
+            $(targetObject).append("<div class='data-loading' style='margin-left:-115px;'><div>");
+            Global.post("/Home/getContents", { filter: JSON.stringify(Params) }, function (data) {
+                $(".data-loading").remove();
+                ObjectJS.isLoading = true;
+                var items = data.items;
+                var len = items.length;                
+                if (len > 0) {                    
+                    for (var i = 0; i < ObjectJS.typesID.length; i++) {
+                        var typeItem = ObjectJS.typesID[i];                    
+                        for (var j = 0; j < len; j++) {
+                            var item = items[j];
+                            if (typeItem.typeid ==item.TypeID ) {
+                                $(typeItem.targetObject).append("<li class='long'><a href='/Problems/ProblemsDetail/" + item.ContentID + "'>. " + item.Title + "</a></li>");
+                            }
+                        }
+                    }
+                }
+            });
+        } else {            
+            ObjectJS.isLoading = false;
+            $(targetObject).append("<div class='data-loading' style='margin-left:-115px;'><div>");
+            Global.post("/Home/getContents", { filter: JSON.stringify(Params) }, function (data) {
+                $(".data-loading").remove();
+                ObjectJS.isLoading = true;
+                var items = data.items;
+                var len = items.length;
+                if (len > 0) {
+                    for (var i = 0; i < len; i++) {
+                        var item = items[i];
+                        $(targetObject).append("<li class='long'><a href='/Contents/Contents/" + item.TypeID + "'>. " + item.Title + "</a></li>");
+                    }
+                }
+            });
+        }
+        
     };
 
     module.exports = ObjectJS;

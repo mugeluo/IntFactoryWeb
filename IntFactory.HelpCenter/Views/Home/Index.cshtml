@@ -63,7 +63,7 @@
                 @{
                     foreach (var qa in HotQAContents)
                     {
-                        <li><a href='/Problems/ProblemsDetail/@qa.ContentID'>@qa.Title</a></li>
+                        <li class="long"><a href='/Problems/ProblemsDetail/@qa.ContentID'>@qa.Title</a></li>
                     }
                 }
             </ul>
@@ -71,7 +71,7 @@
                 <li>最近更新</li>
                 @{
                     foreach(var qa in QAcontents){
-                        <li><a href='/Problems/ProblemsDetail/@qa.ContentID'>@qa.Title</a></li>
+                        <li class="long"><a href='/Problems/ProblemsDetail/@qa.ContentID'>@qa.Title</a></li>
                     }
                 }
             </ul>
@@ -80,7 +80,7 @@
                 @{
                     foreach (var qa in FeedBackContents)
                     {
-                        <li><a href='/Problems/ProblemsDetail/@qa.ContentID'>@qa.Title</a></li>
+                        <li class="long"><a href='/Problems/ProblemsDetail/@qa.ContentID'>@qa.Title</a></li>
                     }
                 }
             </ul>
