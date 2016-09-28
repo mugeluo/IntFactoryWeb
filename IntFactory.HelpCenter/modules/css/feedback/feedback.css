@@ -8,13 +8,12 @@
     
 .feed-top {width: 420px;margin: 30px auto;text-align:center;}
 .feed-top h1 { font-size:36px;font-weight:normal;color: #777;margin-bottom:10px;}
-.feed-top p { font-size:14px;line-height:24px;}
-.feed-top p span { font-size:16px;color:#4a98e7;}
 
 .descript-text { width:100%;margin:20px 0;}
 .descript-text div:first-child { float: left; text-align: right; width:30%;font-size:14px;color:#444;line-height:40px; }
 .descript-text div:last-child {float:left;width:48%; }
-.feed-title .txt-title,.feed-type .dropdown-list,.feed-name .txt-name,.feed-phone .txt-phone,.feed-description .txt-description {height:40px;padding:5px; width:100%;box-sizing:border-box;border-radius:3px;}
+.feed-title .txt-title,.feed-type .dropdown-list,.feed-name .txt-name,.feed-phone .txt-phone,.feed-description .txt-description {height:40px;padding:5px; width:100%;
+                                                                                                                                 box-sizing:border-box;border-radius:3px;}
 .feed-annex .file-annex { line-height:40px;height:40px;width:150px;opacity:0;position:absolute;left:0;top:0;cursor:pointer;}
 
 .feed-annex .upload-btn{ padding: 5px 10px;background-color: #ccc;color: #000;border: none;cursor: pointer;display: inline-block;border-radius: 3px;line-height: 18px;-moz-transition: all 0.3s;-webkit-transition: all 0.3s;width:100px;height:40px;text-align:center;line-height:40px;}
@@ -23,7 +22,7 @@
 #feed-images {padding:6px;overflow:hidden;}
 #feed-images img { width:60px;height:60px;}
 #feed-images li { width:60px;height:60px;position:relative;margin-right:20px;float:left;padding:1px;border:1px solid #ccc;line-height:60px;}
-#feed-images li .iconfont { color:#4a98e7;font-size:18px;position:absolute;top:-8px;right:-8px;background-color:#fff;border-radius:50%;cursor:pointer;}
+#feed-images li .iconfont { color:#0cb39e;font-size:18px;position:absolute;top:-8px;right:-8px;background-color:#fff;border-radius:50%;cursor:pointer;}
 
 .feed-annex a {cursor:pointer;height:40px;line-height:40px;display:inline-block;position:relative;color:#666;font-size:18px;text-align:center;border-radius:2px;transition:background-color 0.3s;}
 .feed-description div:first-child{ line-height:normal;}

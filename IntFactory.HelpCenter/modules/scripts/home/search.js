@@ -46,11 +46,11 @@
             if (!_this.hasClass("hover")) {
                 _this.siblings().removeClass("hover");
                 _this.addClass("hover");
-            };
-            Params.BeginTime = beginTime;
-            Params.EndTime = endTime;
-            Params.PageIndex = 1;
-            ObjectJS.getContents();
+                Params.BeginTime = beginTime;
+                Params.EndTime = endTime;
+                Params.PageIndex = 1;
+                ObjectJS.getContents();
+            };            
         });
 
         //排序

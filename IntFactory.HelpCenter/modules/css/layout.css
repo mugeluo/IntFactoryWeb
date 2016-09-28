@@ -6,7 +6,7 @@ body {font-family:'Microsoft YaHei' !important; }
 li{ list-style-type:none;}
 a {  text-decoration: none;}
 
-input[type="text"],input[type="number"] { border:solid 1px #ccc; border-radius:2px;height:28px; line-height:28px; padding:0 5px; }
+input[type="text"],input[type="number"] { border:solid 1px #fff; border-radius:2px;height:28px; line-height:28px; padding:0 5px; }
 input[type="text"]:focus { border:solid 1px #0cb39e; }
 input[type="number"]:focus{border:1px solid #ccc;}
 

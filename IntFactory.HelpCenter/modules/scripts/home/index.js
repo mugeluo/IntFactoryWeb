@@ -44,8 +44,7 @@
                 if (id == 1) {
                     if (!isget) {
                         target.data("isget", 1);
-                        $("#normal-problems ul").each(function () {
-                            
+                        $("#normal-problems ul").each(function () {                            
                             var _self = $(this);
                             ObjectJS.typesID.push({
                                 typeid: _self.data("id"),
@@ -164,8 +163,7 @@
                     }
                 }
             });
-        }
-        
+        }        
     };
 
     module.exports = ObjectJS;
