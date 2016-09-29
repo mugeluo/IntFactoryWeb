@@ -309,37 +309,49 @@
                         content: innerText,
                         yesText: "登录",
                         yesFn: function () {
-                            if (!$("#iptUserName").val()) {
-                                $(".registerErr").html("请输入账号").slideDown();
-                                return;
-                            }
-                            if (!$("#iptPwd").val()) {
-                                $(".registerErr").html("请输入密码").slideDown();
-                                return;
-                            }
-
-                            $(this).html("登录中...").attr("disabled", "disabled");
-                            Global.post("/Home/UserLogin", {
-                                accound: $("#iptUserName").val(),
-                                pwd: $("#iptPwd").val()
-                            },
-                            function (data) {
-                                if (data.result) {                                    
-                                    if (status) {
-                                        window.location = location.href + "?feedback";
-                                    } else {
-                                        ObjectJS.insertFeedback();
-                                        window.location = location.href;
-                                    }                                   
-                                } else {
-                                    alert("账号或密码有误");
-                                }
-                            });
+                            
                         },
                         callback: function () {
 
                         }
+                    }                    
+                });
+                $(".easyDialog_footer").hide();
+                
+                var loginButtomStatus = true;
+                $("#btnLogin").click(function () {
+                    if (!loginButtomStatus) {
+                        return;
                     }
+                    if (!$("#iptUserName").val()) {
+                        $(".registerErr").html("请输入账号").slideDown();
+                        return;
+                    }
+                    if (!$("#iptPwd").val()) {
+                        $(".registerErr").html("请输入密码").slideDown();
+                        return;
+                    }
+
+                    $(this).html("登录中...");
+                    loginButtomStatus = false;
+                    Global.post("/Home/UserLogin", {
+                        accound: $("#iptUserName").val(),
+                        pwd: $("#iptPwd").val()
+                    },
+                    function (data) {
+                        if (data.result) {
+                            if (status) {
+                                window.location = location.href + "?feedback";
+                            } else {
+                                ObjectJS.insertFeedback();
+                                window.location = location.href;
+                            }
+                        } else {
+                            loginButtomStatus = true;
+                            $("#btnLogin").html("登录");
+                            $(".registerErr").html("账号或密码有误").slideDown();
+                        }
+                    });
                 });
             });
         }, "立即登录");

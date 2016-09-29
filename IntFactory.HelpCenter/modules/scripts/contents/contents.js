@@ -30,9 +30,9 @@
                 $("#title").html(title);
                 $("#remark").html(decodeURI(remark));
 
-                setTimeout(function () {
-                    $(".content-menu").css("height", $(".content").height());
-                }, 500);                
+                setTimeout(function () {                    
+                    $(".content-menu").css("height", $(".contents-remark").height());
+                }, 300);                
             };
         });
 
@@ -95,7 +95,7 @@
             $(targetObject).find(".items:first").click();
 
             setTimeout(function () {
-                $(".content-menu").css("height", $(".content").height());
+                $(".content-menu").css("height", $(".contents-remark").height());
             }, 500);
 
         });
