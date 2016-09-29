@@ -2,7 +2,7 @@
 /*全局样式*/
 * { padding: 0; margin: 0; font-size:14px; color:#333; font-family:'Microsoft YaHei' !important; }/*033d91*/
 body {font-family:'Microsoft YaHei' !important; }
-/**:not([class*="icon"]):not([class*="mui-amount"]):not([class*="chaoshi"]):not([class*="top-nav"]):not([href*="ju.taobao.com"]):not([class*="Icon"]):not([class*="prev"]):not([class*="next"]):not([class*="pay-"]):not([class*="tm-shop-list-"]):not(b):not(ins):not(i):not(s){font-family:"Microsoft YaHei"!important;}*/
+*:not([class*="icon"]):not([class*="mui-amount"]):not([class*="chaoshi"]):not([class*="top-nav"]):not([href*="ju.taobao.com"]):not([class*="Icon"]):not([class*="prev"]):not([class*="next"]):not([class*="pay-"]):not([class*="tm-shop-list-"]):not(b):not(ins):not(i):not(s){font-family:"Microsoft YaHei"!important;}
 li{ list-style-type:none;}
 a {  text-decoration: none;}
 
