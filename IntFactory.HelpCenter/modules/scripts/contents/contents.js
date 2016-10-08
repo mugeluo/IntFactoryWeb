@@ -96,7 +96,7 @@
 
             setTimeout(function () {
                 $(".content-menu").css("height", $(".contents-remark").height());
-            }, 500);
+            }, 300);
 
         });
     };
