@@ -23,7 +23,7 @@ namespace IntFactory.HelpCenter.Controllers
             
             if (id==null)
             {
-                id="01d36f05-89d7-42e1-90df-0bc314964752";
+                id = "8c333da4-c6a0-4b55-a232-e2ca25c76282";
             }
 
             var items = IntFactoryBusiness.HelpCenterBusiness.BaseBusiness.GetContentsByTypeID(id);
