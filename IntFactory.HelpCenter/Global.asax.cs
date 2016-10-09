@@ -16,7 +16,7 @@ namespace IntFactory.HelpCenter
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
-            filters.Add(new HandleErrorAttribute());
+            filters.Add(new HandleErrorAttribute(),1);
         }
 
         public static void RegisterRoutes(RouteCollection routes)
@@ -38,5 +38,6 @@ namespace IntFactory.HelpCenter
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
         }
+        
     }
 }

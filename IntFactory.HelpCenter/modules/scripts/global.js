@@ -247,6 +247,7 @@
         var cval = Global.getCookie(name);
         if (cval != null)
             document.cookie = name + "=" + cval + ";expires=" + exp.toGMTString();
-    }
+    }    
+
     module.exports = Global;
 });

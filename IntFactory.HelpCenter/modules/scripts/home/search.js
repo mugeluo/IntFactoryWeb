@@ -7,7 +7,7 @@
     require("daterangepicker");
 
     var Params = {
-        ModuleType: -1,
+        ModuleType: 2,
         TypeID: "",
         Keywords: "",
         BeginTime: "",
@@ -72,13 +72,8 @@
             Params.PageIndex = 1;
             ObjectJS.getContents();
         });
-
-        if (Params.Keywords == "") {
-            $(".count-trem").find("a:first").html("所有");
-        } else {
-            $(".count-trem").find("a:first").html(Params.Keywords);
-        }       
         
+        $(".count-trem").find("a:first").html(Params.Keywords);
     };
 
     ObjectJS.getContents = function () {

@@ -47,7 +47,7 @@
 .new-guide .guide-img { width:960px;margin:auto;}
 .new-guide .guide-img li{float:left;margin-bottom:20px;margin-right:20px;width:300px;height:200px;position:relative;box-shadow: 3px 3px 3px #f3f3f3;}
 .guide-img li img { width:300px;height:200px;}
-.guide-img li .txt { position:absolute;z-index:10;bottom:10px;left:10px;color:#fff;opacity:0.8;font-size:16px;}
+.guide-img li .txt { position:absolute;z-index:10;bottom:10px;left:10px;color:#fff;opacity:0.9;font-size:16px;}
 .guide-img li .bg-jianbian { position:absolute;z-index:5;width:300px;height:200px;top:0;
                              background: -moz-linear-gradient(top,rgba(0,0,0,0.1)50%,rgba(0,0,0,0.5));        
                              background: -webkit-linear-gradient(top, rgba(0,0,0,0.1) 50%,rgba(0,0,0,0.5));

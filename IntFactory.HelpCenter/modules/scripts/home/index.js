@@ -118,6 +118,9 @@
                         return;
                     }                    
                     var item = guidTypes[i];
+                    if (item.Icon == "" || item.Icon==null) {
+                        item.Icon = "/modules/images/img-noimg.png";
+                    }
                     $(".new-guide ul").append('<li><a href="/NewbieGuide/NewbieGuide/'+item.TypeID+'"><img src="' + item.Icon + '" /><div class="bg-jianbian"></div><span class="txt">' + (i + 1) + '.' + item.Name + '</span></li></a>');
                 }
             }
