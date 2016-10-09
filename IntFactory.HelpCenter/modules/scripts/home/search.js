@@ -25,13 +25,9 @@
     };
 
     ObjectJS.bindEvent = function () {
-        var txt = decodeURI(window.location.href.split("?")[1]);
-        if (txt != "") {
-            Params.Keywords = txt;
-            ObjectJS.getContents();
-        } else {
-            $(".search-results").append("<li class='nodata-txt red'>请输入搜索内容</li>");            
-        }
+        var txt = decodeURI(window.location.href.split("?")[1]);        
+        Params.Keywords = txt;
+        ObjectJS.getContents();        
       
         $(".time-search li").click(function () {            
             if (!ObjectJS.isLoading) {
@@ -77,7 +73,11 @@
             ObjectJS.getContents();
         });
 
-        $(".count-trem").find("a:first").html(Params.Keywords);
+        if (Params.Keywords == "") {
+            $(".count-trem").find("a:first").html("所有");
+        } else {
+            $(".count-trem").find("a:first").html(Params.Keywords);
+        }       
         
     };
 
@@ -85,6 +85,7 @@
         $(".search-results").empty();
         ObjectJS.isLoading = false;
         $(".search-results").append("<div class='data-loading'><div>");
+        
         Global.post("/Home/GetContents", { filter: JSON.stringify(Params) }, function (data) {
             $(".search-results").empty();
             ObjectJS.isLoading = true;
