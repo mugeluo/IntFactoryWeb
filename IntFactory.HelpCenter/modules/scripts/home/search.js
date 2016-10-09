@@ -30,14 +30,10 @@
             Params.Keywords = txt;
             ObjectJS.getContents();
         } else {
-            $(".search-results").append("<li class='nodata-txt red'>请输入搜索内容</li>");
-            return;
+            $(".search-results").append("<li class='nodata-txt red'>请输入搜索内容</li>");            
         }
       
-        $(".time-search li").click(function () {
-            if (Params.Keywords == '') {                
-                return;
-            }
+        $(".time-search li").click(function () {            
             if (!ObjectJS.isLoading) {
                 alert("数据正在加载中");
                 return;
@@ -54,10 +50,7 @@
         });
 
         //排序
-        $(".sort-item").click(function () {
-            if (Params.Keywords == '') {
-                return;
-            }
+        $(".sort-item").click(function () {            
             if (!ObjectJS.isLoading) {
                 alert("数据正在加载中");
                 return;
