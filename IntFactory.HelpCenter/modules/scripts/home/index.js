@@ -69,7 +69,7 @@
             if (functionTypes.length > 0) {               
 
                 var functionArray = [
-                   { id: "1fba4255-8eaa-4823-baae-134add3dc05b", iconfont: "&#xe621;" },
+                   { id: "1fba4255-8eaa-4823-baae-134add3dc05b", iconfont: "&#xe621;"},
                    { id: "42c0bb53-07f1-43e7-857b-6ed589ec093f", iconfont: "&#xe61e;"},
                    { id: "cfa08906-0b09-44e0-978d-b0abb48c6735", iconfont: "&#xe623;"},
                    { id: "95088962-ec5d-4a3f-ae96-85827bee02e9", iconfont: "&#xe619;"},
